@@ -1,6 +1,6 @@
 # OVSE Transaction Intelligence & Executive Dashboard
 
-An enterprise-grade executive analytics portal and reporting engine built for monitoring **Online Verification Service Entities (OVSE)** transaction volumes, quality rates, and onboarding momentum.
+An enterprise-grade executive analytics portal and reporting engine built for monitoring **Offline Verification Seeking Entities (OVSE)** transaction volumes, quality rates, and onboarding momentum.
 
 Now configured with **Secure User Authentication (Username/Password)** and ready for **1-Click Hosting on Render.com** or running locally.
 
