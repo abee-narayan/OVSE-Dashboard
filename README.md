@@ -10,12 +10,16 @@ Now configured with **Secure User Authentication (Username/Password)** and ready
 
 The portal features built-in Role-Based Access Control (RBAC):
 
-| Access Role | Username | Password | Permissions |
-| :--- | :--- | :--- | :--- |
-| **1. Admin Access** | `admin` | `admin2026!` *(or `ovse2026!`)* | **Full Access:** View all dashboards, download CSV/PDF reports, and **upload weekly CSV datasets**. |
-| **2. User / Viewer Access** | `viewer` | `viewer2026!` | **Read-Only Access:** View all dashboards, charts, tables, and download reports. **Cannot upload data files** (upload button is hidden and backend endpoint is locked). |
+| Access Role | Username | Permissions |
+| :--- | :--- | :--- |
+| **1. Admin Access** | `admin` | **Full Access:** View all dashboards, download CSV/PDF reports, and **upload weekly CSV datasets**. |
+| **2. User / Viewer Access** | `viewer` | **Read-Only Access:** View all dashboards, charts, tables, and download reports. **Cannot upload data files** (upload button is hidden and backend endpoint is locked). |
 
-*(You can customize these usernames and passwords in `.env` locally or in the Render Environment Variables).*
+> [!IMPORTANT]
+> **Production Password Setup:**  
+> For maximum security, configure your custom passwords directly in your Render Dashboard under **Environment Variables**:
+> - `ADMIN_PASSWORD`: Your secret admin password
+> - `VIEWER_PASSWORD`: Your secret user/viewer password
 
 ---
 

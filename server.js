@@ -13,11 +13,11 @@ const PORT = process.env.PORT || 3000;
 // Configurable Credentials (overridable via Render Environment Variables)
 // 1. Admin: Can view, download, and upload new data files
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'admin';
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin2026!';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'Ovse#Secure9241!Admin';
 
 // 2. User / Viewer: Can view and download data only (cannot upload)
 const VIEWER_USERNAME = process.env.VIEWER_USERNAME || process.env.USER_USERNAME || 'viewer';
-const VIEWER_PASSWORD = process.env.VIEWER_PASSWORD || process.env.USER_PASSWORD || 'viewer2026!';
+const VIEWER_PASSWORD = process.env.VIEWER_PASSWORD || process.env.USER_PASSWORD || 'Ovse#View7583!User';
 
 const SESSION_SECRET = process.env.SESSION_SECRET || 'ovse-secret-session-key-2026';
 
@@ -92,11 +92,7 @@ app.post('/api/login', (req, res) => {
     cleanUser === 'ovse_admin' ||
     cleanUser === 'admin'
   );
-  const isAdminPass = (
-    cleanPass === ADMIN_PASSWORD ||
-    cleanPass === 'admin2026!' ||
-    cleanPass === 'ovse2026!'
-  );
+  const isAdminPass = (cleanPass === ADMIN_PASSWORD);
 
   if (isAdminUser && isAdminPass) {
     req.session.user = {
@@ -118,18 +114,9 @@ app.post('/api/login', (req, res) => {
     cleanUser === (VIEWER_USERNAME || 'viewer').toLowerCase() ||
     cleanUser === 'viewer' ||
     cleanUser === 'user' ||
-    cleanUser === 'executive' ||
-    cleanUser === 'ovse_dashboard' ||
-    cleanUser === 'ovse-dashboard'
+    cleanUser === 'executive'
   );
-  const isViewerPass = (
-    cleanPass === VIEWER_PASSWORD ||
-    cleanPass === 'viewer2026!' ||
-    cleanPass === 'user2026!' ||
-    cleanPass === 'ovse2026!' ||
-    cleanPass === 'viewer' ||
-    cleanPass === 'user'
-  );
+  const isViewerPass = (cleanPass === VIEWER_PASSWORD);
 
   if (isViewerUser && isViewerPass) {
     req.session.user = {
