@@ -1,0 +1,41 @@
+UIDAI OVSE ERROR CODE INTELLIGENCE - EXECUTIVE REPORT
+Generated At,"14/10/2026, 5:49:00 pm"
+,,,,,,,
+Error Code,Category,Description / Meaning,Weekly Failures,Weekly Failure Share %,Lifetime Failures,Lifetime Failure Share %,Trend Delta (%)
+SDJWT_USER_DENIED_CONSENT,User Consent Denial,Citizen actively declined or cancelled the consent prompt on mAadhaar app.,9358,44.52%,311028,15.01%,+29.50%
+SDJWT_FACEAUTH_FAILED_731,Biometric Face Auth Failure,"Face authentication match failed (Threshold score not met, code 731).",5843,27.79%,336398,16.24%,+11.56%
+SDJWT_SIGN_VALIDATION_FAILED,Cryptographic / Security Error,Cryptographic signature validation failure between OVSE and UIDAI.,2225,10.58%,57506,2.78%,+7.81%
+INVALID_JWT,Cryptographic / Security Error,"Malformed, invalid token payload, or expired token during handshake.",1473,7.01%,405305,19.56%,-12.56%
+SDJWT_CALLBACK_NETWORK_ERROR,Network / Connectivity Timeout,Network timeout or connection drop during callback reporting to OVSE backend.,1115,5.30%,622753,30.06%,-24.76%
+SDJWT_FACEAUTH_FAILED_304,Biometric Face Auth Failure,Face capture / lighting / sensor error during camera acquisition.,580,2.76%,50356,2.43%,+0.33%
+SDJWT_FACEAUTH_FAILED_737,Biometric Face Auth Failure,Low biometric confidence / quality score during facial matching.,409,1.95%,17822,0.86%,+1.09%
+SDJWT_ZIP_CREATION_FAILED,System / Payload Processing,Failure during local credential zip extraction or compression.,10,0.05%,455,0.02%,+0.03%
+0,Generic Timeout / Client Drop,"Generic connection reset, client drop, or unspecified timeout error.",9,0.04%,251737,12.15%,-12.11%
+731,Biometric Face Auth Failure,Biometric verification threshold score not achieved (Code 731).,0,0.00%,14104,0.68%,-0.68%
+SDJWT_FACEAUTH_FAILED,Biometric Face Auth Failure,General facial authentication failure.,0,0.00%,3593,0.17%,-0.17%
+737,Other System Errors,UIDAI error code 737,0,0.00%,569,0.03%,-0.03%
+undefined,Other System Errors,UIDAI error code undefined,0,0.00%,11,0.00%,-0.00%
+Unauthorized access,Other System Errors,UIDAI error code Unauthorized access,0,0.00%,6,0.00%,-0.00%
+No data received,Other System Errors,UIDAI error code No data received,0,0.00%,2,0.00%,-0.00%
+400,Other System Errors,UIDAI error code 400,0,0.00%,1,0.00%,-0.00%
+500,Other System Errors,UIDAI error code 500,0,0.00%,1,0.00%,-0.00%
+Request failed: The request timed out.,Other System Errors,UIDAI error code Request failed: The request timed out.,0,0.00%,1,0.00%,-0.00%
+Request failed: The resource could not be loaded because the App Transport Security policy requires the use of a secure connection.,Other System Errors,UIDAI error code Request failed: The resource could not be loaded because the App Transport Security policy requires the use of a secure connection.,0,0.00%,1,0.00%,-0.00%
+,,,,,,,
+TOP IMPACTED OVSE ENTITIES BY ERROR COUNT (WEEKLY)
+OVSE ID,Total Weekly Failures,Dominant Error Code,Dominant Error Count,Dominant Error Share %
+urbancompany,9937,SDJWT_USER_DENIED_CONSENT,5764,58.0%
+gridlines,2628,SDJWT_CALLBACK_NETWORK_ERROR,730,27.8%
+urn:uidai:client:life-insurance-corporation-of-india:202606036260,2448,SDJWT_FACEAUTH_FAILED_731,992,40.5%
+urn:uidai:client:inferalgo-private-limited:202607177737,1126,SDJWT_USER_DENIED_CONSENT,610,54.2%
+tnmc,632,SDJWT_FACEAUTH_FAILED_731,262,41.5%
+protean,615,SDJWT_SIGN_VALIDATION_FAILED,321,52.2%
+arattai,557,SDJWT_USER_DENIED_CONSENT,308,55.3%
+procam,469,SDJWT_FACEAUTH_FAILED_731,191,40.7%
+dexit,454,INVALID_JWT,137,30.2%
+tspolice,415,SDJWT_USER_DENIED_CONSENT,125,30.1%
+trustt,412,SDJWT_USER_DENIED_CONSENT,160,38.8%
+(Blank / Unknown),250,SDJWT_FACEAUTH_FAILED_304,135,54.0%
+cisf,149,SDJWT_FACEAUTH_FAILED_731,63,42.3%
+urn:uidai:client:punjab-school-educationboard:202608274954,147,SDJWT_SIGN_VALIDATION_FAILED,46,31.3%
+signzytech,145,SDJWT_USER_DENIED_CONSENT,124,85.5%

@@ -68,8 +68,8 @@
       <!-- Action Buttons -->
       <div class="flex items-center flex-wrap gap-2.5 no-print">
         <button id="toggleUploadBtn" onclick="toggleUploadDrawer()" class="inline-flex items-center px-3.5 py-2 rounded-lg text-xs font-semibold bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 transition">
-          <i data-lucide="upload-cloud" class="w-4 h-4 mr-1.5"></i>
-          <span>Weekly Data Ingestion</span>
+          <i data-lucide="upload-cloud" class="w-4 h-4 mr-1.5" id="headerUploadIcon"></i>
+          <span id="headerUploadBtnText">Weekly Data Ingestion</span>
         </button>
 
         <!-- Dropdown for CSV downloads -->
@@ -109,6 +109,20 @@
                   <div class="text-[10px] text-slate-400">Entities with high failure rate</div>
                 </div>
               </a>
+              <a href="javascript:void(0)" onclick="downloadErrorCodeAnalysisCSV()" class="group flex items-center px-4 py-2.5 text-xs text-slate-700 hover:bg-amber-50 hover:text-amber-900 border-t border-slate-100">
+                <i data-lucide="shield-alert" class="w-4 h-4 mr-2.5 text-amber-500"></i>
+                <div>
+                  <div class="font-semibold text-amber-800">UIDAI Error Intelligence (.csv)</div>
+                  <div class="text-[10px] text-slate-400">Error codes, categories & root causes</div>
+                </div>
+              </a>
+              <a href="javascript:void(0)" onclick="downloadChannelAnalysisCSV()" class="group flex items-center px-4 py-2.5 text-xs text-slate-700 hover:bg-sky-50 hover:text-sky-900">
+                <i data-lucide="share-2" class="w-4 h-4 mr-2.5 text-sky-500"></i>
+                <div>
+                  <div class="font-semibold text-sky-800">Sharing Channels Analysis (.csv)</div>
+                  <div class="text-[10px] text-slate-400">App Intent, Web Intent & QR Scan</div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -133,20 +147,33 @@
     </div>
   </header>
 
-  <!-- Weekly Ingestion Center Drawer / Panel -->
+  <!-- Weekly Ingestion Center Drawer / Panel (Dynamic per Tab) -->
   <section id="uploadDrawer" class="no-print bg-slate-900 text-white border-b border-slate-800 transition-all duration-300 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
       <div class="flex items-center justify-between mb-4">
         <div>
-          <h2 class="text-base font-bold text-white flex items-center gap-2">
-            <i data-lucide="refresh-cw" class="w-4 h-4 text-indigo-400"></i>
-            Weekly Data Ingestion Center
+          <div class="flex items-center gap-2 mb-1.5">
+            <span id="uploadDrawerBadge" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+              Page 1: OVSE Transactions Ingestion
+            </span>
+            <span class="text-[11px] text-slate-400 font-mono" id="uploadDrawerSubBadge">• Page-Specific Dataset Upload</span>
+          </div>
+          <h2 id="uploadDrawerTitle" class="text-base font-bold text-white flex items-center gap-2">
+            <i data-lucide="refresh-cw" class="w-4 h-4 text-indigo-400" id="uploadDrawerIcon"></i>
+            Weekly Ingestion: OVSE Transaction Performance Datasets
           </h2>
-          <p class="text-xs text-slate-400">Upload your two weekly CSV exports. The portal instantly recalculates all statistics, graphs, rankings, and downloadable CSVs on the fly.</p>
+          <p id="uploadDrawerDesc" class="text-xs text-slate-400 mt-0.5">Upload your two weekly CSV exports. The portal instantly recalculates all statistics, graphs, rankings, and downloadable CSVs on the fly.</p>
         </div>
-        <button onclick="toggleUploadDrawer()" class="text-slate-400 hover:text-white text-xs px-2 py-1 rounded bg-slate-800 border border-slate-700">
+        <button onclick="toggleUploadDrawer()" class="text-slate-400 hover:text-white text-xs px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 hover:border-slate-600 transition">
           Close Panel ✕
         </button>
+      </div>
+
+      <!-- Format Validation Error Alert Banner -->
+      <div id="uploadErrorAlert" class="hidden mb-4 p-3.5 rounded-xl bg-rose-950/90 border border-rose-500/80 text-rose-200 text-xs flex items-start gap-3 shadow-lg">
+        <i data-lucide="alert-triangle" class="w-5 h-5 text-rose-400 shrink-0 mt-0.5"></i>
+        <div class="flex-1" id="uploadErrorMessage"></div>
+        <button onclick="hideUploadError()" class="text-rose-400 hover:text-white text-xs font-black px-2 py-0.5 rounded bg-rose-900/50 hover:bg-rose-900 transition cursor-pointer">✕</button>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -154,13 +181,13 @@
         <div class="border-2 border-dashed border-slate-700 hover:border-indigo-500 rounded-xl p-4 bg-slate-800/60 transition cursor-pointer relative" onclick="document.getElementById('overallFileInput').click()">
           <input type="file" id="overallFileInput" accept=".csv" class="hidden" onchange="handleFileSelected(event, 'overall')">
           <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0">
+            <div id="dropzone1IconBox" class="w-10 h-10 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0">
               <i data-lucide="database" class="w-5 h-5"></i>
             </div>
             <div class="overflow-hidden">
-              <div class="text-xs font-semibold text-slate-200">1. Overall Transactions Dataset (All Time)</div>
+              <div id="dropzone1Title" class="text-xs font-semibold text-slate-200">1. All-Time Cumulative Transactions CSV (All Time)</div>
               <div id="overallFileName" class="text-xs text-indigo-300 font-mono truncate mt-0.5">Current: ovse_wise_transactions_count___duplicate_...csv</div>
-              <div class="text-[10px] text-slate-400 mt-0.5">Click or drag & drop new file to replace</div>
+              <div id="dropzone1Hint" class="text-[10px] text-slate-400 mt-0.5">Click or drag & drop new file to replace • Expected: Ovse ID, Auth Result, Count</div>
             </div>
           </div>
         </div>
@@ -169,22 +196,22 @@
         <div class="border-2 border-dashed border-slate-700 hover:border-sky-500 rounded-xl p-4 bg-slate-800/60 transition cursor-pointer relative" onclick="document.getElementById('weeklyFileInput').click()">
           <input type="file" id="weeklyFileInput" accept=".csv" class="hidden" onchange="handleFileSelected(event, 'weekly')">
           <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0">
+            <div id="dropzone2IconBox" class="w-10 h-10 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0">
               <i data-lucide="calendar" class="w-5 h-5"></i>
             </div>
             <div class="overflow-hidden">
-              <div class="text-xs font-semibold text-slate-200">2. Last 1-Week Transactions Dataset (Weekly)</div>
+              <div id="dropzone2Title" class="text-xs font-semibold text-slate-200">2. Last 1-Week Transactions CSV (Weekly)</div>
               <div id="weeklyFileName" class="text-xs text-sky-300 font-mono truncate mt-0.5">Current: query_result_2026-10-14...csv</div>
-              <div class="text-[10px] text-slate-400 mt-0.5">Click or drag & drop new file to replace</div>
+              <div id="dropzone2Hint" class="text-[10px] text-slate-400 mt-0.5">Click or drag & drop new file to replace • Expected: Ovse ID, Auth Result, Count</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="mt-4 flex items-center justify-between pt-3 border-t border-slate-800">
-        <div class="text-xs text-slate-400 flex items-center gap-2">
+        <div id="uploadDrawerFormatNote" class="text-xs text-slate-400 flex items-center gap-2">
           <i data-lucide="info" class="w-3.5 h-3.5 text-indigo-400"></i>
-          <span>Supports any future weekly CSVs with columns: <code class="bg-slate-800 px-1.5 py-0.5 rounded text-indigo-300">Ovse ID, Auth Result, Count</code></span>
+          <span>Supports weekly CSVs with columns: <code class="bg-slate-800 px-1.5 py-0.5 rounded text-indigo-300 font-mono">Ovse ID, Auth Result, Count</code></span>
         </div>
         <div class="flex gap-2">
           <button onclick="resetToInitialData()" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 transition">
@@ -192,8 +219,88 @@
           </button>
           <button onclick="processUploadedFiles()" id="processBtn" class="px-4 py-1.5 rounded-lg text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-500 transition shadow-sm flex items-center gap-1.5">
             <i data-lucide="zap" class="w-3.5 h-3.5"></i>
-            Process & Update Dashboard
+            <span id="processBtnText">Process & Update Dashboard</span>
           </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Navigation Tab Bar -->
+  <nav class="bg-white border-b border-slate-200 sticky top-[69px] z-20 shadow-xs no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center space-x-2 py-2.5 overflow-x-auto">
+        <button id="navTabTransactions" onclick="switchTab('transactions')" class="nav-tab-btn inline-flex items-center px-4 py-2 rounded-xl text-xs font-bold transition-all duration-150 bg-indigo-600 text-white shadow-sm shadow-indigo-100">
+          <i data-lucide="layout-dashboard" class="w-4 h-4 mr-2"></i>
+          <span>1. Transaction Performance (Page 1)</span>
+        </button>
+
+        <button id="navTabErrors" onclick="switchTab('errors')" class="nav-tab-btn inline-flex items-center px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all duration-150">
+          <i data-lucide="shield-alert" class="w-4 h-4 mr-2 text-rose-500"></i>
+          <span>2. UIDAI Error Code Intelligence</span>
+          <span class="ml-2 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-rose-100 text-rose-700">21K Failures</span>
+        </button>
+
+        <button id="navTabChannels" onclick="switchTab('channels')" class="nav-tab-btn inline-flex items-center px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all duration-150">
+          <i data-lucide="share-2" class="w-4 h-4 mr-2 text-sky-500"></i>
+          <span>3. Data Sharing Channels</span>
+          <span class="ml-2 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-sky-100 text-sky-700">+4.1% Web Surge</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Global OVSE Scope & Outlier Filter Bar -->
+  <section class="bg-slate-50 border-b border-slate-200/90 py-3 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+        <!-- Title & Status -->
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="sliders-horizontal" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-slate-800">Ecosystem Scope & Outlier Controls</span>
+              <span id="outlierActiveBadge" class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-200 text-slate-700">
+                All 221 Entities Included
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-500">Filter out high-volume outliers to isolate true enterprise metrics & baseline failure rates across all 3 pages</p>
+          </div>
+        </div>
+
+        <!-- Action Controls -->
+        <div class="flex flex-wrap items-center gap-2">
+          <!-- 1-Click Outlier Toggle: SelectiveShare -->
+          <button id="toggleSelectiveShareBtn" onclick="toggleExcludeEntity('SelectiveShare')" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold border transition shadow-xs bg-white text-slate-700 border-slate-300 hover:border-amber-500 hover:text-amber-700">
+            <i data-lucide="zap" class="w-3.5 h-3.5 mr-1.5 text-amber-500"></i>
+            <span id="selectiveShareBtnLabel">Exclude SelectiveShare (75.5% vol)</span>
+          </button>
+
+          <!-- Dropdown to exclude/include ANY OVSE -->
+          <div class="relative">
+            <select id="entityScopeSelect" onchange="handleEntityScopeSelect(event)" class="px-3 py-1.5 text-xs rounded-lg border border-slate-300 bg-white font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-xs max-w-xs">
+              <option value="">+ Exclude another entity...</option>
+              <!-- Populated dynamically with active OVSEs sorted by volume -->
+            </select>
+          </div>
+
+          <!-- Reset Button -->
+          <button id="resetScopeBtn" onclick="resetEntityScope()" class="inline-flex items-center px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-500 hover:text-slate-800 hover:bg-slate-200 transition">
+            <i data-lucide="rotate-ccw" class="w-3 h-3 mr-1"></i>
+            Reset All
+          </button>
+        </div>
+      </div>
+
+      <!-- Active Exclusions Tag Pills & Comparative Impact Bar -->
+      <div id="exclusionBanner" class="hidden mt-2.5 pt-2.5 border-t border-slate-200/80 flex flex-col md:flex-row md:items-center justify-between gap-2">
+        <div class="flex flex-wrap items-center gap-1.5" id="excludedTagsContainer">
+          <!-- Chips for excluded entities: e.g. SelectiveShare [x] -->
+        </div>
+        <div id="exclusionImpactText" class="text-xs text-amber-900 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5 shadow-xs">
+          <!-- Dynamic impact statement e.g. "Excluding SelectiveShare: System Success Rate is 57.40% (vs 88.94%), Web Intent is 19.03% (vs 4.67%)." -->
         </div>
       </div>
     </div>
@@ -201,6 +308,9 @@
 
   <!-- Main Dashboard Content -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6 flex-1 w-full">
+
+    <!-- Tab 1: Transaction Performance Content (Untouched Page 1) -->
+    <div id="tabContentTransactions" class="space-y-6">
 
     <!-- Active Reporting Period Banner -->
     <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-2xl p-5 text-white shadow-md border border-slate-800 relative overflow-hidden">
@@ -599,12 +709,21 @@
 
           <!-- Category Filter -->
           <select id="categoryFilter" onchange="handleCategoryFilter(event)" class="text-xs border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-            <option value="all">All Entities (221)</option>
+            <option value="all">All Statuses (221)</option>
             <option value="active_weekly">Active This Week (82)</option>
             <option value="top10">Top 10 Weekly</option>
             <option value="new_surging">New & Surging Entrants</option>
             <option value="high_failure">High Failure (&gt;40%)</option>
             <option value="high_success">High Success (&gt;90%)</option>
+          </select>
+
+          <!-- Volume Filter -->
+          <select id="volumeFilter" onchange="handleVolumeFilter(event)" class="text-xs border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <option value="all">All Volumes</option>
+            <option value="high">High Volume (&gt;1,000 tx)</option>
+            <option value="mid">Mid Volume (100 - 1,000 tx)</option>
+            <option value="low">Low Volume (&lt;100 tx)</option>
+            <option value="zero">Inactive This Week (0 tx)</option>
           </select>
 
           <!-- Download Button -->
@@ -645,8 +764,584 @@
         </div>
       </div>
     </div>
+    </div> <!-- End #tabContentTransactions -->
 
-  </main>
+    <!-- Tab 2: UIDAI Error Code Intelligence -->
+    <div id="tabContentErrors" class="space-y-6 hidden">
+      <!-- Error Intelligence Banner -->
+      <div class="bg-gradient-to-r from-slate-900 via-rose-950 to-slate-900 rounded-2xl p-5 text-white shadow-md border border-slate-800 relative overflow-hidden">
+        <div class="absolute -right-8 -bottom-8 w-48 h-48 bg-rose-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
+          <div>
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-rose-500/20 text-rose-300 border border-rose-500/30 mb-2">
+              <i data-lucide="shield-alert" class="w-3 h-3"></i>
+              <span>Error Intelligence • 2,071,649 All-Time Tracked UIDAI Failures</span>
+            </div>
+            <h2 class="text-xl font-bold tracking-tight text-white">UIDAI Error Code & Failure Diagnostics</h2>
+            <p class="text-xs text-slate-300 mt-1 max-w-2xl">
+              Root-cause diagnostics, biometric face matching failures, cryptographic signature mismatches, and citizen consent denials across all OVSE entities.
+            </p>
+          </div>
+          <div class="flex items-center gap-3 shrink-0">
+            <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl px-4 py-2.5 text-center">
+              <div class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Weekly Failures</div>
+              <div id="kpiErrorWeeklyFailuresBanner" class="text-lg font-extrabold text-rose-400">21,022</div>
+              <div class="text-[10px] text-emerald-400">-98.9% vs History</div>
+            </div>
+            <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl px-4 py-2.5 text-center">
+              <div class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Top Failure Cause</div>
+              <div id="kpiErrorTopCausePctBanner" class="text-lg font-extrabold text-amber-400">44.52%</div>
+              <div id="kpiErrorTopCauseNameBanner" class="text-[10px] text-amber-300/80">Consent Denial</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Error KPI Scorecards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3.5">
+        <div class="glass-card p-4 hover:shadow-md transition border-l-4 border-l-rose-500">
+          <div class="flex items-center justify-between text-slate-500 mb-1">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Weekly System Failures</span>
+            <i data-lucide="alert-octagon" class="w-4 h-4 text-rose-500"></i>
+          </div>
+          <div id="kpiErrorWeeklyFailuresCard" class="text-2xl font-black text-slate-900">21,022</div>
+          <div class="text-[11px] text-emerald-600 font-medium mt-1 flex items-center">
+            <i data-lucide="trending-down" class="w-3.5 h-3.5 mr-0.5"></i>
+            <span>-98.98% volume (tspolice stabilized)</span>
+          </div>
+        </div>
+
+        <div class="glass-card p-4 hover:shadow-md transition border-l-4 border-l-amber-500">
+          <div class="flex items-center justify-between text-slate-500 mb-1">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Citizen Consent Denied</span>
+            <i data-lucide="user-x" class="w-4 h-4 text-amber-500"></i>
+          </div>
+          <div id="kpiErrorConsentVolCard" class="text-2xl font-black text-slate-900">9,358 <span class="text-sm font-semibold text-slate-500">(44.5%)</span></div>
+          <div class="text-[11px] text-amber-600 font-medium mt-1">
+            <span>+29.50% share surge (Rank #1 Weekly)</span>
+          </div>
+        </div>
+
+        <div class="glass-card p-4 hover:shadow-md transition border-l-4 border-l-indigo-500">
+          <div class="flex items-center justify-between text-slate-500 mb-1">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Face Auth Mismatch (731)</span>
+            <i data-lucide="scan-face" class="w-4 h-4 text-indigo-500"></i>
+          </div>
+          <div id="kpiErrorFaceAuthVolCard" class="text-2xl font-black text-slate-900">5,843 <span class="text-sm font-semibold text-slate-500">(27.8%)</span></div>
+          <div class="text-[11px] text-slate-600 font-medium mt-1">
+            <span>Biometric threshold score not reached</span>
+          </div>
+        </div>
+
+        <div class="glass-card p-4 hover:shadow-md transition border-l-4 border-l-purple-500">
+          <div class="flex items-center justify-between text-slate-500 mb-1">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Cryptographic / Sign Error</span>
+            <i data-lucide="key-round" class="w-4 h-4 text-purple-500"></i>
+          </div>
+          <div id="kpiErrorCryptoVolCard" class="text-2xl font-black text-slate-900">3,698 <span class="text-sm font-semibold text-slate-500">(17.6%)</span></div>
+          <div class="text-[11px] text-purple-600 font-medium mt-1">
+            <span>2,225 Sign Failures + 1,473 Invalid JWTs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Row 1: Top Errors & Categories -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="glass-card p-5 lg:col-span-2">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <div>
+              <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+                <i data-lucide="bar-chart-2" class="w-4 h-4 text-rose-600"></i>
+                Top 6 UIDAI Error Codes (Weekly Failure Count vs Lifetime Share %)
+              </h3>
+              <p class="text-xs text-slate-500">Comparison of failure counts this week against historical proportion</p>
+            </div>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-rose-50 text-rose-700 border border-rose-200">Active Errors</span>
+          </div>
+          <div class="h-64 mt-3">
+            <canvas id="topErrorsChart"></canvas>
+          </div>
+        </div>
+
+        <div class="glass-card p-5">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <div>
+              <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+                <i data-lucide="pie-chart" class="w-4 h-4 text-indigo-600"></i>
+                Weekly Root Cause Breakdown
+              </h3>
+              <p class="text-xs text-slate-500">Functional classification of failures</p>
+            </div>
+          </div>
+          <div class="h-64 mt-3 flex items-center justify-center">
+            <canvas id="errorCategoryDonut"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Row 2: Impacted Entities -->
+      <div class="glass-card p-5">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+          <div>
+            <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="users" class="w-4 h-4 text-purple-600"></i>
+              Top 6 OVSE Entities Impacted by Errors (Weekly Failure Volume)
+            </h3>
+            <p class="text-xs text-slate-500">Failure concentration across active entities</p>
+          </div>
+          <button onclick="downloadErrorCodeAnalysisCSV()" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white hover:bg-slate-800 transition shadow-sm">
+            <i data-lucide="download" class="w-3.5 h-3.5 mr-1.5"></i> Export Error Report (.csv)
+          </button>
+        </div>
+        <div class="h-64 mt-3">
+          <canvas id="topEntitiesErrorsChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Strategic Diagnostics & Recommendations Memo -->
+      <div class="glass-card p-6 bg-gradient-to-br from-white to-slate-50 border border-slate-200">
+        <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+          <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 rounded-lg bg-rose-900 text-white flex items-center justify-center font-bold">
+              <i data-lucide="alert-triangle" class="w-4 h-4 text-rose-200"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-slate-900">UIDAI Error Intelligence & Operational Guidance</h3>
+              <p class="text-xs text-slate-500">Technical insights and recommended actions for partner entity engineering teams</p>
+            </div>
+          </div>
+          <button onclick="downloadErrorCodeAnalysisCSV()" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-rose-900 text-white hover:bg-rose-800 transition shadow-sm">
+            <i data-lucide="file-spreadsheet" class="w-3.5 h-3.5 mr-1.5"></i> Download Full Error CSV
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 text-xs text-slate-700 leading-relaxed">
+          <div class="space-y-3">
+            <div class="p-3 bg-white rounded-xl border border-amber-200 shadow-sm bg-amber-50/20">
+              <h4 class="font-bold text-amber-900 flex items-center gap-1.5 mb-1 text-xs">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                1. Citizen Consent Denial Surged to 44.52% of All System Failures
+              </h4>
+              <p class="text-slate-600">
+                <strong>SDJWT_USER_DENIED_CONSENT</strong> logged <strong>9,358 failures</strong> this week, overwhelmingly driven by <strong>Urban Company (5,764 consent cancellations)</strong>. Citizens cancel the prompt when prompted for Aadhaar offline verification.
+                <br><span class="font-semibold text-amber-800">Action:</span> Advise Urban Company product teams to add an in-app explanatory screen prior to launching mAadhaar, building trust and highlighting why offline verification is safe.
+              </p>
+            </div>
+
+            <div class="p-3 bg-white rounded-xl border border-indigo-200 shadow-sm">
+              <h4 class="font-bold text-indigo-900 flex items-center gap-1.5 mb-1 text-xs">
+                <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+                2. Face Auth Match Score Threshold Failures (Code 731)
+              </h4>
+              <p class="text-slate-600">
+                <strong>5,843 transactions</strong> failed due to facial recognition confidence falling below UIDAI's verification threshold (code 731), led by <strong>Urban Company (2,666)</strong>, <strong>LIC (992)</strong>, and <strong>Gridlines (633)</strong>.
+                <br><span class="font-semibold text-indigo-800">Action:</span> Integrate pre-capture face frame illumination prompts, guide users to avoid backlighting, and ensure camera autofocus locks before biometric stream capture.
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <div class="p-3 bg-white rounded-xl border border-purple-200 shadow-sm">
+              <h4 class="font-bold text-purple-900 flex items-center gap-1.5 mb-1 text-xs">
+                <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                3. Signature Validation & Token Formatting Errors (17.59%)
+              </h4>
+              <p class="text-slate-600">
+                <strong>SDJWT_SIGN_VALIDATION_FAILED</strong> (2,225) and <strong>INVALID_JWT</strong> (1,473) indicate cryptographic handshake mismatches. Protean logged 321 signature failures, while Urban Company had 747 sign failures and 569 invalid JWTs.
+                <br><span class="font-semibold text-purple-800">Action:</span> Technical audit of certificate rotation, public key registration with UIDAI, and JWT payload expiry timestamps for Protean and Urban Company.
+              </p>
+            </div>
+
+            <div class="p-3 bg-white rounded-xl border border-emerald-200 shadow-sm bg-emerald-50/20">
+              <h4 class="font-bold text-emerald-900 flex items-center gap-1.5 mb-1 text-xs">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                4. Significant Network Timeout Improvement (-24.76% Share Plunge)
+              </h4>
+              <p class="text-slate-600">
+                Historically, <strong>SDJWT_CALLBACK_NETWORK_ERROR</strong> was the single largest error cause in UIDAI OVSE history (30.06% of all failures, 622K occurrences). This week, it dropped dramatically to only <strong>5.30% (1,115 occurrences)</strong>, representing a major stabilization in backend callback infrastructure.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Master UIDAI Error Code Directory Table -->
+      <div class="glass-card p-5">
+        <div class="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-slate-100 gap-3">
+          <div>
+            <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-4 h-4 text-rose-600"></i>
+              Master UIDAI Error Code Directory
+            </h3>
+            <p class="text-xs text-slate-500">Complete catalog of UIDAI error codes, root causes, descriptions, and week-over-week trends</p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <!-- Search Error -->
+            <div class="relative">
+              <input type="text" id="errorSearchInput" oninput="handleErrorSearch(event)" placeholder="Search error code or description..." class="pl-8 pr-3 py-1.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-500 w-44 sm:w-56">
+              <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5"></i>
+            </div>
+
+            <!-- Category Filter -->
+            <select id="errorCategoryFilter" onchange="handleErrorCategoryFilter(event)" class="px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-rose-500">
+              <option value="all">All Categories</option>
+              <option value="User Consent Denial">User Consent Denial</option>
+              <option value="Biometric Face Auth Failure">Biometric Face Auth</option>
+              <option value="Cryptographic / Security Error">Cryptographic / Security</option>
+              <option value="Network / Connectivity Timeout">Network Timeout</option>
+              <option value="System / Payload Processing">System Processing</option>
+              <option value="Generic Timeout / Client Drop">Generic Timeout</option>
+            </select>
+
+            <!-- Activity & Impact Filter -->
+            <select id="errorImpactFilter" onchange="handleErrorImpactFilter(event)" class="px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-rose-500">
+              <option value="all">All Statuses (19)</option>
+              <option value="active_weekly">Active This Week (9)</option>
+              <option value="high_volume">High Volume (&gt;1,000 failures)</option>
+              <option value="surging">Surging in Failure Share (+% Delta)</option>
+              <option value="inactive_weekly">Inactive This Week (0 failures)</option>
+            </select>
+
+            <!-- Sort By Dropdown -->
+            <select id="errorSortSelect" onchange="handleErrorSort(event)" class="px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-rose-500">
+              <option value="weekly_desc">Sort: Weekly Failures (High to Low)</option>
+              <option value="overall_desc">Sort: Lifetime Failures (High to Low)</option>
+              <option value="delta_desc">Sort: Failure Share Surge (High to Low)</option>
+              <option value="code_asc">Sort: Error Code (A to Z)</option>
+            </select>
+
+            <span id="errorRecordCount" class="text-[11px] text-slate-500 font-semibold px-2 py-1 rounded bg-slate-100">Showing 19 codes</span>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto mt-4">
+          <table class="w-full text-xs text-left">
+            <thead class="text-[11px] uppercase bg-slate-50 text-slate-600 font-bold border-b border-slate-200">
+              <tr>
+                <th class="py-3 px-3">Error Code</th>
+                <th class="py-3 px-3">Category</th>
+                <th class="py-3 px-3">UIDAI Description / Technical Meaning</th>
+                <th class="py-3 px-3 text-right">Weekly Failures</th>
+                <th class="py-3 px-3 text-right">Weekly Share %</th>
+                <th class="py-3 px-3 text-right">Lifetime Failures</th>
+                <th class="py-3 px-3 text-right">Lifetime Share %</th>
+                <th class="py-3 px-3 text-center">Trend Shift</th>
+              </tr>
+            </thead>
+            <tbody id="errorMasterTableBody" class="divide-y divide-slate-100 font-normal">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Top Impacted OVSE Entity Hotspots Table -->
+      <div class="glass-card p-5">
+        <div class="flex flex-col md:flex-row md:items-center justify-between pb-3 border-b border-slate-100 gap-3">
+          <div>
+            <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="building" class="w-4 h-4 text-indigo-600"></i>
+              Top Impacted OVSE Entities (Error Code Diagnosis)
+            </h3>
+            <p class="text-xs text-slate-500">Entities with highest failure counts and their primary error root causes</p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <!-- Search Entity -->
+            <div class="relative">
+              <input type="text" id="hotspotSearchInput" oninput="handleHotspotSearch(event)" placeholder="Search entity in hotspots..." class="pl-8 pr-3 py-1.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 w-44 sm:w-56">
+              <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5"></i>
+            </div>
+
+            <!-- Primary Error Filter -->
+            <select id="hotspotCodeFilter" onchange="handleHotspotCodeFilter(event)" class="px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="all">All Primary Causes</option>
+              <option value="SDJWT_USER_DENIED_CONSENT">Consent Denials</option>
+              <option value="SDJWT_FACEAUTH_FAILED_731">Face Auth (731)</option>
+              <option value="SDJWT_SIGN_VALIDATION_FAILED">Sign Validation</option>
+              <option value="INVALID_JWT">Invalid JWT</option>
+            </select>
+
+            <span id="hotspotRecordCount" class="text-[11px] text-slate-500 font-semibold px-2 py-1 rounded bg-slate-100">Showing 10 hotspots</span>
+          </div>
+        </div>
+        <div class="overflow-x-auto mt-3">
+          <table class="w-full text-xs text-left">
+            <thead class="text-[11px] uppercase bg-slate-50 text-slate-600 font-bold border-b border-slate-200">
+              <tr>
+                <th class="py-2.5 px-3">OVSE Entity</th>
+                <th class="py-2.5 px-3 text-right">Total Weekly Failures</th>
+                <th class="py-2.5 px-3">Primary Error Code</th>
+                <th class="py-2.5 px-3 text-right">Primary Error Count</th>
+                <th class="py-2.5 px-3 text-right">Primary Error % of Failures</th>
+                <th class="py-2.5 px-3">Diagnostic Recommendation</th>
+              </tr>
+            </thead>
+            <tbody id="errorHotspotsTableBody" class="divide-y divide-slate-100">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 3: Data Sharing Channels -->
+    <div id="tabContentChannels" class="space-y-6 hidden">
+      <!-- Channels Banner -->
+      <div class="bg-gradient-to-r from-slate-900 via-sky-950 to-slate-900 rounded-2xl p-5 text-white shadow-md border border-slate-800 relative overflow-hidden">
+        <div class="absolute -right-8 -bottom-8 w-48 h-48 bg-sky-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
+          <div>
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-sky-500/20 text-sky-300 border border-sky-500/30 mb-2">
+              <i data-lucide="share-2" class="w-3 h-3"></i>
+              <span>Channel Modality • 6,616,780 Lifetime Data Sharing Interactions</span>
+            </div>
+            <h2 class="text-xl font-bold tracking-tight text-white">Data Sharing Channels & Interaction Modalities</h2>
+            <p class="text-xs text-slate-300 mt-1 max-w-2xl">
+              Distribution and adoption velocity across App-to-App (<code>APP_INTENT</code>), Web-to-App (<code>WEB_INTENT</code>), and Cross-Device QR (<code>QR_SCAN</code>) channels.
+            </p>
+          </div>
+          <div class="flex items-center gap-3 shrink-0">
+            <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl px-4 py-2.5 text-center">
+              <div class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Weekly Volume</div>
+              <div id="kpiChannelWeeklyBannerVol" class="text-lg font-extrabold text-sky-400">201,036</div>
+              <div class="text-[10px] text-slate-400">Total Interactions</div>
+            </div>
+            <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl px-4 py-2.5 text-center">
+              <div class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Web Intent Growth</div>
+              <div id="kpiChannelWebGrowthBanner" class="text-lg font-extrabold text-emerald-400">+764%</div>
+              <div id="kpiChannelWebGrowthSubBanner" class="text-[10px] text-emerald-300/80">0.54% → 4.67% Share</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Channel KPI Scorecards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3.5">
+        <div class="glass-card p-4 hover:shadow-md transition border-l-4 border-l-indigo-600">
+          <div class="flex items-center justify-between text-slate-500 mb-1">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">App-to-App (App Intent)</span>
+            <i data-lucide="smartphone" class="w-4 h-4 text-indigo-600"></i>
+          </div>
+          <div id="kpiChannelAppVol" class="text-2xl font-black text-slate-900">186,985 <span class="text-sm font-semibold text-slate-500">(93.0%)</span></div>
+          <div id="kpiChannelAppSub" class="text-[11px] text-indigo-600 font-medium mt-1 flex items-center">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5 mr-1"></i>
+            <span>Mainstream mobile channel (+2.48% vs lifetime)</span>
+          </div>
+        </div>
+
+        <div class="glass-card p-4 hover:shadow-md transition border-l-4 border-l-emerald-500">
+          <div class="flex items-center justify-between text-slate-500 mb-1">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Web-to-App (Web Intent)</span>
+            <i data-lucide="globe" class="w-4 h-4 text-emerald-600"></i>
+          </div>
+          <div id="kpiChannelWebVol" class="text-2xl font-black text-slate-900">9,381 <span class="text-sm font-semibold text-slate-500">(4.67%)</span></div>
+          <div id="kpiChannelWebSub" class="text-[11px] text-emerald-600 font-medium mt-1 flex items-center">
+            <i data-lucide="trending-up" class="w-3.5 h-3.5 mr-1"></i>
+            <span>Surged 8.6x from 0.54% lifetime (+4.12% delta)</span>
+          </div>
+        </div>
+
+        <div class="glass-card p-4 hover:shadow-md transition border-l-4 border-l-sky-500">
+          <div class="flex items-center justify-between text-slate-500 mb-1">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Cross-Device (QR Scan)</span>
+            <i data-lucide="qr-code" class="w-4 h-4 text-sky-600"></i>
+          </div>
+          <div id="kpiChannelQrVol" class="text-2xl font-black text-slate-900">4,670 <span class="text-sm font-semibold text-slate-500">(2.32%)</span></div>
+          <div id="kpiChannelQrSub" class="text-[11px] text-slate-500 font-medium mt-1">
+            <span>Down from 8.93% lifetime (-6.60% delta)</span>
+          </div>
+        </div>
+
+        <div class="glass-card p-4 hover:shadow-md transition border-l-4 border-l-purple-500">
+          <div class="flex items-center justify-between text-slate-500 mb-1">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Top Web Adopter</span>
+            <i data-lucide="building-2" class="w-4 h-4 text-purple-600"></i>
+          </div>
+          <div id="kpiChannelTopWeb" class="text-2xl font-black text-slate-900">Protean <span class="text-sm font-semibold text-slate-500">(90.7%)</span></div>
+          <div id="kpiChannelTopWebSub" class="text-[11px] text-purple-600 font-medium mt-1">
+            <span>3,426 Web Tx • LIC #2 with 2,643 Web Tx</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Row 1: Lifetime vs Weekly Comparison & Donut -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="glass-card p-5 lg:col-span-2">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <div>
+              <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+                <i data-lucide="bar-chart-3" class="w-4 h-4 text-sky-600"></i>
+                Channel Share Shift: Lifetime Cumulative vs Last 1-Week (%)
+              </h3>
+              <p class="text-xs text-slate-500">Proportional comparison of channels demonstrating the Web Intent surge</p>
+            </div>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-sky-50 text-sky-700 border border-sky-200">Modality Shift</span>
+          </div>
+          <div class="h-64 mt-3">
+            <canvas id="channelLifetimeVsWeeklyChart"></canvas>
+          </div>
+        </div>
+
+        <div class="glass-card p-5">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <div>
+              <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+                <i data-lucide="pie-chart" class="w-4 h-4 text-indigo-600"></i>
+                Weekly Modality Mix
+              </h3>
+              <p class="text-xs text-slate-500">Share of 201,036 weekly interactions</p>
+            </div>
+          </div>
+          <div class="h-64 mt-3 flex items-center justify-center">
+            <canvas id="channelWeeklyDonut"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Row 2: Top OVSEs Channel Mix (100% Stacked Bar) -->
+      <div class="glass-card p-5">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+          <div>
+            <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="layers" class="w-4 h-4 text-purple-600"></i>
+              Channel Modality Distribution Across Top 10 OVSEs (Weekly %)
+            </h3>
+            <p class="text-xs text-slate-500">100% Stacked proportion showing App Intent vs Web Intent vs QR Scan by entity</p>
+          </div>
+          <button onclick="downloadChannelAnalysisCSV()" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white hover:bg-slate-800 transition shadow-sm">
+            <i data-lucide="download" class="w-3.5 h-3.5 mr-1.5"></i> Export Channel Report (.csv)
+          </button>
+        </div>
+        <div class="h-72 mt-3">
+          <canvas id="ovseChannelMixChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Strategic Memo on Channel Adoption -->
+      <div class="glass-card p-6 bg-gradient-to-br from-white to-slate-50 border border-slate-200">
+        <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+          <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 rounded-lg bg-sky-900 text-white flex items-center justify-center font-bold">
+              <i data-lucide="info" class="w-4 h-4 text-sky-200"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-slate-900">Strategic Insights on Data Sharing Modalities</h3>
+              <p class="text-xs text-slate-500">Executive takeaways on citizen interaction workflows and entity architecture</p>
+            </div>
+          </div>
+          <button onclick="downloadChannelAnalysisCSV()" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-900 text-white hover:bg-sky-800 transition shadow-sm">
+            <i data-lucide="file-spreadsheet" class="w-3.5 h-3.5 mr-1.5"></i> Download Full Channels CSV
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 text-xs text-slate-700 leading-relaxed">
+          <div class="p-3.5 bg-white rounded-xl border border-emerald-200 shadow-sm bg-emerald-50/20">
+            <h4 class="font-bold text-emerald-900 flex items-center gap-1.5 mb-1 text-xs">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              1. The Web-to-App Enterprise Expansion (+764% Growth)
+            </h4>
+            <p class="text-slate-600">
+              Web Intent grew from <strong>0.54% lifetime</strong> to <strong>4.67% weekly</strong>. Large enterprise portals like <strong>Protean (90.7% Web Intent)</strong> and <strong>LIC (55.7% Web Intent)</strong> initiate verification from web portals, triggering mAadhaar on user phones. This is the fastest-growing modality.
+            </p>
+          </div>
+
+          <div class="p-3.5 bg-white rounded-xl border border-sky-200 shadow-sm">
+            <h4 class="font-bold text-sky-900 flex items-center gap-1.5 mb-1 text-xs">
+              <span class="w-2 h-2 rounded-full bg-sky-500"></span>
+              2. Kiosk & Assisted Verifications Drive QR Scan
+            </h4>
+            <p class="text-slate-600">
+              Cross-Device QR represents <strong>2.32%</strong> overall, but is vital for physical operations: <strong>Procam uses QR for 37.1%</strong> (event registrations) and <strong>TNMC uses QR for 33.5%</strong> (medical council desktop verifications).
+            </p>
+          </div>
+
+          <div class="p-3.5 bg-white rounded-xl border border-indigo-200 shadow-sm">
+            <h4 class="font-bold text-indigo-900 flex items-center gap-1.5 mb-1 text-xs">
+              <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+              3. Consumer Apps Remain 100% App Intent
+            </h4>
+            <p class="text-slate-600">
+              High-volume mobile consumer apps like <strong>Urban Company (21,601 tx)</strong> and <strong>SelectiveShare (151,735 tx)</strong> operate almost exclusively on <strong>App Intent (100%)</strong>, confirming deep native mobile app embedding.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Master OVSE Channel Adoption Table -->
+      <div class="glass-card p-5">
+        <div class="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-slate-100 gap-3">
+          <div>
+            <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="layout-grid" class="w-4 h-4 text-sky-600"></i>
+              OVSE Channel Usage Directory
+            </h3>
+            <p class="text-xs text-slate-500">Breakdown of interaction channels and dominant modality for active OVSE entities</p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <!-- Search OVSE -->
+            <div class="relative">
+              <input type="text" id="channelSearchInput" oninput="handleChannelSearch(event)" placeholder="Search entity name or ID..." class="pl-8 pr-3 py-1.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 w-44 sm:w-56">
+              <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5"></i>
+            </div>
+
+            <!-- Modality Filter -->
+            <select id="channelFilterSelect" onchange="handleChannelFilter(event)" class="px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+              <option value="all">All Modalities</option>
+              <option value="app_dominant">App Intent Dominant (&gt;50%)</option>
+              <option value="web_dominant">Web Intent Dominant (&gt;50%)</option>
+              <option value="web_active">Web Intent Active (&gt;0 tx)</option>
+              <option value="qr_significant">QR Scan Active (&gt;10%)</option>
+              <option value="single_channel">Pure Single-Channel (100%)</option>
+              <option value="multi_channel">Multi-Channel Adopter (2+ Modes)</option>
+            </select>
+
+            <!-- Volume Tier Filter -->
+            <select id="channelVolumeFilter" onchange="handleChannelVolumeFilter(event)" class="px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+              <option value="all">All Volume Tiers</option>
+              <option value="heavy">Heavy Traffic (&gt;5,000 tx)</option>
+              <option value="medium">Medium Traffic (500 - 5,000 tx)</option>
+              <option value="emerging">Emerging Traffic (&lt;500 tx)</option>
+            </select>
+
+            <!-- Sort By Dropdown -->
+            <select id="channelSortSelect" onchange="handleChannelSort(event)" class="px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+              <option value="total_desc">Sort: Total Weekly Volume (High to Low)</option>
+              <option value="web_vol_desc">Sort: Web Intent Volume (High to Low)</option>
+              <option value="web_share_desc">Sort: Web Share % (High to Low)</option>
+              <option value="qr_vol_desc">Sort: QR Scan Volume (High to Low)</option>
+              <option value="app_vol_desc">Sort: App Intent Volume (High to Low)</option>
+              <option value="name_asc">Sort: Entity Name (A to Z)</option>
+            </select>
+
+            <span id="channelRecordCount" class="text-[11px] text-slate-500 font-semibold px-2 py-1 rounded bg-slate-100">Showing 65 entities</span>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto mt-4">
+          <table class="w-full text-xs text-left">
+            <thead class="text-[11px] uppercase bg-slate-50 text-slate-600 font-bold border-b border-slate-200">
+              <tr>
+                <th class="py-3 px-3">OVSE Entity</th>
+                <th class="py-3 px-3 text-right">Weekly Total Tx</th>
+                <th class="py-3 px-3 text-right">App-to-App Tx</th>
+                <th class="py-3 px-3 text-right">App Share %</th>
+                <th class="py-3 px-3 text-right">Web-to-App Tx</th>
+                <th class="py-3 px-3 text-right">Web Share %</th>
+                <th class="py-3 px-3 text-right">QR Scan Tx</th>
+                <th class="py-3 px-3 text-right">QR Share %</th>
+                <th class="py-3 px-3 text-center">Primary Modality</th>
+              </tr>
+            </thead>
+            <tbody id="channelMasterTableBody" class="divide-y divide-slate-100 font-normal">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
   <!-- Footer -->
   <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500 mt-12 no-print">
@@ -688,6 +1383,467 @@
     let uploadedWeeklyContent = null;
 
     let currentUserRole = 'admin'; // default fallback for offline file://
+
+    // Outlier and Entity Scope Filter State
+    let baseData = null;
+    let excludedOvseSet = new Set(); // Stores lowercase OVSE IDs
+
+    const ERROR_DESCRIPTIONS = {
+      'SDJWT_USER_DENIED_CONSENT': 'Citizen actively declined or cancelled the consent prompt on mAadhaar app.',
+      'SDJWT_FACEAUTH_FAILED_731': 'Face authentication match failed (Threshold score not met, code 731).',
+      'SDJWT_SIGN_VALIDATION_FAILED': 'Cryptographic signature validation failure between OVSE and UIDAI.',
+      'INVALID_JWT': 'Malformed, invalid token payload, or expired token during handshake.',
+      'SDJWT_CALLBACK_NETWORK_ERROR': 'Network timeout or connection drop during callback reporting to OVSE backend.',
+      'SDJWT_FACEAUTH_FAILED_304': 'Face capture / lighting / sensor error during camera acquisition.',
+      'SDJWT_FACEAUTH_FAILED_737': 'Low biometric confidence / quality score during facial matching.',
+      'SDJWT_ZIP_CREATION_FAILED': 'Failure during local credential zip extraction or compression.',
+      '0': 'Generic connection reset, client drop, or unspecified timeout error.',
+      '731': 'Biometric verification threshold score not achieved (Code 731).',
+      'SDJWT_FACEAUTH_FAILED': 'General facial authentication failure.'
+    };
+
+    const ERROR_CATEGORIES = {
+      'SDJWT_USER_DENIED_CONSENT': 'User Consent Denial',
+      'SDJWT_FACEAUTH_FAILED_731': 'Biometric Face Auth Failure',
+      'SDJWT_FACEAUTH_FAILED_304': 'Biometric Face Auth Failure',
+      'SDJWT_FACEAUTH_FAILED_737': 'Biometric Face Auth Failure',
+      'SDJWT_FACEAUTH_FAILED': 'Biometric Face Auth Failure',
+      '731': 'Biometric Face Auth Failure',
+      'SDJWT_SIGN_VALIDATION_FAILED': 'Cryptographic / Security Error',
+      'INVALID_JWT': 'Cryptographic / Security Error',
+      'SDJWT_CALLBACK_NETWORK_ERROR': 'Network / Connectivity Timeout',
+      'SDJWT_ZIP_CREATION_FAILED': 'System / Payload Processing',
+      '0': 'Generic Timeout / Client Drop'
+    };
+
+    function toggleExcludeEntity(ovseId) {
+      if (!ovseId) return;
+      const lower = ovseId.toLowerCase();
+      if (excludedOvseSet.has(lower)) {
+        excludedOvseSet.delete(lower);
+      } else {
+        excludedOvseSet.add(lower);
+      }
+      recomputeFilteredData();
+    }
+
+    function resetEntityScope() {
+      excludedOvseSet.clear();
+      recomputeFilteredData();
+    }
+
+    function handleEntityScopeSelect(e) {
+      const val = e.target.value;
+      if (!val) return;
+      toggleExcludeEntity(val);
+      e.target.value = ''; // Reset select dropdown
+    }
+
+    function populateEntityScopeDropdown() {
+      const select = document.getElementById('entityScopeSelect');
+      if (!select || !baseData) return;
+
+      const comp = baseData.comparison || [];
+      const sorted = [...comp].sort((a, b) => b.weeklyTotal - a.weeklyTotal || b.overallTotal - a.overallTotal);
+
+      let optionsHtml = '<option value="">+ Exclude another entity...</option>';
+      sorted.forEach(ent => {
+        const lower = ent.ovseId.toLowerCase();
+        const isExcluded = excludedOvseSet.has(lower);
+        const prefix = isExcluded ? '✓ Excluded: ' : 'Exclude: ';
+        const name = formatEntityName(ent.ovseId);
+        const vol = ent.weeklyTotal > 0 ? `${Number(ent.weeklyTotal).toLocaleString()} weekly tx` : `${Number(ent.overallTotal).toLocaleString()} total tx`;
+        optionsHtml += `<option value="${ent.ovseId}">${prefix}${name} (${vol})</option>`;
+      });
+      select.innerHTML = optionsHtml;
+    }
+
+    function updateScopeUI() {
+      const activeBadge = document.getElementById('outlierActiveBadge');
+      const selBtn = document.getElementById('toggleSelectiveShareBtn');
+      const selBtnLabel = document.getElementById('selectiveShareBtnLabel');
+      const banner = document.getElementById('exclusionBanner');
+      const tagsContainer = document.getElementById('excludedTagsContainer');
+      const impactText = document.getElementById('exclusionImpactText');
+
+      const isSelectiveShareExcluded = excludedOvseSet.has('selectiveshare');
+
+      if (selBtn && selBtnLabel) {
+        if (isSelectiveShareExcluded) {
+          selBtn.className = 'inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold border transition shadow-sm bg-amber-500 text-white border-amber-600 hover:bg-amber-600';
+          selBtnLabel.innerText = '✓ SelectiveShare Excluded (Click to Include)';
+        } else {
+          selBtn.className = 'inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold border transition shadow-xs bg-white text-slate-700 border-slate-300 hover:border-amber-500 hover:text-amber-700';
+          selBtnLabel.innerText = '⚡ Exclude SelectiveShare (75.5% vol)';
+        }
+      }
+
+      if (excludedOvseSet.size === 0) {
+        if (activeBadge) {
+          activeBadge.className = 'inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-200 text-slate-700';
+          activeBadge.innerText = 'All ' + (baseData?.comparison?.length || 221) + ' Entities Included';
+        }
+        if (banner) banner.classList.add('hidden');
+      } else {
+        if (activeBadge) {
+          activeBadge.className = 'inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300 animate-pulse';
+          activeBadge.innerText = `⚡ Outlier Mode: ${excludedOvseSet.size} ${excludedOvseSet.size === 1 ? 'Entity' : 'Entities'} Excluded`;
+        }
+        if (banner) {
+          banner.classList.remove('hidden');
+
+          let tagsHtml = '<span class="text-[11px] font-bold text-slate-600 mr-1">Excluded:</span>';
+          excludedOvseSet.forEach(id => {
+            tagsHtml += `
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300">
+                ${formatEntityName(id)}
+                <button onclick="toggleExcludeEntity('${id}')" class="ml-1 text-amber-700 hover:text-rose-700 font-black cursor-pointer">✕</button>
+              </span>
+            `;
+          });
+          if (tagsContainer) tagsContainer.innerHTML = tagsHtml;
+
+          const baseWeeklySuccRate = Number(baseData?.weekly?.successRate || 0).toFixed(2);
+          const newWeeklySuccRate = Number(currentData?.weekly?.successRate || 0).toFixed(2);
+          const succDelta = (newWeeklySuccRate - baseWeeklySuccRate).toFixed(2);
+
+          const baseComp = baseData?.channels?.comparison || [];
+          const currComp = currentData?.channels?.comparison || [];
+
+          const baseWebPct = baseComp.find(c => c.channel === 'WEB_INTENT')?.weeklyPct || baseData?.channels?.weekly?.webIntentPct || '4.67';
+          const newWebPct = currComp.find(c => c.channel === 'WEB_INTENT')?.weeklyPct || currentData?.channels?.weekly?.webIntentPct || '0.00';
+
+          const baseAppPct = baseComp.find(c => c.channel === 'APP_INTENT')?.weeklyPct || baseData?.channels?.weekly?.appIntentPct || '93.01';
+          const newAppPct = currComp.find(c => c.channel === 'APP_INTENT')?.weeklyPct || currentData?.channels?.weekly?.appIntentPct || '0.00';
+
+          const baseQrPct = baseComp.find(c => c.channel === 'QR_SCAN')?.weeklyPct || baseData?.channels?.weekly?.qrScanPct || '2.32';
+          const newQrPct = currComp.find(c => c.channel === 'QR_SCAN')?.weeklyPct || currentData?.channels?.weekly?.qrScanPct || '0.00';
+
+          if (impactText) {
+            impactText.innerHTML = `
+              <i data-lucide="info" class="w-4 h-4 text-amber-600 shrink-0"></i>
+              <span><strong>Scenario Impact:</strong> System Success Rate shifted from <strong>${baseWeeklySuccRate}%</strong> to <strong class="${Number(newWeeklySuccRate) < Number(baseWeeklySuccRate) ? 'text-rose-700' : 'text-emerald-700'}">${newWeeklySuccRate}%</strong> (${succDelta >= 0 ? '+' : ''}${succDelta}%). Web Intent share: <strong>${baseWebPct}%</strong> → <strong class="text-emerald-700">${newWebPct}%</strong>. QR Scan share: <strong>${baseQrPct}%</strong> → <strong class="text-sky-700">${newQrPct}%</strong>. App Intent: <strong>${baseAppPct}%</strong> → <strong>${newAppPct}%</strong>.</span>
+            `;
+          }
+        }
+      }
+
+      populateEntityScopeDropdown();
+      lucide.createIcons();
+    }
+
+    function ensureChannelsNormalized(targetData) {
+      if (!targetData || !targetData.channels) return;
+      const comp = targetData.channels.comparison || [];
+      const appComp = comp.find(c => c.channel === 'APP_INTENT');
+      const webComp = comp.find(c => c.channel === 'WEB_INTENT');
+      const qrComp = comp.find(c => c.channel === 'QR_SCAN');
+
+      if (targetData.channels.weekly) {
+        const w = targetData.channels.weekly;
+        if (w.appIntent === undefined && appComp) w.appIntent = appComp.weeklyCount;
+        if (w.appIntentPct === undefined && appComp) w.appIntentPct = appComp.weeklyPct;
+        if (w.webIntent === undefined && webComp) w.webIntent = webComp.weeklyCount;
+        if (w.webIntentPct === undefined && webComp) w.webIntentPct = webComp.weeklyPct;
+        if (w.qrScan === undefined && qrComp) w.qrScan = qrComp.weeklyCount;
+        if (w.qrScanPct === undefined && qrComp) w.qrScanPct = qrComp.weeklyPct;
+        if (!w.channelMap && appComp) {
+          w.channelMap = {
+            APP_INTENT: appComp.weeklyCount,
+            WEB_INTENT: webComp?.weeklyCount || 0,
+            QR_SCAN: qrComp?.weeklyCount || 0
+          };
+        }
+      }
+
+      if (targetData.channels.overall) {
+        const o = targetData.channels.overall;
+        if (o.appIntent === undefined && appComp) o.appIntent = appComp.overallCount;
+        if (o.appIntentPct === undefined && appComp) o.appIntentPct = appComp.overallPct;
+        if (o.webIntent === undefined && webComp) o.webIntent = webComp.overallCount;
+        if (o.webIntentPct === undefined && webComp) o.webIntentPct = webComp.overallPct;
+        if (o.qrScan === undefined && qrComp) o.qrScan = qrComp.overallCount;
+        if (o.qrScanPct === undefined && qrComp) o.qrScanPct = qrComp.overallPct;
+        if (!o.channelMap && appComp) {
+          o.channelMap = {
+            APP_INTENT: appComp.overallCount,
+            WEB_INTENT: webComp?.overallCount || 0,
+            QR_SCAN: qrComp?.overallCount || 0
+          };
+        }
+      }
+    }
+
+    function recomputeFilteredData() {
+      if (!baseData) return;
+
+      ensureChannelsNormalized(baseData);
+
+      if (excludedOvseSet.size === 0) {
+        currentData = JSON.parse(JSON.stringify(baseData));
+        ensureChannelsNormalized(currentData);
+        updateScopeUI();
+        renderDashboard();
+        return;
+      }
+
+      const cloned = JSON.parse(JSON.stringify(baseData));
+
+      // 1. Filter Transactions (comparison)
+      const filteredComp = cloned.comparison.filter(c => !excludedOvseSet.has(c.ovseId.toLowerCase()));
+
+      const activeWeekly = filteredComp.filter(c => c.weeklyTotal > 0)
+        .sort((a, b) => b.weeklyTotal - a.weeklyTotal);
+      activeWeekly.forEach((item, idx) => {
+        item.weeklyRank = idx + 1;
+      });
+
+      const activeOverall = [...filteredComp].sort((a, b) => b.overallTotal - a.overallTotal);
+      activeOverall.forEach((item, idx) => {
+        item.overallRank = idx + 1;
+      });
+
+      const weeklyTotalTx = filteredComp.reduce((sum, c) => sum + c.weeklyTotal, 0);
+      const weeklySuccess = filteredComp.reduce((sum, c) => sum + c.weeklySuccess, 0);
+      const weeklyFailure = filteredComp.reduce((sum, c) => sum + c.weeklyFailure, 0);
+      const weeklySuccessRate = weeklyTotalTx > 0 ? (weeklySuccess / weeklyTotalTx) * 100 : 0;
+      const weeklyFailureRate = weeklyTotalTx > 0 ? (weeklyFailure / weeklyTotalTx) * 100 : 0;
+      const weeklyUniqueCount = activeWeekly.length;
+
+      const weeklyTop5 = activeWeekly.slice(0, 5).map(c => ({
+        ovseId: c.ovseId,
+        total: c.weeklyTotal,
+        weeklyTotal: c.weeklyTotal,
+        success: c.weeklySuccess,
+        weeklySuccess: c.weeklySuccess,
+        failure: c.weeklyFailure,
+        weeklyFailure: c.weeklyFailure,
+        successRate: parseFloat(c.weeklySuccessRate) || 0,
+        weeklySuccessRate: parseFloat(c.weeklySuccessRate) || 0,
+        failureRate: parseFloat(c.weeklyFailureRate) || 0,
+        weeklyFailureRate: parseFloat(c.weeklyFailureRate) || 0,
+        rank: c.weeklyRank
+      }));
+
+      const weeklyTop10 = activeWeekly.slice(0, 10).map(c => ({
+        ovseId: c.ovseId,
+        total: c.weeklyTotal,
+        weeklyTotal: c.weeklyTotal,
+        success: c.weeklySuccess,
+        weeklySuccess: c.weeklySuccess,
+        failure: c.weeklyFailure,
+        weeklyFailure: c.weeklyFailure,
+        successRate: parseFloat(c.weeklySuccessRate) || 0,
+        weeklySuccessRate: parseFloat(c.weeklySuccessRate) || 0,
+        failureRate: parseFloat(c.weeklyFailureRate) || 0,
+        weeklyFailureRate: parseFloat(c.weeklyFailureRate) || 0,
+        rank: c.weeklyRank
+      }));
+
+      const overallTotalTx = filteredComp.reduce((sum, c) => sum + c.overallTotal, 0);
+      const overallSuccess = filteredComp.reduce((sum, c) => sum + c.overallSuccess, 0);
+      const overallFailure = filteredComp.reduce((sum, c) => sum + c.overallFailure, 0);
+      const overallSuccessRate = overallTotalTx > 0 ? (overallSuccess / overallTotalTx) * 100 : 0;
+      const overallFailureRate = overallTotalTx > 0 ? (overallFailure / overallTotalTx) * 100 : 0;
+      const overallUniqueCount = filteredComp.filter(c => c.overallTotal > 0).length;
+
+      const overallTop5 = activeOverall.slice(0, 5).map(c => ({
+        ovseId: c.ovseId,
+        total: c.overallTotal,
+        overallTotal: c.overallTotal,
+        success: c.overallSuccess,
+        overallSuccess: c.overallSuccess,
+        failure: c.overallFailure,
+        overallFailure: c.overallFailure,
+        successRate: parseFloat(c.overallSuccessRate) || 0,
+        overallSuccessRate: parseFloat(c.overallSuccessRate) || 0,
+        failureRate: parseFloat(c.overallFailureRate) || 0,
+        overallFailureRate: parseFloat(c.overallFailureRate) || 0,
+        rank: c.overallRank
+      }));
+
+      const newAndEmerging = filteredComp.filter(c => c.status === 'New Entrant' || c.status === 'Surging / High Growth');
+
+      cloned.comparison = filteredComp;
+      cloned.weekly = {
+        totalTx: weeklyTotalTx,
+        totalSuccess: weeklySuccess,
+        totalFailure: weeklyFailure,
+        successRate: weeklySuccessRate,
+        failureRate: weeklyFailureRate,
+        uniqueCount: weeklyUniqueCount,
+        top5: weeklyTop5,
+        top10: weeklyTop10
+      };
+      cloned.overall = {
+        totalTx: overallTotalTx,
+        totalSuccess: overallSuccess,
+        totalFailure: overallFailure,
+        successRate: overallSuccessRate,
+        failureRate: overallFailureRate,
+        uniqueCount: overallUniqueCount,
+        top5: overallTop5
+      };
+      cloned.newAndEmerging = newAndEmerging;
+
+      // 2. Filter Channels
+      if (cloned.channels) {
+        const filteredWeeklyChannels = (cloned.channels.weekly?.ovseList || []).filter(c => !excludedOvseSet.has(c.ovseId.toLowerCase()));
+        const filteredOverallChannels = (cloned.channels.overall?.ovseList || []).filter(c => !excludedOvseSet.has(c.ovseId.toLowerCase()));
+
+        const wApp = filteredWeeklyChannels.reduce((sum, c) => sum + (c.appIntent || 0), 0);
+        const wWeb = filteredWeeklyChannels.reduce((sum, c) => sum + (c.webIntent || 0), 0);
+        const wQr = filteredWeeklyChannels.reduce((sum, c) => sum + (c.qrScan || 0), 0);
+        const wTotal = wApp + wWeb + wQr;
+        const wAppPct = wTotal > 0 ? ((wApp / wTotal) * 100).toFixed(2) : '0.00';
+        const wWebPct = wTotal > 0 ? ((wWeb / wTotal) * 100).toFixed(2) : '0.00';
+        const wQrPct = wTotal > 0 ? ((wQr / wTotal) * 100).toFixed(2) : '0.00';
+
+        const oApp = filteredOverallChannels.reduce((sum, c) => sum + (c.appIntent || 0), 0);
+        const oWeb = filteredOverallChannels.reduce((sum, c) => sum + (c.webIntent || 0), 0);
+        const oQr = filteredOverallChannels.reduce((sum, c) => sum + (c.qrScan || 0), 0);
+        const oTotal = oApp + oWeb + oQr;
+        const oAppPct = oTotal > 0 ? ((oApp / oTotal) * 100).toFixed(2) : '0.00';
+        const oWebPct = oTotal > 0 ? ((oWeb / oTotal) * 100).toFixed(2) : '0.00';
+        const oQrPct = oTotal > 0 ? ((oQr / oTotal) * 100).toFixed(2) : '0.00';
+
+        cloned.channels.weekly = {
+          total: wTotal,
+          appIntent: wApp,
+          appIntentPct: wAppPct,
+          webIntent: wWeb,
+          webIntentPct: wWebPct,
+          qrScan: wQr,
+          qrScanPct: wQrPct,
+          channelMap: {
+            APP_INTENT: wApp,
+            WEB_INTENT: wWeb,
+            QR_SCAN: wQr
+          },
+          ovseList: filteredWeeklyChannels
+        };
+
+        cloned.channels.overall = {
+          total: oTotal,
+          appIntent: oApp,
+          appIntentPct: oAppPct,
+          webIntent: oWeb,
+          webIntentPct: oWebPct,
+          qrScan: oQr,
+          qrScanPct: oQrPct,
+          channelMap: {
+            APP_INTENT: oApp,
+            WEB_INTENT: oWeb,
+            QR_SCAN: oQr
+          },
+          ovseList: filteredOverallChannels
+        };
+
+        cloned.channels.comparison = [
+          {
+            channel: 'APP_INTENT',
+            displayName: 'App-to-App (App Intent)',
+            overallCount: oApp,
+            overallPct: oAppPct,
+            weeklyCount: wApp,
+            weeklyPct: wAppPct,
+            pctPointDelta: (parseFloat(wAppPct) - parseFloat(oAppPct)).toFixed(2)
+          },
+          {
+            channel: 'WEB_INTENT',
+            displayName: 'Web-to-App (Web Intent)',
+            overallCount: oWeb,
+            overallPct: oWebPct,
+            weeklyCount: wWeb,
+            weeklyPct: wWebPct,
+            pctPointDelta: (parseFloat(wWebPct) - parseFloat(oWebPct)).toFixed(2)
+          },
+          {
+            channel: 'QR_SCAN',
+            displayName: 'Cross-Device QR (QR Scan)',
+            overallCount: oQr,
+            overallPct: oQrPct,
+            weeklyCount: wQr,
+            weeklyPct: wQrPct,
+            pctPointDelta: (parseFloat(wQrPct) - parseFloat(oQrPct)).toFixed(2)
+          }
+        ];
+      }
+
+      // 3. Filter Errors
+      if (cloned.errors) {
+        const filteredWeeklyErrors = (cloned.errors.weekly?.ovseErrorList || []).filter(e => !excludedOvseSet.has(e.ovseId.toLowerCase()));
+        const filteredOverallErrors = (cloned.errors.overall?.ovseErrorList || []).filter(e => !excludedOvseSet.has(e.ovseId.toLowerCase()));
+
+        const wCodeMap = {};
+        const wCatMap = {};
+        let wTotalErrors = 0;
+        filteredWeeklyErrors.forEach(ent => {
+          for (const [code, count] of Object.entries(ent.codes || {})) {
+            wCodeMap[code] = (wCodeMap[code] || 0) + count;
+            wTotalErrors += count;
+            const cat = ERROR_CATEGORIES[code] || 'Other System Errors';
+            wCatMap[cat] = (wCatMap[cat] || 0) + count;
+          }
+        });
+
+        const oCodeMap = {};
+        const oCatMap = {};
+        let oTotalErrors = 0;
+        filteredOverallErrors.forEach(ent => {
+          for (const [code, count] of Object.entries(ent.codes || {})) {
+            oCodeMap[code] = (oCodeMap[code] || 0) + count;
+            oTotalErrors += count;
+            const cat = ERROR_CATEGORIES[code] || 'Other System Errors';
+            oCatMap[cat] = (oCatMap[cat] || 0) + count;
+          }
+        });
+
+        const wCatList = Object.entries(wCatMap).map(([category, count]) => ({
+          category, count, pct: wTotalErrors > 0 ? (count / wTotalErrors) * 100 : 0
+        })).sort((a, b) => b.count - a.count);
+
+        const oCatList = Object.entries(oCatMap).map(([category, count]) => ({
+          category, count, pct: oTotalErrors > 0 ? (count / oTotalErrors) * 100 : 0
+        })).sort((a, b) => b.count - a.count);
+
+        const allCodes = Array.from(new Set([...Object.keys(oCodeMap), ...Object.keys(wCodeMap)]));
+        const comparisonErrors = allCodes.map(code => {
+          const wCount = wCodeMap[code] || 0;
+          const oCount = oCodeMap[code] || 0;
+          const wPct = wTotalErrors > 0 ? ((wCount / wTotalErrors) * 100).toFixed(2) : '0.00';
+          const oPct = oTotalErrors > 0 ? ((oCount / oTotalErrors) * 100).toFixed(2) : '0.00';
+          return {
+            code,
+            description: ERROR_DESCRIPTIONS[code] || ('UIDAI error code ' + code),
+            category: ERROR_CATEGORIES[code] || 'Other System Errors',
+            weeklyCount: wCount,
+            weeklyPct: wPct,
+            overallCount: oCount,
+            overallPct: oPct,
+            pctPointDelta: (parseFloat(wPct) - parseFloat(oPct)).toFixed(2)
+          };
+        }).sort((a, b) => b.weeklyCount - a.weeklyCount);
+
+        cloned.errors.weekly = {
+          totalErrors: wTotalErrors,
+          categoryList: wCatList,
+          ovseErrorList: filteredWeeklyErrors
+        };
+
+        cloned.errors.overall = {
+          totalErrors: oTotalErrors,
+          categoryList: oCatList,
+          ovseErrorList: filteredOverallErrors
+        };
+
+        cloned.errors.comparison = comparisonErrors;
+      }
+
+      currentData = cloned;
+      updateScopeUI();
+      renderDashboard();
+    }
 
     // Initialize application
     window.addEventListener('DOMContentLoaded', async () => {
@@ -734,7 +1890,9 @@
           if (dataRes.ok) {
             const jsonRes = await dataRes.json();
             if (jsonRes.data) {
-              currentData = jsonRes.data;
+              baseData = JSON.parse(JSON.stringify(jsonRes.data));
+              ensureChannelsNormalized(baseData);
+              currentData = JSON.parse(JSON.stringify(baseData));
             }
           }
         } catch (e) {
@@ -742,10 +1900,14 @@
         }
       }
 
-      if (!currentData && typeof BUNDLED_DATA !== 'undefined') {
-        currentData = BUNDLED_DATA;
+      if (!baseData && typeof BUNDLED_DATA !== 'undefined') {
+        baseData = JSON.parse(JSON.stringify(BUNDLED_DATA));
+        ensureChannelsNormalized(baseData);
+        currentData = JSON.parse(JSON.stringify(baseData));
       }
 
+      updateUploadDrawerForTab('transactions');
+      populateEntityScopeDropdown();
       renderDashboard();
       lucide.createIcons();
     });
@@ -782,25 +1944,226 @@
       }
     });
 
+    function showUploadError(msg) {
+      const banner = document.getElementById('uploadErrorAlert');
+      const textEl = document.getElementById('uploadErrorMessage');
+      if (banner && textEl) {
+        textEl.innerHTML = `
+          <div class="font-bold text-rose-300 text-xs">File Format Validation Error:</div>
+          <div class="mt-1 whitespace-pre-line text-rose-200 text-xs leading-relaxed">${msg.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>
+        `;
+        banner.classList.remove('hidden');
+        lucide.createIcons();
+      }
+    }
+
+    function hideUploadError() {
+      const banner = document.getElementById('uploadErrorAlert');
+      if (banner) banner.classList.add('hidden');
+    }
+
+    function validateCSVFormat(content, expectedType, fileName = 'Uploaded file') {
+      if (!content || typeof content !== 'string' || content.trim().length === 0) {
+        return {
+          valid: false,
+          error: `Upload Error: "${fileName}" is completely empty. Please select a valid CSV file with data.`
+        };
+      }
+
+      const lines = content.split(/\r?\n/).filter(line => line.trim().length > 0);
+      if (lines.length < 2) {
+        return {
+          valid: false,
+          error: `Upload Error: "${fileName}" does not contain enough rows. A valid dataset requires at least a header row and one or more data rows.`
+        };
+      }
+
+      const parseLine = (line) => {
+        const parts = [];
+        let cur = '';
+        let inQuotes = false;
+        for (let c = 0; c < line.length; c++) {
+          const ch = line[c];
+          if (ch === '"') inQuotes = !inQuotes;
+          else if (ch === ',' && !inQuotes) {
+            parts.push(cur.trim().replace(/^"|"$/g, ''));
+            cur = '';
+          } else cur += ch;
+        }
+        parts.push(cur.trim().replace(/^"|"$/g, ''));
+        return parts;
+      };
+
+      const headerParts = parseLine(lines[0]);
+      const headerLower = headerParts.map(h => h.toLowerCase());
+
+      let detectedType = 'unknown';
+      if (headerLower.some(h => h.includes('auth result') || h === 'auth_result' || h === 'auth')) {
+        detectedType = 'transactions';
+      } else if (headerLower.some(h => h.includes('error code') || h === 'error_code' || h === 'error')) {
+        detectedType = 'errors';
+      } else if (headerLower.some(h => h.includes('exchange channel') || h.includes('channel') || h === 'channel_type')) {
+        detectedType = 'channels';
+      }
+
+      if (expectedType === 'transactions') {
+        if (detectedType === 'errors') {
+          return {
+            valid: false,
+            error: `Wrong Data Format: "${fileName}" appears to be a UIDAI Error Code dataset (columns: ${headerParts.join(', ')}).\n\nYou are on Page 1 (OVSE Transactions). Please switch to Page 2 (UIDAI Errors) to upload this file, or upload an OVSE Transaction dataset with columns: "Ovse ID, Auth Result, Count".`
+          };
+        }
+        if (detectedType === 'channels') {
+          return {
+            valid: false,
+            error: `Wrong Data Format: "${fileName}" appears to be a Data Sharing Channels dataset (columns: ${headerParts.join(', ')}).\n\nYou are on Page 1 (OVSE Transactions). Please switch to Page 3 (Sharing Channels) to upload this file, or upload an OVSE Transaction dataset with columns: "Ovse ID, Auth Result, Count".`
+          };
+        }
+        if (headerParts.length < 3) {
+          return {
+            valid: false,
+            error: `Wrong Data Format: "${fileName}" has only ${headerParts.length} column(s). Expected 3 columns: "Ovse ID, Auth Result, Count".`
+          };
+        }
+
+        let validAuthCount = 0;
+        let checkedRows = 0;
+        for (let i = 1; i < Math.min(lines.length, 30); i++) {
+          const row = parseLine(lines[i]);
+          if (row.length >= 3) {
+            checkedRows++;
+            const auth = row[1].trim().toLowerCase();
+            if (auth === 'y' || auth === 'n') validAuthCount++;
+          }
+        }
+        if (checkedRows > 0 && validAuthCount === 0) {
+          return {
+            valid: false,
+            error: `Wrong Data Format: Column 2 in "${fileName}" does not contain transaction auth results ('Y' or 'N').\n\nExpected columns: "Ovse ID, Auth Result ('Y'/'N'), Count". Found values like "${parseLine(lines[1])[1]}".`
+          };
+        }
+      } else if (expectedType === 'errors') {
+        if (detectedType === 'transactions') {
+          return {
+            valid: false,
+            error: `Wrong Data Format: "${fileName}" appears to be an OVSE Transaction dataset (columns: ${headerParts.join(', ')}).\n\nYou are on Page 2 (UIDAI Errors). Please switch to Page 1 (Transactions) to upload this file, or upload an Error Code dataset with columns: "Error Code, Ovse ID, Count".`
+          };
+        }
+        if (detectedType === 'channels') {
+          return {
+            valid: false,
+            error: `Wrong Data Format: "${fileName}" appears to be a Data Sharing Channels dataset (columns: ${headerParts.join(', ')}).\n\nYou are on Page 2 (UIDAI Errors). Please switch to Page 3 (Sharing Channels) to upload this file, or upload an Error Code dataset with columns: "Error Code, Ovse ID, Count".`
+          };
+        }
+        if (headerParts.length < 3) {
+          return {
+            valid: false,
+            error: `Wrong Data Format: "${fileName}" has only ${headerParts.length} column(s). Expected 3 columns: "Error Code, Ovse ID, Count".`
+          };
+        }
+      } else if (expectedType === 'channels') {
+        if (detectedType === 'transactions') {
+          return {
+            valid: false,
+            error: `Wrong Data Format: "${fileName}" appears to be an OVSE Transaction dataset (columns: ${headerParts.join(', ')}).\n\nYou are on Page 3 (Sharing Channels). Please switch to Page 1 (Transactions) to upload this file, or upload a Sharing Channels dataset with columns: "Cred Exchange Channel, Ovse ID, Count".`
+          };
+        }
+        if (detectedType === 'errors') {
+          return {
+            valid: false,
+            error: `Wrong Data Format: "${fileName}" appears to be a UIDAI Error Code dataset (columns: ${headerParts.join(', ')}).\n\nYou are on Page 3 (Sharing Channels). Please switch to Page 2 (UIDAI Errors) to upload this file, or upload a Sharing Channels dataset with columns: "Cred Exchange Channel, Ovse ID, Count".`
+          };
+        }
+        if (headerParts.length < 3) {
+          return {
+            valid: false,
+            error: `Wrong Data Format: "${fileName}" has only ${headerParts.length} column(s). Expected 3 columns: "Cred Exchange Channel, Ovse ID, Count".`
+          };
+        }
+
+        let validChannelCount = 0;
+        let checkedRows = 0;
+        const knownChannels = new Set(['APP_INTENT', 'WEB_INTENT', 'QR', 'QR_SCAN', 'APP', 'WEB']);
+        for (let i = 1; i < Math.min(lines.length, 30); i++) {
+          const row = parseLine(lines[i]);
+          if (row.length >= 3) {
+            checkedRows++;
+            const ch = row[0].trim().toUpperCase();
+            if (knownChannels.has(ch) || ch.includes('INTENT') || ch.includes('QR')) validChannelCount++;
+          }
+        }
+        if (checkedRows > 0 && validChannelCount === 0) {
+          return {
+            valid: false,
+            error: `Wrong Data Format: Column 1 in "${fileName}" does not contain valid sharing channels (e.g. APP_INTENT, WEB_INTENT, QR_SCAN).\n\nFound values like "${parseLine(lines[1])[0]}".`
+          };
+        }
+      }
+
+      let numericCountFound = 0;
+      for (let i = 1; i < Math.min(lines.length, 20); i++) {
+        const row = parseLine(lines[i]);
+        if (row.length >= 3) {
+          const countVal = row[2].replace(/,/g, '').trim();
+          if (!isNaN(Number(countVal)) && countVal !== '') numericCountFound++;
+        }
+      }
+      if (numericCountFound === 0 && lines.length > 1) {
+        return {
+          valid: false,
+          error: `Wrong Data Format: Column 3 in "${fileName}" is expected to contain numeric transaction/error counts, but no valid numbers were found in sample rows.`
+        };
+      }
+
+      return { valid: true, detectedType };
+    }
+
     // File selection handler
     function handleFileSelected(event, type) {
       const file = event.target.files[0];
       if (!file) return;
 
-      if (type === 'overall') {
-        uploadedOverallFile = file;
-      } else {
-        uploadedWeeklyFile = file;
-      }
-
       const reader = new FileReader();
       reader.onload = (e) => {
         const text = e.target.result;
+
+        // Immediate format validation
+        const val = validateCSVFormat(text, currentTab, file.name);
+        if (!val.valid) {
+          showUploadError(val.error);
+          alert(val.error);
+          // Reset file input
+          event.target.value = '';
+          const cfg = UPLOAD_CONFIGS[currentTab] || UPLOAD_CONFIGS.transactions;
+          if (type === 'overall') {
+            uploadedOverallFile = null;
+            uploadedOverallContent = null;
+            const el = document.getElementById('overallFileName');
+            if (el) {
+              el.innerText = `Current: ${cfg.dropzone1DefaultFile}`;
+              el.classList.remove('text-emerald-400');
+            }
+          } else {
+            uploadedWeeklyFile = null;
+            uploadedWeeklyContent = null;
+            const el = document.getElementById('weeklyFileName');
+            if (el) {
+              el.innerText = `Current: ${cfg.dropzone2DefaultFile}`;
+              el.classList.remove('text-emerald-400');
+            }
+          }
+          return;
+        }
+
+        // File is valid
+        hideUploadError();
         if (type === 'overall') {
+          uploadedOverallFile = file;
           uploadedOverallContent = text;
           document.getElementById('overallFileName').innerText = `Selected: ${file.name} (${(file.size/1024).toFixed(1)} KB)`;
           document.getElementById('overallFileName').classList.add('text-emerald-400');
         } else {
+          uploadedWeeklyFile = file;
           uploadedWeeklyContent = text;
           document.getElementById('weeklyFileName').innerText = `Selected: ${file.name} (${(file.size/1024).toFixed(1)} KB)`;
           document.getElementById('weeklyFileName').classList.add('text-emerald-400');
@@ -886,10 +2249,62 @@
       };
     }
 
+    // Channel and Error Parsers
+    function parseErrorCSVText(content) {
+      const lines = content.split(/\r?\n/).filter(line => line.trim().length > 0);
+      const rows = [];
+      for (let i = 1; i < lines.length; i++) {
+        const parts = lines[i].split(',').map(s => s.replace(/^"|"$/g, '').trim());
+        if (parts.length >= 3) {
+          const code = parts[0];
+          const ovse = parts[1] || '(Blank / Unknown)';
+          const count = parseInt(parts[2].replace(/,/g, ''), 10) || 0;
+          rows.push({ code, ovse, count });
+        }
+      }
+      return rows;
+    }
+
+    function parseChannelCSVText(content) {
+      const lines = content.split(/\r?\n/).filter(line => line.trim().length > 0);
+      const rows = [];
+      for (let i = 1; i < lines.length; i++) {
+        const parts = lines[i].split(',').map(s => s.replace(/^"|"$/g, '').trim());
+        if (parts.length >= 3) {
+          let ch = parts[0].toUpperCase();
+          if (ch === 'QR') ch = 'QR_SCAN';
+          const ovse = parts[1] || '(Blank / Unknown)';
+          const count = parseInt(parts[2].replace(/,/g, ''), 10) || 0;
+          rows.push({ channel: ch, ovse, count });
+        }
+      }
+      return rows;
+    }
+
     async function processUploadedFiles() {
       if (!uploadedOverallContent && !uploadedWeeklyContent && !uploadedOverallFile && !uploadedWeeklyFile) {
-        alert("Please select at least one CSV file (Overall or Weekly).");
+        const msg = "Please select at least one CSV file (Overall or Weekly).";
+        showUploadError(msg);
+        alert(msg);
         return;
+      }
+
+      // Pre-flight client-side format validation
+      if (uploadedOverallContent) {
+        const val = validateCSVFormat(uploadedOverallContent, currentTab, uploadedOverallFile?.name || 'Overall CSV File');
+        if (!val.valid) {
+          showUploadError(val.error);
+          alert(val.error);
+          return;
+        }
+      }
+      if (uploadedWeeklyContent) {
+        const val = validateCSVFormat(uploadedWeeklyContent, currentTab, uploadedWeeklyFile?.name || 'Weekly CSV File');
+        if (!val.valid) {
+          showUploadError(val.error);
+          alert(val.error);
+          return;
+        }
       }
 
       // If running on Render or Node.js server, upload directly to the server backend!
@@ -901,6 +2316,7 @@
 
         try {
           const formData = new FormData();
+          formData.append('datasetType', currentTab);
           if (uploadedOverallFile) formData.append('overallFile', uploadedOverallFile);
           if (uploadedWeeklyFile) formData.append('weeklyFile', uploadedWeeklyFile);
 
@@ -911,15 +2327,28 @@
 
           const uploadJson = await uploadRes.json();
           if (uploadRes.ok && uploadJson.success) {
-            currentData = uploadJson.data;
-            renderDashboard();
-            alert("✓ Success! Datasets uploaded and recomputed on the server!");
+            baseData = JSON.parse(JSON.stringify(uploadJson.data));
+            ensureChannelsNormalized(baseData);
+            recomputeFilteredData();
+            hideUploadError();
+            if (currentTab === 'errors') {
+              alert("✓ Success! UIDAI Error Code datasets uploaded and Page 2 updated!");
+            } else if (currentTab === 'channels') {
+              alert("✓ Success! Data Sharing Channels datasets uploaded and Page 3 updated!");
+            } else {
+              alert("✓ Success! OVSE Transaction datasets uploaded and Page 1 updated!");
+            }
             toggleUploadDrawer();
             processBtn.innerHTML = origHtml;
             processBtn.disabled = false;
             return;
           } else {
-            console.warn("Server responded with error:", uploadJson.error);
+            const errMsg = uploadJson.error || "Failed to process uploaded dataset.";
+            showUploadError(errMsg);
+            alert(errMsg);
+            processBtn.innerHTML = origHtml;
+            processBtn.disabled = false;
+            return;
           }
         } catch (serverErr) {
           console.warn("Server upload encountered an issue, falling back to in-browser parsing:", serverErr);
@@ -929,21 +2358,160 @@
         }
       }
 
+      // In-browser client-side parsing fallback
       try {
+        if (currentTab === 'errors') {
+          // Process Error Datasets
+          let overallErrRows = uploadedOverallContent ? parseErrorCSVText(uploadedOverallContent) : [];
+          let weeklyErrRows = uploadedWeeklyContent ? parseErrorCSVText(uploadedWeeklyContent) : [];
+
+          if (weeklyErrRows.length === 0 && overallErrRows.length === 0) {
+            alert("Please upload at least one valid Error CSV file (columns: Error Code, Ovse ID, Count).");
+            return;
+          }
+
+          function aggErr(rows) {
+            const map = {};
+            const catMap = {};
+            const ovseMap = {};
+            let total = 0;
+            rows.forEach(r => {
+              map[r.code] = (map[r.code] || 0) + r.count;
+              total += r.count;
+              const cat = ERROR_CATEGORIES[r.code] || 'Other System Errors';
+              catMap[cat] = (catMap[cat] || 0) + r.count;
+              if (!ovseMap[r.ovse]) ovseMap[r.ovse] = { total: 0, codes: {} };
+              ovseMap[r.ovse].total += r.count;
+              ovseMap[r.ovse].codes[r.code] = (ovseMap[r.ovse].codes[r.code] || 0) + r.count;
+            });
+            const codeList = Object.entries(map).map(([code, count]) => ({
+              code,
+              description: ERROR_DESCRIPTIONS[code] || ('UIDAI error code ' + code),
+              category: ERROR_CATEGORIES[code] || 'Other System Errors',
+              count,
+              pct: total > 0 ? (count / total) * 100 : 0
+            })).sort((a, b) => b.count - a.count);
+            const categoryList = Object.entries(catMap).map(([category, count]) => ({
+              category,
+              count,
+              pct: total > 0 ? (count / total) * 100 : 0
+            })).sort((a, b) => b.count - a.count);
+            const ovseErrorList = Object.entries(ovseMap).map(([ovseId, data]) => {
+              const topCode = Object.entries(data.codes).sort((a, b) => b[1] - a[1])[0] || ['Unknown', 0];
+              return { ovseId, totalErrors: data.total, topErrorCode: topCode[0], topErrorCount: topCode[1], codes: data.codes };
+            }).sort((a, b) => b.totalErrors - a.totalErrors);
+            return { totalErrors: total, codeList, categoryList, ovseErrorList };
+          }
+
+          const weeklyAgg = weeklyErrRows.length > 0 ? aggErr(weeklyErrRows) : currentData.errors.weekly;
+          const overallAgg = overallErrRows.length > 0 ? aggErr(overallErrRows) : currentData.errors.overall;
+
+          // Comparison
+          const allCodes = Array.from(new Set([...overallAgg.codeList.map(c => c.code), ...weeklyAgg.codeList.map(c => c.code)]));
+          const comparison = allCodes.map(code => {
+            const o = overallAgg.codeList.find(c => c.code === code) || { count: 0, pct: 0 };
+            const w = weeklyAgg.codeList.find(c => c.code === code) || { count: 0, pct: 0 };
+            return {
+              code,
+              description: ERROR_DESCRIPTIONS[code] || ('UIDAI error code ' + code),
+              category: ERROR_CATEGORIES[code] || 'Other System Errors',
+              overallCount: o.count,
+              overallPct: o.pct.toFixed(2),
+              weeklyCount: w.count,
+              weeklyPct: w.pct.toFixed(2),
+              pctPointDelta: (w.pct - o.pct).toFixed(2)
+            };
+          }).sort((a, b) => b.weeklyCount - a.weeklyCount || b.overallCount - a.overallCount);
+
+          if (!currentData) currentData = {};
+          currentData.errors = { overall: overallAgg, weekly: weeklyAgg, comparison };
+          baseData = JSON.parse(JSON.stringify(currentData));
+          recomputeFilteredData();
+          alert("✓ Success! UIDAI Error Code datasets processed and Page 2 updated!");
+          toggleUploadDrawer();
+          return;
+        }
+
+        if (currentTab === 'channels') {
+          // Process Channel Datasets
+          let overallChRows = uploadedOverallContent ? parseChannelCSVText(uploadedOverallContent) : [];
+          let weeklyChRows = uploadedWeeklyContent ? parseChannelCSVText(uploadedWeeklyContent) : [];
+
+          if (weeklyChRows.length === 0 && overallChRows.length === 0) {
+            alert("Please upload at least one valid Channel CSV file (columns: Channel, Ovse ID, Count).");
+            return;
+          }
+
+          function aggCh(rows) {
+            const map = {};
+            const ovseMap = {};
+            let total = 0;
+            rows.forEach(r => {
+              map[r.channel] = (map[r.channel] || 0) + r.count;
+              total += r.count;
+              if (!ovseMap[r.ovse]) ovseMap[r.ovse] = { total: 0, channels: {} };
+              ovseMap[r.ovse].total += r.count;
+              ovseMap[r.ovse].channels[r.channel] = (ovseMap[r.ovse].channels[r.channel] || 0) + r.count;
+            });
+            const channelList = Object.entries(map).map(([channel, count]) => ({
+              channel,
+              displayName: channel === 'APP_INTENT' ? 'App-to-App (App Intent)' : (channel === 'WEB_INTENT' ? 'Web-to-App (Web Intent)' : 'Cross-Device QR (QR Scan)'),
+              count,
+              pct: total > 0 ? (count / total) * 100 : 0
+            })).sort((a, b) => b.count - a.count);
+            const ovseList = Object.entries(ovseMap).map(([ovseId, data]) => ({
+              ovseId,
+              total: data.total,
+              appIntent: data.channels['APP_INTENT'] || 0,
+              webIntent: data.channels['WEB_INTENT'] || 0,
+              qrScan: data.channels['QR_SCAN'] || 0,
+              appIntentPct: data.total > 0 ? ((data.channels['APP_INTENT'] || 0) / data.total * 100).toFixed(1) : '0.0',
+              webIntentPct: data.total > 0 ? ((data.channels['WEB_INTENT'] || 0) / data.total * 100).toFixed(1) : '0.0',
+              qrScanPct: data.total > 0 ? ((data.channels['QR_SCAN'] || 0) / data.total * 100).toFixed(1) : '0.0'
+            })).sort((a, b) => b.total - a.total);
+            return { total, channelMap: map, channelList, ovseList };
+          }
+
+          const weeklyCh = weeklyChRows.length > 0 ? aggCh(weeklyChRows) : currentData.channels.weekly;
+          const overallCh = overallChRows.length > 0 ? aggCh(overallChRows) : currentData.channels.overall;
+
+          const channels = ['APP_INTENT', 'QR_SCAN', 'WEB_INTENT'];
+          const comparison = channels.map(ch => {
+            const o = overallCh.channelList.find(c => c.channel === ch) || { count: 0, pct: 0 };
+            const w = weeklyCh.channelList.find(c => c.channel === ch) || { count: 0, pct: 0 };
+            return {
+              channel: ch,
+              displayName: ch === 'APP_INTENT' ? 'App-to-App (App Intent)' : (ch === 'WEB_INTENT' ? 'Web-to-App (Web Intent)' : 'Cross-Device QR (QR Scan)'),
+              overallCount: o.count,
+              overallPct: o.pct.toFixed(2),
+              weeklyCount: w.count,
+              weeklyPct: w.pct.toFixed(2),
+              weeklyShareOfLifetime: o.count > 0 ? ((w.count / o.count) * 100).toFixed(2) : '0.00',
+              pctPointDelta: (w.pct - o.pct).toFixed(2)
+            };
+          });
+
+          if (!currentData) currentData = {};
+          currentData.channels = { overall: overallCh, weekly: weeklyCh, comparison };
+          baseData = JSON.parse(JSON.stringify(currentData));
+          recomputeFilteredData();
+          alert("✓ Success! Data Sharing Channels datasets processed and Page 3 updated!");
+          toggleUploadDrawer();
+          return;
+        }
+
+        // Default: Transactions (Page 1)
         let overallRows, weeklyRows;
         
         if (uploadedOverallContent) {
           overallRows = parseCSVText(uploadedOverallContent);
-        } else {
-          alert("Note: Keeping existing baseline Overall dataset and updating Weekly dataset.");
-          // Re-synthesize from current
         }
 
         if (uploadedWeeklyContent) {
           weeklyRows = parseCSVText(uploadedWeeklyContent);
         }
 
-        if (uploadedOverallContent && uploadedWeeklyContent) {
+        if (overallRows && weeklyRows) {
           const overall = aggregateData(overallRows);
           const weekly = aggregateData(weeklyRows);
 
@@ -993,6 +2561,7 @@
           const newAndEmerging = comparisonList.filter(c => c.status === 'New Entrant' || c.status === 'Surging / High Growth');
 
           currentData = {
+            ...currentData,
             metadata: {
               generatedAt: new Date().toISOString(),
               reportingCutoff: 'Custom Ingested File: ' + new Date().toLocaleDateString()
@@ -1003,8 +2572,9 @@
             newAndEmerging
           };
 
-          renderDashboard();
-          alert("Dashboard successfully updated with your uploaded weekly files!");
+          baseData = JSON.parse(JSON.stringify(currentData));
+          recomputeFilteredData();
+          alert("✓ Success! OVSE Transaction datasets processed and Page 1 updated!");
           toggleUploadDrawer();
         } else {
           alert("Please upload BOTH files (Overall & Weekly) to recompute full metrics.");
@@ -1017,14 +2587,16 @@
 
     function resetToInitialData() {
       if (typeof BUNDLED_DATA !== 'undefined') {
-        currentData = BUNDLED_DATA;
+        baseData = JSON.parse(JSON.stringify(BUNDLED_DATA));
+        ensureChannelsNormalized(baseData);
+        excludedOvseSet.clear();
         uploadedOverallContent = null;
         uploadedWeeklyContent = null;
         document.getElementById('overallFileName').innerText = "Default: ovse_wise_transactions_count___duplicate_...csv";
         document.getElementById('overallFileName').classList.remove('text-emerald-400');
         document.getElementById('weeklyFileName').innerText = "Default: query_result_2026-10-14...csv";
         document.getElementById('weeklyFileName').classList.remove('text-emerald-400');
-        renderDashboard();
+        recomputeFilteredData();
         alert("Reset to October 14, 2026 baseline data.");
       }
     }
@@ -1070,6 +2642,12 @@
       renderNewEntrantsTable();
       applyFiltersAndRenderMasterTable();
 
+      if (currentTab === 'errors') {
+        renderErrorIntelligence();
+      } else if (currentTab === 'channels') {
+        renderChannelIntelligence();
+      }
+
       lucide.createIcons();
     }
 
@@ -1089,10 +2667,10 @@
         return name;
       });
 
-      const weeklyCounts = top5Weekly.map(i => i.total);
+      const weeklyCounts = top5Weekly.map(i => (i.total || i.weeklyTotal || 0));
       const overallCounts = top5Weekly.map(i => {
         const o = currentData.comparison.find(c => c.ovseId === i.ovseId);
-        return o ? o.overallTotal : i.total;
+        return o ? (o.overallTotal || 0) : (i.overallTotal || i.total || 0);
       });
 
       top5ChartInstance = new Chart(ctxTop5, {
@@ -1198,17 +2776,20 @@
       const ctxDist = document.getElementById('weeklyDistributionChart').getContext('2d');
       if (distributionChartInstance) distributionChartInstance.destroy();
 
-      const top5WeeklyTotal = top5Weekly.reduce((sum, item) => sum + item.total, 0);
-      const othersWeeklyTotal = weekly.totalTx - top5WeeklyTotal;
+      const top5WeeklyTotal = top5Weekly.reduce((sum, item) => sum + (item.total || item.weeklyTotal || 0), 0);
+      const othersWeeklyTotal = Math.max(0, (weekly.totalTx || 0) - top5WeeklyTotal);
 
       const distLabels = top5Weekly.map(item => {
         if (item.ovseId.includes('life-insurance')) return 'LIC of India';
-        return item.ovseId;
+        return formatEntityName(item.ovseId);
       });
-      distLabels.push('Other 77 Entities');
+      const otherCount = Math.max(0, (weekly.uniqueCount || 0) - top5Weekly.length);
+      distLabels.push(`Other ${otherCount} Entities`);
 
-      const distData = top5Weekly.map(i => i.total);
+      const distData = top5Weekly.map(i => (i.total || i.weeklyTotal || 0));
       distData.push(othersWeeklyTotal);
+
+      const palette = ['#4f46e5', '#06b6d4', '#10b981', '#f59e0b', '#8b5cf6', '#94a3b8', '#ec4899', '#6366f1'];
 
       distributionChartInstance = new Chart(ctxDist, {
         type: 'pie',
@@ -1216,7 +2797,7 @@
           labels: distLabels,
           datasets: [{
             data: distData,
-            backgroundColor: ['#4f46e5', '#06b6d4', '#10b981', '#f59e0b', '#8b5cf6', '#94a3b8'],
+            backgroundColor: palette.slice(0, distLabels.length),
             borderWidth: 2,
             borderColor: '#ffffff'
           }]
@@ -1233,7 +2814,7 @@
               callbacks: {
                 label: function(context) {
                   const val = context.raw;
-                  const pct = ((val / weekly.totalTx) * 100).toFixed(1);
+                  const pct = weekly.totalTx > 0 ? ((val / weekly.totalTx) * 100).toFixed(1) : '0.0';
                   return ` ${context.label}: ${Number(val).toLocaleString()} tx (${pct}%)`;
                 }
               }
@@ -1306,44 +2887,56 @@
 
       // Top 5 Overall
       const oBody = document.getElementById('top5OverallTableBody');
-      oBody.innerHTML = overall.top5.map((item, idx) => `
-        <tr class="hover:bg-slate-50 transition">
-          <td class="py-2.5 px-2 font-bold text-slate-700">#${idx + 1}</td>
-          <td class="py-2.5 px-2 font-medium text-slate-900 truncate max-w-[150px]" title="${item.ovseId}">${formatEntityName(item.ovseId)}</td>
-          <td class="py-2.5 px-2 text-right font-semibold text-slate-800">${Number(item.total).toLocaleString()}</td>
-          <td class="py-2.5 px-2 text-right text-emerald-600 font-semibold">${item.successRate.toFixed(2)}%</td>
-          <td class="py-2.5 px-2 text-right text-rose-500 font-semibold">${item.failureRate.toFixed(2)}%</td>
-        </tr>
-      `).join('');
+      if (oBody && overall.top5) {
+        oBody.innerHTML = overall.top5.map((item, idx) => {
+          const tot = item.total ?? item.overallTotal ?? 0;
+          const sRate = typeof item.successRate === 'number' ? item.successRate : parseFloat(item.successRate ?? item.overallSuccessRate ?? 0);
+          const fRate = typeof item.failureRate === 'number' ? item.failureRate : parseFloat(item.failureRate ?? item.overallFailureRate ?? 0);
+          return `
+            <tr class="hover:bg-slate-50 transition">
+              <td class="py-2.5 px-2 font-bold text-slate-700">#${idx + 1}</td>
+              <td class="py-2.5 px-2 font-medium text-slate-900 truncate max-w-[150px]" title="${item.ovseId}">${formatEntityName(item.ovseId)}</td>
+              <td class="py-2.5 px-2 text-right font-semibold text-slate-800">${Number(tot).toLocaleString()}</td>
+              <td class="py-2.5 px-2 text-right text-emerald-600 font-semibold">${sRate.toFixed(2)}%</td>
+              <td class="py-2.5 px-2 text-right text-rose-500 font-semibold">${fRate.toFixed(2)}%</td>
+            </tr>
+          `;
+        }).join('');
+      }
 
       // Top 5 Weekly
       const wBody = document.getElementById('top5WeeklyTableBody');
-      wBody.innerHTML = weekly.top5.map((item, idx) => {
-        const comp = comparison.find(c => c.ovseId === item.ovseId);
-        const oRank = comp ? comp.overallRank : 'New';
-        let badge = '';
-        if (oRank === 'Unranked' || oRank === 'New') {
-          badge = '<span class="text-[10px] font-bold text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded">NEW</span>';
-        } else if (oRank > (idx + 1)) {
-          const shift = oRank - (idx + 1);
-          badge = `<span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded flex items-center justify-center gap-0.5">↑ +${shift}</span>`;
-        } else if (oRank === (idx + 1)) {
-          badge = '<span class="text-[10px] font-bold text-slate-400">— Stable</span>';
-        } else {
-          const shift = (idx + 1) - oRank;
-          badge = `<span class="text-[10px] font-bold text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded flex items-center justify-center gap-0.5">↓ -${shift}</span>`;
-        }
+      if (wBody && weekly.top5) {
+        wBody.innerHTML = weekly.top5.map((item, idx) => {
+          const comp = (comparison || []).find(c => c.ovseId === item.ovseId);
+          const oRank = comp ? comp.overallRank : 'New';
+          let badge = '';
+          if (oRank === 'Unranked' || oRank === 'New') {
+            badge = '<span class="text-[10px] font-bold text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded">NEW</span>';
+          } else if (oRank > (idx + 1)) {
+            const shift = oRank - (idx + 1);
+            badge = `<span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded flex items-center justify-center gap-0.5">↑ +${shift}</span>`;
+          } else if (oRank === (idx + 1)) {
+            badge = '<span class="text-[10px] font-bold text-slate-400">— Stable</span>';
+          } else {
+            const shift = (idx + 1) - oRank;
+            badge = `<span class="text-[10px] font-bold text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded flex items-center justify-center gap-0.5">↓ -${shift}</span>`;
+          }
 
-        return `
-          <tr class="hover:bg-indigo-50/40 transition">
-            <td class="py-2.5 px-2 font-bold text-indigo-700">#${idx + 1}</td>
-            <td class="py-2.5 px-2 font-medium text-slate-900 truncate max-w-[150px]" title="${item.ovseId}">${formatEntityName(item.ovseId)}</td>
-            <td class="py-2.5 px-2 text-right font-bold text-indigo-900">${Number(item.total).toLocaleString()}</td>
-            <td class="py-2.5 px-2 text-right text-emerald-600 font-semibold">${item.successRate.toFixed(2)}%</td>
-            <td class="py-2.5 px-2 text-center">${badge}</td>
-          </tr>
-        `;
-      }).join('');
+          const tot = item.total ?? item.weeklyTotal ?? 0;
+          const sRate = typeof item.successRate === 'number' ? item.successRate : parseFloat(item.successRate ?? item.weeklySuccessRate ?? 0);
+
+          return `
+            <tr class="hover:bg-indigo-50/40 transition">
+              <td class="py-2.5 px-2 font-bold text-indigo-700">#${idx + 1}</td>
+              <td class="py-2.5 px-2 font-medium text-slate-900 truncate max-w-[150px]" title="${item.ovseId}">${formatEntityName(item.ovseId)}</td>
+              <td class="py-2.5 px-2 text-right font-bold text-indigo-900">${Number(tot).toLocaleString()}</td>
+              <td class="py-2.5 px-2 text-right text-emerald-600 font-semibold">${sRate.toFixed(2)}%</td>
+              <td class="py-2.5 px-2 text-center">${badge}</td>
+            </tr>
+          `;
+        }).join('');
+      }
     }
 
     // New Entrants & Surging Table
@@ -1393,8 +2986,16 @@
       applyFiltersAndRenderMasterTable();
     }
 
+    let volumeFilter = 'all';
+
     function handleCategoryFilter(e) {
       categoryFilter = e.target.value;
+      currentPage = 1;
+      applyFiltersAndRenderMasterTable();
+    }
+
+    function handleVolumeFilter(e) {
+      volumeFilter = e.target.value;
       currentPage = 1;
       applyFiltersAndRenderMasterTable();
     }
@@ -1413,9 +3014,12 @@
       if (!currentData) return;
       let list = [...currentData.comparison];
 
-      // Filter by search
+      // Filter by search (matches raw ID and formatted clean name)
       if (searchQuery) {
-        list = list.filter(item => item.ovseId.toLowerCase().includes(searchQuery));
+        list = list.filter(item => 
+          item.ovseId.toLowerCase().includes(searchQuery) ||
+          formatEntityName(item.ovseId).toLowerCase().includes(searchQuery)
+        );
       }
 
       // Filter by category
@@ -1429,6 +3033,17 @@
         list = list.filter(i => i.weeklyTotal > 0 && Number(i.weeklyFailureRate) >= 40);
       } else if (categoryFilter === 'high_success') {
         list = list.filter(i => i.weeklyTotal > 0 && Number(i.weeklySuccessRate) >= 90);
+      }
+
+      // Filter by volume
+      if (volumeFilter === 'high') {
+        list = list.filter(i => i.weeklyTotal >= 1000);
+      } else if (volumeFilter === 'mid') {
+        list = list.filter(i => i.weeklyTotal >= 100 && i.weeklyTotal < 1000);
+      } else if (volumeFilter === 'low') {
+        list = list.filter(i => i.weeklyTotal > 0 && i.weeklyTotal < 100);
+      } else if (volumeFilter === 'zero') {
+        list = list.filter(i => i.weeklyTotal === 0);
       }
 
       // Sort
@@ -1606,6 +3221,989 @@
         ])
       ];
       triggerCSVDownload(`OVSE_High_Failure_Alerts_${new Date().toISOString().slice(0, 10)}.csv`, rows);
+    }
+
+    // ==========================================
+    // MULTI-PAGE TAB SWITCHER & EXTENDED CONTROLLERS
+    // ==========================================
+    let currentTab = 'transactions';
+    let topErrorsChartInstance = null;
+    let errorCategoryDonutInstance = null;
+    let topEntitiesErrorsChartInstance = null;
+
+    let errorSearchQuery = '';
+    let errorCategorySelected = 'all';
+    let errorImpactSelected = 'all';
+    let errorSortSelected = 'weekly_desc';
+
+    let hotspotSearchQuery = '';
+    let hotspotCodeSelected = 'all';
+
+    let channelLifetimeVsWeeklyChartInstance = null;
+    let channelWeeklyDonutInstance = null;
+    let ovseChannelMixChartInstance = null;
+
+    let channelSearchQuery = '';
+    let channelFilterSelected = 'all';
+    let channelVolumeSelected = 'all';
+    let channelSortSelected = 'total_desc';
+
+    const UPLOAD_CONFIGS = {
+      transactions: {
+        headerBtn: "Weekly Ingestion: Transactions",
+        badge: "Page 1: OVSE Transactions Ingestion",
+        badgeClass: "bg-indigo-500/20 text-indigo-300 border-indigo-500/30",
+        icon: "layers",
+        title: "Weekly Ingestion: OVSE Transaction Performance Datasets",
+        desc: "Upload your two weekly transaction CSV exports (Overall and Weekly). Recalculates total volumes, authentication success/failure rates, entity rankings, and comparative metrics.",
+        dropzone1Title: "1. All-Time Cumulative Transactions CSV (All Time)",
+        dropzone1DefaultFile: "ovse_wise_transactions_count___duplicate_2026-10-14T14_53_32.csv",
+        dropzone1Hint: "Required columns: Ovse ID, Auth Result (y/n), Count",
+        dropzone2Title: "2. Last 1-Week Transactions CSV (Weekly)",
+        dropzone2DefaultFile: "query_result_2026-10-14T14_56_44.csv",
+        dropzone2Hint: "Required columns: Ovse ID, Auth Result (y/n), Count",
+        formatNote: 'Supports weekly CSVs with columns: <code class="bg-slate-800 px-1.5 py-0.5 rounded text-indigo-300 font-mono">Ovse ID, Auth Result, Count</code>',
+        btnText: "Process & Update Transaction Dashboard",
+        btnClass: "bg-indigo-600 hover:bg-indigo-500"
+      },
+      errors: {
+        headerBtn: "Weekly Ingestion: Error Codes",
+        badge: "Page 2: UIDAI Error Codes Ingestion",
+        badgeClass: "bg-rose-500/20 text-rose-300 border-rose-500/30",
+        icon: "shield-alert",
+        title: "Weekly Ingestion: UIDAI Error Code & Failure Datasets",
+        desc: "Upload your two UIDAI error code CSV files (Overall Errors and Last 1-Week Errors). Re-aggregates failure codes, root cause categories, biometric/crypto rejections, and entity hotspots.",
+        dropzone1Title: "1. All-Time Cumulative UIDAI Errors CSV (All Time)",
+        dropzone1DefaultFile: "query_result_2026-10-14T17_25_26.025521+05_30.csv",
+        dropzone1Hint: "Required columns: Error Code, Ovse ID, Count",
+        dropzone2Title: "2. Last 1-Week UIDAI Errors CSV (Weekly)",
+        dropzone2DefaultFile: "query_result_2026-10-14T17_25_49.077416+05_30.csv",
+        dropzone2Hint: "Required columns: Error Code, Ovse ID, Count",
+        formatNote: 'Supports error breakdown CSVs with columns: <code class="bg-slate-800 px-1.5 py-0.5 rounded text-rose-300 font-mono">Error Code, Ovse ID, Count</code>',
+        btnText: "Process & Update Error Intelligence",
+        btnClass: "bg-rose-600 hover:bg-rose-500"
+      },
+      channels: {
+        headerBtn: "Weekly Ingestion: Sharing Channels",
+        badge: "Page 3: Data Sharing Channels Ingestion",
+        badgeClass: "bg-sky-500/20 text-sky-300 border-sky-500/30",
+        icon: "share-2",
+        title: "Weekly Ingestion: Data Sharing Channels Datasets",
+        desc: "Upload your two data sharing channel CSV files (Overall Channels and Last 1-Week Channels). Recalculates App-to-App, Web-to-App, and QR Scan volumes, growth velocity, and OVSE modality distributions.",
+        dropzone1Title: "1. All-Time Cumulative Channels CSV (All Time)",
+        dropzone1DefaultFile: "query_result_2026-10-14T16_40_50.390522+05_30.csv",
+        dropzone1Hint: "Required columns: Channel (APP_INTENT, WEB_INTENT, QR_SCAN), Ovse ID, Count",
+        dropzone2Title: "2. Last 1-Week Channels CSV (Weekly)",
+        dropzone2DefaultFile: "query_result_2026-10-14T16_41_07.437168+05_30.csv",
+        dropzone2Hint: "Required columns: Channel, Ovse ID, Count",
+        formatNote: 'Supports channel CSVs with columns: <code class="bg-slate-800 px-1.5 py-0.5 rounded text-sky-300 font-mono">Channel, Ovse ID, Count</code>',
+        btnText: "Process & Update Channel Dashboard",
+        btnClass: "bg-sky-600 hover:bg-sky-500"
+      }
+    };
+
+    function updateUploadDrawerForTab(tabId) {
+      hideUploadError();
+
+      // If user had previously selected files that do not match the new tab, clear them
+      if (uploadedOverallContent) {
+        const val = validateCSVFormat(uploadedOverallContent, tabId, uploadedOverallFile?.name || 'Overall File');
+        if (!val.valid) {
+          uploadedOverallFile = null;
+          uploadedOverallContent = null;
+          const fi = document.getElementById('overallFileInput');
+          if (fi) fi.value = '';
+        }
+      }
+      if (uploadedWeeklyContent) {
+        const val = validateCSVFormat(uploadedWeeklyContent, tabId, uploadedWeeklyFile?.name || 'Weekly File');
+        if (!val.valid) {
+          uploadedWeeklyFile = null;
+          uploadedWeeklyContent = null;
+          const fi = document.getElementById('weeklyFileInput');
+          if (fi) fi.value = '';
+        }
+      }
+
+      const cfg = UPLOAD_CONFIGS[tabId] || UPLOAD_CONFIGS.transactions;
+      const headerBtnText = document.getElementById('headerUploadBtnText');
+      if (headerBtnText) headerBtnText.innerText = cfg.headerBtn;
+
+      const badge = document.getElementById('uploadDrawerBadge');
+      if (badge) {
+        badge.innerText = cfg.badge;
+        badge.className = `inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${cfg.badgeClass}`;
+      }
+
+      const title = document.getElementById('uploadDrawerTitle');
+      if (title) title.innerHTML = `<i data-lucide="${cfg.icon}" class="w-4 h-4 text-indigo-400"></i> ${cfg.title}`;
+
+      const desc = document.getElementById('uploadDrawerDesc');
+      if (desc) desc.innerText = cfg.desc;
+
+      const dz1Title = document.getElementById('dropzone1Title');
+      if (dz1Title) dz1Title.innerText = cfg.dropzone1Title;
+
+      const dz1Hint = document.getElementById('dropzone1Hint');
+      if (dz1Hint) dz1Hint.innerText = `Click or drag & drop new file to replace • ${cfg.dropzone1Hint}`;
+
+      const overallFileName = document.getElementById('overallFileName');
+      if (overallFileName && !uploadedOverallFile) {
+        overallFileName.innerText = `Current: ${cfg.dropzone1DefaultFile}`;
+        overallFileName.classList.remove('text-emerald-400');
+      }
+
+      const dz2Title = document.getElementById('dropzone2Title');
+      if (dz2Title) dz2Title.innerText = cfg.dropzone2Title;
+
+      const dz2Hint = document.getElementById('dropzone2Hint');
+      if (dz2Hint) dz2Hint.innerText = `Click or drag & drop new file to replace • ${cfg.dropzone2Hint}`;
+
+      const weeklyFileName = document.getElementById('weeklyFileName');
+      if (weeklyFileName && !uploadedWeeklyFile) {
+        weeklyFileName.innerText = `Current: ${cfg.dropzone2DefaultFile}`;
+        weeklyFileName.classList.remove('text-emerald-400');
+      }
+
+      const formatNote = document.getElementById('uploadDrawerFormatNote');
+      if (formatNote) {
+        formatNote.innerHTML = `<i data-lucide="info" class="w-3.5 h-3.5 text-indigo-400"></i> <span>${cfg.formatNote}</span>`;
+      }
+
+      const processBtnText = document.getElementById('processBtnText');
+      if (processBtnText) processBtnText.innerText = cfg.btnText;
+
+      const processBtn = document.getElementById('processBtn');
+      if (processBtn) {
+        processBtn.className = `px-4 py-1.5 rounded-lg text-xs font-bold text-white transition shadow-sm flex items-center gap-1.5 ${cfg.btnClass}`;
+      }
+
+      lucide.createIcons();
+    }
+
+    function switchTab(tabId) {
+      currentTab = tabId;
+
+      const tabs = [
+        { id: 'transactions', btn: document.getElementById('navTabTransactions'), content: document.getElementById('tabContentTransactions') },
+        { id: 'errors', btn: document.getElementById('navTabErrors'), content: document.getElementById('tabContentErrors') },
+        { id: 'channels', btn: document.getElementById('navTabChannels'), content: document.getElementById('tabContentChannels') }
+      ];
+
+      tabs.forEach(t => {
+        if (!t.btn || !t.content) return;
+        if (t.id === tabId) {
+          t.btn.className = 'nav-tab-btn inline-flex items-center px-4 py-2 rounded-xl text-xs font-bold transition-all duration-150 bg-indigo-600 text-white shadow-sm shadow-indigo-100';
+          t.content.classList.remove('hidden');
+        } else {
+          t.btn.className = 'nav-tab-btn inline-flex items-center px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all duration-150';
+          t.content.classList.add('hidden');
+        }
+      });
+
+      updateUploadDrawerForTab(tabId);
+
+      if (tabId === 'errors') {
+        renderErrorIntelligence();
+      } else if (tabId === 'channels') {
+        renderChannelIntelligence();
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    // ==========================================
+    // TAB 2: UIDAI ERROR CODE INTELLIGENCE
+    // ==========================================
+    function handleErrorSearch(e) {
+      errorSearchQuery = (e.target.value || '').toLowerCase().trim();
+      renderErrorMasterTable();
+    }
+
+    function handleErrorCategoryFilter(e) {
+      errorCategorySelected = e.target.value;
+      renderErrorMasterTable();
+    }
+
+    function handleErrorImpactFilter(e) {
+      errorImpactSelected = e.target.value;
+      renderErrorMasterTable();
+    }
+
+    function handleErrorSort(e) {
+      errorSortSelected = e.target.value;
+      renderErrorMasterTable();
+    }
+
+    function handleHotspotSearch(e) {
+      hotspotSearchQuery = (e.target.value || '').toLowerCase().trim();
+      renderErrorHotspotsTable();
+    }
+
+    function handleHotspotCodeFilter(e) {
+      hotspotCodeSelected = e.target.value;
+      renderErrorHotspotsTable();
+    }
+
+    function renderErrorIntelligence() {
+      if (!currentData || !currentData.errors) return;
+
+      const errorsData = currentData.errors;
+
+      // Update Error Intelligence Scorecards & Banners
+      const totalWeeklyErr = errorsData.weekly?.totalErrors || 0;
+      const elErrWeeklyBanner = document.getElementById('kpiErrorWeeklyFailuresBanner');
+      if (elErrWeeklyBanner) elErrWeeklyBanner.innerText = Number(totalWeeklyErr).toLocaleString();
+
+      const elErrWeeklyCard = document.getElementById('kpiErrorWeeklyFailuresCard');
+      if (elErrWeeklyCard) elErrWeeklyCard.innerText = Number(totalWeeklyErr).toLocaleString();
+
+      const catList = errorsData.weekly?.categoryList || [];
+      const topCat = catList[0];
+      if (topCat && document.getElementById('kpiErrorTopCausePctBanner')) {
+        document.getElementById('kpiErrorTopCausePctBanner').innerText = topCat.pct.toFixed(2) + '%';
+        if (document.getElementById('kpiErrorTopCauseNameBanner')) {
+          document.getElementById('kpiErrorTopCauseNameBanner').innerText = topCat.category;
+        }
+      }
+
+      const consentCat = catList.find(c => c.category.includes('Consent'));
+      const elConsent = document.getElementById('kpiErrorConsentVolCard');
+      if (elConsent) {
+        if (consentCat) {
+          elConsent.innerHTML = `${Number(consentCat.count).toLocaleString()} <span class="text-sm font-semibold text-slate-500">(${consentCat.pct.toFixed(1)}%)</span>`;
+        } else {
+          elConsent.innerHTML = `0 <span class="text-sm font-semibold text-slate-500">(0.0%)</span>`;
+        }
+      }
+
+      const faceCat = catList.find(c => c.category.includes('Face Auth'));
+      const elFace = document.getElementById('kpiErrorFaceAuthVolCard');
+      if (elFace) {
+        if (faceCat) {
+          elFace.innerHTML = `${Number(faceCat.count).toLocaleString()} <span class="text-sm font-semibold text-slate-500">(${faceCat.pct.toFixed(1)}%)</span>`;
+        } else {
+          elFace.innerHTML = `0 <span class="text-sm font-semibold text-slate-500">(0.0%)</span>`;
+        }
+      }
+
+      const cryptoCat = catList.find(c => c.category.includes('Cryptographic'));
+      const elCrypto = document.getElementById('kpiErrorCryptoVolCard');
+      if (elCrypto) {
+        if (cryptoCat) {
+          elCrypto.innerHTML = `${Number(cryptoCat.count).toLocaleString()} <span class="text-sm font-semibold text-slate-500">(${cryptoCat.pct.toFixed(1)}%)</span>`;
+        } else {
+          elCrypto.innerHTML = `0 <span class="text-sm font-semibold text-slate-500">(0.0%)</span>`;
+        }
+      }
+
+      // 1. Chart: Top 6 UIDAI Error Codes
+      const ctxTopErrors = document.getElementById('topErrorsChart')?.getContext('2d');
+      if (ctxTopErrors) {
+        if (topErrorsChartInstance) topErrorsChartInstance.destroy();
+
+        const top6Errors = (errorsData.comparison || [])
+          .filter(e => e.weeklyCount > 0)
+          .slice(0, 6);
+
+        const labels = top6Errors.map(e => {
+          if (e.code.length > 20) return e.code.replace('SDJWT_', '').substring(0, 16) + '...';
+          return e.code.replace('SDJWT_', '');
+        });
+
+        topErrorsChartInstance = new Chart(ctxTopErrors, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: 'Weekly Failures (Count)',
+                data: top6Errors.map(e => e.weeklyCount),
+                backgroundColor: '#e11d48',
+                borderRadius: 6,
+                barThickness: 26,
+                yAxisID: 'y'
+              },
+              {
+                label: 'Lifetime Proportion (% of all errors)',
+                data: top6Errors.map(e => Number(e.overallPct)),
+                backgroundColor: '#cbd5e1',
+                borderRadius: 6,
+                barThickness: 26,
+                yAxisID: 'y1'
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                type: 'linear',
+                position: 'left',
+                title: { display: true, text: 'Weekly Failures', font: { size: 10 } },
+                grid: { color: '#f1f5f9' },
+                ticks: {
+                  callback: val => Number(val).toLocaleString()
+                }
+              },
+              y1: {
+                type: 'linear',
+                position: 'right',
+                title: { display: true, text: 'Lifetime Proportion (%)', font: { size: 10 } },
+                grid: { drawOnChartArea: false },
+                ticks: {
+                  callback: val => val + '%'
+                }
+              },
+              x: { grid: { display: false } }
+            },
+            plugins: {
+              legend: {
+                position: 'top',
+                labels: { boxWidth: 12, font: { size: 11, family: 'Plus Jakarta Sans' } }
+              },
+              tooltip: {
+                callbacks: {
+                  title: ctx => top6Errors[ctx[0].dataIndex]?.code,
+                  afterTitle: ctx => top6Errors[ctx[0].dataIndex]?.description
+                }
+              }
+            }
+          }
+        });
+      }
+
+      // 2. Chart: Root Cause Categories Donut
+      const ctxCatDonut = document.getElementById('errorCategoryDonut')?.getContext('2d');
+      if (ctxCatDonut) {
+        if (errorCategoryDonutInstance) errorCategoryDonutInstance.destroy();
+
+        const catList = errorsData.weekly?.categoryList || [];
+        const catLabels = catList.map(c => c.category);
+        const catCounts = catList.map(c => c.count);
+        const catColors = ['#f59e0b', '#4f46e5', '#9333ea', '#0284c7', '#10b981', '#94a3b8'];
+
+        errorCategoryDonutInstance = new Chart(ctxCatDonut, {
+          type: 'doughnut',
+          data: {
+            labels: catLabels,
+            datasets: [{
+              data: catCounts,
+              backgroundColor: catColors.slice(0, catLabels.length),
+              borderWidth: 2,
+              borderColor: '#ffffff'
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '62%',
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: { boxWidth: 10, font: { size: 10, family: 'Plus Jakarta Sans' }, padding: 8 }
+              },
+              tooltip: {
+                callbacks: {
+                  label: ctx => {
+                    const total = catCounts.reduce((a, b) => a + b, 0);
+                    const val = ctx.raw;
+                    const pct = ((val / total) * 100).toFixed(1);
+                    return ` ${ctx.label}: ${val.toLocaleString()} (${pct}%)`;
+                  }
+                }
+              }
+            }
+          }
+        });
+      }
+
+      // 3. Chart: Top 6 Entities Impacted by Errors
+      const ctxTopEntities = document.getElementById('topEntitiesErrorsChart')?.getContext('2d');
+      if (ctxTopEntities) {
+        if (topEntitiesErrorsChartInstance) topEntitiesErrorsChartInstance.destroy();
+
+        const ovseErrorList = (errorsData.weekly?.ovseErrorList || []).slice(0, 6);
+        const entLabels = ovseErrorList.map(e => formatEntityName(e.ovseId));
+        const entCounts = ovseErrorList.map(e => e.totalErrors);
+
+        topEntitiesErrorsChartInstance = new Chart(ctxTopEntities, {
+          type: 'bar',
+          data: {
+            labels: entLabels,
+            datasets: [{
+              label: 'Total Weekly Failures',
+              data: entCounts,
+              backgroundColor: '#8b5cf6',
+              borderRadius: 6,
+              barThickness: 28
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                title: { display: true, text: 'Failed Transactions', font: { size: 10 } },
+                grid: { color: '#f1f5f9' },
+                ticks: { callback: val => Number(val).toLocaleString() }
+              },
+              x: { grid: { display: false } }
+            },
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  afterLabel: ctx => {
+                    const ent = ovseErrorList[ctx.dataIndex];
+                    return `Primary Issue: ${ent.topErrorCode} (${ent.topErrorCount} errors)`;
+                  }
+                }
+              }
+            }
+          }
+        });
+      }
+
+      // 4. Render Error Tables
+      renderErrorMasterTable();
+      renderErrorHotspotsTable();
+    }
+
+    function renderErrorMasterTable() {
+      if (!currentData || !currentData.errors) return;
+      const tbody = document.getElementById('errorMasterTableBody');
+      if (!tbody) return;
+
+      const compList = currentData.errors.comparison || [];
+      let filtered = compList.filter(item => {
+        const matchesSearch = !errorSearchQuery ||
+          item.code.toLowerCase().includes(errorSearchQuery) ||
+          (item.description && item.description.toLowerCase().includes(errorSearchQuery)) ||
+          (item.category && item.category.toLowerCase().includes(errorSearchQuery));
+
+        const matchesCat = (errorCategorySelected === 'all') || (item.category === errorCategorySelected);
+
+        let matchesImpact = true;
+        const delta = parseFloat(item.pctPointDelta);
+        if (errorImpactSelected === 'active_weekly') matchesImpact = item.weeklyCount > 0;
+        else if (errorImpactSelected === 'high_volume') matchesImpact = item.weeklyCount >= 1000;
+        else if (errorImpactSelected === 'surging') matchesImpact = delta > 0;
+        else if (errorImpactSelected === 'inactive_weekly') matchesImpact = item.weeklyCount === 0;
+
+        return matchesSearch && matchesCat && matchesImpact;
+      });
+
+      // Sorting
+      filtered.sort((a, b) => {
+        if (errorSortSelected === 'weekly_desc') return b.weeklyCount - a.weeklyCount;
+        if (errorSortSelected === 'overall_desc') return b.overallCount - a.overallCount;
+        if (errorSortSelected === 'delta_desc') return parseFloat(b.pctPointDelta) - parseFloat(a.pctPointDelta);
+        if (errorSortSelected === 'code_asc') return a.code.localeCompare(b.code);
+        return 0;
+      });
+
+      const countEl = document.getElementById('errorRecordCount');
+      if (countEl) countEl.innerText = `Showing ${filtered.length} of ${compList.length} codes`;
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="8" class="py-8 text-center text-slate-400">No error codes matched your filter criteria.</td></tr>`;
+        return;
+      }
+
+      let html = '';
+      filtered.forEach(item => {
+        const delta = parseFloat(item.pctPointDelta);
+        let deltaBadge = '';
+        if (delta > 0) {
+          deltaBadge = `<span class="inline-flex items-center text-rose-600 font-bold bg-rose-50 px-2 py-0.5 rounded text-[11px]">+${delta.toFixed(2)}% ▲</span>`;
+        } else if (delta < 0) {
+          deltaBadge = `<span class="inline-flex items-center text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded text-[11px]">${delta.toFixed(2)}% ▼</span>`;
+        } else {
+          deltaBadge = `<span class="text-slate-400 text-[11px]">0.00%</span>`;
+        }
+
+        let catBadgeColor = 'bg-slate-100 text-slate-700';
+        if (item.category.includes('Consent')) catBadgeColor = 'bg-amber-100 text-amber-800';
+        else if (item.category.includes('Face Auth')) catBadgeColor = 'bg-indigo-100 text-indigo-800';
+        else if (item.category.includes('Cryptographic')) catBadgeColor = 'bg-purple-100 text-purple-800';
+        else if (item.category.includes('Network')) catBadgeColor = 'bg-sky-100 text-sky-800';
+
+        html += `
+          <tr class="hover:bg-slate-50/80 transition">
+            <td class="py-3 px-3 font-mono font-bold text-slate-900 text-xs">${item.code}</td>
+            <td class="py-3 px-3">
+              <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-semibold ${catBadgeColor}">${item.category}</span>
+            </td>
+            <td class="py-3 px-3 text-slate-600 text-xs max-w-md">${item.description || '-'}</td>
+            <td class="py-3 px-3 text-right font-bold ${item.weeklyCount > 0 ? 'text-rose-600' : 'text-slate-400'}">${Number(item.weeklyCount).toLocaleString()}</td>
+            <td class="py-3 px-3 text-right font-semibold text-slate-700">${item.weeklyPct}%</td>
+            <td class="py-3 px-3 text-right text-slate-500">${Number(item.overallCount).toLocaleString()}</td>
+            <td class="py-3 px-3 text-right text-slate-500">${item.overallPct}%</td>
+            <td class="py-3 px-3 text-center">${deltaBadge}</td>
+          </tr>
+        `;
+      });
+      tbody.innerHTML = html;
+    }
+
+    function renderErrorHotspotsTable() {
+      if (!currentData || !currentData.errors) return;
+      const tbody = document.getElementById('errorHotspotsTableBody');
+      if (!tbody) return;
+
+      const rawList = currentData.errors.weekly?.ovseErrorList || [];
+      const filtered = rawList.filter(ent => {
+        const matchesSearch = !hotspotSearchQuery ||
+          ent.ovseId.toLowerCase().includes(hotspotSearchQuery) ||
+          formatEntityName(ent.ovseId).toLowerCase().includes(hotspotSearchQuery);
+
+        const matchesCode = (hotspotCodeSelected === 'all') || (ent.topErrorCode === hotspotCodeSelected);
+        return matchesSearch && matchesCode;
+      });
+
+      const hotspotCountEl = document.getElementById('hotspotRecordCount');
+      if (hotspotCountEl) hotspotCountEl.innerText = `Showing ${filtered.length} of ${rawList.length} hotspots`;
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" class="py-6 text-center text-slate-400">No hotspot entities match your search or filter.</td></tr>`;
+        return;
+      }
+
+      let html = '';
+      const recommendations = {
+        'SDJWT_USER_DENIED_CONSENT': 'Implement pre-consent in-app explainer screen before mAadhaar handoff.',
+        'SDJWT_FACEAUTH_FAILED_731': 'Add real-time illumination detector & face positioning frame guidance.',
+        'SDJWT_SIGN_VALIDATION_FAILED': 'Audit signing certificate expiry & UIDAI public key exchange.',
+        'INVALID_JWT': 'Verify JWT signing algorithm, payload expiration & base64 encoding.',
+        'SDJWT_CALLBACK_NETWORK_ERROR': 'Increase callback connection timeout & implement retry with jitter.',
+        'SDJWT_FACEAUTH_FAILED_304': 'Prompt user to clean front camera lens and increase ambient light.'
+      };
+
+      filtered.forEach(ent => {
+        const topCodePct = ent.totalErrors > 0 ? ((ent.topErrorCount / ent.totalErrors) * 100).toFixed(1) : 0;
+        const rec = recommendations[ent.topErrorCode] || 'Inspect backend logs and consult UIDAI integration specifications.';
+
+        html += `
+          <tr class="hover:bg-slate-50/80 transition">
+            <td class="py-2.5 px-3 font-semibold text-slate-900">${formatEntityName(ent.ovseId)} <span class="text-[10px] text-slate-400 font-mono block">${ent.ovseId}</span></td>
+            <td class="py-2.5 px-3 text-right font-extrabold text-rose-600">${Number(ent.totalErrors).toLocaleString()}</td>
+            <td class="py-2.5 px-3 font-mono text-xs font-bold text-slate-800">${ent.topErrorCode}</td>
+            <td class="py-2.5 px-3 text-right font-semibold text-slate-700">${Number(ent.topErrorCount).toLocaleString()}</td>
+            <td class="py-2.5 px-3 text-right font-bold text-amber-700">${topCodePct}%</td>
+            <td class="py-2.5 px-3 text-xs text-slate-600">${rec}</td>
+          </tr>
+        `;
+      });
+      tbody.innerHTML = html;
+    }
+
+    // ==========================================
+    // TAB 3: DATA SHARING CHANNELS INTELLIGENCE
+    // ==========================================
+    function handleChannelSearch(e) {
+      channelSearchQuery = (e.target.value || '').toLowerCase().trim();
+      renderChannelMasterTable();
+    }
+
+    function handleChannelFilter(e) {
+      channelFilterSelected = e.target.value;
+      renderChannelMasterTable();
+    }
+
+    function handleChannelVolumeFilter(e) {
+      channelVolumeSelected = e.target.value;
+      renderChannelMasterTable();
+    }
+
+    function handleChannelSort(e) {
+      channelSortSelected = e.target.value;
+      renderChannelMasterTable();
+    }
+
+    function renderChannelIntelligence() {
+      if (!currentData || !currentData.channels) return;
+      const chData = currentData.channels;
+
+      // Update Channel Scorecards & Banners
+      const wTotal = chData.weekly?.total || 0;
+      const elChWeeklyBanner = document.getElementById('kpiChannelWeeklyBannerVol');
+      if (elChWeeklyBanner) elChWeeklyBanner.innerText = Number(wTotal).toLocaleString();
+
+      const comp = chData.comparison || [];
+      const appComp = comp.find(c => c.channel === 'APP_INTENT') || {};
+      const webComp = comp.find(c => c.channel === 'WEB_INTENT') || {};
+      const qrComp = comp.find(c => c.channel === 'QR_SCAN') || {};
+
+      const wApp = appComp.weeklyCount ?? (chData.weekly?.appIntent ?? chData.weekly?.channelMap?.APP_INTENT ?? 0);
+      const wAppPct = appComp.weeklyPct ?? chData.weekly?.appIntentPct ?? (wTotal > 0 ? ((wApp / wTotal) * 100).toFixed(2) : '0.00');
+
+      const wWeb = webComp.weeklyCount ?? (chData.weekly?.webIntent ?? chData.weekly?.channelMap?.WEB_INTENT ?? 0);
+      const wWebPct = webComp.weeklyPct ?? chData.weekly?.webIntentPct ?? (wTotal > 0 ? ((wWeb / wTotal) * 100).toFixed(2) : '0.00');
+
+      const wQr = qrComp.weeklyCount ?? (chData.weekly?.qrScan ?? chData.weekly?.channelMap?.QR_SCAN ?? 0);
+      const wQrPct = qrComp.weeklyPct ?? chData.weekly?.qrScanPct ?? (wTotal > 0 ? ((wQr / wTotal) * 100).toFixed(2) : '0.00');
+
+      const elChApp = document.getElementById('kpiChannelAppVol');
+      if (elChApp) elChApp.innerHTML = `${Number(wApp).toLocaleString()} <span class="text-sm font-semibold text-slate-500">(${wAppPct}%)</span>`;
+
+      const elChWeb = document.getElementById('kpiChannelWebVol');
+      if (elChWeb) elChWeb.innerHTML = `${Number(wWeb).toLocaleString()} <span class="text-sm font-semibold text-slate-500">(${wWebPct}%)</span>`;
+
+      const elChQr = document.getElementById('kpiChannelQrVol');
+      if (elChQr) elChQr.innerHTML = `${Number(wQr).toLocaleString()} <span class="text-sm font-semibold text-slate-500">(${wQrPct}%)</span>`;
+
+      // Top Web Adopter
+      const topWebEntity = (chData.weekly?.ovseList || []).filter(c => c.webIntent > 0).sort((a, b) => b.webIntent - a.webIntent)[0];
+      const elTopWeb = document.getElementById('kpiChannelTopWeb');
+      const elTopWebSub = document.getElementById('kpiChannelTopWebSub');
+      if (elTopWeb) {
+        if (topWebEntity) {
+          elTopWeb.innerHTML = `${formatEntityName(topWebEntity.ovseId)} <span class="text-sm font-semibold text-slate-500">(${topWebEntity.webIntentPct}%)</span>`;
+          if (elTopWebSub) elTopWebSub.innerText = `${Number(topWebEntity.webIntent).toLocaleString()} Web Tx`;
+        } else {
+          elTopWeb.innerText = 'None';
+          if (elTopWebSub) elTopWebSub.innerText = '0 Web Tx';
+        }
+      }
+
+      // 1. Chart: Lifetime vs Weekly Comparison
+      const ctxLifetimeWeekly = document.getElementById('channelLifetimeVsWeeklyChart')?.getContext('2d');
+      if (ctxLifetimeWeekly) {
+        if (channelLifetimeVsWeeklyChartInstance) channelLifetimeVsWeeklyChartInstance.destroy();
+
+        const comp = chData.comparison || [];
+        const labels = comp.map(c => c.displayName);
+        const overallShares = comp.map(c => Number(c.overallPct));
+        const weeklyShares = comp.map(c => Number(c.weeklyPct));
+
+        channelLifetimeVsWeeklyChartInstance = new Chart(ctxLifetimeWeekly, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: 'All-Time Lifetime Share %',
+                data: overallShares,
+                backgroundColor: '#cbd5e1',
+                borderRadius: 6,
+                barThickness: 32
+              },
+              {
+                label: 'Last 1 Week Share %',
+                data: weeklyShares,
+                backgroundColor: '#0284c7',
+                borderRadius: 6,
+                barThickness: 32
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                title: { display: true, text: 'Share of Total Transactions (%)', font: { size: 10 } },
+                grid: { color: '#f1f5f9' },
+                ticks: { callback: val => val + '%' },
+                max: 100
+              },
+              x: { grid: { display: false } }
+            },
+            plugins: {
+              legend: {
+                position: 'top',
+                labels: { boxWidth: 12, font: { size: 11, family: 'Plus Jakarta Sans' } }
+              },
+              tooltip: {
+                callbacks: {
+                  afterLabel: ctx => {
+                    const row = comp[ctx.dataIndex];
+                    if (ctx.datasetIndex === 1) {
+                      return `Weekly Volume: ${row.weeklyCount.toLocaleString()} tx (Delta: ${row.pctPointDelta}%)`;
+                    } else {
+                      return `Lifetime Volume: ${row.overallCount.toLocaleString()} tx`;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        });
+      }
+
+      // 2. Chart: Weekly Modality Donut
+      const ctxChDonut = document.getElementById('channelWeeklyDonut')?.getContext('2d');
+      if (ctxChDonut) {
+        if (channelWeeklyDonutInstance) channelWeeklyDonutInstance.destroy();
+
+        const comp = chData.comparison || [];
+        const donutLabels = comp.map(c => `${c.channel} (${c.weeklyPct}%)`);
+        const donutCounts = comp.map(c => c.weeklyCount);
+        const donutColors = ['#4f46e5', '#0284c7', '#10b981'];
+
+        channelWeeklyDonutInstance = new Chart(ctxChDonut, {
+          type: 'doughnut',
+          data: {
+            labels: donutLabels,
+            datasets: [{
+              data: donutCounts,
+              backgroundColor: donutColors,
+              borderWidth: 2,
+              borderColor: '#ffffff'
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '62%',
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: { boxWidth: 10, font: { size: 10, family: 'Plus Jakarta Sans' }, padding: 8 }
+              },
+              tooltip: {
+                callbacks: {
+                  label: ctx => ` ${ctx.label}: ${Number(ctx.raw).toLocaleString()} tx`
+                }
+              }
+            }
+          }
+        });
+      }
+
+      // 3. Chart: 100% Stacked Bar Chart for Top 10 OVSEs
+      const ctxOvseMix = document.getElementById('ovseChannelMixChart')?.getContext('2d');
+      if (ctxOvseMix) {
+        if (ovseChannelMixChartInstance) ovseChannelMixChartInstance.destroy();
+
+        const top10Ovse = (chData.weekly?.ovseList || []).slice(0, 10);
+        const labels = top10Ovse.map(item => formatEntityName(item.ovseId));
+        const appPct = top10Ovse.map(item => Number(item.appIntentPct));
+        const webPct = top10Ovse.map(item => Number(item.webIntentPct));
+        const qrPct = top10Ovse.map(item => Number(item.qrScanPct));
+
+        ovseChannelMixChartInstance = new Chart(ctxOvseMix, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: 'App-to-App (APP_INTENT)',
+                data: appPct,
+                backgroundColor: '#4f46e5',
+                borderRadius: 4
+              },
+              {
+                label: 'Web-to-App (WEB_INTENT)',
+                data: webPct,
+                backgroundColor: '#10b981',
+                borderRadius: 4
+              },
+              {
+                label: 'Cross-Device QR (QR_SCAN)',
+                data: qrPct,
+                backgroundColor: '#0284c7',
+                borderRadius: 4
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                stacked: true,
+                grid: { display: false }
+              },
+              y: {
+                stacked: true,
+                max: 100,
+                title: { display: true, text: 'Modality Share %', font: { size: 10 } },
+                ticks: { callback: val => val + '%' },
+                grid: { color: '#f1f5f9' }
+              }
+            },
+            plugins: {
+              legend: {
+                position: 'top',
+                labels: { boxWidth: 12, font: { size: 11, family: 'Plus Jakarta Sans' } }
+              },
+              tooltip: {
+                callbacks: {
+                  afterTitle: ctx => {
+                    const ent = top10Ovse[ctx[0].dataIndex];
+                    return `Total Weekly Tx: ${ent.total.toLocaleString()}`;
+                  },
+                  label: ctx => ` ${ctx.dataset.label}: ${ctx.raw}%`
+                }
+              }
+            }
+          }
+        });
+      }
+
+      // 4. Render Table
+      renderChannelMasterTable();
+    }
+
+    function renderChannelMasterTable() {
+      if (!currentData || !currentData.channels) return;
+      const tbody = document.getElementById('channelMasterTableBody');
+      if (!tbody) return;
+
+      const ovseList = currentData.channels.weekly?.ovseList || [];
+      let filtered = ovseList.filter(item => {
+        const matchesSearch = !channelSearchQuery ||
+          item.ovseId.toLowerCase().includes(channelSearchQuery) ||
+          formatEntityName(item.ovseId).toLowerCase().includes(channelSearchQuery);
+
+        if (!matchesSearch) return false;
+
+        const appPct = parseFloat(item.appIntentPct);
+        const webPct = parseFloat(item.webIntentPct);
+        const qrPct = parseFloat(item.qrScanPct);
+
+        // Modality filter
+        if (channelFilterSelected === 'app_dominant' && appPct <= 50) return false;
+        if (channelFilterSelected === 'web_dominant' && webPct <= 50) return false;
+        if (channelFilterSelected === 'web_active' && item.webIntent <= 0) return false;
+        if (channelFilterSelected === 'qr_significant' && qrPct <= 10) return false;
+        if (channelFilterSelected === 'single_channel' && !(appPct === 100 || webPct === 100 || qrPct === 100)) return false;
+        if (channelFilterSelected === 'multi_channel') {
+          const activeChannels = [item.appIntent > 0, item.webIntent > 0, item.qrScan > 0].filter(Boolean).length;
+          if (activeChannels < 2) return false;
+        }
+
+        // Volume tier filter
+        if (channelVolumeSelected === 'heavy' && item.total < 5000) return false;
+        if (channelVolumeSelected === 'medium' && (item.total < 500 || item.total >= 5000)) return false;
+        if (channelVolumeSelected === 'emerging' && item.total >= 500) return false;
+
+        return true;
+      });
+
+      // Sorting
+      filtered.sort((a, b) => {
+        if (channelSortSelected === 'total_desc') return b.total - a.total;
+        if (channelSortSelected === 'web_vol_desc') return b.webIntent - a.webIntent;
+        if (channelSortSelected === 'web_share_desc') return parseFloat(b.webIntentPct) - parseFloat(a.webIntentPct);
+        if (channelSortSelected === 'qr_vol_desc') return b.qrScan - a.qrScan;
+        if (channelSortSelected === 'app_vol_desc') return b.appIntent - a.appIntent;
+        if (channelSortSelected === 'name_asc') return formatEntityName(a.ovseId).localeCompare(formatEntityName(b.ovseId));
+        return 0;
+      });
+
+      const countEl = document.getElementById('channelRecordCount');
+      if (countEl) countEl.innerText = `Showing ${filtered.length} of ${ovseList.length} entities`;
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="9" class="py-8 text-center text-slate-400">No entities matched your channel filter criteria.</td></tr>`;
+        return;
+      }
+
+      let html = '';
+      filtered.forEach(item => {
+        const appPct = parseFloat(item.appIntentPct);
+        const webPct = parseFloat(item.webIntentPct);
+        const qrPct = parseFloat(item.qrScanPct);
+
+        let dominantModality = 'App Intent';
+        let domBadgeColor = 'bg-indigo-100 text-indigo-800';
+
+        if (webPct >= appPct && webPct >= qrPct) {
+          dominantModality = 'Web Intent';
+          domBadgeColor = 'bg-emerald-100 text-emerald-800';
+        } else if (qrPct >= appPct && qrPct >= webPct) {
+          dominantModality = 'QR Scan';
+          domBadgeColor = 'bg-sky-100 text-sky-800';
+        }
+
+        html += `
+          <tr class="hover:bg-slate-50/80 transition">
+            <td class="py-3 px-3 font-semibold text-slate-900">${formatEntityName(item.ovseId)} <span class="text-[10px] text-slate-400 font-mono block">${item.ovseId}</span></td>
+            <td class="py-3 px-3 text-right font-bold text-slate-900">${Number(item.total).toLocaleString()}</td>
+            <td class="py-3 px-3 text-right text-slate-700">${Number(item.appIntent).toLocaleString()}</td>
+            <td class="py-3 px-3 text-right font-bold ${appPct > 50 ? 'text-indigo-600' : 'text-slate-500'}">${item.appIntentPct}%</td>
+            <td class="py-3 px-3 text-right text-slate-700">${Number(item.webIntent).toLocaleString()}</td>
+            <td class="py-3 px-3 text-right font-bold ${webPct > 30 ? 'text-emerald-600' : 'text-slate-500'}">${item.webIntentPct}%</td>
+            <td class="py-3 px-3 text-right text-slate-700">${Number(item.qrScan).toLocaleString()}</td>
+            <td class="py-3 px-3 text-right font-bold ${qrPct > 20 ? 'text-sky-600' : 'text-slate-500'}">${item.qrScanPct}%</td>
+            <td class="py-3 px-3 text-center">
+              <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold ${domBadgeColor}">${dominantModality}</span>
+            </td>
+          </tr>
+        `;
+      });
+      tbody.innerHTML = html;
+    }
+
+    // ==========================================
+    // EXTENDED CSV DOWNLOAD ENGINES
+    // ==========================================
+    function downloadErrorCodeAnalysisCSV() {
+      if (location.protocol.startsWith('http')) {
+        window.location.href = '/api/download/error-analysis';
+        return;
+      }
+      if (!currentData || !currentData.errors) {
+        alert("Error data not loaded.");
+        return;
+      }
+      const comp = currentData.errors.comparison || [];
+      const ovseErrors = currentData.errors.weekly?.ovseErrorList || [];
+
+      const headers = ['Error Code', 'Category', 'Description / Meaning', 'Weekly Failures', 'Weekly Failure Share %', 'Lifetime Failures', 'Lifetime Failure Share %', 'Trend Delta (%)'];
+      const rows = [
+        ['UIDAI OVSE ERROR CODE INTELLIGENCE - EXECUTIVE REPORT', '', '', '', '', '', '', ''],
+        ['Generated At', new Date().toLocaleString(), '', '', '', '', '', ''],
+        ['', '', '', '', '', '', '', ''],
+        headers,
+        ...comp.map(e => [
+          e.code, e.category, e.description, e.weeklyCount, `${e.weeklyPct}%`, e.overallCount, `${e.overallPct}%`, `${e.pctPointDelta >= 0 ? '+' : ''}${e.pctPointDelta}%`
+        ]),
+        ['', '', '', '', '', '', '', ''],
+        ['TOP OVSEs IMPACTED BY ERRORS (WEEKLY)', '', '', '', '', '', '', ''],
+        ['OVSE ID', 'Total Weekly Failures', 'Primary Error Code', 'Primary Error Count', 'Primary Error % of Failures', '', '', ''],
+        ...ovseErrors.map(ent => [
+          ent.ovseId, ent.totalErrors, ent.topErrorCode, ent.topErrorCount,
+          ent.totalErrors > 0 ? `${((ent.topErrorCount / ent.totalErrors) * 100).toFixed(1)}%` : '0%', '', '', ''
+        ])
+      ];
+      triggerCSVDownload(`OVSE_Error_Code_Analysis_${new Date().toISOString().slice(0, 10)}.csv`, rows);
+    }
+
+    function downloadChannelAnalysisCSV() {
+      if (location.protocol.startsWith('http')) {
+        window.location.href = '/api/download/channel-analysis';
+        return;
+      }
+      if (!currentData || !currentData.channels) {
+        alert("Channel data not loaded.");
+        return;
+      }
+      const comp = currentData.channels.comparison || [];
+      const ovseList = currentData.channels.weekly?.ovseList || [];
+
+      const headers = ['Channel Code', 'Channel Description', 'Weekly Volume', 'Weekly Share %', 'Overall Lifetime Volume', 'Overall Lifetime Share %', 'Adoption Delta (%)'];
+      const rows = [
+        ['OVSE DATA SHARING CHANNELS - EXECUTIVE ANALYSIS REPORT', '', '', '', '', '', ''],
+        ['Generated At', new Date().toLocaleString(), '', '', '', '', ''],
+        ['', '', '', '', '', '', ''],
+        headers,
+        ...comp.map(c => [
+          c.channel, c.displayName, c.weeklyCount, `${c.weeklyPct}%`, c.overallCount, `${c.overallPct}%`, `${c.pctPointDelta >= 0 ? '+' : ''}${c.pctPointDelta}%`
+        ]),
+        ['', '', '', '', '', '', ''],
+        ['TOP OVSEs BY CHANNEL USAGE (WEEKLY)', '', '', '', '', '', ''],
+        ['OVSE ID', 'Total Weekly Tx', 'App Intent Tx', 'App Intent Share %', 'Web Intent Tx', 'Web Intent Share %', 'QR Scan Tx', 'QR Scan Share %'],
+        ...ovseList.map(item => [
+          item.ovseId, item.total, item.appIntent, `${item.appIntentPct}%`, item.webIntent, `${item.webIntentPct}%`, item.qrScan, `${item.qrScanPct}%`
+        ])
+      ];
+      triggerCSVDownload(`OVSE_Sharing_Channels_Analysis_${new Date().toISOString().slice(0, 10)}.csv`, rows);
     }
   </script>
 </body>

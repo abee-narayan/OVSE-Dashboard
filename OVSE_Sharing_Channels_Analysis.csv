@@ -1,0 +1,25 @@
+OVSE DATA SHARING CHANNELS - EXECUTIVE ANALYSIS REPORT
+Generated At,"14/10/2026, 5:49:00 pm"
+,,,,,,
+Channel Code,Channel Description,Weekly Volume,Weekly Share %,Overall Lifetime Volume,Overall Lifetime Share %,Adoption Delta (%)
+APP_INTENT,App-to-App (App Intent),186985,93.01%,5990160,90.53%,+2.48%
+QR_SCAN,Cross-Device QR (QR Scan),4670,2.32%,590683,8.93%,-6.60%
+WEB_INTENT,Web-to-App (Web Intent),9381,4.67%,35937,0.54%,+4.12%
+,,,,,,
+TOP OVSEs BY CHANNEL USAGE (WEEKLY)
+OVSE ID,Total Weekly Tx,App Intent Tx,App Intent Share %,Web Intent Tx,Web Intent Share %,QR Scan Tx,QR Scan Share %
+SelectiveShare,151735,151735,100.0%,0,0.0%,0,0.0%
+urbancompany,21601,21601,100.0%,0,0.0%,0,0.0%
+gridlines,5375,2564,47.7%,2065,38.4%,746,13.9%
+urn:uidai:client:life-insurance-corporation-of-india:202606036260,4747,1546,32.6%,2643,55.7%,558,11.8%
+protean,3776,2,0.1%,3426,90.7%,348,9.2%
+urn:uidai:client:inferalgo-private-limited:202607177737,2540,1981,78.0%,452,17.8%,107,4.2%
+tnmc,2082,1385,66.5%,0,0.0%,697,33.5%
+procam,1718,1080,62.9%,0,0.0%,638,37.1%
+arattai,1640,1629,99.3%,0,0.0%,11,0.7%
+trustt,1083,300,27.7%,657,60.7%,126,11.6%
+dexit,1048,794,75.8%,0,0.0%,254,24.2%
+tspolice,913,700,76.7%,17,1.9%,196,21.5%
+urn:uidai:client:punjab-school-educationboard:202608274954,327,246,75.2%,0,0.0%,81,24.8%
+cisf,301,237,78.7%,0,0.0%,64,21.3%
+(Blank / Unknown),250,0,0.0%,0,0.0%,250,100.0%

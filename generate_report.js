@@ -82,23 +82,35 @@ function aggregate(rows) {
   };
 }
 
-// Automatically detect the newest files in directory
+// Automatically detect the newest transaction files by inspecting headers
 function findLatestFiles(dir) {
   const files = fs.readdirSync(dir);
   
-  const overallFiles = files
-    .filter(f => (f.startsWith('ovse_wise_transactions_count') || f.toLowerCase().includes('overall')) && f.endsWith('.csv'))
-    .map(f => ({ name: f, path: path.join(dir, f), time: fs.statSync(path.join(dir, f)).mtimeMs }))
+  const txFiles = files
+    .filter(f => f.endsWith('.csv') && !f.startsWith('OVSE_'))
+    .map(f => {
+      const p = path.join(dir, f);
+      try {
+        const firstLine = fs.readFileSync(p, 'utf-8').split(/\r?\n/)[0] || '';
+        return { name: f, path: p, time: fs.statSync(p).mtimeMs, header: firstLine };
+      } catch (e) {
+        return null;
+      }
+    })
+    .filter(Boolean)
+    .filter(f => f.header.includes('Auth Result')); // Only files with Auth Result column
+
+  const overallFiles = txFiles
+    .filter(f => f.name.startsWith('ovse_wise') || f.name.includes('duplicate') || f.name.toLowerCase().includes('overall'))
     .sort((a, b) => b.time - a.time);
 
-  const weeklyFiles = files
-    .filter(f => (f.startsWith('query_result') || f.toLowerCase().includes('week')) && f.endsWith('.csv'))
-    .map(f => ({ name: f, path: path.join(dir, f), time: fs.statSync(path.join(dir, f)).mtimeMs }))
+  const weeklyFiles = txFiles
+    .filter(f => f.name.startsWith('query_result') && !f.name.includes('duplicate'))
     .sort((a, b) => b.time - a.time);
 
   return {
-    overallFile: overallFiles.length > 0 ? overallFiles[0].path : null,
-    weeklyFile: weeklyFiles.length > 0 ? weeklyFiles[0].path : null,
+    overallFile: overallFiles.length > 0 ? overallFiles[0].path : (txFiles[0] ? txFiles[0].path : null),
+    weeklyFile: weeklyFiles.length > 0 ? weeklyFiles[0].path : (txFiles[1] ? txFiles[1].path : null),
   };
 }
 

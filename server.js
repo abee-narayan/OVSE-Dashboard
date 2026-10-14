@@ -6,6 +6,7 @@ const fs = require('fs');
 require('dotenv').config();
 
 const { aggregate, parseCSV } = require('./generate_report');
+const { validateCSVFormat } = require('./csv_validator');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -186,33 +187,102 @@ app.post('/api/upload', requireAuth, requireAdmin, upload.fields([
 ]), (req, res) => {
   try {
     if (!req.files || (!req.files.overallFile && !req.files.weeklyFile)) {
-      return res.status(400).json({ error: 'Please upload both Overall and Weekly CSV files.' });
+      return res.status(400).json({ error: 'Please upload at least one CSV file (Overall or Weekly).' });
     }
 
-    let overallContent, weeklyContent;
+    const datasetType = req.body.datasetType || 'transactions';
 
+    // Strictly validate CSV formats before processing
     if (req.files.overallFile) {
-      overallContent = req.files.overallFile[0].buffer.toString('utf-8');
-      // Save to disk with original filename or standard name
-      const overallName = `ovse_wise_transactions_count_${Date.now()}.csv`;
-      fs.writeFileSync(path.join(__dirname, overallName), overallContent, 'utf-8');
+      const overallContent = req.files.overallFile[0].buffer.toString('utf-8');
+      const val = validateCSVFormat(overallContent, datasetType, req.files.overallFile[0].originalname);
+      if (!val.valid) {
+        return res.status(400).json({ error: val.error });
+      }
     }
 
     if (req.files.weeklyFile) {
-      weeklyContent = req.files.weeklyFile[0].buffer.toString('utf-8');
-      const weeklyName = `query_result_${Date.now()}.csv`;
-      fs.writeFileSync(path.join(__dirname, weeklyName), weeklyContent, 'utf-8');
+      const weeklyContent = req.files.weeklyFile[0].buffer.toString('utf-8');
+      const val = validateCSVFormat(weeklyContent, datasetType, req.files.weeklyFile[0].originalname);
+      if (!val.valid) {
+        return res.status(400).json({ error: val.error });
+      }
     }
 
-    // Run the analysis engine to recompute everything
-    const { generateAnalysis } = require('./generate_report');
-    const computedData = generateAnalysis(__dirname);
+    let overallPath = null;
+    let weeklyPath = null;
 
-    return res.json({
-      success: true,
-      message: 'Datasets processed and dashboard updated successfully!',
-      data: computedData
-    });
+    if (req.files.overallFile) {
+      const overallContent = req.files.overallFile[0].buffer.toString('utf-8');
+      const overallName = `${datasetType}_overall_${Date.now()}.csv`;
+      overallPath = path.join(__dirname, overallName);
+      fs.writeFileSync(overallPath, overallContent, 'utf-8');
+    }
+
+    if (req.files.weeklyFile) {
+      const weeklyContent = req.files.weeklyFile[0].buffer.toString('utf-8');
+      const weeklyName = `${datasetType}_weekly_${Date.now()}.csv`;
+      weeklyPath = path.join(__dirname, weeklyName);
+      fs.writeFileSync(weeklyPath, weeklyContent, 'utf-8');
+    }
+
+    // Load master initial_data.json
+    const initialDataPath = path.join(__dirname, 'initial_data.json');
+    let currentMaster = {};
+    if (fs.existsSync(initialDataPath)) {
+      try {
+        currentMaster = JSON.parse(fs.readFileSync(initialDataPath, 'utf-8'));
+      } catch (e) {}
+    }
+
+    if (datasetType === 'errors') {
+      const { analyzeErrors } = require('./analytics_extended');
+      const defaultOverall = path.join(__dirname, 'query_result_2026-10-14T17_25_26.025521+05_30.csv');
+      const defaultWeekly = path.join(__dirname, 'query_result_2026-10-14T17_25_49.077416+05_30.csv');
+      const errorsResult = analyzeErrors(overallPath || defaultOverall, weeklyPath || defaultWeekly);
+      currentMaster.errors = errorsResult;
+      currentMaster.lastUpdatedLocal = new Date().toISOString();
+      fs.writeFileSync(initialDataPath, JSON.stringify(currentMaster, null, 2), 'utf-8');
+      fs.writeFileSync(path.join(__dirname, 'initial_data_bundle.js'), `// Auto-generated baseline master data for OVSE Executive Dashboard\nconst BUNDLED_DATA = ${JSON.stringify(currentMaster, null, 2)};\n`, 'utf-8');
+
+      return res.json({
+        success: true,
+        message: 'UIDAI Error datasets processed and Tab 2 updated successfully!',
+        data: currentMaster
+      });
+    } else if (datasetType === 'channels') {
+      const { analyzeChannels } = require('./analytics_extended');
+      const defaultOverall = path.join(__dirname, 'query_result_2026-10-14T16_40_50.390522+05_30.csv');
+      const defaultWeekly = path.join(__dirname, 'query_result_2026-10-14T16_41_07.437168+05_30.csv');
+      const channelsResult = analyzeChannels(overallPath || defaultOverall, weeklyPath || defaultWeekly);
+      currentMaster.channels = channelsResult;
+      currentMaster.lastUpdatedLocal = new Date().toISOString();
+      fs.writeFileSync(initialDataPath, JSON.stringify(currentMaster, null, 2), 'utf-8');
+      fs.writeFileSync(path.join(__dirname, 'initial_data_bundle.js'), `// Auto-generated baseline master data for OVSE Executive Dashboard\nconst BUNDLED_DATA = ${JSON.stringify(currentMaster, null, 2)};\n`, 'utf-8');
+
+      return res.json({
+        success: true,
+        message: 'Data sharing channels processed and Tab 3 updated successfully!',
+        data: currentMaster
+      });
+    } else {
+      // Default: transactions
+      const { generateAnalysis } = require('./generate_report');
+      const computedData = generateAnalysis(__dirname);
+      currentMaster = {
+        ...currentMaster,
+        ...computedData,
+        lastUpdatedLocal: new Date().toISOString()
+      };
+      fs.writeFileSync(initialDataPath, JSON.stringify(currentMaster, null, 2), 'utf-8');
+      fs.writeFileSync(path.join(__dirname, 'initial_data_bundle.js'), `// Auto-generated baseline master data for OVSE Executive Dashboard\nconst BUNDLED_DATA = ${JSON.stringify(currentMaster, null, 2)};\n`, 'utf-8');
+
+      return res.json({
+        success: true,
+        message: 'Transaction datasets processed and Page 1 updated successfully!',
+        data: currentMaster
+      });
+    }
   } catch (err) {
     console.error('Upload processing error:', err);
     return res.status(500).json({ error: 'Failed to process files: ' + err.message });
@@ -242,6 +312,22 @@ app.get('/api/download/new-entrants', requireAuth, (req, res) => {
     return res.download(filePath, 'OVSE_New_and_Surging_Entrants.csv');
   }
   res.status(404).send('New entrants list not generated yet.');
+});
+
+app.get('/api/download/error-analysis', requireAuth, (req, res) => {
+  const filePath = path.join(__dirname, 'OVSE_Error_Code_Analysis.csv');
+  if (fs.existsSync(filePath)) {
+    return res.download(filePath, 'OVSE_Error_Code_Analysis.csv');
+  }
+  res.status(404).send('Error analysis report not generated yet.');
+});
+
+app.get('/api/download/channel-analysis', requireAuth, (req, res) => {
+  const filePath = path.join(__dirname, 'OVSE_Sharing_Channels_Analysis.csv');
+  if (fs.existsSync(filePath)) {
+    return res.download(filePath, 'OVSE_Sharing_Channels_Analysis.csv');
+  }
+  res.status(404).send('Channel analysis report not generated yet.');
 });
 
 // Serve the Main Protected Dashboard at "/"
