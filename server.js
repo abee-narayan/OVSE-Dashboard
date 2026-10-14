@@ -57,6 +57,7 @@ app.get('/login', (req, res) => {
   if (req.session && req.session.user) {
     return res.redirect('/');
   }
+  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
   res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
 
@@ -213,6 +214,7 @@ app.get('/api/download/new-entrants', requireAuth, (req, res) => {
 
 // Serve the Main Protected Dashboard at "/"
 app.get('/', requireAuth, (req, res) => {
+  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
