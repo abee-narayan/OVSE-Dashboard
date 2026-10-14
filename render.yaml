@@ -12,5 +12,9 @@ services:
         value: admin
       - key: ADMIN_PASSWORD
         generateValue: false # Set your secure password in Render dashboard or specify here
+      - key: VIEWER_USERNAME
+        value: viewer
+      - key: VIEWER_PASSWORD
+        generateValue: false # Set your viewer password in Render dashboard or specify here
       - key: SESSION_SECRET
         generateValue: true

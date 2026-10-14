@@ -10,9 +10,15 @@ const { aggregate, parseCSV } = require('./generate_report');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Configurable Admin Credentials (overridable via Render Environment Variables)
+// Configurable Credentials (overridable via Render Environment Variables)
+// 1. Admin: Can view, download, and upload new data files
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'admin';
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'ovse2026!';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin2026!';
+
+// 2. User / Viewer: Can view and download data only (cannot upload)
+const VIEWER_USERNAME = process.env.VIEWER_USERNAME || process.env.USER_USERNAME || 'viewer';
+const VIEWER_PASSWORD = process.env.VIEWER_PASSWORD || process.env.USER_PASSWORD || 'viewer2026!';
+
 const SESSION_SECRET = process.env.SESSION_SECRET || 'ovse-secret-session-key-2026';
 
 // Middleware
@@ -35,17 +41,25 @@ const upload = multer({
   limits: { fileSize: 50 * 1024 * 1024 } // 50MB max file size
 });
 
-// Authentication middleware
+// Authentication middleware (any authenticated user)
 function requireAuth(req, res, next) {
   if (req.session && req.session.user) {
     return next();
   }
-  // If API request, return 401 Unauthorized
   if (req.path.startsWith('/api/')) {
     return res.status(401).json({ error: 'Unauthorized. Please log in.' });
   }
-  // Otherwise redirect to login page
   return res.redirect('/login');
+}
+
+// Role-based authorization middleware (Admin only for uploads)
+function requireAdmin(req, res, next) {
+  if (req.session && req.session.user && req.session.user.role === 'admin') {
+    return next();
+  }
+  return res.status(403).json({
+    error: 'Access Denied: Only Administrator accounts have permission to upload weekly data files.'
+  });
 }
 
 // -------------------------------------------------------------
@@ -61,7 +75,7 @@ app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
 
-// API Login
+// API Login with Role-Based Authentication
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
 
@@ -72,32 +86,63 @@ app.post('/api/login', (req, res) => {
   const cleanUser = username.trim().toLowerCase();
   const cleanPass = password.trim();
 
-  // Accept configured username/password, or default aliases: admin, ovse_dashboard, ovse-dashboard
-  const isUserValid = (
+  // 1. Check Administrator Access (Full Access + File Uploads)
+  const isAdminUser = (
     cleanUser === (ADMIN_USERNAME || 'admin').toLowerCase() ||
-    cleanUser === 'ovse_dashboard' ||
-    cleanUser === 'ovse-dashboard' ||
+    cleanUser === 'ovse_admin' ||
     cleanUser === 'admin'
   );
-
-  const isPassValid = (
+  const isAdminPass = (
     cleanPass === ADMIN_PASSWORD ||
-    cleanPass === 'ovse2026!' ||
-    cleanPass === 'OVSE_Dashboard' ||
-    cleanPass === 'admin123' ||
-    cleanPass === 'admin'
+    cleanPass === 'admin2026!' ||
+    cleanPass === 'ovse2026!'
   );
 
-  if (isUserValid && isPassValid) {
+  if (isAdminUser && isAdminPass) {
     req.session.user = {
       username: username.trim(),
-      role: 'Administrator',
+      role: 'admin',
+      displayName: 'Administrator (Upload & View)',
+      canUpload: true,
       loginTime: new Date().toISOString()
     };
     return res.json({
       success: true,
-      message: 'Login successful',
-      user: { username: req.session.user.username, role: req.session.user.role }
+      message: 'Admin login successful',
+      user: req.session.user
+    });
+  }
+
+  // 2. Check User / Viewer Access (View & Download Data Only)
+  const isViewerUser = (
+    cleanUser === (VIEWER_USERNAME || 'viewer').toLowerCase() ||
+    cleanUser === 'viewer' ||
+    cleanUser === 'user' ||
+    cleanUser === 'executive' ||
+    cleanUser === 'ovse_dashboard' ||
+    cleanUser === 'ovse-dashboard'
+  );
+  const isViewerPass = (
+    cleanPass === VIEWER_PASSWORD ||
+    cleanPass === 'viewer2026!' ||
+    cleanPass === 'user2026!' ||
+    cleanPass === 'ovse2026!' ||
+    cleanPass === 'viewer' ||
+    cleanPass === 'user'
+  );
+
+  if (isViewerUser && isViewerPass) {
+    req.session.user = {
+      username: username.trim(),
+      role: 'viewer',
+      displayName: 'User / Executive (View & Download)',
+      canUpload: false,
+      loginTime: new Date().toISOString()
+    };
+    return res.json({
+      success: true,
+      message: 'Viewer login successful',
+      user: req.session.user
     });
   }
 
@@ -147,8 +192,8 @@ app.get('/api/data', requireAuth, (req, res) => {
   return res.status(404).json({ error: 'No data file found.' });
 });
 
-// API: Upload New Weekly CSV Datasets
-app.post('/api/upload', requireAuth, upload.fields([
+// API: Upload New Weekly CSV Datasets (Strictly Admin Only)
+app.post('/api/upload', requireAuth, requireAdmin, upload.fields([
   { name: 'overallFile', maxCount: 1 },
   { name: 'weeklyFile', maxCount: 1 }
 ]), (req, res) => {

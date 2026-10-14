@@ -687,6 +687,8 @@
     let uploadedOverallContent = null;
     let uploadedWeeklyContent = null;
 
+    let currentUserRole = 'admin'; // default fallback for offline file://
+
     // Initialize application
     window.addEventListener('DOMContentLoaded', async () => {
       // 1. Check authentication status if running on a web server (e.g. Render)
@@ -698,11 +700,25 @@
             window.location.href = '/login';
             return;
           }
-          // Display user info in header
+          currentUserRole = authData.user.role || 'viewer';
+
+          // Display user info in header with Role Badge
           const authContainer = document.getElementById('authContainer');
           const headerUsername = document.getElementById('headerUsername');
+          const toggleUploadBtn = document.getElementById('toggleUploadBtn');
+          const uploadDrawer = document.getElementById('uploadDrawer');
+
           if (authContainer && headerUsername) {
-            headerUsername.innerText = authData.user.username;
+            if (currentUserRole === 'admin') {
+              headerUsername.innerHTML = `<span class="text-indigo-900 font-bold">${authData.user.username}</span> <span class="ml-1 text-[10px] px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700 font-bold border border-indigo-200">Admin</span>`;
+              if (toggleUploadBtn) toggleUploadBtn.classList.remove('hidden');
+            } else {
+              headerUsername.innerHTML = `<span class="text-slate-800 font-semibold">${authData.user.username}</span> <span class="ml-1 text-[10px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-semibold border border-slate-200">Viewer (Read-Only)</span>`;
+              // Strictly hide upload button and drawer for regular User/Viewer accounts
+              if (toggleUploadBtn) toggleUploadBtn.classList.add('hidden');
+              if (uploadDrawer) uploadDrawer.classList.add('hidden');
+            }
+
             authContainer.classList.remove('hidden');
             authContainer.classList.add('flex');
           }
@@ -745,6 +761,10 @@
     }
 
     function toggleUploadDrawer() {
+      if (currentUserRole !== 'admin') {
+        alert("Access Denied: Only Administrator accounts can upload data files. Your account has User/Viewer access (read-only).");
+        return;
+      }
       const drawer = document.getElementById('uploadDrawer');
       drawer.classList.toggle('hidden');
     }

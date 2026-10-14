@@ -6,13 +6,16 @@ Now configured with **Secure User Authentication (Username/Password)** and ready
 
 ---
 
-## 🔐 Default Login Credentials
+## 🔐 Access Roles & Credentials
 
-When launching locally or accessing the portal:
-- **Username:** `admin`
-- **Password:** `ovse2026!`
+The portal features built-in Role-Based Access Control (RBAC):
 
-*(You can customize these credentials in `.env` locally or via Render Environment Variables in the cloud).*
+| Access Role | Username | Password | Permissions |
+| :--- | :--- | :--- | :--- |
+| **1. Admin Access** | `admin` | `admin2026!` *(or `ovse2026!`)* | **Full Access:** View all dashboards, download CSV/PDF reports, and **upload weekly CSV datasets**. |
+| **2. User / Viewer Access** | `viewer` | `viewer2026!` | **Read-Only Access:** View all dashboards, charts, tables, and download reports. **Cannot upload data files** (upload button is hidden and backend endpoint is locked). |
+
+*(You can customize these usernames and passwords in `.env` locally or in the Render Environment Variables).*
 
 ---
 
