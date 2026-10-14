@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OVSE Transaction Intelligence & Executive Dashboard</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.98);
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      border-radius: 1rem;
+    }
+    .kpi-gradient-1 { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
+    .kpi-gradient-2 { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); }
+    .kpi-gradient-3 { background: linear-gradient(135deg, #059669 0%, #047857 100%); }
+    .kpi-gradient-4 { background: linear-gradient(135deg, #e11d48 0%, #be123c 100%); }
+    .kpi-gradient-5 { background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+    @media print {
+      .no-print { display: none !important; }
+      body { background-color: #fff !important; }
+      .glass-card { box-shadow: none !important; border: 1px solid #cbd5e1 !important; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Top Navigation & Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div class="flex items-center space-x-3.5">
+        <div class="w-11 h-11 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold text-xl shadow-md shadow-indigo-100">
+          <i data-lucide="shield-check" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-xl font-extrabold text-slate-900 tracking-tight">OVSE Transaction Intelligence Portal</h1>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span> Production Ready
+            </span>
+          </div>
+          <p class="text-xs text-slate-500 font-medium">Executive Analytics • Overall vs Last 1 Week Performance • Entity Tracking</p>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center flex-wrap gap-2.5 no-print">
+        <button id="toggleUploadBtn" onclick="toggleUploadDrawer()" class="inline-flex items-center px-3.5 py-2 rounded-lg text-xs font-semibold bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 transition">
+          <i data-lucide="upload-cloud" class="w-4 h-4 mr-1.5"></i>
+          <span>Weekly Data Ingestion</span>
+        </button>
+
+        <!-- Dropdown for CSV downloads -->
+        <div class="relative inline-block text-left" id="downloadMenuContainer">
+          <button onclick="toggleDownloadMenu()" class="inline-flex items-center px-3.5 py-2 rounded-lg text-xs font-semibold bg-slate-900 text-white hover:bg-slate-800 transition shadow-sm">
+            <i data-lucide="download" class="w-4 h-4 mr-1.5"></i>
+            <span>Export CSV Reports</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 ml-1.5"></i>
+          </button>
+          <div id="downloadDropdown" class="hidden absolute right-0 mt-2 w-64 rounded-xl shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-slate-100 z-50">
+            <div class="py-1">
+              <a href="javascript:void(0)" onclick="downloadExecutiveSummaryCSV()" class="group flex items-center px-4 py-2.5 text-xs text-slate-700 hover:bg-indigo-50 hover:text-indigo-900">
+                <i data-lucide="file-spreadsheet" class="w-4 h-4 mr-2.5 text-slate-400 group-hover:text-indigo-600"></i>
+                <div>
+                  <div class="font-semibold">Executive Summary (.csv)</div>
+                  <div class="text-[10px] text-slate-400">High-level KPIs & Top 5 for Email</div>
+                </div>
+              </a>
+              <a href="javascript:void(0)" onclick="downloadComparativeAnalysisCSV()" class="group flex items-center px-4 py-2.5 text-xs text-slate-700 hover:bg-indigo-50 hover:text-indigo-900">
+                <i data-lucide="table" class="w-4 h-4 mr-2.5 text-slate-400 group-hover:text-indigo-600"></i>
+                <div>
+                  <div class="font-semibold">Full Comparative Dataset (.csv)</div>
+                  <div class="text-[10px] text-slate-400">All 220+ OVSE entities with all stats</div>
+                </div>
+              </a>
+              <a href="javascript:void(0)" onclick="downloadNewEntrantsCSV()" class="group flex items-center px-4 py-2.5 text-xs text-slate-700 hover:bg-indigo-50 hover:text-indigo-900">
+                <i data-lucide="sparkles" class="w-4 h-4 mr-2.5 text-slate-400 group-hover:text-indigo-600"></i>
+                <div>
+                  <div class="font-semibold">New & Surging Entrants (.csv)</div>
+                  <div class="text-[10px] text-slate-400">Emerging & 100% new OVSEs</div>
+                </div>
+              </a>
+              <a href="javascript:void(0)" onclick="downloadHighFailureAlertsCSV()" class="group flex items-center px-4 py-2.5 text-xs text-slate-700 hover:bg-rose-50 hover:text-rose-900">
+                <i data-lucide="alert-triangle" class="w-4 h-4 mr-2.5 text-rose-500"></i>
+                <div>
+                  <div class="font-semibold text-rose-700">Failure Risk Alerts (.csv)</div>
+                  <div class="text-[10px] text-slate-400">Entities with high failure rate</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="window.print()" class="inline-flex items-center px-3 py-2 rounded-lg text-xs font-semibold bg-white text-slate-700 hover:bg-slate-50 border border-slate-300 transition shadow-sm">
+          <i data-lucide="printer" class="w-4 h-4 mr-1.5 text-slate-500"></i>
+          <span>Print / PDF</span>
+        </button>
+
+        <!-- Auth User Profile & Sign Out Button -->
+        <div id="authContainer" class="hidden items-center gap-2 pl-2 border-l border-slate-200">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span id="headerUsername">admin</span>
+          </div>
+          <button onclick="handleLogout()" title="Sign out of dashboard" class="inline-flex items-center px-2.5 py-1.5 rounded-lg text-xs font-semibold text-rose-700 bg-rose-50 hover:bg-rose-100 border border-rose-200 transition">
+            <i data-lucide="log-out" class="w-3.5 h-3.5 mr-1 text-rose-600"></i>
+            <span>Sign Out</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Weekly Ingestion Center Drawer / Panel -->
+  <section id="uploadDrawer" class="no-print bg-slate-900 text-white border-b border-slate-800 transition-all duration-300 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h2 class="text-base font-bold text-white flex items-center gap-2">
+            <i data-lucide="refresh-cw" class="w-4 h-4 text-indigo-400"></i>
+            Weekly Data Ingestion Center
+          </h2>
+          <p class="text-xs text-slate-400">Upload your two weekly CSV exports. The portal instantly recalculates all statistics, graphs, rankings, and downloadable CSVs on the fly.</p>
+        </div>
+        <button onclick="toggleUploadDrawer()" class="text-slate-400 hover:text-white text-xs px-2 py-1 rounded bg-slate-800 border border-slate-700">
+          Close Panel ✕
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Dropzone 1: Overall File -->
+        <div class="border-2 border-dashed border-slate-700 hover:border-indigo-500 rounded-xl p-4 bg-slate-800/60 transition cursor-pointer relative" onclick="document.getElementById('overallFileInput').click()">
+          <input type="file" id="overallFileInput" accept=".csv" class="hidden" onchange="handleFileSelected(event, 'overall')">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0">
+              <i data-lucide="database" class="w-5 h-5"></i>
+            </div>
+            <div class="overflow-hidden">
+              <div class="text-xs font-semibold text-slate-200">1. Overall Transactions Dataset (All Time)</div>
+              <div id="overallFileName" class="text-xs text-indigo-300 font-mono truncate mt-0.5">Current: ovse_wise_transactions_count___duplicate_...csv</div>
+              <div class="text-[10px] text-slate-400 mt-0.5">Click or drag & drop new file to replace</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dropzone 2: Weekly File -->
+        <div class="border-2 border-dashed border-slate-700 hover:border-sky-500 rounded-xl p-4 bg-slate-800/60 transition cursor-pointer relative" onclick="document.getElementById('weeklyFileInput').click()">
+          <input type="file" id="weeklyFileInput" accept=".csv" class="hidden" onchange="handleFileSelected(event, 'weekly')">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0">
+              <i data-lucide="calendar" class="w-5 h-5"></i>
+            </div>
+            <div class="overflow-hidden">
+              <div class="text-xs font-semibold text-slate-200">2. Last 1-Week Transactions Dataset (Weekly)</div>
+              <div id="weeklyFileName" class="text-xs text-sky-300 font-mono truncate mt-0.5">Current: query_result_2026-10-14...csv</div>
+              <div class="text-[10px] text-slate-400 mt-0.5">Click or drag & drop new file to replace</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 flex items-center justify-between pt-3 border-t border-slate-800">
+        <div class="text-xs text-slate-400 flex items-center gap-2">
+          <i data-lucide="info" class="w-3.5 h-3.5 text-indigo-400"></i>
+          <span>Supports any future weekly CSVs with columns: <code class="bg-slate-800 px-1.5 py-0.5 rounded text-indigo-300">Ovse ID, Auth Result, Count</code></span>
+        </div>
+        <div class="flex gap-2">
+          <button onclick="resetToInitialData()" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 transition">
+            Reset to Baseline Data
+          </button>
+          <button onclick="processUploadedFiles()" id="processBtn" class="px-4 py-1.5 rounded-lg text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-500 transition shadow-sm flex items-center gap-1.5">
+            <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+            Process & Update Dashboard
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Dashboard Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6 flex-1 w-full">
+
+    <!-- Active Reporting Period Banner -->
+    <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-2xl p-5 text-white shadow-md border border-slate-800 relative overflow-hidden">
+      <div class="absolute -right-8 -bottom-8 w-48 h-48 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
+        <div>
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 mb-2">
+            <i data-lucide="clock" class="w-3 h-3"></i>
+            <span id="dataTimestampBadge">Data Snapshot: Cumulative & Week ending October 14, 2026 (2:50 PM)</span>
+          </div>
+          <h2 class="text-xl font-bold tracking-tight text-white">Executive Performance & Quality Overview</h2>
+          <p class="text-xs text-slate-300 mt-1 max-w-2xl">
+            Comparison between all-time cumulative transaction volume and the last 7-day operational cycle across all registered Online Verification Service Entities (OVSE).
+          </p>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+          <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl px-4 py-2.5 text-center">
+            <div class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Weekly Volume Share</div>
+            <div id="bannerWeeklyShare" class="text-lg font-extrabold text-indigo-400">3.04%</div>
+            <div class="text-[10px] text-slate-400">of All-Time Volume</div>
+          </div>
+          <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl px-4 py-2.5 text-center">
+            <div class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Quality Trend</div>
+            <div id="bannerQualityDelta" class="text-lg font-extrabold text-emerald-400">+17.06%</div>
+            <div class="text-[10px] text-emerald-300/80">Success Rate Jump</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 Executive KPI Scorecards -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5">
+      <!-- KPI 1: Overall Transactions -->
+      <div class="glass-card p-4 hover:shadow-md transition">
+        <div class="flex items-center justify-between text-slate-500 mb-1">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Overall Volume</span>
+          <i data-lucide="layers" class="w-4 h-4 text-slate-400"></i>
+        </div>
+        <div id="kpiOverallTx" class="text-xl font-extrabold text-slate-900 tracking-tight">6,613,182</div>
+        <div class="text-[10px] text-slate-500 mt-1 flex items-center gap-1">
+          <span class="font-semibold text-slate-700" id="kpiOverallEntities">221</span> Total Entities
+        </div>
+      </div>
+
+      <!-- KPI 2: Last Week Transactions -->
+      <div class="glass-card p-4 hover:shadow-md transition border-l-4 border-l-indigo-500">
+        <div class="flex items-center justify-between text-indigo-600 mb-1">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-700">Last 1 Week Tx</span>
+          <i data-lucide="zap" class="w-4 h-4 text-indigo-500"></i>
+        </div>
+        <div id="kpiWeeklyTx" class="text-xl font-extrabold text-indigo-700 tracking-tight">201,036</div>
+        <div class="text-[10px] text-slate-500 mt-1 flex items-center gap-1">
+          <span class="font-semibold text-slate-700" id="kpiWeeklyEntities">82</span> Active Entities (37.1%)
+        </div>
+      </div>
+
+      <!-- KPI 3: Overall Success Rate -->
+      <div class="glass-card p-4 hover:shadow-md transition">
+        <div class="flex items-center justify-between text-slate-500 mb-1">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Overall Success</span>
+          <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i>
+        </div>
+        <div id="kpiOverallSuccessRate" class="text-xl font-extrabold text-slate-800 tracking-tight">72.49%</div>
+        <div class="text-[10px] text-slate-500 mt-1">
+          <span id="kpiOverallSuccessVol">4.79M</span> successful tx
+        </div>
+      </div>
+
+      <!-- KPI 4: Weekly Success Rate -->
+      <div class="glass-card p-4 hover:shadow-md transition border-l-4 border-l-emerald-500">
+        <div class="flex items-center justify-between text-emerald-600 mb-1">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-700">Weekly Success</span>
+          <i data-lucide="trending-up" class="w-4 h-4 text-emerald-500"></i>
+        </div>
+        <div id="kpiWeeklySuccessRate" class="text-xl font-extrabold text-emerald-600 tracking-tight">89.55%</div>
+        <div class="text-[10px] text-emerald-700 font-semibold mt-1 flex items-center">
+          <i data-lucide="arrow-up-right" class="w-3 h-3 mr-0.5"></i>
+          <span id="kpiSuccessDelta">+17.06% vs Lifetime</span>
+        </div>
+      </div>
+
+      <!-- KPI 5: Weekly Failure Rate -->
+      <div class="glass-card p-4 hover:shadow-md transition border-l-4 border-l-rose-500">
+        <div class="flex items-center justify-between text-rose-600 mb-1">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-rose-700">Weekly Failure</span>
+          <i data-lucide="alert-octagon" class="w-4 h-4 text-rose-500"></i>
+        </div>
+        <div id="kpiWeeklyFailureRate" class="text-xl font-extrabold text-rose-600 tracking-tight">10.45%</div>
+        <div class="text-[10px] text-slate-500 mt-1">
+          <span id="kpiWeeklyFailureVol">21,013</span> failed attempts
+        </div>
+      </div>
+
+      <!-- KPI 6: New & Surging Entities -->
+      <div class="glass-card p-4 hover:shadow-md transition border-l-4 border-l-purple-500">
+        <div class="flex items-center justify-between text-purple-600 mb-1">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-purple-700">New & Surging</span>
+          <i data-lucide="sparkles" class="w-4 h-4 text-purple-500"></i>
+        </div>
+        <div id="kpiNewSurgingCount" class="text-xl font-extrabold text-purple-700 tracking-tight">11</div>
+        <div class="text-[10px] text-purple-800 font-medium mt-1">
+          <span id="kpiBrandNewCount">2</span> brand new • <span id="kpiSurgingCount">9</span> surging
+        </div>
+      </div>
+    </div>
+
+    <!-- Pictographic Analytics: Charts Row 1 -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      
+      <!-- Top 5 Overall vs Weekly Comparison Bar Chart -->
+      <div class="lg:col-span-8 glass-card p-5">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-100 gap-2">
+          <div>
+            <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="bar-chart-3" class="w-4 h-4 text-indigo-600"></i>
+              Top 5 OVSEs: Overall vs Last 1 Week Transaction Comparison
+            </h3>
+            <p class="text-xs text-slate-500">Comparative transaction volume & success rates among leading entities</p>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="inline-flex items-center text-xs text-slate-600 font-medium">
+              <span class="w-3 h-3 rounded-sm bg-indigo-600 mr-1.5"></span> Last 1 Week
+            </span>
+            <span class="inline-flex items-center text-xs text-slate-600 font-medium ml-2">
+              <span class="w-3 h-3 rounded-sm bg-slate-300 mr-1.5"></span> Overall All-Time
+            </span>
+          </div>
+        </div>
+        <div class="mt-4 h-72">
+          <canvas id="top5ComparisonChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Success vs Failure Ratio (Donut Charts) -->
+      <div class="lg:col-span-4 glass-card p-5 flex flex-col justify-between">
+        <div class="pb-3 border-b border-slate-100">
+          <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+            <i data-lucide="pie-chart" class="w-4 h-4 text-indigo-600"></i>
+            Success vs Failure Quality Distribution
+          </h3>
+          <p class="text-xs text-slate-500">Drastic 17% reduction in failure rate in the past 7 days</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 my-auto py-2">
+          <div class="text-center">
+            <div class="text-xs font-bold text-slate-700 mb-1">Overall (Lifetime)</div>
+            <div class="h-36 relative flex items-center justify-center">
+              <canvas id="overallDonutChart"></canvas>
+            </div>
+            <div class="mt-2 text-xs font-semibold text-slate-600">
+              <span class="text-emerald-600">72.5% Y</span> / <span class="text-rose-500">27.5% N</span>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-xs font-bold text-indigo-800 mb-1">Last 1 Week</div>
+            <div class="h-36 relative flex items-center justify-center">
+              <canvas id="weeklyDonutChart"></canvas>
+            </div>
+            <div class="mt-2 text-xs font-bold text-indigo-700">
+              <span class="text-emerald-600">89.6% Y</span> / <span class="text-rose-500">10.5% N</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-slate-100 text-[11px] text-slate-500 bg-slate-50 rounded-lg p-2.5">
+          <span class="font-bold text-slate-700">Key Finding:</span> The weekly failure rate dropped from 27.5% to 10.5% primarily due to lower transaction volume from high-failure entity <code class="font-mono text-slate-800">tspolice</code> (which has a historical 71.3% failure rate).
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pictographic Analytics: Charts Row 2 -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+      <!-- Weekly Volume Distribution (Top Entities Share) -->
+      <div class="lg:col-span-6 glass-card p-5">
+        <div class="pb-3 border-b border-slate-100">
+          <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+            <i data-lucide="pie-chart" class="w-4 h-4 text-sky-600"></i>
+            Weekly Transaction Volume Distribution
+          </h3>
+          <p class="text-xs text-slate-500">Market share of top active OVSEs during the week ending Oct 14</p>
+        </div>
+        <div class="mt-4 h-64">
+          <canvas id="weeklyDistributionChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Failure Rate Risk Radar / Bar Chart -->
+      <div class="lg:col-span-6 glass-card p-5">
+        <div class="pb-3 border-b border-slate-100 flex items-center justify-between">
+          <div>
+            <h3 class="text-sm font-bold text-rose-700 flex items-center gap-2">
+              <i data-lucide="alert-triangle" class="w-4 h-4 text-rose-600"></i>
+              High Failure Rate Entities Spotlight (Weekly)
+            </h3>
+            <p class="text-xs text-slate-500">Active entities with highest failure rates requiring technical intervention</p>
+          </div>
+          <span class="text-[11px] font-semibold text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-100">Action Required</span>
+        </div>
+        <div class="mt-4 h-64">
+          <canvas id="failureRiskChart"></canvas>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Side-by-Side: Top 5 Overall vs Top 5 Last Week Tables -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+      <!-- Card: Top 5 OVSEs Overall -->
+      <div class="glass-card p-5">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+          <div>
+            <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+              Top 5 OVSEs (Overall All-Time)
+            </h3>
+            <p class="text-xs text-slate-500">Leading entities ranked by lifetime cumulative volume</p>
+          </div>
+          <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 text-slate-700">Cumulative</span>
+        </div>
+        <div class="mt-3 overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead>
+              <tr class="text-slate-400 border-b border-slate-100 uppercase tracking-wider text-[10px]">
+                <th class="py-2.5 px-2">Rank</th>
+                <th class="py-2.5 px-2">OVSE ID</th>
+                <th class="py-2.5 px-2 text-right">Total Tx</th>
+                <th class="py-2.5 px-2 text-right">Success %</th>
+                <th class="py-2.5 px-2 text-right">Failure %</th>
+              </tr>
+            </thead>
+            <tbody id="top5OverallTableBody" class="divide-y divide-slate-100">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Card: Top 5 OVSEs Last Week -->
+      <div class="glass-card p-5">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+          <div>
+            <h3 class="text-sm font-bold text-indigo-900 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
+              Top 5 OVSEs (Last 1 Week)
+            </h3>
+            <p class="text-xs text-slate-500">Ranked by weekly volume with rank trajectory</p>
+          </div>
+          <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200">Past 7 Days</span>
+        </div>
+        <div class="mt-3 overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead>
+              <tr class="text-slate-400 border-b border-slate-100 uppercase tracking-wider text-[10px]">
+                <th class="py-2.5 px-2">Rank</th>
+                <th class="py-2.5 px-2">OVSE ID</th>
+                <th class="py-2.5 px-2 text-right">Weekly Tx</th>
+                <th class="py-2.5 px-2 text-right">Success %</th>
+                <th class="py-2.5 px-2 text-center">Rank Shift</th>
+              </tr>
+            </thead>
+            <tbody id="top5WeeklyTableBody" class="divide-y divide-slate-100">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- New Entrants & High-Surge Entities Spotlight -->
+    <div class="glass-card p-5 border-l-4 border-l-purple-600">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-100 gap-2">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="p-1 rounded bg-purple-100 text-purple-700">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+            </span>
+            <h3 class="text-sm font-bold text-slate-900">New Entrants & Emerging OVSE Entities (Weekly Acceleration)</h3>
+          </div>
+          <p class="text-xs text-slate-500 mt-0.5">Identifies brand new entities (100% of volume this week) and high-growth adopters (&gt;35% of lifetime volume executed in last 7 days)</p>
+        </div>
+        <button onclick="downloadNewEntrantsCSV()" class="inline-flex items-center text-xs font-semibold px-3 py-1.5 rounded-lg bg-purple-50 text-purple-700 hover:bg-purple-100 border border-purple-200 transition">
+          <i data-lucide="download" class="w-3.5 h-3.5 mr-1.5"></i> Export New Entrants CSV
+        </button>
+      </div>
+
+      <div class="mt-3 overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead>
+            <tr class="text-slate-400 border-b border-slate-100 uppercase tracking-wider text-[10px]">
+              <th class="py-2.5 px-3">OVSE Entity ID</th>
+              <th class="py-2.5 px-2">Classification</th>
+              <th class="py-2.5 px-2 text-right">Weekly Tx</th>
+              <th class="py-2.5 px-2 text-right">Weekly Success %</th>
+              <th class="py-2.5 px-2 text-right">Weekly Failure %</th>
+              <th class="py-2.5 px-2 text-right">Overall Total Tx</th>
+              <th class="py-2.5 px-2 text-right">Weekly Share %</th>
+              <th class="py-2.5 px-2 text-center">Operational Status</th>
+            </tr>
+          </thead>
+          <tbody id="newEntrantsTableBody" class="divide-y divide-slate-100">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Senior Management Strategic Briefing Memo -->
+    <div class="glass-card p-6 bg-gradient-to-br from-white to-slate-50 border border-slate-200">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center font-bold">
+            <i data-lucide="file-text" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-slate-900">Executive Briefing for Senior Management</h3>
+            <p class="text-xs text-slate-500">Key operational takeaways and recommended action items</p>
+          </div>
+        </div>
+        <button onclick="downloadExecutiveSummaryCSV()" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white hover:bg-slate-800 transition shadow-sm">
+          <i data-lucide="mail" class="w-3.5 h-3.5 mr-1.5"></i> Copy / Download for Email
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 text-xs text-slate-700 leading-relaxed">
+        <div class="space-y-3">
+          <div class="p-3 bg-white rounded-xl border border-slate-200 shadow-sm">
+            <h4 class="font-bold text-slate-900 flex items-center gap-1.5 mb-1 text-xs">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              1. Drastic Quality Improvement (+17.06% Jump in Success Rate)
+            </h4>
+            <p class="text-slate-600">
+              The overall authentication success rate in the last week surged to <strong>89.55%</strong>, compared to the historical cumulative average of <strong>72.49%</strong>. This dramatic improvement is attributed to reduced traffic from high-failure government nodes (<code class="font-mono text-slate-700">tspolice</code>, which historically generated 1.6M failures at 71.3% failure rate, logged only 913 transactions this week).
+            </p>
+          </div>
+
+          <div class="p-3 bg-white rounded-xl border border-slate-200 shadow-sm">
+            <h4 class="font-bold text-slate-900 flex items-center gap-1.5 mb-1 text-xs">
+              <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+              2. Rapid Surge in Institutional Onboarding (LIC & Protean)
+            </h4>
+            <p class="text-slate-600">
+              <strong>Life Insurance Corporation of India (LIC)</strong> climbed to rank #4 weekly with <strong>4,747 transactions</strong>—representing <strong>50.8%</strong> of its entire lifetime transactions conducted in just the last 7 days. Similarly, <strong>Protean</strong> climbed to rank #5 weekly with 3,776 transactions (61.3% of lifetime volume), demonstrating aggressive production rollout.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <div class="p-3 bg-white rounded-xl border border-rose-200 shadow-sm bg-rose-50/30">
+            <h4 class="font-bold text-rose-900 flex items-center gap-1.5 mb-1 text-xs">
+              <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+              3. Critical Technical Alert: High Failure Rates Among Heavy Users
+            </h4>
+            <p class="text-slate-600">
+              Three top-volume entities exhibit concerning failure rates that require immediate technical outreach:
+              <br>• <strong>LIC</strong>: 51.57% failure rate (2,448 failed transactions)
+              <br>• <strong>Urban Company</strong>: 46.00% failure rate (9,937 failed transactions)
+              <br>• <strong>Gridlines</strong>: 48.89% failure rate (2,628 failed transactions)
+              <br>Combined, these three entities account for <strong>71.4% of all weekly system failures</strong>.
+            </p>
+          </div>
+
+          <div class="p-3 bg-white rounded-xl border border-slate-200 shadow-sm">
+            <h4 class="font-bold text-slate-900 flex items-center gap-1.5 mb-1 text-xs">
+              <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+              4. New Entrant Onboarding & Health
+            </h4>
+            <p class="text-slate-600">
+              Entities such as <strong>Punjab School Education Board</strong> (327 tx, 55% success) and <strong>Doklink Services</strong> (20 tx, 100% success) are demonstrating strong initial traction. Two new entities (<code class="font-mono text-slate-800">202609177828</code> and <code class="font-mono text-slate-800">null</code>) registered 100% failure rates on initial trial runs and should be contacted for sandbox verification.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Master OVSE Data Explorer (Search, Filter, Full Table) -->
+    <div class="glass-card p-5">
+      <div class="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-slate-100 gap-3">
+        <div>
+          <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+            <i data-lucide="database" class="w-4 h-4 text-indigo-600"></i>
+            Master OVSE Performance Explorer
+          </h3>
+          <p class="text-xs text-slate-500">Interactive directory of all 221 entities with side-by-side weekly and historical metrics</p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <!-- Search Input -->
+          <div class="relative">
+            <input type="text" id="searchInput" oninput="handleSearch(event)" placeholder="Search OVSE ID or name..." class="pl-8 pr-3 py-1.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 w-48 sm:w-64">
+            <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5"></i>
+          </div>
+
+          <!-- Category Filter -->
+          <select id="categoryFilter" onchange="handleCategoryFilter(event)" class="text-xs border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <option value="all">All Entities (221)</option>
+            <option value="active_weekly">Active This Week (82)</option>
+            <option value="top10">Top 10 Weekly</option>
+            <option value="new_surging">New & Surging Entrants</option>
+            <option value="high_failure">High Failure (&gt;40%)</option>
+            <option value="high_success">High Success (&gt;90%)</option>
+          </select>
+
+          <!-- Download Button -->
+          <button onclick="downloadComparativeAnalysisCSV()" class="inline-flex items-center text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-900 text-white hover:bg-slate-800 transition">
+            <i data-lucide="download" class="w-3.5 h-3.5 mr-1.5"></i> Export Table (CSV)
+          </button>
+        </div>
+      </div>
+
+      <!-- Table Container -->
+      <div class="mt-4 overflow-x-auto">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="bg-slate-50 text-slate-500 uppercase tracking-wider text-[10px] font-bold border-y border-slate-200">
+              <th class="py-3 px-3 cursor-pointer hover:bg-slate-100" onclick="sortTable('ovseId')">OVSE ID <i data-lucide="chevrons-up-down" class="inline w-3 h-3 text-slate-400"></i></th>
+              <th class="py-3 px-2">Category</th>
+              <th class="py-3 px-2 text-right cursor-pointer hover:bg-slate-100" onclick="sortTable('weeklyRank')">Weekly Rank</th>
+              <th class="py-3 px-2 text-right cursor-pointer hover:bg-slate-100" onclick="sortTable('weeklyTotal')">Weekly Tx <i data-lucide="chevrons-up-down" class="inline w-3 h-3 text-slate-400"></i></th>
+              <th class="py-3 px-2 text-right">Weekly Success</th>
+              <th class="py-3 px-2 text-right">Weekly Failure</th>
+              <th class="py-3 px-2 text-right cursor-pointer hover:bg-slate-100" onclick="sortTable('weeklySuccessRate')">Weekly Success %</th>
+              <th class="py-3 px-2 text-right cursor-pointer hover:bg-slate-100" onclick="sortTable('overallTotal')">Lifetime Tx</th>
+              <th class="py-3 px-2 text-right">Lifetime Success %</th>
+              <th class="py-3 px-2 text-right cursor-pointer hover:bg-slate-100" onclick="sortTable('weeklyShareOfOverallPct')">Weekly Share %</th>
+            </tr>
+          </thead>
+          <tbody id="masterTableBody" class="divide-y divide-slate-100 font-normal">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination / Count Footer -->
+      <div class="mt-4 pt-3 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-slate-500 gap-2">
+        <div id="tableRecordCount">Showing 1 to 25 of 221 entities</div>
+        <div class="flex items-center space-x-1.5" id="paginationControls">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500 mt-12 no-print">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div class="flex items-center space-x-2">
+        <span class="font-bold text-slate-800">OVSE Transaction Intelligence System</span>
+        <span>•</span>
+        <span>Automated Weekly Reporting Engine</span>
+      </div>
+      <div>Designed for UIDAI OVSE Monitoring & Senior Management Reporting</div>
+    </div>
+  </footer>
+
+  <!-- Inline Base Data Script (Extracted from initial_data.json) -->
+  <script src="initial_data_bundle.js"></script>
+
+  <!-- Dashboard Controller Script -->
+  <script>
+    // State management
+    let currentData = null;
+    let filteredList = [];
+    let currentPage = 1;
+    const pageSize = 20;
+    let currentSort = { column: 'weeklyTotal', asc: false };
+    let searchQuery = '';
+    let categoryFilter = 'all';
+
+    // Chart instances
+    let top5ChartInstance = null;
+    let overallDonutInstance = null;
+    let weeklyDonutInstance = null;
+    let distributionChartInstance = null;
+    let failureRiskChartInstance = null;
+
+    // File objects and text storage
+    let uploadedOverallFile = null;
+    let uploadedWeeklyFile = null;
+    let uploadedOverallContent = null;
+    let uploadedWeeklyContent = null;
+
+    // Initialize application
+    window.addEventListener('DOMContentLoaded', async () => {
+      // 1. Check authentication status if running on a web server (e.g. Render)
+      if (location.protocol.startsWith('http')) {
+        try {
+          const authRes = await fetch('/api/auth-check');
+          const authData = await authRes.json();
+          if (!authData.authenticated) {
+            window.location.href = '/login';
+            return;
+          }
+          // Display user info in header
+          const authContainer = document.getElementById('authContainer');
+          const headerUsername = document.getElementById('headerUsername');
+          if (authContainer && headerUsername) {
+            headerUsername.innerText = authData.user.username;
+            authContainer.classList.remove('hidden');
+            authContainer.classList.add('flex');
+          }
+        } catch (e) {
+          console.warn('Auth check skipped (offline or static mode)');
+        }
+      }
+
+      // 2. Fetch latest data from server or bundled baseline
+      if (location.protocol.startsWith('http')) {
+        try {
+          const dataRes = await fetch('/api/data');
+          if (dataRes.ok) {
+            const jsonRes = await dataRes.json();
+            if (jsonRes.data) {
+              currentData = jsonRes.data;
+            }
+          }
+        } catch (e) {
+          console.warn('Could not fetch /api/data, falling back to bundled data');
+        }
+      }
+
+      if (!currentData && typeof BUNDLED_DATA !== 'undefined') {
+        currentData = BUNDLED_DATA;
+      }
+
+      renderDashboard();
+      lucide.createIcons();
+    });
+
+    // Sign out function
+    async function handleLogout() {
+      if (confirm("Are you sure you want to sign out of the OVSE Dashboard?")) {
+        try {
+          await fetch('/api/logout', { method: 'POST' });
+        } catch (e) {}
+        window.location.href = '/login';
+      }
+    }
+
+    function toggleUploadDrawer() {
+      const drawer = document.getElementById('uploadDrawer');
+      drawer.classList.toggle('hidden');
+    }
+
+    function toggleDownloadMenu() {
+      const menu = document.getElementById('downloadDropdown');
+      menu.classList.toggle('hidden');
+    }
+
+    // Close download dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      const container = document.getElementById('downloadMenuContainer');
+      if (container && !container.contains(e.target)) {
+        document.getElementById('downloadDropdown').classList.add('hidden');
+      }
+    });
+
+    // File selection handler
+    function handleFileSelected(event, type) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      if (type === 'overall') {
+        uploadedOverallFile = file;
+      } else {
+        uploadedWeeklyFile = file;
+      }
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const text = e.target.result;
+        if (type === 'overall') {
+          uploadedOverallContent = text;
+          document.getElementById('overallFileName').innerText = `Selected: ${file.name} (${(file.size/1024).toFixed(1)} KB)`;
+          document.getElementById('overallFileName').classList.add('text-emerald-400');
+        } else {
+          uploadedWeeklyContent = text;
+          document.getElementById('weeklyFileName').innerText = `Selected: ${file.name} (${(file.size/1024).toFixed(1)} KB)`;
+          document.getElementById('weeklyFileName').classList.add('text-emerald-400');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    // CSV Parser in JS
+    function parseCSVText(content) {
+      const lines = content.split(/\r?\n/).filter(line => line.trim().length > 0);
+      const rows = [];
+      for (let i = 1; i < lines.length; i++) {
+        const line = lines[i];
+        const row = [];
+        let cur = '';
+        let inQuotes = false;
+        for (let c = 0; c < line.length; c++) {
+          const ch = line[c];
+          if (ch === '"') {
+            inQuotes = !inQuotes;
+          } else if (ch === ',' && !inQuotes) {
+            row.push(cur.trim());
+            cur = '';
+          } else {
+            cur += ch;
+          }
+        }
+        row.push(cur.trim());
+        if (row.length >= 3) {
+          let ovseId = row[0].replace(/^"|"$/g, '').trim();
+          let authResult = row[1].replace(/^"|"$/g, '').trim().toLowerCase();
+          let countStr = row[2].replace(/^"|"$/g, '').replace(/,/g, '').trim();
+          let count = parseInt(countStr, 10) || 0;
+          rows.push({ ovseId: ovseId || '(Blank / Unknown)', authResult, count });
+        }
+      }
+      return rows;
+    }
+
+    function aggregateData(rows) {
+      const map = new Map();
+      let totalSuccess = 0;
+      let totalFailure = 0;
+      let totalTx = 0;
+
+      for (const r of rows) {
+        if (!map.has(r.ovseId)) {
+          map.set(r.ovseId, { ovseId: r.ovseId, success: 0, failure: 0, total: 0 });
+        }
+        const item = map.get(r.ovseId);
+        if (r.authResult === 'y') {
+          item.success += r.count;
+          totalSuccess += r.count;
+        } else if (r.authResult === 'n') {
+          item.failure += r.count;
+          totalFailure += r.count;
+        }
+        item.total += r.count;
+        totalTx += r.count;
+      }
+
+      const list = Array.from(map.values()).map(item => ({
+        ...item,
+        successRate: item.total > 0 ? (item.success / item.total) * 100 : 0,
+        failureRate: item.total > 0 ? (item.failure / item.total) * 100 : 0,
+      }));
+
+      list.sort((a, b) => b.total - a.total);
+      list.forEach((item, idx) => { item.rank = idx + 1; });
+
+      return {
+        totalTx,
+        totalSuccess,
+        totalFailure,
+        successRate: totalTx > 0 ? (totalSuccess / totalTx) * 100 : 0,
+        failureRate: totalTx > 0 ? (totalFailure / totalTx) * 100 : 0,
+        uniqueCount: map.size,
+        list,
+        map,
+        top5: list.slice(0, 5),
+        top10: list.slice(0, 10)
+      };
+    }
+
+    async function processUploadedFiles() {
+      if (!uploadedOverallContent && !uploadedWeeklyContent && !uploadedOverallFile && !uploadedWeeklyFile) {
+        alert("Please select at least one CSV file (Overall or Weekly).");
+        return;
+      }
+
+      // If running on Render or Node.js server, upload directly to the server backend!
+      if (location.protocol.startsWith('http') && (uploadedOverallFile || uploadedWeeklyFile)) {
+        const processBtn = document.getElementById('processBtn');
+        const origHtml = processBtn.innerHTML;
+        processBtn.innerHTML = 'Syncing to Server...';
+        processBtn.disabled = true;
+
+        try {
+          const formData = new FormData();
+          if (uploadedOverallFile) formData.append('overallFile', uploadedOverallFile);
+          if (uploadedWeeklyFile) formData.append('weeklyFile', uploadedWeeklyFile);
+
+          const uploadRes = await fetch('/api/upload', {
+            method: 'POST',
+            body: formData
+          });
+
+          const uploadJson = await uploadRes.json();
+          if (uploadRes.ok && uploadJson.success) {
+            currentData = uploadJson.data;
+            renderDashboard();
+            alert("✓ Success! Datasets uploaded and recomputed on the server!");
+            toggleUploadDrawer();
+            processBtn.innerHTML = origHtml;
+            processBtn.disabled = false;
+            return;
+          } else {
+            console.warn("Server responded with error:", uploadJson.error);
+          }
+        } catch (serverErr) {
+          console.warn("Server upload encountered an issue, falling back to in-browser parsing:", serverErr);
+        } finally {
+          processBtn.innerHTML = origHtml;
+          processBtn.disabled = false;
+        }
+      }
+
+      try {
+        let overallRows, weeklyRows;
+        
+        if (uploadedOverallContent) {
+          overallRows = parseCSVText(uploadedOverallContent);
+        } else {
+          alert("Note: Keeping existing baseline Overall dataset and updating Weekly dataset.");
+          // Re-synthesize from current
+        }
+
+        if (uploadedWeeklyContent) {
+          weeklyRows = parseCSVText(uploadedWeeklyContent);
+        }
+
+        if (uploadedOverallContent && uploadedWeeklyContent) {
+          const overall = aggregateData(overallRows);
+          const weekly = aggregateData(weeklyRows);
+
+          const ovseRanksOverall = new Map();
+          overall.list.forEach(item => ovseRanksOverall.set(item.ovseId, item.rank));
+
+          const allOvseIds = new Set([...overall.map.keys(), ...weekly.map.keys()]);
+          const comparisonList = [];
+
+          for (const id of allOvseIds) {
+            const o = overall.map.get(id) || { success: 0, failure: 0, total: 0 };
+            const w = weekly.map.get(id) || { success: 0, failure: 0, total: 0, rank: 'N/A' };
+            const oRank = ovseRanksOverall.get(id) || 'Unranked';
+            const wRank = w.rank || 'Inactive';
+
+            const weeklyShareOfOverall = o.total > 0 ? (w.total / o.total) * 100 : (w.total > 0 ? 100 : 0);
+            const isBrandNew = w.total > 0 && (o.total === w.total || !overall.map.has(id));
+            const isHighGrowth = !isBrandNew && weeklyShareOfOverall >= 35 && w.total >= 10;
+            const isInactive = w.total === 0;
+
+            let status = 'Standard';
+            if (isBrandNew) status = 'New Entrant';
+            else if (isHighGrowth) status = 'Surging / High Growth';
+            else if (isInactive) status = 'Inactive This Week';
+
+            comparisonList.push({
+              ovseId: id,
+              status,
+              weeklyRank: wRank,
+              weeklyTotal: w.total,
+              weeklySuccess: w.success,
+              weeklyFailure: w.failure,
+              weeklySuccessRate: w.total > 0 ? ((w.success / w.total) * 100).toFixed(2) : '0.00',
+              weeklyFailureRate: w.total > 0 ? ((w.failure / w.total) * 100).toFixed(2) : '0.00',
+              overallRank: oRank,
+              overallTotal: o.total,
+              overallSuccess: o.success,
+              overallFailure: o.failure,
+              overallSuccessRate: o.total > 0 ? ((o.success / o.total) * 100).toFixed(2) : '0.00',
+              overallFailureRate: o.total > 0 ? ((o.failure / o.total) * 100).toFixed(2) : '0.00',
+              weeklyShareOfOverallPct: weeklyShareOfOverall.toFixed(2)
+            });
+          }
+
+          comparisonList.sort((a, b) => b.weeklyTotal - a.weeklyTotal || b.overallTotal - a.overallTotal);
+
+          const newAndEmerging = comparisonList.filter(c => c.status === 'New Entrant' || c.status === 'Surging / High Growth');
+
+          currentData = {
+            metadata: {
+              generatedAt: new Date().toISOString(),
+              reportingCutoff: 'Custom Ingested File: ' + new Date().toLocaleDateString()
+            },
+            overall,
+            weekly,
+            comparison: comparisonList,
+            newAndEmerging
+          };
+
+          renderDashboard();
+          alert("Dashboard successfully updated with your uploaded weekly files!");
+          toggleUploadDrawer();
+        } else {
+          alert("Please upload BOTH files (Overall & Weekly) to recompute full metrics.");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Error processing CSV files: " + err.message);
+      }
+    }
+
+    function resetToInitialData() {
+      if (typeof BUNDLED_DATA !== 'undefined') {
+        currentData = BUNDLED_DATA;
+        uploadedOverallContent = null;
+        uploadedWeeklyContent = null;
+        document.getElementById('overallFileName').innerText = "Default: ovse_wise_transactions_count___duplicate_...csv";
+        document.getElementById('overallFileName').classList.remove('text-emerald-400');
+        document.getElementById('weeklyFileName').innerText = "Default: query_result_2026-10-14...csv";
+        document.getElementById('weeklyFileName').classList.remove('text-emerald-400');
+        renderDashboard();
+        alert("Reset to October 14, 2026 baseline data.");
+      }
+    }
+
+    // Render entire dashboard
+    function renderDashboard() {
+      if (!currentData) return;
+
+      const { overall, weekly, comparison, newAndEmerging } = currentData;
+
+      // Update KPI text values
+      document.getElementById('kpiOverallTx').innerText = Number(overall.totalTx).toLocaleString();
+      document.getElementById('kpiOverallEntities').innerText = overall.uniqueCount;
+      document.getElementById('kpiWeeklyTx').innerText = Number(weekly.totalTx).toLocaleString();
+      document.getElementById('kpiWeeklyEntities').innerText = weekly.uniqueCount;
+      
+      document.getElementById('kpiOverallSuccessRate').innerText = Number(overall.successRate).toFixed(2) + '%';
+      document.getElementById('kpiOverallSuccessVol').innerText = (overall.totalSuccess / 1000000).toFixed(2) + 'M';
+
+      document.getElementById('kpiWeeklySuccessRate').innerText = Number(weekly.successRate).toFixed(2) + '%';
+      const delta = weekly.successRate - overall.successRate;
+      document.getElementById('kpiSuccessDelta').innerText = (delta >= 0 ? '+' : '') + delta.toFixed(2) + '% vs Lifetime';
+
+      document.getElementById('kpiWeeklyFailureRate').innerText = Number(weekly.failureRate).toFixed(2) + '%';
+      document.getElementById('kpiWeeklyFailureVol').innerText = Number(weekly.totalFailure).toLocaleString();
+
+      const brandNewList = comparison.filter(c => c.status === 'New Entrant');
+      const surgingList = comparison.filter(c => c.status === 'Surging / High Growth');
+      document.getElementById('kpiNewSurgingCount').innerText = brandNewList.length + surgingList.length;
+      document.getElementById('kpiBrandNewCount').innerText = brandNewList.length;
+      document.getElementById('kpiSurgingCount').innerText = surgingList.length;
+
+      // Banner stats
+      const weeklySharePct = ((weekly.totalTx / overall.totalTx) * 100).toFixed(2) + '%';
+      document.getElementById('bannerWeeklyShare').innerText = weeklySharePct;
+      document.getElementById('bannerQualityDelta').innerText = (delta >= 0 ? '+' : '') + delta.toFixed(2) + '%';
+
+      // Render Charts
+      renderCharts();
+
+      // Render Tables
+      renderTop5Tables();
+      renderNewEntrantsTable();
+      applyFiltersAndRenderMasterTable();
+
+      lucide.createIcons();
+    }
+
+    // Chart.js Rendering
+    function renderCharts() {
+      const { overall, weekly, comparison } = currentData;
+
+      // 1. Top 5 Comparison Chart (Weekly vs Overall for Top 5 weekly)
+      const ctxTop5 = document.getElementById('top5ComparisonChart').getContext('2d');
+      if (top5ChartInstance) top5ChartInstance.destroy();
+
+      const top5Weekly = weekly.top5 || [];
+      const labels = top5Weekly.map(item => {
+        let name = item.ovseId;
+        if (name.includes('life-insurance-corporation')) return 'LIC of India';
+        if (name.length > 18) return name.substring(0, 16) + '...';
+        return name;
+      });
+
+      const weeklyCounts = top5Weekly.map(i => i.total);
+      const overallCounts = top5Weekly.map(i => {
+        const o = currentData.comparison.find(c => c.ovseId === i.ovseId);
+        return o ? o.overallTotal : i.total;
+      });
+
+      top5ChartInstance = new Chart(ctxTop5, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Last 1 Week Volume',
+              data: weeklyCounts,
+              backgroundColor: '#4f46e5',
+              borderRadius: 6,
+              barThickness: 24
+            },
+            {
+              label: 'Overall All-Time Volume',
+              data: overallCounts,
+              backgroundColor: '#cbd5e1',
+              borderRadius: 6,
+              barThickness: 24
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              type: 'logarithmic',
+              title: { display: true, text: 'Transactions (Log Scale)', font: { size: 10 } },
+              grid: { color: '#f1f5f9' },
+              ticks: {
+                callback: function(value) {
+                  if (value === 10 || value === 100 || value === 1000 || value === 10000 || value === 100000 || value === 1000000) {
+                    return Number(value).toLocaleString();
+                  }
+                  return null;
+                }
+              }
+            },
+            x: {
+              grid: { display: false }
+            }
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return ` ${context.dataset.label}: ${Number(context.raw).toLocaleString()} tx`;
+                }
+              }
+            }
+          }
+        }
+      });
+
+      // 2. Overall Success/Failure Donut
+      const ctxOverallDonut = document.getElementById('overallDonutChart').getContext('2d');
+      if (overallDonutInstance) overallDonutInstance.destroy();
+      overallDonutInstance = new Chart(ctxOverallDonut, {
+        type: 'doughnut',
+        data: {
+          labels: ['Success', 'Failure'],
+          datasets: [{
+            data: [overall.totalSuccess, overall.totalFailure],
+            backgroundColor: ['#10b981', '#f43f5e'],
+            borderWidth: 2,
+            borderColor: '#ffffff'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '72%',
+          plugins: { legend: { display: false } }
+        }
+      });
+
+      // 3. Weekly Success/Failure Donut
+      const ctxWeeklyDonut = document.getElementById('weeklyDonutChart').getContext('2d');
+      if (weeklyDonutInstance) weeklyDonutInstance.destroy();
+      weeklyDonutInstance = new Chart(ctxWeeklyDonut, {
+        type: 'doughnut',
+        data: {
+          labels: ['Success', 'Failure'],
+          datasets: [{
+            data: [weekly.totalSuccess, weekly.totalFailure],
+            backgroundColor: ['#10b981', '#f43f5e'],
+            borderWidth: 2,
+            borderColor: '#ffffff'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '72%',
+          plugins: { legend: { display: false } }
+        }
+      });
+
+      // 4. Weekly Volume Distribution (Top 5 + Others)
+      const ctxDist = document.getElementById('weeklyDistributionChart').getContext('2d');
+      if (distributionChartInstance) distributionChartInstance.destroy();
+
+      const top5WeeklyTotal = top5Weekly.reduce((sum, item) => sum + item.total, 0);
+      const othersWeeklyTotal = weekly.totalTx - top5WeeklyTotal;
+
+      const distLabels = top5Weekly.map(item => {
+        if (item.ovseId.includes('life-insurance')) return 'LIC of India';
+        return item.ovseId;
+      });
+      distLabels.push('Other 77 Entities');
+
+      const distData = top5Weekly.map(i => i.total);
+      distData.push(othersWeeklyTotal);
+
+      distributionChartInstance = new Chart(ctxDist, {
+        type: 'pie',
+        data: {
+          labels: distLabels,
+          datasets: [{
+            data: distData,
+            backgroundColor: ['#4f46e5', '#06b6d4', '#10b981', '#f59e0b', '#8b5cf6', '#94a3b8'],
+            borderWidth: 2,
+            borderColor: '#ffffff'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'right',
+              labels: { boxWidth: 12, font: { size: 10 } }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  const val = context.raw;
+                  const pct = ((val / weekly.totalTx) * 100).toFixed(1);
+                  return ` ${context.label}: ${Number(val).toLocaleString()} tx (${pct}%)`;
+                }
+              }
+            }
+          }
+        }
+      });
+
+      // 5. Failure Rate Risk Chart (Weekly active entities with significant failure)
+      const ctxRisk = document.getElementById('failureRiskChart').getContext('2d');
+      if (failureRiskChartInstance) failureRiskChartInstance.destroy();
+
+      const highRisk = comparison
+        .filter(c => c.weeklyTotal >= 10 && Number(c.weeklyFailureRate) >= 30)
+        .sort((a, b) => Number(b.weeklyFailureRate) - Number(a.weeklyFailureRate))
+        .slice(0, 6);
+
+      const riskLabels = highRisk.map(c => {
+        let name = c.ovseId;
+        if (name.includes('life-insurance-corporation')) return 'LIC of India';
+        if (name.includes('tadoba-andhari')) return 'Tadoba Tiger Reserve';
+        if (name.includes('punjab-school')) return 'Punjab School Board';
+        if (name.includes('gujarat-co-operative')) return 'Amul / GCMMF';
+        return name.length > 20 ? name.substring(0, 18) + '..' : name;
+      });
+
+      const riskRates = highRisk.map(c => Number(c.weeklyFailureRate));
+
+      failureRiskChartInstance = new Chart(ctxRisk, {
+        type: 'bar',
+        data: {
+          labels: riskLabels,
+          datasets: [{
+            label: 'Failure Rate %',
+            data: riskRates,
+            backgroundColor: '#f43f5e',
+            borderRadius: 6,
+            barThickness: 20
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              max: 100,
+              title: { display: true, text: 'Failure Percentage (%)', font: { size: 10 } },
+              grid: { color: '#f1f5f9' }
+            },
+            y: { grid: { display: false } }
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: function(c) {
+                  return ` Failure Rate: ${c.raw.toFixed(1)}%`;
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // Top 5 Tables
+    function renderTop5Tables() {
+      const { overall, weekly, comparison } = currentData;
+
+      // Top 5 Overall
+      const oBody = document.getElementById('top5OverallTableBody');
+      oBody.innerHTML = overall.top5.map((item, idx) => `
+        <tr class="hover:bg-slate-50 transition">
+          <td class="py-2.5 px-2 font-bold text-slate-700">#${idx + 1}</td>
+          <td class="py-2.5 px-2 font-medium text-slate-900 truncate max-w-[150px]" title="${item.ovseId}">${formatEntityName(item.ovseId)}</td>
+          <td class="py-2.5 px-2 text-right font-semibold text-slate-800">${Number(item.total).toLocaleString()}</td>
+          <td class="py-2.5 px-2 text-right text-emerald-600 font-semibold">${item.successRate.toFixed(2)}%</td>
+          <td class="py-2.5 px-2 text-right text-rose-500 font-semibold">${item.failureRate.toFixed(2)}%</td>
+        </tr>
+      `).join('');
+
+      // Top 5 Weekly
+      const wBody = document.getElementById('top5WeeklyTableBody');
+      wBody.innerHTML = weekly.top5.map((item, idx) => {
+        const comp = comparison.find(c => c.ovseId === item.ovseId);
+        const oRank = comp ? comp.overallRank : 'New';
+        let badge = '';
+        if (oRank === 'Unranked' || oRank === 'New') {
+          badge = '<span class="text-[10px] font-bold text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded">NEW</span>';
+        } else if (oRank > (idx + 1)) {
+          const shift = oRank - (idx + 1);
+          badge = `<span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded flex items-center justify-center gap-0.5">↑ +${shift}</span>`;
+        } else if (oRank === (idx + 1)) {
+          badge = '<span class="text-[10px] font-bold text-slate-400">— Stable</span>';
+        } else {
+          const shift = (idx + 1) - oRank;
+          badge = `<span class="text-[10px] font-bold text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded flex items-center justify-center gap-0.5">↓ -${shift}</span>`;
+        }
+
+        return `
+          <tr class="hover:bg-indigo-50/40 transition">
+            <td class="py-2.5 px-2 font-bold text-indigo-700">#${idx + 1}</td>
+            <td class="py-2.5 px-2 font-medium text-slate-900 truncate max-w-[150px]" title="${item.ovseId}">${formatEntityName(item.ovseId)}</td>
+            <td class="py-2.5 px-2 text-right font-bold text-indigo-900">${Number(item.total).toLocaleString()}</td>
+            <td class="py-2.5 px-2 text-right text-emerald-600 font-semibold">${item.successRate.toFixed(2)}%</td>
+            <td class="py-2.5 px-2 text-center">${badge}</td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // New Entrants & Surging Table
+    function renderNewEntrantsTable() {
+      const { newAndEmerging } = currentData;
+      const body = document.getElementById('newEntrantsTableBody');
+
+      body.innerHTML = newAndEmerging.map(item => {
+        const isBrandNew = item.status === 'New Entrant';
+        const badgeClass = isBrandNew 
+          ? 'bg-purple-100 text-purple-800 border-purple-200' 
+          : 'bg-blue-100 text-blue-800 border-blue-200';
+        
+        const successRateNum = Number(item.weeklySuccessRate);
+        const successClass = successRateNum >= 75 ? 'text-emerald-600' : (successRateNum >= 50 ? 'text-amber-600' : 'text-rose-600');
+
+        let opStatus = '<span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 font-semibold">Active & Healthy</span>';
+        if (successRateNum === 0) {
+          opStatus = '<span class="text-[10px] px-2 py-0.5 rounded-full bg-rose-100 text-rose-700 font-semibold">100% Failure Alert</span>';
+        } else if (successRateNum < 60) {
+          opStatus = '<span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 font-semibold">Quality Review</span>';
+        }
+
+        return `
+          <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-3 font-medium text-slate-900 truncate max-w-[200px]" title="${item.ovseId}">${formatEntityName(item.ovseId)}</td>
+            <td class="py-2.5 px-2">
+              <span class="inline-flex items-center text-[10px] font-bold px-2 py-0.5 rounded border ${badgeClass}">
+                ${item.status}
+              </span>
+            </td>
+            <td class="py-2.5 px-2 text-right font-bold text-slate-800">${Number(item.weeklyTotal).toLocaleString()}</td>
+            <td class="py-2.5 px-2 text-right font-bold ${successClass}">${item.weeklySuccessRate}%</td>
+            <td class="py-2.5 px-2 text-right text-rose-500 font-semibold">${item.weeklyFailureRate}%</td>
+            <td class="py-2.5 px-2 text-right text-slate-600">${Number(item.overallTotal).toLocaleString()}</td>
+            <td class="py-2.5 px-2 text-right font-extrabold text-indigo-700">${item.weeklyShareOfOverallPct}%</td>
+            <td class="py-2.5 px-2 text-center">${opStatus}</td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // Master Table Explorer Functions
+    function handleSearch(e) {
+      searchQuery = e.target.value.toLowerCase().trim();
+      currentPage = 1;
+      applyFiltersAndRenderMasterTable();
+    }
+
+    function handleCategoryFilter(e) {
+      categoryFilter = e.target.value;
+      currentPage = 1;
+      applyFiltersAndRenderMasterTable();
+    }
+
+    function sortTable(column) {
+      if (currentSort.column === column) {
+        currentSort.asc = !currentSort.asc;
+      } else {
+        currentSort.column = column;
+        currentSort.asc = false;
+      }
+      applyFiltersAndRenderMasterTable();
+    }
+
+    function applyFiltersAndRenderMasterTable() {
+      if (!currentData) return;
+      let list = [...currentData.comparison];
+
+      // Filter by search
+      if (searchQuery) {
+        list = list.filter(item => item.ovseId.toLowerCase().includes(searchQuery));
+      }
+
+      // Filter by category
+      if (categoryFilter === 'active_weekly') {
+        list = list.filter(i => i.weeklyTotal > 0);
+      } else if (categoryFilter === 'top10') {
+        list = list.filter(i => typeof i.weeklyRank === 'number' && i.weeklyRank <= 10);
+      } else if (categoryFilter === 'new_surging') {
+        list = list.filter(i => i.status === 'New Entrant' || i.status === 'Surging / High Growth');
+      } else if (categoryFilter === 'high_failure') {
+        list = list.filter(i => i.weeklyTotal > 0 && Number(i.weeklyFailureRate) >= 40);
+      } else if (categoryFilter === 'high_success') {
+        list = list.filter(i => i.weeklyTotal > 0 && Number(i.weeklySuccessRate) >= 90);
+      }
+
+      // Sort
+      list.sort((a, b) => {
+        let vA = a[currentSort.column];
+        let vB = b[currentSort.column];
+        if (typeof vA === 'string' && !isNaN(Number(vA))) vA = Number(vA);
+        if (typeof vB === 'string' && !isNaN(Number(vB))) vB = Number(vB);
+
+        if (vA < vB) return currentSort.asc ? -1 : 1;
+        if (vA > vB) return currentSort.asc ? 1 : -1;
+        return 0;
+      });
+
+      filteredList = list;
+      renderMasterTablePage();
+    }
+
+    function renderMasterTablePage() {
+      const body = document.getElementById('masterTableBody');
+      const total = filteredList.length;
+      const startIdx = (currentPage - 1) * pageSize;
+      const endIdx = Math.min(startIdx + pageSize, total);
+      const pageItems = filteredList.slice(startIdx, endIdx);
+
+      if (total === 0) {
+        body.innerHTML = `<tr><td colspan="10" class="py-8 text-center text-slate-400">No OVSE entities match your search or filter criteria.</td></tr>`;
+        document.getElementById('tableRecordCount').innerText = '0 records found';
+        document.getElementById('paginationControls').innerHTML = '';
+        return;
+      }
+
+      document.getElementById('tableRecordCount').innerText = `Showing ${startIdx + 1} to ${endIdx} of ${total} entities`;
+
+      body.innerHTML = pageItems.map(item => {
+        const isWeeklyActive = item.weeklyTotal > 0;
+        const wRate = Number(item.weeklySuccessRate);
+        const wRateColor = !isWeeklyActive ? 'text-slate-400' : (wRate >= 80 ? 'text-emerald-600 font-bold' : (wRate >= 50 ? 'text-amber-600 font-bold' : 'text-rose-600 font-bold'));
+
+        let badge = `<span class="text-[10px] text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Standard</span>`;
+        if (item.status === 'New Entrant') badge = `<span class="text-[10px] text-purple-700 bg-purple-50 font-bold px-2 py-0.5 rounded border border-purple-200">New Entrant</span>`;
+        else if (item.status === 'Surging / High Growth') badge = `<span class="text-[10px] text-blue-700 bg-blue-50 font-bold px-2 py-0.5 rounded border border-blue-200">Surging</span>`;
+        else if (item.status === 'Inactive This Week') badge = `<span class="text-[10px] text-slate-400 bg-slate-50 px-2 py-0.5 rounded">Inactive Weekly</span>`;
+
+        return `
+          <tr class="hover:bg-slate-50 transition">
+            <td class="py-2.5 px-3 font-medium text-slate-900 truncate max-w-[200px]" title="${item.ovseId}">${formatEntityName(item.ovseId)}</td>
+            <td class="py-2.5 px-2">${badge}</td>
+            <td class="py-2.5 px-2 text-right font-semibold text-slate-600">${item.weeklyRank !== 'Inactive' ? '#' + item.weeklyRank : '—'}</td>
+            <td class="py-2.5 px-2 text-right font-bold text-slate-900">${isWeeklyActive ? Number(item.weeklyTotal).toLocaleString() : '—'}</td>
+            <td class="py-2.5 px-2 text-right text-emerald-600 font-medium">${isWeeklyActive ? Number(item.weeklySuccess).toLocaleString() : '—'}</td>
+            <td class="py-2.5 px-2 text-right text-rose-500 font-medium">${isWeeklyActive ? Number(item.weeklyFailure).toLocaleString() : '—'}</td>
+            <td class="py-2.5 px-2 text-right ${wRateColor}">${isWeeklyActive ? item.weeklySuccessRate + '%' : '—'}</td>
+            <td class="py-2.5 px-2 text-right text-slate-700 font-semibold">${Number(item.overallTotal).toLocaleString()}</td>
+            <td class="py-2.5 px-2 text-right text-slate-600">${item.overallSuccessRate}%</td>
+            <td class="py-2.5 px-2 text-right font-bold ${Number(item.weeklyShareOfOverallPct) >= 30 ? 'text-indigo-600' : 'text-slate-500'}">${item.weeklyShareOfOverallPct}%</td>
+          </tr>
+        `;
+      }).join('');
+
+      // Render pagination
+      const totalPages = Math.ceil(total / pageSize);
+      let pageHtml = `
+        <button onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled class="opacity-40 cursor-not-allowed"' : 'class="hover:bg-slate-100"'} class="px-2.5 py-1 text-xs border border-slate-300 rounded text-slate-600">Prev</button>
+        <span class="px-2 text-xs font-semibold text-slate-700">Page ${currentPage} of ${totalPages}</span>
+        <button onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled class="opacity-40 cursor-not-allowed"' : 'class="hover:bg-slate-100"'} class="px-2.5 py-1 text-xs border border-slate-300 rounded text-slate-600">Next</button>
+      `;
+      document.getElementById('paginationControls').innerHTML = pageHtml;
+    }
+
+    function goToPage(page) {
+      const totalPages = Math.ceil(filteredList.length / pageSize);
+      if (page >= 1 && page <= totalPages) {
+        currentPage = page;
+        renderMasterTablePage();
+      }
+    }
+
+    function formatEntityName(id) {
+      if (!id || id === 'null') return '(Unidentified / null)';
+      if (id.startsWith('urn:uidai:client:')) {
+        let clean = id.replace('urn:uidai:client:', '');
+        const parts = clean.split(':');
+        return parts[0].replace(/-/g, ' ');
+      }
+      return id;
+    }
+
+    // CSV Download Engines (Triggered on-demand in browser)
+    function escapeCSVVal(val) {
+      if (val === null || val === undefined) return '""';
+      const s = String(val);
+      if (s.includes(',') || s.includes('"') || s.includes('\n')) {
+        return `"${s.replace(/"/g, '""')}"`;
+      }
+      return s;
+    }
+
+    function triggerCSVDownload(filename, rows) {
+      const csvContent = rows.map(r => r.map(escapeCSVVal).join(',')).join('\r\n');
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.setAttribute('href', url);
+      link.setAttribute('download', filename);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    function downloadExecutiveSummaryCSV() {
+      const { overall, weekly, comparison, newAndEmerging } = currentData;
+      const rows = [
+        ['EXECUTIVE BRIEFING REPORT', 'OVSE TRANSACTION QUALITY & MOMENTUM', '', '', ''],
+        ['Cutoff Date / Period', new Date().toLocaleDateString(), '', '', ''],
+        ['', '', '', '', ''],
+        ['METRIC CATEGORY', 'INDICATOR', 'OVERALL (LIFETIME)', 'LAST 1 WEEK', 'KEY MANAGEMENT INSIGHT'],
+        ['Volume Metrics', 'Total Transactions', overall.totalTx, weekly.totalTx, `${((weekly.totalTx / overall.totalTx) * 100).toFixed(2)}% of all-time volume occurred this week`],
+        ['Volume Metrics', 'Successful Transactions', overall.totalSuccess, weekly.totalSuccess, `${overall.successRate.toFixed(2)}% Overall vs ${weekly.successRate.toFixed(2)}% Weekly`],
+        ['Volume Metrics', 'Failed Transactions', overall.totalFailure, weekly.totalFailure, `${overall.failureRate.toFixed(2)}% Overall vs ${weekly.failureRate.toFixed(2)}% Weekly`],
+        ['Quality Metrics', 'Success Rate %', `${overall.successRate.toFixed(2)}%`, `${weekly.successRate.toFixed(2)}%`, `+${(weekly.successRate - overall.successRate).toFixed(2)}% Quality Improvement`],
+        ['Quality Metrics', 'Failure Rate %', `${overall.failureRate.toFixed(2)}%`, `${weekly.failureRate.toFixed(2)}%`, `-${(overall.failureRate - weekly.failureRate).toFixed(2)}% Failure Reduction`],
+        ['Entity Engagement', 'Active Entities', overall.uniqueCount, weekly.uniqueCount, `${((weekly.uniqueCount / overall.uniqueCount) * 100).toFixed(1)}% entity activity rate`],
+        ['', '', '', '', ''],
+        ['TOP 5 OVSEs OVERALL', 'RANK', 'TOTAL TX', 'SUCCESS RATE %', 'FAILURE RATE %'],
+        ...overall.top5.map((item, idx) => [`Top ${idx + 1} Overall: ${item.ovseId}`, idx + 1, item.total, `${item.successRate.toFixed(2)}%`, `${item.failureRate.toFixed(2)}%`]),
+        ['', '', '', '', ''],
+        ['TOP 5 OVSEs LAST WEEK', 'RANK', 'TOTAL TX', 'SUCCESS RATE %', 'FAILURE RATE %'],
+        ...weekly.top5.map((item, idx) => [`Top ${idx + 1} Weekly: ${item.ovseId}`, idx + 1, item.total, `${item.successRate.toFixed(2)}%`, `${item.failureRate.toFixed(2)}%`]),
+        ['', '', '', '', ''],
+        ['NEW & SURGING OVSEs', 'CLASSIFICATION', 'WEEKLY TX', 'WEEKLY SUCCESS %', 'WEEKLY SHARE OF LIFETIME %'],
+        ...newAndEmerging.map(c => [c.ovseId, c.status, c.weeklyTotal, `${c.weeklySuccessRate}%`, `${c.weeklyShareOfOverallPct}%`])
+      ];
+      triggerCSVDownload(`OVSE_Executive_Summary_${new Date().toISOString().slice(0, 10)}.csv`, rows);
+    }
+
+    function downloadComparativeAnalysisCSV() {
+      const { comparison } = currentData;
+      const headers = [
+        'OVSE ID', 'Status / Category', 'Weekly Rank', 'Weekly Total Tx', 'Weekly Success Tx', 'Weekly Failure Tx',
+        'Weekly Success Rate (%)', 'Weekly Failure Rate (%)', 'Overall Rank', 'Overall Total Tx', 'Overall Success Tx',
+        'Overall Failure Tx', 'Overall Success Rate (%)', 'Overall Failure Rate (%)', 'Weekly Volume Share of Lifetime (%)'
+      ];
+      const rows = [
+        headers,
+        ...comparison.map(c => [
+          c.ovseId, c.status, c.weeklyRank, c.weeklyTotal, c.weeklySuccess, c.weeklyFailure,
+          c.weeklySuccessRate, c.weeklyFailureRate, c.overallRank, c.overallTotal, c.overallSuccess,
+          c.overallFailure, c.overallSuccessRate, c.overallFailureRate, c.weeklyShareOfOverallPct
+        ])
+      ];
+      triggerCSVDownload(`OVSE_Full_Comparative_Analysis_${new Date().toISOString().slice(0, 10)}.csv`, rows);
+    }
+
+    function downloadNewEntrantsCSV() {
+      const { newAndEmerging } = currentData;
+      const headers = ['OVSE ID', 'Status', 'Weekly Rank', 'Weekly Total Tx', 'Weekly Success Rate (%)', 'Weekly Failure Rate (%)', 'Overall Lifetime Tx', 'Weekly Share of Lifetime (%)'];
+      const rows = [
+        headers,
+        ...newAndEmerging.map(c => [
+          c.ovseId, c.status, c.weeklyRank, c.weeklyTotal, c.weeklySuccessRate, c.weeklyFailureRate, c.overallTotal, c.weeklyShareOfOverallPct
+        ])
+      ];
+      triggerCSVDownload(`OVSE_New_and_Surging_Entrants_${new Date().toISOString().slice(0, 10)}.csv`, rows);
+    }
+
+    function downloadHighFailureAlertsCSV() {
+      const { comparison } = currentData;
+      const alerts = comparison.filter(c => c.weeklyTotal >= 10 && Number(c.weeklyFailureRate) >= 30);
+      const headers = ['OVSE ID', 'Weekly Total Tx', 'Weekly Failure Count', 'Weekly Failure Rate (%)', 'Weekly Success Rate (%)', 'Overall Lifetime Tx', 'Overall Failure Rate (%)'];
+      const rows = [
+        headers,
+        ...alerts.map(c => [
+          c.ovseId, c.weeklyTotal, c.weeklyFailure, c.weeklyFailureRate, c.weeklySuccessRate, c.overallTotal, c.overallFailureRate
+        ])
+      ];
+      triggerCSVDownload(`OVSE_High_Failure_Alerts_${new Date().toISOString().slice(0, 10)}.csv`, rows);
+    }
+  </script>
+</body>
+</html>

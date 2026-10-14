@@ -1,0 +1,39 @@
+OVSE TRANSACTION INTELLIGENCE - EXECUTIVE SUMMARY REPORT
+Generated At,"14/10/2026, 3:21:04 pm"
+Overall Dataset,ovse_wise_transactions_count___duplicate_2026-10-14T14_53_32.589334+05_30.csv
+Weekly Dataset,query_result_2026-10-14T14_56_44.034466+05_30.csv
+,,,,
+METRIC CATEGORY,INDICATOR,OVERALL (ALL TIME),LAST 1 WEEK,KEY MANAGEMENT VARIANCE / INSIGHT
+Volume Metrics,Total Transactions,6613182,201036,3.04% of all-time volume
+Volume Metrics,Successful Transactions,4794110,180023,72.49% Overall vs 89.55% Weekly
+Volume Metrics,Failed Transactions,1819072,21013,27.51% Overall vs 10.45% Weekly
+Quality Metrics,Success Rate %,72.49%,89.55%,+17.05% Improvement
+Quality Metrics,Failure Rate %,27.51%,10.45%,-17.05% Reduction in Failure Rate
+Entity Engagement,Active OVSE Entities,221,82,37.1% of registered entities active
+,,,,
+TOP 5 OVSEs OVERALL,RANK,TOTAL TX,SUCCESS RATE %,FAILURE RATE %
+Top 1 Overall: SelectiveShare,1,2604063,99.99%,0.01%
+Top 2 Overall: tspolice,2,2247973,28.69%,71.31%
+Top 3 Overall: 000,3,1219372,99.92%,0.08%
+Top 4 Overall: urbancompany,4,250013,59.00%,41.00%
+Top 5 Overall: tnmc,5,50617,69.99%,30.01%
+,,,,
+TOP 5 OVSEs LAST WEEK,RANK,TOTAL TX,SUCCESS RATE %,FAILURE RATE %
+Top 1 Weekly: SelectiveShare,1,151735,99.99%,0.01%
+Top 2 Weekly: urbancompany,2,21601,54.00%,46.00%
+Top 3 Weekly: gridlines,3,5375,51.11%,48.89%
+Top 4 Weekly: urn:uidai:client:life-insurance-corporation-of-india:202606036260,4,4747,48.43%,51.57%
+Top 5 Weekly: protean,5,3776,83.71%,16.29%
+,,,,
+NEW & SURGING OVSEs,CLASSIFICATION,WEEKLY TX,WEEKLY SUCCESS %,WEEKLY SHARE OF LIFETIME %
+urn:uidai:client:life-insurance-corporation-of-india:202606036260,Surging / High Growth,4747,48.43%,50.80%
+protean,Surging / High Growth,3776,83.71%,61.31%
+dexit,Surging / High Growth,1048,56.68%,39.40%
+urn:uidai:client:punjab-school-educationboard:202608274954,Surging / High Growth,327,55.05%,46.71%
+transaction_analysts,Surging / High Growth,35,88.57%,48.61%
+urn:uidai:client:doklink-services-private-limited:202609249932,Surging / High Growth,20,100.00%,64.52%
+urn:uidai:client:tadoba-andhari-tiger-reserve-conservation-foundation:202606125139,Surging / High Growth,19,0.00%,76.00%
+urn:uidai:client:accura-technolabs-private-limited:202609240826,Surging / High Growth,14,64.29%,63.64%
+202609177828,New Entrant,14,0.00%,100.00%
+urn:uidai:client:nxfin-technologies-private-limited:202608186786,Surging / High Growth,13,53.85%,59.09%
+null,New Entrant,2,0.00%,100.00%

@@ -1,0 +1,17 @@
+# Node dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.local
+
+# Operating System Files
+Thumbs.db
+.DS_Store
+
+# Scratch files
+*.tmp
+*.log

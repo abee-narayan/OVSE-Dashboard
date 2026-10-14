@@ -1,0 +1,30 @@
+{
+  "name": "ovse-executive-dashboard",
+  "version": "1.0.0",
+  "description": "Executive Analytics and Monitoring Dashboard for OVSE Transactions",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "report": "node generate_report.js"
+  },
+  "keywords": [
+    "ovse",
+    "dashboard",
+    "analytics",
+    "uidai",
+    "transactions",
+    "render"
+  ],
+  "author": "OVSE Analytics Team",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "multer": "^1.4.5-lts.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

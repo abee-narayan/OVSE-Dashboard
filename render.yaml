@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: ovse-executive-dashboard
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ADMIN_USERNAME
+        value: admin
+      - key: ADMIN_PASSWORD
+        generateValue: false # Set your secure password in Render dashboard or specify here
+      - key: SESSION_SECRET
+        generateValue: true
