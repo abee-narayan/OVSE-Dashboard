@@ -1,12 +1,24 @@
 OVSE ID,Classification,Weekly Rank,Weekly Tx,Weekly Success Rate (%),Weekly Failure Rate (%),Overall Lifetime Tx,Weekly Share of Lifetime (%)
-urn:uidai:client:life-insurance-corporation-of-india:202606036260,Surging / High Growth,Inactive,4747,48.43,51.57,9345,50.80
-protean,Surging / High Growth,Inactive,3776,83.71,16.29,6159,61.31
-dexit,Surging / High Growth,Inactive,1048,56.68,43.32,2660,39.40
-urn:uidai:client:punjab-school-educationboard:202608274954,Surging / High Growth,Inactive,327,55.05,44.95,700,46.71
-transaction_analysts,Surging / High Growth,Inactive,35,88.57,11.43,72,48.61
-urn:uidai:client:doklink-services-private-limited:202609249932,Surging / High Growth,Inactive,20,100.00,0.00,31,64.52
-urn:uidai:client:tadoba-andhari-tiger-reserve-conservation-foundation:202606125139,Surging / High Growth,Inactive,19,0.00,100.00,25,76.00
-urn:uidai:client:accura-technolabs-private-limited:202609240826,Surging / High Growth,Inactive,14,64.29,35.71,22,63.64
+protean,Surging / High Growth,Inactive,5477,89.85,10.15,6954,78.76
+urn:uidai:client:life-insurance-corporation-of-india:202606036260,Surging / High Growth,Inactive,3907,52.96,47.04,9732,40.15
+dexit,Surging / High Growth,Inactive,1161,54.69,45.31,2894,40.12
+urn:uidai:client:punjab-school-educationboard:202608274954,Surging / High Growth,Inactive,642,50.62,49.38,773,83.05
+pathikgp,Surging / High Growth,Inactive,99,82.83,17.17,122,81.15
+transaction_analysts,Surging / High Growth,Inactive,60,80.00,20.00,128,46.88
+urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204,New Entrant,Inactive,55,10.91,89.09,55,100.00
+urn:uidai:client:codetantra-tech-solutions-private-limited:202606124082,Surging / High Growth,Inactive,45,42.22,57.78,98,45.92
+urn:uidai:client:ummeed-housing-finance-private-limited:202609177828,New Entrant,Inactive,40,0.00,100.00,40,100.00
+urn:uidai:client:commissioner-esd-meeseva-telangana:202609174748,Surging / High Growth,Inactive,38,10.53,89.47,55,69.09
+BankuIndialtd:05102026,New Entrant,Inactive,27,0.00,100.00,27,100.00
+urn:uidai:client:bses-rajdhani-power-limited:202609164125,Surging / High Growth,Inactive,23,95.65,4.35,52,44.23
+urn:uidai:client:doklink-services-private-limited:202609249932,Surging / High Growth,Inactive,23,73.91,26.09,31,74.19
+urn:uidai:client:nxfin-technologies-private-limited:202608186786,Surging / High Growth,Inactive,19,73.68,26.32,25,76.00
 202609177828,New Entrant,Inactive,14,0.00,100.00,14,100.00
-urn:uidai:client:nxfin-technologies-private-limited:202608186786,Surging / High Growth,Inactive,13,53.85,46.15,22,59.09
+ebitaus,Surging / High Growth,Inactive,13,0.00,100.00,32,40.63
+POC-AC-VALUE,New Entrant,Inactive,7,0.00,100.00,7,100.00
+urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049,New Entrant,Inactive,5,0.00,100.00,5,100.00
+urn:uidai:client:chhattisgarh-state-power-distribution-company-limited:202610075846,New Entrant,Inactive,3,0.00,100.00,3,100.00
+urn:uidai:client:sahana-system-limited:202610095399,New Entrant,Inactive,3,0.00,100.00,3,100.00
 null,New Entrant,Inactive,2,0.00,100.00,2,100.00
+POC-AC-V1,New Entrant,Inactive,2,0.00,100.00,2,100.00
+POC-AC-V5,New Entrant,Inactive,1,0.00,100.00,1,100.00

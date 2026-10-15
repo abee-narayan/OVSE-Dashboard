@@ -1,35 +1,18 @@
-const fs = require('fs');
 const path = require('path');
 const { generateAnalysis } = require('./generate_report');
-const { generateExtendedAnalytics } = require('./analytics_extended');
 
 console.log("==================================================");
-console.log("UPDATING LOCAL DASHBOARD DATASETS (ALL 6 FILES)");
+console.log("REFRESHING OVSE DASHBOARD MASTER DATASET");
 console.log("==================================================");
 
-// 1. Generate base transaction analysis
-const baseData = generateAnalysis(__dirname);
+const masterData = generateAnalysis(__dirname);
 
-// 2. Generate extended analytics (Channels & Errors)
-const extendedData = generateExtendedAnalytics(__dirname);
-
-// 3. Merge into unified master dataset
-const masterData = {
-  ...baseData,
-  channels: extendedData.channels,
-  errors: extendedData.errors,
-  lastUpdatedLocal: new Date().toISOString()
-};
-
-fs.writeFileSync(path.join(__dirname, 'initial_data.json'), JSON.stringify(masterData, null, 2), 'utf-8');
-
-const bundleJs = `// Auto-generated baseline master data for OVSE Executive Dashboard
-const BUNDLED_DATA = ${JSON.stringify(masterData, null, 2)};
-`;
-fs.writeFileSync(path.join(__dirname, 'initial_data_bundle.js'), bundleJs, 'utf-8');
-
-console.log("\n[SUCCESS] Master data updated locally!");
-console.log(`- Base Transactions: ${masterData.overall.totalTx.toLocaleString()} overall, ${masterData.weekly.totalTx.toLocaleString()} weekly`);
-console.log(`- Channel Types: ${masterData.channels.comparison.length}`);
-console.log(`- Error Code Types: ${masterData.errors.comparison.length}`);
-console.log("==================================================");
+if (masterData) {
+  console.log("\n[SUCCESS] Unified master data refreshed successfully!");
+  console.log(`- Reporting Cutoff: ${masterData.metadata.reportingCutoff}`);
+  console.log(`- Lifetime Volume: ${masterData.overall.totalTx.toLocaleString()} tx across ${masterData.overall.uniqueCount} entities`);
+  console.log(`- Weekly Volume:   ${masterData.weekly.totalTx.toLocaleString()} tx`);
+  console.log(`- Lifetime Errors: ${masterData.errors.overall.totalErrors.toLocaleString()} failures`);
+  console.log(`- Channels Tracked: ${masterData.channels.comparison.length}`);
+  console.log("==================================================");
+}

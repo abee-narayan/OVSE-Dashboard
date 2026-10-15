@@ -22,7 +22,9 @@ echo Generated Files in this folder:
 echo  1. OVSE_Executive_Summary_Report.csv
 echo  2. OVSE_Full_Comparative_Analysis.csv
 echo  3. OVSE_New_and_Surging_Entrants.csv
-echo  4. index.html (Updated with new data)
+echo  4. OVSE_Error_Code_Analysis.csv
+echo  5. OVSE_Sharing_Channels_Analysis.csv
+echo  6. index.html (Updated with new data across all 3 dashboards)
 echo ===================================================================
 echo.
 set /p OPEN_DASHBOARD="Do you want to open the Dashboard now? (Y/N): "

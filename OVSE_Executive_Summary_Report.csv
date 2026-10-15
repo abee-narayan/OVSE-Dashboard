@@ -1,39 +1,51 @@
 OVSE TRANSACTION INTELLIGENCE - EXECUTIVE SUMMARY REPORT
-Generated At,"14/10/2026, 5:49:00 pm"
-Overall Dataset,ovse_wise_transactions_count___duplicate_2026-10-14T14_53_32.589334+05_30.csv
-Weekly Dataset,query_result_2026-10-14T14_56_44.034466+05_30.csv
+Generated At,"15/10/2026, 10:34:49 am"
+Unified Master Export,query_result_2026-10-15T10_01_09.648138+05_30.csv
+Reporting Window,15 Oct 2026 (Weekly: 09 Oct 2026 to 15 Oct 2026)
 ,,,,
 METRIC CATEGORY,INDICATOR,OVERALL (ALL TIME),LAST 1 WEEK,KEY MANAGEMENT VARIANCE / INSIGHT
-Volume Metrics,Total Transactions,6613182,201036,3.04% of all-time volume
-Volume Metrics,Successful Transactions,4794110,180023,72.49% Overall vs 89.55% Weekly
-Volume Metrics,Failed Transactions,1819072,21013,27.51% Overall vs 10.45% Weekly
-Quality Metrics,Success Rate %,72.49%,89.55%,+17.05% Improvement
-Quality Metrics,Failure Rate %,27.51%,10.45%,-17.05% Reduction in Failure Rate
-Entity Engagement,Active OVSE Entities,221,82,37.1% of registered entities active
+Volume Metrics,Total Transactions,6630319,173355,2.61% of all-time volume
+Volume Metrics,Successful Transactions,4809576,155423,72.54% Overall vs 89.66% Weekly
+Volume Metrics,Failed Transactions,1820743,17932,27.46% Overall vs 10.34% Weekly
+Quality Metrics,Success Rate %,72.54%,89.66%,+17.12% Improvement
+Quality Metrics,Failure Rate %,27.46%,10.34%,-17.12% Reduction in Failure Rate
+Entity Engagement,Active OVSE Entities,221,81,36.7% of registered entities active
 ,,,,
 TOP 5 OVSEs OVERALL,RANK,TOTAL TX,SUCCESS RATE %,FAILURE RATE %
-Top 1 Overall: SelectiveShare,1,2604063,99.99%,0.01%
-Top 2 Overall: tspolice,2,2247973,28.69%,71.31%
-Top 3 Overall: 000,3,1219372,99.92%,0.08%
-Top 4 Overall: urbancompany,4,250013,59.00%,41.00%
-Top 5 Overall: tnmc,5,50617,69.99%,30.01%
+Top 1 Overall: SelectiveShare,1,2616692,99.99%,0.01%
+Top 2 Overall: tspolice,2,2248014,28.69%,71.31%
+Top 3 Overall: 000,3,1219390,99.92%,0.08%
+Top 4 Overall: urbancompany,4,251657,58.97%,41.03%
+Top 5 Overall: tnmc,5,50807,69.98%,30.02%
 ,,,,
 TOP 5 OVSEs LAST WEEK,RANK,TOTAL TX,SUCCESS RATE %,FAILURE RATE %
-Top 1 Weekly: SelectiveShare,1,151735,99.99%,0.01%
-Top 2 Weekly: urbancompany,2,21601,54.00%,46.00%
-Top 3 Weekly: gridlines,3,5375,51.11%,48.89%
-Top 4 Weekly: urn:uidai:client:life-insurance-corporation-of-india:202606036260,4,4747,48.43%,51.57%
-Top 5 Weekly: protean,5,3776,83.71%,16.29%
+Top 1 Weekly: SelectiveShare,1,128828,99.99%,0.01%
+Top 2 Weekly: urbancompany,2,17405,53.26%,46.74%
+Top 3 Weekly: protean,3,5477,89.85%,10.15%
+Top 4 Weekly: gridlines,4,4844,52.13%,47.87%
+Top 5 Weekly: urn:uidai:client:life-insurance-corporation-of-india:202606036260,5,3907,52.96%,47.04%
 ,,,,
 NEW & SURGING OVSEs,CLASSIFICATION,WEEKLY TX,WEEKLY SUCCESS %,WEEKLY SHARE OF LIFETIME %
-urn:uidai:client:life-insurance-corporation-of-india:202606036260,Surging / High Growth,4747,48.43%,50.80%
-protean,Surging / High Growth,3776,83.71%,61.31%
-dexit,Surging / High Growth,1048,56.68%,39.40%
-urn:uidai:client:punjab-school-educationboard:202608274954,Surging / High Growth,327,55.05%,46.71%
-transaction_analysts,Surging / High Growth,35,88.57%,48.61%
-urn:uidai:client:doklink-services-private-limited:202609249932,Surging / High Growth,20,100.00%,64.52%
-urn:uidai:client:tadoba-andhari-tiger-reserve-conservation-foundation:202606125139,Surging / High Growth,19,0.00%,76.00%
-urn:uidai:client:accura-technolabs-private-limited:202609240826,Surging / High Growth,14,64.29%,63.64%
+protean,Surging / High Growth,5477,89.85%,78.76%
+urn:uidai:client:life-insurance-corporation-of-india:202606036260,Surging / High Growth,3907,52.96%,40.15%
+dexit,Surging / High Growth,1161,54.69%,40.12%
+urn:uidai:client:punjab-school-educationboard:202608274954,Surging / High Growth,642,50.62%,83.05%
+pathikgp,Surging / High Growth,99,82.83%,81.15%
+transaction_analysts,Surging / High Growth,60,80.00%,46.88%
+urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204,New Entrant,55,10.91%,100.00%
+urn:uidai:client:codetantra-tech-solutions-private-limited:202606124082,Surging / High Growth,45,42.22%,45.92%
+urn:uidai:client:ummeed-housing-finance-private-limited:202609177828,New Entrant,40,0.00%,100.00%
+urn:uidai:client:commissioner-esd-meeseva-telangana:202609174748,Surging / High Growth,38,10.53%,69.09%
+BankuIndialtd:05102026,New Entrant,27,0.00%,100.00%
+urn:uidai:client:bses-rajdhani-power-limited:202609164125,Surging / High Growth,23,95.65%,44.23%
+urn:uidai:client:doklink-services-private-limited:202609249932,Surging / High Growth,23,73.91%,74.19%
+urn:uidai:client:nxfin-technologies-private-limited:202608186786,Surging / High Growth,19,73.68%,76.00%
 202609177828,New Entrant,14,0.00%,100.00%
-urn:uidai:client:nxfin-technologies-private-limited:202608186786,Surging / High Growth,13,53.85%,59.09%
+ebitaus,Surging / High Growth,13,0.00%,40.63%
+POC-AC-VALUE,New Entrant,7,0.00%,100.00%
+urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049,New Entrant,5,0.00%,100.00%
+urn:uidai:client:chhattisgarh-state-power-distribution-company-limited:202610075846,New Entrant,3,0.00%,100.00%
+urn:uidai:client:sahana-system-limited:202610095399,New Entrant,3,0.00%,100.00%
 null,New Entrant,2,0.00%,100.00%
+POC-AC-V1,New Entrant,2,0.00%,100.00%
+POC-AC-V5,New Entrant,1,0.00%,100.00%

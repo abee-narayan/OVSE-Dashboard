@@ -180,14 +180,39 @@ app.get('/api/data', requireAuth, (req, res) => {
   return res.status(404).json({ error: 'No data file found.' });
 });
 
-// API: Upload New Weekly CSV Datasets (Strictly Admin Only)
+// API: Upload New CSV Datasets (Strictly Admin Only)
 app.post('/api/upload', requireAuth, requireAdmin, upload.fields([
+  { name: 'masterFile', maxCount: 1 },
+  { name: 'file', maxCount: 1 },
   { name: 'overallFile', maxCount: 1 },
   { name: 'weeklyFile', maxCount: 1 }
 ]), (req, res) => {
   try {
-    if (!req.files || (!req.files.overallFile && !req.files.weeklyFile)) {
-      return res.status(400).json({ error: 'Please upload at least one CSV file (Overall or Weekly).' });
+    const uploadedMaster = req.files?.masterFile?.[0] || req.files?.file?.[0] || (!req.files?.weeklyFile && req.files?.overallFile?.[0]);
+
+    // 1. Single Unified Master Dataset Ingestion (Refreshes all 3 tabs at once)
+    if (uploadedMaster) {
+      const content = uploadedMaster.buffer.toString('utf-8');
+      const val = validateCSVFormat(content, 'unified', uploadedMaster.originalname);
+      
+      if (val.valid && (val.detectedType === 'unified' || req.body.datasetType === 'unified')) {
+        const savedName = `query_result_${Date.now()}.csv`;
+        const savedPath = path.join(__dirname, savedName);
+        fs.writeFileSync(savedPath, content, 'utf-8');
+
+        const { generateAnalysis } = require('./generate_report');
+        const masterData = generateAnalysis(__dirname, savedPath);
+
+        return res.json({
+          success: true,
+          message: '✓ Unified Master CSV processed successfully! All 3 dashboards (Transactions, UIDAI Errors, Sharing Channels) and all executive reports have been updated.',
+          data: masterData
+        });
+      }
+    }
+
+    if (!req.files || (!req.files.overallFile && !req.files.weeklyFile && !uploadedMaster)) {
+      return res.status(400).json({ error: 'Please upload at least one CSV file.' });
     }
 
     const datasetType = req.body.datasetType || 'transactions';

@@ -216,6 +216,17 @@ function analyzeErrors(fOverall, fWeekly) {
 }
 
 function generateExtendedAnalytics(dir = __dirname) {
+  // If master data already exists in initial_data.json, reuse it
+  const initialDataPath = path.join(dir, 'initial_data.json');
+  if (fs.existsSync(initialDataPath)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(initialDataPath, 'utf-8'));
+      if (data.channels && data.errors && data.metadata?.isUnifiedMaster) {
+        return { channels: data.channels, errors: data.errors };
+      }
+    } catch (e) {}
+  }
+
   const fChanOverall = path.join(dir, 'query_result_2026-10-14T16_40_50.390522+05_30.csv');
   let fChanWeek = path.join(dir, 'query_result_2026-10-14T16_41_07.437168+05_30.csv');
   if (!fs.existsSync(fChanWeek)) {

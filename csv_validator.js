@@ -1,13 +1,14 @@
 /**
  * CSV Format Validation Utility for OVSE Executive Dashboard
  * 
- * Validates uploaded CSV datasets against required schemas for:
- * 1. Transactions (Page 1): Expected columns [Ovse ID, Auth Result, Count]
- * 2. Errors (Page 2): Expected columns [Error Code, Ovse ID, Count]
- * 3. Channels (Page 3): Expected columns [Cred Exchange Channel, Ovse ID, Count]
+ * Supports:
+ * 1. Unified Master Dataset (Recommended): [Error Code, Ovse ID, Event Timestamp, Auth Result, Cred Exchange Channel, Count]
+ * 2. Legacy Transactions: [Ovse ID, Auth Result, Count]
+ * 3. Legacy Errors: [Error Code, Ovse ID, Count]
+ * 4. Legacy Channels: [Cred Exchange Channel, Ovse ID, Count]
  */
 
-function validateCSVFormat(content, expectedType, fileName = 'Uploaded file') {
+function validateCSVFormat(content, expectedType = 'unified', fileName = 'Uploaded file') {
   if (!content || typeof content !== 'string' || content.trim().length === 0) {
     return {
       valid: false,
@@ -46,131 +47,85 @@ function validateCSVFormat(content, expectedType, fileName = 'Uploaded file') {
   const headerParts = parseLine(lines[0]);
   const headerLower = headerParts.map(h => h.toLowerCase());
 
+  const hasErrorCode = headerLower.some(h => h.includes('error code') || h === 'error_code' || h === 'error');
+  const hasAuthResult = headerLower.some(h => h.includes('auth result') || h === 'auth_result' || h === 'auth');
+  const hasChannel = headerLower.some(h => h.includes('exchange channel') || h.includes('channel') || h === 'channel_type');
+  const hasDate = headerLower.some(h => h.includes('timestamp') || h.includes('date') || h.includes('time'));
+  const hasCount = headerLower.some(h => h.includes('count') || h.includes('volume') || h.includes('tx'));
+
   // Detect which dataset type the file matches
   let detectedType = 'unknown';
-  if (headerLower.some(h => h.includes('auth result') || h === 'auth_result' || h === 'auth')) {
+  if (hasErrorCode && hasAuthResult && hasChannel) {
+    detectedType = 'unified';
+  } else if (hasAuthResult && !hasErrorCode && !hasChannel) {
     detectedType = 'transactions';
-  } else if (headerLower.some(h => h.includes('error code') || h === 'error_code' || h === 'error')) {
+  } else if (hasErrorCode && !hasAuthResult && !hasChannel) {
     detectedType = 'errors';
-  } else if (headerLower.some(h => h.includes('exchange channel') || h.includes('channel') || h === 'channel_type')) {
+  } else if (hasChannel && !hasAuthResult && !hasErrorCode) {
     detectedType = 'channels';
   }
 
-  // Page 1: Transactions
-  if (expectedType === 'transactions') {
-    if (detectedType === 'errors') {
+  // 1. Unified Master Dataset Validation (Preferred)
+  if (expectedType === 'unified' || detectedType === 'unified') {
+    if (headerParts.length < 6) {
       return {
         valid: false,
-        error: `Wrong Data Format: "${fileName}" appears to be a UIDAI Error Code dataset (columns: ${headerParts.join(', ')}).\n\nYou are on Page 1 (OVSE Transactions). Please switch to Page 2 (UIDAI Errors) to upload this file, or upload an OVSE Transaction dataset with columns: "Ovse ID, Auth Result, Count".`
-      };
-    }
-    if (detectedType === 'channels') {
-      return {
-        valid: false,
-        error: `Wrong Data Format: "${fileName}" appears to be a Data Sharing Channels dataset (columns: ${headerParts.join(', ')}).\n\nYou are on Page 1 (OVSE Transactions). Please switch to Page 3 (Sharing Channels) to upload this file, or upload an OVSE Transaction dataset with columns: "Ovse ID, Auth Result, Count".`
-      };
-    }
-    if (headerParts.length < 3) {
-      return {
-        valid: false,
-        error: `Wrong Data Format: "${fileName}" has only ${headerParts.length} column(s). Expected 3 columns: "Ovse ID, Auth Result, Count".`
+        error: `Format Notice: "${fileName}" has only ${headerParts.length} column(s). Expected Unified CSV with 6 columns: "Error Code, Ovse ID, Event Timestamp, Auth Result, Cred Exchange Channel, Count".`
       };
     }
 
-    // Inspect first few data rows for Auth Result ('y' / 'n')
+    // Inspect first few rows for valid Auth Result ('y' / 'n')
     let validAuthCount = 0;
     let checkedRows = 0;
     for (let i = 1; i < Math.min(lines.length, 30); i++) {
       const row = parseLine(lines[i]);
-      if (row.length >= 3) {
+      if (row.length >= 6) {
         checkedRows++;
-        const auth = row[1].trim().toLowerCase();
+        const auth = row[3].trim().toLowerCase();
         if (auth === 'y' || auth === 'n') validAuthCount++;
       }
     }
     if (checkedRows > 0 && validAuthCount === 0) {
       return {
         valid: false,
-        error: `Wrong Data Format: Column 2 in "${fileName}" does not contain transaction auth results ('Y' or 'N').\n\nExpected columns: "Ovse ID, Auth Result ('Y'/'N'), Count". Found values like "${parseLine(lines[1])[1]}".`
+        error: `Format Warning: Column 4 (Auth Result) in "${fileName}" does not contain expected 'Y' or 'N' values.`
       };
     }
+
+    return { valid: true, detectedType: 'unified' };
+  }
+
+  // Legacy Page 1: Transactions
+  if (expectedType === 'transactions') {
+    if (headerParts.length < 3) {
+      return {
+        valid: false,
+        error: `Wrong Data Format: "${fileName}" has only ${headerParts.length} column(s). Expected 3 columns: "Ovse ID, Auth Result, Count".`
+      };
+    }
+    return { valid: true, detectedType: 'transactions' };
   } 
-  // Page 2: Errors
-  else if (expectedType === 'errors') {
-    if (detectedType === 'transactions') {
-      return {
-        valid: false,
-        error: `Wrong Data Format: "${fileName}" appears to be an OVSE Transaction dataset (columns: ${headerParts.join(', ')}).\n\nYou are on Page 2 (UIDAI Errors). Please switch to Page 1 (Transactions) to upload this file, or upload an Error Code dataset with columns: "Error Code, Ovse ID, Count".`
-      };
-    }
-    if (detectedType === 'channels') {
-      return {
-        valid: false,
-        error: `Wrong Data Format: "${fileName}" appears to be a Data Sharing Channels dataset (columns: ${headerParts.join(', ')}).\n\nYou are on Page 2 (UIDAI Errors). Please switch to Page 3 (Sharing Channels) to upload this file, or upload an Error Code dataset with columns: "Error Code, Ovse ID, Count".`
-      };
-    }
+
+  // Legacy Page 2: Errors
+  if (expectedType === 'errors') {
     if (headerParts.length < 3) {
       return {
         valid: false,
         error: `Wrong Data Format: "${fileName}" has only ${headerParts.length} column(s). Expected 3 columns: "Error Code, Ovse ID, Count".`
       };
     }
+    return { valid: true, detectedType: 'errors' };
   } 
-  // Page 3: Channels
-  else if (expectedType === 'channels') {
-    if (detectedType === 'transactions') {
-      return {
-        valid: false,
-        error: `Wrong Data Format: "${fileName}" appears to be an OVSE Transaction dataset (columns: ${headerParts.join(', ')}).\n\nYou are on Page 3 (Sharing Channels). Please switch to Page 1 (Transactions) to upload this file, or upload a Sharing Channels dataset with columns: "Cred Exchange Channel, Ovse ID, Count".`
-      };
-    }
-    if (detectedType === 'errors') {
-      return {
-        valid: false,
-        error: `Wrong Data Format: "${fileName}" appears to be a UIDAI Error Code dataset (columns: ${headerParts.join(', ')}).\n\nYou are on Page 3 (Sharing Channels). Please switch to Page 2 (UIDAI Errors) to upload this file, or upload a Sharing Channels dataset with columns: "Cred Exchange Channel, Ovse ID, Count".`
-      };
-    }
+
+  // Legacy Page 3: Channels
+  if (expectedType === 'channels') {
     if (headerParts.length < 3) {
       return {
         valid: false,
         error: `Wrong Data Format: "${fileName}" has only ${headerParts.length} column(s). Expected 3 columns: "Cred Exchange Channel, Ovse ID, Count".`
       };
     }
-
-    // Inspect first few data rows for channel values
-    let validChannelCount = 0;
-    let checkedRows = 0;
-    const knownChannels = new Set(['APP_INTENT', 'WEB_INTENT', 'QR', 'QR_SCAN', 'APP', 'WEB']);
-    for (let i = 1; i < Math.min(lines.length, 30); i++) {
-      const row = parseLine(lines[i]);
-      if (row.length >= 3) {
-        checkedRows++;
-        const ch = row[0].trim().toUpperCase();
-        if (knownChannels.has(ch) || ch.includes('INTENT') || ch.includes('QR')) validChannelCount++;
-      }
-    }
-    if (checkedRows > 0 && validChannelCount === 0) {
-      return {
-        valid: false,
-        error: `Wrong Data Format: Column 1 in "${fileName}" does not contain valid sharing channels (e.g. APP_INTENT, WEB_INTENT, QR_SCAN).\n\nFound values like "${parseLine(lines[1])[0]}".`
-      };
-    }
-  }
-
-  // Row count check: verify Count column has numeric values
-  let numericCountFound = 0;
-  for (let i = 1; i < Math.min(lines.length, 20); i++) {
-    const row = parseLine(lines[i]);
-    if (row.length >= 3) {
-      const countVal = row[2].replace(/,/g, '').trim();
-      if (!isNaN(Number(countVal)) && countVal !== '') numericCountFound++;
-    }
-  }
-  if (numericCountFound === 0 && lines.length > 1) {
-    return {
-      valid: false,
-      error: `Wrong Data Format: Column 3 in "${fileName}" is expected to contain numeric transaction/error counts, but no valid numbers were found in sample rows.`
-    };
+    return { valid: true, detectedType: 'channels' };
   }
 
   return { valid: true, detectedType };
