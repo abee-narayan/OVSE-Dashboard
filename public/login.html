@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | OVSE Transaction Intelligence Portal</title>
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Tailwind CSS (Local Intranet Bundle + CDN Fallback) -->
+  <script src="/assets/vendor/tailwindcss.js" onerror="this.onerror=null;this.src='https://cdn.tailwindcss.com'"></script>
+  <!-- Lucide Icons (Local Intranet Bundle + CDN Fallback) -->
+  <script src="/assets/vendor/lucide.min.js" onerror="this.onerror=null;this.src='https://unpkg.com/lucide@latest'"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -135,7 +135,7 @@
   </div>
 
   <script>
-    lucide.createIcons();
+    if (typeof lucide !== 'undefined') lucide.createIcons();
 
     function togglePasswordVisibility() {
       const pwdInput = document.getElementById('password');
@@ -147,7 +147,7 @@
         pwdInput.type = 'password';
         eyeIcon.setAttribute('data-lucide', 'eye');
       }
-      lucide.createIcons();
+      if (typeof lucide !== 'undefined') lucide.createIcons();
     }
 
     async function handleLogin(e) {

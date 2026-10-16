@@ -82,10 +82,27 @@ function escapeCSV(val) {
   return s;
 }
 
-// Check if a CSV file is the Unified Master format (contains Error Code, Ovse ID, Auth Result, Channel, etc.)
+// Check if a CSV or JSON file is the Unified Master format (contains Error Code, Ovse ID, Auth Result, Channel, etc.)
 function isUnifiedCSV(filePath) {
   if (!fs.existsSync(filePath)) return false;
   try {
+    const ext = path.extname(filePath).toLowerCase();
+    if (ext === '.json') {
+      const base = path.basename(filePath).toLowerCase();
+      if (base === 'package.json' || base === 'package-lock.json' || base === 'initial_data.json') return false;
+      const content = fs.readFileSync(filePath, 'utf-8').trim();
+      const parsed = JSON.parse(content);
+      if (parsed && parsed.overall && parsed.weekly && Array.isArray(parsed.comparison)) {
+        return true; // Pre-aggregated master JSON
+      }
+      const arr = Array.isArray(parsed) ? parsed : (parsed?.rows || parsed?.data || parsed?.results || []);
+      if (Array.isArray(arr) && arr.length > 0 && typeof arr[0] === 'object') {
+        const keys = Object.keys(arr[0]).map(k => k.toLowerCase());
+        return keys.some(k => k.includes('auth')) && keys.some(k => k.includes('channel') || k.includes('ovse'));
+      }
+      return false;
+    }
+
     const fd = fs.openSync(filePath, 'r');
     const buf = Buffer.alloc(1024);
     const bytesRead = fs.readSync(fd, buf, 0, 1024, 0);
@@ -102,13 +119,25 @@ function isUnifiedCSV(filePath) {
   }
 }
 
+// Helper to extract a field from a JSON row object with flexible key naming
+function getJsonField(obj, candidates) {
+  if (!obj || typeof obj !== 'object') return '';
+  for (const key of Object.keys(obj)) {
+    const lower = key.toLowerCase().trim();
+    if (candidates.some(c => lower === c || lower.includes(c))) {
+      return obj[key] !== null && obj[key] !== undefined ? String(obj[key]).trim() : '';
+    }
+  }
+  return '';
+}
+
 // Find latest unified or legacy files
 function findLatestFiles(dir = __dirname) {
   const files = fs.readdirSync(dir);
   
-  // 1. Look for newest Unified Master file
+  // 1. Look for newest Unified Master file (.csv or .json query export)
   const unifiedFiles = files
-    .filter(f => f.endsWith('.csv') && !f.startsWith('OVSE_'))
+    .filter(f => (f.endsWith('.csv') || f.endsWith('.json')) && !f.startsWith('OVSE_') && f !== 'initial_data.json' && f !== 'package.json' && f !== 'package-lock.json')
     .map(f => {
       const p = path.join(dir, f);
       return { name: f, path: p, time: fs.statSync(p).mtimeMs, isUnified: isUnifiedCSV(p) };
@@ -149,41 +178,117 @@ function findLatestFiles(dir = __dirname) {
   };
 }
 
-// Core Unified Processing Engine: Ingests 1 CSV and builds all 3 dashboards
+// Core Unified Processing Engine: Ingests 1 CSV or JSON and builds all 3 dashboards
 function processUnifiedDataset(filePath, dir = path.dirname(filePath), options = {}) {
-  const content = fs.readFileSync(filePath, 'utf-8');
-  const lines = content.split(/\r?\n/).filter(line => line.trim().length > 0);
-  if (lines.length < 2) throw new Error("Dataset contains no data rows.");
+  const content = fs.readFileSync(filePath, 'utf-8').trim();
+  const isJsonInput = filePath.toLowerCase().endsWith('.json') || content.startsWith('{') || content.startsWith('[');
 
   const allRows = [];
   const dateCounts = {};
 
-  for (let i = 1; i < lines.length; i++) {
-    const parts = parseLine(lines[i]);
-    if (parts.length < 6) continue;
-
-    const errCode = parts[0].replace(/^"|"$/g, '').trim();
-    const ovseId = parts[1].replace(/^"|"$/g, '').trim() || '(Blank / Unknown)';
-    const dateStr = parts[2].replace(/^"|"$/g, '').trim();
-    const authResult = parts[3].replace(/^"|"$/g, '').trim().toLowerCase();
-    let channel = parts[4].replace(/^"|"$/g, '').trim().toUpperCase();
-    if (channel === 'QR') channel = 'QR_SCAN';
-    const count = parseInt(parts[5].replace(/^"|"$/g, '').replace(/,/g, ''), 10) || 0;
-
-    const dt = parseDate(dateStr);
-    if (dt) {
-      dateCounts[dateStr] = (dateCounts[dateStr] || 0) + count;
+  if (isJsonInput) {
+    let parsed;
+    try {
+      parsed = JSON.parse(content);
+    } catch (e) {
+      throw new Error(`Invalid JSON file: ${e.message}`);
     }
 
-    allRows.push({
-      errCode,
-      ovseId,
-      dateStr,
-      dt,
-      authResult,
-      channel,
-      count
-    });
+    // Case A: Pre-aggregated Master Dashboard JSON object
+    if (parsed && !Array.isArray(parsed) && parsed.overall && parsed.weekly && Array.isArray(parsed.comparison)) {
+      const masterData = {
+        ...parsed,
+        metadata: {
+          ...(parsed.metadata || {}),
+          generatedAt: new Date().toISOString(),
+          sourceFile: path.basename(filePath),
+          isUnifiedMaster: true
+        },
+        lastUpdatedLocal: new Date().toISOString()
+      };
+      fs.writeFileSync(path.join(dir, 'initial_data.json'), JSON.stringify(masterData, null, 2), 'utf-8');
+      fs.writeFileSync(path.join(dir, 'initial_data_bundle.js'), `// Auto-generated baseline master data for OVSE Executive Dashboard\nconst BUNDLED_DATA = ${JSON.stringify(masterData, null, 2)};\n`, 'utf-8');
+      return masterData;
+    }
+
+    // Case B: Raw JSON Array of Unified Records (or wrapped in { rows/data/results })
+    const rawArray = Array.isArray(parsed) ? parsed : (parsed?.rows || parsed?.data || parsed?.results || []);
+    if (!Array.isArray(rawArray) || rawArray.length === 0) {
+      throw new Error("JSON dataset contains no valid data records.");
+    }
+
+    for (const item of rawArray) {
+      const errCode = getJsonField(item, ['error code', 'error_code', 'errorcode', 'err_code', 'errcode']);
+      const ovseId = getJsonField(item, ['ovse id', 'ovse_id', 'ovseid', 'ovse', 'entity']) || '(Blank / Unknown)';
+      const dateStr = getJsonField(item, ['event timestamp', 'event_timestamp', 'eventtimestamp', 'timestamp', 'date']);
+      const authResult = getJsonField(item, ['auth result', 'auth_result', 'authresult', 'auth']).toLowerCase();
+      let channel = getJsonField(item, ['cred exchange channel', 'cred_exchange_channel', 'channel']).toUpperCase();
+      if (channel === 'QR') channel = 'QR_SCAN';
+      const countRaw = getJsonField(item, ['count', 'volume', 'total', 'tx']);
+      const count = parseInt(String(countRaw).replace(/,/g, ''), 10) || 0;
+
+      const dt = parseDate(dateStr);
+      if (dt) {
+        dateCounts[dateStr] = (dateCounts[dateStr] || 0) + count;
+      }
+
+      allRows.push({
+        errCode,
+        ovseId,
+        dateStr,
+        dt,
+        authResult,
+        channel,
+        count
+      });
+    }
+  } else {
+    // CSV Input with Dynamic Column Header Detection
+    const lines = content.split(/\r?\n/).filter(line => line.trim().length > 0);
+    if (lines.length < 2) throw new Error("Dataset contains no data rows.");
+
+    const headerParts = parseLine(lines[0]).map(h => h.replace(/^"|"$/g, '').trim().toLowerCase());
+    const errIdx = headerParts.findIndex(h => h.includes('error'));
+    const ovseIdx = headerParts.findIndex(h => h.includes('ovse'));
+    const dateIdx = headerParts.findIndex(h => h.includes('timestamp') || h.includes('date') || h.includes('time'));
+    const authIdx = headerParts.findIndex(h => h.includes('auth'));
+    const chanIdx = headerParts.findIndex(h => h.includes('channel'));
+    const countIdx = headerParts.findIndex(h => h.includes('count') || h.includes('volume') || h.includes('tx'));
+
+    const cErr = errIdx !== -1 ? errIdx : 0;
+    const cOvse = ovseIdx !== -1 ? ovseIdx : 1;
+    const cDate = dateIdx !== -1 ? dateIdx : 2;
+    const cAuth = authIdx !== -1 ? authIdx : 3;
+    const cChan = chanIdx !== -1 ? chanIdx : 4;
+    const cCount = countIdx !== -1 ? countIdx : 5;
+
+    for (let i = 1; i < lines.length; i++) {
+      const parts = parseLine(lines[i]);
+      if (parts.length < 6) continue;
+
+      const errCode = (parts[cErr] || '').replace(/^"|"$/g, '').trim();
+      const ovseId = (parts[cOvse] || '').replace(/^"|"$/g, '').trim() || '(Blank / Unknown)';
+      const dateStr = (parts[cDate] || '').replace(/^"|"$/g, '').trim();
+      const authResult = (parts[cAuth] || '').replace(/^"|"$/g, '').trim().toLowerCase();
+      let channel = (parts[cChan] || '').replace(/^"|"$/g, '').trim().toUpperCase();
+      if (channel === 'QR') channel = 'QR_SCAN';
+      const count = parseInt((parts[cCount] || '0').replace(/^"|"$/g, '').replace(/,/g, ''), 10) || 0;
+
+      const dt = parseDate(dateStr);
+      if (dt) {
+        dateCounts[dateStr] = (dateCounts[dateStr] || 0) + count;
+      }
+
+      allRows.push({
+        errCode,
+        ovseId,
+        dateStr,
+        dt,
+        authResult,
+        channel,
+        count
+      });
+    }
   }
 
   // Determine Weekly Window: Last 7 calendar days up to the latest realistic date
@@ -428,11 +533,47 @@ function processUnifiedDataset(filePath, dir = path.dirname(filePath), options =
     return dt.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
   };
 
+  const toISODateOnly = (dt) => {
+    const y = dt.getFullYear();
+    const m = String(dt.getMonth() + 1).padStart(2, '0');
+    const d = String(dt.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+  };
+
+  const minTime = validDates.length > 0 ? Math.min(...validDates) : maxTime;
+  const minDate = new Date(minTime);
+
+  // Extract database export timestamp from filename if formatted like query_result_2026-10-16T10_04_14...
+  const baseFileName = path.basename(filePath);
+  let dataLastUpdated = new Date().toLocaleString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true });
+  const tsMatch = baseFileName.match(/(\d{4})-(\d{2})-(\d{2})T(\d{2})_(\d{2})_(\d{2})/);
+  if (tsMatch) {
+    const expDt = new Date(Number(tsMatch[1]), Number(tsMatch[2]) - 1, Number(tsMatch[3]), Number(tsMatch[4]), Number(tsMatch[5]), Number(tsMatch[6]));
+    dataLastUpdated = expDt.toLocaleString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true }).toUpperCase() + ' IST';
+  }
+
+  // Compact raw records for instant client-side filtering (Today / Last Week / Last Month / Custom Date Range)
+  const rawRecords = allRows.map(r => [
+    r.errCode,
+    r.ovseId,
+    r.dateStr,
+    r.authResult,
+    r.channel,
+    r.count
+  ]);
+
   const masterData = {
     metadata: {
       generatedAt: new Date().toISOString(),
-      sourceFile: path.basename(filePath),
+      dataLastUpdated,
+      sourceFile: baseFileName,
       reportingCutoff: `${formatDateDisplay(maxDate)} (Weekly: ${formatDateDisplay(weeklyStart)} to ${formatDateDisplay(weeklyEnd)})`,
+      dateBounds: {
+        minDate: toISODateOnly(minDate),
+        maxDate: toISODateOnly(maxDate),
+        minFormatted: formatDateDisplay(minDate),
+        maxFormatted: formatDateDisplay(maxDate)
+      },
       weeklyWindow: {
         start: weeklyStart.toISOString(),
         end: weeklyEnd.toISOString(),
@@ -457,6 +598,7 @@ function processUnifiedDataset(filePath, dir = path.dirname(filePath), options =
       comparison: channelComparison
     },
     dailyTrend,
+    rawRecords,
     lastUpdatedLocal: new Date().toISOString()
   };
 

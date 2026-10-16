@@ -1,25 +1,25 @@
 OVSE DATA SHARING CHANNELS - EXECUTIVE ANALYSIS REPORT
-Generated At,"15/10/2026, 10:34:49 am"
+Generated At,"16/10/2026, 10:48:49 am"
 ,,,,,,
 Channel Code,Channel Description,Weekly Volume,Weekly Share %,Overall Lifetime Volume,Overall Lifetime Share %,Adoption Delta (%)
-APP_INTENT,App-to-App (App Intent),158804,91.61%,6002290,90.53%,+1.08%
-QR_SCAN,Cross-Device QR (QR Scan),4054,2.34%,590964,8.91%,-6.57%
-WEB_INTENT,Web-to-App (Web Intent),10497,6.06%,37065,0.56%,+5.50%
+APP_INTENT,App-to-App (App Intent),157100,91.43%,6028008,90.53%,+0.90%
+QR_SCAN,Cross-Device QR (QR Scan),4093,2.38%,591816,8.89%,-6.51%
+WEB_INTENT,Web-to-App (Web Intent),10639,6.19%,38975,0.59%,+5.61%
 ,,,,,,
 TOP OVSEs BY CHANNEL USAGE (WEEKLY)
 OVSE ID,Total Weekly Tx,App Intent Tx,App Intent Share %,Web Intent Tx,Web Intent Share %,QR Scan Tx,QR Scan Share %
-SelectiveShare,128828,128828,100.0%,0,0.0%,0,0.0%
-urbancompany,17405,17405,100.0%,0,0.0%,0,0.0%
-protean,5477,2,0.0%,5208,95.1%,267,4.9%
-gridlines,4844,2325,48.0%,1916,39.6%,603,12.4%
-urn:uidai:client:life-insurance-corporation-of-india:202606036260,3907,1220,31.2%,2283,58.4%,404,10.3%
-urn:uidai:client:inferalgo-private-limited:202607177737,2480,1880,75.8%,525,21.2%,75,3.0%
-procam,1700,1086,63.9%,0,0.0%,614,36.1%
-tnmc,1696,1150,67.8%,0,0.0%,546,32.2%
-arattai,1490,1486,99.7%,0,0.0%,4,0.3%
-dexit,1161,904,77.9%,0,0.0%,257,22.1%
-trustt,1124,559,49.7%,412,36.7%,153,13.6%
-urn:uidai:client:punjab-school-educationboard:202608274954,642,512,79.8%,0,0.0%,130,20.2%
-tspolice,340,227,66.8%,5,1.5%,108,31.8%
-(Blank / Unknown),264,0,0.0%,0,0.0%,264,100.0%
+SelectiveShare,127111,127111,100.0%,0,0.0%,0,0.0%
+urbancompany,17019,17019,100.0%,0,0.0%,0,0.0%
+protean,5456,2,0.0%,5292,97.0%,162,3.0%
+gridlines,5018,2331,46.5%,2061,41.1%,626,12.5%
+urn:uidai:client:life-insurance-corporation-of-india:202606036260,3729,1143,30.7%,2216,59.4%,370,9.9%
+urn:uidai:client:inferalgo-private-limited:202607177737,2566,1931,75.3%,558,21.7%,77,3.0%
+procam,1841,1217,66.1%,0,0.0%,624,33.9%
+tnmc,1631,1051,64.4%,0,0.0%,580,35.6%
+arattai,1506,1500,99.6%,0,0.0%,6,0.4%
+dexit,1431,1106,77.3%,0,0.0%,325,22.7%
+trustt,1215,646,53.2%,400,32.9%,169,13.9%
+urn:uidai:client:punjab-school-educationboard:202608274954,591,456,77.2%,0,0.0%,135,22.8%
+(Blank / Unknown),307,0,0.0%,0,0.0%,307,100.0%
+tspolice,306,221,72.2%,1,0.3%,84,27.5%
 cisf,224,205,91.5%,0,0.0%,19,8.5%

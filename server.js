@@ -163,8 +163,9 @@ app.get('/api/auth-check', (req, res) => {
 // PROTECTED APPLICATION ROUTES
 // -------------------------------------------------------------
 
-// Serve static assets from public folder (CSS, icons, etc.) with auth check for sensitive pages
+// Serve static assets from public folder (vendor JS bundles for offline/intranet, CSS, icons, etc.)
 app.use('/assets', express.static(path.join(__dirname, 'public', 'assets')));
+app.use('/public/assets', express.static(path.join(__dirname, 'public', 'assets')));
 
 // API: Get Current Dashboard Data
 app.get('/api/data', requireAuth, (req, res) => {
@@ -180,7 +181,7 @@ app.get('/api/data', requireAuth, (req, res) => {
   return res.status(404).json({ error: 'No data file found.' });
 });
 
-// API: Upload New CSV Datasets (Strictly Admin Only)
+// API: Upload New CSV or JSON Datasets (Strictly Admin Only)
 app.post('/api/upload', requireAuth, requireAdmin, upload.fields([
   { name: 'masterFile', maxCount: 1 },
   { name: 'file', maxCount: 1 },
@@ -190,13 +191,19 @@ app.post('/api/upload', requireAuth, requireAdmin, upload.fields([
   try {
     const uploadedMaster = req.files?.masterFile?.[0] || req.files?.file?.[0] || (!req.files?.weeklyFile && req.files?.overallFile?.[0]);
 
-    // 1. Single Unified Master Dataset Ingestion (Refreshes all 3 tabs at once)
+    // 1. Single Unified Master Dataset Ingestion (.csv or .json — Refreshes all 3 tabs at once)
     if (uploadedMaster) {
       const content = uploadedMaster.buffer.toString('utf-8');
       const val = validateCSVFormat(content, 'unified', uploadedMaster.originalname);
-      
-      if (val.valid && (val.detectedType === 'unified' || req.body.datasetType === 'unified')) {
-        const savedName = `query_result_${Date.now()}.csv`;
+
+      if (!val.valid) {
+        return res.status(400).json({ error: val.error });
+      }
+
+      if (val.detectedType === 'unified' || req.body.datasetType === 'unified') {
+        const isJsonFile = (uploadedMaster.originalname || '').toLowerCase().endsWith('.json') || (val.format && val.format.startsWith('json'));
+        const ext = isJsonFile ? 'json' : 'csv';
+        const savedName = `query_result_${Date.now()}.${ext}`;
         const savedPath = path.join(__dirname, savedName);
         fs.writeFileSync(savedPath, content, 'utf-8');
 
@@ -205,14 +212,14 @@ app.post('/api/upload', requireAuth, requireAdmin, upload.fields([
 
         return res.json({
           success: true,
-          message: '✓ Unified Master CSV processed successfully! All 3 dashboards (Transactions, UIDAI Errors, Sharing Channels) and all executive reports have been updated.',
+          message: `✓ Unified Master ${ext.toUpperCase()} processed successfully! All 3 dashboards (Transactions, UIDAI Errors, Sharing Channels) and all executive reports have been updated.`,
           data: masterData
         });
       }
     }
 
     if (!req.files || (!req.files.overallFile && !req.files.weeklyFile && !uploadedMaster)) {
-      return res.status(400).json({ error: 'Please upload at least one CSV file.' });
+      return res.status(400).json({ error: 'Please upload at least one CSV or JSON file.' });
     }
 
     const datasetType = req.body.datasetType || 'transactions';
@@ -353,6 +360,14 @@ app.get('/api/download/channel-analysis', requireAuth, (req, res) => {
     return res.download(filePath, 'OVSE_Sharing_Channels_Analysis.csv');
   }
   res.status(404).send('Channel analysis report not generated yet.');
+});
+
+app.get('/api/download/master-json', requireAuth, (req, res) => {
+  const filePath = path.join(__dirname, 'initial_data.json');
+  if (fs.existsSync(filePath)) {
+    return res.download(filePath, `OVSE_Master_Dataset_${new Date().toISOString().slice(0, 10)}.json`);
+  }
+  res.status(404).send('Master JSON dataset not generated yet.');
 });
 
 // Serve the Main Protected Dashboard at "/"
