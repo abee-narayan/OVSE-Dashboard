@@ -370,7 +370,11 @@ function processUnifiedDataset(filePath, dir = path.dirname(filePath), options =
       failureRate: item.total > 0 ? (item.failure / item.total) * 100 : 0
     })).sort((a, b) => b.total - a.total);
 
-    txList.forEach((item, idx) => { item.rank = idx + 1; });
+    txList.forEach((item, idx) => {
+      item.rank = idx + 1;
+      const mapEntry = txOvseMap.get(item.ovseId);
+      if (mapEntry) mapEntry.rank = idx + 1;
+    });
 
     const codeList = Object.entries(errCodeMap).map(([code, count]) => ({
       code,
@@ -529,6 +533,52 @@ function processUnifiedDataset(filePath, dir = path.dirname(filePath), options =
     total: dateCounts[dStr] || 0
   }));
 
+  // Build Monthly Trend Aggregation across Transactions, Errors & Sharing Channels
+  const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const monthBuckets = {};
+  for (const r of allRows) {
+    if (!r.dt) continue;
+    const y = r.dt.getFullYear();
+    const m = r.dt.getMonth() + 1;
+    if (y < 2025) continue;
+    const ym = `${y}-${String(m).padStart(2, '0')}`;
+    if (!monthBuckets[ym]) {
+      monthBuckets[ym] = {
+        monthKey: ym,
+        label: `${MONTH_NAMES[m - 1]} ${y}`,
+        totalTx: 0,
+        successTx: 0,
+        failureTx: 0,
+        errorCount: 0,
+        errorCategories: {},
+        appIntent: 0,
+        webIntent: 0,
+        qrScan: 0
+      };
+    }
+    const b = monthBuckets[ym];
+    b.totalTx += r.count;
+    if (r.authResult === 'y') b.successTx += r.count;
+    else if (r.authResult === 'n') b.failureTx += r.count;
+    if (r.errCode) {
+      b.errorCount += r.count;
+      const cat = ERROR_CATEGORIES[r.errCode] || 'Other System Errors';
+      b.errorCategories[cat] = (b.errorCategories[cat] || 0) + r.count;
+    }
+    if (r.channel === 'APP_INTENT') b.appIntent += r.count;
+    else if (r.channel === 'WEB_INTENT') b.webIntent += r.count;
+    else if (r.channel === 'QR_SCAN') b.qrScan += r.count;
+  }
+  const monthlyTrend = Object.keys(monthBuckets).sort().map(ym => {
+    const b = monthBuckets[ym];
+    return {
+      ...b,
+      successRate: b.totalTx > 0 ? Number(((b.successTx / b.totalTx) * 100).toFixed(2)) : 0,
+      failureRate: b.totalTx > 0 ? Number(((b.failureTx / b.totalTx) * 100).toFixed(2)) : 0,
+      errorRate: b.totalTx > 0 ? Number(((b.errorCount / b.totalTx) * 100).toFixed(2)) : 0
+    };
+  });
+
   const formatDateDisplay = (dt) => {
     return dt.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
   };
@@ -598,6 +648,7 @@ function processUnifiedDataset(filePath, dir = path.dirname(filePath), options =
       comparison: channelComparison
     },
     dailyTrend,
+    monthlyTrend,
     rawRecords,
     lastUpdatedLocal: new Date().toISOString()
   };

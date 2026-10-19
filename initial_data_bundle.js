@@ -1,7 +1,7 @@
 // Auto-generated baseline master data for OVSE Executive Dashboard
 const BUNDLED_DATA = {
   "metadata": {
-    "generatedAt": "2026-10-19T06:13:00.679Z",
+    "generatedAt": "2026-10-19T11:41:33.834Z",
     "dataLastUpdated": "19 OCT 2026, 11:38 AM IST",
     "sourceFile": "query_result_2026-10-19T11_38_10.021711+05_30.csv",
     "reportingCutoff": "19 Oct 2026 (Weekly: 13 Oct 2026 to 19 Oct 2026)",
@@ -3186,7 +3186,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "SelectiveShare",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 1,
       "weeklyTotal": 125732,
       "weeklySuccess": 125727,
       "weeklyFailure": 5,
@@ -3203,7 +3203,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urbancompany",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 2,
       "weeklyTotal": 14604,
       "weeklySuccess": 7826,
       "weeklyFailure": 6778,
@@ -3220,7 +3220,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "protean",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 3,
       "weeklyTotal": 5086,
       "weeklySuccess": 4769,
       "weeklyFailure": 317,
@@ -3237,7 +3237,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "gridlines",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 4,
       "weeklyTotal": 4172,
       "weeklySuccess": 2213,
       "weeklyFailure": 1959,
@@ -3254,7 +3254,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 5,
       "weeklyTotal": 3368,
       "weeklySuccess": 1857,
       "weeklyFailure": 1511,
@@ -3271,7 +3271,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:inferalgo-private-limited:202607177737",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 6,
       "weeklyTotal": 3161,
       "weeklySuccess": 1672,
       "weeklyFailure": 1489,
@@ -3288,7 +3288,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "dexit",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 7,
       "weeklyTotal": 2381,
       "weeklySuccess": 1200,
       "weeklyFailure": 1181,
@@ -3305,7 +3305,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "procam",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 8,
       "weeklyTotal": 2188,
       "weeklySuccess": 1614,
       "weeklyFailure": 574,
@@ -3322,7 +3322,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "tnmc",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 9,
       "weeklyTotal": 1607,
       "weeklySuccess": 1155,
       "weeklyFailure": 452,
@@ -3339,7 +3339,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "arattai",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 10,
       "weeklyTotal": 1392,
       "weeklySuccess": 883,
       "weeklyFailure": 509,
@@ -3356,7 +3356,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "trustt",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 11,
       "weeklyTotal": 1137,
       "weeklySuccess": 781,
       "weeklyFailure": 356,
@@ -3373,7 +3373,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:punjab-school-educationboard:202608274954",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 12,
       "weeklyTotal": 806,
       "weeklySuccess": 357,
       "weeklyFailure": 449,
@@ -3390,7 +3390,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:instantpay-india-limited:202606250788",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 13,
       "weeklyTotal": 405,
       "weeklySuccess": 293,
       "weeklyFailure": 112,
@@ -3407,7 +3407,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:hindon-mercantile-limited:202608105382",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 14,
       "weeklyTotal": 393,
       "weeklySuccess": 237,
       "weeklyFailure": 156,
@@ -3424,7 +3424,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:dc-office-tawang:202606230797",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 15,
       "weeklyTotal": 321,
       "weeklySuccess": 249,
       "weeklyFailure": 72,
@@ -3441,7 +3441,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "(Blank / Unknown)",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 16,
       "weeklyTotal": 285,
       "weeklySuccess": 1,
       "weeklyFailure": 284,
@@ -3458,7 +3458,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "tspolice",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 17,
       "weeklyTotal": 232,
       "weeklySuccess": 130,
       "weeklyFailure": 102,
@@ -3475,7 +3475,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 18,
       "weeklyTotal": 190,
       "weeklySuccess": 161,
       "weeklyFailure": 29,
@@ -3492,7 +3492,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "000",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 19,
       "weeklyTotal": 176,
       "weeklySuccess": 121,
       "weeklyFailure": 55,
@@ -3509,7 +3509,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "transaction_analysts",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 20,
       "weeklyTotal": 175,
       "weeklySuccess": 120,
       "weeklyFailure": 55,
@@ -3526,7 +3526,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "truscholar",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 21,
       "weeklyTotal": 89,
       "weeklySuccess": 66,
       "weeklyFailure": 23,
@@ -3543,7 +3543,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "entityiq",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 22,
       "weeklyTotal": 60,
       "weeklySuccess": 47,
       "weeklyFailure": 13,
@@ -3560,7 +3560,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "cisf",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 23,
       "weeklyTotal": 50,
       "weeklySuccess": 23,
       "weeklyFailure": 27,
@@ -3577,7 +3577,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "pathikgp",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 24,
       "weeklyTotal": 48,
       "weeklySuccess": 45,
       "weeklyFailure": 3,
@@ -3594,7 +3594,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "perfios",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 25,
       "weeklyTotal": 47,
       "weeklySuccess": 25,
       "weeklyFailure": 22,
@@ -3611,7 +3611,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 26,
       "weeklyTotal": 45,
       "weeklySuccess": 11,
       "weeklyFailure": 34,
@@ -3628,7 +3628,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 27,
       "weeklyTotal": 45,
       "weeklySuccess": 7,
       "weeklyFailure": 38,
@@ -3645,7 +3645,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "rjil",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 28,
       "weeklyTotal": 43,
       "weeklySuccess": 30,
       "weeklyFailure": 13,
@@ -3662,7 +3662,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "trackwizz",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 29,
       "weeklyTotal": 42,
       "weeklySuccess": 34,
       "weeklyFailure": 8,
@@ -3679,7 +3679,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "BankuIndialtd:05102026",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 30,
       "weeklyTotal": 42,
       "weeklySuccess": 0,
       "weeklyFailure": 42,
@@ -3696,7 +3696,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "surepass",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 31,
       "weeklyTotal": 33,
       "weeklySuccess": 12,
       "weeklyFailure": 21,
@@ -3713,7 +3713,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:codetantra-tech-solutions-private-limited:202606124082",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 32,
       "weeklyTotal": 31,
       "weeklySuccess": 19,
       "weeklyFailure": 12,
@@ -3730,7 +3730,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "vsign",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 33,
       "weeklyTotal": 28,
       "weeklySuccess": 23,
       "weeklyFailure": 5,
@@ -3747,7 +3747,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:accura-technolabs-private-limited:202609240826",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 34,
       "weeklyTotal": 24,
       "weeklySuccess": 10,
       "weeklyFailure": 14,
@@ -3764,7 +3764,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 35,
       "weeklyTotal": 23,
       "weeklySuccess": 5,
       "weeklyFailure": 18,
@@ -3781,7 +3781,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "ooru_digital",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 36,
       "weeklyTotal": 22,
       "weeklySuccess": 10,
       "weeklyFailure": 12,
@@ -3798,7 +3798,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:directorate-of-land-records:202607304388",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 37,
       "weeklyTotal": 22,
       "weeklySuccess": 9,
       "weeklyFailure": 13,
@@ -3815,7 +3815,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:aparampaar-finance-private-limited:202605134450",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 39,
       "weeklyTotal": 21,
       "weeklySuccess": 9,
       "weeklyFailure": 12,
@@ -3832,7 +3832,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "pratiraksha",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 38,
       "weeklyTotal": 21,
       "weeklySuccess": 17,
       "weeklyFailure": 4,
@@ -3849,7 +3849,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "bioenable",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 40,
       "weeklyTotal": 20,
       "weeklySuccess": 10,
       "weeklyFailure": 10,
@@ -3866,7 +3866,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "apiclub",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 41,
       "weeklyTotal": 16,
       "weeklySuccess": 10,
       "weeklyFailure": 6,
@@ -3883,7 +3883,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:finanalyz-technologies-private-limited:202606306133",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 42,
       "weeklyTotal": 16,
       "weeklySuccess": 0,
       "weeklyFailure": 16,
@@ -3900,7 +3900,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:commissioner-esd-meeseva-telangana:202609174748",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 43,
       "weeklyTotal": 15,
       "weeklySuccess": 4,
       "weeklyFailure": 11,
@@ -3917,7 +3917,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:prabodh-technologies-llp:202610158333",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 44,
       "weeklyTotal": 15,
       "weeklySuccess": 5,
       "weeklyFailure": 10,
@@ -3934,7 +3934,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:state-crime-records-bureau:202609141512",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 45,
       "weeklyTotal": 14,
       "weeklySuccess": 0,
       "weeklyFailure": 14,
@@ -3951,7 +3951,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "baldortpl",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 46,
       "weeklyTotal": 13,
       "weeklySuccess": 13,
       "weeklyFailure": 0,
@@ -3968,7 +3968,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:caratred-technologies-llp:202606040096",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 47,
       "weeklyTotal": 13,
       "weeklySuccess": 5,
       "weeklyFailure": 8,
@@ -3985,7 +3985,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:fr8-india-private-limited:202609177281",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 48,
       "weeklyTotal": 11,
       "weeklySuccess": 7,
       "weeklyFailure": 4,
@@ -4002,7 +4002,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:dhanrise-finance-private-limited:202609176227",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 49,
       "weeklyTotal": 10,
       "weeklySuccess": 0,
       "weeklyFailure": 10,
@@ -4019,7 +4019,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:swastik-enterprises:202610153599",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 50,
       "weeklyTotal": 10,
       "weeklySuccess": 0,
       "weeklyFailure": 10,
@@ -4036,7 +4036,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:bses-rajdhani-power-limited:202609164125",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 51,
       "weeklyTotal": 9,
       "weeklySuccess": 9,
       "weeklyFailure": 0,
@@ -4053,7 +4053,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:kiauth-digitech-private-limited:202608274002",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 52,
       "weeklyTotal": 9,
       "weeklySuccess": 3,
       "weeklyFailure": 6,
@@ -4070,7 +4070,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:assam-police:202606026852",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 53,
       "weeklyTotal": 8,
       "weeklySuccess": 8,
       "weeklyFailure": 0,
@@ -4087,7 +4087,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:paynearby:08092026",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 55,
       "weeklyTotal": 8,
       "weeklySuccess": 3,
       "weeklyFailure": 5,
@@ -4104,7 +4104,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:yars-enterprises-private-limited:202608051108",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 56,
       "weeklyTotal": 8,
       "weeklySuccess": 8,
       "weeklyFailure": 0,
@@ -4121,7 +4121,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:nxfin-technologies-private-limited:202608186786",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 54,
       "weeklyTotal": 8,
       "weeklySuccess": 8,
       "weeklyFailure": 0,
@@ -4138,7 +4138,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "mantra",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 57,
       "weeklyTotal": 7,
       "weeklySuccess": 7,
       "weeklyFailure": 0,
@@ -4155,7 +4155,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 59,
       "weeklyTotal": 7,
       "weeklySuccess": 2,
       "weeklyFailure": 5,
@@ -4172,7 +4172,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:seed-data-systems:202606048001",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 60,
       "weeklyTotal": 7,
       "weeklySuccess": 2,
       "weeklyFailure": 5,
@@ -4189,7 +4189,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:doklink-services-private-limited:202609249932",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 58,
       "weeklyTotal": 7,
       "weeklySuccess": 4,
       "weeklyFailure": 3,
@@ -4206,7 +4206,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "POC-AC-VALUE",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 61,
       "weeklyTotal": 7,
       "weeklySuccess": 0,
       "weeklyFailure": 7,
@@ -4223,7 +4223,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:oryggi-technologies-private-limited:202607288031",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 63,
       "weeklyTotal": 6,
       "weeklySuccess": 6,
       "weeklyFailure": 0,
@@ -4240,7 +4240,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "digio",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 62,
       "weeklyTotal": 6,
       "weeklySuccess": 3,
       "weeklyFailure": 3,
@@ -4257,7 +4257,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "sber",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 64,
       "weeklyTotal": 6,
       "weeklySuccess": 0,
       "weeklyFailure": 6,
@@ -4274,7 +4274,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "ebitaus",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 65,
       "weeklyTotal": 6,
       "weeklySuccess": 0,
       "weeklyFailure": 6,
@@ -4291,7 +4291,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:chandigarh-housing-board:202609023966",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 66,
       "weeklyTotal": 5,
       "weeklySuccess": 5,
       "weeklyFailure": 0,
@@ -4308,7 +4308,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "signzytech",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 67,
       "weeklyTotal": 4,
       "weeklySuccess": 2,
       "weeklyFailure": 2,
@@ -4325,7 +4325,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:virendrabadrinath-buildcon-enterprises-private-limited:202605131058",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 68,
       "weeklyTotal": 4,
       "weeklySuccess": 0,
       "weeklyFailure": 4,
@@ -4342,7 +4342,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 69,
       "weeklyTotal": 3,
       "weeklySuccess": 3,
       "weeklyFailure": 0,
@@ -4359,7 +4359,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:kolkata-police:202608142816",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 71,
       "weeklyTotal": 3,
       "weeklySuccess": 0,
       "weeklyFailure": 3,
@@ -4376,7 +4376,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "202606306133",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 70,
       "weeklyTotal": 3,
       "weeklySuccess": 0,
       "weeklyFailure": 3,
@@ -4393,7 +4393,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:sahana-system-limited:202610095399",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 72,
       "weeklyTotal": 3,
       "weeklySuccess": 0,
       "weeklyFailure": 3,
@@ -4410,7 +4410,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "bel",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 73,
       "weeklyTotal": 2,
       "weeklySuccess": 2,
       "weeklyFailure": 0,
@@ -4427,7 +4427,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "evolvecortex",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 74,
       "weeklyTotal": 2,
       "weeklySuccess": 2,
       "weeklyFailure": 0,
@@ -4444,7 +4444,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "secureedge",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 75,
       "weeklyTotal": 2,
       "weeklySuccess": 2,
       "weeklyFailure": 0,
@@ -4461,7 +4461,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:sashastra-seema-bal:202606103721",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 76,
       "weeklyTotal": 2,
       "weeklySuccess": 2,
       "weeklyFailure": 0,
@@ -4478,7 +4478,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:travdigi-(opc)-private-limited:202609039462",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 80,
       "weeklyTotal": 2,
       "weeklySuccess": 0,
       "weeklyFailure": 2,
@@ -4495,7 +4495,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "OR11274063",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 77,
       "weeklyTotal": 2,
       "weeklySuccess": 0,
       "weeklyFailure": 2,
@@ -4512,7 +4512,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "POC-AC-V1",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 78,
       "weeklyTotal": 2,
       "weeklySuccess": 0,
       "weeklyFailure": 2,
@@ -4529,7 +4529,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:yuvaan-infotech:202608148688",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 79,
       "weeklyTotal": 2,
       "weeklySuccess": 0,
       "weeklyFailure": 2,
@@ -4546,7 +4546,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:evolute-fintech-innovations-private-limited:202608271911",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 88,
       "weeklyTotal": 1,
       "weeklySuccess": 0,
       "weeklyFailure": 1,
@@ -4563,7 +4563,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:gujarat-co-operative-milk-marketing-federation-limited:202607233586",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 87,
       "weeklyTotal": 1,
       "weeklySuccess": 0,
       "weeklyFailure": 1,
@@ -4580,7 +4580,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:seculogix-innovations-private-limited:202606121537",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 85,
       "weeklyTotal": 1,
       "weeklySuccess": 1,
       "weeklyFailure": 0,
@@ -4597,7 +4597,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "finahub",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 81,
       "weeklyTotal": 1,
       "weeklySuccess": 1,
       "weeklyFailure": 0,
@@ -4614,7 +4614,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "signcare",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 83,
       "weeklyTotal": 1,
       "weeklySuccess": 1,
       "weeklyFailure": 0,
@@ -4631,7 +4631,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:atmik-bharat-industries-private-limited:202608127258",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 84,
       "weeklyTotal": 1,
       "weeklySuccess": 1,
       "weeklyFailure": 0,
@@ -4648,7 +4648,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "nict",
       "status": "Standard",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 82,
       "weeklyTotal": 1,
       "weeklySuccess": 1,
       "weeklyFailure": 0,
@@ -4665,7 +4665,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "POC-AC-V5",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 86,
       "weeklyTotal": 1,
       "weeklySuccess": 0,
       "weeklyFailure": 1,
@@ -7098,7 +7098,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "protean",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 3,
       "weeklyTotal": 5086,
       "weeklySuccess": 4769,
       "weeklyFailure": 317,
@@ -7115,7 +7115,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "dexit",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 7,
       "weeklyTotal": 2381,
       "weeklySuccess": 1200,
       "weeklyFailure": 1181,
@@ -7132,7 +7132,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:punjab-school-educationboard:202608274954",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 12,
       "weeklyTotal": 806,
       "weeklySuccess": 357,
       "weeklyFailure": 449,
@@ -7149,7 +7149,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:instantpay-india-limited:202606250788",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 13,
       "weeklyTotal": 405,
       "weeklySuccess": 293,
       "weeklyFailure": 112,
@@ -7166,7 +7166,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:hindon-mercantile-limited:202608105382",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 14,
       "weeklyTotal": 393,
       "weeklySuccess": 237,
       "weeklyFailure": 156,
@@ -7183,7 +7183,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "transaction_analysts",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 20,
       "weeklyTotal": 175,
       "weeklySuccess": 120,
       "weeklyFailure": 55,
@@ -7200,7 +7200,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "pathikgp",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 24,
       "weeklyTotal": 48,
       "weeklySuccess": 45,
       "weeklyFailure": 3,
@@ -7217,7 +7217,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 26,
       "weeklyTotal": 45,
       "weeklySuccess": 11,
       "weeklyFailure": 34,
@@ -7234,7 +7234,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 27,
       "weeklyTotal": 45,
       "weeklySuccess": 7,
       "weeklyFailure": 38,
@@ -7251,7 +7251,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "BankuIndialtd:05102026",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 30,
       "weeklyTotal": 42,
       "weeklySuccess": 0,
       "weeklyFailure": 42,
@@ -7268,7 +7268,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:accura-technolabs-private-limited:202609240826",
       "status": "Surging / High Growth",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 34,
       "weeklyTotal": 24,
       "weeklySuccess": 10,
       "weeklyFailure": 14,
@@ -7285,7 +7285,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 35,
       "weeklyTotal": 23,
       "weeklySuccess": 5,
       "weeklyFailure": 18,
@@ -7302,7 +7302,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:finanalyz-technologies-private-limited:202606306133",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 42,
       "weeklyTotal": 16,
       "weeklySuccess": 0,
       "weeklyFailure": 16,
@@ -7319,7 +7319,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:prabodh-technologies-llp:202610158333",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 44,
       "weeklyTotal": 15,
       "weeklySuccess": 5,
       "weeklyFailure": 10,
@@ -7336,7 +7336,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:state-crime-records-bureau:202609141512",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 45,
       "weeklyTotal": 14,
       "weeklySuccess": 0,
       "weeklyFailure": 14,
@@ -7353,7 +7353,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:fr8-india-private-limited:202609177281",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 48,
       "weeklyTotal": 11,
       "weeklySuccess": 7,
       "weeklyFailure": 4,
@@ -7370,7 +7370,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:dhanrise-finance-private-limited:202609176227",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 49,
       "weeklyTotal": 10,
       "weeklySuccess": 0,
       "weeklyFailure": 10,
@@ -7387,7 +7387,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:swastik-enterprises:202610153599",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 50,
       "weeklyTotal": 10,
       "weeklySuccess": 0,
       "weeklyFailure": 10,
@@ -7404,7 +7404,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "POC-AC-VALUE",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 61,
       "weeklyTotal": 7,
       "weeklySuccess": 0,
       "weeklyFailure": 7,
@@ -7421,7 +7421,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "202606306133",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 70,
       "weeklyTotal": 3,
       "weeklySuccess": 0,
       "weeklyFailure": 3,
@@ -7438,7 +7438,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:sahana-system-limited:202610095399",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 72,
       "weeklyTotal": 3,
       "weeklySuccess": 0,
       "weeklyFailure": 3,
@@ -7455,7 +7455,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "OR11274063",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 77,
       "weeklyTotal": 2,
       "weeklySuccess": 0,
       "weeklyFailure": 2,
@@ -7472,7 +7472,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "POC-AC-V1",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 78,
       "weeklyTotal": 2,
       "weeklySuccess": 0,
       "weeklyFailure": 2,
@@ -7489,7 +7489,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:yuvaan-infotech:202608148688",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 79,
       "weeklyTotal": 2,
       "weeklySuccess": 0,
       "weeklyFailure": 2,
@@ -7506,7 +7506,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "POC-AC-V5",
       "status": "New Entrant",
-      "weeklyRank": "Inactive",
+      "weeklyRank": 86,
       "weeklyTotal": 1,
       "weeklySuccess": 0,
       "weeklyFailure": 1,
@@ -14945,6 +14945,204 @@ const BUNDLED_DATA = {
     {
       "date": "24/10/2026",
       "total": 1
+    }
+  ],
+  "monthlyTrend": [
+    {
+      "monthKey": "2026-01",
+      "label": "Jan 2026",
+      "totalTx": 2,
+      "successTx": 2,
+      "failureTx": 0,
+      "errorCount": 0,
+      "errorCategories": {},
+      "appIntent": 2,
+      "webIntent": 0,
+      "qrScan": 0,
+      "successRate": 100,
+      "failureRate": 0,
+      "errorRate": 0
+    },
+    {
+      "monthKey": "2026-03",
+      "label": "Mar 2026",
+      "totalTx": 126,
+      "successTx": 95,
+      "failureTx": 31,
+      "errorCount": 93,
+      "errorCategories": {
+        "Generic Timeout / Client Drop": 62,
+        "Other System Errors": 19,
+        "Cryptographic / Security Error": 4,
+        "Biometric Face Auth Failure": 3,
+        "User Consent Denial": 5
+      },
+      "appIntent": 56,
+      "webIntent": 5,
+      "qrScan": 65,
+      "successRate": 75.4,
+      "failureRate": 24.6,
+      "errorRate": 73.81
+    },
+    {
+      "monthKey": "2026-04",
+      "label": "Apr 2026",
+      "totalTx": 112541,
+      "successTx": 110711,
+      "failureTx": 1830,
+      "errorCount": 94833,
+      "errorCategories": {
+        "Generic Timeout / Client Drop": 93003,
+        "Biometric Face Auth Failure": 769,
+        "Other System Errors": 29,
+        "Cryptographic / Security Error": 533,
+        "Network / Connectivity Timeout": 208,
+        "User Consent Denial": 264,
+        "System / Payload Processing": 27
+      },
+      "appIntent": 110405,
+      "webIntent": 120,
+      "qrScan": 2016,
+      "successRate": 98.37,
+      "failureRate": 1.63,
+      "errorRate": 84.27
+    },
+    {
+      "monthKey": "2026-05",
+      "label": "May 2026",
+      "totalTx": 392395,
+      "successTx": 379688,
+      "failureTx": 12707,
+      "errorCount": 152377,
+      "errorCategories": {
+        "Generic Timeout / Client Drop": 139670,
+        "Biometric Face Auth Failure": 5968,
+        "Other System Errors": 308,
+        "Cryptographic / Security Error": 1678,
+        "Network / Connectivity Timeout": 1280,
+        "User Consent Denial": 3389,
+        "System / Payload Processing": 84
+      },
+      "appIntent": 385928,
+      "webIntent": 725,
+      "qrScan": 5742,
+      "successRate": 96.76,
+      "failureRate": 3.24,
+      "errorRate": 38.83
+    },
+    {
+      "monthKey": "2026-06",
+      "label": "Jun 2026",
+      "totalTx": 763527,
+      "successTx": 739895,
+      "failureTx": 23632,
+      "errorCount": 42217,
+      "errorCategories": {
+        "Generic Timeout / Client Drop": 18585,
+        "Biometric Face Auth Failure": 10694,
+        "Other System Errors": 223,
+        "Cryptographic / Security Error": 3179,
+        "Network / Connectivity Timeout": 2323,
+        "User Consent Denial": 7170,
+        "System / Payload Processing": 43
+      },
+      "appIntent": 755380,
+      "webIntent": 1015,
+      "qrScan": 7132,
+      "successRate": 96.9,
+      "failureRate": 3.1,
+      "errorRate": 5.53
+    },
+    {
+      "monthKey": "2026-07",
+      "label": "Jul 2026",
+      "totalTx": 959858,
+      "successTx": 926678,
+      "failureTx": 33180,
+      "errorCount": 33478,
+      "errorCategories": {
+        "Generic Timeout / Client Drop": 298,
+        "Biometric Face Auth Failure": 15071,
+        "Other System Errors": 7,
+        "Cryptographic / Security Error": 4986,
+        "Network / Connectivity Timeout": 1100,
+        "User Consent Denial": 11883,
+        "System / Payload Processing": 133
+      },
+      "appIntent": 947047,
+      "webIntent": 846,
+      "qrScan": 11965,
+      "successRate": 96.54,
+      "failureRate": 3.46,
+      "errorRate": 3.49
+    },
+    {
+      "monthKey": "2026-08",
+      "label": "Aug 2026",
+      "totalTx": 1364402,
+      "successTx": 984993,
+      "failureTx": 379409,
+      "errorCount": 379469,
+      "errorCategories": {
+        "Generic Timeout / Client Drop": 60,
+        "Biometric Face Auth Failure": 73613,
+        "Other System Errors": 1,
+        "Cryptographic / Security Error": 100641,
+        "Network / Connectivity Timeout": 149555,
+        "User Consent Denial": 55490,
+        "System / Payload Processing": 109
+      },
+      "appIntent": 1232836,
+      "webIntent": 4504,
+      "qrScan": 127062,
+      "successRate": 72.19,
+      "failureRate": 27.81,
+      "errorRate": 27.81
+    },
+    {
+      "monthKey": "2026-09",
+      "label": "Sep 2026",
+      "totalTx": 2630981,
+      "successTx": 1302403,
+      "failureTx": 1328578,
+      "errorCount": 1328623,
+      "errorCategories": {
+        "Generic Timeout / Client Drop": 45,
+        "Biometric Face Auth Failure": 303017,
+        "Other System Errors": 5,
+        "Cryptographic / Security Error": 345268,
+        "Network / Connectivity Timeout": 465765,
+        "User Consent Denial": 214483,
+        "System / Payload Processing": 40
+      },
+      "appIntent": 2191716,
+      "webIntent": 11311,
+      "qrScan": 427954,
+      "successRate": 49.5,
+      "failureRate": 50.5,
+      "errorRate": 50.5
+    },
+    {
+      "monthKey": "2026-10",
+      "label": "Oct 2026",
+      "totalTx": 506643,
+      "successTx": 455534,
+      "failureTx": 51109,
+      "errorCount": 51130,
+      "errorCategories": {
+        "Generic Timeout / Client Drop": 21,
+        "Cryptographic / Security Error": 8088,
+        "Network / Connectivity Timeout": 3185,
+        "Biometric Face Auth Failure": 16637,
+        "User Consent Denial": 23180,
+        "System / Payload Processing": 19
+      },
+      "appIntent": 470355,
+      "webIntent": 24528,
+      "qrScan": 11760,
+      "successRate": 89.91,
+      "failureRate": 10.09,
+      "errorRate": 10.09
     }
   ],
   "rawRecords": [
@@ -164189,5 +164387,5 @@ const BUNDLED_DATA = {
       4
     ]
   ],
-  "lastUpdatedLocal": "2026-10-19T06:13:00.680Z"
+  "lastUpdatedLocal": "2026-10-19T11:41:33.838Z"
 };

@@ -1,26 +1,26 @@
 OVSE ID,Classification,Weekly Rank,Weekly Tx,Weekly Success Rate (%),Weekly Failure Rate (%),Overall Lifetime Tx,Weekly Share of Lifetime (%)
-protean,Surging / High Growth,Inactive,5086,93.77,6.23,9883,51.46
-dexit,Surging / High Growth,Inactive,2381,50.40,49.60,4628,51.45
-urn:uidai:client:punjab-school-educationboard:202608274954,Surging / High Growth,Inactive,806,44.29,55.71,1301,61.95
-urn:uidai:client:instantpay-india-limited:202606250788,Surging / High Growth,Inactive,405,72.35,27.65,447,90.60
-urn:uidai:client:hindon-mercantile-limited:202608105382,Surging / High Growth,Inactive,393,60.31,39.69,921,42.67
-transaction_analysts,Surging / High Growth,Inactive,175,68.57,31.43,246,71.14
-pathikgp,Surging / High Growth,Inactive,48,93.75,6.25,127,37.80
-urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204,Surging / High Growth,Inactive,45,24.44,75.56,65,69.23
-urn:uidai:client:ummeed-housing-finance-private-limited:202609177828,Surging / High Growth,Inactive,45,15.56,84.44,52,86.54
-BankuIndialtd:05102026,Surging / High Growth,Inactive,42,0.00,100.00,55,76.36
-urn:uidai:client:accura-technolabs-private-limited:202609240826,Surging / High Growth,Inactive,24,41.67,58.33,46,52.17
-urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049,New Entrant,Inactive,23,21.74,78.26,23,100.00
-urn:uidai:client:finanalyz-technologies-private-limited:202606306133,New Entrant,Inactive,16,0.00,100.00,16,100.00
-urn:uidai:client:prabodh-technologies-llp:202610158333,New Entrant,Inactive,15,33.33,66.67,15,100.00
-urn:uidai:client:state-crime-records-bureau:202609141512,New Entrant,Inactive,14,0.00,100.00,14,100.00
-urn:uidai:client:fr8-india-private-limited:202609177281,New Entrant,Inactive,11,63.64,36.36,11,100.00
-urn:uidai:client:dhanrise-finance-private-limited:202609176227,New Entrant,Inactive,10,0.00,100.00,10,100.00
-urn:uidai:client:swastik-enterprises:202610153599,New Entrant,Inactive,10,0.00,100.00,10,100.00
-POC-AC-VALUE,New Entrant,Inactive,7,0.00,100.00,7,100.00
-202606306133,New Entrant,Inactive,3,0.00,100.00,3,100.00
-urn:uidai:client:sahana-system-limited:202610095399,New Entrant,Inactive,3,0.00,100.00,3,100.00
-OR11274063,New Entrant,Inactive,2,0.00,100.00,2,100.00
-POC-AC-V1,New Entrant,Inactive,2,0.00,100.00,2,100.00
-urn:uidai:client:yuvaan-infotech:202608148688,New Entrant,Inactive,2,0.00,100.00,2,100.00
-POC-AC-V5,New Entrant,Inactive,1,0.00,100.00,1,100.00
+protean,Surging / High Growth,3,5086,93.77,6.23,9883,51.46
+dexit,Surging / High Growth,7,2381,50.40,49.60,4628,51.45
+urn:uidai:client:punjab-school-educationboard:202608274954,Surging / High Growth,12,806,44.29,55.71,1301,61.95
+urn:uidai:client:instantpay-india-limited:202606250788,Surging / High Growth,13,405,72.35,27.65,447,90.60
+urn:uidai:client:hindon-mercantile-limited:202608105382,Surging / High Growth,14,393,60.31,39.69,921,42.67
+transaction_analysts,Surging / High Growth,20,175,68.57,31.43,246,71.14
+pathikgp,Surging / High Growth,24,48,93.75,6.25,127,37.80
+urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204,Surging / High Growth,26,45,24.44,75.56,65,69.23
+urn:uidai:client:ummeed-housing-finance-private-limited:202609177828,Surging / High Growth,27,45,15.56,84.44,52,86.54
+BankuIndialtd:05102026,Surging / High Growth,30,42,0.00,100.00,55,76.36
+urn:uidai:client:accura-technolabs-private-limited:202609240826,Surging / High Growth,34,24,41.67,58.33,46,52.17
+urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049,New Entrant,35,23,21.74,78.26,23,100.00
+urn:uidai:client:finanalyz-technologies-private-limited:202606306133,New Entrant,42,16,0.00,100.00,16,100.00
+urn:uidai:client:prabodh-technologies-llp:202610158333,New Entrant,44,15,33.33,66.67,15,100.00
+urn:uidai:client:state-crime-records-bureau:202609141512,New Entrant,45,14,0.00,100.00,14,100.00
+urn:uidai:client:fr8-india-private-limited:202609177281,New Entrant,48,11,63.64,36.36,11,100.00
+urn:uidai:client:dhanrise-finance-private-limited:202609176227,New Entrant,49,10,0.00,100.00,10,100.00
+urn:uidai:client:swastik-enterprises:202610153599,New Entrant,50,10,0.00,100.00,10,100.00
+POC-AC-VALUE,New Entrant,61,7,0.00,100.00,7,100.00
+202606306133,New Entrant,70,3,0.00,100.00,3,100.00
+urn:uidai:client:sahana-system-limited:202610095399,New Entrant,72,3,0.00,100.00,3,100.00
+OR11274063,New Entrant,77,2,0.00,100.00,2,100.00
+POC-AC-V1,New Entrant,78,2,0.00,100.00,2,100.00
+urn:uidai:client:yuvaan-infotech:202608148688,New Entrant,79,2,0.00,100.00,2,100.00
+POC-AC-V5,New Entrant,86,1,0.00,100.00,1,100.00

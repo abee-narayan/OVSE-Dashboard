@@ -295,7 +295,7 @@
           </div>
           <div>
             <div class="flex flex-wrap items-center gap-2">
-              <span class="text-xs font-extrabold uppercase tracking-wider text-slate-800">Date Period & Outlier Filter Controls</span>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-slate-800">Date Period, OVSE Entity & Outlier Filter Controls</span>
               <span id="outlierActiveBadge" class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-200 text-slate-700">
                 All 230 Entities Included
               </span>
@@ -304,7 +304,7 @@
                 <span id="activePeriodWindowText">Weekly: 13 Oct – 19 Oct 2026</span>
               </span>
             </div>
-            <p class="text-[11px] text-slate-500">Dynamically switch period metrics, labels & charts between Daily (Today), Weekly (Last Week), Monthly (Last Month), or Custom Date Range across all 3 dashboards</p>
+            <p class="text-[11px] text-slate-500">Filter by specific OVSE (e.g., Urban Company), exclude outliers, or switch period windows across all 3 dashboards & monthly trend graphs</p>
           </div>
         </div>
 
@@ -334,6 +334,16 @@
             </button>
           </div>
 
+          <!-- Select Specific OVSE (Include Only Filter, e.g., Select Only Urban Company) -->
+          <div class="flex items-center gap-1.5 bg-white border border-emerald-300 rounded-xl px-2.5 py-1.5 shadow-xs ring-1 ring-emerald-500/10">
+            <i data-lucide="filter" class="w-3.5 h-3.5 text-emerald-600"></i>
+            <span class="text-[11px] font-bold text-emerald-800 uppercase tracking-wider">Select OVSE:</span>
+            <select id="includedEntitySelect" onchange="handleIncludedEntitySelect(event)" class="text-xs font-bold text-slate-800 bg-transparent focus:outline-none cursor-pointer max-w-[210px]">
+              <option value="__ALL__">All OVSEs (Overall)</option>
+              <!-- Populated dynamically with all OVSEs sorted by volume -->
+            </select>
+          </div>
+
           <!-- 1-Click Outlier Toggle: SelectiveShare -->
           <button id="toggleSelectiveShareBtn" onclick="toggleExcludeEntity('SelectiveShare')" class="inline-flex items-center px-3 py-1.5 rounded-xl text-xs font-bold border transition shadow-xs bg-white text-slate-700 border-slate-300 hover:border-amber-500 hover:text-amber-700">
             <i data-lucide="zap" class="w-3.5 h-3.5 mr-1.5 text-amber-500"></i>
@@ -356,10 +366,10 @@
         </div>
       </div>
 
-      <!-- Active Exclusions Tag Pills & Comparative Impact Bar -->
+      <!-- Active Inclusions / Exclusions Tag Pills & Comparative Impact Bar -->
       <div id="exclusionBanner" class="hidden mt-2.5 pt-2.5 border-t border-slate-200/80 flex flex-col md:flex-row md:items-center justify-between gap-2">
         <div class="flex flex-wrap items-center gap-1.5" id="excludedTagsContainer">
-          <!-- Chips for excluded entities: e.g. SelectiveShare [x] -->
+          <!-- Chips for included/excluded entities: e.g. Selected: Urban Company [x] or Excluded: SelectiveShare [x] -->
         </div>
         <div id="exclusionImpactText" class="text-xs text-amber-900 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5 shadow-xs">
           <!-- Dynamic impact statement -->
@@ -491,26 +501,131 @@
       </div>
     </div>
 
+    <!-- NEW: Monthly Trend of Total OVSE Transactions & Overall Trajectory (Tab 1) -->
+    <div class="glass-card p-5 border-t-4 border-t-indigo-600">
+      <div class="flex flex-col xl:flex-row xl:items-center justify-between pb-4 border-b border-slate-100 gap-3">
+        <div>
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="p-1.5 rounded-lg bg-indigo-100 text-indigo-700">
+              <i data-lucide="trending-up" class="w-4 h-4"></i>
+            </span>
+            <h3 id="monthlyTxChartTitle" class="text-base font-bold text-slate-900">Monthly Trend & Overall OVSE Transaction Trajectory</h3>
+            <span id="monthlyTxTrendBadge" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">
+              ▲ Increasing Trajectory
+            </span>
+          </div>
+          <p id="monthlyTxChartSubtitle" class="text-xs text-slate-500 mt-0.5">Month-over-month transaction volume, successful vs failed transactions, efficiency rate (%), and cumulative Overall total</p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <!-- Synced OVSE Filter for Monthly Graph -->
+          <div class="flex items-center gap-1 bg-indigo-50/70 border border-indigo-200 rounded-lg px-2 py-1">
+            <i data-lucide="building-2" class="w-3.5 h-3.5 text-indigo-600"></i>
+            <span class="text-[10px] font-bold text-indigo-800 uppercase">OVSE:</span>
+            <select id="monthlyTxEntitySelect" onchange="handleIncludedEntitySelect(event)" class="text-xs font-bold text-indigo-950 bg-transparent focus:outline-none cursor-pointer max-w-[175px]">
+              <option value="__ALL__">All OVSEs (Overall)</option>
+            </select>
+          </div>
+
+          <!-- View Mode -->
+          <select id="monthlyTxViewMode" onchange="renderMonthlyTxTrendChart()" class="text-xs border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <option value="all">View: Total + Success/Fail + Efficiency %</option>
+            <option value="total_only">View: Total Transactions & Efficiency %</option>
+            <option value="stacked">View: Stacked Success vs Failure</option>
+          </select>
+
+          <!-- Sort Option -->
+          <select id="monthlyTxSortSelect" onchange="renderMonthlyTxTrendChart()" class="text-xs border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <option value="chrono_asc">Sort: Chronological (Jan → Oct)</option>
+            <option value="chrono_desc">Sort: Chronological (Oct → Jan)</option>
+            <option value="total_desc">Sort: Total Tx (Highest to Lowest)</option>
+            <option value="total_asc">Sort: Total Tx (Lowest to Highest)</option>
+            <option value="eff_desc">Sort: Efficiency / Success % (High to Low)</option>
+            <option value="eff_asc">Sort: Efficiency / Success % (Low to High)</option>
+            <option value="fail_desc">Sort: Failure Rate % (High to Low)</option>
+          </select>
+
+          <!-- Toggle Overall Bar -->
+          <label class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200/80 px-2.5 py-1.5 rounded-lg border border-slate-300 cursor-pointer select-none transition">
+            <input type="checkbox" id="monthlyTxShowOverallBar" checked onchange="renderMonthlyTxTrendChart()" class="rounded text-indigo-600 focus:ring-indigo-500">
+            <span>Include Overall Total Bar</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Overall & Monthly Summary Strip -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mt-4 bg-slate-50/90 p-3 rounded-xl border border-slate-200/80">
+        <div class="bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Selected Scope Overall Tx</div>
+          <div id="mTxKpiOverallTotal" class="text-base font-black text-slate-900 mt-0.5">6,730,475</div>
+          <div id="mTxKpiSystemShare" class="text-[10px] text-indigo-600 font-semibold">100% of All-OVSE Overall</div>
+        </div>
+        <div class="bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-emerald-700">Overall Successful & Efficiency</div>
+          <div id="mTxKpiOverallSuccess" class="text-base font-black text-emerald-600 mt-0.5">4,897,079 (72.76%)</div>
+          <div class="text-[10px] text-slate-500">Cumulative verified auths</div>
+        </div>
+        <div class="bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-rose-700">Overall Failed Transactions</div>
+          <div id="mTxKpiOverallFail" class="text-base font-black text-rose-600 mt-0.5">1,833,396 (27.24%)</div>
+          <div class="text-[10px] text-slate-500">Cumulative failed auths</div>
+        </div>
+        <div class="bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-indigo-700">Peak Monthly Volume</div>
+          <div id="mTxKpiPeakMonth" class="text-base font-black text-indigo-700 mt-0.5">Sep 2026 (2.63M)</div>
+          <div id="mTxKpiAvgMonth" class="text-[10px] text-slate-500">Avg: 747,831 tx / month</div>
+        </div>
+        <div class="bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs col-span-2 sm:col-span-1">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-purple-700">Trajectory & Momentum</div>
+          <div id="mTxKpiMomentum" class="text-sm font-black text-emerald-700 mt-0.5">▲ +92.8% (Aug → Sep)</div>
+          <div id="mTxKpiMomentumSub" class="text-[10px] text-slate-500">Oct MTD: 506,643 tx</div>
+        </div>
+      </div>
+
+      <div class="mt-4 h-80">
+        <canvas id="monthlyTxTrendChart"></canvas>
+      </div>
+    </div>
+
     <!-- Pictographic Analytics: Charts Row 1 -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
       
-      <!-- Top 5 Overall vs Period Comparison Bar Chart -->
+      <!-- Top OVSEs Overall vs Period Comparison Bar Chart -->
       <div class="lg:col-span-8 glass-card p-5">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-100 gap-2">
           <div>
             <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
               <i data-lucide="bar-chart-3" class="w-4 h-4 text-indigo-600"></i>
-              <span id="chartTop5Title">Top 5 OVSEs: Overall vs Weekly Transaction Comparison</span>
+              <span id="chartTop5Title">Top OVSEs: Overall vs Weekly Transaction Comparison</span>
             </h3>
-            <p class="text-xs text-slate-500">Comparative transaction volume & success rates among leading entities</p>
+            <p class="text-xs text-slate-500">Comparative transaction volume & efficiency (success %) among leading entities</p>
           </div>
-          <div class="flex items-center space-x-2">
-            <span class="inline-flex items-center text-xs text-slate-600 font-medium">
-              <span class="w-3 h-3 rounded-sm bg-indigo-600 mr-1.5"></span> <span id="chartTop5LegendPeriod">Weekly</span>
-            </span>
-            <span class="inline-flex items-center text-xs text-slate-600 font-medium ml-2">
-              <span class="w-3 h-3 rounded-sm bg-slate-300 mr-1.5"></span> Overall All-Time
-            </span>
+          <div class="flex flex-wrap items-center gap-2">
+            <!-- Sort Dropdown for Top Comparison Chart -->
+            <select id="top5ChartSortSelect" onchange="renderCharts()" class="text-xs border border-slate-300 rounded-lg px-2 py-1 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="weekly_desc">Sort: Period Volume (High to Low)</option>
+              <option value="weekly_asc">Sort: Period Volume (Low to High)</option>
+              <option value="overall_desc">Sort: Overall Volume (High to Low)</option>
+              <option value="overall_asc">Sort: Overall Volume (Low to High)</option>
+              <option value="efficiency_desc">Sort: Efficiency / Success % (High to Low)</option>
+              <option value="efficiency_asc">Sort: Efficiency / Success % (Low to High)</option>
+              <option value="failure_rate_desc">Sort: Failure Rate % (High to Low)</option>
+              <option value="name_asc">Sort: Entity Name (A to Z)</option>
+            </select>
+            <!-- Count Selector -->
+            <select id="top5ChartCountSelect" onchange="renderCharts()" class="text-xs border border-slate-300 rounded-lg px-2 py-1 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="5">Top 5</option>
+              <option value="10">Top 10</option>
+              <option value="15">Top 15</option>
+            </select>
+            <div class="flex items-center space-x-1.5 ml-1">
+              <span class="inline-flex items-center text-[11px] text-slate-600 font-medium">
+                <span class="w-2.5 h-2.5 rounded-sm bg-indigo-600 mr-1"></span> <span id="chartTop5LegendPeriod">Weekly</span>
+              </span>
+              <span class="inline-flex items-center text-[11px] text-slate-600 font-medium ml-1.5">
+                <span class="w-2.5 h-2.5 rounded-sm bg-slate-300 mr-1"></span> Overall
+              </span>
+            </div>
           </div>
         </div>
         <div class="mt-4 h-72">
@@ -560,30 +675,57 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
 
       <!-- Period Volume Distribution (Top Entities Share) -->
-      <div class="lg:col-span-6 glass-card p-5">
-        <div class="pb-3 border-b border-slate-100">
-          <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
-            <i data-lucide="pie-chart" class="w-4 h-4 text-sky-600"></i>
-            <span id="chartDistTitle">Weekly Transaction Volume Distribution</span>
-          </h3>
-          <p id="chartDistSubtitle" class="text-xs text-slate-500">Market share of top active OVSEs during the selected period</p>
+      <div class="lg:col-span-5 glass-card p-5">
+        <div class="pb-3 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="pie-chart" class="w-4 h-4 text-sky-600"></i>
+              <span id="chartDistTitle">Weekly Transaction Volume Distribution</span>
+            </h3>
+            <p id="chartDistSubtitle" class="text-xs text-slate-500">Market share of top active OVSEs during the selected period</p>
+          </div>
+          <select id="distChartSortSelect" onchange="renderCharts()" class="text-xs border border-slate-300 rounded-lg px-2 py-1 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-sky-500">
+            <option value="vol_desc">Sort: Volume (High to Low)</option>
+            <option value="vol_asc">Sort: Volume (Low to High)</option>
+            <option value="eff_desc">Sort: Efficiency % (High to Low)</option>
+            <option value="eff_asc">Sort: Efficiency % (Low to High)</option>
+            <option value="name_asc">Sort: Name (A to Z)</option>
+          </select>
         </div>
         <div class="mt-4 h-64">
           <canvas id="weeklyDistributionChart"></canvas>
         </div>
       </div>
 
-      <!-- Failure Rate Risk Radar / Bar Chart -->
-      <div class="lg:col-span-6 glass-card p-5">
-        <div class="pb-3 border-b border-slate-100 flex items-center justify-between">
+      <!-- Failure Rate & Efficiency Spotlight Bar Chart (Last Graph on Page 1) -->
+      <div class="lg:col-span-7 glass-card p-5">
+        <div class="pb-3 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
             <h3 class="text-sm font-bold text-rose-700 flex items-center gap-2">
               <i data-lucide="alert-triangle" class="w-4 h-4 text-rose-600"></i>
-              <span id="chartRiskTitle">High Failure Rate Entities Spotlight (Weekly)</span>
+              <span id="chartRiskTitle">OVSE Failure Rate & Efficiency Spotlight (Weekly)</span>
             </h3>
-            <p class="text-xs text-slate-500">Active entities with highest failure rates requiring technical intervention</p>
+            <p class="text-xs text-slate-500">Sort active OVSEs by Failure Rate %, Efficiency (Success %), or Transaction Volume</p>
           </div>
-          <span class="text-[11px] font-semibold text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-100">Action Required</span>
+          <div class="flex flex-wrap items-center gap-1.5">
+            <select id="riskChartSortSelect" onchange="renderCharts()" class="text-xs border border-slate-300 rounded-lg px-2 py-1 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-rose-500">
+              <option value="failure_rate_desc">Sort: Failure Rate % (High to Low)</option>
+              <option value="failure_rate_asc">Sort: Failure Rate % (Low to High)</option>
+              <option value="efficiency_desc">Sort: Efficiency / Success % (High to Low)</option>
+              <option value="efficiency_asc">Sort: Efficiency / Success % (Low to High)</option>
+              <option value="failure_vol_desc">Sort: Failed Tx Volume (High to Low)</option>
+              <option value="failure_vol_asc">Sort: Failed Tx Volume (Low to High)</option>
+              <option value="total_vol_desc">Sort: Total Tx Volume (High to Low)</option>
+              <option value="total_vol_asc">Sort: Total Tx Volume (Low to High)</option>
+              <option value="name_asc">Sort: Entity Name (A to Z)</option>
+            </select>
+            <select id="riskChartCountSelect" onchange="renderCharts()" class="text-xs border border-slate-300 rounded-lg px-2 py-1 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-rose-500">
+              <option value="6">Top 6</option>
+              <option value="10">Top 10</option>
+              <option value="15">Top 15</option>
+              <option value="25">Top 25</option>
+            </select>
+          </div>
         </div>
         <div class="mt-4 h-64">
           <canvas id="failureRiskChart"></canvas>
@@ -597,7 +739,7 @@
 
       <!-- Card: Top 5 OVSEs Overall -->
       <div class="glass-card p-5">
-        <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-100 gap-2">
           <div>
             <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
@@ -605,7 +747,16 @@
             </h3>
             <p class="text-xs text-slate-500">Leading entities ranked by lifetime cumulative volume</p>
           </div>
-          <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 text-slate-700">Cumulative</span>
+          <div class="flex items-center gap-2">
+            <select id="top5OverallSortSelect" onchange="renderTop5Tables()" class="text-xs border border-slate-300 rounded-lg px-2 py-1 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-slate-500">
+              <option value="vol_desc">Sort: Total Tx (High to Low)</option>
+              <option value="vol_asc">Sort: Total Tx (Low to High)</option>
+              <option value="eff_desc">Sort: Efficiency % (High to Low)</option>
+              <option value="eff_asc">Sort: Efficiency % (Low to High)</option>
+              <option value="fail_desc">Sort: Failure % (High to Low)</option>
+            </select>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 text-slate-700">Cumulative</span>
+          </div>
         </div>
         <div class="mt-3 overflow-x-auto">
           <table class="w-full text-left text-xs">
@@ -627,7 +778,7 @@
 
       <!-- Card: Top 5 OVSEs Period -->
       <div class="glass-card p-5">
-        <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-100 gap-2">
           <div>
             <h3 class="text-sm font-bold text-indigo-900 flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
@@ -635,7 +786,16 @@
             </h3>
             <p id="top5PeriodCardSub" class="text-xs text-slate-500">Ranked by weekly volume with rank trajectory</p>
           </div>
-          <span id="top5PeriodCardBadge" class="text-xs font-semibold px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200">Past 7 Days</span>
+          <div class="flex items-center gap-2">
+            <select id="top5WeeklySortSelect" onchange="renderTop5Tables()" class="text-xs border border-slate-300 rounded-lg px-2 py-1 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="vol_desc">Sort: Period Tx (High to Low)</option>
+              <option value="vol_asc">Sort: Period Tx (Low to High)</option>
+              <option value="eff_desc">Sort: Efficiency % (High to Low)</option>
+              <option value="eff_asc">Sort: Efficiency % (Low to High)</option>
+              <option value="fail_desc">Sort: Failure % (High to Low)</option>
+            </select>
+            <span id="top5PeriodCardBadge" class="text-xs font-semibold px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200">Past 7 Days</span>
+          </div>
         </div>
         <div class="mt-3 overflow-x-auto">
           <table class="w-full text-left text-xs">
@@ -669,9 +829,20 @@
           </div>
           <p id="newEntrantsCardSub" class="text-xs text-slate-500 mt-0.5">Identifies brand new entities (100% of volume in period) and high-growth adopters (&gt;35% of lifetime volume executed in selected period)</p>
         </div>
-        <button onclick="downloadNewEntrantsCSV()" class="inline-flex items-center text-xs font-semibold px-3 py-1.5 rounded-lg bg-purple-50 text-purple-700 hover:bg-purple-100 border border-purple-200 transition">
-          <i data-lucide="download" class="w-3.5 h-3.5 mr-1.5"></i> Export New Entrants CSV
-        </button>
+        <div class="flex flex-wrap items-center gap-2">
+          <select id="newEntrantsSortSelect" onchange="renderNewEntrantsTable()" class="text-xs border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-purple-500">
+            <option value="weekly_desc">Sort: Period Tx (High to Low)</option>
+            <option value="weekly_asc">Sort: Period Tx (Low to High)</option>
+            <option value="eff_desc">Sort: Efficiency / Success % (High to Low)</option>
+            <option value="eff_asc">Sort: Efficiency / Success % (Low to High)</option>
+            <option value="fail_desc">Sort: Failure % (High to Low)</option>
+            <option value="overall_desc">Sort: Overall Tx (High to Low)</option>
+            <option value="share_desc">Sort: Period Share % (High to Low)</option>
+          </select>
+          <button onclick="downloadNewEntrantsCSV()" class="inline-flex items-center text-xs font-semibold px-3 py-1.5 rounded-lg bg-purple-50 text-purple-700 hover:bg-purple-100 border border-purple-200 transition">
+            <i data-lucide="download" class="w-3.5 h-3.5 mr-1.5"></i> Export New Entrants CSV
+          </button>
+        </div>
       </div>
 
       <div class="mt-3 overflow-x-auto">
@@ -763,7 +934,7 @@
       </div>
     </div>
 
-    <!-- Master OVSE Data Explorer (Search, Filter, Full Table) -->
+    <!-- Master OVSE Data Explorer (Search, Filter, Sort, Full Table) -->
     <div class="glass-card p-5">
       <div class="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-slate-100 gap-3">
         <div>
@@ -777,7 +948,7 @@
         <div class="flex flex-wrap items-center gap-2">
           <!-- Search Input -->
           <div class="relative">
-            <input type="text" id="searchInput" oninput="handleSearch(event)" placeholder="Search OVSE ID or name..." class="pl-8 pr-3 py-1.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 w-48 sm:w-64">
+            <input type="text" id="searchInput" oninput="handleSearch(event)" placeholder="Search OVSE ID or name..." class="pl-8 pr-3 py-1.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 w-44 sm:w-56">
             <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5"></i>
           </div>
 
@@ -788,7 +959,7 @@
             <option id="catOptTop10Period" value="top10">Top 10 Weekly</option>
             <option value="new_surging">New & Surging Entrants</option>
             <option value="high_failure">High Failure (&gt;40%)</option>
-            <option value="high_success">High Success (&gt;90%)</option>
+            <option value="high_success">High Efficiency / Success (&gt;90%)</option>
           </select>
 
           <!-- Volume Filter -->
@@ -798,6 +969,22 @@
             <option value="mid">Mid Volume (100 - 1,000 tx)</option>
             <option value="low">Low Volume (&lt;100 tx)</option>
             <option id="volOptZeroPeriod" value="zero">Inactive Weekly (0 tx)</option>
+          </select>
+
+          <!-- Explicit Sort By Dropdown for Master Explorer -->
+          <select id="masterSortSelect" onchange="handleMasterSortDropdown(event)" class="text-xs border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <option value="weeklyTotal:desc">Sort: Period Tx (Highest to Lowest)</option>
+            <option value="weeklyTotal:asc">Sort: Period Tx (Lowest to Highest)</option>
+            <option value="overallTotal:desc">Sort: Lifetime Tx (Highest to Lowest)</option>
+            <option value="overallTotal:asc">Sort: Lifetime Tx (Lowest to Highest)</option>
+            <option value="weeklySuccessRate:desc">Sort: Efficiency / Period Success % (High to Low)</option>
+            <option value="weeklySuccessRate:asc">Sort: Efficiency / Period Success % (Low to High)</option>
+            <option value="overallSuccessRate:desc">Sort: Lifetime Efficiency / Success % (High to Low)</option>
+            <option value="overallSuccessRate:asc">Sort: Lifetime Efficiency / Success % (Low to High)</option>
+            <option value="weeklyFailureRate:desc">Sort: Period Failure % (High to Low)</option>
+            <option value="weeklyFailure:desc">Sort: Period Failed Tx (High to Low)</option>
+            <option value="weeklyShareOfOverallPct:desc">Sort: Period Share % (High to Low)</option>
+            <option value="ovseId:asc">Sort: OVSE Name (A to Z)</option>
           </select>
 
           <!-- Download Button -->
@@ -813,14 +1000,14 @@
           <thead>
             <tr class="bg-slate-50 text-slate-500 uppercase tracking-wider text-[10px] font-bold border-y border-slate-200">
               <th class="py-3 px-3 cursor-pointer hover:bg-slate-100" onclick="sortTable('ovseId')">OVSE ID <i data-lucide="chevrons-up-down" class="inline w-3 h-3 text-slate-400"></i></th>
-              <th class="py-3 px-2">Category</th>
+              <th class="py-3 px-2 cursor-pointer hover:bg-slate-100" onclick="sortTable('status')">Category</th>
               <th id="thMasterPeriodRank" class="py-3 px-2 text-right cursor-pointer hover:bg-slate-100" onclick="sortTable('weeklyRank')">Weekly Rank</th>
               <th class="py-3 px-2 text-right cursor-pointer hover:bg-slate-100" onclick="sortTable('weeklyTotal')"><span id="thMasterPeriodTx">Weekly Tx</span> <i data-lucide="chevrons-up-down" class="inline w-3 h-3 text-slate-400"></i></th>
-              <th id="thMasterPeriodSucc" class="py-3 px-2 text-right">Weekly Success</th>
-              <th id="thMasterPeriodFail" class="py-3 px-2 text-right">Weekly Failure</th>
+              <th id="thMasterPeriodSucc" class="py-3 px-2 text-right cursor-pointer hover:bg-slate-100" onclick="sortTable('weeklySuccess')">Weekly Success</th>
+              <th id="thMasterPeriodFail" class="py-3 px-2 text-right cursor-pointer hover:bg-slate-100" onclick="sortTable('weeklyFailure')">Weekly Failure</th>
               <th id="thMasterPeriodSuccPct" class="py-3 px-2 text-right cursor-pointer hover:bg-slate-100" onclick="sortTable('weeklySuccessRate')">Weekly Success %</th>
               <th class="py-3 px-2 text-right cursor-pointer hover:bg-slate-100" onclick="sortTable('overallTotal')">Lifetime Tx</th>
-              <th class="py-3 px-2 text-right">Lifetime Success %</th>
+              <th class="py-3 px-2 text-right cursor-pointer hover:bg-slate-100" onclick="sortTable('overallSuccessRate')">Lifetime Success %</th>
               <th id="thMasterPeriodSharePct" class="py-3 px-2 text-right cursor-pointer hover:bg-slate-100" onclick="sortTable('weeklyShareOfOverallPct')">Weekly Share %</th>
             </tr>
           </thead>
@@ -927,10 +1114,91 @@
         </div>
       </div>
 
+      <!-- NEW: Monthly Trend of UIDAI Errors & Overall Transactions (Tab 2) -->
+      <div class="glass-card p-5 border-t-4 border-t-rose-600">
+        <div class="flex flex-col xl:flex-row xl:items-center justify-between pb-4 border-b border-slate-100 gap-3">
+          <div>
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="p-1.5 rounded-lg bg-rose-100 text-rose-700">
+                <i data-lucide="activity" class="w-4 h-4"></i>
+              </span>
+              <h3 id="monthlyErrChartTitle" class="text-base font-bold text-slate-900">Monthly Trend: Overall Transactions vs UIDAI Errors & Failure Rate</h3>
+              <span id="monthlyErrTrendBadge" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-rose-100 text-rose-800 border border-rose-200">
+                Error Trajectory
+              </span>
+            </div>
+            <p class="text-xs text-slate-500 mt-0.5">Month-over-month comparison of overall transactions, UIDAI error occurrences, failure rate (%), and root-cause categories</p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <!-- Synced OVSE Filter -->
+            <div class="flex items-center gap-1 bg-rose-50/70 border border-rose-200 rounded-lg px-2 py-1">
+              <i data-lucide="building-2" class="w-3.5 h-3.5 text-rose-600"></i>
+              <span class="text-[10px] font-bold text-rose-800 uppercase">OVSE:</span>
+              <select id="monthlyErrEntitySelect" onchange="handleIncludedEntitySelect(event)" class="text-xs font-bold text-rose-950 bg-transparent focus:outline-none cursor-pointer max-w-[175px]">
+                <option value="__ALL__">All OVSEs (Overall)</option>
+              </select>
+            </div>
+
+            <!-- View Mode -->
+            <select id="monthlyErrViewMode" onchange="renderMonthlyErrorsTrendChart()" class="text-xs border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-rose-500">
+              <option value="tx_vs_err">View: Overall Tx vs Errors & Failure Rate %</option>
+              <option value="categories">View: Root Cause Categories by Month</option>
+              <option value="err_only">View: Monthly Error Volume & Error Rate %</option>
+            </select>
+
+            <!-- Sort Option -->
+            <select id="monthlyErrSortSelect" onchange="renderMonthlyErrorsTrendChart()" class="text-xs border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-rose-500">
+              <option value="chrono_asc">Sort: Chronological (Jan → Oct)</option>
+              <option value="chrono_desc">Sort: Chronological (Oct → Jan)</option>
+              <option value="err_desc">Sort: Error Volume (Highest to Lowest)</option>
+              <option value="err_asc">Sort: Error Volume (Lowest to Highest)</option>
+              <option value="tx_desc">Sort: Overall Tx (Highest to Lowest)</option>
+              <option value="rate_desc">Sort: Error Rate % (Highest to Lowest)</option>
+              <option value="eff_desc">Sort: Efficiency / Success % (High to Low)</option>
+            </select>
+
+            <!-- Toggle Overall Bar -->
+            <label class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200/80 px-2.5 py-1.5 rounded-lg border border-slate-300 cursor-pointer select-none transition">
+              <input type="checkbox" id="monthlyErrShowOverallBar" checked onchange="renderMonthlyErrorsTrendChart()" class="rounded text-rose-600 focus:ring-rose-500">
+              <span>Include Overall Total Bar</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Monthly Error Summary KPI Strip -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4 bg-slate-50/90 p-3 rounded-xl border border-slate-200/80">
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Overall Transactions (Scope)</div>
+            <div id="mErrKpiOverallTx" class="text-base font-black text-slate-900 mt-0.5">6,730,475</div>
+            <div class="text-[10px] text-slate-500">Total attempts across months</div>
+          </div>
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-rose-700">Overall UIDAI Errors</div>
+            <div id="mErrKpiOverallErrors" class="text-base font-black text-rose-600 mt-0.5">2,082,220</div>
+            <div id="mErrKpiErrorRate" class="text-[10px] text-rose-600 font-semibold">27.24% Overall Failure Rate</div>
+          </div>
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-amber-700">Peak Error Month</div>
+            <div id="mErrKpiPeakMonth" class="text-base font-black text-amber-700 mt-0.5">Sep 2026</div>
+            <div id="mErrKpiPeakSub" class="text-[10px] text-slate-500">1,328,623 errors logged</div>
+          </div>
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-emerald-700">Error Trend Status</div>
+            <div id="mErrKpiMomentum" class="text-sm font-black text-rose-700 mt-0.5">Oct MTD: 51,130 errors</div>
+            <div id="mErrKpiMomentumSub" class="text-[10px] text-slate-500">10.09% error rate in Oct</div>
+          </div>
+        </div>
+
+        <div class="mt-4 h-80">
+          <canvas id="monthlyErrorsTrendChart"></canvas>
+        </div>
+      </div>
+
       <!-- Charts Row 1: Top Errors & Categories -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div class="glass-card p-5 lg:col-span-2">
-          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-100 gap-2">
             <div>
               <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
                 <i data-lucide="bar-chart-2" class="w-4 h-4 text-rose-600"></i>
@@ -938,7 +1206,16 @@
               </h3>
               <p id="chartTopErrorsSub" class="text-xs text-slate-500">Comparison of failure counts in selected period against historical proportion</p>
             </div>
-            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-rose-50 text-rose-700 border border-rose-200">Active Errors</span>
+            <div class="flex items-center gap-2">
+              <select id="topErrorsChartSortSelect" onchange="renderErrorIntelligence()" class="text-xs border border-slate-300 rounded-lg px-2 py-1 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-rose-500">
+                <option value="weekly_desc">Sort: Period Failures (High to Low)</option>
+                <option value="weekly_asc">Sort: Period Failures (Low to High)</option>
+                <option value="overall_desc">Sort: Lifetime Share % (High to Low)</option>
+                <option value="overall_asc">Sort: Lifetime Share % (Low to High)</option>
+                <option value="code_asc">Sort: Error Code (A to Z)</option>
+              </select>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-rose-50 text-rose-700 border border-rose-200">Active Errors</span>
+            </div>
           </div>
           <div class="h-64 mt-3">
             <canvas id="topErrorsChart"></canvas>
@@ -961,19 +1238,35 @@
         </div>
       </div>
 
-      <!-- Charts Row 2: Impacted Entities -->
+      <!-- Charts Row 2: Impacted Entities (Last Graph on Page 2) -->
       <div class="glass-card p-5">
-        <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-100 gap-2">
           <div>
             <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
               <i data-lucide="users" class="w-4 h-4 text-purple-600"></i>
-              <span id="chartTopEntErrorsTitle">Top 6 OVSE Entities Impacted by Errors (Weekly Failure Volume)</span>
+              <span id="chartTopEntErrorsTitle">Top OVSE Entities Impacted by Errors (Weekly Failure Volume)</span>
             </h3>
-            <p class="text-xs text-slate-500">Failure concentration across active entities</p>
+            <p class="text-xs text-slate-500">Sort impacted entities by Failure Volume, Failure Rate / Inefficiency %, or Efficiency (Success %)</p>
           </div>
-          <button onclick="downloadErrorCodeAnalysisCSV()" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white hover:bg-slate-800 transition shadow-sm">
-            <i data-lucide="download" class="w-3.5 h-3.5 mr-1.5"></i> Export Error Report (.csv)
-          </button>
+          <div class="flex flex-wrap items-center gap-2">
+            <select id="topEntitiesErrorsSortSelect" onchange="renderErrorIntelligence()" class="text-xs border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-purple-500">
+              <option value="err_vol_desc">Sort: Failure Volume (High to Low)</option>
+              <option value="err_vol_asc">Sort: Failure Volume (Low to High)</option>
+              <option value="fail_rate_desc">Sort: Failure Rate / Inefficiency % (High to Low)</option>
+              <option value="eff_desc">Sort: Efficiency / Success % (High to Low)</option>
+              <option value="eff_asc">Sort: Efficiency / Success % (Low to High)</option>
+              <option value="dom_pct_desc">Sort: Primary Error Share % (High to Low)</option>
+              <option value="name_asc">Sort: Entity Name (A to Z)</option>
+            </select>
+            <select id="topEntitiesErrorsCountSelect" onchange="renderErrorIntelligence()" class="text-xs border border-slate-300 rounded-lg px-2 py-1.5 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-purple-500">
+              <option value="6">Top 6</option>
+              <option value="10">Top 10</option>
+              <option value="15">Top 15</option>
+            </select>
+            <button onclick="downloadErrorCodeAnalysisCSV()" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white hover:bg-slate-800 transition shadow-sm">
+              <i data-lucide="download" class="w-3.5 h-3.5 mr-1.5"></i> Export Error Report (.csv)
+            </button>
+          </div>
         </div>
         <div class="h-64 mt-3">
           <canvas id="topEntitiesErrorsChart"></canvas>
@@ -1088,7 +1381,9 @@
             <!-- Sort By Dropdown -->
             <select id="errorSortSelect" onchange="handleErrorSort(event)" class="px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-rose-500">
               <option id="errSortPeriodDesc" value="weekly_desc">Sort: Weekly Failures (High to Low)</option>
+              <option value="weekly_asc">Sort: Period Failures (Low to High)</option>
               <option value="overall_desc">Sort: Lifetime Failures (High to Low)</option>
+              <option value="overall_asc">Sort: Lifetime Failures (Low to High)</option>
               <option value="delta_desc">Sort: Failure Share Surge (High to Low)</option>
               <option value="code_asc">Sort: Error Code (A to Z)</option>
             </select>
@@ -1126,7 +1421,7 @@
               <i data-lucide="building" class="w-4 h-4 text-indigo-600"></i>
               <span id="hotspotTableCardTitle">Top Impacted OVSE Entities (Error Code Diagnosis)</span>
             </h3>
-            <p class="text-xs text-slate-500">Entities with highest failure counts and their primary error root causes</p>
+            <p class="text-xs text-slate-500">Entities with highest failure counts, efficiency rates, and primary error root causes</p>
           </div>
 
           <div class="flex flex-wrap items-center gap-2">
@@ -1143,6 +1438,17 @@
               <option value="SDJWT_FACEAUTH_FAILED_731">Face Auth (731)</option>
               <option value="SDJWT_SIGN_VALIDATION_FAILED">Sign Validation</option>
               <option value="INVALID_JWT">Invalid JWT</option>
+            </select>
+
+            <!-- Sort Dropdown for Hotspots -->
+            <select id="hotspotSortSelect" onchange="handleHotspotSort(event)" class="px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 bg-white font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="err_desc">Sort: Total Failures (High to Low)</option>
+              <option value="err_asc">Sort: Total Failures (Low to High)</option>
+              <option value="top_cnt_desc">Sort: Primary Error Count (High to Low)</option>
+              <option value="top_pct_desc">Sort: Primary Error % (High to Low)</option>
+              <option value="eff_desc">Sort: Efficiency / Success % (High to Low)</option>
+              <option value="eff_asc">Sort: Efficiency / Success % (Low to High)</option>
+              <option value="name_asc">Sort: Entity Name (A to Z)</option>
             </select>
 
             <span id="hotspotRecordCount" class="text-[11px] text-slate-500 font-semibold px-2 py-1 rounded bg-slate-100">Showing 10 hotspots</span>
@@ -1256,10 +1562,92 @@
         </div>
       </div>
 
+      <!-- NEW: Monthly Trend of Data Sharing Channels & Overall Transactions (Tab 3) -->
+      <div class="glass-card p-5 border-t-4 border-t-sky-600">
+        <div class="flex flex-col xl:flex-row xl:items-center justify-between pb-4 border-b border-slate-100 gap-3">
+          <div>
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="p-1.5 rounded-lg bg-sky-100 text-sky-700">
+                <i data-lucide="share-2" class="w-4 h-4"></i>
+              </span>
+              <h3 id="monthlyChanChartTitle" class="text-base font-bold text-slate-900">Monthly Trend: Data Sharing Channels & Overall Trajectory</h3>
+              <span id="monthlyChanTrendBadge" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-sky-100 text-sky-800 border border-sky-200">
+                Modality Progression
+              </span>
+            </div>
+            <p class="text-xs text-slate-500 mt-0.5">Month-over-month transactions across App-to-App (APP_INTENT), Web-to-App (WEB_INTENT), Cross-Device QR (QR_SCAN), and Overall Total</p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <!-- Synced OVSE Filter -->
+            <div class="flex items-center gap-1 bg-sky-50/70 border border-sky-200 rounded-lg px-2 py-1">
+              <i data-lucide="building-2" class="w-3.5 h-3.5 text-sky-600"></i>
+              <span class="text-[10px] font-bold text-sky-800 uppercase">OVSE:</span>
+              <select id="monthlyChanEntitySelect" onchange="handleIncludedEntitySelect(event)" class="text-xs font-bold text-sky-950 bg-transparent focus:outline-none cursor-pointer max-w-[175px]">
+                <option value="__ALL__">All OVSEs (Overall)</option>
+              </select>
+            </div>
+
+            <!-- View Mode -->
+            <select id="monthlyChanViewMode" onchange="renderMonthlyChannelsTrendChart()" class="text-xs border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-sky-500">
+              <option value="volume">View: Channel Volumes + Total Monthly Tx</option>
+              <option value="stacked_pct">View: 100% Stacked Channel Share %</option>
+              <option value="stacked_vol">View: Stacked Channel Volume</option>
+            </select>
+
+            <!-- Sort Option -->
+            <select id="monthlyChanSortSelect" onchange="renderMonthlyChannelsTrendChart()" class="text-xs border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-sky-500">
+              <option value="chrono_asc">Sort: Chronological (Jan → Oct)</option>
+              <option value="chrono_desc">Sort: Chronological (Oct → Jan)</option>
+              <option value="total_desc">Sort: Total Volume (Highest to Lowest)</option>
+              <option value="total_asc">Sort: Total Volume (Lowest to Highest)</option>
+              <option value="app_desc">Sort: App Intent Volume (High to Low)</option>
+              <option value="web_desc">Sort: Web Intent Volume (High to Low)</option>
+              <option value="qr_desc">Sort: QR Scan Volume (High to Low)</option>
+              <option value="eff_desc">Sort: Efficiency / Success % (High to Low)</option>
+            </select>
+
+            <!-- Toggle Overall Bar -->
+            <label class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200/80 px-2.5 py-1.5 rounded-lg border border-slate-300 cursor-pointer select-none transition">
+              <input type="checkbox" id="monthlyChanShowOverallBar" checked onchange="renderMonthlyChannelsTrendChart()" class="rounded text-sky-600 focus:ring-sky-500">
+              <span>Include Overall Total Bar</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Monthly Channel Summary KPI Strip -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4 bg-slate-50/90 p-3 rounded-xl border border-slate-200/80">
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Overall Channel Volume</div>
+            <div id="mChanKpiOverallTotal" class="text-base font-black text-slate-900 mt-0.5">6,730,475</div>
+            <div class="text-[10px] text-slate-500">Cumulative all-channel tx</div>
+          </div>
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-indigo-700">Overall App-to-App</div>
+            <div id="mChanKpiOverallApp" class="text-base font-black text-indigo-600 mt-0.5">6,093,725 (90.5%)</div>
+            <div class="text-[10px] text-slate-500">APP_INTENT cumulative</div>
+          </div>
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-emerald-700">Overall Web-to-App</div>
+            <div id="mChanKpiOverallWeb" class="text-base font-black text-emerald-600 mt-0.5">43,054 (0.64%)</div>
+            <div id="mChanKpiWebPeak" class="text-[10px] text-emerald-700 font-semibold">Oct MTD: 24,528 Web tx</div>
+          </div>
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200/80 shadow-2xs">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-sky-700">Overall Cross-Device QR</div>
+            <div id="mChanKpiOverallQr" class="text-base font-black text-sky-600 mt-0.5">593,696 (8.82%)</div>
+            <div class="text-[10px] text-slate-500">QR_SCAN cumulative</div>
+          </div>
+        </div>
+
+        <div class="mt-4 h-80">
+          <canvas id="monthlyChannelsTrendChart"></canvas>
+        </div>
+      </div>
+
       <!-- Charts Row 1: Lifetime vs Period Comparison & Donut -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div class="glass-card p-5 lg:col-span-2">
-          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-100 gap-2">
             <div>
               <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
                 <i data-lucide="bar-chart-3" class="w-4 h-4 text-sky-600"></i>
@@ -1267,7 +1655,15 @@
               </h3>
               <p class="text-xs text-slate-500">Proportional comparison of channels demonstrating the Web Intent shift</p>
             </div>
-            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-sky-50 text-sky-700 border border-sky-200">Modality Shift</span>
+            <div class="flex items-center gap-2">
+              <select id="channelShiftSortSelect" onchange="renderChannelIntelligence()" class="text-xs border border-slate-300 rounded-lg px-2 py-1 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-sky-500">
+                <option value="weekly_desc">Sort: Period Share % (High to Low)</option>
+                <option value="weekly_asc">Sort: Period Share % (Low to High)</option>
+                <option value="overall_desc">Sort: Lifetime Share % (High to Low)</option>
+                <option value="delta_desc">Sort: Growth Delta % (High to Low)</option>
+              </select>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-sky-50 text-sky-700 border border-sky-200">Modality Shift</span>
+            </div>
           </div>
           <div class="h-64 mt-3">
             <canvas id="channelLifetimeVsWeeklyChart"></canvas>
@@ -1290,19 +1686,43 @@
         </div>
       </div>
 
-      <!-- Charts Row 2: Top OVSEs Channel Mix (100% Stacked Bar) -->
+      <!-- Charts Row 2: Top OVSEs Channel Mix (Last Graph on Page 3) -->
       <div class="glass-card p-5">
-        <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-100 gap-2">
           <div>
             <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
               <i data-lucide="layers" class="w-4 h-4 text-purple-600"></i>
-              <span id="chartOvseChannelMixTitle">Channel Modality Distribution Across Top 10 OVSEs (Weekly %)</span>
+              <span id="chartOvseChannelMixTitle">Channel Modality Distribution Across Top OVSEs (Weekly %)</span>
             </h3>
-            <p class="text-xs text-slate-500">100% Stacked proportion showing App Intent vs Web Intent vs QR Scan by entity</p>
+            <p class="text-xs text-slate-500">Sort OVSEs by Total Volume, Efficiency (Success %), or Channel Modality Share</p>
           </div>
-          <button onclick="downloadChannelAnalysisCSV()" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white hover:bg-slate-800 transition shadow-sm">
-            <i data-lucide="download" class="w-3.5 h-3.5 mr-1.5"></i> Export Channel Report (.csv)
-          </button>
+          <div class="flex flex-wrap items-center gap-2">
+            <select id="ovseChannelMixSortSelect" onchange="renderChannelIntelligence()" class="text-xs border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-purple-500">
+              <option value="total_desc">Sort: Total Volume (Highest to Lowest)</option>
+              <option value="total_asc">Sort: Total Volume (Lowest to Highest)</option>
+              <option value="eff_desc">Sort: Efficiency / Success % (High to Low)</option>
+              <option value="eff_asc">Sort: Efficiency / Success % (Low to High)</option>
+              <option value="app_pct_desc">Sort: App Intent Share % (High to Low)</option>
+              <option value="web_pct_desc">Sort: Web Intent Share % (High to Low)</option>
+              <option value="qr_pct_desc">Sort: QR Scan Share % (High to Low)</option>
+              <option value="app_vol_desc">Sort: App Intent Volume (High to Low)</option>
+              <option value="web_vol_desc">Sort: Web Intent Volume (High to Low)</option>
+              <option value="qr_vol_desc">Sort: QR Scan Volume (High to Low)</option>
+              <option value="name_asc">Sort: Entity Name (A to Z)</option>
+            </select>
+            <select id="ovseChannelMixModeSelect" onchange="renderChannelIntelligence()" class="text-xs border border-slate-300 rounded-lg px-2 py-1.5 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-purple-500">
+              <option value="pct">Mode: 100% Share (%)</option>
+              <option value="vol">Mode: Transaction Volume</option>
+            </select>
+            <select id="ovseChannelMixCountSelect" onchange="renderChannelIntelligence()" class="text-xs border border-slate-300 rounded-lg px-2 py-1.5 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-purple-500">
+              <option value="10">Top 10</option>
+              <option value="15">Top 15</option>
+              <option value="20">Top 20</option>
+            </select>
+            <button onclick="downloadChannelAnalysisCSV()" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white hover:bg-slate-800 transition shadow-sm">
+              <i data-lucide="download" class="w-3.5 h-3.5 mr-1.5"></i> Export Channel Report (.csv)
+            </button>
+          </div>
         </div>
         <div class="h-72 mt-3">
           <canvas id="ovseChannelMixChart"></canvas>
@@ -1399,10 +1819,15 @@
             <!-- Sort By Dropdown -->
             <select id="channelSortSelect" onchange="handleChannelSort(event)" class="px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-sky-500">
               <option id="chSortPeriodDesc" value="total_desc">Sort: Total Weekly Volume (High to Low)</option>
+              <option value="total_asc">Sort: Total Volume (Low to High)</option>
+              <option value="eff_desc">Sort: Efficiency / Success % (High to Low)</option>
+              <option value="eff_asc">Sort: Efficiency / Success % (Low to High)</option>
               <option value="web_vol_desc">Sort: Web Intent Volume (High to Low)</option>
               <option value="web_share_desc">Sort: Web Share % (High to Low)</option>
               <option value="qr_vol_desc">Sort: QR Scan Volume (High to Low)</option>
+              <option value="qr_share_desc">Sort: QR Share % (High to Low)</option>
               <option value="app_vol_desc">Sort: App Intent Volume (High to Low)</option>
+              <option value="app_share_desc">Sort: App Share % (High to Low)</option>
               <option value="name_asc">Sort: Entity Name (A to Z)</option>
             </select>
 
@@ -1465,6 +1890,9 @@
     let weeklyDonutInstance = null;
     let distributionChartInstance = null;
     let failureRiskChartInstance = null;
+    let monthlyTxTrendChartInstance = null;
+    let monthlyErrorsTrendChartInstance = null;
+    let monthlyChannelsTrendChartInstance = null;
 
     // File objects and text storage
     let uploadedOverallFile = null;
@@ -1476,6 +1904,7 @@
 
     // Outlier, Entity Scope, and Dynamic Date Period Filter State
     let baseData = null;
+    let includedOvseSet = new Set(); // Stores lowercase OVSE IDs when filtering to specific OVSE(s) (e.g. urbancompany)
     let excludedOvseSet = new Set(); // Stores lowercase OVSE IDs
     let selectedTimeframeMode = '7d'; // 'today' | '7d' | '30d' | 'custom' | 'all'
     let customRangeStart = '';
@@ -1512,10 +1941,31 @@
       '0': 'Generic Timeout / Client Drop'
     };
 
+    const MONTH_SHORT_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
     function safeCreateIcons() {
       if (typeof lucide !== 'undefined' && lucide.createIcons) {
         lucide.createIcons();
       }
+    }
+
+    function handleIncludedEntitySelect(e) {
+      const val = (e.target.value || '').trim();
+      if (!val) {
+        includedOvseSet.clear();
+      } else {
+        const lower = val.toLowerCase();
+        includedOvseSet.clear();
+        includedOvseSet.add(lower);
+        excludedOvseSet.delete(lower);
+      }
+      recomputeFilteredData();
+    }
+
+    function removeIncludedEntity(ovseId) {
+      if (!ovseId) return;
+      includedOvseSet.delete(ovseId.toLowerCase());
+      recomputeFilteredData();
     }
 
     function toggleExcludeEntity(ovseId) {
@@ -1525,11 +1975,13 @@
         excludedOvseSet.delete(lower);
       } else {
         excludedOvseSet.add(lower);
+        includedOvseSet.delete(lower);
       }
       recomputeFilteredData();
     }
 
     function resetEntityScope() {
+      includedOvseSet.clear();
       excludedOvseSet.clear();
       selectedTimeframeMode = '7d';
       const tfSelect = document.getElementById('timeframeSelect');
@@ -1550,24 +2002,48 @@
     }
 
     function populateEntityScopeDropdown() {
-      const select = document.getElementById('entityScopeSelect');
-      if (!select || !baseData) return;
+      if (!baseData) return;
 
-      const comp = (currentData && currentData.comparison && excludedOvseSet.size === 0)
-        ? currentData.comparison
-        : (baseData.comparison || []);
-      const sorted = [...comp].sort((a, b) => b.weeklyTotal - a.weeklyTotal || b.overallTotal - a.overallTotal);
+      const baseComp = (currentData?._unfilteredPeriodStats?.comparison) || (baseData.comparison || []);
+      const sorted = [...baseComp].sort((a, b) => b.overallTotal - a.overallTotal || b.weeklyTotal - a.weeklyTotal);
 
-      let optionsHtml = '<option value="">+ Exclude another entity...</option>';
-      sorted.forEach(ent => {
-        const lower = ent.ovseId.toLowerCase();
-        const isExcluded = excludedOvseSet.has(lower);
-        const prefix = isExcluded ? '✓ Excluded: ' : 'Exclude: ';
-        const name = formatEntityName(ent.ovseId);
-        const vol = ent.weeklyTotal > 0 ? `${Number(ent.weeklyTotal).toLocaleString()} period tx` : `${Number(ent.overallTotal).toLocaleString()} total tx`;
-        optionsHtml += `<option value="${ent.ovseId}">${prefix}${name} (${vol})</option>`;
+      // 1. Populate Exclude dropdown
+      const excludeSelect = document.getElementById('entityScopeSelect');
+      if (excludeSelect) {
+        let optionsHtml = '<option value="">+ Exclude OVSE...</option>';
+        sorted.forEach(ent => {
+          const lower = ent.ovseId.toLowerCase();
+          const isExcluded = excludedOvseSet.has(lower);
+          const prefix = isExcluded ? '✓ Excluded: ' : 'Exclude: ';
+          const name = formatEntityName(ent.ovseId);
+          const vol = ent.weeklyTotal > 0 ? `${Number(ent.weeklyTotal).toLocaleString()} period tx` : `${Number(ent.overallTotal).toLocaleString()} total tx`;
+          optionsHtml += `<option value="${ent.ovseId}">${prefix}${name} (${vol})</option>`;
+        });
+        excludeSelect.innerHTML = optionsHtml;
+      }
+
+      // 2. Populate Include (Single OVSE Focus) dropdowns across Global Bar & 3 Monthly Trend Cards
+      const selectedIncludeLower = includedOvseSet.size > 0 ? Array.from(includedOvseSet)[0] : '';
+      const includeDropdownIds = [
+        { id: 'includedEntitySelect', defaultLabel: 'Select OVSE: All OVSEs (Overall)' },
+        { id: 'monthlyTxEntitySelect', defaultLabel: 'OVSE: All OVSEs (Overall)' },
+        { id: 'monthlyErrEntitySelect', defaultLabel: 'OVSE: All OVSEs (Overall)' },
+        { id: 'monthlyChanEntitySelect', defaultLabel: 'OVSE: All OVSEs (Overall)' }
+      ];
+
+      includeDropdownIds.forEach(({ id, defaultLabel }) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        let html = `<option value="">${defaultLabel}</option>`;
+        sorted.forEach(ent => {
+          const lower = ent.ovseId.toLowerCase();
+          const isSelected = lower === selectedIncludeLower;
+          const name = formatEntityName(ent.ovseId);
+          const totalVol = `${Number(ent.overallTotal).toLocaleString()} overall tx`;
+          html += `<option value="${ent.ovseId}" ${isSelected ? 'selected' : ''}>${name} (${totalVol})</option>`;
+        });
+        el.innerHTML = html;
       });
-      select.innerHTML = optionsHtml;
     }
 
     function initDateRangePickers() {
@@ -1625,7 +2101,10 @@
         }
       }
 
-      if (excludedOvseSet.size === 0) {
+      const hasInclusions = includedOvseSet.size > 0;
+      const hasExclusions = excludedOvseSet.size > 0;
+
+      if (!hasInclusions && !hasExclusions) {
         if (activeBadge) {
           activeBadge.className = 'inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-200 text-slate-700';
           activeBadge.innerText = 'All ' + (baseData?.comparison?.length || 223) + ' Entities Included';
@@ -1633,21 +2112,41 @@
         if (banner) banner.classList.add('hidden');
       } else {
         if (activeBadge) {
-          activeBadge.className = 'inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300 animate-pulse';
-          activeBadge.innerText = `⚡ Outlier Mode: ${excludedOvseSet.size} ${excludedOvseSet.size === 1 ? 'Entity' : 'Entities'} Excluded`;
+          if (hasInclusions) {
+            const selName = formatEntityName(Array.from(includedOvseSet)[0]);
+            activeBadge.className = 'inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-300 animate-pulse';
+            activeBadge.innerText = `🎯 Single OVSE Focus: ${selName}`;
+          } else {
+            activeBadge.className = 'inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300 animate-pulse';
+            activeBadge.innerText = `⚡ Outlier Mode: ${excludedOvseSet.size} ${excludedOvseSet.size === 1 ? 'Entity' : 'Entities'} Excluded`;
+          }
         }
         if (banner) {
           banner.classList.remove('hidden');
 
-          let tagsHtml = '<span class="text-[11px] font-bold text-slate-600 mr-1">Excluded:</span>';
-          excludedOvseSet.forEach(id => {
-            tagsHtml += `
-              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300">
-                ${formatEntityName(id)}
-                <button onclick="toggleExcludeEntity('${id}')" class="ml-1 text-amber-700 hover:text-rose-700 font-black cursor-pointer">✕</button>
-              </span>
-            `;
-          });
+          let tagsHtml = '';
+          if (hasInclusions) {
+            tagsHtml += '<span class="text-[11px] font-bold text-indigo-700 mr-1">Selected OVSE Focus:</span>';
+            includedOvseSet.forEach(id => {
+              tagsHtml += `
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold bg-indigo-100 text-indigo-900 border border-indigo-300">
+                  ${formatEntityName(id)}
+                  <button onclick="removeIncludedEntity('${id}')" class="ml-1 text-indigo-700 hover:text-rose-700 font-black cursor-pointer">✕</button>
+                </span>
+              `;
+            });
+          }
+          if (hasExclusions) {
+            tagsHtml += '<span class="text-[11px] font-bold text-slate-600 mr-1 ml-1">Excluded:</span>';
+            excludedOvseSet.forEach(id => {
+              tagsHtml += `
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300">
+                  ${formatEntityName(id)}
+                  <button onclick="toggleExcludeEntity('${id}')" class="ml-1 text-amber-700 hover:text-rose-700 font-black cursor-pointer">✕</button>
+                </span>
+              `;
+            });
+          }
           if (tagsContainer) tagsContainer.innerHTML = tagsHtml;
 
           const baseRef = currentData?._unfilteredPeriodStats || baseData;
@@ -1668,10 +2167,22 @@
           const newQrPct = currComp.find(c => c.channel === 'QR_SCAN')?.weeklyPct || currentData?.channels?.weekly?.qrScanPct || '0.00';
 
           if (impactText) {
-            impactText.innerHTML = `
-              <i data-lucide="info" class="w-4 h-4 text-amber-600 shrink-0"></i>
-              <span><strong>Scenario Impact (${activePeriodLabel}):</strong> System Success Rate shifted from <strong>${baseWeeklySuccRate}%</strong> to <strong class="${Number(newWeeklySuccRate) < Number(baseWeeklySuccRate) ? 'text-rose-700' : 'text-emerald-700'}">${newWeeklySuccRate}%</strong> (${succDelta >= 0 ? '+' : ''}${succDelta}%). Web Intent share: <strong>${baseWebPct}%</strong> → <strong class="text-emerald-700">${newWebPct}%</strong>. QR Scan share: <strong>${baseQrPct}%</strong> → <strong class="text-sky-700">${newQrPct}%</strong>. App Intent: <strong>${baseAppPct}%</strong> → <strong>${newAppPct}%</strong>.</span>
-            `;
+            if (hasInclusions) {
+              const selName = formatEntityName(Array.from(includedOvseSet)[0]);
+              const ovseOverallTx = Number(currentData?.overall?.totalTx || 0).toLocaleString();
+              const sysOverallTx = Number(baseRef?.overall?.totalTx || 0).toLocaleString();
+              const sysShare = (baseRef?.overall?.totalTx > 0) ? ((currentData.overall.totalTx / baseRef.overall.totalTx) * 100).toFixed(2) : '0.00';
+              const ovsePeriodTx = Number(currentData?.weekly?.totalTx || 0).toLocaleString();
+              impactText.innerHTML = `
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-600 shrink-0"></i>
+                <span><strong>Filtered to ${selName}:</strong> Overall Lifetime Volume: <strong>${ovseOverallTx} tx</strong> (<strong>${sysShare}%</strong> of ${sysOverallTx} system overall tx) • ${activePeriodLabel} Volume: <strong>${ovsePeriodTx} tx</strong> • Efficiency: <strong class="text-emerald-700">${Number(currentData?.overall?.successRate || 0).toFixed(2)}% overall</strong> (${newWeeklySuccRate}% ${activePeriodShort.toLowerCase()}).</span>
+              `;
+            } else {
+              impactText.innerHTML = `
+                <i data-lucide="info" class="w-4 h-4 text-amber-600 shrink-0"></i>
+                <span><strong>Scenario Impact (${activePeriodLabel}):</strong> System Success Rate shifted from <strong>${baseWeeklySuccRate}%</strong> to <strong class="${Number(newWeeklySuccRate) < Number(baseWeeklySuccRate) ? 'text-rose-700' : 'text-emerald-700'}">${newWeeklySuccRate}%</strong> (${succDelta >= 0 ? '+' : ''}${succDelta}%). Web Intent share: <strong>${baseWebPct}%</strong> → <strong class="text-emerald-700">${newWebPct}%</strong>. QR Scan share: <strong>${baseQrPct}%</strong> → <strong class="text-sky-700">${newQrPct}%</strong>. App Intent: <strong>${baseAppPct}%</strong> → <strong>${newAppPct}%</strong>.</span>
+              `;
+            }
           }
         }
       }
@@ -1722,6 +2233,114 @@
       }
     }
 
+    function computeMonthlyTrendFromRows(rows) {
+      const monthBuckets = new Map();
+      const overallBucket = {
+        monthKey: 'OVERALL',
+        monthLabel: 'Overall (All-Time)',
+        totalTx: 0,
+        successTx: 0,
+        failureTx: 0,
+        totalErrors: 0,
+        consentErrors: 0,
+        faceAuthErrors: 0,
+        cryptoErrors: 0,
+        networkErrors: 0,
+        otherErrors: 0,
+        appIntent: 0,
+        webIntent: 0,
+        qrScan: 0,
+        ovseSet: new Set()
+      };
+
+      for (const r of rows) {
+        if (!r.dt || isNaN(r.dt.getTime())) continue;
+        const yr = r.dt.getFullYear();
+        if (yr < 2025) continue;
+        const mo = r.dt.getMonth();
+        const mKey = `${yr}-${String(mo + 1).padStart(2, '0')}`;
+        const mLabel = `${MONTH_SHORT_NAMES[mo]} ${yr}`;
+
+        if (!monthBuckets.has(mKey)) {
+          monthBuckets.set(mKey, {
+            monthKey: mKey,
+            monthLabel: mLabel,
+            totalTx: 0,
+            successTx: 0,
+            failureTx: 0,
+            totalErrors: 0,
+            consentErrors: 0,
+            faceAuthErrors: 0,
+            cryptoErrors: 0,
+            networkErrors: 0,
+            otherErrors: 0,
+            appIntent: 0,
+            webIntent: 0,
+            qrScan: 0,
+            ovseSet: new Set()
+          });
+        }
+
+        const mb = monthBuckets.get(mKey);
+        const targets = [mb, overallBucket];
+        for (const t of targets) {
+          t.totalTx += r.count;
+          t.ovseSet.add(r.ovseId);
+          if (r.authResult === 'y') t.successTx += r.count;
+          else if (r.authResult === 'n') t.failureTx += r.count;
+
+          if (r.errCode) {
+            t.totalErrors += r.count;
+            const cat = ERROR_CATEGORIES[r.errCode] || 'Other System Errors';
+            if (cat.includes('Consent')) t.consentErrors += r.count;
+            else if (cat.includes('Face Auth')) t.faceAuthErrors += r.count;
+            else if (cat.includes('Cryptographic')) t.cryptoErrors += r.count;
+            else if (cat.includes('Network')) t.networkErrors += r.count;
+            else t.otherErrors += r.count;
+          }
+
+          if (r.channel === 'APP_INTENT') t.appIntent += r.count;
+          else if (r.channel === 'WEB_INTENT') t.webIntent += r.count;
+          else if (r.channel === 'QR_SCAN') t.qrScan += r.count;
+        }
+      }
+
+      const finalizeBucket = (b) => {
+        const chanTot = (b.appIntent + b.webIntent + b.qrScan) || b.totalTx;
+        return {
+          monthKey: b.monthKey,
+          monthLabel: b.monthLabel,
+          totalTx: b.totalTx,
+          successTx: b.successTx,
+          failureTx: b.failureTx,
+          successRate: b.totalTx > 0 ? Number(((b.successTx / b.totalTx) * 100).toFixed(2)) : 0,
+          failureRate: b.totalTx > 0 ? Number(((b.failureTx / b.totalTx) * 100).toFixed(2)) : 0,
+          activeEntities: b.ovseSet.size,
+          totalErrors: b.totalErrors,
+          consentErrors: b.consentErrors,
+          faceAuthErrors: b.faceAuthErrors,
+          cryptoErrors: b.cryptoErrors,
+          networkErrors: b.networkErrors,
+          otherErrors: b.otherErrors,
+          appIntent: b.appIntent,
+          webIntent: b.webIntent,
+          qrScan: b.qrScan,
+          appIntentPct: chanTot > 0 ? Number(((b.appIntent / chanTot) * 100).toFixed(2)) : 0,
+          webIntentPct: chanTot > 0 ? Number(((b.webIntent / chanTot) * 100).toFixed(2)) : 0,
+          qrScanPct: chanTot > 0 ? Number(((b.qrScan / chanTot) * 100).toFixed(2)) : 0
+        };
+      };
+
+      const months = Array.from(monthBuckets.values())
+        .sort((a, b) => a.monthKey.localeCompare(b.monthKey))
+        .map(finalizeBucket);
+
+      return {
+        months,
+        overall: finalizeBucket(overallBucket)
+      };
+    }
+
     function aggregateRawRecordsSlice(rows) {
       let totalTx = 0, totalSuccess = 0, totalFailure = 0;
       const txMap = new Map();
@@ -1765,7 +2384,15 @@
         successRate: item.total > 0 ? (item.success / item.total) * 100 : 0,
         failureRate: item.total > 0 ? (item.failure / item.total) * 100 : 0
       })).sort((a, b) => b.total - a.total);
-      txList.forEach((item, idx) => { item.rank = idx + 1; });
+      txList.forEach((item, idx) => {
+        item.rank = idx + 1;
+        const mapEntry = txMap.get(item.ovseId);
+        if (mapEntry) {
+          mapEntry.rank = idx + 1;
+          mapEntry.successRate = item.successRate;
+          mapEntry.failureRate = item.failureRate;
+        }
+      });
 
       const codeList = Object.entries(errMap).map(([code, count]) => ({
         code,
@@ -1781,11 +2408,15 @@
 
       const ovseErrorList = Object.entries(errOvseMap).map(([ovseId, data]) => {
         const top = Object.entries(data.codes).sort((a, b) => b[1] - a[1]);
+        const txInfo = txMap.get(ovseId);
         return {
           ovseId, totalErrors: data.totalErrors,
           topErrorCode: top.length > 0 ? top[0][0] : 'None',
           topErrorCount: top.length > 0 ? top[0][1] : 0,
-          codes: data.codes
+          codes: data.codes,
+          totalTx: txInfo ? txInfo.total : data.totalErrors,
+          failureRate: txInfo && txInfo.total > 0 ? txInfo.failureRate : 100,
+          successRate: txInfo && txInfo.total > 0 ? txInfo.successRate : 0
         };
       }).sort((a, b) => b.totalErrors - a.totalErrors);
 
@@ -1799,15 +2430,20 @@
         };
       });
 
-      const ovseChannelList = Object.entries(chanOvseMap).map(([ovseId, data]) => ({
-        ovseId, total: data.total,
-        appIntent: data.channels['APP_INTENT'] || 0,
-        webIntent: data.channels['WEB_INTENT'] || 0,
-        qrScan: data.channels['QR_SCAN'] || 0,
-        appIntentPct: data.total > 0 ? (((data.channels['APP_INTENT'] || 0) / data.total) * 100).toFixed(1) : '0.0',
-        webIntentPct: data.total > 0 ? (((data.channels['WEB_INTENT'] || 0) / data.total) * 100).toFixed(1) : '0.0',
-        qrScanPct: data.total > 0 ? (((data.channels['QR_SCAN'] || 0) / data.total) * 100).toFixed(1) : '0.0'
-      })).sort((a, b) => b.total - a.total);
+      const ovseChannelList = Object.entries(chanOvseMap).map(([ovseId, data]) => {
+        const txInfo = txMap.get(ovseId);
+        return {
+          ovseId, total: data.total,
+          appIntent: data.channels['APP_INTENT'] || 0,
+          webIntent: data.channels['WEB_INTENT'] || 0,
+          qrScan: data.channels['QR_SCAN'] || 0,
+          appIntentPct: data.total > 0 ? (((data.channels['APP_INTENT'] || 0) / data.total) * 100).toFixed(1) : '0.0',
+          webIntentPct: data.total > 0 ? (((data.channels['WEB_INTENT'] || 0) / data.total) * 100).toFixed(1) : '0.0',
+          qrScanPct: data.total > 0 ? (((data.channels['QR_SCAN'] || 0) / data.total) * 100).toFixed(1) : '0.0',
+          successRate: txInfo && txInfo.total > 0 ? txInfo.successRate : 0,
+          failureRate: txInfo && txInfo.total > 0 ? txInfo.failureRate : 0
+        };
+      }).sort((a, b) => b.total - a.total);
 
       return {
         tx: {
@@ -1938,7 +2574,7 @@
 
       ensureChannelsNormalized(baseData);
 
-      // A. Dynamic Date Range Slicing when rawRecords are available
+      // A. Dynamic Date Range & Entity Scope Slicing when rawRecords are available
       if (Array.isArray(baseData.rawRecords) && baseData.rawRecords.length > 0) {
         const parseDmy = (dStr) => {
           if (!dStr) return null;
@@ -2004,23 +2640,36 @@
           ? fmtShort(periodEnd)
           : `${periodStart.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' })} – ${fmtShort(periodEnd)}`;
 
-        // Unfiltered period stats for Outlier Scenario comparison
+        // Unfiltered period stats for Outlier Scenario & System Overall Reference
         const unfilteredPeriodRows = parsedRows.filter(r => r.dt && r.dt >= periodStart && r.dt <= periodEnd);
         const unfilteredOverallAgg = aggregateRawRecordsSlice(parsedRows);
         const unfilteredPeriodAgg = aggregateRawRecordsSlice(unfilteredPeriodRows);
         const unfilteredBuilt = buildComparisonDataset(unfilteredOverallAgg, unfilteredPeriodAgg);
         ensureChannelsNormalized(unfilteredBuilt);
+        const unfilteredMonthlyTrend = computeMonthlyTrendFromRows(parsedRows);
 
-        // Filtered by excludedOvseSet
-        const activeAllRows = excludedOvseSet.size === 0
+        // Filtered by includedOvseSet and excludedOvseSet
+        const isFiltered = includedOvseSet.size > 0 || excludedOvseSet.size > 0;
+        const activeAllRows = !isFiltered
           ? parsedRows
-          : parsedRows.filter(r => !excludedOvseSet.has(r.ovseId.toLowerCase()));
+          : parsedRows.filter(r => {
+              const lower = r.ovseId.toLowerCase();
+              if (includedOvseSet.size > 0 && !includedOvseSet.has(lower)) return false;
+              if (excludedOvseSet.has(lower)) return false;
+              return true;
+            });
         const activePeriodRows = activeAllRows.filter(r => r.dt && r.dt >= periodStart && r.dt <= periodEnd);
 
-        const overallAgg = excludedOvseSet.size === 0 ? unfilteredOverallAgg : aggregateRawRecordsSlice(activeAllRows);
-        const periodAgg = excludedOvseSet.size === 0 ? unfilteredPeriodAgg : aggregateRawRecordsSlice(activePeriodRows);
-        const built = excludedOvseSet.size === 0 ? unfilteredBuilt : buildComparisonDataset(overallAgg, periodAgg);
+        const overallAgg = !isFiltered ? unfilteredOverallAgg : aggregateRawRecordsSlice(activeAllRows);
+        const periodAgg = !isFiltered ? unfilteredPeriodAgg : aggregateRawRecordsSlice(activePeriodRows);
+        const built = !isFiltered ? unfilteredBuilt : buildComparisonDataset(overallAgg, periodAgg);
         ensureChannelsNormalized(built);
+
+        // Monthly trend respects OVSE filter (includedOvseSet/excludedOvseSet), and if custom date range is active, respects custom date bounds
+        const monthlySourceRows = selectedTimeframeMode === 'custom' ? activePeriodRows : activeAllRows;
+        const monthlyTrend = (!isFiltered && selectedTimeframeMode !== 'custom')
+          ? unfilteredMonthlyTrend
+          : computeMonthlyTrendFromRows(monthlySourceRows);
 
         currentData = {
           metadata: {
@@ -2030,6 +2679,8 @@
             activePeriodWindowStr
           },
           ...built,
+          monthlyTrend,
+          _unfilteredMonthlyTrend: unfilteredMonthlyTrend,
           _unfilteredPeriodStats: unfilteredBuilt
         };
 
@@ -2039,7 +2690,7 @@
       }
 
       // B. Fallback when rawRecords are not present (legacy pre-aggregated files)
-      if (excludedOvseSet.size === 0) {
+      if (includedOvseSet.size === 0 && excludedOvseSet.size === 0) {
         currentData = JSON.parse(JSON.stringify(baseData));
         ensureChannelsNormalized(currentData);
         updateScopeUI();
@@ -2048,9 +2699,15 @@
       }
 
       const cloned = JSON.parse(JSON.stringify(baseData));
+      const filterEntityFn = (ovseId) => {
+        const lower = (ovseId || '').toLowerCase();
+        if (includedOvseSet.size > 0 && !includedOvseSet.has(lower)) return false;
+        if (excludedOvseSet.has(lower)) return false;
+        return true;
+      };
 
       // 1. Filter Transactions (comparison)
-      const filteredComp = cloned.comparison.filter(c => !excludedOvseSet.has(c.ovseId.toLowerCase()));
+      const filteredComp = cloned.comparison.filter(c => filterEntityFn(c.ovseId));
 
       const activeWeekly = filteredComp.filter(c => c.weeklyTotal > 0)
         .sort((a, b) => b.weeklyTotal - a.weeklyTotal);
@@ -2148,8 +2805,8 @@
 
       // 2. Filter Channels
       if (cloned.channels) {
-        const filteredWeeklyChannels = (cloned.channels.weekly?.ovseList || []).filter(c => !excludedOvseSet.has(c.ovseId.toLowerCase()));
-        const filteredOverallChannels = (cloned.channels.overall?.ovseList || []).filter(c => !excludedOvseSet.has(c.ovseId.toLowerCase()));
+        const filteredWeeklyChannels = (cloned.channels.weekly?.ovseList || []).filter(c => filterEntityFn(c.ovseId));
+        const filteredOverallChannels = (cloned.channels.overall?.ovseList || []).filter(c => filterEntityFn(c.ovseId));
 
         const wApp = filteredWeeklyChannels.reduce((sum, c) => sum + (c.appIntent || 0), 0);
         const wWeb = filteredWeeklyChannels.reduce((sum, c) => sum + (c.webIntent || 0), 0);
@@ -2232,8 +2889,8 @@
 
       // 3. Filter Errors
       if (cloned.errors) {
-        const filteredWeeklyErrors = (cloned.errors.weekly?.ovseErrorList || []).filter(e => !excludedOvseSet.has(e.ovseId.toLowerCase()));
-        const filteredOverallErrors = (cloned.errors.overall?.ovseErrorList || []).filter(e => !excludedOvseSet.has(e.ovseId.toLowerCase()));
+        const filteredWeeklyErrors = (cloned.errors.weekly?.ovseErrorList || []).filter(e => filterEntityFn(e.ovseId));
+        const filteredOverallErrors = (cloned.errors.overall?.ovseErrorList || []).filter(e => filterEntityFn(e.ovseId));
 
         const wCodeMap = {};
         const wCatMap = {};
@@ -2883,6 +3540,7 @@
       const weeklyRows = allRows.filter(r => r.dt && r.dt >= weeklyStart && r.dt <= weeklyEnd);
       const weekly = aggregateRawRecordsSlice(weeklyRows);
       const built = buildComparisonDataset(overall, weekly);
+      const monthlyTrend = computeMonthlyTrendFromRows(allRows);
 
       return {
         metadata: {
@@ -2894,6 +3552,7 @@
           isUnifiedMaster: true
         },
         ...built,
+        monthlyTrend,
         rawRecords: allRows.map(r => [r.errCode, r.ovseId, r.dateStr, r.authResult, r.channel, r.count])
       };
     }
@@ -3369,6 +4028,7 @@
       if (typeof BUNDLED_DATA !== 'undefined') {
         baseData = JSON.parse(JSON.stringify(BUNDLED_DATA));
         ensureChannelsNormalized(baseData);
+        includedOvseSet.clear();
         excludedOvseSet.clear();
         uploadedMasterFile = null;
         uploadedMasterContent = null;
@@ -3423,8 +4083,11 @@
       setTxt('kpiWeeklyFailLabel', `${t.adj} Failure`);
 
       // Page 1: Charts Row 1
-      setTxt('chartTop5Title', `Top 5 OVSEs: Overall vs ${t.adj} Transaction Comparison`);
+      const top5CountVal = document.getElementById('top5ChartCountSelect')?.value || '5';
+      setTxt('chartTop5Title', `Top ${top5CountVal} OVSEs: Overall vs ${t.adj} Transaction Comparison`);
       setTxt('chartTop5LegendPeriod', `${t.adj} (${activePeriodWindowStr})`);
+      setTxt('top5SortPeriodDesc', `Sort: ${t.adj} Volume (High to Low)`);
+      setTxt('top5SortPeriodAsc', `Sort: ${t.adj} Volume (Low to High)`);
 
       const qualDelta = weekly.successRate - overall.successRate;
       const donutSub = qualDelta >= 0
@@ -3441,7 +4104,7 @@
       // Page 1: Charts Row 2
       setTxt('chartDistTitle', `${t.adj} Transaction Volume Distribution`);
       setTxt('chartDistSubtitle', `Market share of top active OVSEs during ${activePeriodWindowStr}`);
-      setTxt('chartRiskTitle', `High Failure Rate Entities Spotlight (${t.adj})`);
+      setTxt('chartRiskTitle', `High Failure Rate & Efficiency Spotlight (${t.adj})`);
 
       // Page 1: Top 5 Period Table Card
       setTxt('top5PeriodCardTitle', `Top 5 OVSEs (${t.adj})`);
@@ -3463,6 +4126,8 @@
       setTxt('catOptActivePeriod', `Active ${t.adj} (${weekly.uniqueCount})`);
       setTxt('catOptTop10Period', `Top 10 ${t.adj}`);
       setTxt('volOptZeroPeriod', `Inactive ${t.adj} (0 tx)`);
+      setTxt('masterSortPeriodDesc', `Sort: ${t.adj} Tx (High to Low)`);
+      setTxt('masterSortPeriodAsc', `Sort: ${t.adj} Tx (Low to High)`);
       setTxt('thMasterPeriodRank', `${t.adj} Rank`);
       setTxt('thMasterPeriodTx', `${t.adj} Tx`);
       setTxt('thMasterPeriodSucc', `${t.adj} Success`);
@@ -3480,7 +4145,8 @@
       setTxt('chartTopErrorsTitle', `Top 6 UIDAI Error Codes (${t.adj} Failure Count vs Lifetime Share %)`);
       setTxt('chartTopErrorsSub', `Comparison of ${t.lower} failure counts (${activePeriodWindowStr}) against historical proportion`);
       setTxt('chartErrorCatTitle', `${t.adj} Root Cause Breakdown`);
-      setTxt('chartTopEntErrorsTitle', `Top 6 OVSE Entities Impacted by Errors (${t.adj} Failure Volume)`);
+      const topEntErrCountVal = document.getElementById('topEntitiesErrorsCountSelect')?.value || '6';
+      setTxt('chartTopEntErrorsTitle', `Top ${topEntErrCountVal} OVSE Entities Impacted by Errors (${t.adj} Failure Volume)`);
       setTxt('thErrPeriodCount', `${t.adj} Failures`);
       setTxt('thErrPeriodShare', `${t.adj} Share %`);
       setTxt('errSortPeriodDesc', `Sort: ${t.adj} Failures (High to Low)`);
@@ -3500,7 +4166,8 @@
       setTxt('chartChannelMixTitle', `${t.adj} Modality Mix`);
       const wChanTotal = currentData.channels?.weekly?.total || 0;
       setTxt('chartChannelMixSub', `Share of ${Number(wChanTotal).toLocaleString()} ${t.lower} interactions (${activePeriodWindowStr})`);
-      setTxt('chartOvseChannelMixTitle', `Channel Modality Distribution Across Top 10 OVSEs (${t.adj} %)`);
+      const chMixCountVal = document.getElementById('ovseChannelMixCountSelect')?.value || '10';
+      setTxt('chartOvseChannelMixTitle', `Channel Modality Distribution Across Top ${chMixCountVal} OVSEs (${t.adj})`);
       setTxt('chSortPeriodDesc', `Sort: Total ${t.adj} Volume (High to Low)`);
       setTxt('thChannelPeriodTotal', `${t.adj} Total Tx`);
     }
@@ -3533,7 +4200,9 @@
       document.getElementById('kpiWeeklyEntities').innerText = weekly.uniqueCount;
       
       document.getElementById('kpiOverallSuccessRate').innerText = Number(overall.successRate).toFixed(2) + '%';
-      document.getElementById('kpiOverallSuccessVol').innerText = (overall.totalSuccess / 1000000).toFixed(2) + 'M';
+      document.getElementById('kpiOverallSuccessVol').innerText = overall.totalSuccess >= 1000000
+        ? (overall.totalSuccess / 1000000).toFixed(2) + 'M'
+        : Number(overall.totalSuccess).toLocaleString();
 
       document.getElementById('kpiWeeklySuccessRate').innerText = Number(weekly.successRate).toFixed(2) + '%';
       const delta = weekly.successRate - overall.successRate;
@@ -3553,7 +4222,7 @@
       document.getElementById('bannerWeeklyShare').innerText = weeklySharePct;
       document.getElementById('bannerQualityDelta').innerText = (delta >= 0 ? '+' : '') + delta.toFixed(2) + '%';
 
-      // Render Charts
+      // Render Charts (including Monthly Trend Chart)
       renderCharts();
 
       // Render Tables
@@ -3570,28 +4239,366 @@
       safeCreateIcons();
     }
 
+    // Monthly Trend Chart for Tab 1 (Transactions)
+    function renderMonthlyTxTrendChart() {
+      if (typeof Chart === 'undefined' || !currentData) return;
+      const canvas = document.getElementById('monthlyTxTrendChart');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (monthlyTxTrendChartInstance) monthlyTxTrendChartInstance.destroy();
+
+      const mt = currentData.monthlyTrend || baseData?.monthlyTrend || { months: [], overall: {} };
+      const sysMt = currentData._unfilteredMonthlyTrend || baseData?.monthlyTrend || mt;
+      const rawMonths = [...(mt.months || [])];
+      const overallBucket = mt.overall || {
+        monthKey: 'OVERALL',
+        monthLabel: 'Overall (All-Time)',
+        totalTx: currentData.overall?.totalTx || 0,
+        successTx: currentData.overall?.totalSuccess || 0,
+        failureTx: currentData.overall?.totalFailure || 0,
+        successRate: Number((currentData.overall?.successRate || 0).toFixed(2)),
+        failureRate: Number((currentData.overall?.failureRate || 0).toFixed(2))
+      };
+
+      const viewMode = document.getElementById('monthlyTxViewMode')?.value || 'stacked';
+      const sortMode = document.getElementById('monthlyTxSortSelect')?.value || 'chronological';
+      const showOverallBar = document.getElementById('monthlyTxShowOverallBar')?.checked !== false;
+
+      // Update Header Title, Subtitle & KPI Strip
+      const hasSingleOvse = includedOvseSet.size > 0;
+      const selOvseName = hasSingleOvse ? formatEntityName(Array.from(includedOvseSet)[0]) : 'All OVSEs (System Overall)';
+      const sysOverallTx = sysMt?.overall?.totalTx || currentData._unfilteredPeriodStats?.overall?.totalTx || overallBucket.totalTx;
+      const shareOfSysPct = sysOverallTx > 0 ? ((overallBucket.totalTx / sysOverallTx) * 100).toFixed(2) : '100.00';
+
+      const titleEl = document.getElementById('chartMonthlyTxTitle');
+      const subEl = document.getElementById('chartMonthlyTxSub');
+      if (titleEl) {
+        titleEl.innerText = hasSingleOvse
+          ? `Monthly Transaction Trend & Overall Volume — ${selOvseName}`
+          : `Monthly Trend of Total OVSE Transactions & Overall Volume`;
+      }
+      if (subEl) {
+        subEl.innerText = hasSingleOvse
+          ? `Month-by-month trajectory for ${selOvseName}: ${Number(overallBucket.totalTx).toLocaleString()} entity total tx (${shareOfSysPct}% of ${Number(sysOverallTx).toLocaleString()} system overall transactions)`
+          : `Month-by-month trajectory of total OVSE transactions, authentication efficiency, and cumulative overall volume (${Number(overallBucket.totalTx).toLocaleString()} total tx across ${rawMonths.length} active months)`;
+      }
+
+      // KPI Strip
+      const setTxt = (id, txt) => { const el = document.getElementById(id); if (el) el.innerText = txt; };
+      setTxt('monthlyKpiOverallTotal', Number(overallBucket.totalTx).toLocaleString());
+      setTxt('monthlyKpiOverallSub', hasSingleOvse
+        ? `${selOvseName} (${shareOfSysPct}% of ${Number(sysOverallTx).toLocaleString()} System Overall)`
+        : `${Number(overallBucket.successTx).toLocaleString()} Success (${overallBucket.successRate}%) • ${Number(overallBucket.failureTx).toLocaleString()} Failed`);
+
+      if (rawMonths.length > 0) {
+        const peakM = [...rawMonths].sort((a, b) => b.totalTx - a.totalTx)[0];
+        setTxt('monthlyKpiPeakMonth', peakM.monthLabel);
+        setTxt('monthlyKpiPeakVol', `${Number(peakM.totalTx).toLocaleString()} tx (${peakM.successRate}% success)`);
+
+        const latestM = rawMonths[rawMonths.length - 1];
+        const prevM = rawMonths.length >= 2 ? rawMonths[rawMonths.length - 2] : null;
+        setTxt('monthlyKpiLatestMonth', `${latestM.monthLabel}: ${Number(latestM.totalTx).toLocaleString()}`);
+        if (prevM && prevM.totalTx > 0) {
+          const momPct = (((latestM.totalTx - prevM.totalTx) / prevM.totalTx) * 100).toFixed(1);
+          setTxt('monthlyKpiLatestMom', `${momPct >= 0 ? '+' : ''}${momPct}% vs ${prevM.monthLabel} (${Number(prevM.totalTx).toLocaleString()})`);
+        } else {
+          setTxt('monthlyKpiLatestMom', `${latestM.successRate}% efficiency in ${latestM.monthLabel}`);
+        }
+
+        const avgVol = Math.round(overallBucket.totalTx / rawMonths.length);
+        setTxt('monthlyKpiAvgVol', Number(avgVol).toLocaleString());
+        setTxt('monthlyKpiAvgEff', `Across ${rawMonths.length} active months • ${overallBucket.successRate}% overall eff.`);
+
+        // Trend direction badge
+        const dirBadge = document.getElementById('monthlyTxTrendDirectionBadge');
+        if (dirBadge) {
+          if (rawMonths.length >= 2) {
+            const firstActive = rawMonths[0];
+            const lastFull = rawMonths.length >= 2 && latestM.monthKey === '2026-10' ? rawMonths[rawMonths.length - 2] : latestM;
+            const isGrowing = latestM.totalTx >= firstActive.totalTx || (lastFull && lastFull.totalTx > firstActive.totalTx);
+            dirBadge.className = isGrowing
+              ? 'inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200'
+              : 'inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-50 text-amber-700 border border-amber-200';
+            dirBadge.innerText = isGrowing
+              ? `▲ Increasing Trend (${firstActive.monthLabel} → ${peakM.monthLabel} Peak)`
+              : `▼ Consolidating (${latestM.monthLabel})`;
+          } else {
+            dirBadge.innerText = `${rawMonths.length} Active Month`;
+          }
+        }
+      } else {
+        setTxt('monthlyKpiPeakMonth', '—');
+        setTxt('monthlyKpiPeakVol', '0 tx');
+        setTxt('monthlyKpiLatestMonth', '—');
+        setTxt('monthlyKpiLatestMom', 'No monthly records');
+        setTxt('monthlyKpiAvgVol', '0');
+        setTxt('monthlyKpiAvgEff', '0 active months');
+      }
+
+      // Sort months according to #monthlyTxSortSelect
+      let sortedMonths = [...rawMonths];
+      if (sortMode === 'reverse_chron') sortedMonths.sort((a, b) => b.monthKey.localeCompare(a.monthKey));
+      else if (sortMode === 'vol_desc') sortedMonths.sort((a, b) => b.totalTx - a.totalTx);
+      else if (sortMode === 'vol_asc') sortedMonths.sort((a, b) => a.totalTx - b.totalTx);
+      else if (sortMode === 'eff_desc') sortedMonths.sort((a, b) => b.successRate - a.successRate || b.totalTx - a.totalTx);
+      else if (sortMode === 'fail_desc') sortedMonths.sort((a, b) => b.failureRate - a.failureRate || b.failureTx - a.failureTx);
+      else sortedMonths.sort((a, b) => a.monthKey.localeCompare(b.monthKey));
+
+      const plotItems = showOverallBar ? [...sortedMonths, { ...overallBucket, isOverall: true }] : sortedMonths;
+      const labels = plotItems.map(m => m.isOverall ? '⭐ OVERALL (Total)' : m.monthLabel);
+
+      let datasets = [];
+      let scalesConfig = {};
+
+      if (viewMode === 'efficiency') {
+        datasets = [
+          {
+            type: 'bar',
+            label: 'Success Rate (Efficiency %)',
+            data: plotItems.map(m => m.successRate),
+            backgroundColor: plotItems.map(m => m.isOverall ? '#059669' : '#10b981'),
+            borderRadius: 6,
+            yAxisID: 'y'
+          },
+          {
+            type: 'bar',
+            label: 'Failure Rate (%)',
+            data: plotItems.map(m => m.failureRate),
+            backgroundColor: plotItems.map(m => m.isOverall ? '#be123c' : '#f43f5e'),
+            borderRadius: 6,
+            yAxisID: 'y'
+          },
+          {
+            type: 'line',
+            label: 'Total Transactions',
+            data: plotItems.map(m => m.totalTx),
+            borderColor: '#4f46e5',
+            backgroundColor: 'rgba(79, 70, 229, 0.12)',
+            borderWidth: 2.5,
+            pointRadius: 4,
+            pointBackgroundColor: '#4f46e5',
+            tension: 0.3,
+            yAxisID: 'y1'
+          }
+        ];
+        scalesConfig = {
+          x: { stacked: true, grid: { display: false } },
+          y: {
+            stacked: true,
+            position: 'left',
+            max: 100,
+            title: { display: true, text: 'Efficiency / Failure Share (%)', font: { size: 10 } },
+            ticks: { callback: v => v + '%' },
+            grid: { color: '#f1f5f9' }
+          },
+          y1: {
+            position: 'right',
+            title: { display: true, text: 'Transactions Volume', font: { size: 10 } },
+            grid: { drawOnChartArea: false },
+            ticks: { callback: v => Number(v).toLocaleString() }
+          }
+        };
+      } else if (viewMode === 'total_only') {
+        datasets = [
+          {
+            type: 'bar',
+            label: 'Total Transactions',
+            data: plotItems.map(m => m.totalTx),
+            backgroundColor: plotItems.map(m => m.isOverall ? '#312e81' : '#4f46e5'),
+            borderRadius: 6,
+            yAxisID: 'y'
+          },
+          {
+            type: 'line',
+            label: 'Efficiency (Success Rate %)',
+            data: plotItems.map(m => m.successRate),
+            borderColor: '#10b981',
+            backgroundColor: '#10b981',
+            borderWidth: 2.5,
+            pointRadius: 4,
+            tension: 0.3,
+            yAxisID: 'y1'
+          }
+        ];
+        scalesConfig = {
+          x: { grid: { display: false } },
+          y: {
+            position: 'left',
+            title: { display: true, text: 'Total Transactions', font: { size: 10 } },
+            ticks: { callback: v => Number(v).toLocaleString() },
+            grid: { color: '#f1f5f9' }
+          },
+          y1: {
+            position: 'right',
+            min: 0,
+            max: 100,
+            title: { display: true, text: 'Success Rate (%)', font: { size: 10 } },
+            ticks: { callback: v => v + '%' },
+            grid: { drawOnChartArea: false }
+          }
+        };
+      } else {
+        // Default: 'stacked' (Stacked Success + Failure + Total Trend Line + Efficiency % on Right Axis)
+        datasets = [
+          {
+            type: 'bar',
+            label: 'Successful Tx (Auth = Y)',
+            data: plotItems.map(m => m.successTx),
+            backgroundColor: plotItems.map(m => m.isOverall ? '#047857' : '#10b981'),
+            borderRadius: 4,
+            stack: 'txStack',
+            yAxisID: 'y',
+            order: 2
+          },
+          {
+            type: 'bar',
+            label: 'Failed Tx (Auth = N)',
+            data: plotItems.map(m => m.failureTx),
+            backgroundColor: plotItems.map(m => m.isOverall ? '#be123c' : '#f43f5e'),
+            borderRadius: 4,
+            stack: 'txStack',
+            yAxisID: 'y',
+            order: 2
+          },
+          {
+            type: 'line',
+            label: 'Total Transactions (Monthly + Overall)',
+            data: plotItems.map(m => m.totalTx),
+            borderColor: '#312e81',
+            backgroundColor: 'rgba(49, 46, 129, 0.1)',
+            borderWidth: 2.5,
+            pointRadius: 5,
+            pointBackgroundColor: plotItems.map(m => m.isOverall ? '#f59e0b' : '#4f46e5'),
+            pointBorderColor: '#ffffff',
+            pointBorderWidth: 1.5,
+            tension: 0.25,
+            yAxisID: 'y',
+            order: 1
+          },
+          {
+            type: 'line',
+            label: 'Efficiency / Success Rate (%)',
+            data: plotItems.map(m => m.successRate),
+            borderColor: '#0284c7',
+            borderDash: [5, 4],
+            borderWidth: 2,
+            pointRadius: 3.5,
+            pointBackgroundColor: '#0284c7',
+            tension: 0.25,
+            yAxisID: 'y1',
+            order: 0
+          }
+        ];
+        scalesConfig = {
+          x: { stacked: true, grid: { display: false } },
+          y: {
+            stacked: true,
+            position: 'left',
+            title: { display: true, text: 'Transactions Volume (Monthly & Overall)', font: { size: 10 } },
+            ticks: { callback: v => Number(v).toLocaleString() },
+            grid: { color: '#f1f5f9' }
+          },
+          y1: {
+            position: 'right',
+            min: 0,
+            max: 100,
+            title: { display: true, text: 'Efficiency / Success Rate (%)', font: { size: 10 } },
+            ticks: { callback: v => v + '%' },
+            grid: { drawOnChartArea: false }
+          }
+        };
+      }
+
+      monthlyTxTrendChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: { labels, datasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          scales: scalesConfig,
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: { boxWidth: 12, font: { size: 11, family: 'Plus Jakarta Sans' } }
+            },
+            tooltip: {
+              callbacks: {
+                afterTitle: (items) => {
+                  const m = plotItems[items[0].dataIndex];
+                  if (!m) return '';
+                  const shareOfOverall = overallBucket.totalTx > 0 ? ((m.totalTx / overallBucket.totalTx) * 100).toFixed(1) : '100.0';
+                  return m.isOverall
+                    ? `Cumulative Overall Total: ${Number(m.totalTx).toLocaleString()} tx (${m.successRate}% Success)`
+                    : `Total Monthly Tx: ${Number(m.totalTx).toLocaleString()} (${shareOfOverall}% of Overall) • Efficiency: ${m.successRate}%`;
+                },
+                label: (context) => {
+                  const val = context.raw;
+                  if (context.dataset.yAxisID === 'y1' && viewMode !== 'efficiency') {
+                    return ` ${context.dataset.label}: ${Number(val).toFixed(2)}%`;
+                  }
+                  if (viewMode === 'efficiency' && context.dataset.yAxisID === 'y') {
+                    return ` ${context.dataset.label}: ${Number(val).toFixed(2)}%`;
+                  }
+                  return ` ${context.dataset.label}: ${Number(val).toLocaleString()} tx`;
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+
     // Chart.js Rendering
     function renderCharts() {
       if (typeof Chart === 'undefined') return;
       const { overall, weekly, comparison } = currentData;
+      const t = getPeriodTerms();
 
-      // 1. Top 5 Comparison Chart (Selected Period vs Overall for Top 5 period entities)
+      // 0. Render Monthly Transaction Trend + Overall Chart
+      renderMonthlyTxTrendChart();
+
+      // 1. Top N Comparison Chart (with Sort & Count options)
       const ctxTop5 = document.getElementById('top5ComparisonChart').getContext('2d');
       if (top5ChartInstance) top5ChartInstance.destroy();
 
-      const top5Weekly = weekly.top5 || [];
-      const labels = top5Weekly.map(item => {
-        let name = item.ovseId;
-        if (name.includes('life-insurance-corporation')) return 'LIC of India';
+      const top5SortMode = document.getElementById('top5ChartSortSelect')?.value || 'weekly_desc';
+      const top5Count = parseInt(document.getElementById('top5ChartCountSelect')?.value || '5', 10) || 5;
+      const top5TitleEl = document.getElementById('chartTop5Title');
+      if (top5TitleEl) {
+        top5TitleEl.innerText = `Top ${top5Count} OVSEs: Overall vs ${t.adj} Transaction Comparison`;
+      }
+
+      let candidateTop = [...(comparison || [])].filter(c => c.weeklyTotal > 0 || c.overallTotal > 0);
+      if (top5SortMode === 'weekly_desc') candidateTop.sort((a, b) => b.weeklyTotal - a.weeklyTotal || b.overallTotal - a.overallTotal);
+      else if (top5SortMode === 'weekly_asc') {
+        const activeOnly = candidateTop.filter(c => c.weeklyTotal > 0);
+        candidateTop = (activeOnly.length > 0 ? activeOnly : candidateTop).sort((a, b) => a.weeklyTotal - b.weeklyTotal || a.overallTotal - b.overallTotal);
+      } else if (top5SortMode === 'overall_desc') candidateTop.sort((a, b) => b.overallTotal - a.overallTotal || b.weeklyTotal - a.weeklyTotal);
+      else if (top5SortMode === 'overall_asc') candidateTop.sort((a, b) => a.overallTotal - b.overallTotal || a.weeklyTotal - b.weeklyTotal);
+      else if (top5SortMode === 'eff_desc') {
+        const activeOnly = candidateTop.filter(c => c.weeklyTotal >= 10);
+        candidateTop = (activeOnly.length > 0 ? activeOnly : candidateTop).sort((a, b) => parseFloat(b.weeklySuccessRate) - parseFloat(a.weeklySuccessRate) || b.weeklyTotal - a.weeklyTotal);
+      } else if (top5SortMode === 'eff_asc') {
+        const activeOnly = candidateTop.filter(c => c.weeklyTotal >= 10);
+        candidateTop = (activeOnly.length > 0 ? activeOnly : candidateTop).sort((a, b) => parseFloat(a.weeklySuccessRate) - parseFloat(b.weeklySuccessRate) || b.weeklyTotal - a.weeklyTotal);
+      } else if (top5SortMode === 'fail_desc') {
+        const activeOnly = candidateTop.filter(c => c.weeklyTotal >= 10);
+        candidateTop = (activeOnly.length > 0 ? activeOnly : candidateTop).sort((a, b) => parseFloat(b.weeklyFailureRate) - parseFloat(a.weeklyFailureRate) || b.weeklyFailure - a.weeklyFailure);
+      } else if (top5SortMode === 'name_asc') {
+        candidateTop.sort((a, b) => formatEntityName(a.ovseId).localeCompare(formatEntityName(b.ovseId)));
+      }
+
+      const topSelected = candidateTop.slice(0, top5Count);
+      const labels = topSelected.map(item => {
+        let name = formatEntityName(item.ovseId);
+        if (name.includes('life insurance corporation')) return 'LIC of India';
         if (name.length > 18) return name.substring(0, 16) + '...';
         return name;
       });
 
-      const weeklyCounts = top5Weekly.map(i => (i.total || i.weeklyTotal || 0));
-      const overallCounts = top5Weekly.map(i => {
-        const o = currentData.comparison.find(c => c.ovseId === i.ovseId);
-        return o ? (o.overallTotal || 0) : (i.overallTotal || i.total || 0);
-      });
+      const weeklyCounts = topSelected.map(i => Math.max(0, i.weeklyTotal || 0));
+      const overallCounts = topSelected.map(i => Math.max(0, i.overallTotal || 0));
 
       top5ChartInstance = new Chart(ctxTop5, {
         type: 'bar',
@@ -3603,14 +4610,14 @@
               data: weeklyCounts,
               backgroundColor: '#4f46e5',
               borderRadius: 6,
-              barThickness: 24
+              barThickness: top5Count > 10 ? 14 : (top5Count > 5 ? 18 : 24)
             },
             {
               label: 'Overall All-Time Volume',
               data: overallCounts,
               backgroundColor: '#cbd5e1',
               borderRadius: 6,
-              barThickness: 24
+              barThickness: top5Count > 10 ? 14 : (top5Count > 5 ? 18 : 24)
             }
           ]
         },
@@ -3624,7 +4631,7 @@
               grid: { color: '#f1f5f9' },
               ticks: {
                 callback: function(value) {
-                  if (value === 10 || value === 100 || value === 1000 || value === 10000 || value === 100000 || value === 1000000) {
+                  if (value === 1 || value === 10 || value === 100 || value === 1000 || value === 10000 || value === 100000 || value === 1000000) {
                     return Number(value).toLocaleString();
                   }
                   return null;
@@ -3639,6 +4646,11 @@
             legend: { display: false },
             tooltip: {
               callbacks: {
+                afterTitle: function(ctx) {
+                  const item = topSelected[ctx[0].dataIndex];
+                  if (!item) return '';
+                  return `Efficiency: ${item.weeklySuccessRate}% (${t.adj}) | ${item.overallSuccessRate}% (Overall)`;
+                },
                 label: function(context) {
                   return ` ${context.dataset.label}: ${Number(context.raw).toLocaleString()} tx`;
                 }
@@ -3692,22 +4704,33 @@
         }
       });
 
-      // 4. Weekly Volume Distribution (Top 5 + Others)
+      // 4. Weekly Volume Distribution (Top 5 + Others, with Sort Option)
       const ctxDist = document.getElementById('weeklyDistributionChart').getContext('2d');
       if (distributionChartInstance) distributionChartInstance.destroy();
 
-      const top5WeeklyTotal = top5Weekly.reduce((sum, item) => sum + (item.total || item.weeklyTotal || 0), 0);
+      const distSortMode = document.getElementById('distChartSortSelect')?.value || 'vol_desc';
+      let distTop5 = [...(weekly.top5 || [])];
+      if (distSortMode === 'vol_asc') distTop5.sort((a, b) => (a.total || a.weeklyTotal || 0) - (b.total || b.weeklyTotal || 0));
+      else if (distSortMode === 'eff_desc') distTop5.sort((a, b) => (b.successRate || b.weeklySuccessRate || 0) - (a.successRate || a.weeklySuccessRate || 0));
+      else if (distSortMode === 'name_asc') distTop5.sort((a, b) => formatEntityName(a.ovseId).localeCompare(formatEntityName(b.ovseId)));
+      else distTop5.sort((a, b) => (b.total || b.weeklyTotal || 0) - (a.total || a.weeklyTotal || 0));
+
+      const top5WeeklyTotal = distTop5.reduce((sum, item) => sum + (item.total || item.weeklyTotal || 0), 0);
       const othersWeeklyTotal = Math.max(0, (weekly.totalTx || 0) - top5WeeklyTotal);
 
-      const distLabels = top5Weekly.map(item => {
+      const distLabels = distTop5.map(item => {
         if (item.ovseId.includes('life-insurance')) return 'LIC of India';
         return formatEntityName(item.ovseId);
       });
-      const otherCount = Math.max(0, (weekly.uniqueCount || 0) - top5Weekly.length);
-      distLabels.push(`Other ${otherCount} Entities`);
+      const otherCount = Math.max(0, (weekly.uniqueCount || 0) - distTop5.length);
+      if (otherCount > 0 || othersWeeklyTotal > 0) {
+        distLabels.push(`Other ${otherCount} Entities`);
+      }
 
-      const distData = top5Weekly.map(i => (i.total || i.weeklyTotal || 0));
-      distData.push(othersWeeklyTotal);
+      const distData = distTop5.map(i => (i.total || i.weeklyTotal || 0));
+      if (otherCount > 0 || othersWeeklyTotal > 0) {
+        distData.push(othersWeeklyTotal);
+      }
 
       const palette = ['#4f46e5', '#06b6d4', '#10b981', '#f59e0b', '#8b5cf6', '#94a3b8', '#ec4899', '#6366f1'];
 
@@ -3743,36 +4766,76 @@
         }
       });
 
-      // 5. Failure Rate Risk Chart (Weekly active entities with significant failure)
+      // 5. Failure Rate & Efficiency Spotlight Chart (Last Graph on Page 1 — with Sort & Count options)
       const ctxRisk = document.getElementById('failureRiskChart').getContext('2d');
       if (failureRiskChartInstance) failureRiskChartInstance.destroy();
 
-      const highRisk = comparison
-        .filter(c => c.weeklyTotal >= 10 && Number(c.weeklyFailureRate) >= 30)
-        .sort((a, b) => Number(b.weeklyFailureRate) - Number(a.weeklyFailureRate))
-        .slice(0, 6);
+      const riskSortMode = document.getElementById('riskChartSortSelect')?.value || 'fail_desc';
+      const riskCount = parseInt(document.getElementById('riskChartCountSelect')?.value || '6', 10) || 6;
+
+      let riskPool = comparison.filter(c => c.weeklyTotal >= 10);
+      if (riskPool.length === 0) {
+        riskPool = comparison.filter(c => c.weeklyTotal > 0 || c.overallTotal > 0);
+      }
+
+      let isEffMode = false;
+      let isVolMode = false;
+
+      if (riskSortMode === 'fail_desc') {
+        const highFail = riskPool.filter(c => Number(c.weeklyFailureRate) >= 30);
+        if (highFail.length >= Math.min(3, riskPool.length)) riskPool = highFail;
+        riskPool.sort((a, b) => Number(b.weeklyFailureRate) - Number(a.weeklyFailureRate) || b.weeklyFailure - a.weeklyFailure);
+      } else if (riskSortMode === 'fail_asc') {
+        riskPool.sort((a, b) => Number(a.weeklyFailureRate) - Number(b.weeklyFailureRate) || b.weeklyTotal - a.weeklyTotal);
+      } else if (riskSortMode === 'eff_desc') {
+        isEffMode = true;
+        riskPool.sort((a, b) => Number(b.weeklySuccessRate) - Number(a.weeklySuccessRate) || b.weeklyTotal - a.weeklyTotal);
+      } else if (riskSortMode === 'eff_asc') {
+        isEffMode = true;
+        riskPool.sort((a, b) => Number(a.weeklySuccessRate) - Number(b.weeklySuccessRate) || b.weeklyFailure - a.weeklyFailure);
+      } else if (riskSortMode === 'fail_vol_desc') {
+        isVolMode = true;
+        riskPool.sort((a, b) => b.weeklyFailure - a.weeklyFailure || Number(b.weeklyFailureRate) - Number(a.weeklyFailureRate));
+      } else if (riskSortMode === 'total_vol_desc') {
+        isVolMode = true;
+        riskPool.sort((a, b) => b.weeklyTotal - a.weeklyTotal);
+      } else if (riskSortMode === 'name_asc') {
+        riskPool.sort((a, b) => formatEntityName(a.ovseId).localeCompare(formatEntityName(b.ovseId)));
+      }
+
+      const highRisk = riskPool.slice(0, riskCount);
 
       const riskLabels = highRisk.map(c => {
-        let name = c.ovseId;
-        if (name.includes('life-insurance-corporation')) return 'LIC of India';
-        if (name.includes('tadoba-andhari')) return 'Tadoba Tiger Reserve';
-        if (name.includes('punjab-school')) return 'Punjab School Board';
-        if (name.includes('gujarat-co-operative')) return 'Amul / GCMMF';
-        return name.length > 20 ? name.substring(0, 18) + '..' : name;
+        let name = formatEntityName(c.ovseId);
+        if (name.includes('life insurance corporation')) return 'LIC of India';
+        if (name.includes('tadoba andhari')) return 'Tadoba Tiger Reserve';
+        if (name.includes('punjab school')) return 'Punjab School Board';
+        if (name.includes('gujarat co operative')) return 'Amul / GCMMF';
+        return name.length > 22 ? name.substring(0, 20) + '..' : name;
       });
 
-      const riskRates = highRisk.map(c => Number(c.weeklyFailureRate));
+      const riskValues = highRisk.map(c => {
+        if (isEffMode) return Number(c.weeklySuccessRate);
+        if (riskSortMode === 'fail_vol_desc') return Number(c.weeklyFailure);
+        if (riskSortMode === 'total_vol_desc') return Number(c.weeklyTotal);
+        return Number(c.weeklyFailureRate);
+      });
+
+      const barColor = isEffMode ? '#10b981' : (riskSortMode === 'total_vol_desc' ? '#4f46e5' : '#f43f5e');
+      const xAxisTitle = isEffMode
+        ? 'Efficiency / Success Percentage (%)'
+        : (isVolMode ? 'Transactions Count' : 'Failure Percentage (%)');
 
       failureRiskChartInstance = new Chart(ctxRisk, {
         type: 'bar',
         data: {
           labels: riskLabels,
           datasets: [{
-            label: 'Failure Rate %',
-            data: riskRates,
-            backgroundColor: '#f43f5e',
+            label: isEffMode ? 'Efficiency (Success Rate %)' : (isVolMode ? 'Transactions' : 'Failure Rate %'),
+            data: riskValues,
+            backgroundColor: barColor,
             borderRadius: 6,
-            barThickness: 20
+            barThickness: riskCount > 10 ? 12 : 18
           }]
         },
         options: {
@@ -3781,9 +4844,12 @@
           maintainAspectRatio: false,
           scales: {
             x: {
-              max: 100,
-              title: { display: true, text: 'Failure Percentage (%)', font: { size: 10 } },
-              grid: { color: '#f1f5f9' }
+              max: isVolMode ? undefined : 100,
+              title: { display: true, text: xAxisTitle, font: { size: 10 } },
+              grid: { color: '#f1f5f9' },
+              ticks: {
+                callback: v => isVolMode ? Number(v).toLocaleString() : v + '%'
+              }
             },
             y: { grid: { display: false } }
           },
@@ -3792,7 +4858,9 @@
             tooltip: {
               callbacks: {
                 label: function(c) {
-                  return ` Failure Rate: ${c.raw.toFixed(1)}%`;
+                  const ent = highRisk[c.dataIndex];
+                  if (!ent) return '';
+                  return ` Failure Rate: ${ent.weeklyFailureRate}% | Efficiency: ${ent.weeklySuccessRate}% (${Number(ent.weeklyFailure).toLocaleString()} failed / ${Number(ent.weeklyTotal).toLocaleString()} total tx)`;
                 }
               }
             }
@@ -3801,20 +4869,29 @@
       });
     }
 
-    // Top 5 Tables
+    // Top 5 Tables (with Sort Options)
     function renderTop5Tables() {
       const { overall, weekly, comparison } = currentData;
 
       // Top 5 Overall
       const oBody = document.getElementById('top5OverallTableBody');
       if (oBody && overall.top5) {
-        oBody.innerHTML = overall.top5.map((item, idx) => {
+        const oSort = document.getElementById('top5OverallSortSelect')?.value || 'vol_desc';
+        let oList = [...(overall.top5 || [])];
+        if (oSort === 'vol_asc') oList.sort((a, b) => (a.total ?? a.overallTotal ?? 0) - (b.total ?? b.overallTotal ?? 0));
+        else if (oSort === 'eff_desc') oList.sort((a, b) => parseFloat(b.successRate ?? b.overallSuccessRate ?? 0) - parseFloat(a.successRate ?? a.overallSuccessRate ?? 0));
+        else if (oSort === 'fail_desc') oList.sort((a, b) => parseFloat(b.failureRate ?? b.overallFailureRate ?? 0) - parseFloat(a.failureRate ?? a.overallFailureRate ?? 0));
+        else if (oSort === 'name_asc') oList.sort((a, b) => formatEntityName(a.ovseId).localeCompare(formatEntityName(b.ovseId)));
+        else oList.sort((a, b) => (b.total ?? b.overallTotal ?? 0) - (a.total ?? a.overallTotal ?? 0));
+
+        oBody.innerHTML = oList.map((item, idx) => {
           const tot = item.total ?? item.overallTotal ?? 0;
           const sRate = typeof item.successRate === 'number' ? item.successRate : parseFloat(item.successRate ?? item.overallSuccessRate ?? 0);
           const fRate = typeof item.failureRate === 'number' ? item.failureRate : parseFloat(item.failureRate ?? item.overallFailureRate ?? 0);
+          const rankNum = item.rank ?? (idx + 1);
           return `
             <tr class="hover:bg-slate-50 transition">
-              <td class="py-2.5 px-2 font-bold text-slate-700">#${idx + 1}</td>
+              <td class="py-2.5 px-2 font-bold text-slate-700">#${rankNum}</td>
               <td class="py-2.5 px-2 font-medium text-slate-900 truncate max-w-[150px]" title="${item.ovseId}">${formatEntityName(item.ovseId)}</td>
               <td class="py-2.5 px-2 text-right font-semibold text-slate-800">${Number(tot).toLocaleString()}</td>
               <td class="py-2.5 px-2 text-right text-emerald-600 font-semibold">${sRate.toFixed(2)}%</td>
@@ -3827,19 +4904,28 @@
       // Top 5 Weekly
       const wBody = document.getElementById('top5WeeklyTableBody');
       if (wBody && weekly.top5) {
-        wBody.innerHTML = weekly.top5.map((item, idx) => {
+        const wSort = document.getElementById('top5WeeklySortSelect')?.value || 'vol_desc';
+        let wList = [...(weekly.top5 || [])];
+        if (wSort === 'vol_asc') wList.sort((a, b) => (a.total ?? a.weeklyTotal ?? 0) - (b.total ?? b.weeklyTotal ?? 0));
+        else if (wSort === 'eff_desc') wList.sort((a, b) => parseFloat(b.successRate ?? b.weeklySuccessRate ?? 0) - parseFloat(a.successRate ?? a.weeklySuccessRate ?? 0));
+        else if (wSort === 'fail_desc') wList.sort((a, b) => parseFloat(b.failureRate ?? b.weeklyFailureRate ?? 0) - parseFloat(a.failureRate ?? a.weeklyFailureRate ?? 0));
+        else if (wSort === 'name_asc') wList.sort((a, b) => formatEntityName(a.ovseId).localeCompare(formatEntityName(b.ovseId)));
+        else wList.sort((a, b) => (b.total ?? b.weeklyTotal ?? 0) - (a.total ?? a.weeklyTotal ?? 0));
+
+        wBody.innerHTML = wList.map((item, idx) => {
           const comp = (comparison || []).find(c => c.ovseId === item.ovseId);
           const oRank = comp ? comp.overallRank : 'New';
+          const wRankNum = item.rank ?? (idx + 1);
           let badge = '';
           if (oRank === 'Unranked' || oRank === 'New') {
             badge = '<span class="text-[10px] font-bold text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded">NEW</span>';
-          } else if (oRank > (idx + 1)) {
-            const shift = oRank - (idx + 1);
+          } else if (oRank > wRankNum) {
+            const shift = oRank - wRankNum;
             badge = `<span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded flex items-center justify-center gap-0.5">↑ +${shift}</span>`;
-          } else if (oRank === (idx + 1)) {
+          } else if (oRank === wRankNum) {
             badge = '<span class="text-[10px] font-bold text-slate-400">— Stable</span>';
           } else {
-            const shift = (idx + 1) - oRank;
+            const shift = wRankNum - oRank;
             badge = `<span class="text-[10px] font-bold text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded flex items-center justify-center gap-0.5">↓ -${shift}</span>`;
           }
 
@@ -3848,7 +4934,7 @@
 
           return `
             <tr class="hover:bg-indigo-50/40 transition">
-              <td class="py-2.5 px-2 font-bold text-indigo-700">#${idx + 1}</td>
+              <td class="py-2.5 px-2 font-bold text-indigo-700">#${wRankNum}</td>
               <td class="py-2.5 px-2 font-medium text-slate-900 truncate max-w-[150px]" title="${item.ovseId}">${formatEntityName(item.ovseId)}</td>
               <td class="py-2.5 px-2 text-right font-bold text-indigo-900">${Number(tot).toLocaleString()}</td>
               <td class="py-2.5 px-2 text-right text-emerald-600 font-semibold">${sRate.toFixed(2)}%</td>
@@ -3859,12 +4945,24 @@
       }
     }
 
-    // New Entrants & Surging Table
+    // New Entrants & Surging Table (with Sort Option)
     function renderNewEntrantsTable() {
       const { newAndEmerging } = currentData;
       const body = document.getElementById('newEntrantsTableBody');
+      if (!body) return;
 
-      body.innerHTML = newAndEmerging.map(item => {
+      const sortMode = document.getElementById('newEntrantsSortSelect')?.value || 'weekly_desc';
+      let sortedList = [...(newAndEmerging || [])];
+      if (sortMode === 'weekly_asc') sortedList.sort((a, b) => a.weeklyTotal - b.weeklyTotal);
+      else if (sortMode === 'eff_desc') sortedList.sort((a, b) => parseFloat(b.weeklySuccessRate) - parseFloat(a.weeklySuccessRate) || b.weeklyTotal - a.weeklyTotal);
+      else if (sortMode === 'eff_asc') sortedList.sort((a, b) => parseFloat(a.weeklySuccessRate) - parseFloat(b.weeklySuccessRate) || b.weeklyTotal - a.weeklyTotal);
+      else if (sortMode === 'fail_desc') sortedList.sort((a, b) => parseFloat(b.weeklyFailureRate) - parseFloat(a.weeklyFailureRate) || b.weeklyFailure - a.weeklyFailure);
+      else if (sortMode === 'share_desc') sortedList.sort((a, b) => parseFloat(b.weeklyShareOfOverallPct) - parseFloat(a.weeklyShareOfOverallPct) || b.weeklyTotal - a.weeklyTotal);
+      else if (sortMode === 'overall_desc') sortedList.sort((a, b) => b.overallTotal - a.overallTotal);
+      else if (sortMode === 'name_asc') sortedList.sort((a, b) => formatEntityName(a.ovseId).localeCompare(formatEntityName(b.ovseId)));
+      else sortedList.sort((a, b) => b.weeklyTotal - a.weeklyTotal);
+
+      body.innerHTML = sortedList.map(item => {
         const isBrandNew = item.status === 'New Entrant';
         const badgeClass = isBrandNew 
           ? 'bg-purple-100 text-purple-800 border-purple-200' 
@@ -3920,12 +5018,30 @@
       applyFiltersAndRenderMasterTable();
     }
 
+    function handleMasterSortDropdown(e) {
+      const val = e.target.value || 'weeklyTotal_desc';
+      const lastUnderscore = val.lastIndexOf('_');
+      const col = val.substring(0, lastUnderscore);
+      const dir = val.substring(lastUnderscore + 1);
+      currentSort.column = col;
+      currentSort.asc = (dir === 'asc');
+      currentPage = 1;
+      applyFiltersAndRenderMasterTable();
+    }
+
     function sortTable(column) {
       if (currentSort.column === column) {
         currentSort.asc = !currentSort.asc;
       } else {
         currentSort.column = column;
         currentSort.asc = false;
+      }
+      const masterSortEl = document.getElementById('masterSortSelect');
+      if (masterSortEl) {
+        const candidateVal = `${currentSort.column}_${currentSort.asc ? 'asc' : 'desc'}`;
+        if ([...masterSortEl.options].some(o => o.value === candidateVal)) {
+          masterSortEl.value = candidateVal;
+        }
       }
       applyFiltersAndRenderMasterTable();
     }
@@ -3968,6 +5084,11 @@
 
       // Sort
       list.sort((a, b) => {
+        if (currentSort.column === 'ovseId') {
+          const nameA = formatEntityName(a.ovseId).toLowerCase();
+          const nameB = formatEntityName(b.ovseId).toLowerCase();
+          return currentSort.asc ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
+        }
         let vA = a[currentSort.column];
         let vB = b[currentSort.column];
         if (typeof vA === 'string' && !isNaN(Number(vA))) vA = Number(vA);
@@ -4159,6 +5280,7 @@
 
     let hotspotSearchQuery = '';
     let hotspotCodeSelected = 'all';
+    let hotspotSortSelected = 'errors_desc';
 
     let channelLifetimeVsWeeklyChartInstance = null;
     let channelWeeklyDonutInstance = null;
@@ -4273,6 +5395,8 @@
         renderErrorIntelligence();
       } else if (tabId === 'channels') {
         renderChannelIntelligence();
+      } else {
+        renderCharts();
       }
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -4312,11 +5436,316 @@
       renderErrorHotspotsTable();
     }
 
+    function handleHotspotSort(e) {
+      hotspotSortSelected = e.target.value || 'errors_desc';
+      renderErrorHotspotsTable();
+    }
+
+    // Monthly Trend Chart for Tab 2 (UIDAI Errors & Overall Transactions)
+    function renderMonthlyErrorsTrendChart() {
+      if (typeof Chart === 'undefined' || !currentData) return;
+      const canvas = document.getElementById('monthlyErrorsTrendChart');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (monthlyErrorsTrendChartInstance) monthlyErrorsTrendChartInstance.destroy();
+
+      const mt = currentData.monthlyTrend || baseData?.monthlyTrend || { months: [], overall: {} };
+      const sysMt = currentData._unfilteredMonthlyTrend || baseData?.monthlyTrend || mt;
+      const rawMonths = [...(mt.months || [])];
+      const overallBucket = mt.overall || {
+        monthKey: 'OVERALL',
+        monthLabel: 'Overall (All-Time)',
+        totalTx: currentData.overall?.totalTx || 0,
+        totalErrors: currentData.errors?.overall?.totalErrors || 0,
+        failureRate: Number((currentData.overall?.failureRate || 0).toFixed(2)),
+        consentErrors: 0,
+        faceAuthErrors: 0,
+        cryptoErrors: 0,
+        networkErrors: 0,
+        otherErrors: 0
+      };
+
+      const viewMode = document.getElementById('monthlyErrViewMode')?.value || 'errors_vs_tx';
+      const sortMode = document.getElementById('monthlyErrSortSelect')?.value || 'chronological';
+      const showOverallBar = document.getElementById('monthlyErrShowOverallBar')?.checked !== false;
+
+      const hasSingleOvse = includedOvseSet.size > 0;
+      const selOvseName = hasSingleOvse ? formatEntityName(Array.from(includedOvseSet)[0]) : 'All OVSEs (System Overall)';
+      const sysOverallErr = sysMt?.overall?.totalErrors || overallBucket.totalErrors;
+      const errShareOfSys = sysOverallErr > 0 ? ((overallBucket.totalErrors / sysOverallErr) * 100).toFixed(2) : '100.00';
+
+      const titleEl = document.getElementById('chartMonthlyErrTitle');
+      const subEl = document.getElementById('chartMonthlyErrSub');
+      if (titleEl) {
+        titleEl.innerText = hasSingleOvse
+          ? `Monthly Trend of UIDAI Errors & Overall Transactions — ${selOvseName}`
+          : `Monthly Trend of UIDAI Errors & Overall Transactions`;
+      }
+      if (subEl) {
+        subEl.innerText = hasSingleOvse
+          ? `Month-by-month failure trajectory for ${selOvseName}: ${Number(overallBucket.totalErrors).toLocaleString()} errors out of ${Number(overallBucket.totalTx).toLocaleString()} overall tx (${overallBucket.failureRate}% failure rate • ${errShareOfSys}% of system errors)`
+          : `Month-by-month trajectory of UIDAI failures (${Number(overallBucket.totalErrors).toLocaleString()} overall errors) compared against total monthly transactions (${Number(overallBucket.totalTx).toLocaleString()} overall tx) & failure rate %`;
+      }
+
+      const setTxt = (id, txt) => { const el = document.getElementById(id); if (el) el.innerText = txt; };
+      setTxt('monthlyErrKpiOverallErrors', Number(overallBucket.totalErrors).toLocaleString());
+      setTxt('monthlyErrKpiOverallTxRef', `Out of ${Number(overallBucket.totalTx).toLocaleString()} Overall Tx (${overallBucket.failureRate}% Failure Rate)`);
+
+      if (rawMonths.length > 0) {
+        const peakErrM = [...rawMonths].sort((a, b) => b.totalErrors - a.totalErrors)[0];
+        setTxt('monthlyErrKpiPeakMonth', peakErrM.monthLabel);
+        setTxt('monthlyErrKpiPeakVol', `${Number(peakErrM.totalErrors).toLocaleString()} errors (${peakErrM.failureRate}% failure rate)`);
+
+        const latestM = rawMonths[rawMonths.length - 1];
+        const prevM = rawMonths.length >= 2 ? rawMonths[rawMonths.length - 2] : null;
+        setTxt('monthlyErrKpiLatestMonth', `${latestM.monthLabel}: ${Number(latestM.totalErrors).toLocaleString()}`);
+        if (prevM && prevM.totalErrors > 0) {
+          const momPct = (((latestM.totalErrors - prevM.totalErrors) / prevM.totalErrors) * 100).toFixed(1);
+          setTxt('monthlyErrKpiLatestMom', `${momPct >= 0 ? '+' : ''}${momPct}% vs ${prevM.monthLabel} (${latestM.failureRate}% fail rate)`);
+        } else {
+          setTxt('monthlyErrKpiLatestMom', `${latestM.failureRate}% failure rate in ${latestM.monthLabel}`);
+        }
+
+        const avgErr = Math.round(overallBucket.totalErrors / rawMonths.length);
+        setTxt('monthlyErrKpiAvgErrors', Number(avgErr).toLocaleString());
+        const consentShare = overallBucket.totalErrors > 0 ? ((overallBucket.consentErrors / overallBucket.totalErrors) * 100).toFixed(1) : '0.0';
+        const faceShare = overallBucket.totalErrors > 0 ? ((overallBucket.faceAuthErrors / overallBucket.totalErrors) * 100).toFixed(1) : '0.0';
+        setTxt('monthlyErrKpiTopCause', `Consent: ${consentShare}% • Face Auth: ${faceShare}%`);
+
+        const dirBadge = document.getElementById('monthlyErrTrendDirectionBadge');
+        if (dirBadge) {
+          const isImproving = latestM.failureRate <= overallBucket.failureRate;
+          dirBadge.className = isImproving
+            ? 'inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200'
+            : 'inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200';
+          dirBadge.innerText = isImproving
+            ? `▼ Failure Rate Improving (${latestM.failureRate}% in ${latestM.monthLabel} vs ${overallBucket.failureRate}% Overall)`
+            : `▲ Elevated Failure Rate (${latestM.failureRate}% in ${latestM.monthLabel})`;
+        }
+      } else {
+        setTxt('monthlyErrKpiPeakMonth', '—');
+        setTxt('monthlyErrKpiPeakVol', '0 errors');
+        setTxt('monthlyErrKpiLatestMonth', '—');
+        setTxt('monthlyErrKpiLatestMom', 'No monthly error records');
+        setTxt('monthlyErrKpiAvgErrors', '0');
+        setTxt('monthlyErrKpiTopCause', '—');
+      }
+
+      let sortedMonths = [...rawMonths];
+      if (sortMode === 'reverse_chron') sortedMonths.sort((a, b) => b.monthKey.localeCompare(a.monthKey));
+      else if (sortMode === 'err_desc') sortedMonths.sort((a, b) => b.totalErrors - a.totalErrors);
+      else if (sortMode === 'err_asc') sortedMonths.sort((a, b) => a.totalErrors - b.totalErrors);
+      else if (sortMode === 'rate_desc') sortedMonths.sort((a, b) => b.failureRate - a.failureRate || b.totalErrors - a.totalErrors);
+      else if (sortMode === 'rate_asc') sortedMonths.sort((a, b) => a.failureRate - b.failureRate || a.totalErrors - b.totalErrors);
+      else sortedMonths.sort((a, b) => a.monthKey.localeCompare(b.monthKey));
+
+      const plotItems = showOverallBar ? [...sortedMonths, { ...overallBucket, isOverall: true }] : sortedMonths;
+      const labels = plotItems.map(m => m.isOverall ? '⭐ OVERALL (Total)' : m.monthLabel);
+
+      let datasets = [];
+      let scalesConfig = {};
+
+      if (viewMode === 'root_cause_stack') {
+        datasets = [
+          {
+            type: 'bar',
+            label: 'User Consent Denial',
+            data: plotItems.map(m => m.consentErrors || 0),
+            backgroundColor: '#f59e0b',
+            stack: 'errCat',
+            yAxisID: 'y'
+          },
+          {
+            type: 'bar',
+            label: 'Biometric Face Auth Failure',
+            data: plotItems.map(m => m.faceAuthErrors || 0),
+            backgroundColor: '#4f46e5',
+            stack: 'errCat',
+            yAxisID: 'y'
+          },
+          {
+            type: 'bar',
+            label: 'Cryptographic / JWT Error',
+            data: plotItems.map(m => m.cryptoErrors || 0),
+            backgroundColor: '#9333ea',
+            stack: 'errCat',
+            yAxisID: 'y'
+          },
+          {
+            type: 'bar',
+            label: 'Network & Other Errors',
+            data: plotItems.map(m => (m.networkErrors || 0) + (m.otherErrors || 0)),
+            backgroundColor: '#0284c7',
+            stack: 'errCat',
+            yAxisID: 'y'
+          },
+          {
+            type: 'line',
+            label: 'Monthly Failure Rate (%)',
+            data: plotItems.map(m => m.failureRate),
+            borderColor: '#e11d48',
+            backgroundColor: '#e11d48',
+            borderWidth: 2.5,
+            pointRadius: 4,
+            tension: 0.25,
+            yAxisID: 'y1'
+          }
+        ];
+        scalesConfig = {
+          x: { stacked: true, grid: { display: false } },
+          y: {
+            stacked: true,
+            position: 'left',
+            title: { display: true, text: 'Errors by Root Cause Category', font: { size: 10 } },
+            ticks: { callback: v => Number(v).toLocaleString() },
+            grid: { color: '#f1f5f9' }
+          },
+          y1: {
+            position: 'right',
+            min: 0,
+            max: 100,
+            title: { display: true, text: 'Failure Rate (%)', font: { size: 10 } },
+            ticks: { callback: v => v + '%' },
+            grid: { drawOnChartArea: false }
+          }
+        };
+      } else if (viewMode === 'error_rate_only') {
+        datasets = [
+          {
+            type: 'bar',
+            label: 'Total UIDAI Errors',
+            data: plotItems.map(m => m.totalErrors),
+            backgroundColor: plotItems.map(m => m.isOverall ? '#9f1239' : '#e11d48'),
+            borderRadius: 6,
+            yAxisID: 'y'
+          },
+          {
+            type: 'line',
+            label: 'Failure Rate (% of Monthly Tx)',
+            data: plotItems.map(m => m.failureRate),
+            borderColor: '#f59e0b',
+            backgroundColor: '#f59e0b',
+            borderWidth: 2.5,
+            pointRadius: 4,
+            tension: 0.3,
+            yAxisID: 'y1'
+          }
+        ];
+        scalesConfig = {
+          x: { grid: { display: false } },
+          y: {
+            position: 'left',
+            title: { display: true, text: 'Total UIDAI Errors', font: { size: 10 } },
+            ticks: { callback: v => Number(v).toLocaleString() },
+            grid: { color: '#f1f5f9' }
+          },
+          y1: {
+            position: 'right',
+            min: 0,
+            max: 100,
+            title: { display: true, text: 'Failure Rate (%)', font: { size: 10 } },
+            ticks: { callback: v => v + '%' },
+            grid: { drawOnChartArea: false }
+          }
+        };
+      } else {
+        // Default: 'errors_vs_tx' (Total Errors vs Overall Monthly Transactions + Failure Rate %)
+        datasets = [
+          {
+            type: 'bar',
+            label: 'Total UIDAI Errors (Failures)',
+            data: plotItems.map(m => m.totalErrors),
+            backgroundColor: plotItems.map(m => m.isOverall ? '#9f1239' : '#e11d48'),
+            borderRadius: 6,
+            yAxisID: 'y',
+            order: 2
+          },
+          {
+            type: 'bar',
+            label: 'Overall Monthly Transactions (Total Tx)',
+            data: plotItems.map(m => m.totalTx),
+            backgroundColor: plotItems.map(m => m.isOverall ? '#475569' : '#cbd5e1'),
+            borderRadius: 6,
+            yAxisID: 'y',
+            order: 3
+          },
+          {
+            type: 'line',
+            label: 'Failure Rate (% of Total Tx)',
+            data: plotItems.map(m => m.failureRate),
+            borderColor: '#d97706',
+            backgroundColor: 'rgba(217, 119, 6, 0.1)',
+            borderWidth: 2.5,
+            pointRadius: 4.5,
+            pointBackgroundColor: '#d97706',
+            pointBorderColor: '#ffffff',
+            pointBorderWidth: 1.5,
+            tension: 0.25,
+            yAxisID: 'y1',
+            order: 1
+          }
+        ];
+        scalesConfig = {
+          x: { grid: { display: false } },
+          y: {
+            position: 'left',
+            title: { display: true, text: 'Volume (Errors vs Overall Monthly Transactions)', font: { size: 10 } },
+            ticks: { callback: v => Number(v).toLocaleString() },
+            grid: { color: '#f1f5f9' }
+          },
+          y1: {
+            position: 'right',
+            min: 0,
+            max: 100,
+            title: { display: true, text: 'Failure Rate (%)', font: { size: 10 } },
+            ticks: { callback: v => v + '%' },
+            grid: { drawOnChartArea: false }
+          }
+        };
+      }
+
+      monthlyErrorsTrendChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: { labels, datasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          scales: scalesConfig,
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: { boxWidth: 12, font: { size: 11, family: 'Plus Jakarta Sans' } }
+            },
+            tooltip: {
+              callbacks: {
+                afterTitle: (items) => {
+                  const m = plotItems[items[0].dataIndex];
+                  if (!m) return '';
+                  return `Total Tx: ${Number(m.totalTx).toLocaleString()} | Errors: ${Number(m.totalErrors).toLocaleString()} (${m.failureRate}% Failure / ${m.successRate || (100 - m.failureRate).toFixed(2)}% Efficiency)`;
+                },
+                label: (context) => {
+                  const val = context.raw;
+                  if (context.dataset.yAxisID === 'y1') {
+                    return ` ${context.dataset.label}: ${Number(val).toFixed(2)}%`;
+                  }
+                  return ` ${context.dataset.label}: ${Number(val).toLocaleString()}`;
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+
     function renderErrorIntelligence() {
       if (!currentData || !currentData.errors) return;
 
       const errorsData = currentData.errors;
       const t = getPeriodTerms();
+
+      // 0. Render Monthly Error Trend Chart
+      renderMonthlyErrorsTrendChart();
 
       // Update Error Intelligence Scorecards & Banners
       const totalWeeklyErr = errorsData.weekly?.totalErrors || 0;
@@ -4378,14 +5807,27 @@
         elCryptoSub.innerText = `${Number(signErr).toLocaleString()} Sign Failures + ${Number(jwtErr).toLocaleString()} Invalid JWTs (${t.adj})`;
       }
 
-      // 1. Chart: Top 6 UIDAI Error Codes
+      // 1. Chart: Top 6 UIDAI Error Codes (with Sort Option)
       const ctxTopErrors = document.getElementById('topErrorsChart')?.getContext('2d');
       if (ctxTopErrors && typeof Chart !== 'undefined') {
         if (topErrorsChartInstance) topErrorsChartInstance.destroy();
 
-        const top6Errors = (errorsData.comparison || [])
-          .filter(e => e.weeklyCount > 0)
-          .slice(0, 6);
+        const topErrSort = document.getElementById('topErrorsChartSortSelect')?.value || 'weekly_desc';
+        let errPool = [...(errorsData.comparison || [])].filter(e => e.weeklyCount > 0 || e.overallCount > 0);
+        if (topErrSort === 'weekly_asc') {
+          const activeOnly = errPool.filter(e => e.weeklyCount > 0);
+          errPool = (activeOnly.length > 0 ? activeOnly : errPool).sort((a, b) => a.weeklyCount - b.weeklyCount);
+        } else if (topErrSort === 'overall_desc') {
+          errPool.sort((a, b) => b.overallCount - a.overallCount);
+        } else if (topErrSort === 'delta_desc') {
+          errPool.sort((a, b) => parseFloat(b.pctPointDelta) - parseFloat(a.pctPointDelta));
+        } else if (topErrSort === 'code_asc') {
+          errPool.sort((a, b) => a.code.localeCompare(b.code));
+        } else {
+          errPool.sort((a, b) => b.weeklyCount - a.weeklyCount || b.overallCount - a.overallCount);
+        }
+
+        const top6Errors = errPool.slice(0, 6);
 
         const labels = top6Errors.map(e => {
           if (e.code.length > 20) return e.code.replace('SDJWT_', '').substring(0, 16) + '...';
@@ -4490,7 +5932,7 @@
                   label: ctx => {
                     const total = catCounts.reduce((a, b) => a + b, 0);
                     const val = ctx.raw;
-                    const pct = ((val / total) * 100).toFixed(1);
+                    const pct = total > 0 ? ((val / total) * 100).toFixed(1) : '0.0';
                     return ` ${ctx.label}: ${val.toLocaleString()} (${pct}%)`;
                   }
                 }
@@ -4500,12 +5942,35 @@
         });
       }
 
-      // 3. Chart: Top 6 Entities Impacted by Errors
+      // 3. Chart: Top Entities Impacted by Errors (Last Graph on Page 2 — with Sort & Count options)
       const ctxTopEntities = document.getElementById('topEntitiesErrorsChart')?.getContext('2d');
       if (ctxTopEntities && typeof Chart !== 'undefined') {
         if (topEntitiesErrorsChartInstance) topEntitiesErrorsChartInstance.destroy();
 
-        const ovseErrorList = (errorsData.weekly?.ovseErrorList || []).slice(0, 6);
+        const entErrSort = document.getElementById('topEntitiesErrorsSortSelect')?.value || 'err_desc';
+        const entErrCount = parseInt(document.getElementById('topEntitiesErrorsCountSelect')?.value || '6', 10) || 6;
+        const topEntTitleEl = document.getElementById('chartTopEntErrorsTitle');
+        if (topEntTitleEl) {
+          topEntTitleEl.innerText = `Top ${entErrCount} OVSE Entities Impacted by Errors (${t.adj} Failure Volume)`;
+        }
+
+        const compMap = new Map((currentData.comparison || []).map(c => [c.ovseId, c]));
+        let rawEntErrList = (errorsData.weekly?.ovseErrorList || []).map(e => {
+          const c = compMap.get(e.ovseId);
+          const totalTx = e.totalTx ?? (c ? c.weeklyTotal : e.totalErrors);
+          const failRate = e.failureRate ?? (c ? parseFloat(c.weeklyFailureRate) : 100);
+          const succRate = e.successRate ?? (c ? parseFloat(c.weeklySuccessRate) : 0);
+          return { ...e, totalTx, failureRate: failRate, successRate: succRate };
+        });
+
+        if (entErrSort === 'err_asc') rawEntErrList.sort((a, b) => a.totalErrors - b.totalErrors);
+        else if (entErrSort === 'fail_rate_desc') rawEntErrList.sort((a, b) => b.failureRate - a.failureRate || b.totalErrors - a.totalErrors);
+        else if (entErrSort === 'eff_desc') rawEntErrList.sort((a, b) => b.successRate - a.successRate || a.totalErrors - b.totalErrors);
+        else if (entErrSort === 'total_tx_desc') rawEntErrList.sort((a, b) => b.totalTx - a.totalTx || b.totalErrors - a.totalErrors);
+        else if (entErrSort === 'name_asc') rawEntErrList.sort((a, b) => formatEntityName(a.ovseId).localeCompare(formatEntityName(b.ovseId)));
+        else rawEntErrList.sort((a, b) => b.totalErrors - a.totalErrors);
+
+        const ovseErrorList = rawEntErrList.slice(0, entErrCount);
         const entLabels = ovseErrorList.map(e => formatEntityName(e.ovseId));
         const entCounts = ovseErrorList.map(e => e.totalErrors);
 
@@ -4518,7 +5983,7 @@
               data: entCounts,
               backgroundColor: '#8b5cf6',
               borderRadius: 6,
-              barThickness: 28
+              barThickness: entErrCount > 10 ? 18 : 28
             }]
           },
           options: {
@@ -4538,7 +6003,8 @@
                 callbacks: {
                   afterLabel: ctx => {
                     const ent = ovseErrorList[ctx.dataIndex];
-                    return `Primary Issue: ${ent.topErrorCode} (${ent.topErrorCount} errors)`;
+                    if (!ent) return '';
+                    return `Primary Issue: ${ent.topErrorCode} (${Number(ent.topErrorCount).toLocaleString()} errors) • Fail Rate: ${Number(ent.failureRate).toFixed(1)}% | Efficiency: ${Number(ent.successRate).toFixed(1)}%`;
                   }
                 }
               }
@@ -4578,9 +6044,12 @@
 
       // Sorting
       filtered.sort((a, b) => {
-        if (errorSortSelected === 'weekly_desc') return b.weeklyCount - a.weeklyCount;
+        if (errorSortSelected === 'weekly_desc') return b.weeklyCount - a.weeklyCount || b.overallCount - a.overallCount;
+        if (errorSortSelected === 'weekly_asc') return a.weeklyCount - b.weeklyCount || a.overallCount - b.overallCount;
         if (errorSortSelected === 'overall_desc') return b.overallCount - a.overallCount;
+        if (errorSortSelected === 'overall_asc') return a.overallCount - b.overallCount;
         if (errorSortSelected === 'delta_desc') return parseFloat(b.pctPointDelta) - parseFloat(a.pctPointDelta);
+        if (errorSortSelected === 'delta_asc') return parseFloat(a.pctPointDelta) - parseFloat(b.pctPointDelta);
         if (errorSortSelected === 'code_asc') return a.code.localeCompare(b.code);
         return 0;
       });
@@ -4634,14 +6103,32 @@
       const tbody = document.getElementById('errorHotspotsTableBody');
       if (!tbody) return;
 
-      const rawList = currentData.errors.weekly?.ovseErrorList || [];
-      const filtered = rawList.filter(ent => {
+      const compMap = new Map((currentData.comparison || []).map(c => [c.ovseId, c]));
+      const rawList = (currentData.errors.weekly?.ovseErrorList || []).map(ent => {
+        const c = compMap.get(ent.ovseId);
+        const topCodeShare = ent.totalErrors > 0 ? (ent.topErrorCount / ent.totalErrors) * 100 : 0;
+        const failRate = ent.failureRate ?? (c ? parseFloat(c.weeklyFailureRate) : 100);
+        const succRate = ent.successRate ?? (c ? parseFloat(c.weeklySuccessRate) : 0);
+        return { ...ent, topCodeShare, failureRate: failRate, successRate: succRate };
+      });
+
+      let filtered = rawList.filter(ent => {
         const matchesSearch = !hotspotSearchQuery ||
           ent.ovseId.toLowerCase().includes(hotspotSearchQuery) ||
           formatEntityName(ent.ovseId).toLowerCase().includes(hotspotSearchQuery);
 
         const matchesCode = (hotspotCodeSelected === 'all') || (ent.topErrorCode === hotspotCodeSelected);
         return matchesSearch && matchesCode;
+      });
+
+      const sortMode = document.getElementById('hotspotSortSelect')?.value || hotspotSortSelected || 'errors_desc';
+      filtered.sort((a, b) => {
+        if (sortMode === 'errors_asc') return a.totalErrors - b.totalErrors;
+        if (sortMode === 'top_share_desc') return b.topCodeShare - a.topCodeShare || b.totalErrors - a.totalErrors;
+        if (sortMode === 'fail_rate_desc') return b.failureRate - a.failureRate || b.totalErrors - a.totalErrors;
+        if (sortMode === 'eff_desc') return b.successRate - a.successRate || a.totalErrors - b.totalErrors;
+        if (sortMode === 'name_asc') return formatEntityName(a.ovseId).localeCompare(formatEntityName(b.ovseId));
+        return b.totalErrors - a.totalErrors;
       });
 
       const hotspotCountEl = document.getElementById('hotspotRecordCount');
@@ -4663,7 +6150,7 @@
       };
 
       filtered.forEach(ent => {
-        const topCodePct = ent.totalErrors > 0 ? ((ent.topErrorCount / ent.totalErrors) * 100).toFixed(1) : 0;
+        const topCodePct = ent.topCodeShare.toFixed(1);
         const rec = recommendations[ent.topErrorCode] || 'Inspect backend logs and consult UIDAI integration specifications.';
 
         html += `
@@ -4703,10 +6190,266 @@
       renderChannelMasterTable();
     }
 
+    // Monthly Trend Chart for Tab 3 (Data Sharing Channels & Overall Volume)
+    function renderMonthlyChannelsTrendChart() {
+      if (typeof Chart === 'undefined' || !currentData) return;
+      const canvas = document.getElementById('monthlyChannelsTrendChart');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (monthlyChannelsTrendChartInstance) monthlyChannelsTrendChartInstance.destroy();
+
+      const mt = currentData.monthlyTrend || baseData?.monthlyTrend || { months: [], overall: {} };
+      const sysMt = currentData._unfilteredMonthlyTrend || baseData?.monthlyTrend || mt;
+      const rawMonths = [...(mt.months || [])];
+      const overallBucket = mt.overall || {
+        monthKey: 'OVERALL',
+        monthLabel: 'Overall (All-Time)',
+        totalTx: currentData.channels?.overall?.total || currentData.overall?.totalTx || 0,
+        appIntent: currentData.channels?.overall?.appIntent || 0,
+        webIntent: currentData.channels?.overall?.webIntent || 0,
+        qrScan: currentData.channels?.overall?.qrScan || 0,
+        appIntentPct: parseFloat(currentData.channels?.overall?.appIntentPct || 0),
+        webIntentPct: parseFloat(currentData.channels?.overall?.webIntentPct || 0),
+        qrScanPct: parseFloat(currentData.channels?.overall?.qrScanPct || 0)
+      };
+
+      const viewMode = document.getElementById('monthlyChanViewMode')?.value || 'volume_stack';
+      const sortMode = document.getElementById('monthlyChanSortSelect')?.value || 'chronological';
+      const showOverallBar = document.getElementById('monthlyChanShowOverallBar')?.checked !== false;
+
+      const hasSingleOvse = includedOvseSet.size > 0;
+      const selOvseName = hasSingleOvse ? formatEntityName(Array.from(includedOvseSet)[0]) : 'All OVSEs (System Overall)';
+      const sysOverallTx = sysMt?.overall?.totalTx || overallBucket.totalTx;
+      const shareOfSysPct = sysOverallTx > 0 ? ((overallBucket.totalTx / sysOverallTx) * 100).toFixed(2) : '100.00';
+
+      const titleEl = document.getElementById('chartMonthlyChanTitle');
+      const subEl = document.getElementById('chartMonthlyChanSub');
+      if (titleEl) {
+        titleEl.innerText = hasSingleOvse
+          ? `Monthly Trend of Data Sharing Channels & Overall Volume — ${selOvseName}`
+          : `Monthly Trend of Data Sharing Channels & Overall Volume`;
+      }
+      if (subEl) {
+        subEl.innerText = hasSingleOvse
+          ? `Month-by-month channel modality breakdown for ${selOvseName}: ${Number(overallBucket.totalTx).toLocaleString()} overall interactions (${shareOfSysPct}% of system overall)`
+          : `Month-by-month trajectory of App-to-App (APP_INTENT), Web-to-App (WEB_INTENT), Cross-Device QR (QR_SCAN), and cumulative overall volume (${Number(overallBucket.totalTx).toLocaleString()} total interactions)`;
+      }
+
+      const setTxt = (id, txt) => { const el = document.getElementById(id); if (el) el.innerText = txt; };
+      setTxt('monthlyChanKpiOverallTotal', Number(overallBucket.totalTx).toLocaleString());
+      setTxt('monthlyChanKpiOverallSub', hasSingleOvse
+        ? `${selOvseName} (${shareOfSysPct}% of ${Number(sysOverallTx).toLocaleString()} System Overall)`
+        : `Across ${rawMonths.length} active months & all 3 sharing modalities`);
+
+      setTxt('monthlyChanKpiAppTotal', Number(overallBucket.appIntent).toLocaleString());
+      setTxt('monthlyChanKpiAppShare', `${overallBucket.appIntentPct}% of Overall Volume`);
+
+      setTxt('monthlyChanKpiWebTotal', Number(overallBucket.webIntent).toLocaleString());
+      setTxt('monthlyChanKpiWebShare', `${overallBucket.webIntentPct}% of Overall Volume`);
+
+      setTxt('monthlyChanKpiQrTotal', Number(overallBucket.qrScan).toLocaleString());
+      setTxt('monthlyChanKpiQrShare', `${overallBucket.qrScanPct}% of Overall Volume`);
+
+      const dirBadge = document.getElementById('monthlyChanTrendDirectionBadge');
+      if (dirBadge && rawMonths.length > 0) {
+        const latestM = rawMonths[rawMonths.length - 1];
+        dirBadge.innerText = `Latest (${latestM.monthLabel}): ${latestM.appIntentPct}% App • ${latestM.webIntentPct}% Web • ${latestM.qrScanPct}% QR`;
+      }
+
+      let sortedMonths = [...rawMonths];
+      if (sortMode === 'reverse_chron') sortedMonths.sort((a, b) => b.monthKey.localeCompare(a.monthKey));
+      else if (sortMode === 'total_desc') sortedMonths.sort((a, b) => b.totalTx - a.totalTx);
+      else if (sortMode === 'total_asc') sortedMonths.sort((a, b) => a.totalTx - b.totalTx);
+      else if (sortMode === 'web_desc') sortedMonths.sort((a, b) => b.webIntent - a.webIntent || b.webIntentPct - a.webIntentPct);
+      else if (sortMode === 'qr_desc') sortedMonths.sort((a, b) => b.qrScan - a.qrScan || b.qrScanPct - a.qrScanPct);
+      else if (sortMode === 'app_desc') sortedMonths.sort((a, b) => b.appIntent - a.appIntent);
+      else sortedMonths.sort((a, b) => a.monthKey.localeCompare(b.monthKey));
+
+      const plotItems = showOverallBar ? [...sortedMonths, { ...overallBucket, isOverall: true }] : sortedMonths;
+      const labels = plotItems.map(m => m.isOverall ? '⭐ OVERALL (Total)' : m.monthLabel);
+
+      let datasets = [];
+      let scalesConfig = {};
+
+      if (viewMode === 'share_100') {
+        datasets = [
+          {
+            type: 'bar',
+            label: 'App-to-App (APP_INTENT %)',
+            data: plotItems.map(m => m.appIntentPct),
+            backgroundColor: '#4f46e5',
+            stack: 'chanPct'
+          },
+          {
+            type: 'bar',
+            label: 'Web-to-App (WEB_INTENT %)',
+            data: plotItems.map(m => m.webIntentPct),
+            backgroundColor: '#10b981',
+            stack: 'chanPct'
+          },
+          {
+            type: 'bar',
+            label: 'Cross-Device QR (QR_SCAN %)',
+            data: plotItems.map(m => m.qrScanPct),
+            backgroundColor: '#0284c7',
+            stack: 'chanPct'
+          }
+        ];
+        scalesConfig = {
+          x: { stacked: true, grid: { display: false } },
+          y: {
+            stacked: true,
+            max: 100,
+            title: { display: true, text: 'Channel Modality Share (%)', font: { size: 10 } },
+            ticks: { callback: v => v + '%' },
+            grid: { color: '#f1f5f9' }
+          }
+        };
+      } else if (viewMode === 'web_qr_focus') {
+        datasets = [
+          {
+            type: 'bar',
+            label: 'Web-to-App (WEB_INTENT Tx)',
+            data: plotItems.map(m => m.webIntent),
+            backgroundColor: '#10b981',
+            borderRadius: 6,
+            yAxisID: 'y'
+          },
+          {
+            type: 'bar',
+            label: 'Cross-Device QR (QR_SCAN Tx)',
+            data: plotItems.map(m => m.qrScan),
+            backgroundColor: '#0284c7',
+            borderRadius: 6,
+            yAxisID: 'y'
+          },
+          {
+            type: 'line',
+            label: 'Combined Web + QR Share (%)',
+            data: plotItems.map(m => Number((m.webIntentPct + m.qrScanPct).toFixed(2))),
+            borderColor: '#4f46e5',
+            backgroundColor: '#4f46e5',
+            borderWidth: 2.5,
+            pointRadius: 4,
+            tension: 0.25,
+            yAxisID: 'y1'
+          }
+        ];
+        scalesConfig = {
+          x: { grid: { display: false } },
+          y: {
+            position: 'left',
+            title: { display: true, text: 'Web Intent & QR Scan Volume', font: { size: 10 } },
+            ticks: { callback: v => Number(v).toLocaleString() },
+            grid: { color: '#f1f5f9' }
+          },
+          y1: {
+            position: 'right',
+            min: 0,
+            title: { display: true, text: 'Combined Web + QR Share (%)', font: { size: 10 } },
+            ticks: { callback: v => v + '%' },
+            grid: { drawOnChartArea: false }
+          }
+        };
+      } else {
+        // Default: 'volume_stack' (Stacked App + Web + QR + Total Transactions Line)
+        datasets = [
+          {
+            type: 'bar',
+            label: 'App-to-App (APP_INTENT)',
+            data: plotItems.map(m => m.appIntent),
+            backgroundColor: plotItems.map(m => m.isOverall ? '#3730a3' : '#4f46e5'),
+            stack: 'chanVol',
+            yAxisID: 'y',
+            order: 2
+          },
+          {
+            type: 'bar',
+            label: 'Web-to-App (WEB_INTENT)',
+            data: plotItems.map(m => m.webIntent),
+            backgroundColor: plotItems.map(m => m.isOverall ? '#047857' : '#10b981'),
+            stack: 'chanVol',
+            yAxisID: 'y',
+            order: 2
+          },
+          {
+            type: 'bar',
+            label: 'Cross-Device QR (QR_SCAN)',
+            data: plotItems.map(m => m.qrScan),
+            backgroundColor: plotItems.map(m => m.isOverall ? '#0369a1' : '#0284c7'),
+            stack: 'chanVol',
+            yAxisID: 'y',
+            order: 2
+          },
+          {
+            type: 'line',
+            label: 'Total Transactions (Monthly + Overall)',
+            data: plotItems.map(m => m.totalTx),
+            borderColor: '#0f172a',
+            backgroundColor: 'rgba(15, 23, 42, 0.08)',
+            borderWidth: 2.5,
+            pointRadius: 4.5,
+            pointBackgroundColor: plotItems.map(m => m.isOverall ? '#f59e0b' : '#0284c7'),
+            pointBorderColor: '#ffffff',
+            pointBorderWidth: 1.5,
+            tension: 0.25,
+            yAxisID: 'y',
+            order: 1
+          }
+        ];
+        scalesConfig = {
+          x: { stacked: true, grid: { display: false } },
+          y: {
+            stacked: true,
+            position: 'left',
+            title: { display: true, text: 'Channel Transactions Volume (Monthly & Overall)', font: { size: 10 } },
+            ticks: { callback: v => Number(v).toLocaleString() },
+            grid: { color: '#f1f5f9' }
+          }
+        };
+      }
+
+      monthlyChannelsTrendChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: { labels, datasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          scales: scalesConfig,
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: { boxWidth: 12, font: { size: 11, family: 'Plus Jakarta Sans' } }
+            },
+            tooltip: {
+              callbacks: {
+                afterTitle: (items) => {
+                  const m = plotItems[items[0].dataIndex];
+                  if (!m) return '';
+                  return `Total Volume: ${Number(m.totalTx).toLocaleString()} tx (App: ${m.appIntentPct}% | Web: ${m.webIntentPct}% | QR: ${m.qrScanPct}%)`;
+                },
+                label: (context) => {
+                  const val = context.raw;
+                  if (viewMode === 'share_100' || context.dataset.yAxisID === 'y1') {
+                    return ` ${context.dataset.label}: ${Number(val).toFixed(2)}%`;
+                  }
+                  return ` ${context.dataset.label}: ${Number(val).toLocaleString()} tx`;
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+
     function renderChannelIntelligence() {
       if (!currentData || !currentData.channels) return;
       const chData = currentData.channels;
       const t = getPeriodTerms();
+
+      // 0. Render Monthly Channels Trend Chart
+      renderMonthlyChannelsTrendChart();
 
       // Update Channel Scorecards & Banners
       const wTotal = chData.weekly?.total || 0;
@@ -4776,15 +6519,22 @@
         }
       }
 
-      // 1. Chart: Lifetime vs Period Comparison
+      // 1. Chart: Lifetime vs Period Comparison (with Sort Option)
       const ctxLifetimeWeekly = document.getElementById('channelLifetimeVsWeeklyChart')?.getContext('2d');
       if (ctxLifetimeWeekly && typeof Chart !== 'undefined') {
         if (channelLifetimeVsWeeklyChartInstance) channelLifetimeVsWeeklyChartInstance.destroy();
 
-        const comp = chData.comparison || [];
-        const labels = comp.map(c => c.displayName);
-        const overallShares = comp.map(c => Number(c.overallPct));
-        const weeklyShares = comp.map(c => Number(c.weeklyPct));
+        const shiftSort = document.getElementById('channelShiftSortSelect')?.value || 'weekly_desc';
+        let sortedComp = [...(chData.comparison || [])];
+        if (shiftSort === 'weekly_asc') sortedComp.sort((a, b) => parseFloat(a.weeklyPct) - parseFloat(b.weeklyPct));
+        else if (shiftSort === 'overall_desc') sortedComp.sort((a, b) => parseFloat(b.overallPct) - parseFloat(a.overallPct));
+        else if (shiftSort === 'delta_desc') sortedComp.sort((a, b) => parseFloat(b.pctPointDelta) - parseFloat(a.pctPointDelta));
+        else if (shiftSort === 'name_asc') sortedComp.sort((a, b) => a.displayName.localeCompare(b.displayName));
+        else sortedComp.sort((a, b) => parseFloat(b.weeklyPct) - parseFloat(a.weeklyPct));
+
+        const labels = sortedComp.map(c => c.displayName);
+        const overallShares = sortedComp.map(c => Number(c.overallPct));
+        const weeklyShares = sortedComp.map(c => Number(c.weeklyPct));
 
         channelLifetimeVsWeeklyChartInstance = new Chart(ctxLifetimeWeekly, {
           type: 'bar',
@@ -4827,7 +6577,7 @@
               tooltip: {
                 callbacks: {
                   afterLabel: ctx => {
-                    const row = comp[ctx.dataIndex];
+                    const row = sortedComp[ctx.dataIndex];
                     if (ctx.datasetIndex === 1) {
                       return `${t.adj} Volume: ${row.weeklyCount.toLocaleString()} tx (Delta: ${row.pctPointDelta}%)`;
                     } else {
@@ -4881,16 +6631,45 @@
         });
       }
 
-      // 3. Chart: 100% Stacked Bar Chart for Top 10 OVSEs
+      // 3. Chart: Stacked Bar Chart for Top N OVSEs (Last Graph on Page 3 — with Sort, Mode & Count options)
       const ctxOvseMix = document.getElementById('ovseChannelMixChart')?.getContext('2d');
       if (ctxOvseMix) {
         if (ovseChannelMixChartInstance) ovseChannelMixChartInstance.destroy();
 
-        const top10Ovse = (chData.weekly?.ovseList || []).slice(0, 10);
-        const labels = top10Ovse.map(item => formatEntityName(item.ovseId));
-        const appPct = top10Ovse.map(item => Number(item.appIntentPct));
-        const webPct = top10Ovse.map(item => Number(item.webIntentPct));
-        const qrPct = top10Ovse.map(item => Number(item.qrScanPct));
+        const mixSort = document.getElementById('ovseChannelMixSortSelect')?.value || 'total_desc';
+        const mixMode = document.getElementById('ovseChannelMixModeSelect')?.value || 'pct_stack';
+        const mixCount = parseInt(document.getElementById('ovseChannelMixCountSelect')?.value || '10', 10) || 10;
+
+        const mixTitleEl = document.getElementById('chartOvseChannelMixTitle');
+        if (mixTitleEl) {
+          mixTitleEl.innerText = `Channel Modality Distribution Across Top ${mixCount} OVSEs (${t.adj} ${mixMode === 'vol_stack' ? 'Volume' : '%'})`;
+        }
+
+        const compMap = new Map((currentData.comparison || []).map(c => [c.ovseId, c]));
+        let pool = (chData.weekly?.ovseList || []).map(item => {
+          const c = compMap.get(item.ovseId);
+          const eff = item.successRate ?? (c ? parseFloat(c.weeklySuccessRate) : 0);
+          return { ...item, successRate: eff };
+        });
+
+        if (mixSort === 'total_asc') pool.sort((a, b) => a.total - b.total);
+        else if (mixSort === 'eff_desc') pool.sort((a, b) => b.successRate - a.successRate || b.total - a.total);
+        else if (mixSort === 'eff_asc') pool.sort((a, b) => a.successRate - b.successRate || b.total - a.total);
+        else if (mixSort === 'app_pct_desc') pool.sort((a, b) => parseFloat(b.appIntentPct) - parseFloat(a.appIntentPct) || b.appIntent - a.appIntent);
+        else if (mixSort === 'web_pct_desc') pool.sort((a, b) => parseFloat(b.webIntentPct) - parseFloat(a.webIntentPct) || b.webIntent - a.webIntent);
+        else if (mixSort === 'qr_pct_desc') pool.sort((a, b) => parseFloat(b.qrScanPct) - parseFloat(a.qrScanPct) || b.qrScan - a.qrScan);
+        else if (mixSort === 'web_vol_desc') pool.sort((a, b) => b.webIntent - a.webIntent);
+        else if (mixSort === 'qr_vol_desc') pool.sort((a, b) => b.qrScan - a.qrScan);
+        else if (mixSort === 'name_asc') pool.sort((a, b) => formatEntityName(a.ovseId).localeCompare(formatEntityName(b.ovseId)));
+        else pool.sort((a, b) => b.total - a.total);
+
+        const topNOvse = pool.slice(0, mixCount);
+        const labels = topNOvse.map(item => formatEntityName(item.ovseId));
+        const isVolMode = mixMode === 'vol_stack';
+
+        const appData = topNOvse.map(item => isVolMode ? item.appIntent : Number(item.appIntentPct));
+        const webData = topNOvse.map(item => isVolMode ? item.webIntent : Number(item.webIntentPct));
+        const qrData = topNOvse.map(item => isVolMode ? item.qrScan : Number(item.qrScanPct));
 
         ovseChannelMixChartInstance = new Chart(ctxOvseMix, {
           type: 'bar',
@@ -4899,19 +6678,19 @@
             datasets: [
               {
                 label: 'App-to-App (APP_INTENT)',
-                data: appPct,
+                data: appData,
                 backgroundColor: '#4f46e5',
                 borderRadius: 4
               },
               {
                 label: 'Web-to-App (WEB_INTENT)',
-                data: webPct,
+                data: webData,
                 backgroundColor: '#10b981',
                 borderRadius: 4
               },
               {
                 label: 'Cross-Device QR (QR_SCAN)',
-                data: qrPct,
+                data: qrData,
                 backgroundColor: '#0284c7',
                 borderRadius: 4
               }
@@ -4927,9 +6706,9 @@
               },
               y: {
                 stacked: true,
-                max: 100,
-                title: { display: true, text: 'Modality Share %', font: { size: 10 } },
-                ticks: { callback: val => val + '%' },
+                max: isVolMode ? undefined : 100,
+                title: { display: true, text: isVolMode ? 'Transactions Volume' : 'Modality Share %', font: { size: 10 } },
+                ticks: { callback: val => isVolMode ? Number(val).toLocaleString() : val + '%' },
                 grid: { color: '#f1f5f9' }
               }
             },
@@ -4941,10 +6720,13 @@
               tooltip: {
                 callbacks: {
                   afterTitle: ctx => {
-                    const ent = top10Ovse[ctx[0].dataIndex];
-                    return `Total ${t.adj} Tx: ${ent.total.toLocaleString()}`;
+                    const ent = topNOvse[ctx[0].dataIndex];
+                    if (!ent) return '';
+                    return `Total ${t.adj} Tx: ${ent.total.toLocaleString()} | Efficiency: ${Number(ent.successRate).toFixed(1)}%`;
                   },
-                  label: ctx => ` ${ctx.dataset.label}: ${ctx.raw}%`
+                  label: ctx => isVolMode
+                    ? ` ${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString()} tx`
+                    : ` ${ctx.dataset.label}: ${ctx.raw}%`
                 }
               }
             }
@@ -4961,7 +6743,13 @@
       const tbody = document.getElementById('channelMasterTableBody');
       if (!tbody) return;
 
-      const ovseList = currentData.channels.weekly?.ovseList || [];
+      const compMap = new Map((currentData.comparison || []).map(c => [c.ovseId, c]));
+      const ovseList = (currentData.channels.weekly?.ovseList || []).map(item => {
+        const c = compMap.get(item.ovseId);
+        const eff = item.successRate ?? (c ? parseFloat(c.weeklySuccessRate) : 0);
+        return { ...item, successRate: eff };
+      });
+
       let filtered = ovseList.filter(item => {
         const matchesSearch = !channelSearchQuery ||
           item.ovseId.toLowerCase().includes(channelSearchQuery) ||
@@ -4995,10 +6783,15 @@
       // Sorting
       filtered.sort((a, b) => {
         if (channelSortSelected === 'total_desc') return b.total - a.total;
+        if (channelSortSelected === 'total_asc') return a.total - b.total;
+        if (channelSortSelected === 'eff_desc') return b.successRate - a.successRate || b.total - a.total;
+        if (channelSortSelected === 'eff_asc') return a.successRate - b.successRate || b.total - a.total;
         if (channelSortSelected === 'web_vol_desc') return b.webIntent - a.webIntent;
-        if (channelSortSelected === 'web_share_desc') return parseFloat(b.webIntentPct) - parseFloat(a.webIntentPct);
+        if (channelSortSelected === 'web_share_desc') return parseFloat(b.webIntentPct) - parseFloat(a.webIntentPct) || b.webIntent - a.webIntent;
         if (channelSortSelected === 'qr_vol_desc') return b.qrScan - a.qrScan;
+        if (channelSortSelected === 'qr_share_desc') return parseFloat(b.qrScanPct) - parseFloat(a.qrScanPct) || b.qrScan - a.qrScan;
         if (channelSortSelected === 'app_vol_desc') return b.appIntent - a.appIntent;
+        if (channelSortSelected === 'app_share_desc') return parseFloat(b.appIntentPct) - parseFloat(a.appIntentPct) || b.appIntent - a.appIntent;
         if (channelSortSelected === 'name_asc') return formatEntityName(a.ovseId).localeCompare(formatEntityName(b.ovseId));
         return 0;
       });
