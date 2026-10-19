@@ -1,25 +1,25 @@
 OVSE DATA SHARING CHANNELS - EXECUTIVE ANALYSIS REPORT
-Generated At,"16/10/2026, 10:48:49 am"
+Generated At,"19/10/2026, 11:43:00 am"
 ,,,,,,
 Channel Code,Channel Description,Weekly Volume,Weekly Share %,Overall Lifetime Volume,Overall Lifetime Share %,Adoption Delta (%)
-APP_INTENT,App-to-App (App Intent),157100,91.43%,6028008,90.53%,+0.90%
-QR_SCAN,Cross-Device QR (QR Scan),4093,2.38%,591816,8.89%,-6.51%
-WEB_INTENT,Web-to-App (Web Intent),10639,6.19%,38975,0.59%,+5.61%
+APP_INTENT,App-to-App (App Intent),154361,91.41%,6093725,90.54%,+0.88%
+QR_SCAN,Cross-Device QR (QR Scan),4299,2.55%,593696,8.82%,-6.28%
+WEB_INTENT,Web-to-App (Web Intent),10198,6.04%,43054,0.64%,+5.40%
 ,,,,,,
 TOP OVSEs BY CHANNEL USAGE (WEEKLY)
 OVSE ID,Total Weekly Tx,App Intent Tx,App Intent Share %,Web Intent Tx,Web Intent Share %,QR Scan Tx,QR Scan Share %
-SelectiveShare,127111,127111,100.0%,0,0.0%,0,0.0%
-urbancompany,17019,17019,100.0%,0,0.0%,0,0.0%
-protean,5456,2,0.0%,5292,97.0%,162,3.0%
-gridlines,5018,2331,46.5%,2061,41.1%,626,12.5%
-urn:uidai:client:life-insurance-corporation-of-india:202606036260,3729,1143,30.7%,2216,59.4%,370,9.9%
-urn:uidai:client:inferalgo-private-limited:202607177737,2566,1931,75.3%,558,21.7%,77,3.0%
-procam,1841,1217,66.1%,0,0.0%,624,33.9%
-tnmc,1631,1051,64.4%,0,0.0%,580,35.6%
-arattai,1506,1500,99.6%,0,0.0%,6,0.4%
-dexit,1431,1106,77.3%,0,0.0%,325,22.7%
-trustt,1215,646,53.2%,400,32.9%,169,13.9%
-urn:uidai:client:punjab-school-educationboard:202608274954,591,456,77.2%,0,0.0%,135,22.8%
-(Blank / Unknown),307,0,0.0%,0,0.0%,307,100.0%
-tspolice,306,221,72.2%,1,0.3%,84,27.5%
-cisf,224,205,91.5%,0,0.0%,19,8.5%
+SelectiveShare,125732,125732,100.0%,0,0.0%,0,0.0%
+urbancompany,14604,14604,100.0%,0,0.0%,0,0.0%
+protean,5086,2,0.0%,4990,98.1%,94,1.8%
+gridlines,4172,1860,44.6%,1843,44.2%,469,11.2%
+urn:uidai:client:life-insurance-corporation-of-india:202606036260,3368,1125,33.4%,1910,56.7%,333,9.9%
+urn:uidai:client:inferalgo-private-limited:202607177737,3161,1996,63.1%,1027,32.5%,138,4.4%
+dexit,2381,1822,76.5%,0,0.0%,559,23.5%
+procam,2188,1372,62.7%,0,0.0%,816,37.3%
+tnmc,1607,1019,63.4%,0,0.0%,588,36.6%
+arattai,1392,1387,99.6%,0,0.0%,5,0.4%
+trustt,1137,662,58.2%,307,27.0%,168,14.8%
+urn:uidai:client:punjab-school-educationboard:202608274954,806,637,79.0%,0,0.0%,169,21.0%
+urn:uidai:client:instantpay-india-limited:202606250788,405,367,90.6%,0,0.0%,38,9.4%
+urn:uidai:client:hindon-mercantile-limited:202608105382,393,349,88.8%,0,0.0%,44,11.2%
+urn:uidai:client:dc-office-tawang:202606230797,321,204,63.6%,0,0.0%,117,36.4%
