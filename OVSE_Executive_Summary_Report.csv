@@ -1,49 +1,48 @@
 OVSE TRANSACTION INTELLIGENCE - EXECUTIVE SUMMARY REPORT
-Generated At,"21/10/2026, 10:54:55 am"
-Unified Master Export,query_result_2026-10-21T10_49_09.527159+05_30.csv
-Reporting Window,21 Oct 2026 (Weekly: 15 Oct 2026 to 21 Oct 2026)
+Generated At,"23/10/2026, 6:14:19 pm"
+Unified Master Export,query_result_2026-10-23T18_04_11.72689+05_30.csv
+Reporting Window,23 Oct 2026 (Weekly: 17 Oct 2026 to 23 Oct 2026)
 ,,,,
 METRIC CATEGORY,INDICATOR,OVERALL (ALL TIME),LAST 1 WEEK,KEY MANAGEMENT VARIANCE / INSIGHT
-Volume Metrics,Total Transactions,6766282,145616,2.15% of all-time volume
-Volume Metrics,Successful Transactions,4932529,132028,72.90% Overall vs 90.67% Weekly
-Volume Metrics,Failed Transactions,1833753,13588,27.10% Overall vs 9.33% Weekly
-Quality Metrics,Success Rate %,72.90%,90.67%,+17.77% Improvement
-Quality Metrics,Failure Rate %,27.10%,9.33%,-17.77% Reduction in Failure Rate
-Entity Engagement,Active OVSE Entities,232,77,33.2% of registered entities active
+Volume Metrics,Total Transactions,6833291,158413,2.32% of all-time volume
+Volume Metrics,Successful Transactions,4990989,142005,73.04% Overall vs 89.64% Weekly
+Volume Metrics,Failed Transactions,1842302,16408,26.96% Overall vs 10.36% Weekly
+Quality Metrics,Success Rate %,73.04%,89.64%,+16.60% Improvement
+Quality Metrics,Failure Rate %,26.96%,10.36%,-16.60% Reduction in Failure Rate
+Entity Engagement,Active OVSE Entities,238,81,34.0% of registered entities active
 ,,,,
 TOP 5 OVSEs OVERALL,RANK,TOTAL TX,SUCCESS RATE %,FAILURE RATE %
-Top 1 Overall: SelectiveShare,1,2719035,99.99%,0.01%
-Top 2 Overall: tspolice,2,2248141,28.69%,71.31%
-Top 3 Overall: 000,3,1219543,99.92%,0.08%
-Top 4 Overall: urbancompany,4,262107,58.79%,41.21%
-Top 5 Overall: tnmc,5,52039,69.93%,30.07%
+Top 1 Overall: SelectiveShare,1,2765703,99.99%,0.01%
+Top 2 Overall: tspolice,2,2248213,28.69%,71.31%
+Top 3 Overall: 000,3,1219591,99.91%,0.09%
+Top 4 Overall: urbancompany,4,269351,58.62%,41.38%
+Top 5 Overall: tnmc,5,52831,69.86%,30.14%
 ,,,,
 TOP 5 OVSEs LAST WEEK,RANK,TOTAL TX,SUCCESS RATE %,FAILURE RATE %
-Top 1 Weekly: SelectiveShare,1,110278,100.00%,0.00%
-Top 2 Weekly: urbancompany,2,10774,54.21%,45.79%
-Top 3 Weekly: protean,3,3972,94.61%,5.39%
-Top 4 Weekly: urn:uidai:client:life-insurance-corporation-of-india:202606036260,4,3170,57.60%,42.40%
-Top 5 Weekly: urn:uidai:client:inferalgo-private-limited:202607177737,5,2897,53.26%,46.74%
+Top 1 Weekly: SelectiveShare,1,117585,99.99%,0.01%
+Top 2 Weekly: urbancompany,2,13328,53.41%,46.59%
+Top 3 Weekly: protean,3,3880,94.30%,5.70%
+Top 4 Weekly: urn:uidai:client:life-insurance-corporation-of-india:202606036260,4,3364,55.26%,44.74%
+Top 5 Weekly: procam,5,2963,73.74%,26.26%
 ,,,,
 NEW & SURGING OVSEs,CLASSIFICATION,WEEKLY TX,WEEKLY SUCCESS %,WEEKLY SHARE OF LIFETIME %
-protean,Surging / High Growth,3972,94.61%,38.00%
-dexit,Surging / High Growth,2336,52.31%,45.63%
-urn:uidai:client:punjab-school-educationboard:202608274954,Surging / High Growth,743,42.13%,50.79%
-urn:uidai:client:instantpay-india-limited:202606250788,Surging / High Growth,602,73.59%,93.48%
-urn:uidai:client:hindon-mercantile-limited:202608105382,Surging / High Growth,499,59.32%,46.46%
-transaction_analysts,Surging / High Growth,180,70.00%,68.97%
-BankuIndialtd:05102026,Surging / High Growth,60,3.33%,68.97%
-urn:uidai:client:ummeed-housing-finance-private-limited:202609177828,Surging / High Growth,59,45.76%,59.60%
-urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049,Surging / High Growth,33,27.27%,91.67%
-urn:uidai:client:accura-technolabs-private-limited:202609240826,Surging / High Growth,24,41.67%,52.17%
-urn:uidai:client:finanalyz-technologies-private-limited:202606306133,New Entrant,17,0.00%,100.00%
+dexit,Surging / High Growth,2687,50.43%,42.31%
+urn:uidai:client:hindon-mercantile-limited:202608105382,Surging / High Growth,1834,48.04%,75.38%
+urn:uidai:client:instantpay-india-limited:202606250788,Surging / High Growth,1105,71.58%,96.25%
+urn:uidai:client:punjab-school-educationboard:202608274954,Surging / High Growth,646,48.92%,35.91%
+urn:uidai:client:ummeed-housing-finance-private-limited:202609177828,Surging / High Growth,172,52.91%,76.79%
+urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204,Surging / High Growth,78,44.87%,54.93%
+BankuIndialtd:05102026,Surging / High Growth,57,15.79%,57.58%
+urn:uidai:client:mizoram-police:202610168520,New Entrant,44,43.18%,100.00%
+urn:uidai:client:finanalyz-technologies-private-limited:202606306133,New Entrant,28,0.00%,100.00%
+urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049,Surging / High Growth,25,44.00%,52.08%
 urn:uidai:client:prabodh-technologies-llp:202610158333,New Entrant,16,37.50%,100.00%
-urn:uidai:client:state-crime-records-bureau:202609141512,New Entrant,14,0.00%,100.00%
-urn:uidai:client:dhanrise-finance-private-limited:202609176227,New Entrant,13,0.00%,100.00%
-urn:uidai:client:fr8-india-private-limited:202609177281,New Entrant,11,63.64%,100.00%
-urn:uidai:client:swastik-enterprises:202610153599,New Entrant,10,0.00%,100.00%
-202606306133,New Entrant,3,0.00%,100.00%
-OR11274063,New Entrant,2,0.00%,100.00%
+202609036112,New Entrant,13,0.00%,100.00%
+DEMO-CLIENT,New Entrant,13,0.00%,100.00%
+urn:uidai:client:dhanrise-finance-private-limited:202609176227,Surging / High Growth,12,0.00%,54.55%
+202606306133,New Entrant,7,0.00%,100.00%
+urn:uidai:client:earnest-data-analytics-private-limited:202609247533,New Entrant,5,20.00%,100.00%
 finanalyz-technologies-private-limited:202606306133,New Entrant,2,0.00%,100.00%
-urn:uidai:client:yuvaan-infotech:202608148688,New Entrant,2,0.00%,100.00%
+urn:uidai:client:magic-bus-india-foundation:202610147311,New Entrant,2,0.00%,100.00%
 202609176227,New Entrant,1,0.00%,100.00%
+AF34083698,New Entrant,1,0.00%,100.00%
