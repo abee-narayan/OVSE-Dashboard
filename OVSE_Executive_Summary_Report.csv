@@ -1,5 +1,5 @@
 OVSE TRANSACTION INTELLIGENCE - EXECUTIVE SUMMARY REPORT
-Generated At,"26/10/2026, 10:11:49 am"
+Generated At,"27/10/2026, 6:16:14 pm"
 Unified Master Export,query_result_2026-10-26T10_03_02.405994+05_30.csv
 Reporting Window,26 Oct 2026 (Weekly: 20 Oct 2026 to 26 Oct 2026)
 ,,,,
@@ -9,7 +9,7 @@ Volume Metrics,Successful Transactions,5045066,135286,73.21% Overall vs 90.41% W
 Volume Metrics,Failed Transactions,1846278,14350,26.79% Overall vs 9.59% Weekly
 Quality Metrics,Success Rate %,73.21%,90.41%,+17.20% Improvement
 Quality Metrics,Failure Rate %,26.79%,9.59%,-17.20% Reduction in Failure Rate
-Entity Engagement,Active OVSE Entities,238,76,31.9% of registered entities active
+Entity Engagement,Active OVSE Entities,137,61,44.5% of registered entities active
 ,,,,
 TOP 5 OVSEs OVERALL,RANK,TOTAL TX,SUCCESS RATE %,FAILURE RATE %
 Top 1 Overall: SelectiveShare,1,2813001,99.99%,0.01%
@@ -30,15 +30,6 @@ urn:uidai:client:hindon-mercantile-limited:202608105382,Surging / High Growth,17
 urn:uidai:client:instantpay-india-limited:202606250788,Surging / High Growth,1064,66.54%,67.30%
 urn:uidai:client:ummeed-housing-finance-private-limited:202609177828,Surging / High Growth,129,58.14%,57.08%
 urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204,Surging / High Growth,108,53.70%,62.43%
-urn:uidai:client:finanalyz-technologies-private-limited:202606306133,Surging / High Growth,48,0.00%,75.00%
-urn:uidai:client:kolkata-police:202608142816,Surging / High Growth,47,0.00%,37.30%
 urn:uidai:client:mizoram-police:202610168520,New Entrant,44,43.18%,100.00%
 urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049,Surging / High Growth,27,48.15%,52.94%
-202609036112,New Entrant,15,0.00%,100.00%
-urn:uidai:client:dhanrise-finance-private-limited:202609176227,Surging / High Growth,14,0.00%,58.33%
-DEMO-CLIENT,New Entrant,13,0.00%,100.00%
 urn:uidai:client:earnest-data-analytics-private-limited:202609247533,New Entrant,11,63.64%,100.00%
-finanalyz-technologies-private-limited:202606306133,New Entrant,2,0.00%,100.00%
-urn:uidai:client:magic-bus-india-foundation:202610147311,New Entrant,2,0.00%,100.00%
-202609176227,New Entrant,1,0.00%,100.00%
-AF34083698,New Entrant,1,0.00%,100.00%

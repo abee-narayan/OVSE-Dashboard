@@ -419,6 +419,8 @@ function processUnifiedDataset(filePath, dir = path.dirname(filePath), options =
       qrScanPct: data.total > 0 ? (((data.channels['QR_SCAN'] || 0) / data.total) * 100).toFixed(1) : '0.0'
     })).sort((a, b) => b.total - a.total);
 
+    const activeOvseCount = txList.filter(item => item.success > 0).length;
+
     return {
       tx: {
         totalTx,
@@ -426,7 +428,8 @@ function processUnifiedDataset(filePath, dir = path.dirname(filePath), options =
         totalFailure,
         successRate: totalTx > 0 ? (totalSuccess / totalTx) * 100 : 0,
         failureRate: totalTx > 0 ? (totalFailure / totalTx) * 100 : 0,
-        uniqueCount: txOvseMap.size,
+        uniqueCount: activeOvseCount,
+        registeredCount: txOvseMap.size,
         list: txList,
         map: txOvseMap,
         top5: txList.slice(0, 5),
@@ -465,9 +468,10 @@ function processUnifiedDataset(filePath, dir = path.dirname(filePath), options =
     const wRank = w.rank || 'Inactive';
 
     const weeklyShareOfOverall = o.total > 0 ? (w.total / o.total) * 100 : (w.total > 0 ? 100 : 0);
-    const isBrandNew = w.total > 0 && (o.total === w.total || !overallAgg.tx.map.has(id));
-    const isHighGrowth = !isBrandNew && weeklyShareOfOverall >= 35 && w.total >= 10;
-    const isInactive = w.total === 0;
+    const isActiveWeekly = w.success > 0;
+    const isBrandNew = isActiveWeekly && (o.total === w.total || !overallAgg.tx.map.has(id));
+    const isHighGrowth = !isBrandNew && isActiveWeekly && weeklyShareOfOverall >= 35 && w.total >= 10;
+    const isInactive = !isActiveWeekly;
 
     let status = 'Standard';
     if (isBrandNew) status = 'New Entrant';
@@ -553,12 +557,16 @@ function processUnifiedDataset(filePath, dir = path.dirname(filePath), options =
         errorCategories: {},
         appIntent: 0,
         webIntent: 0,
-        qrScan: 0
+        qrScan: 0,
+        activeOvseSet: new Set()
       };
     }
     const b = monthBuckets[ym];
     b.totalTx += r.count;
-    if (r.authResult === 'y') b.successTx += r.count;
+    if (r.authResult === 'y') {
+      b.successTx += r.count;
+      if (r.count > 0) b.activeOvseSet.add(r.ovseId);
+    }
     else if (r.authResult === 'n') b.failureTx += r.count;
     if (r.errCode) {
       b.errorCount += r.count;
@@ -571,8 +579,10 @@ function processUnifiedDataset(filePath, dir = path.dirname(filePath), options =
   }
   const monthlyTrend = Object.keys(monthBuckets).sort().map(ym => {
     const b = monthBuckets[ym];
+    const { activeOvseSet, ...rest } = b;
     return {
-      ...b,
+      ...rest,
+      activeEntities: activeOvseSet.size,
       successRate: b.totalTx > 0 ? Number(((b.successTx / b.totalTx) * 100).toFixed(2)) : 0,
       failureRate: b.totalTx > 0 ? Number(((b.failureTx / b.totalTx) * 100).toFixed(2)) : 0,
       errorRate: b.totalTx > 0 ? Number(((b.errorCount / b.totalTx) * 100).toFixed(2)) : 0

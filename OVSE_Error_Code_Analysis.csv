@@ -1,5 +1,5 @@
 UIDAI OVSE ERROR CODE INTELLIGENCE - EXECUTIVE REPORT
-Generated At,"26/10/2026, 10:11:49 am"
+Generated At,"27/10/2026, 6:16:14 pm"
 ,,,,,,,
 Error Code,Category,Description / Meaning,Weekly Failures,Weekly Failure Share %,Lifetime Failures,Lifetime Failure Share %,Trend Delta (%)
 SDJWT_USER_DENIED_CONSENT,User Consent Denial,Citizen actively declined or cancelled the consent prompt on mAadhaar app.,6532,45.49%,323133,15.40%,+30.09%

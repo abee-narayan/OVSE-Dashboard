@@ -1,7 +1,7 @@
 // Auto-generated baseline master data for OVSE Executive Dashboard
 const BUNDLED_DATA = {
   "metadata": {
-    "generatedAt": "2026-10-26T04:41:49.066Z",
+    "generatedAt": "2026-10-27T12:46:14.335Z",
     "dataLastUpdated": "26 OCT 2026, 10:03 AM IST",
     "sourceFile": "query_result_2026-10-26T10_03_02.405994+05_30.csv",
     "reportingCutoff": "26 Oct 2026 (Weekly: 20 Oct 2026 to 26 Oct 2026)",
@@ -26,7 +26,8 @@ const BUNDLED_DATA = {
     "totalFailure": 1846278,
     "successRate": 73.20873838252741,
     "failureRate": 26.791261617472585,
-    "uniqueCount": 238,
+    "uniqueCount": 137,
+    "registeredCount": 238,
     "list": [
       {
         "ovseId": "SelectiveShare",
@@ -2318,7 +2319,8 @@ const BUNDLED_DATA = {
     "totalFailure": 14350,
     "successRate": 90.41006174984629,
     "failureRate": 9.589938250153708,
-    "uniqueCount": 76,
+    "uniqueCount": 61,
+    "registeredCount": 76,
     "list": [
       {
         "ovseId": "SelectiveShare",
@@ -3404,7 +3406,7 @@ const BUNDLED_DATA = {
     },
     {
       "ovseId": "(Blank / Unknown)",
-      "status": "Standard",
+      "status": "Inactive This Week",
       "weeklyRank": 16,
       "weeklyTotal": 217,
       "weeklySuccess": 0,
@@ -3574,7 +3576,7 @@ const BUNDLED_DATA = {
     },
     {
       "ovseId": "urn:uidai:client:finanalyz-technologies-private-limited:202606306133",
-      "status": "Surging / High Growth",
+      "status": "Inactive This Week",
       "weeklyRank": 26,
       "weeklyTotal": 48,
       "weeklySuccess": 0,
@@ -3608,7 +3610,7 @@ const BUNDLED_DATA = {
     },
     {
       "ovseId": "urn:uidai:client:kolkata-police:202608142816",
-      "status": "Surging / High Growth",
+      "status": "Inactive This Week",
       "weeklyRank": 28,
       "weeklyTotal": 47,
       "weeklySuccess": 0,
@@ -3795,7 +3797,7 @@ const BUNDLED_DATA = {
     },
     {
       "ovseId": "202609036112",
-      "status": "New Entrant",
+      "status": "Inactive This Week",
       "weeklyRank": 39,
       "weeklyTotal": 15,
       "weeklySuccess": 0,
@@ -3829,7 +3831,7 @@ const BUNDLED_DATA = {
     },
     {
       "ovseId": "urn:uidai:client:dhanrise-finance-private-limited:202609176227",
-      "status": "Surging / High Growth",
+      "status": "Inactive This Week",
       "weeklyRank": 41,
       "weeklyTotal": 14,
       "weeklySuccess": 0,
@@ -3846,7 +3848,7 @@ const BUNDLED_DATA = {
     },
     {
       "ovseId": "DEMO-CLIENT",
-      "status": "New Entrant",
+      "status": "Inactive This Week",
       "weeklyRank": 42,
       "weeklyTotal": 13,
       "weeklySuccess": 0,
@@ -3931,7 +3933,7 @@ const BUNDLED_DATA = {
     },
     {
       "ovseId": "oneStack",
-      "status": "Standard",
+      "status": "Inactive This Week",
       "weeklyRank": 47,
       "weeklyTotal": 7,
       "weeklySuccess": 0,
@@ -3999,7 +4001,7 @@ const BUNDLED_DATA = {
     },
     {
       "ovseId": "sber",
-      "status": "Standard",
+      "status": "Inactive This Week",
       "weeklyRank": 53,
       "weeklyTotal": 5,
       "weeklySuccess": 0,
@@ -4118,7 +4120,7 @@ const BUNDLED_DATA = {
     },
     {
       "ovseId": "202606306133",
-      "status": "Standard",
+      "status": "Inactive This Week",
       "weeklyRank": 58,
       "weeklyTotal": 4,
       "weeklySuccess": 0,
@@ -4135,7 +4137,7 @@ const BUNDLED_DATA = {
     },
     {
       "ovseId": "urn:uidai:client:virendrabadrinath-buildcon-enterprises-private-limited:202605131058",
-      "status": "Standard",
+      "status": "Inactive This Week",
       "weeklyRank": 60,
       "weeklyTotal": 3,
       "weeklySuccess": 0,
@@ -4152,7 +4154,7 @@ const BUNDLED_DATA = {
     },
     {
       "ovseId": "aespl",
-      "status": "Standard",
+      "status": "Inactive This Week",
       "weeklyRank": 59,
       "weeklyTotal": 3,
       "weeklySuccess": 0,
@@ -4237,7 +4239,7 @@ const BUNDLED_DATA = {
     },
     {
       "ovseId": "finanalyz-technologies-private-limited:202606306133",
-      "status": "New Entrant",
+      "status": "Inactive This Week",
       "weeklyRank": 65,
       "weeklyTotal": 2,
       "weeklySuccess": 0,
@@ -4254,7 +4256,7 @@ const BUNDLED_DATA = {
     },
     {
       "ovseId": "urn:uidai:client:magic-bus-india-foundation:202610147311",
-      "status": "New Entrant",
+      "status": "Inactive This Week",
       "weeklyRank": 66,
       "weeklyTotal": 2,
       "weeklySuccess": 0,
@@ -4407,7 +4409,7 @@ const BUNDLED_DATA = {
     },
     {
       "ovseId": "202609176227",
-      "status": "New Entrant",
+      "status": "Inactive This Week",
       "weeklyRank": 75,
       "weeklyTotal": 1,
       "weeklySuccess": 0,
@@ -4424,7 +4426,7 @@ const BUNDLED_DATA = {
     },
     {
       "ovseId": "AF34083698",
-      "status": "New Entrant",
+      "status": "Inactive This Week",
       "weeklyRank": 76,
       "weeklyTotal": 1,
       "weeklySuccess": 0,
@@ -7264,40 +7266,6 @@ const BUNDLED_DATA = {
       "weeklyShareOfOverallPct": "62.43"
     },
     {
-      "ovseId": "urn:uidai:client:finanalyz-technologies-private-limited:202606306133",
-      "status": "Surging / High Growth",
-      "weeklyRank": 26,
-      "weeklyTotal": 48,
-      "weeklySuccess": 0,
-      "weeklyFailure": 48,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "100.00",
-      "overallRank": 92,
-      "overallTotal": 64,
-      "overallSuccess": 0,
-      "overallFailure": 64,
-      "overallSuccessRate": "0.00",
-      "overallFailureRate": "100.00",
-      "weeklyShareOfOverallPct": "75.00"
-    },
-    {
-      "ovseId": "urn:uidai:client:kolkata-police:202608142816",
-      "status": "Surging / High Growth",
-      "weeklyRank": 28,
-      "weeklyTotal": 47,
-      "weeklySuccess": 0,
-      "weeklyFailure": 47,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "100.00",
-      "overallRank": 69,
-      "overallTotal": 126,
-      "overallSuccess": 27,
-      "overallFailure": 99,
-      "overallSuccessRate": "21.43",
-      "overallFailureRate": "78.57",
-      "weeklyShareOfOverallPct": "37.30"
-    },
-    {
       "ovseId": "urn:uidai:client:mizoram-police:202610168520",
       "status": "New Entrant",
       "weeklyRank": 29,
@@ -7332,57 +7300,6 @@ const BUNDLED_DATA = {
       "weeklyShareOfOverallPct": "52.94"
     },
     {
-      "ovseId": "202609036112",
-      "status": "New Entrant",
-      "weeklyRank": 39,
-      "weeklyTotal": 15,
-      "weeklySuccess": 0,
-      "weeklyFailure": 15,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "100.00",
-      "overallRank": 145,
-      "overallTotal": 15,
-      "overallSuccess": 0,
-      "overallFailure": 15,
-      "overallSuccessRate": "0.00",
-      "overallFailureRate": "100.00",
-      "weeklyShareOfOverallPct": "100.00"
-    },
-    {
-      "ovseId": "urn:uidai:client:dhanrise-finance-private-limited:202609176227",
-      "status": "Surging / High Growth",
-      "weeklyRank": 41,
-      "weeklyTotal": 14,
-      "weeklySuccess": 0,
-      "weeklyFailure": 14,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "100.00",
-      "overallRank": 130,
-      "overallTotal": 24,
-      "overallSuccess": 0,
-      "overallFailure": 24,
-      "overallSuccessRate": "0.00",
-      "overallFailureRate": "100.00",
-      "weeklyShareOfOverallPct": "58.33"
-    },
-    {
-      "ovseId": "DEMO-CLIENT",
-      "status": "New Entrant",
-      "weeklyRank": 42,
-      "weeklyTotal": 13,
-      "weeklySuccess": 0,
-      "weeklyFailure": 13,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "100.00",
-      "overallRank": 155,
-      "overallTotal": 13,
-      "overallSuccess": 0,
-      "overallFailure": 13,
-      "overallSuccessRate": "0.00",
-      "overallFailureRate": "100.00",
-      "weeklyShareOfOverallPct": "100.00"
-    },
-    {
       "ovseId": "urn:uidai:client:earnest-data-analytics-private-limited:202609247533",
       "status": "New Entrant",
       "weeklyRank": 44,
@@ -7397,74 +7314,6 @@ const BUNDLED_DATA = {
       "overallFailure": 4,
       "overallSuccessRate": "63.64",
       "overallFailureRate": "36.36",
-      "weeklyShareOfOverallPct": "100.00"
-    },
-    {
-      "ovseId": "finanalyz-technologies-private-limited:202606306133",
-      "status": "New Entrant",
-      "weeklyRank": 65,
-      "weeklyTotal": 2,
-      "weeklySuccess": 0,
-      "weeklyFailure": 2,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "100.00",
-      "overallRank": 207,
-      "overallTotal": 2,
-      "overallSuccess": 0,
-      "overallFailure": 2,
-      "overallSuccessRate": "0.00",
-      "overallFailureRate": "100.00",
-      "weeklyShareOfOverallPct": "100.00"
-    },
-    {
-      "ovseId": "urn:uidai:client:magic-bus-india-foundation:202610147311",
-      "status": "New Entrant",
-      "weeklyRank": 66,
-      "weeklyTotal": 2,
-      "weeklySuccess": 0,
-      "weeklyFailure": 2,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "100.00",
-      "overallRank": 210,
-      "overallTotal": 2,
-      "overallSuccess": 0,
-      "overallFailure": 2,
-      "overallSuccessRate": "0.00",
-      "overallFailureRate": "100.00",
-      "weeklyShareOfOverallPct": "100.00"
-    },
-    {
-      "ovseId": "202609176227",
-      "status": "New Entrant",
-      "weeklyRank": 75,
-      "weeklyTotal": 1,
-      "weeklySuccess": 0,
-      "weeklyFailure": 1,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "100.00",
-      "overallRank": 220,
-      "overallTotal": 1,
-      "overallSuccess": 0,
-      "overallFailure": 1,
-      "overallSuccessRate": "0.00",
-      "overallFailureRate": "100.00",
-      "weeklyShareOfOverallPct": "100.00"
-    },
-    {
-      "ovseId": "AF34083698",
-      "status": "New Entrant",
-      "weeklyRank": 76,
-      "weeklyTotal": 1,
-      "weeklySuccess": 0,
-      "weeklyFailure": 1,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "100.00",
-      "overallRank": 221,
-      "overallTotal": 1,
-      "overallSuccess": 0,
-      "overallFailure": 1,
-      "overallSuccessRate": "0.00",
-      "overallFailureRate": "100.00",
       "weeklyShareOfOverallPct": "100.00"
     }
   ],
@@ -14873,6 +14722,7 @@ const BUNDLED_DATA = {
       "appIntent": 2,
       "webIntent": 0,
       "qrScan": 0,
+      "activeEntities": 1,
       "successRate": 100,
       "failureRate": 0,
       "errorRate": 0
@@ -14894,6 +14744,7 @@ const BUNDLED_DATA = {
       "appIntent": 56,
       "webIntent": 5,
       "qrScan": 65,
+      "activeEntities": 6,
       "successRate": 75.4,
       "failureRate": 24.6,
       "errorRate": 73.81
@@ -14917,6 +14768,7 @@ const BUNDLED_DATA = {
       "appIntent": 110405,
       "webIntent": 120,
       "qrScan": 2016,
+      "activeEntities": 30,
       "successRate": 98.37,
       "failureRate": 1.63,
       "errorRate": 84.27
@@ -14940,6 +14792,7 @@ const BUNDLED_DATA = {
       "appIntent": 385928,
       "webIntent": 725,
       "qrScan": 5742,
+      "activeEntities": 33,
       "successRate": 96.76,
       "failureRate": 3.24,
       "errorRate": 38.83
@@ -14963,6 +14816,7 @@ const BUNDLED_DATA = {
       "appIntent": 755380,
       "webIntent": 1015,
       "qrScan": 7132,
+      "activeEntities": 72,
       "successRate": 96.9,
       "failureRate": 3.1,
       "errorRate": 5.53
@@ -14986,6 +14840,7 @@ const BUNDLED_DATA = {
       "appIntent": 947047,
       "webIntent": 846,
       "qrScan": 11965,
+      "activeEntities": 82,
       "successRate": 96.54,
       "failureRate": 3.46,
       "errorRate": 3.49
@@ -15009,6 +14864,7 @@ const BUNDLED_DATA = {
       "appIntent": 1232836,
       "webIntent": 4504,
       "qrScan": 127062,
+      "activeEntities": 81,
       "successRate": 72.19,
       "failureRate": 27.81,
       "errorRate": 27.81
@@ -15032,6 +14888,7 @@ const BUNDLED_DATA = {
       "appIntent": 2191716,
       "webIntent": 11311,
       "qrScan": 427954,
+      "activeEntities": 93,
       "successRate": 49.5,
       "failureRate": 50.5,
       "errorRate": 50.5
@@ -15054,6 +14911,7 @@ const BUNDLED_DATA = {
       "appIntent": 619702,
       "webIntent": 31280,
       "qrScan": 16530,
+      "activeEntities": 93,
       "successRate": 89.98,
       "failureRate": 10.02,
       "errorRate": 10.03
@@ -174717,5 +174575,5 @@ const BUNDLED_DATA = {
       4
     ]
   ],
-  "lastUpdatedLocal": "2026-10-26T04:41:49.068Z"
+  "lastUpdatedLocal": "2026-10-27T12:46:14.337Z"
 };

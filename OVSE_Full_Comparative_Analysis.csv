@@ -14,7 +14,7 @@ urn:uidai:client:instantpay-india-limited:202606250788,Surging / High Growth,12,
 urn:uidai:client:punjab-school-educationboard:202608274954,Standard,13,557,253,304,45.42,54.58,21,1931,915,1016,47.38,52.62,28.85
 trustt,Standard,14,459,304,155,66.23,33.77,14,10665,6746,3919,63.25,36.75,4.30
 urn:uidai:client:dc-office-tawang:202606230797,Standard,15,308,211,97,68.51,31.49,22,1808,1117,691,61.78,38.22,17.04
-(Blank / Unknown),Standard,16,217,0,217,0.00,100.00,9,25194,13924,11270,55.27,44.73,0.86
+(Blank / Unknown),Inactive This Week,16,217,0,217,0.00,100.00,9,25194,13924,11270,55.27,44.73,0.86
 urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774,Standard,17,197,52,145,26.40,73.60,27,786,527,259,67.05,32.95,25.06
 tspolice,Standard,18,155,67,88,43.23,56.77,2,2248293,645032,1603261,28.69,71.31,0.01
 cisf,Standard,19,149,47,102,31.54,68.46,16,6142,2571,3571,41.86,58.14,2.43
@@ -24,9 +24,9 @@ truscholar,Standard,22,128,106,22,82.81,17.19,17,5019,4040,979,80.49,19.51,2.55
 000,Standard,23,113,67,46,59.29,40.71,3,1219623,1218561,1062,99.91,0.09,0.01
 urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204,Surging / High Growth,24,108,58,50,53.70,46.30,58,173,69,104,39.88,60.12,62.43
 transaction_analysts,Standard,25,56,47,9,83.93,16.07,42,304,226,78,74.34,25.66,18.42
-urn:uidai:client:finanalyz-technologies-private-limited:202606306133,Surging / High Growth,26,48,0,48,0.00,100.00,92,64,0,64,0.00,100.00,75.00
+urn:uidai:client:finanalyz-technologies-private-limited:202606306133,Inactive This Week,26,48,0,48,0.00,100.00,92,64,0,64,0.00,100.00,75.00
 urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107,Standard,27,47,10,37,21.28,78.72,31,570,160,410,28.07,71.93,8.25
-urn:uidai:client:kolkata-police:202608142816,Surging / High Growth,28,47,0,47,0.00,100.00,69,126,27,99,21.43,78.57,37.30
+urn:uidai:client:kolkata-police:202608142816,Inactive This Week,28,47,0,47,0.00,100.00,69,126,27,99,21.43,78.57,37.30
 urn:uidai:client:mizoram-police:202610168520,New Entrant,29,44,19,25,43.18,56.82,109,44,19,25,43.18,56.82,100.00
 pathikgp,Standard,30,43,16,27,37.21,62.79,59,170,119,51,70.00,30.00,25.29
 ooru_digital,Standard,31,31,14,17,45.16,54.84,19,2987,2357,630,78.91,21.09,1.04
@@ -37,34 +37,34 @@ trackwizz,Standard,36,18,16,2,88.89,11.11,18,2989,1702,1287,56.94,43.06,0.60
 surepass,Standard,35,18,7,11,38.89,61.11,29,628,412,216,65.61,34.39,2.87
 urn:uidai:client:aparampaar-finance-private-limited:202605134450,Standard,38,15,6,9,40.00,60.00,43,304,184,120,60.53,39.47,4.93
 apiclub,Standard,37,15,7,8,46.67,53.33,72,117,67,50,57.26,42.74,12.82
-202609036112,New Entrant,39,15,0,15,0.00,100.00,145,15,0,15,0.00,100.00,100.00
+202609036112,Inactive This Week,39,15,0,15,0.00,100.00,145,15,0,15,0.00,100.00,100.00
 pratiraksha,Standard,40,14,6,8,42.86,57.14,66,134,85,49,63.43,36.57,10.45
-urn:uidai:client:dhanrise-finance-private-limited:202609176227,Surging / High Growth,41,14,0,14,0.00,100.00,130,24,0,24,0.00,100.00,58.33
-DEMO-CLIENT,New Entrant,42,13,0,13,0.00,100.00,155,13,0,13,0.00,100.00,100.00
+urn:uidai:client:dhanrise-finance-private-limited:202609176227,Inactive This Week,41,14,0,14,0.00,100.00,130,24,0,24,0.00,100.00,58.33
+DEMO-CLIENT,Inactive This Week,42,13,0,13,0.00,100.00,155,13,0,13,0.00,100.00,100.00
 rjil,Standard,43,12,11,1,91.67,8.33,26,852,739,113,86.74,13.26,1.41
 urn:uidai:client:earnest-data-analytics-private-limited:202609247533,New Entrant,44,11,7,4,63.64,36.36,157,11,7,4,63.64,36.36,100.00
 urn:uidai:client:caratred-technologies-llp:202606040096,Standard,45,8,2,6,25.00,75.00,64,146,105,41,71.92,28.08,5.48
 mantra,Standard,46,7,6,1,85.71,14.29,30,578,477,101,82.53,17.47,1.21
-oneStack,Standard,47,7,0,7,0.00,100.00,90,67,16,51,23.88,76.12,10.45
+oneStack,Inactive This Week,47,7,0,7,0.00,100.00,90,67,16,51,23.88,76.12,10.45
 urn:uidai:client:oryggi-technologies-private-limited:202607288031,Standard,49,6,3,3,50.00,50.00,33,482,347,135,71.99,28.01,1.24
 urn:uidai:client:nxfin-technologies-private-limited:202608186786,Standard,48,6,6,0,100.00,0.00,119,32,21,11,65.63,34.38,18.75
 perfios,Standard,50,5,2,3,40.00,60.00,32,550,381,169,69.27,30.73,0.91
-sber,Standard,53,5,0,5,0.00,100.00,62,158,25,133,15.82,84.18,3.16
+sber,Inactive This Week,53,5,0,5,0.00,100.00,62,158,25,133,15.82,84.18,3.16
 veriguard,Standard,52,5,3,2,60.00,40.00,110,43,32,11,74.42,25.58,11.63
 urn:uidai:client:travdigi-(opc)-private-limited:202609039462,Standard,51,5,3,2,60.00,40.00,135,19,9,10,47.37,52.63,26.32
 digitapai,Standard,55,4,2,2,50.00,50.00,45,286,197,89,68.88,31.12,1.40
 bioenable,Standard,54,4,4,0,100.00,0.00,67,128,85,43,66.41,33.59,3.13
 urn:uidai:client:codetantra-tech-solutions-private-limited:202606124082,Standard,56,4,3,1,75.00,25.00,77,102,59,43,57.84,42.16,3.92
 urn:uidai:client:doklink-services-private-limited:202609249932,Standard,57,4,4,0,100.00,0.00,113,36,30,6,83.33,16.67,11.11
-202606306133,Standard,58,4,0,4,0.00,100.00,171,7,0,7,0.00,100.00,57.14
-urn:uidai:client:virendrabadrinath-buildcon-enterprises-private-limited:202605131058,Standard,60,3,0,3,0.00,100.00,50,214,132,82,61.68,38.32,1.40
-aespl,Standard,59,3,0,3,0.00,100.00,96,57,12,45,21.05,78.95,5.26
+202606306133,Inactive This Week,58,4,0,4,0.00,100.00,171,7,0,7,0.00,100.00,57.14
+urn:uidai:client:virendrabadrinath-buildcon-enterprises-private-limited:202605131058,Inactive This Week,60,3,0,3,0.00,100.00,50,214,132,82,61.68,38.32,1.40
+aespl,Inactive This Week,59,3,0,3,0.00,100.00,96,57,12,45,21.05,78.95,5.26
 signzytech,Standard,62,2,2,0,100.00,0.00,28,632,258,374,40.82,59.18,0.32
 decentro,Standard,61,2,2,0,100.00,0.00,51,213,60,153,28.17,71.83,0.94
 urn:uidai:client:shri-trimbakeshwar-devasthan-trust:202607072068,Standard,64,2,2,0,100.00,0.00,52,213,95,118,44.60,55.40,0.94
 urn:uidai:client:seed-data-systems:202606048001,Standard,63,2,2,0,100.00,0.00,103,49,26,23,53.06,46.94,4.08
-finanalyz-technologies-private-limited:202606306133,New Entrant,65,2,0,2,0.00,100.00,207,2,0,2,0.00,100.00,100.00
-urn:uidai:client:magic-bus-india-foundation:202610147311,New Entrant,66,2,0,2,0.00,100.00,210,2,0,2,0.00,100.00,100.00
+finanalyz-technologies-private-limited:202606306133,Inactive This Week,65,2,0,2,0.00,100.00,207,2,0,2,0.00,100.00,100.00
+urn:uidai:client:magic-bus-india-foundation:202610147311,Inactive This Week,66,2,0,2,0.00,100.00,210,2,0,2,0.00,100.00,100.00
 dreamcast,Standard,68,1,1,0,100.00,0.00,25,854,624,230,73.07,26.93,0.12
 digio,Standard,67,1,1,0,100.00,0.00,40,363,243,120,66.94,33.06,0.28
 urn:uidai:client:perigeon-software-private-limited:202606041974,Standard,72,1,1,0,100.00,0.00,49,217,161,56,74.19,25.81,0.46
@@ -73,8 +73,8 @@ urn:uidai:client:seculogix-innovations-private-limited:202606121537,Standard,74,
 idigicloud,Standard,69,1,1,0,100.00,0.00,95,60,30,30,50.00,50.00,1.67
 kwikid,Standard,70,1,1,0,100.00,0.00,98,55,18,37,32.73,67.27,1.82
 urn:uidai:client:prabodh-technologies-llp:202610158333,Standard,73,1,1,0,100.00,0.00,141,16,6,10,37.50,62.50,6.25
-202609176227,New Entrant,75,1,0,1,0.00,100.00,220,1,0,1,0.00,100.00,100.00
-AF34083698,New Entrant,76,1,0,1,0.00,100.00,221,1,0,1,0.00,100.00,100.00
+202609176227,Inactive This Week,75,1,0,1,0.00,100.00,220,1,0,1,0.00,100.00,100.00
+AF34083698,Inactive This Week,76,1,0,1,0.00,100.00,221,1,0,1,0.00,100.00,100.00
 0,Inactive This Week,N/A,0,0,0,0.00,0.00,11,16671,5032,11639,30.18,69.82,0.00
 frslabs,Inactive This Week,N/A,0,0,0,0.00,0.00,35,446,273,173,61.21,38.79,0.00
 eastcs,Inactive This Week,N/A,0,0,0,0.00,0.00,36,424,273,151,64.39,35.61,0.00
