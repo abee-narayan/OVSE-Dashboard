@@ -1,8 +1,13 @@
 OVSE ID,Classification,Weekly Rank,Weekly Tx,Weekly Success Rate (%),Weekly Failure Rate (%),Overall Lifetime Tx,Weekly Share of Lifetime (%)
-urn:uidai:client:hindon-mercantile-limited:202608105382,Surging / High Growth,7,1718,45.63,54.37,2696,63.72
-urn:uidai:client:instantpay-india-limited:202606250788,Surging / High Growth,12,1064,66.54,33.46,1581,67.30
-urn:uidai:client:ummeed-housing-finance-private-limited:202609177828,Surging / High Growth,21,129,58.14,41.86,226,57.08
-urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204,Surging / High Growth,24,108,53.70,46.30,173,62.43
-urn:uidai:client:mizoram-police:202610168520,New Entrant,29,44,43.18,56.82,44,100.00
-urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049,Surging / High Growth,33,27,48.15,51.85,51,52.94
-urn:uidai:client:earnest-data-analytics-private-limited:202609247533,New Entrant,44,11,63.64,36.36,11,100.00
+urn:uidai:client:hindon-mercantile-limited:202608105382,Surging / High Growth,8,1788,46.64,53.36,2971,60.18
+urn:uidai:client:instantpay-india-limited:202606250788,Surging / High Growth,12,1317,65.00,35.00,2083,63.23
+urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204,Surging / High Growth,21,118,61.86,38.14,195,60.51
+urn:uidai:client:kolkata-police:202608142816,Surging / High Growth,23,104,34.62,65.38,183,56.83
+urn:uidai:client:ummeed-housing-finance-private-limited:202609177828,Surging / High Growth,25,103,68.93,31.07,248,41.53
+"urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",New Entrant,33,48,37.50,62.50,48,100.00
+urn:uidai:client:mizoram-police:202610168520,New Entrant,34,44,43.18,56.82,44,100.00
+urn:uidai:client:dhanrise-finance-private-limited:202609176227,Surging / High Growth,35,36,19.44,80.56,49,73.47
+urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049,Surging / High Growth,37,34,44.12,55.88,78,43.59
+urn:uidai:client:magic-bus-india-foundation:202610147311,Surging / High Growth,39,30,70.00,30.00,32,93.75
+urn:uidai:client:earnest-data-analytics-private-limited:202609247533,Surging / High Growth,43,20,65.00,35.00,22,90.91
+urn:uidai:client:prabodh-technologies-llp:202610158333,Surging / High Growth,46,13,61.54,38.46,29,44.83

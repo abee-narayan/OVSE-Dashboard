@@ -313,11 +313,11 @@
           <!-- Active Scope Badges -->
           <div class="flex flex-col gap-1.5">
             <span id="outlierActiveBadge" class="inline-flex items-center px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-200/80 truncate">
-              All 221 Entities Included
+              All 225 Entities Included
             </span>
             <span id="activePeriodWindowBadge" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-semibold bg-emerald-50 text-[#0b5d3e] border border-emerald-200/70 truncate">
               <i data-lucide="calendar-range" class="w-3 h-3 text-[#0b5d3e] shrink-0"></i>
-              <span id="activePeriodWindowText" class="truncate">Weekly: 20 Oct – 26 Oct 2026</span>
+              <span id="activePeriodWindowText" class="truncate">Weekly: 22 Oct – 28 Oct 2026</span>
             </span>
           </div>
 
@@ -411,7 +411,7 @@
               <h1 id="mainHeaderTitle" class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight whitespace-nowrap">Business Overview</h1>
               <span id="headerLastUpdatedBadge" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-white text-slate-600 border border-slate-200/90 shadow-2xs whitespace-nowrap" title="Timestamp of the latest ingested dataset">
                 <i data-lucide="clock" class="w-3 h-3 text-[#0b5d3e]"></i>
-                <span id="headerLastUpdatedText">Last Updated: 26 OCT 2026, 10:03 AM IST</span>
+                <span id="headerLastUpdatedText">Last Updated: 28 OCT 2026, 12:07 PM IST</span>
               </span>
             </div>
           </div>
@@ -563,7 +563,7 @@
                   <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-900/80 text-emerald-300 border border-emerald-700/50">CSV (6 Columns)</span>
                   <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-teal-900/80 text-teal-300 border border-teal-700/50">JSON Supported</span>
                 </div>
-                <div id="masterFileName" class="text-xs text-emerald-300 font-mono truncate mt-0.5">Current Active File: query_result_2026-10-26T10_03_02.405994+05_30.csv</div>
+                <div id="masterFileName" class="text-xs text-emerald-300 font-mono truncate mt-0.5">Current Active File: query_result_2026-10-28T12_07_09.257972+05_30.json</div>
                 <div class="text-[10px] text-slate-400 mt-0.5">
                   Click or drag & drop <strong>.csv</strong> or <strong>.json</strong> file • Fields (any order): <code class="text-emerald-300">Auth Result, Error Code, Event Timestamp, Ovse ID, Cred Exchange Channel, Count</code>
                 </div>
@@ -2856,7 +2856,7 @@
     let customRangeEnd = '';
     let activePeriodLabel = 'Last Week (7 Days)';
     let activePeriodShort = 'Weekly';
-    let activePeriodWindowStr = '20 Oct – 26 Oct 2026';
+    let activePeriodWindowStr = '22 Oct – 28 Oct 2026';
 
     const ERROR_DESCRIPTIONS = {
       'SDJWT_USER_DENIED_CONSENT': 'Citizen actively declined or cancelled the consent prompt on mAadhaar app.',
@@ -2994,7 +2994,7 @@
     function initDateRangePickers() {
       if (!baseData) return;
       const minD = baseData.metadata?.dateBounds?.minDate || '2026-03-11';
-      const maxD = baseData.metadata?.dateBounds?.maxDate || '2026-10-26';
+      const maxD = baseData.metadata?.dateBounds?.maxDate || '2026-10-28';
       const startInput = document.getElementById('customStartDate');
       const endInput = document.getElementById('customEndDate');
 
@@ -3544,7 +3544,7 @@
           count: Number(tuple[5]) || 0
         }));
 
-        const maxIso = baseData.metadata?.dateBounds?.maxDate || '2026-10-26';
+        const maxIso = baseData.metadata?.dateBounds?.maxDate || '2026-10-28';
         const minIso = baseData.metadata?.dateBounds?.minDate || '2026-03-11';
         const maxDateObj = new Date(maxIso + 'T00:00:00');
         const minDateObj = new Date(minIso + 'T00:00:00');
@@ -4991,12 +4991,12 @@
         if (masterInput) masterInput.value = '';
         const masterName = document.getElementById('masterFileName');
         if (masterName) {
-          masterName.innerText = `Current Source: ${baseData?.metadata?.sourceFile || 'query_result_2026-10-26T10_03_02.405994+05_30.csv'}`;
+          masterName.innerText = `Current Source: ${baseData?.metadata?.sourceFile || 'query_result_2026-10-28T12_07_09.257972+05_30.json'}`;
           masterName.classList.remove('text-emerald-300');
         }
         hideUploadError();
         recomputeFilteredData();
-        alert(`Reset to baseline dataset (${baseData?.metadata?.reportingCutoff || 'October 26, 2026'}).`);
+        alert(`Reset to baseline dataset (${baseData?.metadata?.reportingCutoff || 'October 28, 2026'}).`);
       }
     }
 
@@ -5133,7 +5133,7 @@
       const { overall, weekly, comparison, newAndEmerging } = currentData;
 
       // Update Header "Data Last Updated" badge and Banner Snapshot badge
-      const lastUpd = currentData.metadata?.dataLastUpdated || baseData?.metadata?.dataLastUpdated || '26 OCT 2026, 10:03 AM IST';
+      const lastUpd = currentData.metadata?.dataLastUpdated || baseData?.metadata?.dataLastUpdated || '28 OCT 2026, 12:07 PM IST';
       const headerUpdEl = document.getElementById('headerLastUpdatedText');
       if (headerUpdEl) {
         headerUpdEl.innerText = `Last Updated: ${lastUpd}`;
@@ -6331,7 +6331,7 @@
 
       const masterFileName = document.getElementById('masterFileName');
       if (masterFileName && !uploadedMasterFile) {
-        masterFileName.innerText = `Current Source: ${currentData?.metadata?.sourceFile || 'query_result_2026-10-26T10_03_02.405994+05_30.csv'}`;
+        masterFileName.innerText = `Current Source: ${currentData?.metadata?.sourceFile || 'query_result_2026-10-28T12_07_09.257972+05_30.json'}`;
       }
 
       safeCreateIcons();
