@@ -178,8 +178,12 @@
         const data = await response.json();
 
         if (response.ok && data.success) {
+          try {
+            sessionStorage.removeItem('ovse_logged_out');
+            if (data.user) sessionStorage.setItem('ovse_auth_user', JSON.stringify(data.user));
+          } catch (e) {}
           btnText.innerText = "Access Granted! Redirecting...";
-          window.location.href = '/';
+          window.location.replace('/');
         } else {
           errorMessage.innerText = data.error || 'Authentication failed. Please verify credentials.';
           errorAlert.classList.remove('hidden');

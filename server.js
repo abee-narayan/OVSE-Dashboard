@@ -137,16 +137,30 @@ app.post('/api/login', (req, res) => {
   return res.status(401).json({ error: 'Invalid username or password.' });
 });
 
-// API Logout
-app.post('/api/logout', (req, res) => {
-  req.session.destroy((err) => {
-    if (err) {
-      return res.status(500).json({ error: 'Failed to log out.' });
+// API Logout (POST & GET support)
+function performLogout(req, res, isRedirect = false) {
+  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+  if (req.session) {
+    req.session.user = null;
+    req.session.destroy(() => {
+      res.clearCookie('connect.sid', { path: '/' });
+      if (isRedirect) {
+        return res.redirect('/login');
+      }
+      return res.json({ success: true, message: 'Logged out successfully.' });
+    });
+  } else {
+    res.clearCookie('connect.sid', { path: '/' });
+    if (isRedirect) {
+      return res.redirect('/login');
     }
-    res.clearCookie('connect.sid');
     return res.json({ success: true, message: 'Logged out successfully.' });
-  });
-});
+  }
+}
+
+app.post('/api/logout', (req, res) => performLogout(req, res, false));
+app.get('/api/logout', (req, res) => performLogout(req, res, false));
+app.get('/logout', (req, res) => performLogout(req, res, true));
 
 // Auth status check
 app.get('/api/auth-check', (req, res) => {

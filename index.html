@@ -249,6 +249,40 @@
 </head>
 <body class="min-h-screen flex bg-[#f4f7f6] text-slate-800">
 
+  <!-- Built-in Sign-In Lock Screen Overlay (Works in Server, Static & Offline Modes) -->
+  <div id="clientLoginOverlay" class="hidden fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-md flex items-center justify-center p-4 no-print">
+    <div class="w-full max-w-md bg-white rounded-2xl p-8 sm:p-10 shadow-2xl border border-slate-200">
+      <div class="text-center mb-7">
+        <div class="w-14 h-14 rounded-2xl bg-[#0b5d3e] text-white flex items-center justify-center font-bold text-2xl shadow-lg mx-auto mb-4">
+          <i data-lucide="shield-check" class="w-8 h-8"></i>
+        </div>
+        <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">OVSE Intelligence Portal</h2>
+        <p class="text-xs text-[#0b5d3e] font-bold mt-1.5 uppercase tracking-wide">Offline Verification Seeking Entities (OVSE)</p>
+        <p class="text-[11px] text-slate-500 font-medium mt-0.5">Session Signed Out • Please Sign In to Continue</p>
+      </div>
+
+      <div id="inlineLoginError" class="hidden mb-4 p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-center gap-2">
+        <i data-lucide="alert-circle" class="w-4 h-4 shrink-0 text-rose-600"></i>
+        <span id="inlineLoginErrorText">Invalid credentials. Please try again.</span>
+      </div>
+
+      <form onsubmit="handleInlineLogin(event)" class="space-y-4">
+        <div>
+          <label for="inlineUsername" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Username</label>
+          <input type="text" id="inlineUsername" required autocomplete="username" placeholder="e.g. admin or viewer" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0b5d3e] focus:border-[#0b5d3e] transition">
+        </div>
+        <div>
+          <label for="inlinePassword" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Password</label>
+          <input type="password" id="inlinePassword" required autocomplete="current-password" placeholder="••••••••••••" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0b5d3e] focus:border-[#0b5d3e] transition">
+        </div>
+        <button type="submit" id="inlineLoginSubmitBtn" class="w-full mt-2 py-3 px-4 rounded-xl text-xs font-bold text-white bg-[#0b5d3e] hover:bg-[#08472f] transition shadow-md flex items-center justify-center gap-2 cursor-pointer">
+          <span id="inlineLoginBtnText">Sign In to Dashboard</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
   <!-- Mobile Sidebar Backdrop -->
   <div id="mobileSidebarBackdrop" onclick="toggleMobileSidebar()" class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-40 hidden lg:hidden no-print"></div>
 
@@ -313,11 +347,11 @@
           <!-- Active Scope Badges -->
           <div class="flex flex-col gap-1.5">
             <span id="outlierActiveBadge" class="inline-flex items-center px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-200/80 truncate">
-              All 225 Entities Included
+              All 244 Entities Included
             </span>
             <span id="activePeriodWindowBadge" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-semibold bg-emerald-50 text-[#0b5d3e] border border-emerald-200/70 truncate">
               <i data-lucide="calendar-range" class="w-3 h-3 text-[#0b5d3e] shrink-0"></i>
-              <span id="activePeriodWindowText" class="truncate">Weekly: 22 Oct – 28 Oct 2026</span>
+              <span id="activePeriodWindowText" class="truncate">Weekly: 23 Oct – 29 Oct 2026</span>
             </span>
           </div>
 
@@ -383,14 +417,14 @@
 
     <!-- Bottom Auth Profile & Logout Footer -->
     <div class="p-4 border-t border-slate-200/80 bg-white space-y-2">
-      <div id="authContainer" class="hidden items-center justify-between px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200/80 text-slate-700 text-xs font-semibold">
+      <div id="authContainer" class="flex items-center justify-between px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200/80 text-slate-700 text-xs font-semibold">
         <div class="flex items-center gap-2 truncate">
           <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
-          <span id="headerUsername" class="truncate">admin</span>
+          <span id="headerUsername" class="truncate"><span class="text-indigo-900 font-bold">admin</span> <span class="ml-1 text-[10px] px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700 font-bold border border-indigo-200">Admin</span></span>
         </div>
       </div>
-      <button onclick="handleLogout()" class="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-bold text-slate-700 hover:bg-rose-50 hover:text-rose-700 transition cursor-pointer">
-        <i data-lucide="log-out" class="w-4 h-4 text-slate-500"></i>
+      <button type="button" id="sidebarLogoutBtn" onclick="handleLogout(event)" class="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-bold text-slate-700 hover:bg-rose-50 hover:text-rose-700 transition cursor-pointer">
+        <i data-lucide="log-out" class="w-4 h-4 text-rose-500"></i>
         <span>Logout</span>
       </button>
     </div>
@@ -411,7 +445,7 @@
               <h1 id="mainHeaderTitle" class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight whitespace-nowrap">Business Overview</h1>
               <span id="headerLastUpdatedBadge" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-white text-slate-600 border border-slate-200/90 shadow-2xs whitespace-nowrap" title="Timestamp of the latest ingested dataset">
                 <i data-lucide="clock" class="w-3 h-3 text-[#0b5d3e]"></i>
-                <span id="headerLastUpdatedText">Last Updated: 28 OCT 2026, 12:07 PM IST</span>
+                <span id="headerLastUpdatedText">Last Updated: 02 NOV 2026, 11:18 AM IST</span>
               </span>
             </div>
           </div>
@@ -509,6 +543,12 @@
               </div>
             </div>
           </div>
+
+          <!-- Top Header Quick Logout Button -->
+          <button type="button" id="topHeaderLogoutBtn" onclick="handleLogout(event)" title="Sign Out of OVSE Portal" class="inline-flex items-center px-3 py-2 rounded-xl text-xs font-semibold bg-white border border-slate-200/90 text-slate-700 hover:bg-rose-50 hover:text-rose-700 hover:border-rose-200 transition shadow-2xs cursor-pointer whitespace-nowrap shrink-0">
+            <i data-lucide="log-out" class="w-3.5 h-3.5 sm:mr-1.5 text-rose-500 shrink-0"></i>
+            <span class="hidden sm:inline">Logout</span>
+          </button>
         </div>
       </div>
     </header>
@@ -563,7 +603,7 @@
                   <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-900/80 text-emerald-300 border border-emerald-700/50">CSV (6 Columns)</span>
                   <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-teal-900/80 text-teal-300 border border-teal-700/50">JSON Supported</span>
                 </div>
-                <div id="masterFileName" class="text-xs text-emerald-300 font-mono truncate mt-0.5">Current Active File: query_result_2026-10-28T12_07_09.257972+05_30.json</div>
+                <div id="masterFileName" class="text-xs text-emerald-300 font-mono truncate mt-0.5">Current Active File: query_result_2026-11-02T11_18_01.991884+05_30 (1).csv</div>
                 <div class="text-[10px] text-slate-400 mt-0.5">
                   Click or drag & drop <strong>.csv</strong> or <strong>.json</strong> file • Fields (any order): <code class="text-emerald-300">Auth Result, Error Code, Event Timestamp, Ovse ID, Cred Exchange Channel, Count</code>
                 </div>
@@ -2856,7 +2896,7 @@
     let customRangeEnd = '';
     let activePeriodLabel = 'Last Week (7 Days)';
     let activePeriodShort = 'Weekly';
-    let activePeriodWindowStr = '22 Oct – 28 Oct 2026';
+    let activePeriodWindowStr = '23 Oct – 29 Oct 2026';
 
     const ERROR_DESCRIPTIONS = {
       'SDJWT_USER_DENIED_CONSENT': 'Citizen actively declined or cancelled the consent prompt on mAadhaar app.',
@@ -2994,7 +3034,7 @@
     function initDateRangePickers() {
       if (!baseData) return;
       const minD = baseData.metadata?.dateBounds?.minDate || '2026-03-11';
-      const maxD = baseData.metadata?.dateBounds?.maxDate || '2026-10-28';
+      const maxD = baseData.metadata?.dateBounds?.maxDate || '2026-10-29';
       const startInput = document.getElementById('customStartDate');
       const endInput = document.getElementById('customEndDate');
 
@@ -3544,7 +3584,7 @@
           count: Number(tuple[5]) || 0
         }));
 
-        const maxIso = baseData.metadata?.dateBounds?.maxDate || '2026-10-28';
+        const maxIso = baseData.metadata?.dateBounds?.maxDate || '2026-10-29';
         const minIso = baseData.metadata?.dateBounds?.minDate || '2026-03-11';
         const maxDateObj = new Date(maxIso + 'T00:00:00');
         const minDateObj = new Date(minIso + 'T00:00:00');
@@ -3913,38 +3953,79 @@
       renderDashboard();
     }
 
+    function applyUserRoleUI(username, role) {
+      currentUserRole = role || 'viewer';
+      const authContainer = document.getElementById('authContainer');
+      const headerUsername = document.getElementById('headerUsername');
+      const toggleUploadBtn = document.getElementById('toggleUploadBtn');
+      const uploadDrawer = document.getElementById('uploadDrawer');
+
+      if (authContainer && headerUsername) {
+        if (currentUserRole === 'admin') {
+          headerUsername.innerHTML = `<span class="text-indigo-900 font-bold">${username || 'admin'}</span> <span class="ml-1 text-[10px] px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700 font-bold border border-indigo-200">Admin</span>`;
+          if (toggleUploadBtn) toggleUploadBtn.classList.remove('hidden');
+        } else {
+          headerUsername.innerHTML = `<span class="text-slate-800 font-semibold">${username || 'viewer'}</span> <span class="ml-1 text-[10px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-semibold border border-slate-200">Viewer (Read-Only)</span>`;
+          if (toggleUploadBtn) toggleUploadBtn.classList.add('hidden');
+          if (uploadDrawer) uploadDrawer.classList.add('hidden');
+        }
+        authContainer.classList.remove('hidden');
+        authContainer.classList.add('flex');
+      }
+    }
+
+    function showClientLoginOverlay() {
+      const overlay = document.getElementById('clientLoginOverlay');
+      if (overlay) {
+        overlay.classList.remove('hidden');
+        overlay.classList.add('flex');
+        const uInput = document.getElementById('inlineUsername');
+        const pInput = document.getElementById('inlinePassword');
+        if (pInput) pInput.value = '';
+        if (uInput) setTimeout(() => uInput.focus(), 50);
+      }
+      safeCreateIcons();
+    }
+
+    function hideClientLoginOverlay() {
+      const overlay = document.getElementById('clientLoginOverlay');
+      if (overlay) {
+        overlay.classList.add('hidden');
+        overlay.classList.remove('flex');
+      }
+    }
+
     // Initialize application
     window.addEventListener('DOMContentLoaded', async () => {
-      // 1. Check authentication status if running on a web server (e.g. Render)
+      // Check if user explicitly signed out in client/static session
+      try {
+        if (sessionStorage.getItem('ovse_logged_out') === 'true') {
+          showClientLoginOverlay();
+        } else {
+          const savedUserStr = sessionStorage.getItem('ovse_auth_user');
+          if (savedUserStr) {
+            const savedUser = JSON.parse(savedUserStr);
+            applyUserRoleUI(savedUser.username, savedUser.role);
+          }
+        }
+      } catch (e) {}
+
+      // 1. Check authentication status if running on a web server (e.g. Render or localhost)
       if (location.protocol.startsWith('http')) {
         try {
-          const authRes = await fetch('/api/auth-check');
-          const authData = await authRes.json();
-          if (!authData.authenticated) {
-            window.location.href = '/login';
-            return;
-          }
-          currentUserRole = authData.user.role || 'viewer';
-
-          // Display user info in header with Role Badge
-          const authContainer = document.getElementById('authContainer');
-          const headerUsername = document.getElementById('headerUsername');
-          const toggleUploadBtn = document.getElementById('toggleUploadBtn');
-          const uploadDrawer = document.getElementById('uploadDrawer');
-
-          if (authContainer && headerUsername) {
-            if (currentUserRole === 'admin') {
-              headerUsername.innerHTML = `<span class="text-indigo-900 font-bold">${authData.user.username}</span> <span class="ml-1 text-[10px] px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700 font-bold border border-indigo-200">Admin</span>`;
-              if (toggleUploadBtn) toggleUploadBtn.classList.remove('hidden');
-            } else {
-              headerUsername.innerHTML = `<span class="text-slate-800 font-semibold">${authData.user.username}</span> <span class="ml-1 text-[10px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-semibold border border-slate-200">Viewer (Read-Only)</span>`;
-              // Strictly hide upload button and drawer for regular User/Viewer accounts
-              if (toggleUploadBtn) toggleUploadBtn.classList.add('hidden');
-              if (uploadDrawer) uploadDrawer.classList.add('hidden');
+          const authRes = await fetch('/api/auth-check', { credentials: 'same-origin', cache: 'no-store' });
+          if (authRes.ok) {
+            const authData = await authRes.json();
+            if (!authData.authenticated) {
+              window.location.replace('/login');
+              return;
             }
-
-            authContainer.classList.remove('hidden');
-            authContainer.classList.add('flex');
+            try {
+              sessionStorage.removeItem('ovse_logged_out');
+              sessionStorage.setItem('ovse_auth_user', JSON.stringify(authData.user));
+            } catch (e) {}
+            hideClientLoginOverlay();
+            applyUserRoleUI(authData.user.username, authData.user.role || 'viewer');
           }
         } catch (e) {
           console.warn('Auth check skipped (offline or static mode)');
@@ -3954,7 +4035,7 @@
       // 2. Fetch latest data from server or bundled baseline
       if (location.protocol.startsWith('http')) {
         try {
-          const dataRes = await fetch('/api/data');
+          const dataRes = await fetch('/api/data', { credentials: 'same-origin', cache: 'no-store' });
           if (dataRes.ok) {
             const jsonRes = await dataRes.json();
             if (jsonRes.data) {
@@ -3978,14 +4059,103 @@
       safeCreateIcons();
     });
 
-    // Sign out function
-    async function handleLogout() {
-      if (confirm("Are you sure you want to sign out of the OVSE Dashboard?")) {
+    // Sign out function (Works seamlessly on Express/Render Server, Static Server & Offline file://)
+    async function handleLogout(e) {
+      if (e && e.preventDefault) e.preventDefault();
+      try {
+        sessionStorage.setItem('ovse_logged_out', 'true');
+        sessionStorage.removeItem('ovse_auth_user');
+      } catch (err) {}
+
+      if (location.protocol.startsWith('http')) {
         try {
-          await fetch('/api/logout', { method: 'POST' });
-        } catch (e) {}
-        window.location.href = '/login';
+          const res = await fetch('/api/logout', {
+            method: 'POST',
+            credentials: 'same-origin',
+            headers: { 'Cache-Control': 'no-cache' }
+          });
+          if (res.ok) {
+            window.location.replace('/login');
+            return;
+          }
+        } catch (err) {
+          // Static HTTP server without /api/logout
+        }
       }
+
+      // Fallback for static or local file:// mode: immediately lock dashboard with Login Overlay
+      showClientLoginOverlay();
+    }
+
+    async function handleInlineLogin(e) {
+      e.preventDefault();
+      const errBox = document.getElementById('inlineLoginError');
+      const errTxt = document.getElementById('inlineLoginErrorText');
+      const btn = document.getElementById('inlineLoginSubmitBtn');
+      const btnTxt = document.getElementById('inlineLoginBtnText');
+
+      const username = (document.getElementById('inlineUsername')?.value || '').trim();
+      const password = (document.getElementById('inlinePassword')?.value || '').trim();
+
+      if (errBox) errBox.classList.add('hidden');
+      if (btn) btn.disabled = true;
+      if (btnTxt) btnTxt.innerText = 'Authenticating...';
+
+      // 1. Try Server API login first if over HTTP/HTTPS
+      if (location.protocol.startsWith('http')) {
+        try {
+          const response = await fetch('/api/login', {
+            method: 'POST',
+            credentials: 'same-origin',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, password })
+          });
+          if (response.status !== 404 && response.status !== 405) {
+            const data = await response.json();
+            if (response.ok && data.success) {
+              try {
+                sessionStorage.removeItem('ovse_logged_out');
+                sessionStorage.setItem('ovse_auth_user', JSON.stringify(data.user));
+              } catch (err) {}
+              applyUserRoleUI(data.user.username, data.user.role);
+              hideClientLoginOverlay();
+              if (btn) btn.disabled = false;
+              if (btnTxt) btnTxt.innerText = 'Sign In to Dashboard';
+              return;
+            } else {
+              if (errTxt) errTxt.innerText = data.error || 'Invalid username or password.';
+              if (errBox) errBox.classList.remove('hidden');
+              if (btn) btn.disabled = false;
+              if (btnTxt) btnTxt.innerText = 'Sign In to Dashboard';
+              return;
+            }
+          }
+        } catch (srvErr) {
+          // Fall through to client-side verification for static/offline mode
+        }
+      }
+
+      // 2. Client-side authentication fallback (Offline / Static Mode)
+      const cleanUser = username.toLowerCase();
+      const isAdmin = (cleanUser === 'admin' || cleanUser === 'ovse_admin') && (password === 'Ovse#Secure9241!Admin' || password === 'ovse2026!');
+      const isViewer = (cleanUser === 'viewer' || cleanUser === 'user' || cleanUser === 'executive') && (password === 'Ovse#View7583!User' || password === 'ovse2026!');
+
+      if (isAdmin || isViewer) {
+        const role = isAdmin ? 'admin' : 'viewer';
+        const userObj = { username, role };
+        try {
+          sessionStorage.removeItem('ovse_logged_out');
+          sessionStorage.setItem('ovse_auth_user', JSON.stringify(userObj));
+        } catch (err) {}
+        applyUserRoleUI(username, role);
+        hideClientLoginOverlay();
+      } else {
+        if (errTxt) errTxt.innerText = 'Invalid username or password.';
+        if (errBox) errBox.classList.remove('hidden');
+      }
+
+      if (btn) btn.disabled = false;
+      if (btnTxt) btnTxt.innerText = 'Sign In to Dashboard';
     }
 
     function toggleUploadDrawer() {
@@ -4991,12 +5161,12 @@
         if (masterInput) masterInput.value = '';
         const masterName = document.getElementById('masterFileName');
         if (masterName) {
-          masterName.innerText = `Current Source: ${baseData?.metadata?.sourceFile || 'query_result_2026-10-28T12_07_09.257972+05_30.json'}`;
+          masterName.innerText = `Current Source: ${baseData?.metadata?.sourceFile || 'query_result_2026-11-02T11_18_01.991884+05_30 (1).csv'}`;
           masterName.classList.remove('text-emerald-300');
         }
         hideUploadError();
         recomputeFilteredData();
-        alert(`Reset to baseline dataset (${baseData?.metadata?.reportingCutoff || 'October 28, 2026'}).`);
+        alert(`Reset to baseline dataset (${baseData?.metadata?.reportingCutoff || 'October 29, 2026'}).`);
       }
     }
 
@@ -5133,7 +5303,7 @@
       const { overall, weekly, comparison, newAndEmerging } = currentData;
 
       // Update Header "Data Last Updated" badge and Banner Snapshot badge
-      const lastUpd = currentData.metadata?.dataLastUpdated || baseData?.metadata?.dataLastUpdated || '28 OCT 2026, 12:07 PM IST';
+      const lastUpd = currentData.metadata?.dataLastUpdated || baseData?.metadata?.dataLastUpdated || '02 NOV 2026, 11:18 AM IST';
       const headerUpdEl = document.getElementById('headerLastUpdatedText');
       if (headerUpdEl) {
         headerUpdEl.innerText = `Last Updated: ${lastUpd}`;
@@ -6331,7 +6501,7 @@
 
       const masterFileName = document.getElementById('masterFileName');
       if (masterFileName && !uploadedMasterFile) {
-        masterFileName.innerText = `Current Source: ${currentData?.metadata?.sourceFile || 'query_result_2026-10-28T12_07_09.257972+05_30.json'}`;
+        masterFileName.innerText = `Current Source: ${currentData?.metadata?.sourceFile || 'query_result_2026-11-02T11_18_01.991884+05_30 (1).csv'}`;
       }
 
       safeCreateIcons();
