@@ -1,25 +1,25 @@
 OVSE DATA SHARING CHANNELS - EXECUTIVE ANALYSIS REPORT
-Generated At,"2/11/2026, 11:31:19 am"
+Generated At,"4/11/2026, 9:49:35 am"
 ,,,,,,
 Channel Code,Channel Description,Weekly Volume,Weekly Share %,Overall Lifetime Volume,Overall Lifetime Share %,Adoption Delta (%)
-APP_INTENT,App-to-App (App Intent),151805,93.25%,6315485,90.62%,+2.64%
-QR_SCAN,Cross-Device QR (QR Scan),4138,2.54%,600711,8.62%,-6.08%
-WEB_INTENT,Web-to-App (Web Intent),6842,4.20%,53062,0.76%,+3.44%
+APP_INTENT,App-to-App (App Intent),148476,92.89%,6458395,90.67%,+2.22%
+QR_SCAN,Cross-Device QR (QR Scan),4120,2.58%,604775,8.49%,-5.91%
+WEB_INTENT,Web-to-App (Web Intent),7246,4.53%,60124,0.84%,+3.69%
 ,,,,,,
 TOP OVSEs BY CHANNEL USAGE (WEEKLY)
 OVSE ID,Total Weekly Tx,App Intent Tx,App Intent Share %,Web Intent Tx,Web Intent Share %,QR Scan Tx,QR Scan Share %
-SelectiveShare,122186,122186,100.0%,0,0.0%,0,0.0%
-urbancompany,14911,14911,100.0%,0,0.0%,0,0.0%
-protean,4385,0,0.0%,4313,98.4%,72,1.6%
-urn:uidai:client:life-insurance-corporation-of-india:202606036260,3328,1355,40.7%,1623,48.8%,350,10.5%
-procam,2575,1664,64.6%,0,0.0%,911,35.4%
-dexit,2548,2002,78.6%,0,0.0%,546,21.4%
-gridlines,1837,1261,68.6%,345,18.8%,231,12.6%
-urn:uidai:client:inferalgo-private-limited:202607177737,1742,1502,86.2%,183,10.5%,57,3.3%
-tnmc,1589,1003,63.1%,0,0.0%,586,36.9%
-arattai,1496,1490,99.6%,0,0.0%,6,0.4%
-urn:uidai:client:instantpay-india-limited:202606250788,1414,1270,89.8%,4,0.3%,140,9.9%
-urn:uidai:client:hindon-mercantile-limited:202608105382,1115,941,84.4%,0,0.0%,174,15.6%
-trustt,826,468,56.7%,238,28.8%,120,14.5%
-urn:uidai:client:punjab-school-educationboard:202608274954,505,379,75.0%,0,0.0%,126,25.0%
-(Blank / Unknown),332,4,1.2%,0,0.0%,328,98.8%
+SelectiveShare,118300,118300,100.0%,0,0.0%,0,0.0%
+urbancompany,13126,13126,100.0%,0,0.0%,0,0.0%
+protean,4457,0,0.0%,4392,98.5%,65,1.5%
+dexit,3613,2935,81.2%,0,0.0%,678,18.8%
+urn:uidai:client:life-insurance-corporation-of-india:202606036260,3584,1508,42.1%,1745,48.7%,331,9.2%
+urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107,2318,1654,71.4%,183,7.9%,481,20.8%
+gridlines,2223,1654,74.4%,358,16.1%,211,9.5%
+urn:uidai:client:instantpay-india-limited:202606250788,2030,1897,93.4%,10,0.5%,123,6.1%
+urn:uidai:client:inferalgo-private-limited:202607177737,1988,1673,84.2%,216,10.9%,99,5.0%
+tnmc,1488,810,54.4%,0,0.0%,678,45.6%
+arattai,1104,1102,99.8%,0,0.0%,2,0.2%
+procam,1058,814,76.9%,0,0.0%,244,23.1%
+trustt,870,501,57.6%,237,27.2%,132,15.2%
+urn:uidai:client:punjab-school-educationboard:202608274954,568,426,75.0%,0,0.0%,142,25.0%
+surepass,533,420,78.8%,1,0.2%,112,21.0%

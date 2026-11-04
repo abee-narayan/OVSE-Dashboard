@@ -68,8 +68,10 @@ function parseCSV(filePath) {
 
 function parseDate(dStr) {
   if (!dStr) return null;
-  const parts = dStr.split('/').map(Number);
-  if (parts.length !== 3) return null;
+  const clean = String(dStr).trim().split(/[T\s]/)[0];
+  const parts = clean.split(/[\/\-]/).map(Number);
+  if (parts.length !== 3 || parts.some(isNaN)) return null;
+  if (parts[0] > 1900) return new Date(parts[0], parts[1] - 1, parts[2]);
   return new Date(parts[2], parts[1] - 1, parts[0]);
 }
 
