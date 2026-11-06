@@ -1,16 +1,16 @@
 UIDAI OVSE ERROR CODE INTELLIGENCE - EXECUTIVE REPORT
-Generated At,"4/11/2026, 9:49:35 am"
+Generated At,"6/11/2026, 11:02:55 am"
 ,,,,,,,
 Error Code,Category,Description / Meaning,Weekly Failures,Weekly Failure Share %,Lifetime Failures,Lifetime Failure Share %,Trend Delta (%)
-SDJWT_USER_DENIED_CONSENT,User Consent Denial,Citizen actively declined or cancelled the consent prompt on mAadhaar app.,7424,46.72%,334565,15.76%,+30.96%
-SDJWT_FACEAUTH_FAILED_731,Biometric Face Auth Failure,"Face authentication match failed (Threshold score not met, code 731).",3756,23.64%,349269,16.45%,+7.18%
-SDJWT_CALLBACK_NETWORK_ERROR,Network / Connectivity Timeout,Network timeout or connection drop during callback reporting to OVSE backend.,1689,10.63%,626745,29.53%,-18.90%
-INVALID_JWT,Cryptographic / Security Error,"Malformed, invalid token payload, or expired token during handshake.",1063,6.69%,408882,19.26%,-12.57%
-SDJWT_SIGN_VALIDATION_FAILED,Cryptographic / Security Error,Cryptographic signature validation failure between OVSE and UIDAI.,969,6.10%,61184,2.88%,+3.22%
-SDJWT_FACEAUTH_FAILED_304,Biometric Face Auth Failure,Face capture / lighting / sensor error during camera acquisition.,610,3.84%,52344,2.47%,+1.37%
-SDJWT_FACEAUTH_FAILED_737,Biometric Face Auth Failure,Low biometric confidence / quality score during facial matching.,369,2.32%,19059,0.90%,+1.42%
-SDJWT_ZIP_CREATION_FAILED,System / Payload Processing,Failure during local credential zip extraction or compression.,6,0.04%,476,0.02%,+0.02%
-0,Generic Timeout / Client Drop,"Generic connection reset, client drop, or unspecified timeout error.",5,0.03%,251760,11.86%,-11.83%
+SDJWT_USER_DENIED_CONSENT,User Consent Denial,Citizen actively declined or cancelled the consent prompt on mAadhaar app.,8097,45.14%,337707,15.86%,+29.28%
+SDJWT_FACEAUTH_FAILED_731,Biometric Face Auth Failure,"Face authentication match failed (Threshold score not met, code 731).",4841,26.99%,351614,16.51%,+10.48%
+SDJWT_CALLBACK_NETWORK_ERROR,Network / Connectivity Timeout,Network timeout or connection drop during callback reporting to OVSE backend.,2037,11.36%,627440,29.46%,-18.11%
+INVALID_JWT,Cryptographic / Security Error,"Malformed, invalid token payload, or expired token during handshake.",991,5.52%,409192,19.21%,-13.69%
+SDJWT_SIGN_VALIDATION_FAILED,Cryptographic / Security Error,Cryptographic signature validation failure between OVSE and UIDAI.,939,5.23%,61483,2.89%,+2.35%
+SDJWT_FACEAUTH_FAILED_304,Biometric Face Auth Failure,Face capture / lighting / sensor error during camera acquisition.,592,3.30%,52493,2.46%,+0.84%
+SDJWT_FACEAUTH_FAILED_737,Biometric Face Auth Failure,Low biometric confidence / quality score during facial matching.,431,2.40%,19232,0.90%,+1.50%
+SDJWT_ZIP_CREATION_FAILED,System / Payload Processing,Failure during local credential zip extraction or compression.,6,0.03%,476,0.02%,+0.01%
+0,Generic Timeout / Client Drop,"Generic connection reset, client drop, or unspecified timeout error.",3,0.02%,251760,11.82%,-11.80%
 731,Biometric Face Auth Failure,Biometric verification threshold score not achieved (Code 731).,0,0.00%,14104,0.66%,-0.66%
 SDJWT_FACEAUTH_FAILED,Biometric Face Auth Failure,General facial authentication failure.,0,0.00%,3593,0.17%,-0.17%
 737,Other System Errors,UIDAI error code 737,0,0.00%,569,0.03%,-0.03%
@@ -24,18 +24,18 @@ Request failed: The resource could not be loaded because the App Transport Secur
 ,,,,,,,
 TOP IMPACTED OVSE ENTITIES BY ERROR COUNT (WEEKLY)
 OVSE ID,Total Weekly Failures,Dominant Error Code,Dominant Error Count,Dominant Error Share %
-urbancompany,5982,SDJWT_USER_DENIED_CONSENT,4139,69.2%
-dexit,1619,SDJWT_FACEAUTH_FAILED_731,460,28.4%
-urn:uidai:client:life-insurance-corporation-of-india:202606036260,1352,SDJWT_USER_DENIED_CONSENT,568,42.0%
-urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107,1279,SDJWT_CALLBACK_NETWORK_ERROR,910,71.1%
-gridlines,928,SDJWT_CALLBACK_NETWORK_ERROR,332,35.8%
-urn:uidai:client:instantpay-india-limited:202606250788,722,SDJWT_USER_DENIED_CONSENT,375,51.9%
-urn:uidai:client:inferalgo-private-limited:202607177737,718,SDJWT_USER_DENIED_CONSENT,387,53.9%
-tnmc,415,SDJWT_FACEAUTH_FAILED_304,187,45.1%
-procam,336,SDJWT_FACEAUTH_FAILED_731,152,45.2%
-arattai,317,SDJWT_USER_DENIED_CONSENT,180,56.8%
-(Blank / Unknown),307,SDJWT_FACEAUTH_FAILED_304,116,37.8%
-urn:uidai:client:punjab-school-educationboard:202608274954,280,SDJWT_USER_DENIED_CONSENT,106,37.9%
-trustt,263,SDJWT_USER_DENIED_CONSENT,120,45.6%
-surepass,258,SDJWT_FACEAUTH_FAILED_731,102,39.5%
-urn:uidai:client:hindon-mercantile-limited:202608105382,192,SDJWT_USER_DENIED_CONSENT,108,56.3%
+urbancompany,5814,SDJWT_USER_DENIED_CONSENT,4151,71.4%
+"urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",2608,SDJWT_FACEAUTH_FAILED_731,1152,44.2%
+dexit,1595,SDJWT_FACEAUTH_FAILED_731,479,30.0%
+urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107,1194,SDJWT_CALLBACK_NETWORK_ERROR,835,69.9%
+gridlines,1083,SDJWT_CALLBACK_NETWORK_ERROR,407,37.6%
+urn:uidai:client:life-insurance-corporation-of-india:202606036260,1067,SDJWT_USER_DENIED_CONSENT,449,42.1%
+urn:uidai:client:instantpay-india-limited:202606250788,560,SDJWT_USER_DENIED_CONSENT,292,52.1%
+urn:uidai:client:inferalgo-private-limited:202607177737,442,SDJWT_USER_DENIED_CONSENT,249,56.3%
+surepass,432,SDJWT_FACEAUTH_FAILED_731,207,47.9%
+tnmc,426,SDJWT_FACEAUTH_FAILED_304,176,41.3%
+arattai,370,SDJWT_USER_DENIED_CONSENT,207,55.9%
+urn:uidai:client:punjab-school-educationboard:202608274954,329,SDJWT_USER_DENIED_CONSENT,124,37.7%
+(Blank / Unknown),329,SDJWT_FACEAUTH_FAILED_304,118,35.9%
+procam,313,SDJWT_FACEAUTH_FAILED_731,154,49.2%
+trustt,251,SDJWT_USER_DENIED_CONSENT,130,51.8%

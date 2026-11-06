@@ -1,38 +1,41 @@
 OVSE TRANSACTION INTELLIGENCE - EXECUTIVE SUMMARY REPORT
-Generated At,"4/11/2026, 9:49:35 am"
-Unified Master Export,query_result_2026-11-04T09_39_11.278673+05_30.csv
-Reporting Window,04 Nov 2026 (Weekly: 29 Oct 2026 to 04 Nov 2026)
+Generated At,"6/11/2026, 11:02:55 am"
+Unified Master Export,query_result_2026-11-06T10_39_32.128773+05_30.csv
+Reporting Window,06 Nov 2026 (Weekly: 31 Oct 2026 to 06 Nov 2026)
 ,,,,
 METRIC CATEGORY,INDICATOR,OVERALL (ALL TIME),LAST 1 WEEK,KEY MANAGEMENT VARIANCE / INSIGHT
-Volume Metrics,Total Transactions,7123294,159842,2.24% of all-time volume
-Volume Metrics,Successful Transactions,5252481,143956,73.74% Overall vs 90.06% Weekly
-Volume Metrics,Failed Transactions,1870813,15886,26.26% Overall vs 9.94% Weekly
-Quality Metrics,Success Rate %,73.74%,90.06%,+16.32% Improvement
-Quality Metrics,Failure Rate %,26.26%,9.94%,-16.32% Reduction in Failure Rate
-Entity Engagement,Active OVSE Entities,147,76,51.7% of registered entities active
+Volume Metrics,Total Transactions,7176958,161467,2.25% of all-time volume
+Volume Metrics,Successful Transactions,5299032,143533,73.83% Overall vs 88.89% Weekly
+Volume Metrics,Failed Transactions,1877926,17934,26.17% Overall vs 11.11% Weekly
+Quality Metrics,Success Rate %,73.83%,88.89%,+15.06% Improvement
+Quality Metrics,Failure Rate %,26.17%,11.11%,-15.06% Reduction in Failure Rate
+Entity Engagement,Active OVSE Entities,151,76,50.3% of registered entities active
 ,,,,
 TOP 5 OVSEs OVERALL,RANK,TOTAL TX,SUCCESS RATE %,FAILURE RATE %
-Top 1 Overall: SelectiveShare,1,2981734,99.99%,0.01%
-Top 2 Overall: tspolice,2,2248473,28.69%,71.31%
-Top 3 Overall: 000,3,1219769,99.91%,0.09%
-Top 4 Overall: urbancompany,4,294696,58.32%,41.68%
-Top 5 Overall: tnmc,5,55569,69.93%,30.07%
+Top 1 Overall: SelectiveShare,1,3019649,99.99%,0.01%
+Top 2 Overall: tspolice,2,2248530,28.69%,71.31%
+Top 3 Overall: 000,3,1219804,99.91%,0.09%
+Top 4 Overall: urbancompany,4,298641,58.26%,41.74%
+Top 5 Overall: tnmc,5,56089,70.03%,29.97%
 ,,,,
 TOP 5 OVSEs LAST WEEK,RANK,TOTAL TX,SUCCESS RATE %,FAILURE RATE %
-Top 1 Weekly: SelectiveShare,1,118300,99.99%,0.01%
-Top 2 Weekly: urbancompany,2,13126,54.43%,45.57%
-Top 3 Weekly: protean,3,4457,96.21%,3.79%
-Top 4 Weekly: dexit,4,3613,55.19%,44.81%
-Top 5 Weekly: urn:uidai:client:life-insurance-corporation-of-india:202606036260,5,3584,62.28%,37.72%
+Top 1 Weekly: SelectiveShare,1,118077,99.99%,0.01%
+Top 2 Weekly: urbancompany,2,12607,53.88%,46.12%
+Top 3 Weekly: protean,3,4539,96.30%,3.70%
+"Top 4 Weekly: urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",4,3708,29.67%,70.33%
+Top 5 Weekly: dexit,5,3484,54.22%,45.78%
 ,,,,
 NEW & SURGING OVSEs,CLASSIFICATION,WEEKLY TX,WEEKLY SUCCESS %,WEEKLY SHARE OF LIFETIME %
-urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107,Surging / High Growth,2318,44.82%,79.49%
-urn:uidai:client:instantpay-india-limited:202606250788,Surging / High Growth,2030,64.43%,47.00%
-surepass,Surging / High Growth,533,51.59%,42.85%
-"urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",Surging / High Growth,110,61.82%,64.71%
-pathikgp,Surging / High Growth,99,65.66%,35.61%
-urn:uidai:client:padmasree-hotels-private-limited:202610094326,New Entrant,41,7.32%,100.00%
-urn:uidai:client:access-computech-limited:202610269618,New Entrant,32,34.38%,100.00%
-urn:uidai:client:nagaland-police:202610092803,Surging / High Growth,16,25.00%,66.67%
+"urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",Surging / High Growth,3708,29.67%,97.86%
+urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107,Surging / High Growth,2115,43.55%,72.26%
+surepass,Surging / High Growth,937,53.90%,55.12%
+pathikgp,Surging / High Growth,131,71.76%,41.46%
+urn:uidai:client:codetantra-tech-solutions-private-limited:202606124082,Surging / High Growth,61,59.02%,36.97%
+urn:uidai:client:alynn-technologies-private-limited:202610262068,New Entrant,55,23.64%,100.00%
+urn:uidai:client:padmasree-hotels-private-limited:202610094326,New Entrant,42,7.14%,100.00%
+urn:uidai:client:nagaland-police:202610092803,Surging / High Growth,27,40.74%,77.14%
+urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581,New Entrant,27,74.07%,100.00%
+cgg,New Entrant,17,23.53%,100.00%
 urn:uidai:client:mahalaxmi-parivahan-private-limited:202608108563,New Entrant,15,13.33%,100.00%
-urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581,New Entrant,11,36.36%,100.00%
+urn:uidai:client:startup-gurukul-innovation-private-limited:202610157376,New Entrant,8,25.00%,100.00%
+urn:uidai:client:samtechnova-private-limited:202611030176,New Entrant,7,28.57%,100.00%

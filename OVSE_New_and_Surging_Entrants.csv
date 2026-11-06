@@ -1,11 +1,14 @@
 OVSE ID,Classification,Weekly Rank,Weekly Tx,Weekly Success Rate (%),Weekly Failure Rate (%),Overall Lifetime Tx,Weekly Share of Lifetime (%)
-urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107,Surging / High Growth,6,2318,44.82,55.18,2916,79.49
-urn:uidai:client:instantpay-india-limited:202606250788,Surging / High Growth,8,2030,64.43,35.57,4319,47.00
-surepass,Surging / High Growth,15,533,51.59,48.41,1244,42.85
-"urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",Surging / High Growth,21,110,61.82,38.18,170,64.71
-pathikgp,Surging / High Growth,22,99,65.66,34.34,278,35.61
-urn:uidai:client:padmasree-hotels-private-limited:202610094326,New Entrant,27,41,7.32,92.68,41,100.00
-urn:uidai:client:access-computech-limited:202610269618,New Entrant,31,32,34.38,65.63,32,100.00
-urn:uidai:client:nagaland-police:202610092803,Surging / High Growth,44,16,25.00,75.00,24,66.67
-urn:uidai:client:mahalaxmi-parivahan-private-limited:202608108563,New Entrant,48,15,13.33,86.67,15,100.00
-urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581,New Entrant,52,11,36.36,63.64,11,100.00
+"urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",Surging / High Growth,4,3708,29.67,70.33,3789,97.86
+urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107,Surging / High Growth,8,2115,43.55,56.45,2927,72.26
+surepass,Surging / High Growth,14,937,53.90,46.10,1700,55.12
+pathikgp,Surging / High Growth,21,131,71.76,28.24,316,41.46
+urn:uidai:client:codetantra-tech-solutions-private-limited:202606124082,Surging / High Growth,27,61,59.02,40.98,165,36.97
+urn:uidai:client:alynn-technologies-private-limited:202610262068,New Entrant,28,55,23.64,76.36,55,100.00
+urn:uidai:client:padmasree-hotels-private-limited:202610094326,New Entrant,30,42,7.14,92.86,42,100.00
+urn:uidai:client:nagaland-police:202610092803,Surging / High Growth,35,27,40.74,59.26,35,77.14
+urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581,New Entrant,36,27,74.07,25.93,27,100.00
+cgg,New Entrant,44,17,23.53,76.47,17,100.00
+urn:uidai:client:mahalaxmi-parivahan-private-limited:202608108563,New Entrant,49,15,13.33,86.67,15,100.00
+urn:uidai:client:startup-gurukul-innovation-private-limited:202610157376,New Entrant,59,8,25.00,75.00,8,100.00
+urn:uidai:client:samtechnova-private-limited:202611030176,New Entrant,62,7,28.57,71.43,7,100.00
