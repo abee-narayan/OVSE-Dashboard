@@ -1,14 +1,12 @@
 OVSE ID,Classification,Weekly Rank,Weekly Tx,Weekly Success Rate (%),Weekly Failure Rate (%),Overall Lifetime Tx,Weekly Share of Lifetime (%)
-"urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",Surging / High Growth,4,3708,29.67,70.33,3789,97.86
-urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107,Surging / High Growth,8,2115,43.55,56.45,2927,72.26
-surepass,Surging / High Growth,14,937,53.90,46.10,1700,55.12
-pathikgp,Surging / High Growth,21,131,71.76,28.24,316,41.46
-urn:uidai:client:codetantra-tech-solutions-private-limited:202606124082,Surging / High Growth,27,61,59.02,40.98,165,36.97
-urn:uidai:client:alynn-technologies-private-limited:202610262068,New Entrant,28,55,23.64,76.36,55,100.00
-urn:uidai:client:padmasree-hotels-private-limited:202610094326,New Entrant,30,42,7.14,92.86,42,100.00
-urn:uidai:client:nagaland-police:202610092803,Surging / High Growth,35,27,40.74,59.26,35,77.14
-urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581,New Entrant,36,27,74.07,25.93,27,100.00
-cgg,New Entrant,44,17,23.53,76.47,17,100.00
-urn:uidai:client:mahalaxmi-parivahan-private-limited:202608108563,New Entrant,49,15,13.33,86.67,15,100.00
-urn:uidai:client:startup-gurukul-innovation-private-limited:202610157376,New Entrant,59,8,25.00,75.00,8,100.00
-urn:uidai:client:samtechnova-private-limited:202611030176,New Entrant,62,7,28.57,71.43,7,100.00
+"urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",Surging / High Growth,3,4328,29.94,70.06,4438,97.52
+surepass,Surging / High Growth,10,1219,55.87,44.13,2181,55.89
+urn:uidai:client:alynn-technologies-private-limited:202610262068,New Entrant,25,58,27.59,72.41,58,100.00
+urn:uidai:client:sahana-system-limited:202610095399,Surging / High Growth,29,46,2.17,97.83,49,93.88
+urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581,New Entrant,32,37,78.38,21.62,37,100.00
+vibex,Surging / High Growth,38,23,13.04,86.96,30,76.67
+cgg,New Entrant,39,21,38.10,61.90,21,100.00
+urn:uidai:client:samtechnova-private-limited:202611030176,New Entrant,40,19,68.42,31.58,19,100.00
+urn:uidai:client:nagaland-police:202610092803,Surging / High Growth,42,14,50.00,50.00,38,36.84
+urn:uidai:client:rurtech-for-arayans-llp:202611039670,New Entrant,52,9,100.00,0.00,9,100.00
+urn:uidai:client:startup-gurukul-innovation-private-limited:202610157376,New Entrant,54,8,25.00,75.00,8,100.00
