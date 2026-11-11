@@ -1,106 +1,104 @@
 OVSE ID,Status / Category,Weekly Rank,Weekly Total Tx,Weekly Success Tx,Weekly Failure Tx,Weekly Success Rate (%),Weekly Failure Rate (%),Overall Rank,Overall Total Tx,Overall Success Tx,Overall Failure Tx,Overall Success Rate (%),Overall Failure Rate (%),Weekly Volume Share of All-Time (%)
-SelectiveShare,Standard,1,104312,104297,15,99.99,0.01,1,3059322,3059021,301,99.99,0.01,3.41
-urbancompany,Standard,2,8029,4420,3609,55.05,44.95,4,299806,174701,125105,58.27,41.73,2.68
-"urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",Surging / High Growth,3,4328,1296,3032,29.94,70.06,19,4438,1349,3089,30.40,69.60,97.52
-protean,Standard,4,3696,3568,128,96.54,3.46,11,22781,21165,1616,92.91,7.09,16.22
-dexit,Standard,5,3491,1967,1524,56.34,43.66,14,14752,7905,6847,53.59,46.41,23.66
-gridlines,Standard,6,1962,1024,938,52.19,47.81,5,56668,30592,26076,53.98,46.02,3.46
-urn:uidai:client:instantpay-india-limited:202606250788,Standard,7,1608,1026,582,63.81,36.19,17,5542,3641,1901,65.70,34.30,29.01
-urn:uidai:client:life-insurance-corporation-of-india:202606036260,Standard,8,1538,924,614,60.08,39.92,12,21761,11398,10363,52.38,47.62,7.07
-tnmc,Standard,9,1358,1050,308,77.32,22.68,6,56578,39645,16933,70.07,29.93,2.40
-surepass,Surging / High Growth,10,1219,681,538,55.87,44.13,25,2181,1283,898,58.83,41.17,55.89
-procam,Standard,11,1085,774,311,71.34,28.66,7,49318,36731,12587,74.48,25.52,2.20
-arattai,Standard,12,952,590,362,61.97,38.03,8,33738,23097,10641,68.46,31.54,2.82
-trustt,Standard,13,729,541,188,74.21,25.79,15,12494,8107,4387,64.89,35.11,5.83
-urn:uidai:client:punjab-school-educationboard:202608274954,Standard,14,525,259,266,49.33,50.67,22,3090,1500,1590,48.54,51.46,16.99
-urn:uidai:client:hindon-mercantile-limited:202608105382,Standard,15,410,245,165,59.76,40.24,20,3800,2030,1770,53.42,46.58,10.79
-urn:uidai:client:inferalgo-private-limited:202607177737,Standard,16,362,236,126,65.19,34.81,10,24427,13745,10682,56.27,43.73,1.48
-(Blank / Unknown),Standard,17,265,3,262,1.13,98.87,9,25920,13929,11991,53.74,46.26,1.02
-000,Standard,18,188,88,100,46.81,53.19,3,1219930,1218721,1209,99.90,0.10,0.02
-urn:uidai:client:dc-office-tawang:202606230797,Standard,19,147,102,45,69.39,30.61,26,2128,1357,771,63.77,36.23,6.91
-transaction_analysts,Standard,20,139,115,24,82.73,17.27,35,520,410,110,78.85,21.15,26.73
-vsign,Standard,21,130,113,17,86.92,13.08,31,640,427,213,66.72,33.28,20.31
-tspolice,Standard,22,113,53,60,46.90,53.10,2,2248555,645173,1603382,28.69,71.31,0.01
-truscholar,Standard,23,92,82,10,89.13,10.87,18,5248,4252,996,81.02,18.98,1.75
-pathikgp,Standard,24,76,53,23,69.74,30.26,45,316,228,88,72.15,27.85,24.05
-urn:uidai:client:alynn-technologies-private-limited:202610262068,New Entrant,25,58,16,42,27.59,72.41,102,58,16,42,27.59,72.41,100.00
-urn:uidai:client:directorate-of-land-records:202607304388,Standard,26,49,19,30,38.78,61.22,62,176,69,107,39.20,60.80,27.84
-cisf,Standard,27,48,25,23,52.08,47.92,16,6499,2770,3729,42.62,57.38,0.74
-evaluit,Standard,28,48,37,11,77.08,22.92,51,246,171,75,69.51,30.49,19.51
-urn:uidai:client:sahana-system-limited:202610095399,Surging / High Growth,29,46,1,45,2.17,97.83,109,49,1,48,2.04,97.96,93.88
-trackwizz,Standard,30,39,21,18,53.85,46.15,21,3104,1740,1364,56.06,43.94,1.26
-urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107,Standard,31,37,13,24,35.14,64.86,24,2934,1214,1720,41.38,58.62,1.26
-urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581,New Entrant,32,37,29,8,78.38,21.62,122,37,29,8,78.38,21.62,100.00
-urn:uidai:client:qboid-iotech-private-limited:202606172076,Standard,33,36,20,16,55.56,44.44,76,123,86,37,69.92,30.08,29.27
-ooru_digital,Standard,34,34,22,12,64.71,35.29,23,3044,2397,647,78.75,21.25,1.12
-urn:uidai:client:codetantra-tech-solutions-private-limited:202606124082,Standard,35,33,23,10,69.70,30.30,63,165,96,69,58.18,41.82,20.00
-urn:uidai:client:aparampaar-finance-private-limited:202605134450,Standard,36,28,17,11,60.71,39.29,43,355,215,140,60.56,39.44,7.89
-pratiraksha,Standard,37,27,26,1,96.30,3.70,64,164,114,50,69.51,30.49,16.46
-vibex,Surging / High Growth,38,23,3,20,13.04,86.96,134,30,3,27,10.00,90.00,76.67
-cgg,New Entrant,39,21,8,13,38.10,61.90,147,21,8,13,38.10,61.90,100.00
-urn:uidai:client:samtechnova-private-limited:202611030176,New Entrant,40,19,13,6,68.42,31.58,151,19,13,6,68.42,31.58,100.00
-apiclub,Standard,41,18,8,10,44.44,55.56,69,157,81,76,51.59,48.41,11.46
-urn:uidai:client:nagaland-police:202610092803,Surging / High Growth,42,14,7,7,50.00,50.00,119,38,18,20,47.37,52.63,36.84
-entityiq,Standard,43,13,7,6,53.85,46.15,27,1208,948,260,78.48,21.52,1.08
-urn:uidai:client:ummeed-housing-finance-private-limited:202609177828,Standard,45,12,11,1,91.67,8.33,48,282,147,135,52.13,47.87,4.26
-urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049,Standard,46,12,6,6,50.00,50.00,80,106,45,61,42.45,57.55,11.32
-oneStack,Standard,44,12,11,1,91.67,8.33,91,84,28,56,33.33,66.67,14.29
-urn:uidai:client:oryggi-technologies-private-limited:202607288031,Standard,48,11,11,0,100.00,0.00,36,504,368,136,73.02,26.98,2.18
-novelpatterns,Standard,49,11,11,0,100.00,0.00,55,215,105,110,48.84,51.16,5.12
-AF88835766,Inactive This Week,47,11,0,11,0.00,100.00,171,13,0,13,0.00,100.00,84.62
-perfios,Standard,51,10,5,5,50.00,50.00,34,572,393,179,68.71,31.29,1.75
-"urn:uidai:client:special-branch,-bihar-police:202610163901",Inactive This Week,50,10,0,10,0.00,100.00,173,12,0,12,0.00,100.00,83.33
-urn:uidai:client:rurtech-for-arayans-llp:202611039670,New Entrant,52,9,9,0,100.00,0.00,187,9,9,0,100.00,0.00,100.00
-urn:uidai:client:utkarsh-khare:202610265264,Inactive This Week,53,8,0,8,0.00,100.00,155,16,0,16,0.00,100.00,50.00
-urn:uidai:client:startup-gurukul-innovation-private-limited:202610157376,New Entrant,54,8,2,6,25.00,75.00,191,8,2,6,25.00,75.00,100.00
-urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023,Standard,56,7,3,4,42.86,57.14,46,309,174,135,56.31,43.69,2.27
-urn:uidai:client:greenpark-hotels-and-resorts-limited:202606248233,Standard,55,7,5,2,71.43,28.57,120,37,21,16,56.76,43.24,18.92
-urn:uidai:client:chandigarh-housing-board:202609023966,Standard,58,6,6,0,100.00,0.00,40,404,97,307,24.01,75.99,1.49
-urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888,Inactive This Week,57,6,0,6,0.00,100.00,125,36,0,36,0.00,100.00,16.67
-urn:uidai:client:commissioner-esd-meeseva-telangana:202609174748,Standard,59,5,5,0,100.00,0.00,98,62,10,52,16.13,83.87,8.06
-mantra,Standard,61,4,2,2,50.00,50.00,33,613,505,108,82.38,17.62,0.65
-digio,Standard,62,4,2,2,50.00,50.00,42,369,246,123,66.67,33.33,1.08
-baldortpl,Standard,60,4,4,0,100.00,0.00,59,191,98,93,51.31,48.69,2.09
-urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774,Standard,63,3,3,0,100.00,0.00,29,855,553,302,64.68,35.32,0.35
-fastkyc,Standard,68,3,3,0,100.00,0.00,84,97,30,67,30.93,69.07,3.09
-urn:uidai:client:seed-data-systems:202606048001,Standard,67,3,3,0,100.00,0.00,94,70,40,30,57.14,42.86,4.29
-urn:uidai:client:dhanrise-finance-private-limited:202609176227,Standard,66,3,3,0,100.00,0.00,96,69,25,44,36.23,63.77,4.35
-urn:uidai:client:padmasree-hotels-private-limited:202610094326,Inactive This Week,69,3,0,3,0.00,100.00,115,42,3,39,7.14,92.86,7.14
-urn:uidai:client:access-computech-limited:202610269618,Standard,64,3,3,0,100.00,0.00,127,35,14,21,40.00,60.00,8.57
-urn:uidai:client:mahalaxmi-parivahan-private-limited:202608108563,Standard,65,3,2,1,66.67,33.33,160,15,2,13,13.33,86.67,20.00
-evolvecortex,Standard,71,2,2,0,100.00,0.00,75,126,78,48,61.90,38.10,1.59
-urn:uidai:client:earnest-data-analytics-private-limited:202609247533,Standard,72,2,2,0,100.00,0.00,138,28,19,9,67.86,32.14,7.14
-hi,Inactive This Week,70,2,0,2,0.00,100.00,205,5,0,5,0.00,100.00,40.00
-decentro,Standard,78,1,1,0,100.00,0.00,54,222,64,158,28.83,71.17,0.45
-urn:uidai:client:seculogix-innovations-private-limited:202606121537,Standard,79,1,1,0,100.00,0.00,77,123,111,12,90.24,9.76,0.81
-veriguard,Standard,76,1,1,0,100.00,0.00,114,44,33,11,75.00,25.00,2.27
-sedax,Standard,77,1,1,0,100.00,0.00,141,24,6,18,25.00,75.00,4.17
-TESTAC,Inactive This Week,73,1,0,1,0.00,100.00,265,1,0,1,0.00,100.00,100.00
-urn:uidai:client:local:ovse-qr-portal,Inactive This Week,74,1,0,1,0.00,100.00,266,1,0,1,0.00,100.00,100.00
-SIMULATOR,Inactive This Week,75,1,0,1,0.00,100.00,267,1,0,1,0.00,100.00,100.00
+SelectiveShare,Standard,1,92354,92327,27,99.97,0.03,1,3085678,3085365,313,99.99,0.01,2.99
+urbancompany,Standard,2,4808,2715,2093,56.47,43.53,4,301463,175597,125866,58.25,41.75,1.59
+protean,Standard,3,3418,3316,102,97.02,2.98,11,23837,22195,1642,93.11,6.89,14.34
+dexit,Standard,4,3318,1824,1494,54.97,45.03,14,15651,8366,7285,53.45,46.55,21.20
+"urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",Surging / High Growth,5,2095,663,1432,31.65,68.35,19,4588,1410,3178,30.73,69.27,45.66
+gridlines,Standard,6,1628,877,751,53.87,46.13,5,57191,30893,26298,54.02,45.98,2.85
+urn:uidai:client:instantpay-india-limited:202606250788,Standard,7,1506,990,516,65.74,34.26,17,5961,3943,2018,66.15,33.85,25.26
+urn:uidai:client:life-insurance-corporation-of-india:202606036260,Standard,8,1383,774,609,55.97,44.03,12,22142,11590,10552,52.34,47.66,6.25
+tnmc,Standard,9,1247,928,319,74.42,25.58,6,56984,39935,17049,70.08,29.92,2.19
+arattai,Standard,10,961,605,356,62.96,37.04,8,34009,23271,10738,68.43,31.57,2.83
+procam,Standard,11,914,624,290,68.27,31.73,7,49563,36887,12676,74.42,25.58,1.84
+surepass,Surging / High Growth,12,794,463,331,58.31,41.69,25,2210,1293,917,58.51,41.49,35.93
+trustt,Standard,13,362,251,111,69.34,30.66,15,12572,8145,4427,64.79,35.21,2.88
+urn:uidai:client:hindon-mercantile-limited:202608105382,Standard,14,337,215,122,63.80,36.20,20,3892,2086,1806,53.60,46.40,8.66
+urn:uidai:client:punjab-school-educationboard:202608274954,Standard,15,336,176,160,52.38,47.62,21,3182,1546,1636,48.59,51.41,10.56
+urn:uidai:client:inferalgo-private-limited:202607177737,Standard,16,270,171,99,63.33,36.67,10,24490,13780,10710,56.27,43.73,1.10
+(Blank / Unknown),Standard,17,201,3,198,1.49,98.51,9,26002,13929,12073,53.57,46.43,0.77
+000,Standard,18,188,88,100,46.81,53.19,3,1219960,1218746,1214,99.90,0.10,0.02
+urn:uidai:client:dc-office-tawang:202606230797,Standard,19,147,92,55,62.59,37.41,26,2173,1383,790,63.64,36.36,6.76
+transaction_analysts,Standard,20,128,110,18,85.94,14.06,35,548,437,111,79.74,20.26,23.36
+tspolice,Standard,21,77,35,42,45.45,54.55,2,2248569,645179,1603390,28.69,71.31,0.00
+truscholar,Standard,22,77,68,9,88.31,11.69,18,5269,4266,1003,80.96,19.04,1.46
+ooru_digital,Standard,23,65,33,32,50.77,49.23,23,3089,2418,671,78.28,21.72,2.10
+vsign,Standard,24,54,43,11,79.63,20.37,31,640,427,213,66.72,33.28,8.44
+urn:uidai:client:directorate-of-land-records:202607304388,Standard,25,39,15,24,38.46,61.54,62,180,69,111,38.33,61.67,21.67
+trackwizz,Standard,26,37,19,18,51.35,48.65,22,3110,1746,1364,56.14,43.86,1.19
+urn:uidai:client:samtechnova-private-limited:202611030176,New Entrant,27,36,20,16,55.56,44.44,128,36,20,16,55.56,44.44,100.00
+urn:uidai:client:alynn-technologies-private-limited:202610262068,Surging / High Growth,28,35,12,23,34.29,65.71,102,58,16,42,27.59,72.41,60.34
+evaluit,Standard,29,34,30,4,88.24,11.76,50,251,176,75,70.12,29.88,13.55
+urn:uidai:client:sahana-system-limited:202610095399,Surging / High Growth,30,30,1,29,3.33,96.67,109,49,1,48,2.04,97.96,61.22
+apiclub,Standard,31,29,13,16,44.83,55.17,63,170,88,82,51.76,48.24,17.06
+cgg,New Entrant,32,25,8,17,32.00,68.00,142,25,8,17,32.00,68.00,100.00
+urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107,Standard,33,24,10,14,41.67,58.33,24,2943,1216,1727,41.32,58.68,0.82
+vibex,Surging / High Growth,34,23,3,20,13.04,86.96,135,30,3,27,10.00,90.00,76.67
+pathikgp,Standard,35,22,21,1,95.45,4.55,45,316,228,88,72.15,27.85,6.96
+urn:uidai:client:qboid-iotech-private-limited:202606172076,Standard,36,20,6,14,30.00,70.00,77,123,86,37,69.92,30.08,16.26
+urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581,Surging / High Growth,37,20,19,1,95.00,5.00,124,37,29,8,78.38,21.62,54.05
+urn:uidai:client:aparampaar-finance-private-limited:202605134450,Standard,39,17,12,5,70.59,29.41,43,357,217,140,60.78,39.22,4.76
+novelpatterns,Standard,38,17,17,0,100.00,0.00,52,228,118,110,51.75,48.25,7.46
+entityiq,Standard,40,15,6,9,40.00,60.00,27,1213,950,263,78.32,21.68,1.24
+pratiraksha,Standard,41,14,14,0,100.00,0.00,65,164,114,50,69.51,30.49,8.54
+urn:uidai:client:bses-rajdhani-power-limited:202609164125,Standard,43,12,12,0,100.00,0.00,94,72,54,18,75.00,25.00,16.67
+urn:uidai:client:payinstacard-private-limited:202610269296,Inactive This Week,42,12,0,12,0.00,100.00,175,12,0,12,0.00,100.00,100.00
+urn:uidai:client:finanalyz-technologies-private-limited:202606306133,Standard,44,11,4,7,36.36,63.64,81,104,12,92,11.54,88.46,10.58
+"urn:uidai:client:special-branch,-bihar-police:202610163901",Inactive This Week,45,10,0,10,0.00,100.00,174,12,0,12,0.00,100.00,83.33
+perfios,Standard,47,9,4,5,44.44,55.56,34,574,393,181,68.47,31.53,1.57
+urn:uidai:client:ummeed-housing-finance-private-limited:202609177828,Standard,46,9,8,1,88.89,11.11,48,283,148,135,52.30,47.70,3.18
+urn:uidai:client:rurtech-for-arayans-llp:202611039670,New Entrant,48,9,9,0,100.00,0.00,189,9,9,0,100.00,0.00,100.00
+urn:uidai:client:nagaland-police:202610092803,Standard,51,7,4,3,57.14,42.86,121,38,18,20,47.37,52.63,18.42
+urn:uidai:client:greenpark-hotels-and-resorts-limited:202606248233,Standard,50,7,5,2,71.43,28.57,122,37,21,16,56.76,43.24,18.92
+urn:uidai:client:startup-gurukul-innovation-private-limited:202610157376,Standard,49,7,2,5,28.57,71.43,192,8,2,6,25.00,75.00,87.50
+urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023,Standard,52,6,2,4,33.33,66.67,46,309,174,135,56.31,43.69,1.94
+cisf,Standard,53,4,3,1,75.00,25.00,16,6499,2770,3729,42.62,57.38,0.06
+urn:uidai:client:chandigarh-housing-board:202609023966,Standard,56,4,4,0,100.00,0.00,40,404,97,307,24.01,75.99,0.99
+baldortpl,Standard,55,4,4,0,100.00,0.00,59,191,98,93,51.31,48.69,2.09
+AF88835766,Inactive This Week,54,4,0,4,0.00,100.00,171,13,0,13,0.00,100.00,30.77
+urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049,Standard,59,3,3,0,100.00,0.00,80,108,47,61,43.52,56.48,2.78
+fastkyc,Standard,58,3,3,0,100.00,0.00,86,97,30,67,30.93,69.07,3.09
+urn:uidai:client:seed-data-systems:202606048001,Standard,57,3,3,0,100.00,0.00,95,70,40,30,57.14,42.86,4.29
+urn:uidai:client:doklink-services-private-limited:202609249932,Standard,60,3,1,2,33.33,66.67,118,40,32,8,80.00,20.00,7.50
+evolvecortex,Standard,62,2,2,0,100.00,0.00,75,126,78,48,61.90,38.10,1.59
+urn:uidai:client:access-computech-limited:202610269618,Standard,63,2,2,0,100.00,0.00,123,37,16,21,43.24,56.76,5.41
+hi,Inactive This Week,61,2,0,2,0.00,100.00,207,5,0,5,0.00,100.00,40.00
+decentro,Standard,68,1,1,0,100.00,0.00,54,222,64,158,28.83,71.17,0.45
+sandboxuidai,Standard,73,1,1,0,100.00,0.00,58,198,117,81,59.09,40.91,0.51
+urn:uidai:client:seculogix-innovations-private-limited:202606121537,Standard,70,1,1,0,100.00,0.00,76,123,111,12,90.24,9.76,0.81
+oneStack,Standard,65,1,1,0,100.00,0.00,91,84,28,56,33.33,66.67,1.19
+veriguard,Standard,66,1,1,0,100.00,0.00,112,44,33,11,75.00,25.00,2.27
+urn:uidai:client:padmasree-hotels-private-limited:202610094326,Inactive This Week,72,1,0,1,0.00,100.00,115,43,3,40,6.98,93.02,2.33
+urn:uidai:client:prabodh-technologies-llp:202610158333,Standard,71,1,1,0,100.00,0.00,120,38,21,17,55.26,44.74,2.63
+urn:uidai:client:earnest-data-analytics-private-limited:202609247533,Standard,69,1,1,0,100.00,0.00,139,28,19,9,67.86,32.14,3.57
+sedax,Standard,67,1,1,0,100.00,0.00,143,24,6,18,25.00,75.00,4.17
+SIMULATOR,Inactive This Week,64,1,0,1,0.00,100.00,268,1,0,1,0.00,100.00,100.00
 0,Inactive This Week,N/A,0,0,0,0.00,0.00,13,16671,5032,11639,30.18,69.82,0.00
 rjil,Inactive This Week,N/A,0,0,0,0.00,0.00,28,895,780,115,87.15,12.85,0.00
+urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774,Inactive This Week,N/A,0,0,0,0.00,0.00,29,855,553,302,64.68,35.32,0.00
 dreamcast,Inactive This Week,N/A,0,0,0,0.00,0.00,30,854,624,230,73.07,26.93,0.00
 signzytech,Inactive This Week,N/A,0,0,0,0.00,0.00,32,632,258,374,40.82,59.18,0.00
+mantra,Inactive This Week,N/A,0,0,0,0.00,0.00,33,613,505,108,82.38,17.62,0.00
+urn:uidai:client:oryggi-technologies-private-limited:202607288031,Inactive This Week,N/A,0,0,0,0.00,0.00,36,504,368,136,73.02,26.98,0.00
 frslabs,Inactive This Week,N/A,0,0,0,0.00,0.00,37,448,273,175,60.94,39.06,0.00
 eastcs,Inactive This Week,N/A,0,0,0,0.00,0.00,38,424,273,151,64.39,35.61,0.00
 ayanworks,Inactive This Week,N/A,0,0,0,0.00,0.00,39,423,268,155,63.36,36.64,0.00
 bel,Inactive This Week,N/A,0,0,0,0.00,0.00,41,385,291,94,75.58,24.42,0.00
+digio,Inactive This Week,N/A,0,0,0,0.00,0.00,42,369,246,123,66.67,33.33,0.00
 urn:uidai:client:evolute-fintech-innovations-private-limited:202608271911,Inactive This Week,N/A,0,0,0,0.00,0.00,44,328,235,93,71.65,28.35,0.00
 digitapai,Inactive This Week,N/A,0,0,0,0.00,0.00,47,290,201,89,69.31,30.69,0.00
 urn:uidai:client:intuitive-data-solutions-private-limited:202607237962,Inactive This Week,N/A,0,0,0,0.00,0.00,49,267,142,125,53.18,46.82,0.00
-urn:uidai:client:inverix-innovations-private-limited:202607131364,Inactive This Week,N/A,0,0,0,0.00,0.00,50,250,72,178,28.80,71.20,0.00
-urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204,Inactive This Week,N/A,0,0,0,0.00,0.00,52,228,108,120,47.37,52.63,0.00
-urn:uidai:client:perigeon-software-private-limited:202606041974,Inactive This Week,N/A,0,0,0,0.00,0.00,53,222,165,57,74.32,25.68,0.00
+urn:uidai:client:inverix-innovations-private-limited:202607131364,Inactive This Week,N/A,0,0,0,0.00,0.00,51,250,72,178,28.80,71.20,0.00
+urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204,Inactive This Week,N/A,0,0,0,0.00,0.00,53,228,108,120,47.37,52.63,0.00
+urn:uidai:client:perigeon-software-private-limited:202606041974,Inactive This Week,N/A,0,0,0,0.00,0.00,55,222,165,57,74.32,25.68,0.00
 urn:uidai:client:virendrabadrinath-buildcon-enterprises-private-limited:202605131058,Inactive This Week,N/A,0,0,0,0.00,0.00,56,214,132,82,61.68,38.32,0.00
 urn:uidai:client:shri-trimbakeshwar-devasthan-trust:202607072068,Inactive This Week,N/A,0,0,0,0.00,0.00,57,213,95,118,44.60,55.40,0.00
-sandboxuidai,Inactive This Week,N/A,0,0,0,0.00,0.00,58,197,116,81,58.88,41.12,0.00
 urn:uidai:client:kolkata-police:202608142816,Inactive This Week,N/A,0,0,0,0.00,0.00,60,189,69,120,36.51,63.49,0.00
 urn:uidai:client:crystal-screening-services-private-limited:202605184362,Inactive This Week,N/A,0,0,0,0.00,0.00,61,181,54,127,29.83,70.17,0.00
-urn:uidai:client:assam-police:202606026852,Inactive This Week,N/A,0,0,0,0.00,0.00,65,161,102,59,63.35,36.65,0.00
-pinelabs,Inactive This Week,N/A,0,0,0,0.00,0.00,66,160,60,100,37.50,62.50,0.00
-sber,Inactive This Week,N/A,0,0,0,0.00,0.00,67,159,25,134,15.72,84.28,0.00
-bureauid,Inactive This Week,N/A,0,0,0,0.00,0.00,68,157,22,135,14.01,85.99,0.00
+urn:uidai:client:codetantra-tech-solutions-private-limited:202606124082,Inactive This Week,N/A,0,0,0,0.00,0.00,64,165,96,69,58.18,41.82,0.00
+urn:uidai:client:assam-police:202606026852,Inactive This Week,N/A,0,0,0,0.00,0.00,66,161,102,59,63.35,36.65,0.00
+pinelabs,Inactive This Week,N/A,0,0,0,0.00,0.00,67,160,60,100,37.50,62.50,0.00
+sber,Inactive This Week,N/A,0,0,0,0.00,0.00,68,159,25,134,15.72,84.28,0.00
+bureauid,Inactive This Week,N/A,0,0,0,0.00,0.00,69,157,22,135,14.01,85.99,0.00
 urn:uidai:client:caratred-technologies-llp:202606040096,Inactive This Week,N/A,0,0,0,0.00,0.00,70,148,106,42,71.62,28.38,0.00
 BankuIndialtd:05102026,Inactive This Week,N/A,0,0,0,0.00,0.00,71,141,9,132,6.38,93.62,0.00
 urn:uidai:client:gujarat-co-operative-milk-marketing-federation-limited:202607233586,Inactive This Week,N/A,0,0,0,0.00,0.00,72,137,0,137,0.00,100.00,0.00
@@ -108,161 +106,164 @@ bioenable,Inactive This Week,N/A,0,0,0,0.00,0.00,73,133,88,45,66.17,33.83,0.00
 dhiway,Inactive This Week,N/A,0,0,0,0.00,0.00,74,128,93,35,72.66,27.34,0.00
 secureedge,Inactive This Week,N/A,0,0,0,0.00,0.00,78,117,28,89,23.93,76.07,0.00
 urn:uidai:client:sarthak-rana:202606021191,Inactive This Week,N/A,0,0,0,0.00,0.00,79,111,76,35,68.47,31.53,0.00
-tartanhq,Inactive This Week,N/A,0,0,0,0.00,0.00,81,102,42,60,41.18,58.82,0.00
-any2paytpl,Inactive This Week,N/A,0,0,0,0.00,0.00,82,100,55,45,55.00,45.00,0.00
+tartanhq,Inactive This Week,N/A,0,0,0,0.00,0.00,82,102,42,60,41.18,58.82,0.00
 as4,Inactive This Week,N/A,0,0,0,0.00,0.00,83,100,73,27,73.00,27.00,0.00
+any2paytpl,Inactive This Week,N/A,0,0,0,0.00,0.00,84,100,55,45,55.00,45.00,0.00
 digigo,Inactive This Week,N/A,0,0,0,0.00,0.00,85,97,42,55,43.30,56.70,0.00
-signcare,Inactive This Week,N/A,0,0,0,0.00,0.00,86,94,67,27,71.28,28.72,0.00
-urn:uidai:client:finanalyz-technologies-private-limited:202606306133,Inactive This Week,N/A,0,0,0,0.00,0.00,87,93,8,85,8.60,91.40,0.00
+signcare,Inactive This Week,N/A,0,0,0,0.00,0.00,87,94,67,27,71.28,28.72,0.00
 urn:uidai:client:paynearby:08092026,Inactive This Week,N/A,0,0,0,0.00,0.00,88,91,38,53,41.76,58.24,0.00
 ainxt,Inactive This Week,N/A,0,0,0,0.00,0.00,89,85,17,68,20.00,80.00,0.00
 finahub,Inactive This Week,N/A,0,0,0,0.00,0.00,90,85,56,29,65.88,34.12,0.00
 scoreme,Inactive This Week,N/A,0,0,0,0.00,0.00,92,84,43,41,51.19,48.81,0.00
 urn:uidai:client:infoque-solution-(opc)-private-limited:202606124435,Inactive This Week,N/A,0,0,0,0.00,0.00,93,79,28,51,35.44,64.56,0.00
-diovse,Inactive This Week,N/A,0,0,0,0.00,0.00,95,69,53,16,76.81,23.19,0.00
-documint,Inactive This Week,N/A,0,0,0,0.00,0.00,97,65,64,1,98.46,1.54,0.00
-urn:uidai:client:3i-consulting-private-limited:202608031319,Inactive This Week,N/A,0,0,0,0.00,0.00,99,61,21,40,34.43,65.57,0.00
-urn:uidai:client:bses-rajdhani-power-limited:202609164125,Inactive This Week,N/A,0,0,0,0.00,0.00,100,60,42,18,70.00,30.00,0.00
+diovse,Inactive This Week,N/A,0,0,0,0.00,0.00,96,69,53,16,76.81,23.19,0.00
+urn:uidai:client:dhanrise-finance-private-limited:202609176227,Inactive This Week,N/A,0,0,0,0.00,0.00,97,69,25,44,36.23,63.77,0.00
+documint,Inactive This Week,N/A,0,0,0,0.00,0.00,98,65,64,1,98.46,1.54,0.00
+urn:uidai:client:commissioner-esd-meeseva-telangana:202609174748,Inactive This Week,N/A,0,0,0,0.00,0.00,99,62,10,52,16.13,83.87,0.00
+urn:uidai:client:3i-consulting-private-limited:202608031319,Inactive This Week,N/A,0,0,0,0.00,0.00,100,61,21,40,34.43,65.57,0.00
 idigicloud,Inactive This Week,N/A,0,0,0,0.00,0.00,101,60,30,30,50.00,50.00,0.00
 aespl,Inactive This Week,N/A,0,0,0,0.00,0.00,103,57,12,45,21.05,78.95,0.00
 kwikid,Inactive This Week,N/A,0,0,0,0.00,0.00,104,55,18,37,32.73,67.27,0.00
 urn:uidai:client:yars-enterprises-private-limited:202608051108,Inactive This Week,N/A,0,0,0,0.00,0.00,105,54,43,11,79.63,20.37,0.00
-OR67091845,Inactive This Week,N/A,0,0,0,0.00,0.00,106,53,0,53,0.00,100.00,0.00
-1a2f,Inactive This Week,N/A,0,0,0,0.00,0.00,107,53,0,53,0.00,100.00,0.00
+1a2f,Inactive This Week,N/A,0,0,0,0.00,0.00,106,53,0,53,0.00,100.00,0.00
+OR67091845,Inactive This Week,N/A,0,0,0,0.00,0.00,107,53,0,53,0.00,100.00,0.00
 ddp,Inactive This Week,N/A,0,0,0,0.00,0.00,108,51,0,51,0.00,100.00,0.00
-urn:uidai:client:accura-technolabs-private-limited:202609240826,Inactive This Week,N/A,0,0,0,0.00,0.00,110,46,19,27,41.30,58.70,0.00
-authbridge,Inactive This Week,N/A,0,0,0,0.00,0.00,111,46,22,24,47.83,52.17,0.00
-urn:uidai:client:mizoram-police:202610168520,Inactive This Week,N/A,0,0,0,0.00,0.00,112,44,19,25,43.18,56.82,0.00
+authbridge,Inactive This Week,N/A,0,0,0,0.00,0.00,110,46,22,24,47.83,52.17,0.00
+urn:uidai:client:accura-technolabs-private-limited:202609240826,Inactive This Week,N/A,0,0,0,0.00,0.00,111,46,19,27,41.30,58.70,0.00
 urn:uidai:client:atmik-bharat-industries-private-limited:202608127258,Inactive This Week,N/A,0,0,0,0.00,0.00,113,44,24,20,54.55,45.45,0.00
+urn:uidai:client:mizoram-police:202610168520,Inactive This Week,N/A,0,0,0,0.00,0.00,114,44,19,25,43.18,56.82,0.00
 urn:uidai:client:bansal-hotels-and-resorts-private-limited:202608122685,Inactive This Week,N/A,0,0,0,0.00,0.00,116,41,22,19,53.66,46.34,0.00
 urn:uidai:client:rollnumber-technologies-private-limited:202606113283,Inactive This Week,N/A,0,0,0,0.00,0.00,117,40,0,40,0.00,100.00,0.00
-urn:uidai:client:magic-bus-india-foundation:202610147311,Inactive This Week,N/A,0,0,0,0.00,0.00,118,40,24,16,60.00,40.00,0.00
-urn:uidai:client:doklink-services-private-limited:202609249932,Inactive This Week,N/A,0,0,0,0.00,0.00,121,37,31,6,83.78,16.22,0.00
-urn:uidai:client:prabodh-technologies-llp:202610158333,Inactive This Week,N/A,0,0,0,0.00,0.00,123,37,20,17,54.05,45.95,0.00
-nict,Inactive This Week,N/A,0,0,0,0.00,0.00,124,36,16,20,44.44,55.56,0.00
+urn:uidai:client:magic-bus-india-foundation:202610147311,Inactive This Week,N/A,0,0,0,0.00,0.00,119,40,24,16,60.00,40.00,0.00
+nict,Inactive This Week,N/A,0,0,0,0.00,0.00,125,36,16,20,44.44,55.56,0.00
 realtimebiometrics,Inactive This Week,N/A,0,0,0,0.00,0.00,126,36,16,20,44.44,55.56,0.00
-vexil,Inactive This Week,N/A,0,0,0,0.00,0.00,128,35,3,32,8.57,91.43,0.00
-urn:uidai:client:nxfin-technologies-private-limited:202608186786,Inactive This Week,N/A,0,0,0,0.00,0.00,129,35,24,11,68.57,31.43,0.00
-urn:uidai:client:wml-it-solutions-private-limited:202609246367,Inactive This Week,N/A,0,0,0,0.00,0.00,130,33,15,18,45.45,54.55,0.00
-ebitaus,Inactive This Week,N/A,0,0,0,0.00,0.00,131,32,0,32,0.00,100.00,0.00
-bfhl,Inactive This Week,N/A,0,0,0,0.00,0.00,132,32,23,9,71.88,28.13,0.00
-urn:uidai:client:naatchaal-(opc)-private-limited:202607289115,Inactive This Week,N/A,0,0,0,0.00,0.00,133,31,1,30,3.23,96.77,0.00
-urn:uidai:client:u-turn:202605143353,Inactive This Week,N/A,0,0,0,0.00,0.00,135,30,4,26,13.33,86.67,0.00
-urn:uidai:client:sashastra-seema-bal:202606103721,Inactive This Week,N/A,0,0,0,0.00,0.00,136,30,26,4,86.67,13.33,0.00
+urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888,Inactive This Week,N/A,0,0,0,0.00,0.00,127,36,0,36,0.00,100.00,0.00
+vexil,Inactive This Week,N/A,0,0,0,0.00,0.00,129,35,3,32,8.57,91.43,0.00
+urn:uidai:client:nxfin-technologies-private-limited:202608186786,Inactive This Week,N/A,0,0,0,0.00,0.00,130,35,24,11,68.57,31.43,0.00
+urn:uidai:client:wml-it-solutions-private-limited:202609246367,Inactive This Week,N/A,0,0,0,0.00,0.00,131,33,15,18,45.45,54.55,0.00
+ebitaus,Inactive This Week,N/A,0,0,0,0.00,0.00,132,32,0,32,0.00,100.00,0.00
+bfhl,Inactive This Week,N/A,0,0,0,0.00,0.00,133,32,23,9,71.88,28.13,0.00
+urn:uidai:client:naatchaal-(opc)-private-limited:202607289115,Inactive This Week,N/A,0,0,0,0.00,0.00,134,31,1,30,3.23,96.77,0.00
+urn:uidai:client:u-turn:202605143353,Inactive This Week,N/A,0,0,0,0.00,0.00,136,30,4,26,13.33,86.67,0.00
 urn:uidai:client:kiauth-digitech-private-limited:202608274002,Inactive This Week,N/A,0,0,0,0.00,0.00,137,30,13,17,43.33,56.67,0.00
-urn:uidai:client:rmso-services-private-limited:202605187324,Inactive This Week,N/A,0,0,0,0.00,0.00,139,27,0,27,0.00,100.00,0.00
-urn:uidai:client:tadoba-andhari-tiger-reserve-conservation-foundation:202606125139,Inactive This Week,N/A,0,0,0,0.00,0.00,140,27,0,27,0.00,100.00,0.00
-urn:uidai:client:miscot-systems-private-limited:202608031067,Inactive This Week,N/A,0,0,0,0.00,0.00,142,24,5,19,20.83,79.17,0.00
-urn:uidai:client:internet-and-mobile-association-of-india:202608053256,Inactive This Week,N/A,0,0,0,0.00,0.00,143,24,19,5,79.17,20.83,0.00
-ltfs,Inactive This Week,N/A,0,0,0,0.00,0.00,144,23,2,21,8.70,91.30,0.00
-urn:uidai:client:travdigi-(opc)-private-limited:202609039462,Inactive This Week,N/A,0,0,0,0.00,0.00,145,22,12,10,54.55,45.45,0.00
-urn:uidai:client:mist-it-services-private-limited:202607236224,Inactive This Week,N/A,0,0,0,0.00,0.00,146,21,7,14,33.33,66.67,0.00
-AF87538431,Inactive This Week,N/A,0,0,0,0.00,0.00,148,19,0,19,0.00,100.00,0.00
-urn:uidai:client:authzen-intelligence-private-limited:202606041024,Inactive This Week,N/A,0,0,0,0.00,0.00,149,19,16,3,84.21,15.79,0.00
-AF73081876,Inactive This Week,N/A,0,0,0,0.00,0.00,150,19,0,19,0.00,100.00,0.00
-maxhealthcare,Inactive This Week,N/A,0,0,0,0.00,0.00,152,19,11,8,57.89,42.11,0.00
+urn:uidai:client:sashastra-seema-bal:202606103721,Inactive This Week,N/A,0,0,0,0.00,0.00,138,30,26,4,86.67,13.33,0.00
+urn:uidai:client:rmso-services-private-limited:202605187324,Inactive This Week,N/A,0,0,0,0.00,0.00,140,27,0,27,0.00,100.00,0.00
+urn:uidai:client:tadoba-andhari-tiger-reserve-conservation-foundation:202606125139,Inactive This Week,N/A,0,0,0,0.00,0.00,141,27,0,27,0.00,100.00,0.00
+urn:uidai:client:internet-and-mobile-association-of-india:202608053256,Inactive This Week,N/A,0,0,0,0.00,0.00,144,24,19,5,79.17,20.83,0.00
+urn:uidai:client:miscot-systems-private-limited:202608031067,Inactive This Week,N/A,0,0,0,0.00,0.00,145,24,5,19,20.83,79.17,0.00
+ltfs,Inactive This Week,N/A,0,0,0,0.00,0.00,146,23,2,21,8.70,91.30,0.00
+urn:uidai:client:travdigi-(opc)-private-limited:202609039462,Inactive This Week,N/A,0,0,0,0.00,0.00,147,22,12,10,54.55,45.45,0.00
+urn:uidai:client:mist-it-services-private-limited:202607236224,Inactive This Week,N/A,0,0,0,0.00,0.00,148,21,7,14,33.33,66.67,0.00
+maxhealthcare,Inactive This Week,N/A,0,0,0,0.00,0.00,149,19,11,8,57.89,42.11,0.00
+AF87538431,Inactive This Week,N/A,0,0,0,0.00,0.00,150,19,0,19,0.00,100.00,0.00
+AF73081876,Inactive This Week,N/A,0,0,0,0.00,0.00,151,19,0,19,0.00,100.00,0.00
+urn:uidai:client:authzen-intelligence-private-limited:202606041024,Inactive This Week,N/A,0,0,0,0.00,0.00,152,19,16,3,84.21,15.79,0.00
 OR74531879,Inactive This Week,N/A,0,0,0,0.00,0.00,153,18,0,18,0.00,100.00,0.00
 urn:uidai:client:zongovita-tech-private-limited:202605220440,Inactive This Week,N/A,0,0,0,0.00,0.00,154,17,0,17,0.00,100.00,0.00
-navadhan,Inactive This Week,N/A,0,0,0,0.00,0.00,156,16,0,16,0.00,100.00,0.00
+navadhan,Inactive This Week,N/A,0,0,0,0.00,0.00,155,16,0,16,0.00,100.00,0.00
+golucky,Inactive This Week,N/A,0,0,0,0.00,0.00,156,16,14,2,87.50,12.50,0.00
 AF98028480,Inactive This Week,N/A,0,0,0,0.00,0.00,157,16,0,16,0.00,100.00,0.00
-golucky,Inactive This Week,N/A,0,0,0,0.00,0.00,158,16,14,2,87.50,12.50,0.00
+urn:uidai:client:utkarsh-khare:202610265264,Inactive This Week,N/A,0,0,0,0.00,0.00,158,16,0,16,0.00,100.00,0.00
 202606041974,Inactive This Week,N/A,0,0,0,0.00,0.00,159,15,0,15,0.00,100.00,0.00
+public,Inactive This Week,N/A,0,0,0,0.00,0.00,160,15,0,15,0.00,100.00,0.00
 202609036112,Inactive This Week,N/A,0,0,0,0.00,0.00,161,15,0,15,0.00,100.00,0.00
-public,Inactive This Week,N/A,0,0,0,0.00,0.00,162,15,0,15,0.00,100.00,0.00
-AR74531879,Inactive This Week,N/A,0,0,0,0.00,0.00,163,14,0,14,0.00,100.00,0.00
-AF74531879,Inactive This Week,N/A,0,0,0,0.00,0.00,164,14,0,14,0.00,100.00,0.00
-urn:uidai:client:state-crime-records-bureau:202609141512,Inactive This Week,N/A,0,0,0,0.00,0.00,165,14,0,14,0.00,100.00,0.00
-202609177828,Inactive This Week,N/A,0,0,0,0.00,0.00,166,14,0,14,0.00,100.00,0.00
-AF30151403,Inactive This Week,N/A,0,0,0,0.00,0.00,167,14,0,14,0.00,100.00,0.00
-urn:uidai:client:uidai:202603304905,Inactive This Week,N/A,0,0,0,0.00,0.00,168,14,0,14,0.00,100.00,0.00
-isolve,Inactive This Week,N/A,0,0,0,0.00,0.00,169,14,11,3,78.57,21.43,0.00
+urn:uidai:client:mahalaxmi-parivahan-private-limited:202608108563,Inactive This Week,N/A,0,0,0,0.00,0.00,162,15,2,13,13.33,86.67,0.00
+urn:uidai:client:uidai:202603304905,Inactive This Week,N/A,0,0,0,0.00,0.00,163,14,0,14,0.00,100.00,0.00
+AF30151403,Inactive This Week,N/A,0,0,0,0.00,0.00,164,14,0,14,0.00,100.00,0.00
+AF74531879,Inactive This Week,N/A,0,0,0,0.00,0.00,165,14,0,14,0.00,100.00,0.00
+isolve,Inactive This Week,N/A,0,0,0,0.00,0.00,166,14,11,3,78.57,21.43,0.00
+AR74531879,Inactive This Week,N/A,0,0,0,0.00,0.00,167,14,0,14,0.00,100.00,0.00
+202609177828,Inactive This Week,N/A,0,0,0,0.00,0.00,168,14,0,14,0.00,100.00,0.00
+urn:uidai:client:state-crime-records-bureau:202609141512,Inactive This Week,N/A,0,0,0,0.00,0.00,169,14,0,14,0.00,100.00,0.00
 DEMO-CLIENT,Inactive This Week,N/A,0,0,0,0.00,0.00,170,13,0,13,0.00,100.00,0.00
 urn:uidai:client:flix-solutions-private-limited:202608140865,Inactive This Week,N/A,0,0,0,0.00,0.00,172,12,0,12,0.00,100.00,0.00
-urn:uidai:client:intellilabs-techno-solutions-private-limited:202610019646,Inactive This Week,N/A,0,0,0,0.00,0.00,174,12,0,12,0.00,100.00,0.00
-urn:uidai:client:biometrik-systems-private-limited:202608124806,Inactive This Week,N/A,0,0,0,0.00,0.00,175,11,0,11,0.00,100.00,0.00
-seculogix,Inactive This Week,N/A,0,0,0,0.00,0.00,176,11,0,11,0.00,100.00,0.00
-urn:uidai:client:fr8-india-private-limited:202609177281,Inactive This Week,N/A,0,0,0,0.00,0.00,177,11,7,4,63.64,36.36,0.00
-avigma,Inactive This Week,N/A,0,0,0,0.00,0.00,178,11,1,10,9.09,90.91,0.00
-urn:uidai:client:swastik-enterprises:202610153599,Inactive This Week,N/A,0,0,0,0.00,0.00,179,10,0,10,0.00,100.00,0.00
-719436497430,Inactive This Week,N/A,0,0,0,0.00,0.00,180,10,0,10,0.00,100.00,0.00
+urn:uidai:client:intellilabs-techno-solutions-private-limited:202610019646,Inactive This Week,N/A,0,0,0,0.00,0.00,173,12,0,12,0.00,100.00,0.00
+avigma,Inactive This Week,N/A,0,0,0,0.00,0.00,176,11,1,10,9.09,90.91,0.00
+seculogix,Inactive This Week,N/A,0,0,0,0.00,0.00,177,11,0,11,0.00,100.00,0.00
+urn:uidai:client:biometrik-systems-private-limited:202608124806,Inactive This Week,N/A,0,0,0,0.00,0.00,178,11,0,11,0.00,100.00,0.00
+urn:uidai:client:fr8-india-private-limited:202609177281,Inactive This Week,N/A,0,0,0,0.00,0.00,179,11,7,4,63.64,36.36,0.00
+makspay,Inactive This Week,N/A,0,0,0,0.00,0.00,180,10,6,4,60.00,40.00,0.00
 urn:uidai:client:neeyamo-enterprise-solutions-private-limited:202608036512,Inactive This Week,N/A,0,0,0,0.00,0.00,181,10,2,8,20.00,80.00,0.00
-makspay,Inactive This Week,N/A,0,0,0,0.00,0.00,182,10,6,4,60.00,40.00,0.00
-202608105382,Inactive This Week,N/A,0,0,0,0.00,0.00,183,9,0,9,0.00,100.00,0.00
-urn:uidai:client:centre-for-good-governance:202609037683,Inactive This Week,N/A,0,0,0,0.00,0.00,184,9,0,9,0.00,100.00,0.00
-urn:uidai:client:lilac-professional-services-(opc)-private-limited:202609172802,Inactive This Week,N/A,0,0,0,0.00,0.00,185,9,0,9,0.00,100.00,0.00
-mccia,Inactive This Week,N/A,0,0,0,0.00,0.00,186,9,0,9,0.00,100.00,0.00
-securex,Inactive This Week,N/A,0,0,0,0.00,0.00,188,9,0,9,0.00,100.00,0.00
-268894069799,Inactive This Week,N/A,0,0,0,0.00,0.00,189,8,0,8,0.00,100.00,0.00
+urn:uidai:client:swastik-enterprises:202610153599,Inactive This Week,N/A,0,0,0,0.00,0.00,182,10,0,10,0.00,100.00,0.00
+719436497430,Inactive This Week,N/A,0,0,0,0.00,0.00,183,10,0,10,0.00,100.00,0.00
+mccia,Inactive This Week,N/A,0,0,0,0.00,0.00,184,9,0,9,0.00,100.00,0.00
+securex,Inactive This Week,N/A,0,0,0,0.00,0.00,185,9,0,9,0.00,100.00,0.00
+202608105382,Inactive This Week,N/A,0,0,0,0.00,0.00,186,9,0,9,0.00,100.00,0.00
+urn:uidai:client:lilac-professional-services-(opc)-private-limited:202609172802,Inactive This Week,N/A,0,0,0,0.00,0.00,187,9,0,9,0.00,100.00,0.00
+urn:uidai:client:centre-for-good-governance:202609037683,Inactive This Week,N/A,0,0,0,0.00,0.00,188,9,0,9,0.00,100.00,0.00
 urn:uidai:client:eventshook-private-limited:202608108045,Inactive This Week,N/A,0,0,0,0.00,0.00,190,8,2,6,25.00,75.00,0.00
-OR41267593,Inactive This Week,N/A,0,0,0,0.00,0.00,192,7,0,7,0.00,100.00,0.00
-OR37482910,Inactive This Week,N/A,0,0,0,0.00,0.00,193,7,0,7,0.00,100.00,0.00
-POC-AC-VALUE,Inactive This Week,N/A,0,0,0,0.00,0.00,194,7,0,7,0.00,100.00,0.00
+268894069799,Inactive This Week,N/A,0,0,0,0.00,0.00,191,8,0,8,0.00,100.00,0.00
+OR41267593,Inactive This Week,N/A,0,0,0,0.00,0.00,193,7,0,7,0.00,100.00,0.00
+OR37482910,Inactive This Week,N/A,0,0,0,0.00,0.00,194,7,0,7,0.00,100.00,0.00
 202607131364,Inactive This Week,N/A,0,0,0,0.00,0.00,195,7,0,7,0.00,100.00,0.00
-202606306133,Inactive This Week,N/A,0,0,0,0.00,0.00,196,7,0,7,0.00,100.00,0.00
-karza,Inactive This Week,N/A,0,0,0,0.00,0.00,197,6,0,6,0.00,100.00,0.00
-urn:uidai:client:surety-telco-private-limited:202606224542,Inactive This Week,N/A,0,0,0,0.00,0.00,198,6,2,4,33.33,66.67,0.00
-urn:uidai:client:maxworth-electronic-systems-private-limited:202608256362,Inactive This Week,N/A,0,0,0,0.00,0.00,199,6,3,3,50.00,50.00,0.00
-Hyperverge,Inactive This Week,N/A,0,0,0,0.00,0.00,200,6,0,6,0.00,100.00,0.00
-393862529910,Inactive This Week,N/A,0,0,0,0.00,0.00,201,5,0,5,0.00,100.00,0.00
-TESTCLIENT,Inactive This Week,N/A,0,0,0,0.00,0.00,202,5,0,5,0.00,100.00,0.00
-urn:uidai:client:perfect-finsec-private-limited:202610166102,Inactive This Week,N/A,0,0,0,0.00,0.00,203,5,1,4,20.00,80.00,0.00
-commissioner-esd-meeseva-telangana:202609174748,Inactive This Week,N/A,0,0,0,0.00,0.00,204,5,0,5,0.00,100.00,0.00
-uidai:client:gujarat-co-operative-milk-marketing-federation-limited:202607233586,Inactive This Week,N/A,0,0,0,0.00,0.00,206,5,0,5,0.00,100.00,0.00
-dexit_AC,Inactive This Week,N/A,0,0,0,0.00,0.00,207,4,0,4,0.00,100.00,0.00
-000urn:uidai:client:assam-police:202606026852,Inactive This Week,N/A,0,0,0,0.00,0.00,208,4,0,4,0.00,100.00,0.00
-hindon-mercantile-limited:202608105382,Inactive This Week,N/A,0,0,0,0.00,0.00,209,4,0,4,0.00,100.00,0.00
-urn:uidai:client:mock-dev:000000000000,Inactive This Week,N/A,0,0,0,0.00,0.00,210,4,0,4,0.00,100.00,0.00
-MOCK-OVSE-001,Inactive This Week,N/A,0,0,0,0.00,0.00,211,4,0,4,0.00,100.00,0.00
-YOUR_OVSE_CLIENT_ID,Inactive This Week,N/A,0,0,0,0.00,0.00,212,4,0,4,0.00,100.00,0.00
-dexit_ac,Inactive This Week,N/A,0,0,0,0.00,0.00,213,3,0,3,0.00,100.00,0.00
-your_client_id,Inactive This Week,N/A,0,0,0,0.00,0.00,214,3,0,3,0.00,100.00,0.00
-urn:uidai:client:assam-police:202606,Inactive This Week,N/A,0,0,0,0.00,0.00,215,3,0,3,0.00,100.00,0.00
-OVSE_CLIENT_ID_PLACEHOLDER,Inactive This Week,N/A,0,0,0,0.00,0.00,216,3,0,3,0.00,100.00,0.00
-AF61962134,Inactive This Week,N/A,0,0,0,0.00,0.00,217,3,0,3,0.00,100.00,0.00
-202607233586,Inactive This Week,N/A,0,0,0,0.00,0.00,218,3,0,3,0.00,100.00,0.00
-AF85418916,Inactive This Week,N/A,0,0,0,0.00,0.00,219,3,0,3,0.00,100.00,0.00
-urn:uidai:client:chhattisgarh-state-power-distribution-company-limited:202610075846,Inactive This Week,N/A,0,0,0,0.00,0.00,220,3,0,3,0.00,100.00,0.00
-demo-client-id,Inactive This Week,N/A,0,0,0,0.00,0.00,221,3,0,3,0.00,100.00,0.00
-veetechnologies,Inactive This Week,N/A,0,0,0,0.00,0.00,222,3,0,3,0.00,100.00,0.00
-AF49129919,Inactive This Week,N/A,0,0,0,0.00,0.00,223,3,0,3,0.00,100.00,0.00
-dummy_ac,Inactive This Week,N/A,0,0,0,0.00,0.00,224,2,0,2,0.00,100.00,0.00
-vvv,Inactive This Week,N/A,0,0,0,0.00,0.00,225,2,0,2,0.00,100.00,0.00
-xxx,Inactive This Week,N/A,0,0,0,0.00,0.00,226,2,0,2,0.00,100.00,0.00
-AF34073304,Inactive This Week,N/A,0,0,0,0.00,0.00,227,2,0,2,0.00,100.00,0.00
-urn:uidai:client:appexigo-technologies-private-limited:2028555185225206113,Inactive This Week,N/A,0,0,0,0.00,0.00,228,2,0,2,0.00,100.00,0.00
-demo,Inactive This Week,N/A,0,0,0,0.00,0.00,229,2,0,2,0.00,100.00,0.00
-dev-ac,Inactive This Week,N/A,0,0,0,0.00,0.00,230,2,0,2,0.00,100.00,0.00
-202608031067,Inactive This Week,N/A,0,0,0,0.00,0.00,231,2,0,2,0.00,100.00,0.00
-TOPA,Inactive This Week,N/A,0,0,0,0.00,0.00,232,2,0,2,0.00,100.00,0.00
-null,Inactive This Week,N/A,0,0,0,0.00,0.00,233,2,0,2,0.00,100.00,0.00
-OR11274063,Inactive This Week,N/A,0,0,0,0.00,0.00,234,2,0,2,0.00,100.00,0.00
-urn:uidai:client:yuvaan-infotech:202608148688,Inactive This Week,N/A,0,0,0,0.00,0.00,235,2,0,2,0.00,100.00,0.00
-finanalyz-technologies-private-limited:202606306133,Inactive This Week,N/A,0,0,0,0.00,0.00,236,2,0,2,0.00,100.00,0.00
-UNREGISTEREDTEST,Inactive This Week,N/A,0,0,0,0.00,0.00,237,2,0,2,0.00,100.00,0.00
-559930556683,Inactive This Week,N/A,0,0,0,0.00,0.00,238,2,0,2,0.00,100.00,0.00
-POC-AC-V1,Inactive This Week,N/A,0,0,0,0.00,0.00,239,2,0,2,0.00,100.00,0.00
-idfy,Inactive This Week,N/A,0,0,0,0.00,0.00,240,1,0,1,0.00,100.00,0.00
-test_client,Inactive This Week,N/A,0,0,0,0.00,0.00,241,1,0,1,0.00,100.00,0.00
-202606036260,Inactive This Week,N/A,0,0,0,0.00,0.00,242,1,0,1,0.00,100.00,0.00
-urn:uidai:client:life-insurance-corporation-of-india,Inactive This Week,N/A,0,0,0,0.00,0.00,243,1,0,1,0.00,100.00,0.00
-AF53818386,Inactive This Week,N/A,0,0,0,0.00,0.00,244,1,0,1,0.00,100.00,0.00
-dhiway            # UIDAI-issued client ID,Inactive This Week,N/A,0,0,0,0.00,0.00,245,1,0,1,0.00,100.00,0.00
-inverix-innovations-private-limited:202607131364,Inactive This Week,N/A,0,0,0,0.00,0.00,246,1,0,1,0.00,100.00,0.00
-74531879,Inactive This Week,N/A,0,0,0,0.00,0.00,247,1,0,1,0.00,100.00,0.00
-OR61962134,Inactive This Week,N/A,0,0,0,0.00,0.00,248,1,0,1,0.00,100.00,0.00
-POC1,Inactive This Week,N/A,0,0,0,0.00,0.00,249,1,0,1,0.00,100.00,0.00
-biometrik-systems-private-limited:202608124806,Inactive This Week,N/A,0,0,0,0.00,0.00,250,1,0,1,0.00,100.00,0.00
-REPLACE_WITH_YOUR_OVSE_CLIENT_ID,Inactive This Week,N/A,0,0,0,0.00,0.00,251,1,0,1,0.00,100.00,0.00
-123,Inactive This Week,N/A,0,0,0,0.00,0.00,252,1,0,1,0.00,100.00,0.00
-OvseConfig.OVSE_ID,Inactive This Week,N/A,0,0,0,0.00,0.00,253,1,0,1,0.00,100.00,0.00
-perfios_karza,Inactive This Week,N/A,0,0,0,0.00,0.00,254,1,0,1,0.00,100.00,0.00
-0000,Inactive This Week,N/A,0,0,0,0.00,0.00,255,1,0,1,0.00,100.00,0.00
-202609174748,Inactive This Week,N/A,0,0,0,0.00,0.00,256,1,0,1,0.00,100.00,0.00
-OR85418916,Inactive This Week,N/A,0,0,0,0.00,0.00,257,1,0,1,0.00,100.00,0.00
-urn:uidai:client:YOUR-ORG-SLUG-HERE:YOUR-REG-NUMBER-HERE,Inactive This Week,N/A,0,0,0,0.00,0.00,258,1,0,1,0.00,100.00,0.00
-POC-AC-V5,Inactive This Week,N/A,0,0,0,0.00,0.00,259,1,0,1,0.00,100.00,0.00
-202609176227,Inactive This Week,N/A,0,0,0,0.00,0.00,260,1,0,1,0.00,100.00,0.00
-AF34083698,Inactive This Week,N/A,0,0,0,0.00,0.00,261,1,0,1,0.00,100.00,0.00
-urn::client::igrmaharashtra.gov.in::202609036112,Inactive This Week,N/A,0,0,0,0.00,0.00,262,1,0,1,0.00,100.00,0.00
-urn::client::igrmaharashtra.gov.in::6112,Inactive This Week,N/A,0,0,0,0.00,0.00,263,1,0,1,0.00,100.00,0.00
-x509_san_dns:pehchaanstage.uidai.gov.in,Inactive This Week,N/A,0,0,0,0.00,0.00,264,1,0,1,0.00,100.00,0.00
+POC-AC-VALUE,Inactive This Week,N/A,0,0,0,0.00,0.00,196,7,0,7,0.00,100.00,0.00
+202606306133,Inactive This Week,N/A,0,0,0,0.00,0.00,197,7,0,7,0.00,100.00,0.00
+Hyperverge,Inactive This Week,N/A,0,0,0,0.00,0.00,198,6,0,6,0.00,100.00,0.00
+urn:uidai:client:surety-telco-private-limited:202606224542,Inactive This Week,N/A,0,0,0,0.00,0.00,199,6,2,4,33.33,66.67,0.00
+urn:uidai:client:maxworth-electronic-systems-private-limited:202608256362,Inactive This Week,N/A,0,0,0,0.00,0.00,200,6,3,3,50.00,50.00,0.00
+karza,Inactive This Week,N/A,0,0,0,0.00,0.00,201,6,0,6,0.00,100.00,0.00
+commissioner-esd-meeseva-telangana:202609174748,Inactive This Week,N/A,0,0,0,0.00,0.00,202,5,0,5,0.00,100.00,0.00
+TESTCLIENT,Inactive This Week,N/A,0,0,0,0.00,0.00,203,5,0,5,0.00,100.00,0.00
+uidai:client:gujarat-co-operative-milk-marketing-federation-limited:202607233586,Inactive This Week,N/A,0,0,0,0.00,0.00,204,5,0,5,0.00,100.00,0.00
+urn:uidai:client:perfect-finsec-private-limited:202610166102,Inactive This Week,N/A,0,0,0,0.00,0.00,205,5,1,4,20.00,80.00,0.00
+393862529910,Inactive This Week,N/A,0,0,0,0.00,0.00,206,5,0,5,0.00,100.00,0.00
+MOCK-OVSE-001,Inactive This Week,N/A,0,0,0,0.00,0.00,208,4,0,4,0.00,100.00,0.00
+dexit_AC,Inactive This Week,N/A,0,0,0,0.00,0.00,209,4,0,4,0.00,100.00,0.00
+000urn:uidai:client:assam-police:202606026852,Inactive This Week,N/A,0,0,0,0.00,0.00,210,4,0,4,0.00,100.00,0.00
+YOUR_OVSE_CLIENT_ID,Inactive This Week,N/A,0,0,0,0.00,0.00,211,4,0,4,0.00,100.00,0.00
+urn:uidai:client:mock-dev:000000000000,Inactive This Week,N/A,0,0,0,0.00,0.00,212,4,0,4,0.00,100.00,0.00
+hindon-mercantile-limited:202608105382,Inactive This Week,N/A,0,0,0,0.00,0.00,213,4,0,4,0.00,100.00,0.00
+dexit_ac,Inactive This Week,N/A,0,0,0,0.00,0.00,214,3,0,3,0.00,100.00,0.00
+your_client_id,Inactive This Week,N/A,0,0,0,0.00,0.00,215,3,0,3,0.00,100.00,0.00
+urn:uidai:client:assam-police:202606,Inactive This Week,N/A,0,0,0,0.00,0.00,216,3,0,3,0.00,100.00,0.00
+OVSE_CLIENT_ID_PLACEHOLDER,Inactive This Week,N/A,0,0,0,0.00,0.00,217,3,0,3,0.00,100.00,0.00
+demo-client-id,Inactive This Week,N/A,0,0,0,0.00,0.00,218,3,0,3,0.00,100.00,0.00
+veetechnologies,Inactive This Week,N/A,0,0,0,0.00,0.00,219,3,0,3,0.00,100.00,0.00
+AF61962134,Inactive This Week,N/A,0,0,0,0.00,0.00,220,3,0,3,0.00,100.00,0.00
+AF49129919,Inactive This Week,N/A,0,0,0,0.00,0.00,221,3,0,3,0.00,100.00,0.00
+202607233586,Inactive This Week,N/A,0,0,0,0.00,0.00,222,3,0,3,0.00,100.00,0.00
+AF85418916,Inactive This Week,N/A,0,0,0,0.00,0.00,223,3,0,3,0.00,100.00,0.00
+urn:uidai:client:chhattisgarh-state-power-distribution-company-limited:202610075846,Inactive This Week,N/A,0,0,0,0.00,0.00,224,3,0,3,0.00,100.00,0.00
+dummy_ac,Inactive This Week,N/A,0,0,0,0.00,0.00,225,2,0,2,0.00,100.00,0.00
+vvv,Inactive This Week,N/A,0,0,0,0.00,0.00,226,2,0,2,0.00,100.00,0.00
+xxx,Inactive This Week,N/A,0,0,0,0.00,0.00,227,2,0,2,0.00,100.00,0.00
+AF34073304,Inactive This Week,N/A,0,0,0,0.00,0.00,228,2,0,2,0.00,100.00,0.00
+urn:uidai:client:appexigo-technologies-private-limited:2028555185225206113,Inactive This Week,N/A,0,0,0,0.00,0.00,229,2,0,2,0.00,100.00,0.00
+demo,Inactive This Week,N/A,0,0,0,0.00,0.00,230,2,0,2,0.00,100.00,0.00
+dev-ac,Inactive This Week,N/A,0,0,0,0.00,0.00,231,2,0,2,0.00,100.00,0.00
+202608031067,Inactive This Week,N/A,0,0,0,0.00,0.00,232,2,0,2,0.00,100.00,0.00
+TOPA,Inactive This Week,N/A,0,0,0,0.00,0.00,233,2,0,2,0.00,100.00,0.00
+null,Inactive This Week,N/A,0,0,0,0.00,0.00,234,2,0,2,0.00,100.00,0.00
+POC-AC-V1,Inactive This Week,N/A,0,0,0,0.00,0.00,235,2,0,2,0.00,100.00,0.00
+OR11274063,Inactive This Week,N/A,0,0,0,0.00,0.00,236,2,0,2,0.00,100.00,0.00
+urn:uidai:client:yuvaan-infotech:202608148688,Inactive This Week,N/A,0,0,0,0.00,0.00,237,2,0,2,0.00,100.00,0.00
+finanalyz-technologies-private-limited:202606306133,Inactive This Week,N/A,0,0,0,0.00,0.00,238,2,0,2,0.00,100.00,0.00
+UNREGISTEREDTEST,Inactive This Week,N/A,0,0,0,0.00,0.00,239,2,0,2,0.00,100.00,0.00
+559930556683,Inactive This Week,N/A,0,0,0,0.00,0.00,240,2,0,2,0.00,100.00,0.00
+idfy,Inactive This Week,N/A,0,0,0,0.00,0.00,241,1,0,1,0.00,100.00,0.00
+test_client,Inactive This Week,N/A,0,0,0,0.00,0.00,242,1,0,1,0.00,100.00,0.00
+202606036260,Inactive This Week,N/A,0,0,0,0.00,0.00,243,1,0,1,0.00,100.00,0.00
+urn:uidai:client:life-insurance-corporation-of-india,Inactive This Week,N/A,0,0,0,0.00,0.00,244,1,0,1,0.00,100.00,0.00
+AF53818386,Inactive This Week,N/A,0,0,0,0.00,0.00,245,1,0,1,0.00,100.00,0.00
+dhiway            # UIDAI-issued client ID,Inactive This Week,N/A,0,0,0,0.00,0.00,246,1,0,1,0.00,100.00,0.00
+inverix-innovations-private-limited:202607131364,Inactive This Week,N/A,0,0,0,0.00,0.00,247,1,0,1,0.00,100.00,0.00
+74531879,Inactive This Week,N/A,0,0,0,0.00,0.00,248,1,0,1,0.00,100.00,0.00
+OR61962134,Inactive This Week,N/A,0,0,0,0.00,0.00,249,1,0,1,0.00,100.00,0.00
+POC1,Inactive This Week,N/A,0,0,0,0.00,0.00,250,1,0,1,0.00,100.00,0.00
+biometrik-systems-private-limited:202608124806,Inactive This Week,N/A,0,0,0,0.00,0.00,251,1,0,1,0.00,100.00,0.00
+REPLACE_WITH_YOUR_OVSE_CLIENT_ID,Inactive This Week,N/A,0,0,0,0.00,0.00,252,1,0,1,0.00,100.00,0.00
+123,Inactive This Week,N/A,0,0,0,0.00,0.00,253,1,0,1,0.00,100.00,0.00
+OvseConfig.OVSE_ID,Inactive This Week,N/A,0,0,0,0.00,0.00,254,1,0,1,0.00,100.00,0.00
+perfios_karza,Inactive This Week,N/A,0,0,0,0.00,0.00,255,1,0,1,0.00,100.00,0.00
+0000,Inactive This Week,N/A,0,0,0,0.00,0.00,256,1,0,1,0.00,100.00,0.00
+202609174748,Inactive This Week,N/A,0,0,0,0.00,0.00,257,1,0,1,0.00,100.00,0.00
+OR85418916,Inactive This Week,N/A,0,0,0,0.00,0.00,258,1,0,1,0.00,100.00,0.00
+urn:uidai:client:YOUR-ORG-SLUG-HERE:YOUR-REG-NUMBER-HERE,Inactive This Week,N/A,0,0,0,0.00,0.00,259,1,0,1,0.00,100.00,0.00
+POC-AC-V5,Inactive This Week,N/A,0,0,0,0.00,0.00,260,1,0,1,0.00,100.00,0.00
+202609176227,Inactive This Week,N/A,0,0,0,0.00,0.00,261,1,0,1,0.00,100.00,0.00
+AF34083698,Inactive This Week,N/A,0,0,0,0.00,0.00,262,1,0,1,0.00,100.00,0.00
+urn::client::igrmaharashtra.gov.in::202609036112,Inactive This Week,N/A,0,0,0,0.00,0.00,263,1,0,1,0.00,100.00,0.00
+urn::client::igrmaharashtra.gov.in::6112,Inactive This Week,N/A,0,0,0,0.00,0.00,264,1,0,1,0.00,100.00,0.00
+x509_san_dns:pehchaanstage.uidai.gov.in,Inactive This Week,N/A,0,0,0,0.00,0.00,265,1,0,1,0.00,100.00,0.00
+TESTAC,Inactive This Week,N/A,0,0,0,0.00,0.00,266,1,0,1,0.00,100.00,0.00
+urn:uidai:client:local:ovse-qr-portal,Inactive This Week,N/A,0,0,0,0.00,0.00,267,1,0,1,0.00,100.00,0.00

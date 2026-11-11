@@ -1,25 +1,25 @@
 OVSE DATA SHARING CHANNELS - EXECUTIVE ANALYSIS REPORT
-Generated At,"9/11/2026, 1:38:11 pm"
+Generated At,"11/11/2026, 10:46:22 am"
 ,,,,,,
 Channel Code,Channel Description,Weekly Volume,Weekly Share %,Overall Lifetime Volume,Overall Lifetime Share %,Adoption Delta (%)
-APP_INTENT,App-to-App (App Intent),128970,93.75%,6554668,90.71%,+3.04%
-QR_SCAN,Cross-Device QR (QR Scan),3276,2.38%,607288,8.40%,-6.02%
-WEB_INTENT,Web-to-App (Web Intent),5327,3.87%,64120,0.89%,+2.98%
+APP_INTENT,App-to-App (App Intent),109903,93.74%,6585583,90.72%,+3.01%
+QR_SCAN,Cross-Device QR (QR Scan),2547,2.17%,608059,8.38%,-6.20%
+WEB_INTENT,Web-to-App (Web Intent),4798,4.09%,65542,0.90%,+3.19%
 ,,,,,,
 TOP OVSEs BY CHANNEL USAGE (WEEKLY)
 OVSE ID,Total Weekly Tx,App Intent Tx,App Intent Share %,Web Intent Tx,Web Intent Share %,QR Scan Tx,QR Scan Share %
-SelectiveShare,104312,104312,100.0%,0,0.0%,0,0.0%
-urbancompany,8029,8029,100.0%,0,0.0%,0,0.0%
-"urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",4328,3819,88.2%,0,0.0%,509,11.8%
-protean,3696,0,0.0%,3648,98.7%,48,1.3%
-dexit,3491,2941,84.2%,0,0.0%,550,15.8%
-gridlines,1962,1425,72.6%,384,19.6%,153,7.8%
-urn:uidai:client:instantpay-india-limited:202606250788,1608,1508,93.8%,0,0.0%,100,6.2%
-urn:uidai:client:life-insurance-corporation-of-india:202606036260,1538,566,36.8%,822,53.4%,150,9.8%
-tnmc,1358,864,63.6%,0,0.0%,494,36.4%
-surepass,1219,1066,87.4%,5,0.4%,148,12.1%
-procam,1085,880,81.1%,0,0.0%,205,18.9%
-arattai,952,950,99.8%,0,0.0%,2,0.2%
-trustt,729,361,49.5%,275,37.7%,93,12.8%
-urn:uidai:client:punjab-school-educationboard:202608274954,525,427,81.3%,0,0.0%,98,18.7%
-urn:uidai:client:hindon-mercantile-limited:202608105382,410,406,99.0%,0,0.0%,4,1.0%
+SelectiveShare,92354,92354,100.0%,0,0.0%,0,0.0%
+urbancompany,4808,4808,100.0%,0,0.0%,0,0.0%
+protean,3418,0,0.0%,3385,99.0%,33,1.0%
+dexit,3318,2689,81.0%,0,0.0%,629,19.0%
+"urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",2095,1820,86.9%,0,0.0%,275,13.1%
+gridlines,1628,1257,77.2%,252,15.5%,119,7.3%
+urn:uidai:client:instantpay-india-limited:202606250788,1506,1440,95.6%,0,0.0%,66,4.4%
+urn:uidai:client:life-insurance-corporation-of-india:202606036260,1383,511,36.9%,769,55.6%,103,7.4%
+tnmc,1247,799,64.1%,0,0.0%,448,35.9%
+arattai,961,959,99.8%,0,0.0%,2,0.2%
+procam,914,771,84.4%,0,0.0%,143,15.6%
+surepass,794,714,89.9%,4,0.5%,76,9.6%
+trustt,362,116,32.0%,197,54.4%,49,13.5%
+urn:uidai:client:hindon-mercantile-limited:202608105382,337,335,99.4%,0,0.0%,2,0.6%
+urn:uidai:client:punjab-school-educationboard:202608274954,336,275,81.8%,0,0.0%,61,18.2%
