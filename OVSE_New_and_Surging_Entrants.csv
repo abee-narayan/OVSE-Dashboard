@@ -1,10 +1,6 @@
 OVSE ID,Classification,Weekly Rank,Weekly Tx,Weekly Success Rate (%),Weekly Failure Rate (%),Overall Lifetime Tx,Weekly Share of Lifetime (%)
-"urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",Surging / High Growth,5,2095,31.65,68.35,4588,45.66
-surepass,Surging / High Growth,12,794,58.31,41.69,2210,35.93
-urn:uidai:client:samtechnova-private-limited:202611030176,New Entrant,27,36,55.56,44.44,36,100.00
-urn:uidai:client:alynn-technologies-private-limited:202610262068,Surging / High Growth,28,35,34.29,65.71,58,60.34
-urn:uidai:client:sahana-system-limited:202610095399,Surging / High Growth,30,30,3.33,96.67,49,61.22
-cgg,New Entrant,32,25,32.00,68.00,25,100.00
-vibex,Surging / High Growth,34,23,13.04,86.96,30,76.67
-urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581,Surging / High Growth,37,20,95.00,5.00,37,54.05
-urn:uidai:client:rurtech-for-arayans-llp:202611039670,New Entrant,48,9,100.00,0.00,9,100.00
+urn:uidai:client:samtechnova-private-limited:202611030176,Surging / High Growth,25,33,63.64,36.36,37,89.19
+urn:uidai:client:sahana-system-limited:202610095399,Surging / High Growth,30,27,7.41,92.59,54,50.00
+vibex,Surging / High Growth,32,19,15.79,84.21,30,63.33
+cgg,Surging / High Growth,39,12,66.67,33.33,29,41.38
+urn:uidai:client:rurtech-for-arayans-llp:202611039670,New Entrant,45,9,100.00,0.00,9,100.00
