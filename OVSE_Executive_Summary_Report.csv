@@ -1,33 +1,33 @@
 OVSE TRANSACTION INTELLIGENCE - EXECUTIVE SUMMARY REPORT
-Generated At,"12/11/2026, 1:09:05 pm"
-Unified Master Export,query_result_2026-11-12T12_52_20.468323+05_30.csv
-Reporting Window,12 Nov 2026 (Weekly: 06 Nov 2026 to 12 Nov 2026)
+Generated At,"16/11/2026, 1:38:27 pm"
+Unified Master Export,query_result_2026-11-16T11_16_01.997086+05_30.csv
+Reporting Window,16 Nov 2026 (Weekly: 10 Nov 2026 to 16 Nov 2026)
 ,,,,
 METRIC CATEGORY,INDICATOR,OVERALL (ALL TIME),LAST 1 WEEK,KEY MANAGEMENT VARIANCE / INSIGHT
-Volume Metrics,Total Transactions,7284629,117512,1.61% of all-time volume
-Volume Metrics,Successful Transactions,5398372,108570,74.11% Overall vs 92.39% Weekly
-Volume Metrics,Failed Transactions,1886257,8942,25.89% Overall vs 7.61% Weekly
-Quality Metrics,Success Rate %,74.11%,92.39%,+18.28% Improvement
-Quality Metrics,Failure Rate %,25.89%,7.61%,-18.28% Reduction in Failure Rate
-Entity Engagement,Active OVSE Entities,154,61,39.6% of registered entities active
+Volume Metrics,Total Transactions,7366743,135167,1.83% of all-time volume
+Volume Metrics,Successful Transactions,5472806,123080,74.29% Overall vs 91.06% Weekly
+Volume Metrics,Failed Transactions,1893937,12087,25.71% Overall vs 8.94% Weekly
+Quality Metrics,Success Rate %,74.29%,91.06%,+16.77% Improvement
+Quality Metrics,Failure Rate %,25.71%,8.94%,-16.77% Reduction in Failure Rate
+Entity Engagement,Active OVSE Entities,155,67,43.2% of registered entities active
 ,,,,
 TOP 5 OVSEs OVERALL,RANK,TOTAL TX,SUCCESS RATE %,FAILURE RATE %
-Top 1 Overall: SelectiveShare,1,3104989,99.99%,0.01%
-Top 2 Overall: tspolice,2,2248575,28.69%,71.31%
-Top 3 Overall: 000,3,1219983,99.90%,0.10%
-Top 4 Overall: urbancompany,4,303939,58.25%,41.75%
-Top 5 Overall: gridlines,5,57646,54.03%,45.97%
+Top 1 Overall: SelectiveShare,1,3167220,99.99%,0.01%
+Top 2 Overall: tspolice,2,2248586,28.69%,71.31%
+Top 3 Overall: 000,3,1220015,99.90%,0.10%
+Top 4 Overall: urbancompany,4,310442,58.17%,41.83%
+Top 5 Overall: gridlines,5,58635,54.07%,45.93%
 ,,,,
 TOP 5 OVSEs LAST WEEK,RANK,TOTAL TX,SUCCESS RATE %,FAILURE RATE %
-Top 1 Weekly: SelectiveShare,1,93334,99.97%,0.03%
-Top 2 Weekly: urbancompany,2,5524,57.91%,42.09%
-Top 3 Weekly: dexit,3,3540,55.34%,44.66%
-Top 4 Weekly: protean,4,3322,97.20%,2.80%
-Top 5 Weekly: gridlines,5,1736,54.15%,45.85%
+Top 1 Weekly: SelectiveShare,1,103532,99.96%,0.04%
+Top 2 Weekly: urbancompany,2,10595,55.44%,44.56%
+Top 3 Weekly: protean,3,3729,97.16%,2.84%
+Top 4 Weekly: dexit,4,2745,54.86%,45.14%
+"Top 5 Weekly: urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",5,2138,40.97%,59.03%
 ,,,,
 NEW & SURGING OVSEs,CLASSIFICATION,WEEKLY TX,WEEKLY SUCCESS %,WEEKLY SHARE OF LIFETIME %
-urn:uidai:client:samtechnova-private-limited:202611030176,Surging / High Growth,33,63.64%,89.19%
-urn:uidai:client:sahana-system-limited:202610095399,Surging / High Growth,27,7.41%,50.00%
-vibex,Surging / High Growth,19,15.79%,63.33%
-cgg,Surging / High Growth,12,66.67%,41.38%
-urn:uidai:client:rurtech-for-arayans-llp:202611039670,New Entrant,9,100.00%,100.00%
+vsign,Surging / High Growth,587,90.12%,47.84%
+urn:uidai:client:sahana-system-limited:202610095399,Surging / High Growth,38,68.42%,43.68%
+urn:uidai:client:samtechnova-private-limited:202611030176,Surging / High Growth,18,55.56%,45.00%
+cgg,Surging / High Growth,18,22.22%,46.15%
+urn:uidai:client:centre-for-good-governance:202609037683,Surging / High Growth,13,15.38%,59.09%
