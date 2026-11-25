@@ -1,25 +1,25 @@
 OVSE DATA SHARING CHANNELS - EXECUTIVE ANALYSIS REPORT
-Generated At,"20/11/2026, 2:09:15 pm"
+Generated At,"25/11/2026, 11:02:53 am"
 ,,,,,,
 Channel Code,Channel Description,Weekly Volume,Weekly Share %,Overall Lifetime Volume,Overall Lifetime Share %,Adoption Delta (%)
-APP_INTENT,App-to-App (App Intent),145216,93.27%,6788362,90.80%,+2.47%
-QR_SCAN,Cross-Device QR (QR Scan),4624,2.97%,614238,8.22%,-5.25%
-WEB_INTENT,Web-to-App (Web Intent),5856,3.76%,73751,0.99%,+2.77%
+APP_INTENT,App-to-App (App Intent),150883,93.60%,6898976,90.84%,+2.75%
+QR_SCAN,Cross-Device QR (QR Scan),4381,2.72%,617138,8.13%,-5.41%
+WEB_INTENT,Web-to-App (Web Intent),5937,3.68%,78144,1.03%,+2.65%
 ,,,,,,
 TOP OVSEs BY CHANNEL USAGE (WEEKLY)
 OVSE ID,Total Weekly Tx,App Intent Tx,App Intent Share %,Web Intent Tx,Web Intent Share %,QR Scan Tx,QR Scan Share %
-SelectiveShare,115191,115191,100.0%,0,0.0%,0,0.0%
-urbancompany,13843,13843,100.0%,0,0.0%,0,0.0%
-"urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",5053,4471,88.5%,0,0.0%,582,11.5%
-protean,3947,3,0.1%,3587,90.9%,357,9.0%
-dexit,2122,1708,80.5%,0,0.0%,414,19.5%
-gridlines,1974,1352,68.5%,444,22.5%,178,9.0%
-procam,1958,1298,66.3%,0,0.0%,660,33.7%
-urn:uidai:client:life-insurance-corporation-of-india:202606036260,1748,578,33.1%,1028,58.8%,142,8.1%
-urn:uidai:client:instantpay-india-limited:202606250788,1464,1363,93.1%,0,0.0%,101,6.9%
-tnmc,1429,915,64.0%,0,0.0%,514,36.0%
-trustt,1059,354,33.4%,640,60.4%,65,6.1%
-urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107,989,442,44.7%,0,0.0%,547,55.3%
-urn:uidai:client:inferalgo-private-limited:202607177737,785,724,92.2%,41,5.2%,20,2.5%
-arattai,737,737,100.0%,0,0.0%,0,0.0%
-urn:uidai:client:punjab-school-educationboard:202608274954,604,471,78.0%,0,0.0%,133,22.0%
+SelectiveShare,123018,123018,100.0%,0,0.0%,0,0.0%
+urbancompany,11825,11825,100.0%,0,0.0%,0,0.0%
+protean,4133,0,0.0%,3774,91.3%,359,8.7%
+"urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",2981,2674,89.7%,0,0.0%,307,10.3%
+dexit,2767,2310,83.5%,0,0.0%,457,16.5%
+procam,2115,1514,71.6%,0,0.0%,601,28.4%
+urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107,2089,1440,68.9%,0,0.0%,649,31.1%
+gridlines,2011,1479,73.5%,383,19.0%,149,7.4%
+urn:uidai:client:life-insurance-corporation-of-india:202606036260,1672,454,27.2%,1089,65.1%,129,7.7%
+tnmc,1660,1111,66.9%,0,0.0%,549,33.1%
+urn:uidai:client:instantpay-india-limited:202606250788,1313,1245,94.8%,0,0.0%,68,5.2%
+trustt,1030,385,37.4%,530,51.5%,115,11.2%
+urn:uidai:client:inferalgo-private-limited:202607177737,962,872,90.6%,57,5.9%,33,3.4%
+arattai,680,674,99.1%,0,0.0%,6,0.9%
+urn:uidai:client:punjab-school-educationboard:202608274954,431,322,74.7%,0,0.0%,109,25.3%
