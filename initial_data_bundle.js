@@ -1,150 +1,159 @@
 // Auto-generated baseline master data for OVSE Executive Dashboard
 const BUNDLED_DATA = {
   "metadata": {
-    "generatedAt": "2026-11-25T05:32:53.152Z",
-    "dataLastUpdated": "25 NOV 2026, 10:46 AM IST",
-    "sourceFile": "ovse_data_for_public_dashboard_2026-11-25T10_46_38.556178+05_30.csv",
-    "reportingCutoff": "25 Nov 2026 (Weekly: 19 Nov 2026 to 25 Nov 2026)",
+    "generatedAt": "2026-11-26T12:48:14.256Z",
+    "dataLastUpdated": "26 NOV 2026, 05:37 PM IST",
+    "sourceFile": "ovse_data_for_public_dashboard_2026-11-26T17_37_19.58935+05_30 (2).csv",
+    "reportingCutoff": "26 Nov 2026 (Weekly: 20 Nov 2026 to 26 Nov 2026)",
     "dateBounds": {
       "minDate": "2026-01-12",
-      "maxDate": "2026-11-25",
+      "maxDate": "2026-11-26",
       "minFormatted": "12 Jan 2026",
-      "maxFormatted": "25 Nov 2026"
+      "maxFormatted": "26 Nov 2026"
     },
     "weeklyWindow": {
-      "start": "2026-11-18T18:30:00.000Z",
-      "end": "2026-11-25T18:29:59.999Z",
-      "startFormatted": "19 Nov 2026",
-      "endFormatted": "25 Nov 2026",
+      "start": "2026-11-19T18:30:00.000Z",
+      "end": "2026-11-26T18:29:59.999Z",
+      "startFormatted": "20 Nov 2026",
+      "endFormatted": "26 Nov 2026",
       "days": 7
     },
     "isUnifiedMaster": true
   },
   "overall": {
-    "totalTx": 7594258,
-    "totalSuccess": 5676325,
-    "totalFailure": 1917933,
-    "successRate": 74.74495862531928,
-    "failureRate": 25.255041374680715,
+    "totalTx": 7639975,
+    "totalSuccess": 5715062,
+    "totalFailure": 1924913,
+    "successRate": 74.8047212196375,
+    "failureRate": 25.1952787803625,
     "uniqueCount": 160,
-    "registeredCount": 283,
+    "registeredCount": 284,
     "list": [
       {
         "ovseId": "SelectiveShare",
-        "success": 3335583,
+        "success": 3365367,
         "failure": 385,
-        "total": 3335968,
-        "successRate": 99.98845912191004,
-        "failureRate": 0.011540878089957698,
+        "total": 3365752,
+        "successRate": 99.98856124871945,
+        "failureRate": 0.011438751280545924,
         "rank": 1
       },
       {
         "ovseId": "tspolice",
-        "success": 645192,
-        "failure": 1603402,
-        "total": 2248594,
-        "successRate": 28.693130018135776,
-        "failureRate": 71.30686998186422,
+        "success": 645196,
+        "failure": 1603409,
+        "total": 2248605,
+        "successRate": 28.6931675416536,
+        "failureRate": 71.30683245834639,
         "rank": 2
       },
       {
         "ovseId": "000",
-        "success": 1218830,
+        "success": 1218839,
         "failure": 1246,
-        "total": 1220076,
-        "successRate": 99.89787521433091,
-        "failureRate": 0.10212478566908947,
+        "total": 1220085,
+        "successRate": 99.897875967658,
+        "failureRate": 0.10212403234200897,
         "rank": 3
       },
       {
         "ovseId": "urbancompany",
-        "success": 191267,
-        "failure": 138650,
-        "total": 329917,
-        "successRate": 57.97427837910747,
-        "failureRate": 42.025721620892526,
+        "success": 193435,
+        "failure": 140246,
+        "total": 333681,
+        "successRate": 57.970037251147055,
+        "failureRate": 42.029962748852945,
         "rank": 4
       },
       {
         "ovseId": "gridlines",
-        "success": 33536,
-        "failure": 28198,
-        "total": 61734,
-        "successRate": 54.32338743642078,
-        "failureRate": 45.676612563579226,
+        "success": 33957,
+        "failure": 28498,
+        "total": 62455,
+        "successRate": 54.37034664958771,
+        "failureRate": 45.6296533504123,
         "rank": 5
       },
       {
         "ovseId": "tnmc",
-        "success": 42382,
-        "failure": 17926,
-        "total": 60308,
-        "successRate": 70.27591695960736,
-        "failureRate": 29.724083040392653,
+        "success": 42729,
+        "failure": 18184,
+        "total": 60913,
+        "successRate": 70.14758754288903,
+        "failureRate": 29.85241245711096,
         "rank": 6
       },
       {
         "ovseId": "procam",
-        "success": 39708,
-        "failure": 13698,
-        "total": 53406,
-        "successRate": 74.35119649477588,
-        "failureRate": 25.648803505224134,
+        "success": 40164,
+        "failure": 13888,
+        "total": 54052,
+        "successRate": 74.30622363649819,
+        "failureRate": 25.693776363501815,
         "rank": 7
       },
       {
         "ovseId": "arattai",
-        "success": 24293,
-        "failure": 11293,
-        "total": 35586,
-        "successRate": 68.26561007137639,
-        "failureRate": 31.734389928623617,
+        "success": 24411,
+        "failure": 11351,
+        "total": 35762,
+        "successRate": 68.25960516749623,
+        "failureRate": 31.740394832503778,
         "rank": 8
       },
       {
         "ovseId": "protean",
-        "success": 29888,
-        "failure": 2284,
-        "total": 32172,
-        "successRate": 92.90065895810021,
-        "failureRate": 7.099341041899788,
+        "success": 30462,
+        "failure": 2302,
+        "total": 32764,
+        "successRate": 92.97399584910268,
+        "failureRate": 7.026004150897326,
         "rank": 9
       },
       {
         "ovseId": "(Blank / Unknown)",
         "success": 13929,
-        "failure": 12800,
-        "total": 26729,
-        "successRate": 52.111938344120624,
-        "failureRate": 47.88806165587938,
+        "failure": 12897,
+        "total": 26826,
+        "successRate": 51.92350704540372,
+        "failureRate": 48.07649295459629,
         "rank": 10
       },
       {
-        "ovseId": "urn:uidai:client:inferalgo-private-limited:202607177737",
-        "success": 14751,
-        "failure": 11404,
-        "total": 26155,
-        "successRate": 56.398394188491686,
-        "failureRate": 43.601605811508314,
+        "ovseId": "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+        "success": 14282,
+        "failure": 12289,
+        "total": 26571,
+        "successRate": 53.75032930638666,
+        "failureRate": 46.24967069361334,
         "rank": 11
       },
       {
-        "ovseId": "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
-        "success": 13903,
-        "failure": 12002,
-        "total": 25905,
-        "successRate": 53.66917583478094,
-        "failureRate": 46.33082416521907,
+        "ovseId": "urn:uidai:client:inferalgo-private-limited:202607177737",
+        "success": 14913,
+        "failure": 11503,
+        "total": 26416,
+        "successRate": 56.454421562689284,
+        "failureRate": 43.54557843731072,
         "rank": 12
       },
       {
         "ovseId": "dexit",
-        "success": 11643,
-        "failure": 9697,
-        "total": 21340,
-        "successRate": 54.55951265229616,
-        "failureRate": 45.440487347703844,
+        "success": 12052,
+        "failure": 9946,
+        "total": 21998,
+        "successRate": 54.7867987998909,
+        "failureRate": 45.2132012001091,
         "rank": 13
+      },
+      {
+        "ovseId": "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+        "success": 6852,
+        "failure": 10916,
+        "total": 17768,
+        "successRate": 38.56371004052229,
+        "failureRate": 61.436289959477705,
+        "rank": 14
       },
       {
         "ovseId": "0",
@@ -153,123 +162,114 @@ const BUNDLED_DATA = {
         "total": 16671,
         "successRate": 30.184152120448683,
         "failureRate": 69.81584787955131,
-        "rank": 14
-      },
-      {
-        "ovseId": "trustt",
-        "success": 9446,
-        "failure": 5057,
-        "total": 14503,
-        "successRate": 65.13135213404124,
-        "failureRate": 34.86864786595877,
         "rank": 15
       },
       {
-        "ovseId": "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
-        "success": 4696,
-        "failure": 8184,
-        "total": 12880,
-        "successRate": 36.45962732919254,
-        "failureRate": 63.54037267080746,
+        "ovseId": "trustt",
+        "success": 9783,
+        "failure": 5235,
+        "total": 15018,
+        "successRate": 65.14182980423492,
+        "failureRate": 34.858170195765084,
         "rank": 16
       },
       {
         "ovseId": "urn:uidai:client:instantpay-india-limited:202606250788",
-        "success": 6001,
-        "failure": 3085,
-        "total": 9086,
-        "successRate": 66.04666519920758,
-        "failureRate": 33.953334800792426,
+        "success": 6262,
+        "failure": 3199,
+        "total": 9461,
+        "successRate": 66.18750660606702,
+        "failureRate": 33.81249339393299,
         "rank": 17
       },
       {
         "ovseId": "cisf",
-        "success": 2924,
-        "failure": 4187,
-        "total": 7111,
-        "successRate": 41.119392490507664,
-        "failureRate": 58.880607509492336,
+        "success": 2933,
+        "failure": 4206,
+        "total": 7139,
+        "successRate": 41.08418546014848,
+        "failureRate": 58.91581453985152,
         "rank": 18
       },
       {
         "ovseId": "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
-        "success": 2651,
-        "failure": 2925,
-        "total": 5576,
-        "successRate": 47.54304160688665,
-        "failureRate": 52.45695839311334,
+        "success": 2940,
+        "failure": 3179,
+        "total": 6119,
+        "successRate": 48.0470665141363,
+        "failureRate": 51.9529334858637,
         "rank": 19
       },
       {
         "ovseId": "truscholar",
-        "success": 4472,
-        "failure": 1050,
-        "total": 5522,
-        "successRate": 80.98515030785947,
-        "failureRate": 19.01484969214053,
+        "success": 4504,
+        "failure": 1055,
+        "total": 5559,
+        "successRate": 81.02176650476704,
+        "failureRate": 18.978233495232956,
         "rank": 20
       },
       {
         "ovseId": "urn:uidai:client:hindon-mercantile-limited:202608105382",
-        "success": 2748,
-        "failure": 2146,
-        "total": 4894,
-        "successRate": 56.150388230486314,
-        "failureRate": 43.84961176951369,
+        "success": 2839,
+        "failure": 2225,
+        "total": 5064,
+        "successRate": 56.06240126382307,
+        "failureRate": 43.93759873617694,
         "rank": 21
       },
       {
         "ovseId": "urn:uidai:client:punjab-school-educationboard:202608274954",
-        "success": 2152,
-        "failure": 2064,
-        "total": 4216,
-        "successRate": 51.04364326375711,
-        "failureRate": 48.95635673624288,
+        "success": 2273,
+        "failure": 2114,
+        "total": 4387,
+        "successRate": 51.81217232733075,
+        "failureRate": 48.18782767266925,
         "rank": 22
       },
       {
-        "ovseId": "ooru_digital",
-        "success": 2462,
-        "failure": 687,
-        "total": 3149,
-        "successRate": 78.18355033343919,
-        "failureRate": 21.816449666560814,
+        "ovseId": "surepass",
+        "success": 1837,
+        "failure": 1412,
+        "total": 3249,
+        "successRate": 56.540473991997544,
+        "failureRate": 43.45952600800246,
         "rank": 23
       },
       {
-        "ovseId": "trackwizz",
-        "success": 1763,
-        "failure": 1373,
-        "total": 3136,
-        "successRate": 56.21811224489795,
-        "failureRate": 43.78188775510204,
+        "ovseId": "ooru_digital",
+        "success": 2469,
+        "failure": 690,
+        "total": 3159,
+        "successRate": 78.15764482431149,
+        "failureRate": 21.84235517568851,
         "rank": 24
       },
       {
-        "ovseId": "surepass",
-        "success": 1546,
-        "failure": 1174,
-        "total": 2720,
-        "successRate": 56.838235294117645,
-        "failureRate": 43.161764705882355,
+        "ovseId": "trackwizz",
+        "success": 1764,
+        "failure": 1373,
+        "total": 3137,
+        "successRate": 56.23206885559452,
+        "failureRate": 43.76793114440548,
         "rank": 25
       },
       {
         "ovseId": "urn:uidai:client:dc-office-tawang:202606230797",
-        "success": 1661,
-        "failure": 987,
-        "total": 2648,
-        "successRate": 62.726586102719025,
-        "failureRate": 37.27341389728097,
+        "success": 1675,
+        "failure": 1002,
+        "total": 2677,
+        "successRate": 62.57004109077325,
+        "failureRate": 37.42995890922675,
         "rank": 26
       },
       {
         "ovseId": "vsign",
-        "success": 1014,
-        "failure": 303,
-        "total": 1317,
-        "successRate": 76.99316628701595,
-        "failureRate": 23.006833712984054,
+        "success": 1030,
+        "failure": 306,
+        "total": 1336,
+        "successRate": 77.09580838323353,
+        "failureRate": 22.904191616766468,
         "rank": 27
       },
       {
@@ -283,20 +283,20 @@ const BUNDLED_DATA = {
       },
       {
         "ovseId": "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
-        "success": 667,
-        "failure": 425,
-        "total": 1092,
-        "successRate": 61.08058608058609,
-        "failureRate": 38.91941391941392,
+        "success": 763,
+        "failure": 468,
+        "total": 1231,
+        "successRate": 61.9821283509342,
+        "failureRate": 38.017871649065796,
         "rank": 29
       },
       {
         "ovseId": "rjil",
-        "success": 794,
+        "success": 804,
         "failure": 119,
-        "total": 913,
-        "successRate": 86.96604600219058,
-        "failureRate": 13.03395399780942,
+        "total": 923,
+        "successRate": 87.10725893824485,
+        "failureRate": 12.892741061755148,
         "rank": 30
       },
       {
@@ -310,29 +310,29 @@ const BUNDLED_DATA = {
       },
       {
         "ovseId": "transaction_analysts",
-        "success": 553,
+        "success": 560,
         "failure": 146,
-        "total": 699,
-        "successRate": 79.11301859799714,
-        "failureRate": 20.88698140200286,
+        "total": 706,
+        "successRate": 79.3201133144476,
+        "failureRate": 20.679886685552407,
         "rank": 32
       },
       {
         "ovseId": "signzytech",
-        "success": 260,
+        "success": 262,
         "failure": 374,
-        "total": 634,
-        "successRate": 41.00946372239748,
-        "failureRate": 58.99053627760252,
+        "total": 636,
+        "successRate": 41.19496855345912,
+        "failureRate": 58.80503144654088,
         "rank": 33
       },
       {
         "ovseId": "mantra",
-        "success": 510,
-        "failure": 108,
-        "total": 618,
-        "successRate": 82.52427184466019,
-        "failureRate": 17.475728155339805,
+        "success": 515,
+        "failure": 110,
+        "total": 625,
+        "successRate": 82.39999999999999,
+        "failureRate": 17.599999999999998,
         "rank": 34
       },
       {
@@ -346,11 +346,11 @@ const BUNDLED_DATA = {
       },
       {
         "ovseId": "urn:uidai:client:oryggi-technologies-private-limited:202607288031",
-        "success": 384,
+        "success": 386,
         "failure": 148,
-        "total": 532,
-        "successRate": 72.18045112781954,
-        "failureRate": 27.819548872180448,
+        "total": 534,
+        "successRate": 72.28464419475655,
+        "failureRate": 27.715355805243448,
         "rank": 36
       },
       {
@@ -372,30 +372,30 @@ const BUNDLED_DATA = {
         "rank": 38
       },
       {
+        "ovseId": "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
+        "success": 270,
+        "failure": 168,
+        "total": 438,
+        "successRate": 61.64383561643836,
+        "failureRate": 38.35616438356164,
+        "rank": 39
+      },
+      {
         "ovseId": "ayanworks",
         "success": 268,
         "failure": 155,
         "total": 423,
         "successRate": 63.35697399527187,
         "failureRate": 36.64302600472813,
-        "rank": 39
-      },
-      {
-        "ovseId": "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
-        "success": 250,
-        "failure": 162,
-        "total": 412,
-        "successRate": 60.679611650485434,
-        "failureRate": 39.32038834951456,
         "rank": 40
       },
       {
         "ovseId": "urn:uidai:client:aparampaar-finance-private-limited:202605134450",
-        "success": 247,
-        "failure": 161,
-        "total": 408,
-        "successRate": 60.5392156862745,
-        "failureRate": 39.46078431372549,
+        "success": 253,
+        "failure": 164,
+        "total": 417,
+        "successRate": 60.671462829736214,
+        "failureRate": 39.328537170263786,
         "rank": 41
       },
       {
@@ -408,13 +408,22 @@ const BUNDLED_DATA = {
         "rank": 42
       },
       {
+        "ovseId": "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
+        "success": 216,
+        "failure": 186,
+        "total": 402,
+        "successRate": 53.73134328358209,
+        "failureRate": 46.26865671641791,
+        "rank": 43
+      },
+      {
         "ovseId": "digio",
         "success": 267,
         "failure": 125,
         "total": 392,
         "successRate": 68.11224489795919,
         "failureRate": 31.887755102040817,
-        "rank": 43
+        "rank": 44
       },
       {
         "ovseId": "bel",
@@ -423,33 +432,24 @@ const BUNDLED_DATA = {
         "total": 385,
         "successRate": 75.58441558441558,
         "failureRate": 24.415584415584416,
-        "rank": 44
-      },
-      {
-        "ovseId": "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
-        "success": 207,
-        "failure": 175,
-        "total": 382,
-        "successRate": 54.18848167539267,
-        "failureRate": 45.811518324607334,
         "rank": 45
       },
       {
-        "ovseId": "urn:uidai:client:evolute-fintech-innovations-private-limited:202608271911",
-        "success": 242,
-        "failure": 94,
-        "total": 336,
-        "successRate": 72.02380952380952,
-        "failureRate": 27.976190476190478,
+        "ovseId": "evaluit",
+        "success": 272,
+        "failure": 100,
+        "total": 372,
+        "successRate": 73.11827956989248,
+        "failureRate": 26.881720430107524,
         "rank": 46
       },
       {
-        "ovseId": "evaluit",
-        "success": 236,
-        "failure": 98,
-        "total": 334,
-        "successRate": 70.65868263473054,
-        "failureRate": 29.34131736526946,
+        "ovseId": "urn:uidai:client:evolute-fintech-innovations-private-limited:202608271911",
+        "success": 246,
+        "failure": 94,
+        "total": 340,
+        "successRate": 72.35294117647058,
+        "failureRate": 27.647058823529413,
         "rank": 47
       },
       {
@@ -462,22 +462,31 @@ const BUNDLED_DATA = {
         "rank": 48
       },
       {
+        "ovseId": "urn:uidai:client:intuitive-data-solutions-private-limited:202607237962",
+        "success": 157,
+        "failure": 134,
+        "total": 291,
+        "successRate": 53.95189003436426,
+        "failureRate": 46.04810996563574,
+        "rank": 49
+      },
+      {
         "ovseId": "digitapai",
         "success": 201,
         "failure": 89,
         "total": 290,
         "successRate": 69.3103448275862,
         "failureRate": 30.689655172413794,
-        "rank": 49
+        "rank": 50
       },
       {
-        "ovseId": "urn:uidai:client:intuitive-data-solutions-private-limited:202607237962",
-        "success": 154,
-        "failure": 125,
-        "total": 279,
-        "successRate": 55.19713261648745,
-        "failureRate": 44.80286738351255,
-        "rank": 50
+        "ovseId": "novelpatterns",
+        "success": 157,
+        "failure": 124,
+        "total": 281,
+        "successRate": 55.871886120996436,
+        "failureRate": 44.128113879003564,
+        "rank": 51
       },
       {
         "ovseId": "urn:uidai:client:shri-trimbakeshwar-devasthan-trust:202607072068",
@@ -486,15 +495,6 @@ const BUNDLED_DATA = {
         "total": 269,
         "successRate": 40.89219330855018,
         "failureRate": 59.10780669144982,
-        "rank": 51
-      },
-      {
-        "ovseId": "novelpatterns",
-        "success": 139,
-        "failure": 119,
-        "total": 258,
-        "successRate": 53.875968992248055,
-        "failureRate": 46.12403100775194,
         "rank": 52
       },
       {
@@ -508,29 +508,29 @@ const BUNDLED_DATA = {
       },
       {
         "ovseId": "urn:uidai:client:perigeon-software-private-limited:202606041974",
-        "success": 175,
+        "success": 182,
         "failure": 60,
-        "total": 235,
-        "successRate": 74.46808510638297,
-        "failureRate": 25.53191489361702,
+        "total": 242,
+        "successRate": 75.20661157024794,
+        "failureRate": 24.793388429752067,
         "rank": 54
       },
       {
-        "ovseId": "urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204",
-        "success": 108,
-        "failure": 120,
-        "total": 228,
-        "successRate": 47.368421052631575,
-        "failureRate": 52.63157894736842,
+        "ovseId": "decentro",
+        "success": 72,
+        "failure": 158,
+        "total": 230,
+        "successRate": 31.30434782608696,
+        "failureRate": 68.69565217391305,
         "rank": 55
       },
       {
-        "ovseId": "decentro",
-        "success": 69,
-        "failure": 158,
-        "total": 227,
-        "successRate": 30.396475770925107,
-        "failureRate": 69.60352422907489,
+        "ovseId": "urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204",
+        "success": 109,
+        "failure": 120,
+        "total": 229,
+        "successRate": 47.59825327510917,
+        "failureRate": 52.40174672489083,
         "rank": 56
       },
       {
@@ -552,13 +552,22 @@ const BUNDLED_DATA = {
         "rank": 58
       },
       {
+        "ovseId": "apiclub",
+        "success": 104,
+        "failure": 88,
+        "total": 192,
+        "successRate": 54.166666666666664,
+        "failureRate": 45.83333333333333,
+        "rank": 59
+      },
+      {
         "ovseId": "baldortpl",
         "success": 98,
         "failure": 93,
         "total": 191,
         "successRate": 51.30890052356021,
         "failureRate": 48.69109947643979,
-        "rank": 59
+        "rank": 60
       },
       {
         "ovseId": "urn:uidai:client:kolkata-police:202608142816",
@@ -567,15 +576,6 @@ const BUNDLED_DATA = {
         "total": 191,
         "successRate": 37.17277486910995,
         "failureRate": 62.82722513089005,
-        "rank": 60
-      },
-      {
-        "ovseId": "apiclub",
-        "success": 101,
-        "failure": 83,
-        "total": 184,
-        "successRate": 54.891304347826086,
-        "failureRate": 45.108695652173914,
         "rank": 61
       },
       {
@@ -678,13 +678,31 @@ const BUNDLED_DATA = {
         "rank": 72
       },
       {
+        "ovseId": "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
+        "success": 69,
+        "failure": 70,
+        "total": 139,
+        "successRate": 49.64028776978417,
+        "failureRate": 50.35971223021583,
+        "rank": 73
+      },
+      {
         "ovseId": "urn:uidai:client:sahana-system-limited:202610095399",
         "success": 65,
         "failure": 73,
         "total": 138,
         "successRate": 47.10144927536232,
         "failureRate": 52.89855072463768,
-        "rank": 73
+        "rank": 74
+      },
+      {
+        "ovseId": "urn:uidai:client:special-branch,-bihar-police:202610163901",
+        "success": 14,
+        "failure": 123,
+        "total": 137,
+        "successRate": 10.218978102189782,
+        "failureRate": 89.78102189781022,
+        "rank": 75
       },
       {
         "ovseId": "urn:uidai:client:gujarat-co-operative-milk-marketing-federation-limited:202607233586",
@@ -693,7 +711,7 @@ const BUNDLED_DATA = {
         "total": 137,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 74
+        "rank": 76
       },
       {
         "ovseId": "bioenable",
@@ -702,16 +720,7 @@ const BUNDLED_DATA = {
         "total": 136,
         "successRate": 66.91176470588235,
         "failureRate": 33.088235294117645,
-        "rank": 75
-      },
-      {
-        "ovseId": "urn:uidai:client:special-branch,-bihar-police:202610163901",
-        "success": 13,
-        "failure": 122,
-        "total": 135,
-        "successRate": 9.62962962962963,
-        "failureRate": 90.37037037037037,
-        "rank": 76
+        "rank": 77
       },
       {
         "ovseId": "dhiway",
@@ -720,7 +729,7 @@ const BUNDLED_DATA = {
         "total": 128,
         "successRate": 72.65625,
         "failureRate": 27.34375,
-        "rank": 77
+        "rank": 78
       },
       {
         "ovseId": "evolvecortex",
@@ -729,7 +738,7 @@ const BUNDLED_DATA = {
         "total": 126,
         "successRate": 61.904761904761905,
         "failureRate": 38.095238095238095,
-        "rank": 78
+        "rank": 79
       },
       {
         "ovseId": "urn:uidai:client:seculogix-innovations-private-limited:202606121537",
@@ -738,7 +747,16 @@ const BUNDLED_DATA = {
         "total": 123,
         "successRate": 90.2439024390244,
         "failureRate": 9.75609756097561,
-        "rank": 79
+        "rank": 80
+      },
+      {
+        "ovseId": "urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049",
+        "success": 55,
+        "failure": 65,
+        "total": 120,
+        "successRate": 45.83333333333333,
+        "failureRate": 54.166666666666664,
+        "rank": 81
       },
       {
         "ovseId": "as4",
@@ -747,16 +765,7 @@ const BUNDLED_DATA = {
         "total": 119,
         "successRate": 71.42857142857143,
         "failureRate": 28.57142857142857,
-        "rank": 80
-      },
-      {
-        "ovseId": "urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049",
-        "success": 53,
-        "failure": 65,
-        "total": 118,
-        "successRate": 44.91525423728814,
-        "failureRate": 55.08474576271186,
-        "rank": 81
+        "rank": 82
       },
       {
         "ovseId": "secureedge",
@@ -765,15 +774,6 @@ const BUNDLED_DATA = {
         "total": 117,
         "successRate": 23.931623931623932,
         "failureRate": 76.06837606837607,
-        "rank": 82
-      },
-      {
-        "ovseId": "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
-        "success": 49,
-        "failure": 67,
-        "total": 116,
-        "successRate": 42.241379310344826,
-        "failureRate": 57.758620689655174,
         "rank": 83
       },
       {
@@ -797,11 +797,29 @@ const BUNDLED_DATA = {
       {
         "ovseId": "urn:uidai:client:finanalyz-technologies-private-limited:202606306133",
         "success": 12,
-        "failure": 92,
-        "total": 104,
-        "successRate": 11.538461538461538,
-        "failureRate": 88.46153846153845,
+        "failure": 94,
+        "total": 106,
+        "successRate": 11.320754716981133,
+        "failureRate": 88.67924528301887,
         "rank": 86
+      },
+      {
+        "ovseId": "ebitaus",
+        "success": 0,
+        "failure": 103,
+        "total": 103,
+        "successRate": 0,
+        "failureRate": 100,
+        "rank": 87
+      },
+      {
+        "ovseId": "fastkyc",
+        "success": 34,
+        "failure": 69,
+        "total": 103,
+        "successRate": 33.00970873786408,
+        "failureRate": 66.99029126213593,
+        "rank": 88
       },
       {
         "ovseId": "tartanhq",
@@ -810,34 +828,25 @@ const BUNDLED_DATA = {
         "total": 102,
         "successRate": 41.17647058823529,
         "failureRate": 58.82352941176471,
-        "rank": 87
-      },
-      {
-        "ovseId": "fastkyc",
-        "success": 32,
-        "failure": 69,
-        "total": 101,
-        "successRate": 31.683168316831683,
-        "failureRate": 68.31683168316832,
-        "rank": 88
+        "rank": 89
       },
       {
         "ovseId": "any2paytpl",
         "success": 55,
-        "failure": 45,
-        "total": 100,
-        "successRate": 55.00000000000001,
-        "failureRate": 45,
-        "rank": 89
+        "failure": 46,
+        "total": 101,
+        "successRate": 54.45544554455446,
+        "failureRate": 45.54455445544555,
+        "rank": 90
       },
       {
         "ovseId": "signcare",
-        "success": 71,
+        "success": 73,
         "failure": 27,
-        "total": 98,
-        "successRate": 72.44897959183673,
-        "failureRate": 27.55102040816326,
-        "rank": 90
+        "total": 100,
+        "successRate": 73,
+        "failureRate": 27,
+        "rank": 91
       },
       {
         "ovseId": "digigo",
@@ -846,15 +855,6 @@ const BUNDLED_DATA = {
         "total": 98,
         "successRate": 42.857142857142854,
         "failureRate": 57.14285714285714,
-        "rank": 91
-      },
-      {
-        "ovseId": "ebitaus",
-        "success": 0,
-        "failure": 92,
-        "total": 92,
-        "successRate": 0,
-        "failureRate": 100,
         "rank": 92
       },
       {
@@ -958,12 +958,30 @@ const BUNDLED_DATA = {
       },
       {
         "ovseId": "documint",
-        "success": 64,
-        "failure": 1,
-        "total": 65,
-        "successRate": 98.46153846153847,
-        "failureRate": 1.5384615384615385,
+        "success": 65,
+        "failure": 3,
+        "total": 68,
+        "successRate": 95.58823529411765,
+        "failureRate": 4.411764705882353,
         "rank": 104
+      },
+      {
+        "ovseId": "urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581",
+        "success": 52,
+        "failure": 13,
+        "total": 65,
+        "successRate": 80,
+        "failureRate": 20,
+        "rank": 105
+      },
+      {
+        "ovseId": "urn:uidai:client:3i-consulting-private-limited:202608031319",
+        "success": 23,
+        "failure": 41,
+        "total": 64,
+        "successRate": 35.9375,
+        "failureRate": 64.0625,
+        "rank": 106
       },
       {
         "ovseId": "urn:uidai:client:commissioner-esd-meeseva-telangana:202609174748",
@@ -972,16 +990,7 @@ const BUNDLED_DATA = {
         "total": 62,
         "successRate": 16.129032258064516,
         "failureRate": 83.87096774193549,
-        "rank": 105
-      },
-      {
-        "ovseId": "urn:uidai:client:3i-consulting-private-limited:202608031319",
-        "success": 21,
-        "failure": 40,
-        "total": 61,
-        "successRate": 34.42622950819672,
-        "failureRate": 65.57377049180327,
-        "rank": 106
+        "rank": 107
       },
       {
         "ovseId": "idigicloud",
@@ -990,15 +999,6 @@ const BUNDLED_DATA = {
         "total": 61,
         "successRate": 50.81967213114754,
         "failureRate": 49.18032786885246,
-        "rank": 107
-      },
-      {
-        "ovseId": "urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581",
-        "success": 47,
-        "failure": 13,
-        "total": 60,
-        "successRate": 78.33333333333333,
-        "failureRate": 21.666666666666668,
         "rank": 108
       },
       {
@@ -1029,21 +1029,21 @@ const BUNDLED_DATA = {
         "rank": 111
       },
       {
+        "ovseId": "urn:uidai:client:msqube-technology-solutions-private-limited:202611061651",
+        "success": 0,
+        "failure": 56,
+        "total": 56,
+        "successRate": 0,
+        "failureRate": 100,
+        "rank": 112
+      },
+      {
         "ovseId": "urn:uidai:client:greenpark-hotels-and-resorts-limited:202606248233",
         "success": 35,
         "failure": 21,
         "total": 56,
         "successRate": 62.5,
         "failureRate": 37.5,
-        "rank": 112
-      },
-      {
-        "ovseId": "urn:uidai:client:msqube-technology-solutions-private-limited:202611061651",
-        "success": 0,
-        "failure": 55,
-        "total": 55,
-        "successRate": 0,
-        "failureRate": 100,
         "rank": 113
       },
       {
@@ -1056,16 +1056,16 @@ const BUNDLED_DATA = {
         "rank": 114
       },
       {
-        "ovseId": "OR67091845",
+        "ovseId": "1a2f",
         "success": 0,
-        "failure": 53,
-        "total": 53,
+        "failure": 54,
+        "total": 54,
         "successRate": 0,
         "failureRate": 100,
         "rank": 115
       },
       {
-        "ovseId": "1a2f",
+        "ovseId": "OR67091845",
         "success": 0,
         "failure": 53,
         "total": 53,
@@ -1092,13 +1092,22 @@ const BUNDLED_DATA = {
         "rank": 118
       },
       {
+        "ovseId": "urn:uidai:client:centre-for-good-governance:202609037683",
+        "success": 24,
+        "failure": 23,
+        "total": 47,
+        "successRate": 51.06382978723404,
+        "failureRate": 48.93617021276596,
+        "rank": 119
+      },
+      {
         "ovseId": "urn:uidai:client:accura-technolabs-private-limited:202609240826",
         "success": 19,
         "failure": 27,
         "total": 46,
         "successRate": 41.30434782608695,
         "failureRate": 58.69565217391305,
-        "rank": 119
+        "rank": 120
       },
       {
         "ovseId": "authbridge",
@@ -1107,15 +1116,6 @@ const BUNDLED_DATA = {
         "total": 46,
         "successRate": 47.82608695652174,
         "failureRate": 52.17391304347826,
-        "rank": 120
-      },
-      {
-        "ovseId": "urn:uidai:client:centre-for-good-governance:202609037683",
-        "success": 22,
-        "failure": 23,
-        "total": 45,
-        "successRate": 48.888888888888886,
-        "failureRate": 51.11111111111111,
         "rank": 121
       },
       {
@@ -1137,22 +1137,31 @@ const BUNDLED_DATA = {
         "rank": 123
       },
       {
+        "ovseId": "urn:uidai:client:doklink-services-private-limited:202609249932",
+        "success": 34,
+        "failure": 10,
+        "total": 44,
+        "successRate": 77.27272727272727,
+        "failureRate": 22.727272727272727,
+        "rank": 124
+      },
+      {
         "ovseId": "veriguard",
         "success": 33,
         "failure": 11,
         "total": 44,
         "successRate": 75,
         "failureRate": 25,
-        "rank": 124
+        "rank": 125
       },
       {
-        "ovseId": "urn:uidai:client:doklink-services-private-limited:202609249932",
-        "success": 33,
-        "failure": 10,
-        "total": 43,
-        "successRate": 76.74418604651163,
-        "failureRate": 23.25581395348837,
-        "rank": 125
+        "ovseId": "urn:uidai:client:earnest-data-analytics-private-limited:202609247533",
+        "success": 35,
+        "failure": 9,
+        "total": 44,
+        "successRate": 79.54545454545455,
+        "failureRate": 20.454545454545457,
+        "rank": 126
       },
       {
         "ovseId": "urn:uidai:client:bansal-hotels-and-resorts-private-limited:202608122685",
@@ -1161,7 +1170,7 @@ const BUNDLED_DATA = {
         "total": 42,
         "successRate": 54.761904761904766,
         "failureRate": 45.23809523809524,
-        "rank": 126
+        "rank": 127
       },
       {
         "ovseId": "urn:uidai:client:ican-bpo-private-limited:202608272078",
@@ -1170,7 +1179,7 @@ const BUNDLED_DATA = {
         "total": 41,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 127
+        "rank": 128
       },
       {
         "ovseId": "urn:uidai:client:rollnumber-technologies-private-limited:202606113283",
@@ -1179,7 +1188,7 @@ const BUNDLED_DATA = {
         "total": 40,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 128
+        "rank": 129
       },
       {
         "ovseId": "urn:uidai:client:magic-bus-india-foundation:202610147311",
@@ -1188,7 +1197,7 @@ const BUNDLED_DATA = {
         "total": 40,
         "successRate": 60,
         "failureRate": 40,
-        "rank": 129
+        "rank": 130
       },
       {
         "ovseId": "urn:uidai:client:samtechnova-private-limited:202611030176",
@@ -1197,7 +1206,7 @@ const BUNDLED_DATA = {
         "total": 40,
         "successRate": 60,
         "failureRate": 40,
-        "rank": 130
+        "rank": 131
       },
       {
         "ovseId": "nict",
@@ -1206,7 +1215,7 @@ const BUNDLED_DATA = {
         "total": 39,
         "successRate": 46.15384615384615,
         "failureRate": 53.84615384615385,
-        "rank": 131
+        "rank": 132
       },
       {
         "ovseId": "urn:uidai:client:tadoba-andhari-tiger-reserve-conservation-foundation:202606125139",
@@ -1215,7 +1224,7 @@ const BUNDLED_DATA = {
         "total": 39,
         "successRate": 5.128205128205128,
         "failureRate": 94.87179487179486,
-        "rank": 132
+        "rank": 133
       },
       {
         "ovseId": "cgg",
@@ -1224,7 +1233,7 @@ const BUNDLED_DATA = {
         "total": 39,
         "successRate": 30.76923076923077,
         "failureRate": 69.23076923076923,
-        "rank": 133
+        "rank": 134
       },
       {
         "ovseId": "urn:uidai:client:prabodh-technologies-llp:202610158333",
@@ -1233,7 +1242,7 @@ const BUNDLED_DATA = {
         "total": 38,
         "successRate": 55.26315789473685,
         "failureRate": 44.73684210526316,
-        "rank": 134
+        "rank": 135
       },
       {
         "ovseId": "urn:uidai:client:access-computech-limited:202610269618",
@@ -1242,7 +1251,7 @@ const BUNDLED_DATA = {
         "total": 37,
         "successRate": 43.24324324324324,
         "failureRate": 56.75675675675676,
-        "rank": 135
+        "rank": 136
       },
       {
         "ovseId": "urn:uidai:client:nxfin-technologies-private-limited:202608186786",
@@ -1251,7 +1260,7 @@ const BUNDLED_DATA = {
         "total": 37,
         "successRate": 70.27027027027027,
         "failureRate": 29.72972972972973,
-        "rank": 136
+        "rank": 137
       },
       {
         "ovseId": "vibex",
@@ -1260,7 +1269,7 @@ const BUNDLED_DATA = {
         "total": 36,
         "successRate": 16.666666666666664,
         "failureRate": 83.33333333333334,
-        "rank": 137
+        "rank": 138
       },
       {
         "ovseId": "realtimebiometrics",
@@ -1269,7 +1278,7 @@ const BUNDLED_DATA = {
         "total": 36,
         "successRate": 44.44444444444444,
         "failureRate": 55.55555555555556,
-        "rank": 138
+        "rank": 139
       },
       {
         "ovseId": "vexil",
@@ -1278,19 +1287,10 @@ const BUNDLED_DATA = {
         "total": 35,
         "successRate": 8.571428571428571,
         "failureRate": 91.42857142857143,
-        "rank": 139
-      },
-      {
-        "ovseId": "bfhl",
-        "success": 26,
-        "failure": 9,
-        "total": 35,
-        "successRate": 74.28571428571429,
-        "failureRate": 25.71428571428571,
         "rank": 140
       },
       {
-        "ovseId": "urn:uidai:client:earnest-data-analytics-private-limited:202609247533",
+        "ovseId": "bfhl",
         "success": 26,
         "failure": 9,
         "total": 35,
@@ -1452,7 +1452,7 @@ const BUNDLED_DATA = {
         "rank": 158
       },
       {
-        "ovseId": "AF87538431",
+        "ovseId": "urn:uidai:client:kendriya-vidyalaya-sangathan:202611171026",
         "success": 0,
         "failure": 19,
         "total": 19,
@@ -1461,13 +1461,22 @@ const BUNDLED_DATA = {
         "rank": 159
       },
       {
+        "ovseId": "AF87538431",
+        "success": 0,
+        "failure": 19,
+        "total": 19,
+        "successRate": 0,
+        "failureRate": 100,
+        "rank": 160
+      },
+      {
         "ovseId": "urn:uidai:client:authzen-intelligence-private-limited:202606041024",
         "success": 16,
         "failure": 3,
         "total": 19,
         "successRate": 84.21052631578947,
         "failureRate": 15.789473684210526,
-        "rank": 160
+        "rank": 161
       },
       {
         "ovseId": "AF73081876",
@@ -1476,7 +1485,7 @@ const BUNDLED_DATA = {
         "total": 19,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 161
+        "rank": 162
       },
       {
         "ovseId": "maxhealthcare",
@@ -1485,7 +1494,7 @@ const BUNDLED_DATA = {
         "total": 19,
         "successRate": 57.89473684210527,
         "failureRate": 42.10526315789473,
-        "rank": 162
+        "rank": 163
       },
       {
         "ovseId": "OR74531879",
@@ -1494,7 +1503,7 @@ const BUNDLED_DATA = {
         "total": 18,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 163
+        "rank": 164
       },
       {
         "ovseId": "urn:uidai:client:zongovita-tech-private-limited:202605220440",
@@ -1503,7 +1512,7 @@ const BUNDLED_DATA = {
         "total": 17,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 164
+        "rank": 165
       },
       {
         "ovseId": "urn:uidai:client:utkarsh-khare:202610265264",
@@ -1512,7 +1521,7 @@ const BUNDLED_DATA = {
         "total": 16,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 165
+        "rank": 166
       },
       {
         "ovseId": "navadhan",
@@ -1521,7 +1530,7 @@ const BUNDLED_DATA = {
         "total": 16,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 166
+        "rank": 167
       },
       {
         "ovseId": "AF98028480",
@@ -1530,7 +1539,7 @@ const BUNDLED_DATA = {
         "total": 16,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 167
+        "rank": 168
       },
       {
         "ovseId": "golucky",
@@ -1539,7 +1548,7 @@ const BUNDLED_DATA = {
         "total": 16,
         "successRate": 87.5,
         "failureRate": 12.5,
-        "rank": 168
+        "rank": 169
       },
       {
         "ovseId": "202606041974",
@@ -1548,7 +1557,7 @@ const BUNDLED_DATA = {
         "total": 15,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 169
+        "rank": 170
       },
       {
         "ovseId": "202609036112",
@@ -1557,7 +1566,7 @@ const BUNDLED_DATA = {
         "total": 15,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 170
+        "rank": 171
       },
       {
         "ovseId": "public",
@@ -1566,7 +1575,7 @@ const BUNDLED_DATA = {
         "total": 15,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 171
+        "rank": 172
       },
       {
         "ovseId": "AR74531879",
@@ -1575,7 +1584,7 @@ const BUNDLED_DATA = {
         "total": 14,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 172
+        "rank": 173
       },
       {
         "ovseId": "AF74531879",
@@ -1584,7 +1593,7 @@ const BUNDLED_DATA = {
         "total": 14,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 173
+        "rank": 174
       },
       {
         "ovseId": "urn:uidai:client:state-crime-records-bureau:202609141512",
@@ -1593,7 +1602,7 @@ const BUNDLED_DATA = {
         "total": 14,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 174
+        "rank": 175
       },
       {
         "ovseId": "202609177828",
@@ -1602,7 +1611,7 @@ const BUNDLED_DATA = {
         "total": 14,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 175
+        "rank": 176
       },
       {
         "ovseId": "AF30151403",
@@ -1611,19 +1620,10 @@ const BUNDLED_DATA = {
         "total": 14,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 176
-      },
-      {
-        "ovseId": "urn:uidai:client:appexigo-technologies-private-limited:2028555185225206113",
-        "success": 0,
-        "failure": 14,
-        "total": 14,
-        "successRate": 0,
-        "failureRate": 100,
         "rank": 177
       },
       {
-        "ovseId": "urn:uidai:client:uidai:202603304905",
+        "ovseId": "urn:uidai:client:appexigo-technologies-private-limited:2028555185225206113",
         "success": 0,
         "failure": 14,
         "total": 14,
@@ -1632,16 +1632,16 @@ const BUNDLED_DATA = {
         "rank": 178
       },
       {
-        "ovseId": "DEMO-CLIENT",
+        "ovseId": "urn:uidai:client:uidai:202603304905",
         "success": 0,
-        "failure": 13,
-        "total": 13,
+        "failure": 14,
+        "total": 14,
         "successRate": 0,
         "failureRate": 100,
         "rank": 179
       },
       {
-        "ovseId": "AF88835766",
+        "ovseId": "DEMO-CLIENT",
         "success": 0,
         "failure": 13,
         "total": 13,
@@ -1650,13 +1650,31 @@ const BUNDLED_DATA = {
         "rank": 180
       },
       {
+        "ovseId": "AF88835766",
+        "success": 0,
+        "failure": 13,
+        "total": 13,
+        "successRate": 0,
+        "failureRate": 100,
+        "rank": 181
+      },
+      {
+        "ovseId": "urn:uidai:client:sai-roshni-capital-private-limited:202610275530",
+        "success": 6,
+        "failure": 7,
+        "total": 13,
+        "successRate": 46.15384615384615,
+        "failureRate": 53.84615384615385,
+        "rank": 182
+      },
+      {
         "ovseId": "urn:uidai:client:flix-solutions-private-limited:202608140865",
         "success": 0,
         "failure": 12,
         "total": 12,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 181
+        "rank": 183
       },
       {
         "ovseId": "urn:uidai:client:intellilabs-techno-solutions-private-limited:202610019646",
@@ -1665,7 +1683,7 @@ const BUNDLED_DATA = {
         "total": 12,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 182
+        "rank": 184
       },
       {
         "ovseId": "urn:uidai:client:fr8-india-private-limited:202609177281",
@@ -1674,28 +1692,10 @@ const BUNDLED_DATA = {
         "total": 12,
         "successRate": 66.66666666666666,
         "failureRate": 33.33333333333333,
-        "rank": 183
-      },
-      {
-        "ovseId": "AF27680312",
-        "success": 0,
-        "failure": 11,
-        "total": 11,
-        "successRate": 0,
-        "failureRate": 100,
-        "rank": 184
-      },
-      {
-        "ovseId": "urn:uidai:client:biometrik-systems-private-limited:202608124806",
-        "success": 0,
-        "failure": 11,
-        "total": 11,
-        "successRate": 0,
-        "failureRate": 100,
         "rank": 185
       },
       {
-        "ovseId": "seculogix",
+        "ovseId": "AF27680312",
         "success": 0,
         "failure": 11,
         "total": 11,
@@ -1704,13 +1704,31 @@ const BUNDLED_DATA = {
         "rank": 186
       },
       {
+        "ovseId": "urn:uidai:client:biometrik-systems-private-limited:202608124806",
+        "success": 0,
+        "failure": 11,
+        "total": 11,
+        "successRate": 0,
+        "failureRate": 100,
+        "rank": 187
+      },
+      {
+        "ovseId": "seculogix",
+        "success": 0,
+        "failure": 11,
+        "total": 11,
+        "successRate": 0,
+        "failureRate": 100,
+        "rank": 188
+      },
+      {
         "ovseId": "avigma",
         "success": 1,
         "failure": 10,
         "total": 11,
         "successRate": 9.090909090909092,
         "failureRate": 90.9090909090909,
-        "rank": 187
+        "rank": 189
       },
       {
         "ovseId": "urn:uidai:client:swastik-enterprises:202610153599",
@@ -1719,7 +1737,7 @@ const BUNDLED_DATA = {
         "total": 10,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 188
+        "rank": 190
       },
       {
         "ovseId": "719436497430",
@@ -1728,7 +1746,7 @@ const BUNDLED_DATA = {
         "total": 10,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 189
+        "rank": 191
       },
       {
         "ovseId": "urn:uidai:client:neeyamo-enterprise-solutions-private-limited:202608036512",
@@ -1737,7 +1755,7 @@ const BUNDLED_DATA = {
         "total": 10,
         "successRate": 20,
         "failureRate": 80,
-        "rank": 190
+        "rank": 192
       },
       {
         "ovseId": "urn:uidai:client:rurtech-for-arayans-llp:202611039670",
@@ -1746,7 +1764,7 @@ const BUNDLED_DATA = {
         "total": 10,
         "successRate": 90,
         "failureRate": 10,
-        "rank": 191
+        "rank": 193
       },
       {
         "ovseId": "makspay",
@@ -1755,7 +1773,7 @@ const BUNDLED_DATA = {
         "total": 10,
         "successRate": 60,
         "failureRate": 40,
-        "rank": 192
+        "rank": 194
       },
       {
         "ovseId": "202608105382",
@@ -1764,28 +1782,10 @@ const BUNDLED_DATA = {
         "total": 9,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 193
-      },
-      {
-        "ovseId": "2610163901",
-        "success": 0,
-        "failure": 9,
-        "total": 9,
-        "successRate": 0,
-        "failureRate": 100,
-        "rank": 194
-      },
-      {
-        "ovseId": "202611177252",
-        "success": 0,
-        "failure": 9,
-        "total": 9,
-        "successRate": 0,
-        "failureRate": 100,
         "rank": 195
       },
       {
-        "ovseId": "urn:uidai:client:lilac-professional-services-(opc)-private-limited:202609172802",
+        "ovseId": "2610163901",
         "success": 0,
         "failure": 9,
         "total": 9,
@@ -1794,7 +1794,7 @@ const BUNDLED_DATA = {
         "rank": 196
       },
       {
-        "ovseId": "mccia",
+        "ovseId": "202611177252",
         "success": 0,
         "failure": 9,
         "total": 9,
@@ -1803,7 +1803,7 @@ const BUNDLED_DATA = {
         "rank": 197
       },
       {
-        "ovseId": "securex",
+        "ovseId": "urn:uidai:client:lilac-professional-services-(opc)-private-limited:202609172802",
         "success": 0,
         "failure": 9,
         "total": 9,
@@ -1812,13 +1812,31 @@ const BUNDLED_DATA = {
         "rank": 198
       },
       {
+        "ovseId": "mccia",
+        "success": 0,
+        "failure": 9,
+        "total": 9,
+        "successRate": 0,
+        "failureRate": 100,
+        "rank": 199
+      },
+      {
+        "ovseId": "securex",
+        "success": 0,
+        "failure": 9,
+        "total": 9,
+        "successRate": 0,
+        "failureRate": 100,
+        "rank": 200
+      },
+      {
         "ovseId": "268894069799",
         "success": 0,
         "failure": 8,
         "total": 8,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 199
+        "rank": 201
       },
       {
         "ovseId": "urn:uidai:client:eventshook-private-limited:202608108045",
@@ -1827,16 +1845,7 @@ const BUNDLED_DATA = {
         "total": 8,
         "successRate": 25,
         "failureRate": 75,
-        "rank": 200
-      },
-      {
-        "ovseId": "urn:uidai:client:sai-roshni-capital-private-limited:202610275530",
-        "success": 4,
-        "failure": 4,
-        "total": 8,
-        "successRate": 50,
-        "failureRate": 50,
-        "rank": 201
+        "rank": 202
       },
       {
         "ovseId": "OR41267593",
@@ -1845,7 +1854,7 @@ const BUNDLED_DATA = {
         "total": 7,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 202
+        "rank": 203
       },
       {
         "ovseId": "OR37482910",
@@ -1854,7 +1863,7 @@ const BUNDLED_DATA = {
         "total": 7,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 203
+        "rank": 204
       },
       {
         "ovseId": "POC-AC-VALUE",
@@ -1863,7 +1872,7 @@ const BUNDLED_DATA = {
         "total": 7,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 204
+        "rank": 205
       },
       {
         "ovseId": "MSQUBE_DEMO_CLIENT",
@@ -1872,7 +1881,7 @@ const BUNDLED_DATA = {
         "total": 7,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 205
+        "rank": 206
       },
       {
         "ovseId": "urn:uidai:client:nativegems-private-limited:202611043910",
@@ -1881,7 +1890,7 @@ const BUNDLED_DATA = {
         "total": 7,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 206
+        "rank": 207
       },
       {
         "ovseId": "202607131364",
@@ -1890,7 +1899,7 @@ const BUNDLED_DATA = {
         "total": 7,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 207
+        "rank": 208
       },
       {
         "ovseId": "202606306133",
@@ -1899,7 +1908,7 @@ const BUNDLED_DATA = {
         "total": 7,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 208
+        "rank": 209
       },
       {
         "ovseId": "karza",
@@ -1908,7 +1917,7 @@ const BUNDLED_DATA = {
         "total": 6,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 209
+        "rank": 210
       },
       {
         "ovseId": "urn:uidai:client:perfect-finsec-private-limited:202610166102",
@@ -1917,7 +1926,7 @@ const BUNDLED_DATA = {
         "total": 6,
         "successRate": 33.33333333333333,
         "failureRate": 66.66666666666666,
-        "rank": 210
+        "rank": 211
       },
       {
         "ovseId": "urn:uidai:client:surety-telco-private-limited:202606224542",
@@ -1926,7 +1935,7 @@ const BUNDLED_DATA = {
         "total": 6,
         "successRate": 33.33333333333333,
         "failureRate": 66.66666666666666,
-        "rank": 211
+        "rank": 212
       },
       {
         "ovseId": "urn:uidai:client:maxworth-electronic-systems-private-limited:202608256362",
@@ -1935,7 +1944,7 @@ const BUNDLED_DATA = {
         "total": 6,
         "successRate": 50,
         "failureRate": 50,
-        "rank": 212
+        "rank": 213
       },
       {
         "ovseId": "Hyperverge",
@@ -1944,7 +1953,7 @@ const BUNDLED_DATA = {
         "total": 6,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 213
+        "rank": 214
       },
       {
         "ovseId": "393862529910",
@@ -1953,7 +1962,7 @@ const BUNDLED_DATA = {
         "total": 5,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 214
+        "rank": 215
       },
       {
         "ovseId": "TESTCLIENT",
@@ -1962,7 +1971,7 @@ const BUNDLED_DATA = {
         "total": 5,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 215
+        "rank": 216
       },
       {
         "ovseId": "commissioner-esd-meeseva-telangana:202609174748",
@@ -1971,7 +1980,7 @@ const BUNDLED_DATA = {
         "total": 5,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 216
+        "rank": 217
       },
       {
         "ovseId": "hi",
@@ -1980,7 +1989,7 @@ const BUNDLED_DATA = {
         "total": 5,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 217
+        "rank": 218
       },
       {
         "ovseId": "uidai:client:gujarat-co-operative-milk-marketing-federation-limited:202607233586",
@@ -1989,7 +1998,7 @@ const BUNDLED_DATA = {
         "total": 5,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 218
+        "rank": 219
       },
       {
         "ovseId": "dexit_AC",
@@ -1998,7 +2007,7 @@ const BUNDLED_DATA = {
         "total": 4,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 219
+        "rank": 220
       },
       {
         "ovseId": "000urn:uidai:client:assam-police:202606026852",
@@ -2007,7 +2016,7 @@ const BUNDLED_DATA = {
         "total": 4,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 220
+        "rank": 221
       },
       {
         "ovseId": "hindon-mercantile-limited:202608105382",
@@ -2016,7 +2025,7 @@ const BUNDLED_DATA = {
         "total": 4,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 221
+        "rank": 222
       },
       {
         "ovseId": "urn:uidai:client:mock-dev:000000000000",
@@ -2025,7 +2034,7 @@ const BUNDLED_DATA = {
         "total": 4,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 222
+        "rank": 223
       },
       {
         "ovseId": "MOCK-OVSE-001",
@@ -2034,7 +2043,7 @@ const BUNDLED_DATA = {
         "total": 4,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 223
+        "rank": 224
       },
       {
         "ovseId": "YOUR_OVSE_CLIENT_ID",
@@ -2043,7 +2052,7 @@ const BUNDLED_DATA = {
         "total": 4,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 224
+        "rank": 225
       },
       {
         "ovseId": "veetechnologies",
@@ -2052,7 +2061,7 @@ const BUNDLED_DATA = {
         "total": 4,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 225
+        "rank": 226
       },
       {
         "ovseId": "dexit_ac",
@@ -2061,7 +2070,7 @@ const BUNDLED_DATA = {
         "total": 3,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 226
+        "rank": 227
       },
       {
         "ovseId": "your_client_id",
@@ -2070,7 +2079,7 @@ const BUNDLED_DATA = {
         "total": 3,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 227
+        "rank": 228
       },
       {
         "ovseId": "urn:uidai:client:assam-police:202606",
@@ -2079,7 +2088,7 @@ const BUNDLED_DATA = {
         "total": 3,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 228
+        "rank": 229
       },
       {
         "ovseId": "OVSE_CLIENT_ID_PLACEHOLDER",
@@ -2088,7 +2097,7 @@ const BUNDLED_DATA = {
         "total": 3,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 229
+        "rank": 230
       },
       {
         "ovseId": "AF61962134",
@@ -2097,7 +2106,7 @@ const BUNDLED_DATA = {
         "total": 3,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 230
+        "rank": 231
       },
       {
         "ovseId": "202607233586",
@@ -2106,7 +2115,7 @@ const BUNDLED_DATA = {
         "total": 3,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 231
+        "rank": 232
       },
       {
         "ovseId": "AF85418916",
@@ -2115,7 +2124,7 @@ const BUNDLED_DATA = {
         "total": 3,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 232
+        "rank": 233
       },
       {
         "ovseId": "urn:uidai:client:chhattisgarh-state-power-distribution-company-limited:202610075846",
@@ -2124,7 +2133,7 @@ const BUNDLED_DATA = {
         "total": 3,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 233
+        "rank": 234
       },
       {
         "ovseId": "CONFIGURE_ENTITY_CODE",
@@ -2133,7 +2142,7 @@ const BUNDLED_DATA = {
         "total": 3,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 234
+        "rank": 235
       },
       {
         "ovseId": "demo-client-id",
@@ -2142,7 +2151,7 @@ const BUNDLED_DATA = {
         "total": 3,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 235
+        "rank": 236
       },
       {
         "ovseId": "AF49129919",
@@ -2151,7 +2160,7 @@ const BUNDLED_DATA = {
         "total": 3,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 236
+        "rank": 237
       },
       {
         "ovseId": "dummy_ac",
@@ -2160,7 +2169,7 @@ const BUNDLED_DATA = {
         "total": 2,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 237
+        "rank": 238
       },
       {
         "ovseId": "vvv",
@@ -2169,7 +2178,7 @@ const BUNDLED_DATA = {
         "total": 2,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 238
+        "rank": 239
       },
       {
         "ovseId": "xxx",
@@ -2178,7 +2187,7 @@ const BUNDLED_DATA = {
         "total": 2,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 239
+        "rank": 240
       },
       {
         "ovseId": "AF34073304",
@@ -2187,7 +2196,7 @@ const BUNDLED_DATA = {
         "total": 2,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 240
+        "rank": 241
       },
       {
         "ovseId": "demo",
@@ -2196,7 +2205,7 @@ const BUNDLED_DATA = {
         "total": 2,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 241
+        "rank": 242
       },
       {
         "ovseId": "dev-ac",
@@ -2205,7 +2214,7 @@ const BUNDLED_DATA = {
         "total": 2,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 242
+        "rank": 243
       },
       {
         "ovseId": "202608031067",
@@ -2214,7 +2223,7 @@ const BUNDLED_DATA = {
         "total": 2,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 243
+        "rank": 244
       },
       {
         "ovseId": "TOPA",
@@ -2223,7 +2232,7 @@ const BUNDLED_DATA = {
         "total": 2,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 244
+        "rank": 245
       },
       {
         "ovseId": "null",
@@ -2232,7 +2241,7 @@ const BUNDLED_DATA = {
         "total": 2,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 245
+        "rank": 246
       },
       {
         "ovseId": "OR11274063",
@@ -2241,7 +2250,7 @@ const BUNDLED_DATA = {
         "total": 2,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 246
+        "rank": 247
       },
       {
         "ovseId": "urn:uidai:client:yuvaan-infotech:202608148688",
@@ -2250,7 +2259,7 @@ const BUNDLED_DATA = {
         "total": 2,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 247
+        "rank": 248
       },
       {
         "ovseId": "finanalyz-technologies-private-limited:202606306133",
@@ -2259,7 +2268,7 @@ const BUNDLED_DATA = {
         "total": 2,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 248
+        "rank": 249
       },
       {
         "ovseId": "UNREGISTEREDTEST",
@@ -2268,7 +2277,7 @@ const BUNDLED_DATA = {
         "total": 2,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 249
+        "rank": 250
       },
       {
         "ovseId": "559930556683",
@@ -2277,7 +2286,7 @@ const BUNDLED_DATA = {
         "total": 2,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 250
+        "rank": 251
       },
       {
         "ovseId": "<your ac>",
@@ -2286,7 +2295,7 @@ const BUNDLED_DATA = {
         "total": 2,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 251
+        "rank": 252
       },
       {
         "ovseId": "urn:uidai:client:appexigo-technologies-private-limited:202606106113",
@@ -2295,7 +2304,7 @@ const BUNDLED_DATA = {
         "total": 2,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 252
+        "rank": 253
       },
       {
         "ovseId": "urn:uidai:client:syncro1-private-limited:202611175462",
@@ -2304,7 +2313,7 @@ const BUNDLED_DATA = {
         "total": 2,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 253
+        "rank": 254
       },
       {
         "ovseId": "POC-AC-V1",
@@ -2313,7 +2322,7 @@ const BUNDLED_DATA = {
         "total": 2,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 254
+        "rank": 255
       },
       {
         "ovseId": "idfy",
@@ -2322,7 +2331,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 255
+        "rank": 256
       },
       {
         "ovseId": "test_client",
@@ -2331,7 +2340,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 256
+        "rank": 257
       },
       {
         "ovseId": "202606036260",
@@ -2340,7 +2349,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 257
+        "rank": 258
       },
       {
         "ovseId": "urn:uidai:client:life-insurance-corporation-of-india",
@@ -2349,7 +2358,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 258
+        "rank": 259
       },
       {
         "ovseId": "AF53818386",
@@ -2358,7 +2367,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 259
+        "rank": 260
       },
       {
         "ovseId": "dhiway            # UIDAI-issued client ID",
@@ -2367,7 +2376,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 260
+        "rank": 261
       },
       {
         "ovseId": "inverix-innovations-private-limited:202607131364",
@@ -2376,7 +2385,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 261
+        "rank": 262
       },
       {
         "ovseId": "74531879",
@@ -2385,7 +2394,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 262
+        "rank": 263
       },
       {
         "ovseId": "OR61962134",
@@ -2394,7 +2403,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 263
+        "rank": 264
       },
       {
         "ovseId": "POC1",
@@ -2403,7 +2412,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 264
+        "rank": 265
       },
       {
         "ovseId": "biometrik-systems-private-limited:202608124806",
@@ -2412,7 +2421,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 265
+        "rank": 266
       },
       {
         "ovseId": "REPLACE_WITH_YOUR_OVSE_CLIENT_ID",
@@ -2421,7 +2430,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 266
+        "rank": 267
       },
       {
         "ovseId": "123",
@@ -2430,7 +2439,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 267
+        "rank": 268
       },
       {
         "ovseId": "OvseConfig.OVSE_ID",
@@ -2439,7 +2448,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 268
+        "rank": 269
       },
       {
         "ovseId": "perfios_karza",
@@ -2448,7 +2457,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 269
+        "rank": 270
       },
       {
         "ovseId": "0000",
@@ -2457,7 +2466,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 270
+        "rank": 271
       },
       {
         "ovseId": "202609174748",
@@ -2466,7 +2475,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 271
+        "rank": 272
       },
       {
         "ovseId": "OR85418916",
@@ -2475,7 +2484,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 272
+        "rank": 273
       },
       {
         "ovseId": "urn:uidai:client:YOUR-ORG-SLUG-HERE:YOUR-REG-NUMBER-HERE",
@@ -2484,7 +2493,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 273
+        "rank": 274
       },
       {
         "ovseId": "POC-AC-V5",
@@ -2493,7 +2502,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 274
+        "rank": 275
       },
       {
         "ovseId": "202609176227",
@@ -2502,7 +2511,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 275
+        "rank": 276
       },
       {
         "ovseId": "AF34083698",
@@ -2511,7 +2520,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 276
+        "rank": 277
       },
       {
         "ovseId": "urn::client::igrmaharashtra.gov.in::202609036112",
@@ -2520,7 +2529,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 277
+        "rank": 278
       },
       {
         "ovseId": "urn::client::igrmaharashtra.gov.in::6112",
@@ -2529,7 +2538,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 278
+        "rank": 279
       },
       {
         "ovseId": "x509_san_dns:pehchaanstage.uidai.gov.in",
@@ -2538,7 +2547,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 279
+        "rank": 280
       },
       {
         "ovseId": "TESTAC",
@@ -2547,7 +2556,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 280
+        "rank": 281
       },
       {
         "ovseId": "urn:uidai:client:local:ovse-qr-portal",
@@ -2556,7 +2565,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 281
+        "rank": 282
       },
       {
         "ovseId": "SIMULATOR",
@@ -2565,7 +2574,7 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 282
+        "rank": 283
       },
       {
         "ovseId": "202611061651",
@@ -2574,443 +2583,443 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 283
+        "rank": 284
       }
     ],
     "map": {},
     "top5": [
       {
         "ovseId": "SelectiveShare",
-        "success": 3335583,
+        "success": 3365367,
         "failure": 385,
-        "total": 3335968,
-        "successRate": 99.98845912191004,
-        "failureRate": 0.011540878089957698,
+        "total": 3365752,
+        "successRate": 99.98856124871945,
+        "failureRate": 0.011438751280545924,
         "rank": 1
       },
       {
         "ovseId": "tspolice",
-        "success": 645192,
-        "failure": 1603402,
-        "total": 2248594,
-        "successRate": 28.693130018135776,
-        "failureRate": 71.30686998186422,
+        "success": 645196,
+        "failure": 1603409,
+        "total": 2248605,
+        "successRate": 28.6931675416536,
+        "failureRate": 71.30683245834639,
         "rank": 2
       },
       {
         "ovseId": "000",
-        "success": 1218830,
+        "success": 1218839,
         "failure": 1246,
-        "total": 1220076,
-        "successRate": 99.89787521433091,
-        "failureRate": 0.10212478566908947,
+        "total": 1220085,
+        "successRate": 99.897875967658,
+        "failureRate": 0.10212403234200897,
         "rank": 3
       },
       {
         "ovseId": "urbancompany",
-        "success": 191267,
-        "failure": 138650,
-        "total": 329917,
-        "successRate": 57.97427837910747,
-        "failureRate": 42.025721620892526,
+        "success": 193435,
+        "failure": 140246,
+        "total": 333681,
+        "successRate": 57.970037251147055,
+        "failureRate": 42.029962748852945,
         "rank": 4
       },
       {
         "ovseId": "gridlines",
-        "success": 33536,
-        "failure": 28198,
-        "total": 61734,
-        "successRate": 54.32338743642078,
-        "failureRate": 45.676612563579226,
+        "success": 33957,
+        "failure": 28498,
+        "total": 62455,
+        "successRate": 54.37034664958771,
+        "failureRate": 45.6296533504123,
         "rank": 5
       }
     ],
     "top10": [
       {
         "ovseId": "SelectiveShare",
-        "success": 3335583,
+        "success": 3365367,
         "failure": 385,
-        "total": 3335968,
-        "successRate": 99.98845912191004,
-        "failureRate": 0.011540878089957698,
+        "total": 3365752,
+        "successRate": 99.98856124871945,
+        "failureRate": 0.011438751280545924,
         "rank": 1
       },
       {
         "ovseId": "tspolice",
-        "success": 645192,
-        "failure": 1603402,
-        "total": 2248594,
-        "successRate": 28.693130018135776,
-        "failureRate": 71.30686998186422,
+        "success": 645196,
+        "failure": 1603409,
+        "total": 2248605,
+        "successRate": 28.6931675416536,
+        "failureRate": 71.30683245834639,
         "rank": 2
       },
       {
         "ovseId": "000",
-        "success": 1218830,
+        "success": 1218839,
         "failure": 1246,
-        "total": 1220076,
-        "successRate": 99.89787521433091,
-        "failureRate": 0.10212478566908947,
+        "total": 1220085,
+        "successRate": 99.897875967658,
+        "failureRate": 0.10212403234200897,
         "rank": 3
       },
       {
         "ovseId": "urbancompany",
-        "success": 191267,
-        "failure": 138650,
-        "total": 329917,
-        "successRate": 57.97427837910747,
-        "failureRate": 42.025721620892526,
+        "success": 193435,
+        "failure": 140246,
+        "total": 333681,
+        "successRate": 57.970037251147055,
+        "failureRate": 42.029962748852945,
         "rank": 4
       },
       {
         "ovseId": "gridlines",
-        "success": 33536,
-        "failure": 28198,
-        "total": 61734,
-        "successRate": 54.32338743642078,
-        "failureRate": 45.676612563579226,
+        "success": 33957,
+        "failure": 28498,
+        "total": 62455,
+        "successRate": 54.37034664958771,
+        "failureRate": 45.6296533504123,
         "rank": 5
       },
       {
         "ovseId": "tnmc",
-        "success": 42382,
-        "failure": 17926,
-        "total": 60308,
-        "successRate": 70.27591695960736,
-        "failureRate": 29.724083040392653,
+        "success": 42729,
+        "failure": 18184,
+        "total": 60913,
+        "successRate": 70.14758754288903,
+        "failureRate": 29.85241245711096,
         "rank": 6
       },
       {
         "ovseId": "procam",
-        "success": 39708,
-        "failure": 13698,
-        "total": 53406,
-        "successRate": 74.35119649477588,
-        "failureRate": 25.648803505224134,
+        "success": 40164,
+        "failure": 13888,
+        "total": 54052,
+        "successRate": 74.30622363649819,
+        "failureRate": 25.693776363501815,
         "rank": 7
       },
       {
         "ovseId": "arattai",
-        "success": 24293,
-        "failure": 11293,
-        "total": 35586,
-        "successRate": 68.26561007137639,
-        "failureRate": 31.734389928623617,
+        "success": 24411,
+        "failure": 11351,
+        "total": 35762,
+        "successRate": 68.25960516749623,
+        "failureRate": 31.740394832503778,
         "rank": 8
       },
       {
         "ovseId": "protean",
-        "success": 29888,
-        "failure": 2284,
-        "total": 32172,
-        "successRate": 92.90065895810021,
-        "failureRate": 7.099341041899788,
+        "success": 30462,
+        "failure": 2302,
+        "total": 32764,
+        "successRate": 92.97399584910268,
+        "failureRate": 7.026004150897326,
         "rank": 9
       },
       {
         "ovseId": "(Blank / Unknown)",
         "success": 13929,
-        "failure": 12800,
-        "total": 26729,
-        "successRate": 52.111938344120624,
-        "failureRate": 47.88806165587938,
+        "failure": 12897,
+        "total": 26826,
+        "successRate": 51.92350704540372,
+        "failureRate": 48.07649295459629,
         "rank": 10
       }
     ]
   },
   "weekly": {
-    "totalTx": 161201,
-    "totalSuccess": 145881,
-    "totalFailure": 15320,
-    "successRate": 90.49633687135936,
-    "failureRate": 9.50366312864064,
-    "uniqueCount": 70,
-    "registeredCount": 83,
+    "totalTx": 181017,
+    "totalSuccess": 162086,
+    "totalFailure": 18931,
+    "successRate": 89.54186623355818,
+    "failureRate": 10.458133766441826,
+    "uniqueCount": 71,
+    "registeredCount": 87,
     "list": [
       {
         "ovseId": "SelectiveShare",
-        "success": 122992,
-        "failure": 26,
-        "total": 123018,
-        "successRate": 99.97886488156205,
-        "failureRate": 0.02113511843795217,
+        "success": 134305,
+        "failure": 11,
+        "total": 134316,
+        "successRate": 99.99181035766401,
+        "failureRate": 0.0081896423359838,
         "rank": 1
       },
       {
         "ovseId": "urbancompany",
-        "success": 6408,
-        "failure": 5417,
-        "total": 11825,
-        "successRate": 54.190274841437635,
-        "failureRate": 45.80972515856237,
+        "success": 7293,
+        "failure": 5891,
+        "total": 13184,
+        "successRate": 55.31705097087378,
+        "failureRate": 44.68294902912621,
         "rank": 2
       },
       {
-        "ovseId": "protean",
-        "success": 3657,
-        "failure": 476,
-        "total": 4133,
-        "successRate": 88.48294217275587,
-        "failureRate": 11.517057827244132,
+        "ovseId": "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+        "success": 2892,
+        "failure": 3808,
+        "total": 6700,
+        "successRate": 43.16417910447761,
+        "failureRate": 56.835820895522396,
         "rank": 3
       },
       {
-        "ovseId": "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
-        "success": 1146,
-        "failure": 1835,
-        "total": 2981,
-        "successRate": 38.44347534384435,
-        "failureRate": 61.55652465615565,
+        "ovseId": "protean",
+        "success": 3684,
+        "failure": 220,
+        "total": 3904,
+        "successRate": 94.36475409836066,
+        "failureRate": 5.635245901639344,
         "rank": 4
       },
       {
         "ovseId": "dexit",
-        "success": 1596,
-        "failure": 1171,
-        "total": 2767,
-        "successRate": 57.67979761474521,
-        "failureRate": 42.32020238525479,
+        "success": 1782,
+        "failure": 1217,
+        "total": 2999,
+        "successRate": 59.41980660220073,
+        "failureRate": 40.58019339779927,
         "rank": 5
       },
       {
         "ovseId": "procam",
-        "success": 1578,
-        "failure": 537,
-        "total": 2115,
-        "successRate": 74.60992907801418,
-        "failureRate": 25.390070921985814,
+        "success": 1807,
+        "failure": 659,
+        "total": 2466,
+        "successRate": 73.27656123276562,
+        "failureRate": 26.723438767234388,
         "rank": 6
       },
       {
         "ovseId": "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
-        "success": 1037,
-        "failure": 1052,
-        "total": 2089,
-        "successRate": 49.64097654380086,
-        "failureRate": 50.35902345619914,
+        "success": 1197,
+        "failure": 1222,
+        "total": 2419,
+        "successRate": 49.48325754443985,
+        "failureRate": 50.51674245556015,
         "rank": 7
       },
       {
         "ovseId": "gridlines",
-        "success": 1187,
-        "failure": 824,
-        "total": 2011,
-        "successRate": 59.02536051715565,
-        "failureRate": 40.97463948284435,
+        "success": 1424,
+        "failure": 952,
+        "total": 2376,
+        "successRate": 59.93265993265994,
+        "failureRate": 40.06734006734007,
         "rank": 8
       },
       {
         "ovseId": "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
-        "success": 995,
-        "failure": 677,
-        "total": 1672,
-        "successRate": 59.50956937799043,
-        "failureRate": 40.49043062200957,
+        "success": 1207,
+        "failure": 820,
+        "total": 2027,
+        "successRate": 59.54612728169709,
+        "failureRate": 40.45387271830291,
         "rank": 9
       },
       {
         "ovseId": "tnmc",
-        "success": 1092,
-        "failure": 568,
-        "total": 1660,
-        "successRate": 65.78313253012048,
-        "failureRate": 34.21686746987952,
+        "success": 1250,
+        "failure": 766,
+        "total": 2016,
+        "successRate": 62.00396825396825,
+        "failureRate": 37.99603174603175,
         "rank": 10
       },
       {
         "ovseId": "urn:uidai:client:instantpay-india-limited:202606250788",
-        "success": 890,
-        "failure": 423,
-        "total": 1313,
-        "successRate": 67.78370144706778,
-        "failureRate": 32.216298552932216,
+        "success": 1011,
+        "failure": 491,
+        "total": 1502,
+        "successRate": 67.31025299600533,
+        "failureRate": 32.689747003994675,
         "rank": 11
       },
       {
         "ovseId": "trustt",
-        "success": 713,
-        "failure": 317,
-        "total": 1030,
-        "successRate": 69.2233009708738,
-        "failureRate": 30.776699029126213,
+        "success": 894,
+        "failure": 423,
+        "total": 1317,
+        "successRate": 67.88154897494306,
+        "failureRate": 32.11845102505695,
         "rank": 12
       },
       {
         "ovseId": "urn:uidai:client:inferalgo-private-limited:202607177737",
-        "success": 545,
-        "failure": 417,
-        "total": 962,
-        "successRate": 56.65280665280665,
-        "failureRate": 43.34719334719335,
+        "success": 646,
+        "failure": 458,
+        "total": 1104,
+        "successRate": 58.514492753623195,
+        "failureRate": 41.48550724637681,
         "rank": 13
       },
       {
         "ovseId": "arattai",
-        "success": 488,
-        "failure": 192,
-        "total": 680,
-        "successRate": 71.76470588235294,
-        "failureRate": 28.235294117647058,
+        "success": 527,
+        "failure": 216,
+        "total": 743,
+        "successRate": 70.92866756393002,
+        "failureRate": 29.071332436069987,
         "rank": 14
       },
       {
-        "ovseId": "urn:uidai:client:punjab-school-educationboard:202608274954",
-        "success": 249,
-        "failure": 182,
-        "total": 431,
-        "successRate": 57.772621809744784,
-        "failureRate": 42.22737819025522,
+        "ovseId": "surepass",
+        "success": 349,
+        "failure": 304,
+        "total": 653,
+        "successRate": 53.44563552833078,
+        "failureRate": 46.55436447166922,
         "rank": 15
       },
       {
         "ovseId": "urn:uidai:client:hindon-mercantile-limited:202608105382",
-        "success": 285,
-        "failure": 144,
-        "total": 429,
-        "successRate": 66.43356643356644,
-        "failureRate": 33.56643356643357,
+        "success": 328,
+        "failure": 189,
+        "total": 517,
+        "successRate": 63.44294003868471,
+        "failureRate": 36.55705996131528,
         "rank": 16
       },
       {
-        "ovseId": "(Blank / Unknown)",
-        "success": 0,
-        "failure": 281,
-        "total": 281,
-        "successRate": 0,
-        "failureRate": 100,
+        "ovseId": "urn:uidai:client:punjab-school-educationboard:202608274954",
+        "success": 311,
+        "failure": 180,
+        "total": 491,
+        "successRate": 63.34012219959266,
+        "failureRate": 36.65987780040733,
         "rank": 17
       },
       {
         "ovseId": "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
-        "success": 111,
-        "failure": 123,
-        "total": 234,
-        "successRate": 47.43589743589743,
-        "failureRate": 52.56410256410257,
+        "success": 201,
+        "failure": 159,
+        "total": 360,
+        "successRate": 55.833333333333336,
+        "failureRate": 44.166666666666664,
         "rank": 18
       },
       {
-        "ovseId": "urn:uidai:client:dc-office-tawang:202606230797",
-        "success": 128,
-        "failure": 45,
-        "total": 173,
-        "successRate": 73.98843930635837,
-        "failureRate": 26.011560693641616,
+        "ovseId": "(Blank / Unknown)",
+        "success": 0,
+        "failure": 326,
+        "total": 326,
+        "successRate": 0,
+        "failureRate": 100,
         "rank": 19
       },
       {
-        "ovseId": "truscholar",
-        "success": 110,
-        "failure": 37,
-        "total": 147,
-        "successRate": 74.82993197278913,
-        "failureRate": 25.170068027210885,
+        "ovseId": "urn:uidai:client:dc-office-tawang:202606230797",
+        "success": 130,
+        "failure": 54,
+        "total": 184,
+        "successRate": 70.65217391304348,
+        "failureRate": 29.347826086956523,
         "rank": 20
       },
       {
-        "ovseId": "surepass",
-        "success": 62,
-        "failure": 75,
-        "total": 137,
-        "successRate": 45.25547445255474,
-        "failureRate": 54.74452554744526,
+        "ovseId": "truscholar",
+        "success": 126,
+        "failure": 38,
+        "total": 164,
+        "successRate": 76.82926829268293,
+        "failureRate": 23.170731707317074,
         "rank": 21
       },
       {
         "ovseId": "urn:uidai:client:special-branch,-bihar-police:202610163901",
-        "success": 13,
-        "failure": 107,
-        "total": 120,
-        "successRate": 10.833333333333334,
-        "failureRate": 89.16666666666667,
+        "success": 14,
+        "failure": 102,
+        "total": 116,
+        "successRate": 12.068965517241379,
+        "failureRate": 87.93103448275862,
         "rank": 22
       },
       {
-        "ovseId": "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
-        "success": 68,
-        "failure": 15,
-        "total": 83,
-        "successRate": 81.92771084337349,
-        "failureRate": 18.072289156626507,
+        "ovseId": "vsign",
+        "success": 63,
+        "failure": 26,
+        "total": 89,
+        "successRate": 70.78651685393258,
+        "failureRate": 29.213483146067414,
         "rank": 23
       },
       {
-        "ovseId": "transaction_analysts",
-        "success": 53,
-        "failure": 29,
-        "total": 82,
-        "successRate": 64.63414634146342,
-        "failureRate": 35.36585365853659,
+        "ovseId": "evaluit",
+        "success": 61,
+        "failure": 22,
+        "total": 83,
+        "successRate": 73.49397590361446,
+        "failureRate": 26.506024096385545,
         "rank": 24
       },
       {
-        "ovseId": "vsign",
-        "success": 49,
-        "failure": 23,
-        "total": 72,
-        "successRate": 68.05555555555556,
-        "failureRate": 31.944444444444443,
+        "ovseId": "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
+        "success": 69,
+        "failure": 11,
+        "total": 80,
+        "successRate": 86.25,
+        "failureRate": 13.750000000000002,
         "rank": 25
       },
       {
-        "ovseId": "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
-        "success": 49,
-        "failure": 8,
-        "total": 57,
-        "successRate": 85.96491228070175,
-        "failureRate": 14.035087719298245,
+        "ovseId": "cisf",
+        "success": 34,
+        "failure": 45,
+        "total": 79,
+        "successRate": 43.037974683544306,
+        "failureRate": 56.9620253164557,
         "rank": 26
       },
       {
-        "ovseId": "entityiq",
-        "success": 50,
-        "failure": 6,
-        "total": 56,
-        "successRate": 89.28571428571429,
-        "failureRate": 10.714285714285714,
+        "ovseId": "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
+        "success": 62,
+        "failure": 16,
+        "total": 78,
+        "successRate": 79.48717948717949,
+        "failureRate": 20.51282051282051,
         "rank": 27
       },
       {
-        "ovseId": "evaluit",
-        "success": 30,
-        "failure": 21,
-        "total": 51,
-        "successRate": 58.82352941176471,
-        "failureRate": 41.17647058823529,
+        "ovseId": "transaction_analysts",
+        "success": 51,
+        "failure": 20,
+        "total": 71,
+        "successRate": 71.83098591549296,
+        "failureRate": 28.169014084507044,
         "rank": 28
       },
       {
-        "ovseId": "cisf",
-        "success": 25,
-        "failure": 26,
-        "total": 51,
-        "successRate": 49.01960784313725,
-        "failureRate": 50.98039215686274,
+        "ovseId": "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
+        "success": 34,
+        "failure": 28,
+        "total": 62,
+        "successRate": 54.83870967741935,
+        "failureRate": 45.16129032258064,
         "rank": 29
       },
       {
-        "ovseId": "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
-        "success": 28,
-        "failure": 18,
-        "total": 46,
-        "successRate": 60.86956521739131,
-        "failureRate": 39.130434782608695,
+        "ovseId": "entityiq",
+        "success": 38,
+        "failure": 6,
+        "total": 44,
+        "successRate": 86.36363636363636,
+        "failureRate": 13.636363636363635,
         "rank": 30
       },
       {
         "ovseId": "000",
         "success": 38,
-        "failure": 5,
-        "total": 43,
-        "successRate": 88.37209302325581,
-        "failureRate": 11.627906976744185,
+        "failure": 2,
+        "total": 40,
+        "successRate": 95,
+        "failureRate": 5,
         "rank": 31
       },
       {
         "ovseId": "urn:uidai:client:ican-bpo-private-limited:202608272078",
         "success": 0,
-        "failure": 41,
-        "total": 41,
+        "failure": 36,
+        "total": 36,
         "successRate": 0,
         "failureRate": 100,
         "rank": 32
@@ -3018,110 +3027,146 @@ const BUNDLED_DATA = {
       {
         "ovseId": "ebitaus",
         "success": 0,
-        "failure": 32,
-        "total": 32,
+        "failure": 31,
+        "total": 31,
         "successRate": 0,
         "failureRate": 100,
         "rank": 33
       },
       {
-        "ovseId": "urn:uidai:client:sahana-system-limited:202610095399",
-        "success": 18,
-        "failure": 13,
-        "total": 31,
-        "successRate": 58.06451612903226,
-        "failureRate": 41.935483870967744,
+        "ovseId": "rjil",
+        "success": 24,
+        "failure": 4,
+        "total": 28,
+        "successRate": 85.71428571428571,
+        "failureRate": 14.285714285714285,
         "rank": 34
       },
       {
-        "ovseId": "urn:uidai:client:mdindia-health-insurance-tpa-private-limited:202608143596",
-        "success": 3,
-        "failure": 25,
-        "total": 28,
-        "successRate": 10.714285714285714,
-        "failureRate": 89.28571428571429,
+        "ovseId": "urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581",
+        "success": 21,
+        "failure": 5,
+        "total": 26,
+        "successRate": 80.76923076923077,
+        "failureRate": 19.230769230769234,
         "rank": 35
       },
       {
-        "ovseId": "urn:uidai:client:nagaland-police:202610092803",
-        "success": 4,
-        "failure": 19,
-        "total": 23,
-        "successRate": 17.391304347826086,
-        "failureRate": 82.6086956521739,
+        "ovseId": "novelpatterns",
+        "success": 20,
+        "failure": 5,
+        "total": 25,
+        "successRate": 80,
+        "failureRate": 20,
         "rank": 36
       },
       {
-        "ovseId": "urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581",
-        "success": 16,
-        "failure": 5,
-        "total": 21,
-        "successRate": 76.19047619047619,
-        "failureRate": 23.809523809523807,
+        "ovseId": "urn:uidai:client:aparampaar-finance-private-limited:202605134450",
+        "success": 14,
+        "failure": 9,
+        "total": 23,
+        "successRate": 60.86956521739131,
+        "failureRate": 39.130434782608695,
         "rank": 37
       },
       {
-        "ovseId": "ooru_digital",
-        "success": 19,
-        "failure": 1,
-        "total": 20,
-        "successRate": 95,
-        "failureRate": 5,
+        "ovseId": "urn:uidai:client:sahana-system-limited:202610095399",
+        "success": 15,
+        "failure": 7,
+        "total": 22,
+        "successRate": 68.18181818181817,
+        "failureRate": 31.818181818181817,
         "rank": 38
       },
       {
-        "ovseId": "rjil",
-        "success": 14,
-        "failure": 4,
-        "total": 18,
-        "successRate": 77.77777777777779,
-        "failureRate": 22.22222222222222,
+        "ovseId": "urn:uidai:client:intuitive-data-solutions-private-limited:202607237962",
+        "success": 11,
+        "failure": 9,
+        "total": 20,
+        "successRate": 55.00000000000001,
+        "failureRate": 45,
         "rank": 39
       },
       {
-        "ovseId": "urn:uidai:client:oryggi-technologies-private-limited:202607288031",
-        "success": 5,
-        "failure": 10,
-        "total": 15,
-        "successRate": 33.33333333333333,
-        "failureRate": 66.66666666666666,
+        "ovseId": "urn:uidai:client:kendriya-vidyalaya-sangathan:202611171026",
+        "success": 0,
+        "failure": 19,
+        "total": 19,
+        "successRate": 0,
+        "failureRate": 100,
         "rank": 40
       },
       {
-        "ovseId": "urn:uidai:client:aparampaar-finance-private-limited:202605134450",
-        "success": 9,
-        "failure": 6,
-        "total": 15,
-        "successRate": 60,
-        "failureRate": 40,
+        "ovseId": "ooru_digital",
+        "success": 15,
+        "failure": 4,
+        "total": 19,
+        "successRate": 78.94736842105263,
+        "failureRate": 21.052631578947366,
         "rank": 41
       },
       {
         "ovseId": "urn:uidai:client:perigeon-software-private-limited:202606041974",
-        "success": 10,
+        "success": 16,
         "failure": 3,
-        "total": 13,
-        "successRate": 76.92307692307693,
-        "failureRate": 23.076923076923077,
+        "total": 19,
+        "successRate": 84.21052631578947,
+        "failureRate": 15.789473684210526,
         "rank": 42
       },
       {
-        "ovseId": "urn:uidai:client:assam-police:202606026852",
+        "ovseId": "tspolice",
+        "success": 8,
+        "failure": 9,
+        "total": 17,
+        "successRate": 47.05882352941176,
+        "failureRate": 52.94117647058824,
+        "rank": 43
+      },
+      {
+        "ovseId": "urn:uidai:client:oryggi-technologies-private-limited:202607288031",
+        "success": 6,
+        "failure": 10,
+        "total": 16,
+        "successRate": 37.5,
+        "failureRate": 62.5,
+        "rank": 44
+      },
+      {
+        "ovseId": "urn:uidai:client:mdindia-health-insurance-tpa-private-limited:202608143596",
+        "success": 3,
+        "failure": 11,
+        "total": 14,
+        "successRate": 21.428571428571427,
+        "failureRate": 78.57142857142857,
+        "rank": 45
+      },
+      {
+        "ovseId": "apiclub",
+        "success": 8,
+        "failure": 5,
+        "total": 13,
+        "successRate": 61.53846153846154,
+        "failureRate": 38.46153846153847,
+        "rank": 46
+      },
+      {
+        "ovseId": "urn:uidai:client:sai-roshni-capital-private-limited:202610275530",
+        "success": 6,
+        "failure": 7,
+        "total": 13,
+        "successRate": 46.15384615384615,
+        "failureRate": 53.84615384615385,
+        "rank": 47
+      },
+      {
+        "ovseId": "mantra",
         "success": 10,
         "failure": 2,
         "total": 12,
         "successRate": 83.33333333333334,
         "failureRate": 16.666666666666664,
-        "rank": 43
-      },
-      {
-        "ovseId": "urn:uidai:client:intuitive-data-solutions-private-limited:202607237962",
-        "success": 12,
-        "failure": 0,
-        "total": 12,
-        "successRate": 100,
-        "failureRate": 0,
-        "rank": 44
+        "rank": 48
       },
       {
         "ovseId": "AF27680312",
@@ -3130,7 +3175,7 @@ const BUNDLED_DATA = {
         "total": 11,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 45
+        "rank": 49
       },
       {
         "ovseId": "2610163901",
@@ -3139,7 +3184,7 @@ const BUNDLED_DATA = {
         "total": 9,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 46
+        "rank": 50
       },
       {
         "ovseId": "202611177252",
@@ -3148,52 +3193,52 @@ const BUNDLED_DATA = {
         "total": 9,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 47
+        "rank": 51
+      },
+      {
+        "ovseId": "urn:uidai:client:earnest-data-analytics-private-limited:202609247533",
+        "success": 9,
+        "failure": 0,
+        "total": 9,
+        "successRate": 100,
+        "failureRate": 0,
+        "rank": 52
+      },
+      {
+        "ovseId": "urn:uidai:client:nagaland-police:202610092803",
+        "success": 2,
+        "failure": 7,
+        "total": 9,
+        "successRate": 22.22222222222222,
+        "failureRate": 77.77777777777779,
+        "rank": 53
+      },
+      {
+        "ovseId": "urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049",
+        "success": 5,
+        "failure": 3,
+        "total": 8,
+        "successRate": 62.5,
+        "failureRate": 37.5,
+        "rank": 54
+      },
+      {
+        "ovseId": "urn:uidai:client:assam-police:202606026852",
+        "success": 7,
+        "failure": 0,
+        "total": 7,
+        "successRate": 100,
+        "failureRate": 0,
+        "rank": 55
       },
       {
         "ovseId": "urn:uidai:client:appexigo-technologies-private-limited:2028555185225206113",
         "success": 0,
-        "failure": 9,
-        "total": 9,
+        "failure": 6,
+        "total": 6,
         "successRate": 0,
         "failureRate": 100,
-        "rank": 48
-      },
-      {
-        "ovseId": "urn:uidai:client:msqube-technology-solutions-private-limited:202611061651",
-        "success": 0,
-        "failure": 8,
-        "total": 8,
-        "successRate": 0,
-        "failureRate": 100,
-        "rank": 49
-      },
-      {
-        "ovseId": "urn:uidai:client:evolute-fintech-innovations-private-limited:202608271911",
-        "success": 7,
-        "failure": 1,
-        "total": 8,
-        "successRate": 87.5,
-        "failureRate": 12.5,
-        "rank": 50
-      },
-      {
-        "ovseId": "urn:uidai:client:sai-roshni-capital-private-limited:202610275530",
-        "success": 4,
-        "failure": 4,
-        "total": 8,
-        "successRate": 50,
-        "failureRate": 50,
-        "rank": 51
-      },
-      {
-        "ovseId": "urn:uidai:client:startup-gurukul-innovation-private-limited:202610157376",
-        "success": 6,
-        "failure": 1,
-        "total": 7,
-        "successRate": 85.71428571428571,
-        "failureRate": 14.285714285714285,
-        "rank": 52
+        "rank": 56
       },
       {
         "ovseId": "isolve",
@@ -3202,25 +3247,7 @@ const BUNDLED_DATA = {
         "total": 6,
         "successRate": 16.666666666666664,
         "failureRate": 83.33333333333334,
-        "rank": 53
-      },
-      {
-        "ovseId": "urn:uidai:client:bses-rajdhani-power-limited:202609164125",
-        "success": 3,
-        "failure": 3,
-        "total": 6,
-        "successRate": 50,
-        "failureRate": 50,
-        "rank": 54
-      },
-      {
-        "ovseId": "urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049",
-        "success": 3,
-        "failure": 3,
-        "total": 6,
-        "successRate": 50,
-        "failureRate": 50,
-        "rank": 55
+        "rank": 57
       },
       {
         "ovseId": "urn:uidai:client:mahalaxmi-parivahan-private-limited:202608108563",
@@ -3229,46 +3256,28 @@ const BUNDLED_DATA = {
         "total": 6,
         "successRate": 50,
         "failureRate": 50,
-        "rank": 56
+        "rank": 58
       },
       {
-        "ovseId": "tspolice",
-        "success": 4,
-        "failure": 2,
-        "total": 6,
-        "successRate": 66.66666666666666,
-        "failureRate": 33.33333333333333,
-        "rank": 57
-      },
-      {
-        "ovseId": "apiclub",
+        "ovseId": "decentro",
         "success": 6,
         "failure": 0,
         "total": 6,
         "successRate": 100,
         "failureRate": 0,
-        "rank": 58
-      },
-      {
-        "ovseId": "mantra",
-        "success": 5,
-        "failure": 0,
-        "total": 5,
-        "successRate": 100,
-        "failureRate": 0,
         "rank": 59
       },
       {
-        "ovseId": "urn:uidai:client:centre-for-good-governance:202609037683",
-        "success": 4,
-        "failure": 0,
-        "total": 4,
-        "successRate": 100,
-        "failureRate": 0,
+        "ovseId": "urn:uidai:client:startup-gurukul-innovation-private-limited:202610157376",
+        "success": 5,
+        "failure": 1,
+        "total": 6,
+        "successRate": 83.33333333333334,
+        "failureRate": 16.666666666666664,
         "rank": 60
       },
       {
-        "ovseId": "as4",
+        "ovseId": "urn:uidai:client:evolute-fintech-innovations-private-limited:202608271911",
         "success": 4,
         "failure": 0,
         "total": 4,
@@ -3277,25 +3286,25 @@ const BUNDLED_DATA = {
         "rank": 61
       },
       {
-        "ovseId": "urn:uidai:client:hp-marketing-board:202611045503",
-        "success": 0,
-        "failure": 4,
-        "total": 4,
-        "successRate": 0,
-        "failureRate": 100,
-        "rank": 62
-      },
-      {
         "ovseId": "urn:uidai:client:greenpark-hotels-and-resorts-limited:202606248233",
         "success": 2,
         "failure": 2,
         "total": 4,
         "successRate": 50,
         "failureRate": 50,
+        "rank": 62
+      },
+      {
+        "ovseId": "fastkyc",
+        "success": 4,
+        "failure": 0,
+        "total": 4,
+        "successRate": 100,
+        "failureRate": 0,
         "rank": 63
       },
       {
-        "ovseId": "urn:uidai:client:caratred-technologies-llp:202606040096",
+        "ovseId": "signcare",
         "success": 4,
         "failure": 0,
         "total": 4,
@@ -3304,7 +3313,7 @@ const BUNDLED_DATA = {
         "rank": 64
       },
       {
-        "ovseId": "digio",
+        "ovseId": "urn:uidai:client:directorate-of-land-records:202607304388",
         "success": 3,
         "failure": 0,
         "total": 3,
@@ -3313,7 +3322,7 @@ const BUNDLED_DATA = {
         "rank": 65
       },
       {
-        "ovseId": "urn:uidai:client:directorate-of-land-records:202607304388",
+        "ovseId": "bioenable",
         "success": 3,
         "failure": 0,
         "total": 3,
@@ -3322,25 +3331,25 @@ const BUNDLED_DATA = {
         "rank": 66
       },
       {
-        "ovseId": "bioenable",
-        "success": 3,
-        "failure": 0,
+        "ovseId": "urn:uidai:client:doklink-services-private-limited:202609249932",
+        "success": 1,
+        "failure": 2,
         "total": 3,
-        "successRate": 100,
-        "failureRate": 0,
+        "successRate": 33.33333333333333,
+        "failureRate": 66.66666666666666,
         "rank": 67
       },
       {
-        "ovseId": "bfhl",
-        "success": 3,
-        "failure": 0,
+        "ovseId": "documint",
+        "success": 1,
+        "failure": 2,
         "total": 3,
-        "successRate": 100,
-        "failureRate": 0,
+        "successRate": 33.33333333333333,
+        "failureRate": 66.66666666666666,
         "rank": 68
       },
       {
-        "ovseId": "decentro",
+        "ovseId": "bfhl",
         "success": 3,
         "failure": 0,
         "total": 3,
@@ -3358,7 +3367,7 @@ const BUNDLED_DATA = {
         "rank": 70
       },
       {
-        "ovseId": "urn:uidai:client:internet-and-mobile-association-of-india:202608053256",
+        "ovseId": "urn:uidai:client:3i-consulting-private-limited:202608031319",
         "success": 2,
         "failure": 1,
         "total": 3,
@@ -3367,7 +3376,7 @@ const BUNDLED_DATA = {
         "rank": 71
       },
       {
-        "ovseId": "sedax",
+        "ovseId": "signzytech",
         "success": 3,
         "failure": 0,
         "total": 3,
@@ -3376,16 +3385,16 @@ const BUNDLED_DATA = {
         "rank": 72
       },
       {
-        "ovseId": "urn:uidai:client:appexigo-technologies-private-limited:202606106113",
-        "success": 0,
-        "failure": 2,
-        "total": 2,
-        "successRate": 0,
-        "failureRate": 100,
+        "ovseId": "urn:uidai:client:internet-and-mobile-association-of-india:202608053256",
+        "success": 2,
+        "failure": 1,
+        "total": 3,
+        "successRate": 66.66666666666666,
+        "failureRate": 33.33333333333333,
         "rank": 73
       },
       {
-        "ovseId": "urn:uidai:client:doklink-services-private-limited:202609249932",
+        "ovseId": "urn:uidai:client:appexigo-technologies-private-limited:202606106113",
         "success": 0,
         "failure": 2,
         "total": 2,
@@ -3403,16 +3412,16 @@ const BUNDLED_DATA = {
         "rank": 75
       },
       {
-        "ovseId": "novelpatterns",
-        "success": 2,
-        "failure": 0,
+        "ovseId": "urn:uidai:client:finanalyz-technologies-private-limited:202606306133",
+        "success": 0,
+        "failure": 2,
         "total": 2,
-        "successRate": 100,
-        "failureRate": 0,
+        "successRate": 0,
+        "failureRate": 100,
         "rank": 76
       },
       {
-        "ovseId": "signcare",
+        "ovseId": "urn:uidai:client:caratred-technologies-llp:202606040096",
         "success": 2,
         "failure": 0,
         "total": 2,
@@ -3421,7 +3430,7 @@ const BUNDLED_DATA = {
         "rank": 77
       },
       {
-        "ovseId": "fastkyc",
+        "ovseId": "urn:uidai:client:centre-for-good-governance:202609037683",
         "success": 2,
         "failure": 0,
         "total": 2,
@@ -3430,7 +3439,7 @@ const BUNDLED_DATA = {
         "rank": 78
       },
       {
-        "ovseId": "urn:uidai:client:rurtech-for-arayans-llp:202611039670",
+        "ovseId": "urn:uidai:client:hp-marketing-board:202611045503",
         "success": 0,
         "failure": 1,
         "total": 1,
@@ -3439,31 +3448,49 @@ const BUNDLED_DATA = {
         "rank": 79
       },
       {
-        "ovseId": "urn:uidai:client:shri-trimbakeshwar-devasthan-trust:202607072068",
-        "success": 1,
-        "failure": 0,
+        "ovseId": "urn:uidai:client:rurtech-for-arayans-llp:202611039670",
+        "success": 0,
+        "failure": 1,
         "total": 1,
-        "successRate": 100,
-        "failureRate": 0,
+        "successRate": 0,
+        "failureRate": 100,
         "rank": 80
       },
       {
-        "ovseId": "trackwizz",
-        "success": 1,
-        "failure": 0,
+        "ovseId": "any2paytpl",
+        "success": 0,
+        "failure": 1,
         "total": 1,
-        "successRate": 100,
-        "failureRate": 0,
+        "successRate": 0,
+        "failureRate": 100,
         "rank": 81
       },
       {
-        "ovseId": "signzytech",
+        "ovseId": "1a2f",
+        "success": 0,
+        "failure": 1,
+        "total": 1,
+        "successRate": 0,
+        "failureRate": 100,
+        "rank": 82
+      },
+      {
+        "ovseId": "urn:uidai:client:msqube-technology-solutions-private-limited:202611061651",
+        "success": 0,
+        "failure": 1,
+        "total": 1,
+        "successRate": 0,
+        "failureRate": 100,
+        "rank": 83
+      },
+      {
+        "ovseId": "sedax",
         "success": 1,
         "failure": 0,
         "total": 1,
         "successRate": 100,
         "failureRate": 0,
-        "rank": 82
+        "rank": 84
       },
       {
         "ovseId": "urn:uidai:client:fr8-india-private-limited:202609177281",
@@ -3472,146 +3499,164 @@ const BUNDLED_DATA = {
         "total": 1,
         "successRate": 100,
         "failureRate": 0,
-        "rank": 83
+        "rank": 85
+      },
+      {
+        "ovseId": "urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204",
+        "success": 1,
+        "failure": 0,
+        "total": 1,
+        "successRate": 100,
+        "failureRate": 0,
+        "rank": 86
+      },
+      {
+        "ovseId": "trackwizz",
+        "success": 1,
+        "failure": 0,
+        "total": 1,
+        "successRate": 100,
+        "failureRate": 0,
+        "rank": 87
       }
     ],
     "map": {},
     "top5": [
       {
         "ovseId": "SelectiveShare",
-        "success": 122992,
-        "failure": 26,
-        "total": 123018,
-        "successRate": 99.97886488156205,
-        "failureRate": 0.02113511843795217,
+        "success": 134305,
+        "failure": 11,
+        "total": 134316,
+        "successRate": 99.99181035766401,
+        "failureRate": 0.0081896423359838,
         "rank": 1
       },
       {
         "ovseId": "urbancompany",
-        "success": 6408,
-        "failure": 5417,
-        "total": 11825,
-        "successRate": 54.190274841437635,
-        "failureRate": 45.80972515856237,
+        "success": 7293,
+        "failure": 5891,
+        "total": 13184,
+        "successRate": 55.31705097087378,
+        "failureRate": 44.68294902912621,
         "rank": 2
       },
       {
-        "ovseId": "protean",
-        "success": 3657,
-        "failure": 476,
-        "total": 4133,
-        "successRate": 88.48294217275587,
-        "failureRate": 11.517057827244132,
+        "ovseId": "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+        "success": 2892,
+        "failure": 3808,
+        "total": 6700,
+        "successRate": 43.16417910447761,
+        "failureRate": 56.835820895522396,
         "rank": 3
       },
       {
-        "ovseId": "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
-        "success": 1146,
-        "failure": 1835,
-        "total": 2981,
-        "successRate": 38.44347534384435,
-        "failureRate": 61.55652465615565,
+        "ovseId": "protean",
+        "success": 3684,
+        "failure": 220,
+        "total": 3904,
+        "successRate": 94.36475409836066,
+        "failureRate": 5.635245901639344,
         "rank": 4
       },
       {
         "ovseId": "dexit",
-        "success": 1596,
-        "failure": 1171,
-        "total": 2767,
-        "successRate": 57.67979761474521,
-        "failureRate": 42.32020238525479,
+        "success": 1782,
+        "failure": 1217,
+        "total": 2999,
+        "successRate": 59.41980660220073,
+        "failureRate": 40.58019339779927,
         "rank": 5
       }
     ],
     "top10": [
       {
         "ovseId": "SelectiveShare",
-        "success": 122992,
-        "failure": 26,
-        "total": 123018,
-        "successRate": 99.97886488156205,
-        "failureRate": 0.02113511843795217,
+        "success": 134305,
+        "failure": 11,
+        "total": 134316,
+        "successRate": 99.99181035766401,
+        "failureRate": 0.0081896423359838,
         "rank": 1
       },
       {
         "ovseId": "urbancompany",
-        "success": 6408,
-        "failure": 5417,
-        "total": 11825,
-        "successRate": 54.190274841437635,
-        "failureRate": 45.80972515856237,
+        "success": 7293,
+        "failure": 5891,
+        "total": 13184,
+        "successRate": 55.31705097087378,
+        "failureRate": 44.68294902912621,
         "rank": 2
       },
       {
-        "ovseId": "protean",
-        "success": 3657,
-        "failure": 476,
-        "total": 4133,
-        "successRate": 88.48294217275587,
-        "failureRate": 11.517057827244132,
+        "ovseId": "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+        "success": 2892,
+        "failure": 3808,
+        "total": 6700,
+        "successRate": 43.16417910447761,
+        "failureRate": 56.835820895522396,
         "rank": 3
       },
       {
-        "ovseId": "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
-        "success": 1146,
-        "failure": 1835,
-        "total": 2981,
-        "successRate": 38.44347534384435,
-        "failureRate": 61.55652465615565,
+        "ovseId": "protean",
+        "success": 3684,
+        "failure": 220,
+        "total": 3904,
+        "successRate": 94.36475409836066,
+        "failureRate": 5.635245901639344,
         "rank": 4
       },
       {
         "ovseId": "dexit",
-        "success": 1596,
-        "failure": 1171,
-        "total": 2767,
-        "successRate": 57.67979761474521,
-        "failureRate": 42.32020238525479,
+        "success": 1782,
+        "failure": 1217,
+        "total": 2999,
+        "successRate": 59.41980660220073,
+        "failureRate": 40.58019339779927,
         "rank": 5
       },
       {
         "ovseId": "procam",
-        "success": 1578,
-        "failure": 537,
-        "total": 2115,
-        "successRate": 74.60992907801418,
-        "failureRate": 25.390070921985814,
+        "success": 1807,
+        "failure": 659,
+        "total": 2466,
+        "successRate": 73.27656123276562,
+        "failureRate": 26.723438767234388,
         "rank": 6
       },
       {
         "ovseId": "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
-        "success": 1037,
-        "failure": 1052,
-        "total": 2089,
-        "successRate": 49.64097654380086,
-        "failureRate": 50.35902345619914,
+        "success": 1197,
+        "failure": 1222,
+        "total": 2419,
+        "successRate": 49.48325754443985,
+        "failureRate": 50.51674245556015,
         "rank": 7
       },
       {
         "ovseId": "gridlines",
-        "success": 1187,
-        "failure": 824,
-        "total": 2011,
-        "successRate": 59.02536051715565,
-        "failureRate": 40.97463948284435,
+        "success": 1424,
+        "failure": 952,
+        "total": 2376,
+        "successRate": 59.93265993265994,
+        "failureRate": 40.06734006734007,
         "rank": 8
       },
       {
         "ovseId": "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
-        "success": 995,
-        "failure": 677,
-        "total": 1672,
-        "successRate": 59.50956937799043,
-        "failureRate": 40.49043062200957,
+        "success": 1207,
+        "failure": 820,
+        "total": 2027,
+        "successRate": 59.54612728169709,
+        "failureRate": 40.45387271830291,
         "rank": 9
       },
       {
         "ovseId": "tnmc",
-        "success": 1092,
-        "failure": 568,
-        "total": 1660,
-        "successRate": 65.78313253012048,
-        "failureRate": 34.21686746987952,
+        "success": 1250,
+        "failure": 766,
+        "total": 2016,
+        "successRate": 62.00396825396825,
+        "failureRate": 37.99603174603175,
         "rank": 10
       }
     ]
@@ -3621,524 +3666,524 @@ const BUNDLED_DATA = {
       "ovseId": "SelectiveShare",
       "status": "Standard",
       "weeklyRank": 1,
-      "weeklyTotal": 123018,
-      "weeklySuccess": 122992,
-      "weeklyFailure": 26,
-      "weeklySuccessRate": "99.98",
-      "weeklyFailureRate": "0.02",
+      "weeklyTotal": 134316,
+      "weeklySuccess": 134305,
+      "weeklyFailure": 11,
+      "weeklySuccessRate": "99.99",
+      "weeklyFailureRate": "0.01",
       "overallRank": 1,
-      "overallTotal": 3335968,
-      "overallSuccess": 3335583,
+      "overallTotal": 3365752,
+      "overallSuccess": 3365367,
       "overallFailure": 385,
       "overallSuccessRate": "99.99",
       "overallFailureRate": "0.01",
-      "weeklyShareOfOverallPct": "3.69"
+      "weeklyShareOfOverallPct": "3.99"
     },
     {
       "ovseId": "urbancompany",
       "status": "Standard",
       "weeklyRank": 2,
-      "weeklyTotal": 11825,
-      "weeklySuccess": 6408,
-      "weeklyFailure": 5417,
-      "weeklySuccessRate": "54.19",
-      "weeklyFailureRate": "45.81",
+      "weeklyTotal": 13184,
+      "weeklySuccess": 7293,
+      "weeklyFailure": 5891,
+      "weeklySuccessRate": "55.32",
+      "weeklyFailureRate": "44.68",
       "overallRank": 4,
-      "overallTotal": 329917,
-      "overallSuccess": 191267,
-      "overallFailure": 138650,
+      "overallTotal": 333681,
+      "overallSuccess": 193435,
+      "overallFailure": 140246,
       "overallSuccessRate": "57.97",
       "overallFailureRate": "42.03",
-      "weeklyShareOfOverallPct": "3.58"
+      "weeklyShareOfOverallPct": "3.95"
+    },
+    {
+      "ovseId": "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "status": "Surging / High Growth",
+      "weeklyRank": 3,
+      "weeklyTotal": 6700,
+      "weeklySuccess": 2892,
+      "weeklyFailure": 3808,
+      "weeklySuccessRate": "43.16",
+      "weeklyFailureRate": "56.84",
+      "overallRank": 14,
+      "overallTotal": 17768,
+      "overallSuccess": 6852,
+      "overallFailure": 10916,
+      "overallSuccessRate": "38.56",
+      "overallFailureRate": "61.44",
+      "weeklyShareOfOverallPct": "37.71"
     },
     {
       "ovseId": "protean",
       "status": "Standard",
-      "weeklyRank": 3,
-      "weeklyTotal": 4133,
-      "weeklySuccess": 3657,
-      "weeklyFailure": 476,
-      "weeklySuccessRate": "88.48",
-      "weeklyFailureRate": "11.52",
-      "overallRank": 9,
-      "overallTotal": 32172,
-      "overallSuccess": 29888,
-      "overallFailure": 2284,
-      "overallSuccessRate": "92.90",
-      "overallFailureRate": "7.10",
-      "weeklyShareOfOverallPct": "12.85"
-    },
-    {
-      "ovseId": "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
-      "status": "Standard",
       "weeklyRank": 4,
-      "weeklyTotal": 2981,
-      "weeklySuccess": 1146,
-      "weeklyFailure": 1835,
-      "weeklySuccessRate": "38.44",
-      "weeklyFailureRate": "61.56",
-      "overallRank": 16,
-      "overallTotal": 12880,
-      "overallSuccess": 4696,
-      "overallFailure": 8184,
-      "overallSuccessRate": "36.46",
-      "overallFailureRate": "63.54",
-      "weeklyShareOfOverallPct": "23.14"
+      "weeklyTotal": 3904,
+      "weeklySuccess": 3684,
+      "weeklyFailure": 220,
+      "weeklySuccessRate": "94.36",
+      "weeklyFailureRate": "5.64",
+      "overallRank": 9,
+      "overallTotal": 32764,
+      "overallSuccess": 30462,
+      "overallFailure": 2302,
+      "overallSuccessRate": "92.97",
+      "overallFailureRate": "7.03",
+      "weeklyShareOfOverallPct": "11.92"
     },
     {
       "ovseId": "dexit",
       "status": "Standard",
       "weeklyRank": 5,
-      "weeklyTotal": 2767,
-      "weeklySuccess": 1596,
-      "weeklyFailure": 1171,
-      "weeklySuccessRate": "57.68",
-      "weeklyFailureRate": "42.32",
+      "weeklyTotal": 2999,
+      "weeklySuccess": 1782,
+      "weeklyFailure": 1217,
+      "weeklySuccessRate": "59.42",
+      "weeklyFailureRate": "40.58",
       "overallRank": 13,
-      "overallTotal": 21340,
-      "overallSuccess": 11643,
-      "overallFailure": 9697,
-      "overallSuccessRate": "54.56",
-      "overallFailureRate": "45.44",
-      "weeklyShareOfOverallPct": "12.97"
+      "overallTotal": 21998,
+      "overallSuccess": 12052,
+      "overallFailure": 9946,
+      "overallSuccessRate": "54.79",
+      "overallFailureRate": "45.21",
+      "weeklyShareOfOverallPct": "13.63"
     },
     {
       "ovseId": "procam",
       "status": "Standard",
       "weeklyRank": 6,
-      "weeklyTotal": 2115,
-      "weeklySuccess": 1578,
-      "weeklyFailure": 537,
-      "weeklySuccessRate": "74.61",
-      "weeklyFailureRate": "25.39",
+      "weeklyTotal": 2466,
+      "weeklySuccess": 1807,
+      "weeklyFailure": 659,
+      "weeklySuccessRate": "73.28",
+      "weeklyFailureRate": "26.72",
       "overallRank": 7,
-      "overallTotal": 53406,
-      "overallSuccess": 39708,
-      "overallFailure": 13698,
-      "overallSuccessRate": "74.35",
-      "overallFailureRate": "25.65",
-      "weeklyShareOfOverallPct": "3.96"
+      "overallTotal": 54052,
+      "overallSuccess": 40164,
+      "overallFailure": 13888,
+      "overallSuccessRate": "74.31",
+      "overallFailureRate": "25.69",
+      "weeklyShareOfOverallPct": "4.56"
     },
     {
       "ovseId": "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
       "status": "Surging / High Growth",
       "weeklyRank": 7,
-      "weeklyTotal": 2089,
-      "weeklySuccess": 1037,
-      "weeklyFailure": 1052,
-      "weeklySuccessRate": "49.64",
-      "weeklyFailureRate": "50.36",
+      "weeklyTotal": 2419,
+      "weeklySuccess": 1197,
+      "weeklyFailure": 1222,
+      "weeklySuccessRate": "49.48",
+      "weeklyFailureRate": "50.52",
       "overallRank": 19,
-      "overallTotal": 5576,
-      "overallSuccess": 2651,
-      "overallFailure": 2925,
-      "overallSuccessRate": "47.54",
-      "overallFailureRate": "52.46",
-      "weeklyShareOfOverallPct": "37.46"
+      "overallTotal": 6119,
+      "overallSuccess": 2940,
+      "overallFailure": 3179,
+      "overallSuccessRate": "48.05",
+      "overallFailureRate": "51.95",
+      "weeklyShareOfOverallPct": "39.53"
     },
     {
       "ovseId": "gridlines",
       "status": "Standard",
       "weeklyRank": 8,
-      "weeklyTotal": 2011,
-      "weeklySuccess": 1187,
-      "weeklyFailure": 824,
-      "weeklySuccessRate": "59.03",
-      "weeklyFailureRate": "40.97",
+      "weeklyTotal": 2376,
+      "weeklySuccess": 1424,
+      "weeklyFailure": 952,
+      "weeklySuccessRate": "59.93",
+      "weeklyFailureRate": "40.07",
       "overallRank": 5,
-      "overallTotal": 61734,
-      "overallSuccess": 33536,
-      "overallFailure": 28198,
-      "overallSuccessRate": "54.32",
-      "overallFailureRate": "45.68",
-      "weeklyShareOfOverallPct": "3.26"
+      "overallTotal": 62455,
+      "overallSuccess": 33957,
+      "overallFailure": 28498,
+      "overallSuccessRate": "54.37",
+      "overallFailureRate": "45.63",
+      "weeklyShareOfOverallPct": "3.80"
     },
     {
       "ovseId": "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
       "status": "Standard",
       "weeklyRank": 9,
-      "weeklyTotal": 1672,
-      "weeklySuccess": 995,
-      "weeklyFailure": 677,
-      "weeklySuccessRate": "59.51",
-      "weeklyFailureRate": "40.49",
-      "overallRank": 12,
-      "overallTotal": 25905,
-      "overallSuccess": 13903,
-      "overallFailure": 12002,
-      "overallSuccessRate": "53.67",
-      "overallFailureRate": "46.33",
-      "weeklyShareOfOverallPct": "6.45"
+      "weeklyTotal": 2027,
+      "weeklySuccess": 1207,
+      "weeklyFailure": 820,
+      "weeklySuccessRate": "59.55",
+      "weeklyFailureRate": "40.45",
+      "overallRank": 11,
+      "overallTotal": 26571,
+      "overallSuccess": 14282,
+      "overallFailure": 12289,
+      "overallSuccessRate": "53.75",
+      "overallFailureRate": "46.25",
+      "weeklyShareOfOverallPct": "7.63"
     },
     {
       "ovseId": "tnmc",
       "status": "Standard",
       "weeklyRank": 10,
-      "weeklyTotal": 1660,
-      "weeklySuccess": 1092,
-      "weeklyFailure": 568,
-      "weeklySuccessRate": "65.78",
-      "weeklyFailureRate": "34.22",
+      "weeklyTotal": 2016,
+      "weeklySuccess": 1250,
+      "weeklyFailure": 766,
+      "weeklySuccessRate": "62.00",
+      "weeklyFailureRate": "38.00",
       "overallRank": 6,
-      "overallTotal": 60308,
-      "overallSuccess": 42382,
-      "overallFailure": 17926,
-      "overallSuccessRate": "70.28",
-      "overallFailureRate": "29.72",
-      "weeklyShareOfOverallPct": "2.75"
+      "overallTotal": 60913,
+      "overallSuccess": 42729,
+      "overallFailure": 18184,
+      "overallSuccessRate": "70.15",
+      "overallFailureRate": "29.85",
+      "weeklyShareOfOverallPct": "3.31"
     },
     {
       "ovseId": "urn:uidai:client:instantpay-india-limited:202606250788",
       "status": "Standard",
       "weeklyRank": 11,
-      "weeklyTotal": 1313,
-      "weeklySuccess": 890,
-      "weeklyFailure": 423,
-      "weeklySuccessRate": "67.78",
-      "weeklyFailureRate": "32.22",
+      "weeklyTotal": 1502,
+      "weeklySuccess": 1011,
+      "weeklyFailure": 491,
+      "weeklySuccessRate": "67.31",
+      "weeklyFailureRate": "32.69",
       "overallRank": 17,
-      "overallTotal": 9086,
-      "overallSuccess": 6001,
-      "overallFailure": 3085,
-      "overallSuccessRate": "66.05",
-      "overallFailureRate": "33.95",
-      "weeklyShareOfOverallPct": "14.45"
+      "overallTotal": 9461,
+      "overallSuccess": 6262,
+      "overallFailure": 3199,
+      "overallSuccessRate": "66.19",
+      "overallFailureRate": "33.81",
+      "weeklyShareOfOverallPct": "15.88"
     },
     {
       "ovseId": "trustt",
       "status": "Standard",
       "weeklyRank": 12,
-      "weeklyTotal": 1030,
-      "weeklySuccess": 713,
-      "weeklyFailure": 317,
-      "weeklySuccessRate": "69.22",
-      "weeklyFailureRate": "30.78",
-      "overallRank": 15,
-      "overallTotal": 14503,
-      "overallSuccess": 9446,
-      "overallFailure": 5057,
-      "overallSuccessRate": "65.13",
-      "overallFailureRate": "34.87",
-      "weeklyShareOfOverallPct": "7.10"
+      "weeklyTotal": 1317,
+      "weeklySuccess": 894,
+      "weeklyFailure": 423,
+      "weeklySuccessRate": "67.88",
+      "weeklyFailureRate": "32.12",
+      "overallRank": 16,
+      "overallTotal": 15018,
+      "overallSuccess": 9783,
+      "overallFailure": 5235,
+      "overallSuccessRate": "65.14",
+      "overallFailureRate": "34.86",
+      "weeklyShareOfOverallPct": "8.77"
     },
     {
       "ovseId": "urn:uidai:client:inferalgo-private-limited:202607177737",
       "status": "Standard",
       "weeklyRank": 13,
-      "weeklyTotal": 962,
-      "weeklySuccess": 545,
-      "weeklyFailure": 417,
-      "weeklySuccessRate": "56.65",
-      "weeklyFailureRate": "43.35",
-      "overallRank": 11,
-      "overallTotal": 26155,
-      "overallSuccess": 14751,
-      "overallFailure": 11404,
-      "overallSuccessRate": "56.40",
-      "overallFailureRate": "43.60",
-      "weeklyShareOfOverallPct": "3.68"
+      "weeklyTotal": 1104,
+      "weeklySuccess": 646,
+      "weeklyFailure": 458,
+      "weeklySuccessRate": "58.51",
+      "weeklyFailureRate": "41.49",
+      "overallRank": 12,
+      "overallTotal": 26416,
+      "overallSuccess": 14913,
+      "overallFailure": 11503,
+      "overallSuccessRate": "56.45",
+      "overallFailureRate": "43.55",
+      "weeklyShareOfOverallPct": "4.18"
     },
     {
       "ovseId": "arattai",
       "status": "Standard",
       "weeklyRank": 14,
-      "weeklyTotal": 680,
-      "weeklySuccess": 488,
-      "weeklyFailure": 192,
-      "weeklySuccessRate": "71.76",
-      "weeklyFailureRate": "28.24",
+      "weeklyTotal": 743,
+      "weeklySuccess": 527,
+      "weeklyFailure": 216,
+      "weeklySuccessRate": "70.93",
+      "weeklyFailureRate": "29.07",
       "overallRank": 8,
-      "overallTotal": 35586,
-      "overallSuccess": 24293,
-      "overallFailure": 11293,
-      "overallSuccessRate": "68.27",
-      "overallFailureRate": "31.73",
-      "weeklyShareOfOverallPct": "1.91"
+      "overallTotal": 35762,
+      "overallSuccess": 24411,
+      "overallFailure": 11351,
+      "overallSuccessRate": "68.26",
+      "overallFailureRate": "31.74",
+      "weeklyShareOfOverallPct": "2.08"
     },
     {
-      "ovseId": "urn:uidai:client:punjab-school-educationboard:202608274954",
+      "ovseId": "surepass",
       "status": "Standard",
       "weeklyRank": 15,
-      "weeklyTotal": 431,
-      "weeklySuccess": 249,
-      "weeklyFailure": 182,
-      "weeklySuccessRate": "57.77",
-      "weeklyFailureRate": "42.23",
-      "overallRank": 22,
-      "overallTotal": 4216,
-      "overallSuccess": 2152,
-      "overallFailure": 2064,
-      "overallSuccessRate": "51.04",
-      "overallFailureRate": "48.96",
-      "weeklyShareOfOverallPct": "10.22"
+      "weeklyTotal": 653,
+      "weeklySuccess": 349,
+      "weeklyFailure": 304,
+      "weeklySuccessRate": "53.45",
+      "weeklyFailureRate": "46.55",
+      "overallRank": 23,
+      "overallTotal": 3249,
+      "overallSuccess": 1837,
+      "overallFailure": 1412,
+      "overallSuccessRate": "56.54",
+      "overallFailureRate": "43.46",
+      "weeklyShareOfOverallPct": "20.10"
     },
     {
       "ovseId": "urn:uidai:client:hindon-mercantile-limited:202608105382",
       "status": "Standard",
       "weeklyRank": 16,
-      "weeklyTotal": 429,
-      "weeklySuccess": 285,
-      "weeklyFailure": 144,
-      "weeklySuccessRate": "66.43",
-      "weeklyFailureRate": "33.57",
+      "weeklyTotal": 517,
+      "weeklySuccess": 328,
+      "weeklyFailure": 189,
+      "weeklySuccessRate": "63.44",
+      "weeklyFailureRate": "36.56",
       "overallRank": 21,
-      "overallTotal": 4894,
-      "overallSuccess": 2748,
-      "overallFailure": 2146,
-      "overallSuccessRate": "56.15",
-      "overallFailureRate": "43.85",
-      "weeklyShareOfOverallPct": "8.77"
+      "overallTotal": 5064,
+      "overallSuccess": 2839,
+      "overallFailure": 2225,
+      "overallSuccessRate": "56.06",
+      "overallFailureRate": "43.94",
+      "weeklyShareOfOverallPct": "10.21"
     },
     {
-      "ovseId": "(Blank / Unknown)",
-      "status": "Inactive This Week",
+      "ovseId": "urn:uidai:client:punjab-school-educationboard:202608274954",
+      "status": "Standard",
       "weeklyRank": 17,
-      "weeklyTotal": 281,
-      "weeklySuccess": 0,
-      "weeklyFailure": 281,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "100.00",
-      "overallRank": 10,
-      "overallTotal": 26729,
-      "overallSuccess": 13929,
-      "overallFailure": 12800,
-      "overallSuccessRate": "52.11",
-      "overallFailureRate": "47.89",
-      "weeklyShareOfOverallPct": "1.05"
+      "weeklyTotal": 491,
+      "weeklySuccess": 311,
+      "weeklyFailure": 180,
+      "weeklySuccessRate": "63.34",
+      "weeklyFailureRate": "36.66",
+      "overallRank": 22,
+      "overallTotal": 4387,
+      "overallSuccess": 2273,
+      "overallFailure": 2114,
+      "overallSuccessRate": "51.81",
+      "overallFailureRate": "48.19",
+      "weeklyShareOfOverallPct": "11.19"
     },
     {
       "ovseId": "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
       "status": "Standard",
       "weeklyRank": 18,
-      "weeklyTotal": 234,
-      "weeklySuccess": 111,
-      "weeklyFailure": 123,
-      "weeklySuccessRate": "47.44",
-      "weeklyFailureRate": "52.56",
+      "weeklyTotal": 360,
+      "weeklySuccess": 201,
+      "weeklyFailure": 159,
+      "weeklySuccessRate": "55.83",
+      "weeklyFailureRate": "44.17",
       "overallRank": 29,
-      "overallTotal": 1092,
-      "overallSuccess": 667,
-      "overallFailure": 425,
-      "overallSuccessRate": "61.08",
-      "overallFailureRate": "38.92",
-      "weeklyShareOfOverallPct": "21.43"
+      "overallTotal": 1231,
+      "overallSuccess": 763,
+      "overallFailure": 468,
+      "overallSuccessRate": "61.98",
+      "overallFailureRate": "38.02",
+      "weeklyShareOfOverallPct": "29.24"
+    },
+    {
+      "ovseId": "(Blank / Unknown)",
+      "status": "Inactive This Week",
+      "weeklyRank": 19,
+      "weeklyTotal": 326,
+      "weeklySuccess": 0,
+      "weeklyFailure": 326,
+      "weeklySuccessRate": "0.00",
+      "weeklyFailureRate": "100.00",
+      "overallRank": 10,
+      "overallTotal": 26826,
+      "overallSuccess": 13929,
+      "overallFailure": 12897,
+      "overallSuccessRate": "51.92",
+      "overallFailureRate": "48.08",
+      "weeklyShareOfOverallPct": "1.22"
     },
     {
       "ovseId": "urn:uidai:client:dc-office-tawang:202606230797",
       "status": "Standard",
-      "weeklyRank": 19,
-      "weeklyTotal": 173,
-      "weeklySuccess": 128,
-      "weeklyFailure": 45,
-      "weeklySuccessRate": "73.99",
-      "weeklyFailureRate": "26.01",
+      "weeklyRank": 20,
+      "weeklyTotal": 184,
+      "weeklySuccess": 130,
+      "weeklyFailure": 54,
+      "weeklySuccessRate": "70.65",
+      "weeklyFailureRate": "29.35",
       "overallRank": 26,
-      "overallTotal": 2648,
-      "overallSuccess": 1661,
-      "overallFailure": 987,
-      "overallSuccessRate": "62.73",
-      "overallFailureRate": "37.27",
-      "weeklyShareOfOverallPct": "6.53"
+      "overallTotal": 2677,
+      "overallSuccess": 1675,
+      "overallFailure": 1002,
+      "overallSuccessRate": "62.57",
+      "overallFailureRate": "37.43",
+      "weeklyShareOfOverallPct": "6.87"
     },
     {
       "ovseId": "truscholar",
       "status": "Standard",
-      "weeklyRank": 20,
-      "weeklyTotal": 147,
-      "weeklySuccess": 110,
-      "weeklyFailure": 37,
-      "weeklySuccessRate": "74.83",
-      "weeklyFailureRate": "25.17",
-      "overallRank": 20,
-      "overallTotal": 5522,
-      "overallSuccess": 4472,
-      "overallFailure": 1050,
-      "overallSuccessRate": "80.99",
-      "overallFailureRate": "19.01",
-      "weeklyShareOfOverallPct": "2.66"
-    },
-    {
-      "ovseId": "surepass",
-      "status": "Standard",
       "weeklyRank": 21,
-      "weeklyTotal": 137,
-      "weeklySuccess": 62,
-      "weeklyFailure": 75,
-      "weeklySuccessRate": "45.26",
-      "weeklyFailureRate": "54.74",
-      "overallRank": 25,
-      "overallTotal": 2720,
-      "overallSuccess": 1546,
-      "overallFailure": 1174,
-      "overallSuccessRate": "56.84",
-      "overallFailureRate": "43.16",
-      "weeklyShareOfOverallPct": "5.04"
+      "weeklyTotal": 164,
+      "weeklySuccess": 126,
+      "weeklyFailure": 38,
+      "weeklySuccessRate": "76.83",
+      "weeklyFailureRate": "23.17",
+      "overallRank": 20,
+      "overallTotal": 5559,
+      "overallSuccess": 4504,
+      "overallFailure": 1055,
+      "overallSuccessRate": "81.02",
+      "overallFailureRate": "18.98",
+      "weeklyShareOfOverallPct": "2.95"
     },
     {
       "ovseId": "urn:uidai:client:special-branch,-bihar-police:202610163901",
       "status": "Surging / High Growth",
       "weeklyRank": 22,
-      "weeklyTotal": 120,
-      "weeklySuccess": 13,
-      "weeklyFailure": 107,
-      "weeklySuccessRate": "10.83",
-      "weeklyFailureRate": "89.17",
-      "overallRank": 76,
-      "overallTotal": 135,
-      "overallSuccess": 13,
-      "overallFailure": 122,
-      "overallSuccessRate": "9.63",
-      "overallFailureRate": "90.37",
-      "weeklyShareOfOverallPct": "88.89"
-    },
-    {
-      "ovseId": "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
-      "status": "Standard",
-      "weeklyRank": 23,
-      "weeklyTotal": 83,
-      "weeklySuccess": 68,
-      "weeklyFailure": 15,
-      "weeklySuccessRate": "81.93",
-      "weeklyFailureRate": "18.07",
-      "overallRank": 40,
-      "overallTotal": 412,
-      "overallSuccess": 250,
-      "overallFailure": 162,
-      "overallSuccessRate": "60.68",
-      "overallFailureRate": "39.32",
-      "weeklyShareOfOverallPct": "20.15"
-    },
-    {
-      "ovseId": "transaction_analysts",
-      "status": "Standard",
-      "weeklyRank": 24,
-      "weeklyTotal": 82,
-      "weeklySuccess": 53,
-      "weeklyFailure": 29,
-      "weeklySuccessRate": "64.63",
-      "weeklyFailureRate": "35.37",
-      "overallRank": 32,
-      "overallTotal": 699,
-      "overallSuccess": 553,
-      "overallFailure": 146,
-      "overallSuccessRate": "79.11",
-      "overallFailureRate": "20.89",
-      "weeklyShareOfOverallPct": "11.73"
+      "weeklyTotal": 116,
+      "weeklySuccess": 14,
+      "weeklyFailure": 102,
+      "weeklySuccessRate": "12.07",
+      "weeklyFailureRate": "87.93",
+      "overallRank": 75,
+      "overallTotal": 137,
+      "overallSuccess": 14,
+      "overallFailure": 123,
+      "overallSuccessRate": "10.22",
+      "overallFailureRate": "89.78",
+      "weeklyShareOfOverallPct": "84.67"
     },
     {
       "ovseId": "vsign",
       "status": "Standard",
-      "weeklyRank": 25,
-      "weeklyTotal": 72,
-      "weeklySuccess": 49,
-      "weeklyFailure": 23,
-      "weeklySuccessRate": "68.06",
-      "weeklyFailureRate": "31.94",
+      "weeklyRank": 23,
+      "weeklyTotal": 89,
+      "weeklySuccess": 63,
+      "weeklyFailure": 26,
+      "weeklySuccessRate": "70.79",
+      "weeklyFailureRate": "29.21",
       "overallRank": 27,
-      "overallTotal": 1317,
-      "overallSuccess": 1014,
-      "overallFailure": 303,
-      "overallSuccessRate": "76.99",
-      "overallFailureRate": "23.01",
-      "weeklyShareOfOverallPct": "5.47"
+      "overallTotal": 1336,
+      "overallSuccess": 1030,
+      "overallFailure": 306,
+      "overallSuccessRate": "77.10",
+      "overallFailureRate": "22.90",
+      "weeklyShareOfOverallPct": "6.66"
+    },
+    {
+      "ovseId": "evaluit",
+      "status": "Standard",
+      "weeklyRank": 24,
+      "weeklyTotal": 83,
+      "weeklySuccess": 61,
+      "weeklyFailure": 22,
+      "weeklySuccessRate": "73.49",
+      "weeklyFailureRate": "26.51",
+      "overallRank": 46,
+      "overallTotal": 372,
+      "overallSuccess": 272,
+      "overallFailure": 100,
+      "overallSuccessRate": "73.12",
+      "overallFailureRate": "26.88",
+      "weeklyShareOfOverallPct": "22.31"
     },
     {
       "ovseId": "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
       "status": "Surging / High Growth",
+      "weeklyRank": 25,
+      "weeklyTotal": 80,
+      "weeklySuccess": 69,
+      "weeklyFailure": 11,
+      "weeklySuccessRate": "86.25",
+      "weeklyFailureRate": "13.75",
+      "overallRank": 73,
+      "overallTotal": 139,
+      "overallSuccess": 69,
+      "overallFailure": 70,
+      "overallSuccessRate": "49.64",
+      "overallFailureRate": "50.36",
+      "weeklyShareOfOverallPct": "57.55"
+    },
+    {
+      "ovseId": "cisf",
+      "status": "Standard",
       "weeklyRank": 26,
-      "weeklyTotal": 57,
-      "weeklySuccess": 49,
-      "weeklyFailure": 8,
-      "weeklySuccessRate": "85.96",
-      "weeklyFailureRate": "14.04",
-      "overallRank": 83,
-      "overallTotal": 116,
-      "overallSuccess": 49,
-      "overallFailure": 67,
-      "overallSuccessRate": "42.24",
-      "overallFailureRate": "57.76",
-      "weeklyShareOfOverallPct": "49.14"
+      "weeklyTotal": 79,
+      "weeklySuccess": 34,
+      "weeklyFailure": 45,
+      "weeklySuccessRate": "43.04",
+      "weeklyFailureRate": "56.96",
+      "overallRank": 18,
+      "overallTotal": 7139,
+      "overallSuccess": 2933,
+      "overallFailure": 4206,
+      "overallSuccessRate": "41.08",
+      "overallFailureRate": "58.92",
+      "weeklyShareOfOverallPct": "1.11"
+    },
+    {
+      "ovseId": "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
+      "status": "Standard",
+      "weeklyRank": 27,
+      "weeklyTotal": 78,
+      "weeklySuccess": 62,
+      "weeklyFailure": 16,
+      "weeklySuccessRate": "79.49",
+      "weeklyFailureRate": "20.51",
+      "overallRank": 39,
+      "overallTotal": 438,
+      "overallSuccess": 270,
+      "overallFailure": 168,
+      "overallSuccessRate": "61.64",
+      "overallFailureRate": "38.36",
+      "weeklyShareOfOverallPct": "17.81"
+    },
+    {
+      "ovseId": "transaction_analysts",
+      "status": "Standard",
+      "weeklyRank": 28,
+      "weeklyTotal": 71,
+      "weeklySuccess": 51,
+      "weeklyFailure": 20,
+      "weeklySuccessRate": "71.83",
+      "weeklyFailureRate": "28.17",
+      "overallRank": 32,
+      "overallTotal": 706,
+      "overallSuccess": 560,
+      "overallFailure": 146,
+      "overallSuccessRate": "79.32",
+      "overallFailureRate": "20.68",
+      "weeklyShareOfOverallPct": "10.06"
+    },
+    {
+      "ovseId": "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
+      "status": "Standard",
+      "weeklyRank": 29,
+      "weeklyTotal": 62,
+      "weeklySuccess": 34,
+      "weeklyFailure": 28,
+      "weeklySuccessRate": "54.84",
+      "weeklyFailureRate": "45.16",
+      "overallRank": 43,
+      "overallTotal": 402,
+      "overallSuccess": 216,
+      "overallFailure": 186,
+      "overallSuccessRate": "53.73",
+      "overallFailureRate": "46.27",
+      "weeklyShareOfOverallPct": "15.42"
     },
     {
       "ovseId": "entityiq",
       "status": "Standard",
-      "weeklyRank": 27,
-      "weeklyTotal": 56,
-      "weeklySuccess": 50,
+      "weeklyRank": 30,
+      "weeklyTotal": 44,
+      "weeklySuccess": 38,
       "weeklyFailure": 6,
-      "weeklySuccessRate": "89.29",
-      "weeklyFailureRate": "10.71",
+      "weeklySuccessRate": "86.36",
+      "weeklyFailureRate": "13.64",
       "overallRank": 28,
       "overallTotal": 1293,
       "overallSuccess": 1021,
       "overallFailure": 272,
       "overallSuccessRate": "78.96",
       "overallFailureRate": "21.04",
-      "weeklyShareOfOverallPct": "4.33"
-    },
-    {
-      "ovseId": "cisf",
-      "status": "Standard",
-      "weeklyRank": 29,
-      "weeklyTotal": 51,
-      "weeklySuccess": 25,
-      "weeklyFailure": 26,
-      "weeklySuccessRate": "49.02",
-      "weeklyFailureRate": "50.98",
-      "overallRank": 18,
-      "overallTotal": 7111,
-      "overallSuccess": 2924,
-      "overallFailure": 4187,
-      "overallSuccessRate": "41.12",
-      "overallFailureRate": "58.88",
-      "weeklyShareOfOverallPct": "0.72"
-    },
-    {
-      "ovseId": "evaluit",
-      "status": "Standard",
-      "weeklyRank": 28,
-      "weeklyTotal": 51,
-      "weeklySuccess": 30,
-      "weeklyFailure": 21,
-      "weeklySuccessRate": "58.82",
-      "weeklyFailureRate": "41.18",
-      "overallRank": 47,
-      "overallTotal": 334,
-      "overallSuccess": 236,
-      "overallFailure": 98,
-      "overallSuccessRate": "70.66",
-      "overallFailureRate": "29.34",
-      "weeklyShareOfOverallPct": "15.27"
-    },
-    {
-      "ovseId": "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
-      "status": "Standard",
-      "weeklyRank": 30,
-      "weeklyTotal": 46,
-      "weeklySuccess": 28,
-      "weeklyFailure": 18,
-      "weeklySuccessRate": "60.87",
-      "weeklyFailureRate": "39.13",
-      "overallRank": 45,
-      "overallTotal": 382,
-      "overallSuccess": 207,
-      "overallFailure": 175,
-      "overallSuccessRate": "54.19",
-      "overallFailureRate": "45.81",
-      "weeklyShareOfOverallPct": "12.04"
+      "weeklyShareOfOverallPct": "3.40"
     },
     {
       "ovseId": "000",
       "status": "Standard",
       "weeklyRank": 31,
-      "weeklyTotal": 43,
+      "weeklyTotal": 40,
       "weeklySuccess": 38,
-      "weeklyFailure": 5,
-      "weeklySuccessRate": "88.37",
-      "weeklyFailureRate": "11.63",
+      "weeklyFailure": 2,
+      "weeklySuccessRate": "95.00",
+      "weeklyFailureRate": "5.00",
       "overallRank": 3,
-      "overallTotal": 1220076,
-      "overallSuccess": 1218830,
+      "overallTotal": 1220085,
+      "overallSuccess": 1218839,
       "overallFailure": 1246,
       "overallSuccessRate": "99.90",
       "overallFailureRate": "0.10",
@@ -4148,233 +4193,301 @@ const BUNDLED_DATA = {
       "ovseId": "urn:uidai:client:ican-bpo-private-limited:202608272078",
       "status": "Inactive This Week",
       "weeklyRank": 32,
-      "weeklyTotal": 41,
+      "weeklyTotal": 36,
       "weeklySuccess": 0,
-      "weeklyFailure": 41,
+      "weeklyFailure": 36,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "100.00",
-      "overallRank": 127,
+      "overallRank": 128,
       "overallTotal": 41,
       "overallSuccess": 0,
       "overallFailure": 41,
       "overallSuccessRate": "0.00",
       "overallFailureRate": "100.00",
-      "weeklyShareOfOverallPct": "100.00"
+      "weeklyShareOfOverallPct": "87.80"
     },
     {
       "ovseId": "ebitaus",
       "status": "Inactive This Week",
       "weeklyRank": 33,
-      "weeklyTotal": 32,
+      "weeklyTotal": 31,
       "weeklySuccess": 0,
-      "weeklyFailure": 32,
+      "weeklyFailure": 31,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "100.00",
-      "overallRank": 92,
-      "overallTotal": 92,
+      "overallRank": 87,
+      "overallTotal": 103,
       "overallSuccess": 0,
-      "overallFailure": 92,
+      "overallFailure": 103,
       "overallSuccessRate": "0.00",
       "overallFailureRate": "100.00",
-      "weeklyShareOfOverallPct": "34.78"
+      "weeklyShareOfOverallPct": "30.10"
+    },
+    {
+      "ovseId": "rjil",
+      "status": "Standard",
+      "weeklyRank": 34,
+      "weeklyTotal": 28,
+      "weeklySuccess": 24,
+      "weeklyFailure": 4,
+      "weeklySuccessRate": "85.71",
+      "weeklyFailureRate": "14.29",
+      "overallRank": 30,
+      "overallTotal": 923,
+      "overallSuccess": 804,
+      "overallFailure": 119,
+      "overallSuccessRate": "87.11",
+      "overallFailureRate": "12.89",
+      "weeklyShareOfOverallPct": "3.03"
+    },
+    {
+      "ovseId": "urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581",
+      "status": "Surging / High Growth",
+      "weeklyRank": 35,
+      "weeklyTotal": 26,
+      "weeklySuccess": 21,
+      "weeklyFailure": 5,
+      "weeklySuccessRate": "80.77",
+      "weeklyFailureRate": "19.23",
+      "overallRank": 105,
+      "overallTotal": 65,
+      "overallSuccess": 52,
+      "overallFailure": 13,
+      "overallSuccessRate": "80.00",
+      "overallFailureRate": "20.00",
+      "weeklyShareOfOverallPct": "40.00"
+    },
+    {
+      "ovseId": "novelpatterns",
+      "status": "Standard",
+      "weeklyRank": 36,
+      "weeklyTotal": 25,
+      "weeklySuccess": 20,
+      "weeklyFailure": 5,
+      "weeklySuccessRate": "80.00",
+      "weeklyFailureRate": "20.00",
+      "overallRank": 51,
+      "overallTotal": 281,
+      "overallSuccess": 157,
+      "overallFailure": 124,
+      "overallSuccessRate": "55.87",
+      "overallFailureRate": "44.13",
+      "weeklyShareOfOverallPct": "8.90"
+    },
+    {
+      "ovseId": "urn:uidai:client:aparampaar-finance-private-limited:202605134450",
+      "status": "Standard",
+      "weeklyRank": 37,
+      "weeklyTotal": 23,
+      "weeklySuccess": 14,
+      "weeklyFailure": 9,
+      "weeklySuccessRate": "60.87",
+      "weeklyFailureRate": "39.13",
+      "overallRank": 41,
+      "overallTotal": 417,
+      "overallSuccess": 253,
+      "overallFailure": 164,
+      "overallSuccessRate": "60.67",
+      "overallFailureRate": "39.33",
+      "weeklyShareOfOverallPct": "5.52"
     },
     {
       "ovseId": "urn:uidai:client:sahana-system-limited:202610095399",
       "status": "Standard",
-      "weeklyRank": 34,
-      "weeklyTotal": 31,
-      "weeklySuccess": 18,
-      "weeklyFailure": 13,
-      "weeklySuccessRate": "58.06",
-      "weeklyFailureRate": "41.94",
-      "overallRank": 73,
+      "weeklyRank": 38,
+      "weeklyTotal": 22,
+      "weeklySuccess": 15,
+      "weeklyFailure": 7,
+      "weeklySuccessRate": "68.18",
+      "weeklyFailureRate": "31.82",
+      "overallRank": 74,
       "overallTotal": 138,
       "overallSuccess": 65,
       "overallFailure": 73,
       "overallSuccessRate": "47.10",
       "overallFailureRate": "52.90",
-      "weeklyShareOfOverallPct": "22.46"
+      "weeklyShareOfOverallPct": "15.94"
+    },
+    {
+      "ovseId": "urn:uidai:client:intuitive-data-solutions-private-limited:202607237962",
+      "status": "Standard",
+      "weeklyRank": 39,
+      "weeklyTotal": 20,
+      "weeklySuccess": 11,
+      "weeklyFailure": 9,
+      "weeklySuccessRate": "55.00",
+      "weeklyFailureRate": "45.00",
+      "overallRank": 49,
+      "overallTotal": 291,
+      "overallSuccess": 157,
+      "overallFailure": 134,
+      "overallSuccessRate": "53.95",
+      "overallFailureRate": "46.05",
+      "weeklyShareOfOverallPct": "6.87"
+    },
+    {
+      "ovseId": "ooru_digital",
+      "status": "Standard",
+      "weeklyRank": 41,
+      "weeklyTotal": 19,
+      "weeklySuccess": 15,
+      "weeklyFailure": 4,
+      "weeklySuccessRate": "78.95",
+      "weeklyFailureRate": "21.05",
+      "overallRank": 24,
+      "overallTotal": 3159,
+      "overallSuccess": 2469,
+      "overallFailure": 690,
+      "overallSuccessRate": "78.16",
+      "overallFailureRate": "21.84",
+      "weeklyShareOfOverallPct": "0.60"
+    },
+    {
+      "ovseId": "urn:uidai:client:perigeon-software-private-limited:202606041974",
+      "status": "Standard",
+      "weeklyRank": 42,
+      "weeklyTotal": 19,
+      "weeklySuccess": 16,
+      "weeklyFailure": 3,
+      "weeklySuccessRate": "84.21",
+      "weeklyFailureRate": "15.79",
+      "overallRank": 54,
+      "overallTotal": 242,
+      "overallSuccess": 182,
+      "overallFailure": 60,
+      "overallSuccessRate": "75.21",
+      "overallFailureRate": "24.79",
+      "weeklyShareOfOverallPct": "7.85"
+    },
+    {
+      "ovseId": "urn:uidai:client:kendriya-vidyalaya-sangathan:202611171026",
+      "status": "Inactive This Week",
+      "weeklyRank": 40,
+      "weeklyTotal": 19,
+      "weeklySuccess": 0,
+      "weeklyFailure": 19,
+      "weeklySuccessRate": "0.00",
+      "weeklyFailureRate": "100.00",
+      "overallRank": 159,
+      "overallTotal": 19,
+      "overallSuccess": 0,
+      "overallFailure": 19,
+      "overallSuccessRate": "0.00",
+      "overallFailureRate": "100.00",
+      "weeklyShareOfOverallPct": "100.00"
+    },
+    {
+      "ovseId": "tspolice",
+      "status": "Standard",
+      "weeklyRank": 43,
+      "weeklyTotal": 17,
+      "weeklySuccess": 8,
+      "weeklyFailure": 9,
+      "weeklySuccessRate": "47.06",
+      "weeklyFailureRate": "52.94",
+      "overallRank": 2,
+      "overallTotal": 2248605,
+      "overallSuccess": 645196,
+      "overallFailure": 1603409,
+      "overallSuccessRate": "28.69",
+      "overallFailureRate": "71.31",
+      "weeklyShareOfOverallPct": "0.00"
+    },
+    {
+      "ovseId": "urn:uidai:client:oryggi-technologies-private-limited:202607288031",
+      "status": "Standard",
+      "weeklyRank": 44,
+      "weeklyTotal": 16,
+      "weeklySuccess": 6,
+      "weeklyFailure": 10,
+      "weeklySuccessRate": "37.50",
+      "weeklyFailureRate": "62.50",
+      "overallRank": 36,
+      "overallTotal": 534,
+      "overallSuccess": 386,
+      "overallFailure": 148,
+      "overallSuccessRate": "72.28",
+      "overallFailureRate": "27.72",
+      "weeklyShareOfOverallPct": "3.00"
     },
     {
       "ovseId": "urn:uidai:client:mdindia-health-insurance-tpa-private-limited:202608143596",
       "status": "Surging / High Growth",
-      "weeklyRank": 35,
-      "weeklyTotal": 28,
+      "weeklyRank": 45,
+      "weeklyTotal": 14,
       "weeklySuccess": 3,
-      "weeklyFailure": 25,
-      "weeklySuccessRate": "10.71",
-      "weeklyFailureRate": "89.29",
+      "weeklyFailure": 11,
+      "weeklySuccessRate": "21.43",
+      "weeklyFailureRate": "78.57",
       "overallRank": 146,
       "overallTotal": 30,
       "overallSuccess": 3,
       "overallFailure": 27,
       "overallSuccessRate": "10.00",
       "overallFailureRate": "90.00",
-      "weeklyShareOfOverallPct": "93.33"
+      "weeklyShareOfOverallPct": "46.67"
     },
     {
-      "ovseId": "urn:uidai:client:nagaland-police:202610092803",
+      "ovseId": "apiclub",
       "status": "Standard",
-      "weeklyRank": 36,
-      "weeklyTotal": 23,
-      "weeklySuccess": 4,
-      "weeklyFailure": 19,
-      "weeklySuccessRate": "17.39",
-      "weeklyFailureRate": "82.61",
-      "overallRank": 102,
-      "overallTotal": 72,
-      "overallSuccess": 31,
-      "overallFailure": 41,
-      "overallSuccessRate": "43.06",
-      "overallFailureRate": "56.94",
-      "weeklyShareOfOverallPct": "31.94"
-    },
-    {
-      "ovseId": "urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581",
-      "status": "Surging / High Growth",
-      "weeklyRank": 37,
-      "weeklyTotal": 21,
-      "weeklySuccess": 16,
-      "weeklyFailure": 5,
-      "weeklySuccessRate": "76.19",
-      "weeklyFailureRate": "23.81",
-      "overallRank": 108,
-      "overallTotal": 60,
-      "overallSuccess": 47,
-      "overallFailure": 13,
-      "overallSuccessRate": "78.33",
-      "overallFailureRate": "21.67",
-      "weeklyShareOfOverallPct": "35.00"
-    },
-    {
-      "ovseId": "ooru_digital",
-      "status": "Standard",
-      "weeklyRank": 38,
-      "weeklyTotal": 20,
-      "weeklySuccess": 19,
-      "weeklyFailure": 1,
-      "weeklySuccessRate": "95.00",
-      "weeklyFailureRate": "5.00",
-      "overallRank": 23,
-      "overallTotal": 3149,
-      "overallSuccess": 2462,
-      "overallFailure": 687,
-      "overallSuccessRate": "78.18",
-      "overallFailureRate": "21.82",
-      "weeklyShareOfOverallPct": "0.64"
-    },
-    {
-      "ovseId": "rjil",
-      "status": "Standard",
-      "weeklyRank": 39,
-      "weeklyTotal": 18,
-      "weeklySuccess": 14,
-      "weeklyFailure": 4,
-      "weeklySuccessRate": "77.78",
-      "weeklyFailureRate": "22.22",
-      "overallRank": 30,
-      "overallTotal": 913,
-      "overallSuccess": 794,
-      "overallFailure": 119,
-      "overallSuccessRate": "86.97",
-      "overallFailureRate": "13.03",
-      "weeklyShareOfOverallPct": "1.97"
-    },
-    {
-      "ovseId": "urn:uidai:client:oryggi-technologies-private-limited:202607288031",
-      "status": "Standard",
-      "weeklyRank": 40,
-      "weeklyTotal": 15,
-      "weeklySuccess": 5,
-      "weeklyFailure": 10,
-      "weeklySuccessRate": "33.33",
-      "weeklyFailureRate": "66.67",
-      "overallRank": 36,
-      "overallTotal": 532,
-      "overallSuccess": 384,
-      "overallFailure": 148,
-      "overallSuccessRate": "72.18",
-      "overallFailureRate": "27.82",
-      "weeklyShareOfOverallPct": "2.82"
-    },
-    {
-      "ovseId": "urn:uidai:client:aparampaar-finance-private-limited:202605134450",
-      "status": "Standard",
-      "weeklyRank": 41,
-      "weeklyTotal": 15,
-      "weeklySuccess": 9,
-      "weeklyFailure": 6,
-      "weeklySuccessRate": "60.00",
-      "weeklyFailureRate": "40.00",
-      "overallRank": 41,
-      "overallTotal": 408,
-      "overallSuccess": 247,
-      "overallFailure": 161,
-      "overallSuccessRate": "60.54",
-      "overallFailureRate": "39.46",
-      "weeklyShareOfOverallPct": "3.68"
-    },
-    {
-      "ovseId": "urn:uidai:client:perigeon-software-private-limited:202606041974",
-      "status": "Standard",
-      "weeklyRank": 42,
+      "weeklyRank": 46,
       "weeklyTotal": 13,
-      "weeklySuccess": 10,
-      "weeklyFailure": 3,
-      "weeklySuccessRate": "76.92",
-      "weeklyFailureRate": "23.08",
-      "overallRank": 54,
-      "overallTotal": 235,
-      "overallSuccess": 175,
-      "overallFailure": 60,
-      "overallSuccessRate": "74.47",
-      "overallFailureRate": "25.53",
-      "weeklyShareOfOverallPct": "5.53"
+      "weeklySuccess": 8,
+      "weeklyFailure": 5,
+      "weeklySuccessRate": "61.54",
+      "weeklyFailureRate": "38.46",
+      "overallRank": 59,
+      "overallTotal": 192,
+      "overallSuccess": 104,
+      "overallFailure": 88,
+      "overallSuccessRate": "54.17",
+      "overallFailureRate": "45.83",
+      "weeklyShareOfOverallPct": "6.77"
     },
     {
-      "ovseId": "urn:uidai:client:intuitive-data-solutions-private-limited:202607237962",
-      "status": "Standard",
-      "weeklyRank": 44,
-      "weeklyTotal": 12,
-      "weeklySuccess": 12,
-      "weeklyFailure": 0,
-      "weeklySuccessRate": "100.00",
-      "weeklyFailureRate": "0.00",
-      "overallRank": 50,
-      "overallTotal": 279,
-      "overallSuccess": 154,
-      "overallFailure": 125,
-      "overallSuccessRate": "55.20",
-      "overallFailureRate": "44.80",
-      "weeklyShareOfOverallPct": "4.30"
+      "ovseId": "urn:uidai:client:sai-roshni-capital-private-limited:202610275530",
+      "status": "New Entrant",
+      "weeklyRank": 47,
+      "weeklyTotal": 13,
+      "weeklySuccess": 6,
+      "weeklyFailure": 7,
+      "weeklySuccessRate": "46.15",
+      "weeklyFailureRate": "53.85",
+      "overallRank": 182,
+      "overallTotal": 13,
+      "overallSuccess": 6,
+      "overallFailure": 7,
+      "overallSuccessRate": "46.15",
+      "overallFailureRate": "53.85",
+      "weeklyShareOfOverallPct": "100.00"
     },
     {
-      "ovseId": "urn:uidai:client:assam-police:202606026852",
+      "ovseId": "mantra",
       "status": "Standard",
-      "weeklyRank": 43,
+      "weeklyRank": 48,
       "weeklyTotal": 12,
       "weeklySuccess": 10,
       "weeklyFailure": 2,
       "weeklySuccessRate": "83.33",
       "weeklyFailureRate": "16.67",
-      "overallRank": 64,
-      "overallTotal": 176,
-      "overallSuccess": 114,
-      "overallFailure": 62,
-      "overallSuccessRate": "64.77",
-      "overallFailureRate": "35.23",
-      "weeklyShareOfOverallPct": "6.82"
+      "overallRank": 34,
+      "overallTotal": 625,
+      "overallSuccess": 515,
+      "overallFailure": 110,
+      "overallSuccessRate": "82.40",
+      "overallFailureRate": "17.60",
+      "weeklyShareOfOverallPct": "1.92"
     },
     {
       "ovseId": "AF27680312",
       "status": "Inactive This Week",
-      "weeklyRank": 45,
+      "weeklyRank": 49,
       "weeklyTotal": 11,
       "weeklySuccess": 0,
       "weeklyFailure": 11,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "100.00",
-      "overallRank": 184,
+      "overallRank": 186,
       "overallTotal": 11,
       "overallSuccess": 0,
       "overallFailure": 11,
@@ -4383,32 +4496,49 @@ const BUNDLED_DATA = {
       "weeklyShareOfOverallPct": "100.00"
     },
     {
-      "ovseId": "urn:uidai:client:appexigo-technologies-private-limited:2028555185225206113",
-      "status": "Inactive This Week",
-      "weeklyRank": 48,
+      "ovseId": "urn:uidai:client:nagaland-police:202610092803",
+      "status": "Standard",
+      "weeklyRank": 53,
       "weeklyTotal": 9,
-      "weeklySuccess": 0,
-      "weeklyFailure": 9,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "100.00",
-      "overallRank": 177,
-      "overallTotal": 14,
-      "overallSuccess": 0,
-      "overallFailure": 14,
-      "overallSuccessRate": "0.00",
-      "overallFailureRate": "100.00",
-      "weeklyShareOfOverallPct": "64.29"
+      "weeklySuccess": 2,
+      "weeklyFailure": 7,
+      "weeklySuccessRate": "22.22",
+      "weeklyFailureRate": "77.78",
+      "overallRank": 102,
+      "overallTotal": 72,
+      "overallSuccess": 31,
+      "overallFailure": 41,
+      "overallSuccessRate": "43.06",
+      "overallFailureRate": "56.94",
+      "weeklyShareOfOverallPct": "12.50"
+    },
+    {
+      "ovseId": "urn:uidai:client:earnest-data-analytics-private-limited:202609247533",
+      "status": "Standard",
+      "weeklyRank": 52,
+      "weeklyTotal": 9,
+      "weeklySuccess": 9,
+      "weeklyFailure": 0,
+      "weeklySuccessRate": "100.00",
+      "weeklyFailureRate": "0.00",
+      "overallRank": 126,
+      "overallTotal": 44,
+      "overallSuccess": 35,
+      "overallFailure": 9,
+      "overallSuccessRate": "79.55",
+      "overallFailureRate": "20.45",
+      "weeklyShareOfOverallPct": "20.45"
     },
     {
       "ovseId": "2610163901",
       "status": "Inactive This Week",
-      "weeklyRank": 46,
+      "weeklyRank": 50,
       "weeklyTotal": 9,
       "weeklySuccess": 0,
       "weeklyFailure": 9,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "100.00",
-      "overallRank": 194,
+      "overallRank": 196,
       "overallTotal": 9,
       "overallSuccess": 0,
       "overallFailure": 9,
@@ -4419,13 +4549,13 @@ const BUNDLED_DATA = {
     {
       "ovseId": "202611177252",
       "status": "Inactive This Week",
-      "weeklyRank": 47,
+      "weeklyRank": 51,
       "weeklyTotal": 9,
       "weeklySuccess": 0,
       "weeklyFailure": 9,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "100.00",
-      "overallRank": 195,
+      "overallRank": 197,
       "overallTotal": 9,
       "overallSuccess": 0,
       "overallFailure": 9,
@@ -4434,145 +4564,60 @@ const BUNDLED_DATA = {
       "weeklyShareOfOverallPct": "100.00"
     },
     {
-      "ovseId": "urn:uidai:client:evolute-fintech-innovations-private-limited:202608271911",
+      "ovseId": "urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049",
       "status": "Standard",
-      "weeklyRank": 50,
+      "weeklyRank": 54,
       "weeklyTotal": 8,
-      "weeklySuccess": 7,
-      "weeklyFailure": 1,
-      "weeklySuccessRate": "87.50",
-      "weeklyFailureRate": "12.50",
-      "overallRank": 46,
-      "overallTotal": 336,
-      "overallSuccess": 242,
-      "overallFailure": 94,
-      "overallSuccessRate": "72.02",
-      "overallFailureRate": "27.98",
-      "weeklyShareOfOverallPct": "2.38"
+      "weeklySuccess": 5,
+      "weeklyFailure": 3,
+      "weeklySuccessRate": "62.50",
+      "weeklyFailureRate": "37.50",
+      "overallRank": 81,
+      "overallTotal": 120,
+      "overallSuccess": 55,
+      "overallFailure": 65,
+      "overallSuccessRate": "45.83",
+      "overallFailureRate": "54.17",
+      "weeklyShareOfOverallPct": "6.67"
     },
     {
-      "ovseId": "urn:uidai:client:msqube-technology-solutions-private-limited:202611061651",
-      "status": "Inactive This Week",
-      "weeklyRank": 49,
-      "weeklyTotal": 8,
-      "weeklySuccess": 0,
-      "weeklyFailure": 8,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "100.00",
-      "overallRank": 113,
-      "overallTotal": 55,
-      "overallSuccess": 0,
-      "overallFailure": 55,
-      "overallSuccessRate": "0.00",
-      "overallFailureRate": "100.00",
-      "weeklyShareOfOverallPct": "14.55"
-    },
-    {
-      "ovseId": "urn:uidai:client:sai-roshni-capital-private-limited:202610275530",
-      "status": "New Entrant",
-      "weeklyRank": 51,
-      "weeklyTotal": 8,
-      "weeklySuccess": 4,
-      "weeklyFailure": 4,
-      "weeklySuccessRate": "50.00",
-      "weeklyFailureRate": "50.00",
-      "overallRank": 201,
-      "overallTotal": 8,
-      "overallSuccess": 4,
-      "overallFailure": 4,
-      "overallSuccessRate": "50.00",
-      "overallFailureRate": "50.00",
-      "weeklyShareOfOverallPct": "100.00"
-    },
-    {
-      "ovseId": "urn:uidai:client:startup-gurukul-innovation-private-limited:202610157376",
+      "ovseId": "urn:uidai:client:assam-police:202606026852",
       "status": "Standard",
-      "weeklyRank": 52,
+      "weeklyRank": 55,
       "weeklyTotal": 7,
-      "weeklySuccess": 6,
-      "weeklyFailure": 1,
-      "weeklySuccessRate": "85.71",
-      "weeklyFailureRate": "14.29",
-      "overallRank": 158,
-      "overallTotal": 20,
-      "overallSuccess": 13,
-      "overallFailure": 7,
-      "overallSuccessRate": "65.00",
-      "overallFailureRate": "35.00",
-      "weeklyShareOfOverallPct": "35.00"
+      "weeklySuccess": 7,
+      "weeklyFailure": 0,
+      "weeklySuccessRate": "100.00",
+      "weeklyFailureRate": "0.00",
+      "overallRank": 64,
+      "overallTotal": 176,
+      "overallSuccess": 114,
+      "overallFailure": 62,
+      "overallSuccessRate": "64.77",
+      "overallFailureRate": "35.23",
+      "weeklyShareOfOverallPct": "3.98"
     },
     {
-      "ovseId": "tspolice",
+      "ovseId": "decentro",
       "status": "Standard",
-      "weeklyRank": 57,
-      "weeklyTotal": 6,
-      "weeklySuccess": 4,
-      "weeklyFailure": 2,
-      "weeklySuccessRate": "66.67",
-      "weeklyFailureRate": "33.33",
-      "overallRank": 2,
-      "overallTotal": 2248594,
-      "overallSuccess": 645192,
-      "overallFailure": 1603402,
-      "overallSuccessRate": "28.69",
-      "overallFailureRate": "71.31",
-      "weeklyShareOfOverallPct": "0.00"
-    },
-    {
-      "ovseId": "apiclub",
-      "status": "Standard",
-      "weeklyRank": 58,
+      "weeklyRank": 59,
       "weeklyTotal": 6,
       "weeklySuccess": 6,
       "weeklyFailure": 0,
       "weeklySuccessRate": "100.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 61,
-      "overallTotal": 184,
-      "overallSuccess": 101,
-      "overallFailure": 83,
-      "overallSuccessRate": "54.89",
-      "overallFailureRate": "45.11",
-      "weeklyShareOfOverallPct": "3.26"
-    },
-    {
-      "ovseId": "urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049",
-      "status": "Standard",
-      "weeklyRank": 55,
-      "weeklyTotal": 6,
-      "weeklySuccess": 3,
-      "weeklyFailure": 3,
-      "weeklySuccessRate": "50.00",
-      "weeklyFailureRate": "50.00",
-      "overallRank": 81,
-      "overallTotal": 118,
-      "overallSuccess": 53,
-      "overallFailure": 65,
-      "overallSuccessRate": "44.92",
-      "overallFailureRate": "55.08",
-      "weeklyShareOfOverallPct": "5.08"
-    },
-    {
-      "ovseId": "urn:uidai:client:bses-rajdhani-power-limited:202609164125",
-      "status": "Standard",
-      "weeklyRank": 54,
-      "weeklyTotal": 6,
-      "weeklySuccess": 3,
-      "weeklyFailure": 3,
-      "weeklySuccessRate": "50.00",
-      "weeklyFailureRate": "50.00",
-      "overallRank": 85,
-      "overallTotal": 108,
-      "overallSuccess": 79,
-      "overallFailure": 29,
-      "overallSuccessRate": "73.15",
-      "overallFailureRate": "26.85",
-      "weeklyShareOfOverallPct": "5.56"
+      "overallRank": 55,
+      "overallTotal": 230,
+      "overallSuccess": 72,
+      "overallFailure": 158,
+      "overallSuccessRate": "31.30",
+      "overallFailureRate": "68.70",
+      "weeklyShareOfOverallPct": "2.61"
     },
     {
       "ovseId": "urn:uidai:client:mahalaxmi-parivahan-private-limited:202608108563",
       "status": "Standard",
-      "weeklyRank": 56,
+      "weeklyRank": 58,
       "weeklyTotal": 6,
       "weeklySuccess": 3,
       "weeklyFailure": 3,
@@ -4589,7 +4634,7 @@ const BUNDLED_DATA = {
     {
       "ovseId": "isolve",
       "status": "Standard",
-      "weeklyRank": 53,
+      "weeklyRank": 57,
       "weeklyTotal": 6,
       "weeklySuccess": 1,
       "weeklyFailure": 5,
@@ -4604,41 +4649,41 @@ const BUNDLED_DATA = {
       "weeklyShareOfOverallPct": "30.00"
     },
     {
-      "ovseId": "mantra",
+      "ovseId": "urn:uidai:client:startup-gurukul-innovation-private-limited:202610157376",
       "status": "Standard",
-      "weeklyRank": 59,
-      "weeklyTotal": 5,
+      "weeklyRank": 60,
+      "weeklyTotal": 6,
       "weeklySuccess": 5,
-      "weeklyFailure": 0,
-      "weeklySuccessRate": "100.00",
-      "weeklyFailureRate": "0.00",
-      "overallRank": 34,
-      "overallTotal": 618,
-      "overallSuccess": 510,
-      "overallFailure": 108,
-      "overallSuccessRate": "82.52",
-      "overallFailureRate": "17.48",
-      "weeklyShareOfOverallPct": "0.81"
+      "weeklyFailure": 1,
+      "weeklySuccessRate": "83.33",
+      "weeklyFailureRate": "16.67",
+      "overallRank": 158,
+      "overallTotal": 20,
+      "overallSuccess": 13,
+      "overallFailure": 7,
+      "overallSuccessRate": "65.00",
+      "overallFailureRate": "35.00",
+      "weeklyShareOfOverallPct": "30.00"
     },
     {
-      "ovseId": "urn:uidai:client:caratred-technologies-llp:202606040096",
-      "status": "Standard",
-      "weeklyRank": 64,
-      "weeklyTotal": 4,
-      "weeklySuccess": 4,
-      "weeklyFailure": 0,
-      "weeklySuccessRate": "100.00",
-      "weeklyFailureRate": "0.00",
-      "overallRank": 70,
-      "overallTotal": 156,
-      "overallSuccess": 114,
-      "overallFailure": 42,
-      "overallSuccessRate": "73.08",
-      "overallFailureRate": "26.92",
-      "weeklyShareOfOverallPct": "2.56"
+      "ovseId": "urn:uidai:client:appexigo-technologies-private-limited:2028555185225206113",
+      "status": "Inactive This Week",
+      "weeklyRank": 56,
+      "weeklyTotal": 6,
+      "weeklySuccess": 0,
+      "weeklyFailure": 6,
+      "weeklySuccessRate": "0.00",
+      "weeklyFailureRate": "100.00",
+      "overallRank": 178,
+      "overallTotal": 14,
+      "overallSuccess": 0,
+      "overallFailure": 14,
+      "overallSuccessRate": "0.00",
+      "overallFailureRate": "100.00",
+      "weeklyShareOfOverallPct": "42.86"
     },
     {
-      "ovseId": "as4",
+      "ovseId": "urn:uidai:client:evolute-fintech-innovations-private-limited:202608271911",
       "status": "Standard",
       "weeklyRank": 61,
       "weeklyTotal": 4,
@@ -4646,24 +4691,58 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "100.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 80,
-      "overallTotal": 119,
-      "overallSuccess": 85,
-      "overallFailure": 34,
-      "overallSuccessRate": "71.43",
-      "overallFailureRate": "28.57",
-      "weeklyShareOfOverallPct": "3.36"
+      "overallRank": 47,
+      "overallTotal": 340,
+      "overallSuccess": 246,
+      "overallFailure": 94,
+      "overallSuccessRate": "72.35",
+      "overallFailureRate": "27.65",
+      "weeklyShareOfOverallPct": "1.18"
+    },
+    {
+      "ovseId": "fastkyc",
+      "status": "Standard",
+      "weeklyRank": 63,
+      "weeklyTotal": 4,
+      "weeklySuccess": 4,
+      "weeklyFailure": 0,
+      "weeklySuccessRate": "100.00",
+      "weeklyFailureRate": "0.00",
+      "overallRank": 88,
+      "overallTotal": 103,
+      "overallSuccess": 34,
+      "overallFailure": 69,
+      "overallSuccessRate": "33.01",
+      "overallFailureRate": "66.99",
+      "weeklyShareOfOverallPct": "3.88"
+    },
+    {
+      "ovseId": "signcare",
+      "status": "Standard",
+      "weeklyRank": 64,
+      "weeklyTotal": 4,
+      "weeklySuccess": 4,
+      "weeklyFailure": 0,
+      "weeklySuccessRate": "100.00",
+      "weeklyFailureRate": "0.00",
+      "overallRank": 91,
+      "overallTotal": 100,
+      "overallSuccess": 73,
+      "overallFailure": 27,
+      "overallSuccessRate": "73.00",
+      "overallFailureRate": "27.00",
+      "weeklyShareOfOverallPct": "4.00"
     },
     {
       "ovseId": "urn:uidai:client:greenpark-hotels-and-resorts-limited:202606248233",
       "status": "Standard",
-      "weeklyRank": 63,
+      "weeklyRank": 62,
       "weeklyTotal": 4,
       "weeklySuccess": 2,
       "weeklyFailure": 2,
       "weeklySuccessRate": "50.00",
       "weeklyFailureRate": "50.00",
-      "overallRank": 112,
+      "overallRank": 113,
       "overallTotal": 56,
       "overallSuccess": 35,
       "overallFailure": 21,
@@ -4672,38 +4751,21 @@ const BUNDLED_DATA = {
       "weeklyShareOfOverallPct": "7.14"
     },
     {
-      "ovseId": "urn:uidai:client:centre-for-good-governance:202609037683",
+      "ovseId": "signzytech",
       "status": "Standard",
-      "weeklyRank": 60,
-      "weeklyTotal": 4,
-      "weeklySuccess": 4,
+      "weeklyRank": 72,
+      "weeklyTotal": 3,
+      "weeklySuccess": 3,
       "weeklyFailure": 0,
       "weeklySuccessRate": "100.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 121,
-      "overallTotal": 45,
-      "overallSuccess": 22,
-      "overallFailure": 23,
-      "overallSuccessRate": "48.89",
-      "overallFailureRate": "51.11",
-      "weeklyShareOfOverallPct": "8.89"
-    },
-    {
-      "ovseId": "urn:uidai:client:hp-marketing-board:202611045503",
-      "status": "Inactive This Week",
-      "weeklyRank": 62,
-      "weeklyTotal": 4,
-      "weeklySuccess": 0,
-      "weeklyFailure": 4,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "100.00",
-      "overallRank": 152,
-      "overallTotal": 24,
-      "overallSuccess": 0,
-      "overallFailure": 24,
-      "overallSuccessRate": "0.00",
-      "overallFailureRate": "100.00",
-      "weeklyShareOfOverallPct": "16.67"
+      "overallRank": 33,
+      "overallTotal": 636,
+      "overallSuccess": 262,
+      "overallFailure": 374,
+      "overallSuccessRate": "41.19",
+      "overallFailureRate": "58.81",
+      "weeklyShareOfOverallPct": "0.47"
     },
     {
       "ovseId": "perfios",
@@ -4723,43 +4785,9 @@ const BUNDLED_DATA = {
       "weeklyShareOfOverallPct": "0.51"
     },
     {
-      "ovseId": "digio",
-      "status": "Standard",
-      "weeklyRank": 65,
-      "weeklyTotal": 3,
-      "weeklySuccess": 3,
-      "weeklyFailure": 0,
-      "weeklySuccessRate": "100.00",
-      "weeklyFailureRate": "0.00",
-      "overallRank": 43,
-      "overallTotal": 392,
-      "overallSuccess": 267,
-      "overallFailure": 125,
-      "overallSuccessRate": "68.11",
-      "overallFailureRate": "31.89",
-      "weeklyShareOfOverallPct": "0.77"
-    },
-    {
-      "ovseId": "decentro",
-      "status": "Standard",
-      "weeklyRank": 69,
-      "weeklyTotal": 3,
-      "weeklySuccess": 3,
-      "weeklyFailure": 0,
-      "weeklySuccessRate": "100.00",
-      "weeklyFailureRate": "0.00",
-      "overallRank": 56,
-      "overallTotal": 227,
-      "overallSuccess": 69,
-      "overallFailure": 158,
-      "overallSuccessRate": "30.40",
-      "overallFailureRate": "69.60",
-      "weeklyShareOfOverallPct": "1.32"
-    },
-    {
       "ovseId": "urn:uidai:client:directorate-of-land-records:202607304388",
       "status": "Standard",
-      "weeklyRank": 66,
+      "weeklyRank": 65,
       "weeklyTotal": 3,
       "weeklySuccess": 3,
       "weeklyFailure": 0,
@@ -4776,13 +4804,13 @@ const BUNDLED_DATA = {
     {
       "ovseId": "bioenable",
       "status": "Standard",
-      "weeklyRank": 67,
+      "weeklyRank": 66,
       "weeklyTotal": 3,
       "weeklySuccess": 3,
       "weeklyFailure": 0,
       "weeklySuccessRate": "100.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 75,
+      "overallRank": 77,
       "overallTotal": 136,
       "overallSuccess": 91,
       "overallFailure": 45,
@@ -4791,15 +4819,66 @@ const BUNDLED_DATA = {
       "weeklyShareOfOverallPct": "2.21"
     },
     {
-      "ovseId": "bfhl",
+      "ovseId": "documint",
       "status": "Standard",
       "weeklyRank": 68,
+      "weeklyTotal": 3,
+      "weeklySuccess": 1,
+      "weeklyFailure": 2,
+      "weeklySuccessRate": "33.33",
+      "weeklyFailureRate": "66.67",
+      "overallRank": 104,
+      "overallTotal": 68,
+      "overallSuccess": 65,
+      "overallFailure": 3,
+      "overallSuccessRate": "95.59",
+      "overallFailureRate": "4.41",
+      "weeklyShareOfOverallPct": "4.41"
+    },
+    {
+      "ovseId": "urn:uidai:client:3i-consulting-private-limited:202608031319",
+      "status": "Standard",
+      "weeklyRank": 71,
+      "weeklyTotal": 3,
+      "weeklySuccess": 2,
+      "weeklyFailure": 1,
+      "weeklySuccessRate": "66.67",
+      "weeklyFailureRate": "33.33",
+      "overallRank": 106,
+      "overallTotal": 64,
+      "overallSuccess": 23,
+      "overallFailure": 41,
+      "overallSuccessRate": "35.94",
+      "overallFailureRate": "64.06",
+      "weeklyShareOfOverallPct": "4.69"
+    },
+    {
+      "ovseId": "urn:uidai:client:doklink-services-private-limited:202609249932",
+      "status": "Standard",
+      "weeklyRank": 67,
+      "weeklyTotal": 3,
+      "weeklySuccess": 1,
+      "weeklyFailure": 2,
+      "weeklySuccessRate": "33.33",
+      "weeklyFailureRate": "66.67",
+      "overallRank": 124,
+      "overallTotal": 44,
+      "overallSuccess": 34,
+      "overallFailure": 10,
+      "overallSuccessRate": "77.27",
+      "overallFailureRate": "22.73",
+      "weeklyShareOfOverallPct": "6.82"
+    },
+    {
+      "ovseId": "bfhl",
+      "status": "Standard",
+      "weeklyRank": 69,
       "weeklyTotal": 3,
       "weeklySuccess": 3,
       "weeklyFailure": 0,
       "weeklySuccessRate": "100.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 140,
+      "overallRank": 141,
       "overallTotal": 35,
       "overallSuccess": 26,
       "overallFailure": 9,
@@ -4808,26 +4887,9 @@ const BUNDLED_DATA = {
       "weeklyShareOfOverallPct": "8.57"
     },
     {
-      "ovseId": "sedax",
-      "status": "Standard",
-      "weeklyRank": 72,
-      "weeklyTotal": 3,
-      "weeklySuccess": 3,
-      "weeklyFailure": 0,
-      "weeklySuccessRate": "100.00",
-      "weeklyFailureRate": "0.00",
-      "overallRank": 148,
-      "overallTotal": 29,
-      "overallSuccess": 11,
-      "overallFailure": 18,
-      "overallSuccessRate": "37.93",
-      "overallFailureRate": "62.07",
-      "weeklyShareOfOverallPct": "10.34"
-    },
-    {
       "ovseId": "urn:uidai:client:internet-and-mobile-association-of-india:202608053256",
       "status": "Standard",
-      "weeklyRank": 71,
+      "weeklyRank": 73,
       "weeklyTotal": 3,
       "weeklySuccess": 2,
       "weeklyFailure": 1,
@@ -4842,41 +4904,7 @@ const BUNDLED_DATA = {
       "weeklyShareOfOverallPct": "11.11"
     },
     {
-      "ovseId": "novelpatterns",
-      "status": "Standard",
-      "weeklyRank": 76,
-      "weeklyTotal": 2,
-      "weeklySuccess": 2,
-      "weeklyFailure": 0,
-      "weeklySuccessRate": "100.00",
-      "weeklyFailureRate": "0.00",
-      "overallRank": 52,
-      "overallTotal": 258,
-      "overallSuccess": 139,
-      "overallFailure": 119,
-      "overallSuccessRate": "53.88",
-      "overallFailureRate": "46.12",
-      "weeklyShareOfOverallPct": "0.78"
-    },
-    {
-      "ovseId": "fastkyc",
-      "status": "Standard",
-      "weeklyRank": 78,
-      "weeklyTotal": 2,
-      "weeklySuccess": 2,
-      "weeklyFailure": 0,
-      "weeklySuccessRate": "100.00",
-      "weeklyFailureRate": "0.00",
-      "overallRank": 88,
-      "overallTotal": 101,
-      "overallSuccess": 32,
-      "overallFailure": 69,
-      "overallSuccessRate": "31.68",
-      "overallFailureRate": "68.32",
-      "weeklyShareOfOverallPct": "1.98"
-    },
-    {
-      "ovseId": "signcare",
+      "ovseId": "urn:uidai:client:caratred-technologies-llp:202606040096",
       "status": "Standard",
       "weeklyRank": 77,
       "weeklyTotal": 2,
@@ -4884,16 +4912,50 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "100.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 90,
-      "overallTotal": 98,
-      "overallSuccess": 71,
-      "overallFailure": 27,
-      "overallSuccessRate": "72.45",
-      "overallFailureRate": "27.55",
-      "weeklyShareOfOverallPct": "2.04"
+      "overallRank": 70,
+      "overallTotal": 156,
+      "overallSuccess": 114,
+      "overallFailure": 42,
+      "overallSuccessRate": "73.08",
+      "overallFailureRate": "26.92",
+      "weeklyShareOfOverallPct": "1.28"
     },
     {
-      "ovseId": "urn:uidai:client:doklink-services-private-limited:202609249932",
+      "ovseId": "urn:uidai:client:finanalyz-technologies-private-limited:202606306133",
+      "status": "Inactive This Week",
+      "weeklyRank": 76,
+      "weeklyTotal": 2,
+      "weeklySuccess": 0,
+      "weeklyFailure": 2,
+      "weeklySuccessRate": "0.00",
+      "weeklyFailureRate": "100.00",
+      "overallRank": 86,
+      "overallTotal": 106,
+      "overallSuccess": 12,
+      "overallFailure": 94,
+      "overallSuccessRate": "11.32",
+      "overallFailureRate": "88.68",
+      "weeklyShareOfOverallPct": "1.89"
+    },
+    {
+      "ovseId": "urn:uidai:client:centre-for-good-governance:202609037683",
+      "status": "Standard",
+      "weeklyRank": 78,
+      "weeklyTotal": 2,
+      "weeklySuccess": 2,
+      "weeklyFailure": 0,
+      "weeklySuccessRate": "100.00",
+      "weeklyFailureRate": "0.00",
+      "overallRank": 119,
+      "overallTotal": 47,
+      "overallSuccess": 24,
+      "overallFailure": 23,
+      "overallSuccessRate": "51.06",
+      "overallFailureRate": "48.94",
+      "weeklyShareOfOverallPct": "4.26"
+    },
+    {
+      "ovseId": "urn:uidai:client:appexigo-technologies-private-limited:202606106113",
       "status": "Inactive This Week",
       "weeklyRank": 74,
       "weeklyTotal": 2,
@@ -4901,24 +4963,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 2,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "100.00",
-      "overallRank": 125,
-      "overallTotal": 43,
-      "overallSuccess": 33,
-      "overallFailure": 10,
-      "overallSuccessRate": "76.74",
-      "overallFailureRate": "23.26",
-      "weeklyShareOfOverallPct": "4.65"
-    },
-    {
-      "ovseId": "urn:uidai:client:appexigo-technologies-private-limited:202606106113",
-      "status": "Inactive This Week",
-      "weeklyRank": 73,
-      "weeklyTotal": 2,
-      "weeklySuccess": 0,
-      "weeklyFailure": 2,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "100.00",
-      "overallRank": 252,
+      "overallRank": 253,
       "overallTotal": 2,
       "overallSuccess": 0,
       "overallFailure": 2,
@@ -4935,7 +4980,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 2,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "100.00",
-      "overallRank": 253,
+      "overallRank": 254,
       "overallTotal": 2,
       "overallSuccess": 0,
       "overallFailure": 2,
@@ -4946,64 +4991,132 @@ const BUNDLED_DATA = {
     {
       "ovseId": "trackwizz",
       "status": "Standard",
-      "weeklyRank": 81,
+      "weeklyRank": 87,
       "weeklyTotal": 1,
       "weeklySuccess": 1,
       "weeklyFailure": 0,
       "weeklySuccessRate": "100.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 24,
-      "overallTotal": 3136,
-      "overallSuccess": 1763,
+      "overallRank": 25,
+      "overallTotal": 3137,
+      "overallSuccess": 1764,
       "overallFailure": 1373,
-      "overallSuccessRate": "56.22",
-      "overallFailureRate": "43.78",
+      "overallSuccessRate": "56.23",
+      "overallFailureRate": "43.77",
       "weeklyShareOfOverallPct": "0.03"
     },
     {
-      "ovseId": "signzytech",
+      "ovseId": "urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204",
       "status": "Standard",
-      "weeklyRank": 82,
+      "weeklyRank": 86,
       "weeklyTotal": 1,
       "weeklySuccess": 1,
       "weeklyFailure": 0,
       "weeklySuccessRate": "100.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 33,
-      "overallTotal": 634,
-      "overallSuccess": 260,
-      "overallFailure": 374,
-      "overallSuccessRate": "41.01",
-      "overallFailureRate": "58.99",
-      "weeklyShareOfOverallPct": "0.16"
+      "overallRank": 56,
+      "overallTotal": 229,
+      "overallSuccess": 109,
+      "overallFailure": 120,
+      "overallSuccessRate": "47.60",
+      "overallFailureRate": "52.40",
+      "weeklyShareOfOverallPct": "0.44"
     },
     {
-      "ovseId": "urn:uidai:client:shri-trimbakeshwar-devasthan-trust:202607072068",
+      "ovseId": "any2paytpl",
+      "status": "Inactive This Week",
+      "weeklyRank": 81,
+      "weeklyTotal": 1,
+      "weeklySuccess": 0,
+      "weeklyFailure": 1,
+      "weeklySuccessRate": "0.00",
+      "weeklyFailureRate": "100.00",
+      "overallRank": 90,
+      "overallTotal": 101,
+      "overallSuccess": 55,
+      "overallFailure": 46,
+      "overallSuccessRate": "54.46",
+      "overallFailureRate": "45.54",
+      "weeklyShareOfOverallPct": "0.99"
+    },
+    {
+      "ovseId": "urn:uidai:client:msqube-technology-solutions-private-limited:202611061651",
+      "status": "Inactive This Week",
+      "weeklyRank": 83,
+      "weeklyTotal": 1,
+      "weeklySuccess": 0,
+      "weeklyFailure": 1,
+      "weeklySuccessRate": "0.00",
+      "weeklyFailureRate": "100.00",
+      "overallRank": 112,
+      "overallTotal": 56,
+      "overallSuccess": 0,
+      "overallFailure": 56,
+      "overallSuccessRate": "0.00",
+      "overallFailureRate": "100.00",
+      "weeklyShareOfOverallPct": "1.79"
+    },
+    {
+      "ovseId": "1a2f",
+      "status": "Inactive This Week",
+      "weeklyRank": 82,
+      "weeklyTotal": 1,
+      "weeklySuccess": 0,
+      "weeklyFailure": 1,
+      "weeklySuccessRate": "0.00",
+      "weeklyFailureRate": "100.00",
+      "overallRank": 115,
+      "overallTotal": 54,
+      "overallSuccess": 0,
+      "overallFailure": 54,
+      "overallSuccessRate": "0.00",
+      "overallFailureRate": "100.00",
+      "weeklyShareOfOverallPct": "1.85"
+    },
+    {
+      "ovseId": "sedax",
       "status": "Standard",
-      "weeklyRank": 80,
+      "weeklyRank": 84,
       "weeklyTotal": 1,
       "weeklySuccess": 1,
       "weeklyFailure": 0,
       "weeklySuccessRate": "100.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 51,
-      "overallTotal": 269,
-      "overallSuccess": 110,
-      "overallFailure": 159,
-      "overallSuccessRate": "40.89",
-      "overallFailureRate": "59.11",
-      "weeklyShareOfOverallPct": "0.37"
+      "overallRank": 148,
+      "overallTotal": 29,
+      "overallSuccess": 11,
+      "overallFailure": 18,
+      "overallSuccessRate": "37.93",
+      "overallFailureRate": "62.07",
+      "weeklyShareOfOverallPct": "3.45"
+    },
+    {
+      "ovseId": "urn:uidai:client:hp-marketing-board:202611045503",
+      "status": "Inactive This Week",
+      "weeklyRank": 79,
+      "weeklyTotal": 1,
+      "weeklySuccess": 0,
+      "weeklyFailure": 1,
+      "weeklySuccessRate": "0.00",
+      "weeklyFailureRate": "100.00",
+      "overallRank": 152,
+      "overallTotal": 24,
+      "overallSuccess": 0,
+      "overallFailure": 24,
+      "overallSuccessRate": "0.00",
+      "overallFailureRate": "100.00",
+      "weeklyShareOfOverallPct": "4.17"
     },
     {
       "ovseId": "urn:uidai:client:fr8-india-private-limited:202609177281",
       "status": "Standard",
-      "weeklyRank": 83,
+      "weeklyRank": 85,
       "weeklyTotal": 1,
       "weeklySuccess": 1,
       "weeklyFailure": 0,
       "weeklySuccessRate": "100.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 183,
+      "overallRank": 185,
       "overallTotal": 12,
       "overallSuccess": 8,
       "overallFailure": 4,
@@ -5014,13 +5127,13 @@ const BUNDLED_DATA = {
     {
       "ovseId": "urn:uidai:client:rurtech-for-arayans-llp:202611039670",
       "status": "Inactive This Week",
-      "weeklyRank": 79,
+      "weeklyRank": 80,
       "weeklyTotal": 1,
       "weeklySuccess": 0,
       "weeklyFailure": 1,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "100.00",
-      "overallRank": 191,
+      "overallRank": 193,
       "overallTotal": 10,
       "overallSuccess": 9,
       "overallFailure": 1,
@@ -5037,7 +5150,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 14,
+      "overallRank": 15,
       "overallTotal": 16671,
       "overallSuccess": 5032,
       "overallFailure": 11639,
@@ -5105,7 +5218,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 39,
+      "overallRank": 40,
       "overallTotal": 423,
       "overallSuccess": 268,
       "overallFailure": 155,
@@ -5131,7 +5244,7 @@ const BUNDLED_DATA = {
       "weeklyShareOfOverallPct": "0.00"
     },
     {
-      "ovseId": "bel",
+      "ovseId": "digio",
       "status": "Inactive This Week",
       "weeklyRank": "N/A",
       "weeklyTotal": 0,
@@ -5140,6 +5253,23 @@ const BUNDLED_DATA = {
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
       "overallRank": 44,
+      "overallTotal": 392,
+      "overallSuccess": 267,
+      "overallFailure": 125,
+      "overallSuccessRate": "68.11",
+      "overallFailureRate": "31.89",
+      "weeklyShareOfOverallPct": "0.00"
+    },
+    {
+      "ovseId": "bel",
+      "status": "Inactive This Week",
+      "weeklyRank": "N/A",
+      "weeklyTotal": 0,
+      "weeklySuccess": 0,
+      "weeklyFailure": 0,
+      "weeklySuccessRate": "0.00",
+      "weeklyFailureRate": "0.00",
+      "overallRank": 45,
       "overallTotal": 385,
       "overallSuccess": 291,
       "overallFailure": 94,
@@ -5173,12 +5303,29 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 49,
+      "overallRank": 50,
       "overallTotal": 290,
       "overallSuccess": 201,
       "overallFailure": 89,
       "overallSuccessRate": "69.31",
       "overallFailureRate": "30.69",
+      "weeklyShareOfOverallPct": "0.00"
+    },
+    {
+      "ovseId": "urn:uidai:client:shri-trimbakeshwar-devasthan-trust:202607072068",
+      "status": "Inactive This Week",
+      "weeklyRank": "N/A",
+      "weeklyTotal": 0,
+      "weeklySuccess": 0,
+      "weeklyFailure": 0,
+      "weeklySuccessRate": "0.00",
+      "weeklyFailureRate": "0.00",
+      "overallRank": 52,
+      "overallTotal": 269,
+      "overallSuccess": 110,
+      "overallFailure": 159,
+      "overallSuccessRate": "40.89",
+      "overallFailureRate": "59.11",
       "weeklyShareOfOverallPct": "0.00"
     },
     {
@@ -5196,23 +5343,6 @@ const BUNDLED_DATA = {
       "overallFailure": 178,
       "overallSuccessRate": "28.80",
       "overallFailureRate": "71.20",
-      "weeklyShareOfOverallPct": "0.00"
-    },
-    {
-      "ovseId": "urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204",
-      "status": "Inactive This Week",
-      "weeklyRank": "N/A",
-      "weeklyTotal": 0,
-      "weeklySuccess": 0,
-      "weeklyFailure": 0,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "0.00",
-      "overallRank": 55,
-      "overallTotal": 228,
-      "overallSuccess": 108,
-      "overallFailure": 120,
-      "overallSuccessRate": "47.37",
-      "overallFailureRate": "52.63",
       "weeklyShareOfOverallPct": "0.00"
     },
     {
@@ -5258,7 +5388,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 59,
+      "overallRank": 60,
       "overallTotal": 191,
       "overallSuccess": 98,
       "overallFailure": 93,
@@ -5275,7 +5405,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 60,
+      "overallRank": 61,
       "overallTotal": 191,
       "overallSuccess": 71,
       "overallFailure": 120,
@@ -5428,7 +5558,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 74,
+      "overallRank": 76,
       "overallTotal": 137,
       "overallSuccess": 0,
       "overallFailure": 137,
@@ -5445,7 +5575,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 77,
+      "overallRank": 78,
       "overallTotal": 128,
       "overallSuccess": 93,
       "overallFailure": 35,
@@ -5462,7 +5592,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 78,
+      "overallRank": 79,
       "overallTotal": 126,
       "overallSuccess": 78,
       "overallFailure": 48,
@@ -5479,12 +5609,29 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 79,
+      "overallRank": 80,
       "overallTotal": 123,
       "overallSuccess": 111,
       "overallFailure": 12,
       "overallSuccessRate": "90.24",
       "overallFailureRate": "9.76",
+      "weeklyShareOfOverallPct": "0.00"
+    },
+    {
+      "ovseId": "as4",
+      "status": "Inactive This Week",
+      "weeklyRank": "N/A",
+      "weeklyTotal": 0,
+      "weeklySuccess": 0,
+      "weeklyFailure": 0,
+      "weeklySuccessRate": "0.00",
+      "weeklyFailureRate": "0.00",
+      "overallRank": 82,
+      "overallTotal": 119,
+      "overallSuccess": 85,
+      "overallFailure": 34,
+      "overallSuccessRate": "71.43",
+      "overallFailureRate": "28.57",
       "weeklyShareOfOverallPct": "0.00"
     },
     {
@@ -5496,7 +5643,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 82,
+      "overallRank": 83,
       "overallTotal": 117,
       "overallSuccess": 28,
       "overallFailure": 89,
@@ -5522,7 +5669,7 @@ const BUNDLED_DATA = {
       "weeklyShareOfOverallPct": "0.00"
     },
     {
-      "ovseId": "urn:uidai:client:finanalyz-technologies-private-limited:202606306133",
+      "ovseId": "urn:uidai:client:bses-rajdhani-power-limited:202609164125",
       "status": "Inactive This Week",
       "weeklyRank": "N/A",
       "weeklyTotal": 0,
@@ -5530,12 +5677,12 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 86,
-      "overallTotal": 104,
-      "overallSuccess": 12,
-      "overallFailure": 92,
-      "overallSuccessRate": "11.54",
-      "overallFailureRate": "88.46",
+      "overallRank": 85,
+      "overallTotal": 108,
+      "overallSuccess": 79,
+      "overallFailure": 29,
+      "overallSuccessRate": "73.15",
+      "overallFailureRate": "26.85",
       "weeklyShareOfOverallPct": "0.00"
     },
     {
@@ -5547,29 +5694,12 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 87,
+      "overallRank": 89,
       "overallTotal": 102,
       "overallSuccess": 42,
       "overallFailure": 60,
       "overallSuccessRate": "41.18",
       "overallFailureRate": "58.82",
-      "weeklyShareOfOverallPct": "0.00"
-    },
-    {
-      "ovseId": "any2paytpl",
-      "status": "Inactive This Week",
-      "weeklyRank": "N/A",
-      "weeklyTotal": 0,
-      "weeklySuccess": 0,
-      "weeklyFailure": 0,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "0.00",
-      "overallRank": 89,
-      "overallTotal": 100,
-      "overallSuccess": 55,
-      "overallFailure": 45,
-      "overallSuccessRate": "55.00",
-      "overallFailureRate": "45.00",
       "weeklyShareOfOverallPct": "0.00"
     },
     {
@@ -5581,7 +5711,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 91,
+      "overallRank": 92,
       "overallTotal": 98,
       "overallSuccess": 42,
       "overallFailure": 56,
@@ -5760,23 +5890,6 @@ const BUNDLED_DATA = {
       "weeklyShareOfOverallPct": "0.00"
     },
     {
-      "ovseId": "documint",
-      "status": "Inactive This Week",
-      "weeklyRank": "N/A",
-      "weeklyTotal": 0,
-      "weeklySuccess": 0,
-      "weeklyFailure": 0,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "0.00",
-      "overallRank": 104,
-      "overallTotal": 65,
-      "overallSuccess": 64,
-      "overallFailure": 1,
-      "overallSuccessRate": "98.46",
-      "overallFailureRate": "1.54",
-      "weeklyShareOfOverallPct": "0.00"
-    },
-    {
       "ovseId": "urn:uidai:client:commissioner-esd-meeseva-telangana:202609174748",
       "status": "Inactive This Week",
       "weeklyRank": "N/A",
@@ -5785,29 +5898,12 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 105,
+      "overallRank": 107,
       "overallTotal": 62,
       "overallSuccess": 10,
       "overallFailure": 52,
       "overallSuccessRate": "16.13",
       "overallFailureRate": "83.87",
-      "weeklyShareOfOverallPct": "0.00"
-    },
-    {
-      "ovseId": "urn:uidai:client:3i-consulting-private-limited:202608031319",
-      "status": "Inactive This Week",
-      "weeklyRank": "N/A",
-      "weeklyTotal": 0,
-      "weeklySuccess": 0,
-      "weeklyFailure": 0,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "0.00",
-      "overallRank": 106,
-      "overallTotal": 61,
-      "overallSuccess": 21,
-      "overallFailure": 40,
-      "overallSuccessRate": "34.43",
-      "overallFailureRate": "65.57",
       "weeklyShareOfOverallPct": "0.00"
     },
     {
@@ -5819,7 +5915,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 107,
+      "overallRank": 108,
       "overallTotal": 61,
       "overallSuccess": 31,
       "overallFailure": 30,
@@ -5904,23 +6000,6 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 115,
-      "overallTotal": 53,
-      "overallSuccess": 0,
-      "overallFailure": 53,
-      "overallSuccessRate": "0.00",
-      "overallFailureRate": "100.00",
-      "weeklyShareOfOverallPct": "0.00"
-    },
-    {
-      "ovseId": "1a2f",
-      "status": "Inactive This Week",
-      "weeklyRank": "N/A",
-      "weeklyTotal": 0,
-      "weeklySuccess": 0,
-      "weeklyFailure": 0,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "0.00",
       "overallRank": 116,
       "overallTotal": 53,
       "overallSuccess": 0,
@@ -5972,7 +6051,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 119,
+      "overallRank": 120,
       "overallTotal": 46,
       "overallSuccess": 19,
       "overallFailure": 27,
@@ -5989,7 +6068,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 120,
+      "overallRank": 121,
       "overallTotal": 46,
       "overallSuccess": 22,
       "overallFailure": 24,
@@ -6040,7 +6119,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 124,
+      "overallRank": 125,
       "overallTotal": 44,
       "overallSuccess": 33,
       "overallFailure": 11,
@@ -6057,7 +6136,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 126,
+      "overallRank": 127,
       "overallTotal": 42,
       "overallSuccess": 23,
       "overallFailure": 19,
@@ -6074,7 +6153,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 128,
+      "overallRank": 129,
       "overallTotal": 40,
       "overallSuccess": 0,
       "overallFailure": 40,
@@ -6091,7 +6170,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 129,
+      "overallRank": 130,
       "overallTotal": 40,
       "overallSuccess": 24,
       "overallFailure": 16,
@@ -6108,7 +6187,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 130,
+      "overallRank": 131,
       "overallTotal": 40,
       "overallSuccess": 24,
       "overallFailure": 16,
@@ -6125,7 +6204,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 131,
+      "overallRank": 132,
       "overallTotal": 39,
       "overallSuccess": 18,
       "overallFailure": 21,
@@ -6142,7 +6221,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 132,
+      "overallRank": 133,
       "overallTotal": 39,
       "overallSuccess": 2,
       "overallFailure": 37,
@@ -6159,7 +6238,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 133,
+      "overallRank": 134,
       "overallTotal": 39,
       "overallSuccess": 12,
       "overallFailure": 27,
@@ -6176,7 +6255,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 134,
+      "overallRank": 135,
       "overallTotal": 38,
       "overallSuccess": 21,
       "overallFailure": 17,
@@ -6193,7 +6272,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 135,
+      "overallRank": 136,
       "overallTotal": 37,
       "overallSuccess": 16,
       "overallFailure": 21,
@@ -6210,7 +6289,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 136,
+      "overallRank": 137,
       "overallTotal": 37,
       "overallSuccess": 26,
       "overallFailure": 11,
@@ -6227,7 +6306,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 137,
+      "overallRank": 138,
       "overallTotal": 36,
       "overallSuccess": 6,
       "overallFailure": 30,
@@ -6244,7 +6323,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 138,
+      "overallRank": 139,
       "overallTotal": 36,
       "overallSuccess": 16,
       "overallFailure": 20,
@@ -6261,29 +6340,12 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 139,
+      "overallRank": 140,
       "overallTotal": 35,
       "overallSuccess": 3,
       "overallFailure": 32,
       "overallSuccessRate": "8.57",
       "overallFailureRate": "91.43",
-      "weeklyShareOfOverallPct": "0.00"
-    },
-    {
-      "ovseId": "urn:uidai:client:earnest-data-analytics-private-limited:202609247533",
-      "status": "Inactive This Week",
-      "weeklyRank": "N/A",
-      "weeklyTotal": 0,
-      "weeklySuccess": 0,
-      "weeklyFailure": 0,
-      "weeklySuccessRate": "0.00",
-      "weeklyFailureRate": "0.00",
-      "overallRank": 141,
-      "overallTotal": 35,
-      "overallSuccess": 26,
-      "overallFailure": 9,
-      "overallSuccessRate": "74.29",
-      "overallFailureRate": "25.71",
       "weeklyShareOfOverallPct": "0.00"
     },
     {
@@ -6465,7 +6527,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 159,
+      "overallRank": 160,
       "overallTotal": 19,
       "overallSuccess": 0,
       "overallFailure": 19,
@@ -6482,7 +6544,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 160,
+      "overallRank": 161,
       "overallTotal": 19,
       "overallSuccess": 16,
       "overallFailure": 3,
@@ -6499,7 +6561,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 161,
+      "overallRank": 162,
       "overallTotal": 19,
       "overallSuccess": 0,
       "overallFailure": 19,
@@ -6516,7 +6578,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 162,
+      "overallRank": 163,
       "overallTotal": 19,
       "overallSuccess": 11,
       "overallFailure": 8,
@@ -6533,7 +6595,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 163,
+      "overallRank": 164,
       "overallTotal": 18,
       "overallSuccess": 0,
       "overallFailure": 18,
@@ -6550,7 +6612,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 164,
+      "overallRank": 165,
       "overallTotal": 17,
       "overallSuccess": 0,
       "overallFailure": 17,
@@ -6567,7 +6629,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 165,
+      "overallRank": 166,
       "overallTotal": 16,
       "overallSuccess": 0,
       "overallFailure": 16,
@@ -6584,7 +6646,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 166,
+      "overallRank": 167,
       "overallTotal": 16,
       "overallSuccess": 0,
       "overallFailure": 16,
@@ -6601,7 +6663,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 167,
+      "overallRank": 168,
       "overallTotal": 16,
       "overallSuccess": 0,
       "overallFailure": 16,
@@ -6618,7 +6680,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 168,
+      "overallRank": 169,
       "overallTotal": 16,
       "overallSuccess": 14,
       "overallFailure": 2,
@@ -6635,7 +6697,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 169,
+      "overallRank": 170,
       "overallTotal": 15,
       "overallSuccess": 0,
       "overallFailure": 15,
@@ -6652,7 +6714,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 170,
+      "overallRank": 171,
       "overallTotal": 15,
       "overallSuccess": 0,
       "overallFailure": 15,
@@ -6669,7 +6731,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 171,
+      "overallRank": 172,
       "overallTotal": 15,
       "overallSuccess": 0,
       "overallFailure": 15,
@@ -6686,7 +6748,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 172,
+      "overallRank": 173,
       "overallTotal": 14,
       "overallSuccess": 0,
       "overallFailure": 14,
@@ -6703,7 +6765,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 173,
+      "overallRank": 174,
       "overallTotal": 14,
       "overallSuccess": 0,
       "overallFailure": 14,
@@ -6720,7 +6782,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 174,
+      "overallRank": 175,
       "overallTotal": 14,
       "overallSuccess": 0,
       "overallFailure": 14,
@@ -6737,7 +6799,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 175,
+      "overallRank": 176,
       "overallTotal": 14,
       "overallSuccess": 0,
       "overallFailure": 14,
@@ -6754,7 +6816,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 176,
+      "overallRank": 177,
       "overallTotal": 14,
       "overallSuccess": 0,
       "overallFailure": 14,
@@ -6771,7 +6833,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 178,
+      "overallRank": 179,
       "overallTotal": 14,
       "overallSuccess": 0,
       "overallFailure": 14,
@@ -6788,7 +6850,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 179,
+      "overallRank": 180,
       "overallTotal": 13,
       "overallSuccess": 0,
       "overallFailure": 13,
@@ -6805,7 +6867,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 180,
+      "overallRank": 181,
       "overallTotal": 13,
       "overallSuccess": 0,
       "overallFailure": 13,
@@ -6822,7 +6884,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 181,
+      "overallRank": 183,
       "overallTotal": 12,
       "overallSuccess": 0,
       "overallFailure": 12,
@@ -6839,7 +6901,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 182,
+      "overallRank": 184,
       "overallTotal": 12,
       "overallSuccess": 0,
       "overallFailure": 12,
@@ -6856,7 +6918,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 185,
+      "overallRank": 187,
       "overallTotal": 11,
       "overallSuccess": 0,
       "overallFailure": 11,
@@ -6873,7 +6935,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 186,
+      "overallRank": 188,
       "overallTotal": 11,
       "overallSuccess": 0,
       "overallFailure": 11,
@@ -6890,7 +6952,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 187,
+      "overallRank": 189,
       "overallTotal": 11,
       "overallSuccess": 1,
       "overallFailure": 10,
@@ -6907,7 +6969,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 188,
+      "overallRank": 190,
       "overallTotal": 10,
       "overallSuccess": 0,
       "overallFailure": 10,
@@ -6924,7 +6986,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 189,
+      "overallRank": 191,
       "overallTotal": 10,
       "overallSuccess": 0,
       "overallFailure": 10,
@@ -6941,7 +7003,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 190,
+      "overallRank": 192,
       "overallTotal": 10,
       "overallSuccess": 2,
       "overallFailure": 8,
@@ -6958,7 +7020,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 192,
+      "overallRank": 194,
       "overallTotal": 10,
       "overallSuccess": 6,
       "overallFailure": 4,
@@ -6975,7 +7037,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 193,
+      "overallRank": 195,
       "overallTotal": 9,
       "overallSuccess": 0,
       "overallFailure": 9,
@@ -6992,7 +7054,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 196,
+      "overallRank": 198,
       "overallTotal": 9,
       "overallSuccess": 0,
       "overallFailure": 9,
@@ -7009,7 +7071,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 197,
+      "overallRank": 199,
       "overallTotal": 9,
       "overallSuccess": 0,
       "overallFailure": 9,
@@ -7026,7 +7088,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 198,
+      "overallRank": 200,
       "overallTotal": 9,
       "overallSuccess": 0,
       "overallFailure": 9,
@@ -7043,7 +7105,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 199,
+      "overallRank": 201,
       "overallTotal": 8,
       "overallSuccess": 0,
       "overallFailure": 8,
@@ -7060,7 +7122,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 200,
+      "overallRank": 202,
       "overallTotal": 8,
       "overallSuccess": 2,
       "overallFailure": 6,
@@ -7077,7 +7139,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 202,
+      "overallRank": 203,
       "overallTotal": 7,
       "overallSuccess": 0,
       "overallFailure": 7,
@@ -7094,7 +7156,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 203,
+      "overallRank": 204,
       "overallTotal": 7,
       "overallSuccess": 0,
       "overallFailure": 7,
@@ -7111,7 +7173,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 204,
+      "overallRank": 205,
       "overallTotal": 7,
       "overallSuccess": 0,
       "overallFailure": 7,
@@ -7128,7 +7190,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 205,
+      "overallRank": 206,
       "overallTotal": 7,
       "overallSuccess": 0,
       "overallFailure": 7,
@@ -7145,7 +7207,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 206,
+      "overallRank": 207,
       "overallTotal": 7,
       "overallSuccess": 0,
       "overallFailure": 7,
@@ -7162,7 +7224,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 207,
+      "overallRank": 208,
       "overallTotal": 7,
       "overallSuccess": 0,
       "overallFailure": 7,
@@ -7179,7 +7241,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 208,
+      "overallRank": 209,
       "overallTotal": 7,
       "overallSuccess": 0,
       "overallFailure": 7,
@@ -7196,7 +7258,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 209,
+      "overallRank": 210,
       "overallTotal": 6,
       "overallSuccess": 0,
       "overallFailure": 6,
@@ -7213,7 +7275,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 210,
+      "overallRank": 211,
       "overallTotal": 6,
       "overallSuccess": 2,
       "overallFailure": 4,
@@ -7230,7 +7292,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 211,
+      "overallRank": 212,
       "overallTotal": 6,
       "overallSuccess": 2,
       "overallFailure": 4,
@@ -7247,7 +7309,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 212,
+      "overallRank": 213,
       "overallTotal": 6,
       "overallSuccess": 3,
       "overallFailure": 3,
@@ -7264,7 +7326,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 213,
+      "overallRank": 214,
       "overallTotal": 6,
       "overallSuccess": 0,
       "overallFailure": 6,
@@ -7281,7 +7343,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 214,
+      "overallRank": 215,
       "overallTotal": 5,
       "overallSuccess": 0,
       "overallFailure": 5,
@@ -7298,7 +7360,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 215,
+      "overallRank": 216,
       "overallTotal": 5,
       "overallSuccess": 0,
       "overallFailure": 5,
@@ -7315,7 +7377,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 216,
+      "overallRank": 217,
       "overallTotal": 5,
       "overallSuccess": 0,
       "overallFailure": 5,
@@ -7332,7 +7394,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 217,
+      "overallRank": 218,
       "overallTotal": 5,
       "overallSuccess": 0,
       "overallFailure": 5,
@@ -7349,7 +7411,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 218,
+      "overallRank": 219,
       "overallTotal": 5,
       "overallSuccess": 0,
       "overallFailure": 5,
@@ -7366,7 +7428,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 219,
+      "overallRank": 220,
       "overallTotal": 4,
       "overallSuccess": 0,
       "overallFailure": 4,
@@ -7383,7 +7445,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 220,
+      "overallRank": 221,
       "overallTotal": 4,
       "overallSuccess": 0,
       "overallFailure": 4,
@@ -7400,7 +7462,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 221,
+      "overallRank": 222,
       "overallTotal": 4,
       "overallSuccess": 0,
       "overallFailure": 4,
@@ -7417,7 +7479,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 222,
+      "overallRank": 223,
       "overallTotal": 4,
       "overallSuccess": 0,
       "overallFailure": 4,
@@ -7434,7 +7496,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 223,
+      "overallRank": 224,
       "overallTotal": 4,
       "overallSuccess": 0,
       "overallFailure": 4,
@@ -7451,7 +7513,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 224,
+      "overallRank": 225,
       "overallTotal": 4,
       "overallSuccess": 0,
       "overallFailure": 4,
@@ -7468,7 +7530,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 225,
+      "overallRank": 226,
       "overallTotal": 4,
       "overallSuccess": 0,
       "overallFailure": 4,
@@ -7485,7 +7547,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 226,
+      "overallRank": 227,
       "overallTotal": 3,
       "overallSuccess": 0,
       "overallFailure": 3,
@@ -7502,7 +7564,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 227,
+      "overallRank": 228,
       "overallTotal": 3,
       "overallSuccess": 0,
       "overallFailure": 3,
@@ -7519,7 +7581,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 228,
+      "overallRank": 229,
       "overallTotal": 3,
       "overallSuccess": 0,
       "overallFailure": 3,
@@ -7536,7 +7598,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 229,
+      "overallRank": 230,
       "overallTotal": 3,
       "overallSuccess": 0,
       "overallFailure": 3,
@@ -7553,7 +7615,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 230,
+      "overallRank": 231,
       "overallTotal": 3,
       "overallSuccess": 0,
       "overallFailure": 3,
@@ -7570,7 +7632,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 231,
+      "overallRank": 232,
       "overallTotal": 3,
       "overallSuccess": 0,
       "overallFailure": 3,
@@ -7587,7 +7649,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 232,
+      "overallRank": 233,
       "overallTotal": 3,
       "overallSuccess": 0,
       "overallFailure": 3,
@@ -7604,7 +7666,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 233,
+      "overallRank": 234,
       "overallTotal": 3,
       "overallSuccess": 0,
       "overallFailure": 3,
@@ -7621,7 +7683,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 234,
+      "overallRank": 235,
       "overallTotal": 3,
       "overallSuccess": 0,
       "overallFailure": 3,
@@ -7638,7 +7700,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 235,
+      "overallRank": 236,
       "overallTotal": 3,
       "overallSuccess": 0,
       "overallFailure": 3,
@@ -7655,7 +7717,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 236,
+      "overallRank": 237,
       "overallTotal": 3,
       "overallSuccess": 0,
       "overallFailure": 3,
@@ -7672,7 +7734,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 237,
+      "overallRank": 238,
       "overallTotal": 2,
       "overallSuccess": 0,
       "overallFailure": 2,
@@ -7689,7 +7751,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 238,
+      "overallRank": 239,
       "overallTotal": 2,
       "overallSuccess": 0,
       "overallFailure": 2,
@@ -7706,7 +7768,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 239,
+      "overallRank": 240,
       "overallTotal": 2,
       "overallSuccess": 0,
       "overallFailure": 2,
@@ -7723,7 +7785,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 240,
+      "overallRank": 241,
       "overallTotal": 2,
       "overallSuccess": 0,
       "overallFailure": 2,
@@ -7740,7 +7802,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 241,
+      "overallRank": 242,
       "overallTotal": 2,
       "overallSuccess": 0,
       "overallFailure": 2,
@@ -7757,7 +7819,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 242,
+      "overallRank": 243,
       "overallTotal": 2,
       "overallSuccess": 0,
       "overallFailure": 2,
@@ -7774,7 +7836,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 243,
+      "overallRank": 244,
       "overallTotal": 2,
       "overallSuccess": 0,
       "overallFailure": 2,
@@ -7791,7 +7853,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 244,
+      "overallRank": 245,
       "overallTotal": 2,
       "overallSuccess": 0,
       "overallFailure": 2,
@@ -7808,7 +7870,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 245,
+      "overallRank": 246,
       "overallTotal": 2,
       "overallSuccess": 0,
       "overallFailure": 2,
@@ -7825,7 +7887,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 246,
+      "overallRank": 247,
       "overallTotal": 2,
       "overallSuccess": 0,
       "overallFailure": 2,
@@ -7842,7 +7904,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 247,
+      "overallRank": 248,
       "overallTotal": 2,
       "overallSuccess": 0,
       "overallFailure": 2,
@@ -7859,7 +7921,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 248,
+      "overallRank": 249,
       "overallTotal": 2,
       "overallSuccess": 0,
       "overallFailure": 2,
@@ -7876,7 +7938,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 249,
+      "overallRank": 250,
       "overallTotal": 2,
       "overallSuccess": 0,
       "overallFailure": 2,
@@ -7893,7 +7955,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 250,
+      "overallRank": 251,
       "overallTotal": 2,
       "overallSuccess": 0,
       "overallFailure": 2,
@@ -7910,7 +7972,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 251,
+      "overallRank": 252,
       "overallTotal": 2,
       "overallSuccess": 0,
       "overallFailure": 2,
@@ -7927,7 +7989,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 254,
+      "overallRank": 255,
       "overallTotal": 2,
       "overallSuccess": 0,
       "overallFailure": 2,
@@ -7944,7 +8006,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 255,
+      "overallRank": 256,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -7961,7 +8023,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 256,
+      "overallRank": 257,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -7978,7 +8040,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 257,
+      "overallRank": 258,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -7995,7 +8057,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 258,
+      "overallRank": 259,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8012,7 +8074,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 259,
+      "overallRank": 260,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8029,7 +8091,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 260,
+      "overallRank": 261,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8046,7 +8108,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 261,
+      "overallRank": 262,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8063,7 +8125,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 262,
+      "overallRank": 263,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8080,7 +8142,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 263,
+      "overallRank": 264,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8097,7 +8159,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 264,
+      "overallRank": 265,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8114,7 +8176,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 265,
+      "overallRank": 266,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8131,7 +8193,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 266,
+      "overallRank": 267,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8148,7 +8210,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 267,
+      "overallRank": 268,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8165,7 +8227,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 268,
+      "overallRank": 269,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8182,7 +8244,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 269,
+      "overallRank": 270,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8199,7 +8261,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 270,
+      "overallRank": 271,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8216,7 +8278,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 271,
+      "overallRank": 272,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8233,7 +8295,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 272,
+      "overallRank": 273,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8250,7 +8312,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 273,
+      "overallRank": 274,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8267,7 +8329,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 274,
+      "overallRank": 275,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8284,7 +8346,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 275,
+      "overallRank": 276,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8301,7 +8363,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 276,
+      "overallRank": 277,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8318,7 +8380,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 277,
+      "overallRank": 278,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8335,7 +8397,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 278,
+      "overallRank": 279,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8352,7 +8414,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 279,
+      "overallRank": 280,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8369,7 +8431,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 280,
+      "overallRank": 281,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8386,7 +8448,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 281,
+      "overallRank": 282,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8403,7 +8465,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 282,
+      "overallRank": 283,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8420,7 +8482,7 @@ const BUNDLED_DATA = {
       "weeklyFailure": 0,
       "weeklySuccessRate": "0.00",
       "weeklyFailureRate": "0.00",
-      "overallRank": 283,
+      "overallRank": 284,
       "overallTotal": 1,
       "overallSuccess": 0,
       "overallFailure": 1,
@@ -8431,297 +8493,314 @@ const BUNDLED_DATA = {
   ],
   "newAndEmerging": [
     {
+      "ovseId": "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "status": "Surging / High Growth",
+      "weeklyRank": 3,
+      "weeklyTotal": 6700,
+      "weeklySuccess": 2892,
+      "weeklyFailure": 3808,
+      "weeklySuccessRate": "43.16",
+      "weeklyFailureRate": "56.84",
+      "overallRank": 14,
+      "overallTotal": 17768,
+      "overallSuccess": 6852,
+      "overallFailure": 10916,
+      "overallSuccessRate": "38.56",
+      "overallFailureRate": "61.44",
+      "weeklyShareOfOverallPct": "37.71"
+    },
+    {
       "ovseId": "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
       "status": "Surging / High Growth",
       "weeklyRank": 7,
-      "weeklyTotal": 2089,
-      "weeklySuccess": 1037,
-      "weeklyFailure": 1052,
-      "weeklySuccessRate": "49.64",
-      "weeklyFailureRate": "50.36",
+      "weeklyTotal": 2419,
+      "weeklySuccess": 1197,
+      "weeklyFailure": 1222,
+      "weeklySuccessRate": "49.48",
+      "weeklyFailureRate": "50.52",
       "overallRank": 19,
-      "overallTotal": 5576,
-      "overallSuccess": 2651,
-      "overallFailure": 2925,
-      "overallSuccessRate": "47.54",
-      "overallFailureRate": "52.46",
-      "weeklyShareOfOverallPct": "37.46"
+      "overallTotal": 6119,
+      "overallSuccess": 2940,
+      "overallFailure": 3179,
+      "overallSuccessRate": "48.05",
+      "overallFailureRate": "51.95",
+      "weeklyShareOfOverallPct": "39.53"
     },
     {
       "ovseId": "urn:uidai:client:special-branch,-bihar-police:202610163901",
       "status": "Surging / High Growth",
       "weeklyRank": 22,
-      "weeklyTotal": 120,
-      "weeklySuccess": 13,
-      "weeklyFailure": 107,
-      "weeklySuccessRate": "10.83",
-      "weeklyFailureRate": "89.17",
-      "overallRank": 76,
-      "overallTotal": 135,
-      "overallSuccess": 13,
-      "overallFailure": 122,
-      "overallSuccessRate": "9.63",
-      "overallFailureRate": "90.37",
-      "weeklyShareOfOverallPct": "88.89"
+      "weeklyTotal": 116,
+      "weeklySuccess": 14,
+      "weeklyFailure": 102,
+      "weeklySuccessRate": "12.07",
+      "weeklyFailureRate": "87.93",
+      "overallRank": 75,
+      "overallTotal": 137,
+      "overallSuccess": 14,
+      "overallFailure": 123,
+      "overallSuccessRate": "10.22",
+      "overallFailureRate": "89.78",
+      "weeklyShareOfOverallPct": "84.67"
     },
     {
       "ovseId": "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
       "status": "Surging / High Growth",
-      "weeklyRank": 26,
-      "weeklyTotal": 57,
-      "weeklySuccess": 49,
-      "weeklyFailure": 8,
-      "weeklySuccessRate": "85.96",
-      "weeklyFailureRate": "14.04",
-      "overallRank": 83,
-      "overallTotal": 116,
-      "overallSuccess": 49,
-      "overallFailure": 67,
-      "overallSuccessRate": "42.24",
-      "overallFailureRate": "57.76",
-      "weeklyShareOfOverallPct": "49.14"
+      "weeklyRank": 25,
+      "weeklyTotal": 80,
+      "weeklySuccess": 69,
+      "weeklyFailure": 11,
+      "weeklySuccessRate": "86.25",
+      "weeklyFailureRate": "13.75",
+      "overallRank": 73,
+      "overallTotal": 139,
+      "overallSuccess": 69,
+      "overallFailure": 70,
+      "overallSuccessRate": "49.64",
+      "overallFailureRate": "50.36",
+      "weeklyShareOfOverallPct": "57.55"
+    },
+    {
+      "ovseId": "urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581",
+      "status": "Surging / High Growth",
+      "weeklyRank": 35,
+      "weeklyTotal": 26,
+      "weeklySuccess": 21,
+      "weeklyFailure": 5,
+      "weeklySuccessRate": "80.77",
+      "weeklyFailureRate": "19.23",
+      "overallRank": 105,
+      "overallTotal": 65,
+      "overallSuccess": 52,
+      "overallFailure": 13,
+      "overallSuccessRate": "80.00",
+      "overallFailureRate": "20.00",
+      "weeklyShareOfOverallPct": "40.00"
     },
     {
       "ovseId": "urn:uidai:client:mdindia-health-insurance-tpa-private-limited:202608143596",
       "status": "Surging / High Growth",
-      "weeklyRank": 35,
-      "weeklyTotal": 28,
+      "weeklyRank": 45,
+      "weeklyTotal": 14,
       "weeklySuccess": 3,
-      "weeklyFailure": 25,
-      "weeklySuccessRate": "10.71",
-      "weeklyFailureRate": "89.29",
+      "weeklyFailure": 11,
+      "weeklySuccessRate": "21.43",
+      "weeklyFailureRate": "78.57",
       "overallRank": 146,
       "overallTotal": 30,
       "overallSuccess": 3,
       "overallFailure": 27,
       "overallSuccessRate": "10.00",
       "overallFailureRate": "90.00",
-      "weeklyShareOfOverallPct": "93.33"
-    },
-    {
-      "ovseId": "urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581",
-      "status": "Surging / High Growth",
-      "weeklyRank": 37,
-      "weeklyTotal": 21,
-      "weeklySuccess": 16,
-      "weeklyFailure": 5,
-      "weeklySuccessRate": "76.19",
-      "weeklyFailureRate": "23.81",
-      "overallRank": 108,
-      "overallTotal": 60,
-      "overallSuccess": 47,
-      "overallFailure": 13,
-      "overallSuccessRate": "78.33",
-      "overallFailureRate": "21.67",
-      "weeklyShareOfOverallPct": "35.00"
+      "weeklyShareOfOverallPct": "46.67"
     },
     {
       "ovseId": "urn:uidai:client:sai-roshni-capital-private-limited:202610275530",
       "status": "New Entrant",
-      "weeklyRank": 51,
-      "weeklyTotal": 8,
-      "weeklySuccess": 4,
-      "weeklyFailure": 4,
-      "weeklySuccessRate": "50.00",
-      "weeklyFailureRate": "50.00",
-      "overallRank": 201,
-      "overallTotal": 8,
-      "overallSuccess": 4,
-      "overallFailure": 4,
-      "overallSuccessRate": "50.00",
-      "overallFailureRate": "50.00",
+      "weeklyRank": 47,
+      "weeklyTotal": 13,
+      "weeklySuccess": 6,
+      "weeklyFailure": 7,
+      "weeklySuccessRate": "46.15",
+      "weeklyFailureRate": "53.85",
+      "overallRank": 182,
+      "overallTotal": 13,
+      "overallSuccess": 6,
+      "overallFailure": 7,
+      "overallSuccessRate": "46.15",
+      "overallFailureRate": "53.85",
       "weeklyShareOfOverallPct": "100.00"
     }
   ],
   "errors": {
     "overall": {
-      "totalErrors": 2169698,
-      "totalSuccesses": 5424560,
+      "totalErrors": 2176679,
+      "totalSuccesses": 5463296,
       "codeList": [
         {
           "code": "SDJWT_CALLBACK_NETWORK_ERROR",
           "description": "Network timeout or connection drop during callback reporting to OVSE backend.",
           "category": "Network / Connectivity Timeout",
-          "count": 631277,
-          "pctOfErrors": 29.095155178278265
+          "count": 632238,
+          "pctOfErrors": 29.04599162301837
         },
         {
           "code": "INVALID_JWT",
           "description": "Malformed, invalid token payload, or expired token during handshake.",
           "category": "Cryptographic / Security Error",
-          "count": 411461,
-          "pctOfErrors": 18.963975631631683
+          "count": 411671,
+          "pctOfErrors": 18.912802484886377
         },
         {
           "code": "SDJWT_FACEAUTH_FAILED_731",
           "description": "Face authentication match failed (Threshold score not met, code 731).",
           "category": "Biometric Face Auth Failure",
-          "count": 362786,
-          "pctOfErrors": 16.720575858944425
+          "count": 364872,
+          "pctOfErrors": 16.762784039355367
         },
         {
           "code": "SDJWT_USER_DENIED_CONSENT",
           "description": "Citizen actively declined or cancelled the consent prompt on mAadhaar app.",
           "category": "User Consent Denial",
-          "count": 356124,
-          "pctOfErrors": 16.41352851871551
+          "count": 358999,
+          "pctOfErrors": 16.492969335395802
         },
         {
           "code": "0",
           "description": "Generic connection reset, client drop, or unspecified timeout error.",
           "category": "Generic Timeout / Client Drop",
-          "count": 251765,
-          "pctOfErrors": 11.603688623946743
+          "count": 251766,
+          "pctOfErrors": 11.566519454637087
         },
         {
           "code": "SDJWT_SIGN_VALIDATION_FAILED",
           "description": "Cryptographic signature validation failure between OVSE and UIDAI.",
           "category": "Cryptographic / Security Error",
-          "count": 63457,
-          "pctOfErrors": 2.924692745257635
+          "count": 63731,
+          "pctOfErrors": 2.9279007148045255
         },
         {
           "code": "SDJWT_FACEAUTH_FAILED_304",
           "description": "Face capture / lighting / sensor error during camera acquisition.",
           "category": "Biometric Face Auth Failure",
-          "count": 53785,
-          "pctOfErrors": 2.478916420626281
+          "count": 54078,
+          "pctOfErrors": 2.4844269641963743
         },
         {
           "code": "SDJWT_FACEAUTH_FAILED_737",
           "description": "Low biometric confidence / quality score during facial matching.",
           "category": "Biometric Face Auth Failure",
-          "count": 20179,
-          "pctOfErrors": 0.9300372678593979
+          "count": 20460,
+          "pctOfErrors": 0.9399640461455272
         },
         {
           "code": "731",
           "description": "Biometric verification threshold score not achieved (Code 731).",
           "category": "Biometric Face Auth Failure",
           "count": 14104,
-          "pctOfErrors": 0.650044384057136
+          "pctOfErrors": 0.6479595751141992
         },
         {
           "code": "SDJWT_FACEAUTH_FAILED",
           "description": "General facial authentication failure.",
           "category": "Biometric Face Auth Failure",
           "count": 3593,
-          "pctOfErrors": 0.16559908337473694
+          "pctOfErrors": 0.16506797740962262
         },
         {
           "code": "SDJWT_ZIP_CREATION_FAILED",
           "description": "Failure during local credential zip extraction or compression.",
           "category": "System / Payload Processing",
           "count": 575,
-          "pctOfErrors": 0.026501384063588575
+          "pctOfErrors": 0.026416389371147514
         },
         {
           "code": "737",
           "description": "UIDAI error code 737",
           "category": "Other System Errors",
           "count": 569,
-          "pctOfErrors": 0.026224847882055473
+          "pctOfErrors": 0.02614074009075293
         },
         {
           "code": "undefined",
           "description": "UIDAI error code undefined",
           "category": "Other System Errors",
           "count": 11,
-          "pctOfErrors": 0.0005069829994773466
+          "pctOfErrors": 0.0005053570140567351
         },
         {
           "code": "Unauthorized access",
           "description": "UIDAI error code Unauthorized access",
           "category": "Other System Errors",
           "count": 6,
-          "pctOfErrors": 0.00027653618153309815
+          "pctOfErrors": 0.00027564928039458276
         },
         {
           "code": "No data received",
           "description": "UIDAI error code No data received",
           "category": "Other System Errors",
           "count": 2,
-          "pctOfErrors": 0.00009217872717769937
+          "pctOfErrors": 0.00009188309346486092
         },
         {
           "code": "400",
           "description": "UIDAI error code 400",
           "category": "Other System Errors",
           "count": 1,
-          "pctOfErrors": 0.00004608936358884969
+          "pctOfErrors": 0.00004594154673243046
         },
         {
           "code": "500",
           "description": "UIDAI error code 500",
           "category": "Other System Errors",
           "count": 1,
-          "pctOfErrors": 0.00004608936358884969
+          "pctOfErrors": 0.00004594154673243046
         },
         {
           "code": "Request failed: The request timed out.",
           "description": "UIDAI error code Request failed: The request timed out.",
           "category": "Other System Errors",
           "count": 1,
-          "pctOfErrors": 0.00004608936358884969
+          "pctOfErrors": 0.00004594154673243046
         },
         {
           "code": "Request failed: The resource could not be loaded because the App Transport Security policy requires the use of a secure connection.",
           "description": "UIDAI error code Request failed: The resource could not be loaded because the App Transport Security policy requires the use of a secure connection.",
           "category": "Other System Errors",
           "count": 1,
-          "pctOfErrors": 0.00004608936358884969
+          "pctOfErrors": 0.00004594154673243046
         }
       ],
       "categoryList": [
         {
           "category": "Network / Connectivity Timeout",
-          "count": 631277,
-          "pct": 29.095155178278265
+          "count": 632238,
+          "pct": 29.04599162301837
         },
         {
           "category": "Cryptographic / Security Error",
-          "count": 474918,
-          "pct": 21.888668376889317
+          "count": 475402,
+          "pct": 21.840703199690907
         },
         {
           "category": "Biometric Face Auth Failure",
-          "count": 454447,
-          "pct": 20.945173014861975
+          "count": 457107,
+          "pct": 21.00020260222109
         },
         {
           "category": "User Consent Denial",
-          "count": 356124,
-          "pct": 16.41352851871551
+          "count": 358999,
+          "pct": 16.492969335395802
         },
         {
           "category": "Generic Timeout / Client Drop",
-          "count": 251765,
-          "pct": 11.603688623946743
+          "count": 251766,
+          "pct": 11.566519454637087
         },
         {
           "category": "Other System Errors",
           "count": 592,
-          "pct": 0.02728490324459902
+          "pct": 0.027197395665598832
         },
         {
           "category": "System / Payload Processing",
           "count": 575,
-          "pct": 0.026501384063588575
+          "pct": 0.026416389371147514
         }
       ],
       "ovseErrorList": [
         {
           "ovseId": "tspolice",
-          "totalErrors": 1603402,
+          "totalErrors": 1603409,
           "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
           "topErrorCount": 608908,
           "codes": {
             "731": 59,
             "737": 5,
             "SDJWT_CALLBACK_NETWORK_ERROR": 608908,
-            "INVALID_JWT": 389134,
+            "INVALID_JWT": 389139,
             "SDJWT_FACEAUTH_FAILED_731": 277823,
-            "SDJWT_USER_DENIED_CONSENT": 225928,
+            "SDJWT_USER_DENIED_CONSENT": 225930,
             "SDJWT_SIGN_VALIDATION_FAILED": 46039,
             "SDJWT_FACEAUTH_FAILED_304": 42544,
             "SDJWT_FACEAUTH_FAILED_737": 12960,
@@ -8730,11 +8809,11 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "000",
-          "totalErrors": 242721,
+          "totalErrors": 242722,
           "topErrorCode": "0",
-          "topErrorCount": 241475,
+          "topErrorCount": 241476,
           "codes": {
-            "0": 241475,
+            "0": 241476,
             "500": 1,
             "731": 2,
             "SDJWT_ZIP_CREATION_FAILED": 190,
@@ -8750,56 +8829,56 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "urbancompany",
-          "totalErrors": 138650,
+          "totalErrors": 140246,
           "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 78714,
+          "topErrorCount": 79861,
           "codes": {
             "731": 3516,
             "737": 56,
-            "SDJWT_USER_DENIED_CONSENT": 78714,
-            "SDJWT_FACEAUTH_FAILED_731": 41251,
-            "SDJWT_SIGN_VALIDATION_FAILED": 4308,
-            "INVALID_JWT": 8198,
-            "SDJWT_FACEAUTH_FAILED_304": 1586,
-            "SDJWT_FACEAUTH_FAILED_737": 1021
+            "SDJWT_USER_DENIED_CONSENT": 79861,
+            "SDJWT_FACEAUTH_FAILED_731": 41581,
+            "SDJWT_SIGN_VALIDATION_FAILED": 4344,
+            "INVALID_JWT": 8247,
+            "SDJWT_FACEAUTH_FAILED_304": 1601,
+            "SDJWT_FACEAUTH_FAILED_737": 1040
           }
         },
         {
           "ovseId": "gridlines",
-          "totalErrors": 28459,
+          "totalErrors": 28759,
           "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
-          "topErrorCount": 8758,
+          "topErrorCount": 8904,
           "codes": {
             "0": 261,
             "731": 633,
             "737": 35,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 8758,
-            "SDJWT_FACEAUTH_FAILED_731": 7138,
-            "SDJWT_SIGN_VALIDATION_FAILED": 2381,
-            "SDJWT_USER_DENIED_CONSENT": 5643,
-            "INVALID_JWT": 1460,
-            "SDJWT_FACEAUTH_FAILED_304": 1163,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 8904,
+            "SDJWT_FACEAUTH_FAILED_731": 7192,
+            "SDJWT_SIGN_VALIDATION_FAILED": 2396,
+            "SDJWT_USER_DENIED_CONSENT": 5694,
+            "INVALID_JWT": 1464,
+            "SDJWT_FACEAUTH_FAILED_304": 1181,
             "SDJWT_FACEAUTH_FAILED": 200,
-            "SDJWT_FACEAUTH_FAILED_737": 787
+            "SDJWT_FACEAUTH_FAILED_737": 799
           }
         },
         {
           "ovseId": "tnmc",
-          "totalErrors": 21745,
+          "totalErrors": 22003,
           "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
-          "topErrorCount": 5238,
+          "topErrorCount": 5320,
           "codes": {
             "0": 3819,
             "731": 770,
             "737": 11,
-            "SDJWT_FACEAUTH_FAILED_731": 5238,
+            "SDJWT_FACEAUTH_FAILED_731": 5320,
             "SDJWT_FACEAUTH_FAILED": 2292,
-            "SDJWT_FACEAUTH_FAILED_304": 2565,
-            "SDJWT_FACEAUTH_FAILED_737": 1087,
-            "SDJWT_USER_DENIED_CONSENT": 3229,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 891,
-            "SDJWT_SIGN_VALIDATION_FAILED": 1569,
-            "INVALID_JWT": 274
+            "SDJWT_FACEAUTH_FAILED_304": 2594,
+            "SDJWT_FACEAUTH_FAILED_737": 1100,
+            "SDJWT_USER_DENIED_CONSENT": 3280,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 948,
+            "SDJWT_SIGN_VALIDATION_FAILED": 1585,
+            "INVALID_JWT": 284
           }
         },
         {
@@ -8820,85 +8899,85 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "procam",
-          "totalErrors": 13804,
+          "totalErrors": 13994,
           "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
-          "topErrorCount": 4842,
+          "topErrorCount": 4931,
           "codes": {
             "0": 106,
             "731": 6,
-            "SDJWT_FACEAUTH_FAILED_731": 4842,
-            "SDJWT_FACEAUTH_FAILED_304": 2322,
-            "SDJWT_FACEAUTH_FAILED_737": 1777,
-            "SDJWT_USER_DENIED_CONSENT": 2233,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 963,
-            "SDJWT_SIGN_VALIDATION_FAILED": 1003,
-            "INVALID_JWT": 477,
+            "SDJWT_FACEAUTH_FAILED_731": 4931,
+            "SDJWT_FACEAUTH_FAILED_304": 2353,
+            "SDJWT_FACEAUTH_FAILED_737": 1782,
+            "SDJWT_USER_DENIED_CONSENT": 2276,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 973,
+            "SDJWT_SIGN_VALIDATION_FAILED": 1012,
+            "INVALID_JWT": 480,
             "SDJWT_FACEAUTH_FAILED": 75
           }
         },
         {
           "ovseId": "(Blank / Unknown)",
-          "totalErrors": 12800,
+          "totalErrors": 12897,
           "topErrorCode": "731",
           "topErrorCount": 4782,
           "codes": {
             "731": 4782,
             "737": 340,
             "SDJWT_CALLBACK_NETWORK_ERROR": 2010,
-            "SDJWT_USER_DENIED_CONSENT": 2756,
-            "SDJWT_FACEAUTH_FAILED_304": 1526,
+            "SDJWT_USER_DENIED_CONSENT": 2793,
+            "SDJWT_FACEAUTH_FAILED_304": 1563,
             "SDJWT_FACEAUTH_FAILED": 303,
-            "SDJWT_FACEAUTH_FAILED_737": 747,
-            "SDJWT_FACEAUTH_FAILED_731": 214,
+            "SDJWT_FACEAUTH_FAILED_737": 765,
+            "SDJWT_FACEAUTH_FAILED_731": 219,
             "INVALID_JWT": 87,
             "SDJWT_SIGN_VALIDATION_FAILED": 35
           }
         },
         {
           "ovseId": "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
-          "totalErrors": 12002,
+          "totalErrors": 12289,
           "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
-          "topErrorCount": 4578,
+          "topErrorCount": 4688,
           "codes": {
             "731": 2,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 1037,
-            "SDJWT_FACEAUTH_FAILED_731": 4578,
-            "SDJWT_USER_DENIED_CONSENT": 4509,
-            "INVALID_JWT": 1054,
-            "SDJWT_SIGN_VALIDATION_FAILED": 575,
-            "SDJWT_FACEAUTH_FAILED_737": 127,
-            "SDJWT_FACEAUTH_FAILED_304": 113,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 1040,
+            "SDJWT_FACEAUTH_FAILED_731": 4688,
+            "SDJWT_USER_DENIED_CONSENT": 4620,
+            "INVALID_JWT": 1091,
+            "SDJWT_SIGN_VALIDATION_FAILED": 579,
+            "SDJWT_FACEAUTH_FAILED_737": 139,
+            "SDJWT_FACEAUTH_FAILED_304": 123,
             "SDJWT_FACEAUTH_FAILED": 7
           }
         },
         {
           "ovseId": "urn:uidai:client:inferalgo-private-limited:202607177737",
-          "totalErrors": 11404,
+          "totalErrors": 11503,
           "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 5926,
+          "topErrorCount": 5990,
           "codes": {
             "731": 4,
-            "SDJWT_USER_DENIED_CONSENT": 5926,
-            "SDJWT_FACEAUTH_FAILED_731": 3695,
+            "SDJWT_USER_DENIED_CONSENT": 5990,
+            "SDJWT_FACEAUTH_FAILED_731": 3716,
             "SDJWT_CALLBACK_NETWORK_ERROR": 624,
-            "SDJWT_SIGN_VALIDATION_FAILED": 486,
-            "SDJWT_FACEAUTH_FAILED_737": 261,
+            "SDJWT_SIGN_VALIDATION_FAILED": 497,
+            "SDJWT_FACEAUTH_FAILED_737": 263,
             "INVALID_JWT": 171,
-            "SDJWT_FACEAUTH_FAILED_304": 237
+            "SDJWT_FACEAUTH_FAILED_304": 238
           }
         },
         {
           "ovseId": "arattai",
-          "totalErrors": 11366,
+          "totalErrors": 11424,
           "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 5705,
+          "topErrorCount": 5740,
           "codes": {
             "0": 73,
             "731": 3,
-            "SDJWT_USER_DENIED_CONSENT": 5705,
-            "SDJWT_FACEAUTH_FAILED_731": 4363,
-            "INVALID_JWT": 592,
-            "SDJWT_SIGN_VALIDATION_FAILED": 427,
+            "SDJWT_USER_DENIED_CONSENT": 5740,
+            "SDJWT_FACEAUTH_FAILED_731": 4378,
+            "INVALID_JWT": 593,
+            "SDJWT_SIGN_VALIDATION_FAILED": 434,
             "SDJWT_FACEAUTH_FAILED_304": 105,
             "SDJWT_FACEAUTH_FAILED": 25,
             "SDJWT_FACEAUTH_FAILED_737": 55,
@@ -8906,65 +8985,65 @@ const BUNDLED_DATA = {
           }
         },
         {
-          "ovseId": "dexit",
-          "totalErrors": 9714,
-          "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
-          "topErrorCount": 2620,
-          "codes": {
-            "0": 17,
-            "INVALID_JWT": 2476,
-            "SDJWT_FACEAUTH_FAILED_731": 2620,
-            "SDJWT_USER_DENIED_CONSENT": 2611,
-            "SDJWT_SIGN_VALIDATION_FAILED": 784,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 800,
-            "SDJWT_FACEAUTH_FAILED_304": 277,
-            "SDJWT_FACEAUTH_FAILED_737": 116,
-            "SDJWT_FACEAUTH_FAILED": 13
-          }
-        },
-        {
           "ovseId": "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
-          "totalErrors": 8184,
+          "totalErrors": 10916,
           "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
-          "topErrorCount": 3506,
+          "topErrorCount": 4514,
           "codes": {
-            "SDJWT_FACEAUTH_FAILED_731": 3506,
-            "SDJWT_USER_DENIED_CONSENT": 2706,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 1419,
-            "SDJWT_SIGN_VALIDATION_FAILED": 227,
-            "SDJWT_FACEAUTH_FAILED_304": 158,
-            "SDJWT_FACEAUTH_FAILED_737": 167,
+            "SDJWT_FACEAUTH_FAILED_731": 4514,
+            "SDJWT_USER_DENIED_CONSENT": 3619,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 1933,
+            "SDJWT_SIGN_VALIDATION_FAILED": 304,
+            "SDJWT_FACEAUTH_FAILED_737": 313,
+            "SDJWT_FACEAUTH_FAILED_304": 232,
             "INVALID_JWT": 1
           }
         },
         {
-          "ovseId": "trustt",
-          "totalErrors": 5057,
+          "ovseId": "dexit",
+          "totalErrors": 9963,
           "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 1797,
+          "topErrorCount": 2702,
           "codes": {
-            "INVALID_JWT": 1497,
-            "SDJWT_USER_DENIED_CONSENT": 1797,
-            "SDJWT_FACEAUTH_FAILED_731": 888,
-            "SDJWT_SIGN_VALIDATION_FAILED": 601,
+            "0": 17,
+            "INVALID_JWT": 2523,
+            "SDJWT_FACEAUTH_FAILED_731": 2695,
+            "SDJWT_USER_DENIED_CONSENT": 2702,
+            "SDJWT_SIGN_VALIDATION_FAILED": 797,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 811,
+            "SDJWT_FACEAUTH_FAILED_304": 285,
+            "SDJWT_FACEAUTH_FAILED_737": 120,
+            "SDJWT_FACEAUTH_FAILED": 13
+          }
+        },
+        {
+          "ovseId": "trustt",
+          "totalErrors": 5235,
+          "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
+          "topErrorCount": 1869,
+          "codes": {
+            "INVALID_JWT": 1500,
+            "SDJWT_USER_DENIED_CONSENT": 1869,
+            "SDJWT_FACEAUTH_FAILED_731": 955,
+            "SDJWT_SIGN_VALIDATION_FAILED": 621,
             "SDJWT_FACEAUTH_FAILED_304": 64,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 121,
-            "SDJWT_FACEAUTH_FAILED_737": 89
+            "SDJWT_CALLBACK_NETWORK_ERROR": 124,
+            "SDJWT_FACEAUTH_FAILED_737": 102
           }
         },
         {
           "ovseId": "cisf",
-          "totalErrors": 4187,
+          "totalErrors": 4206,
           "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
-          "topErrorCount": 1560,
+          "topErrorCount": 1565,
           "codes": {
             "731": 321,
             "737": 4,
-            "SDJWT_FACEAUTH_FAILED_731": 1560,
+            "SDJWT_FACEAUTH_FAILED_731": 1565,
             "SDJWT_USER_DENIED_CONSENT": 907,
-            "INVALID_JWT": 452,
-            "SDJWT_SIGN_VALIDATION_FAILED": 459,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 213,
+            "INVALID_JWT": 462,
+            "SDJWT_SIGN_VALIDATION_FAILED": 461,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 215,
             "SDJWT_FACEAUTH_FAILED_304": 127,
             "SDJWT_FACEAUTH_FAILED_737": 134,
             "SDJWT_FACEAUTH_FAILED": 10
@@ -8972,46 +9051,46 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "urn:uidai:client:instantpay-india-limited:202606250788",
-          "totalErrors": 3085,
+          "totalErrors": 3199,
           "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 1580,
+          "topErrorCount": 1630,
           "codes": {
-            "SDJWT_USER_DENIED_CONSENT": 1580,
-            "SDJWT_FACEAUTH_FAILED_731": 970,
-            "SDJWT_SIGN_VALIDATION_FAILED": 162,
-            "INVALID_JWT": 174,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 82,
-            "SDJWT_FACEAUTH_FAILED_304": 89,
-            "SDJWT_FACEAUTH_FAILED_737": 28
+            "SDJWT_USER_DENIED_CONSENT": 1630,
+            "SDJWT_FACEAUTH_FAILED_731": 1002,
+            "SDJWT_SIGN_VALIDATION_FAILED": 173,
+            "INVALID_JWT": 177,
+            "SDJWT_FACEAUTH_FAILED_304": 103,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 83,
+            "SDJWT_FACEAUTH_FAILED_737": 31
           }
         },
         {
           "ovseId": "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
-          "totalErrors": 2925,
+          "totalErrors": 3179,
           "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
-          "topErrorCount": 2158,
+          "topErrorCount": 2340,
           "codes": {
-            "SDJWT_CALLBACK_NETWORK_ERROR": 2158,
-            "SDJWT_USER_DENIED_CONSENT": 527,
-            "SDJWT_FACEAUTH_FAILED_731": 134,
-            "SDJWT_SIGN_VALIDATION_FAILED": 62,
-            "SDJWT_FACEAUTH_FAILED_304": 33,
-            "SDJWT_FACEAUTH_FAILED_737": 8,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 2340,
+            "SDJWT_USER_DENIED_CONSENT": 570,
+            "SDJWT_FACEAUTH_FAILED_731": 139,
+            "SDJWT_SIGN_VALIDATION_FAILED": 69,
+            "SDJWT_FACEAUTH_FAILED_737": 18,
+            "SDJWT_FACEAUTH_FAILED_304": 40,
             "INVALID_JWT": 3
           }
         },
         {
           "ovseId": "protean",
-          "totalErrors": 2285,
+          "totalErrors": 2303,
           "topErrorCode": "SDJWT_SIGN_VALIDATION_FAILED",
-          "topErrorCount": 990,
+          "topErrorCount": 996,
           "codes": {
             "0": 1,
             "731": 1,
-            "SDJWT_SIGN_VALIDATION_FAILED": 990,
-            "SDJWT_USER_DENIED_CONSENT": 950,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 178,
-            "INVALID_JWT": 133,
+            "SDJWT_SIGN_VALIDATION_FAILED": 996,
+            "SDJWT_USER_DENIED_CONSENT": 956,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 181,
+            "INVALID_JWT": 136,
             "SDJWT_FACEAUTH_FAILED_731": 28,
             "SDJWT_FACEAUTH_FAILED": 2,
             "SDJWT_FACEAUTH_FAILED_737": 2
@@ -9019,32 +9098,49 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "urn:uidai:client:hindon-mercantile-limited:202608105382",
-          "totalErrors": 2146,
+          "totalErrors": 2225,
           "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 839,
+          "topErrorCount": 861,
           "codes": {
-            "INVALID_JWT": 357,
-            "SDJWT_USER_DENIED_CONSENT": 839,
-            "SDJWT_FACEAUTH_FAILED_731": 559,
-            "SDJWT_FACEAUTH_FAILED_737": 138,
-            "SDJWT_SIGN_VALIDATION_FAILED": 160,
+            "INVALID_JWT": 365,
+            "SDJWT_USER_DENIED_CONSENT": 861,
+            "SDJWT_FACEAUTH_FAILED_731": 605,
+            "SDJWT_FACEAUTH_FAILED_737": 139,
+            "SDJWT_SIGN_VALIDATION_FAILED": 162,
             "SDJWT_CALLBACK_NETWORK_ERROR": 47,
             "SDJWT_FACEAUTH_FAILED_304": 46
           }
         },
         {
           "ovseId": "urn:uidai:client:punjab-school-educationboard:202608274954",
-          "totalErrors": 2064,
+          "totalErrors": 2114,
           "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 701,
+          "topErrorCount": 725,
           "codes": {
-            "SDJWT_FACEAUTH_FAILED_731": 637,
-            "SDJWT_USER_DENIED_CONSENT": 701,
+            "SDJWT_FACEAUTH_FAILED_731": 654,
+            "SDJWT_USER_DENIED_CONSENT": 725,
             "INVALID_JWT": 272,
-            "SDJWT_SIGN_VALIDATION_FAILED": 220,
+            "SDJWT_SIGN_VALIDATION_FAILED": 223,
             "SDJWT_FACEAUTH_FAILED_304": 75,
-            "SDJWT_FACEAUTH_FAILED_737": 84,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 75
+            "SDJWT_FACEAUTH_FAILED_737": 86,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 79
+          }
+        },
+        {
+          "ovseId": "surepass",
+          "totalErrors": 1430,
+          "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
+          "topErrorCount": 591,
+          "codes": {
+            "0": 18,
+            "SDJWT_FACEAUTH_FAILED_731": 591,
+            "SDJWT_USER_DENIED_CONSENT": 447,
+            "SDJWT_SIGN_VALIDATION_FAILED": 141,
+            "SDJWT_FACEAUTH_FAILED_304": 67,
+            "SDJWT_FACEAUTH_FAILED_737": 100,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 41,
+            "INVALID_JWT": 17,
+            "SDJWT_FACEAUTH_FAILED": 8
           }
         },
         {
@@ -9064,34 +9160,17 @@ const BUNDLED_DATA = {
           }
         },
         {
-          "ovseId": "surepass",
-          "totalErrors": 1192,
-          "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
-          "topErrorCount": 495,
-          "codes": {
-            "0": 18,
-            "SDJWT_FACEAUTH_FAILED_731": 495,
-            "SDJWT_USER_DENIED_CONSENT": 375,
-            "SDJWT_SIGN_VALIDATION_FAILED": 131,
-            "SDJWT_FACEAUTH_FAILED_737": 84,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 33,
-            "INVALID_JWT": 12,
-            "SDJWT_FACEAUTH_FAILED": 8,
-            "SDJWT_FACEAUTH_FAILED_304": 36
-          }
-        },
-        {
           "ovseId": "truscholar",
-          "totalErrors": 1052,
+          "totalErrors": 1057,
           "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 454,
+          "topErrorCount": 458,
           "codes": {
             "0": 2,
             "731": 25,
-            "SDJWT_USER_DENIED_CONSENT": 454,
+            "SDJWT_USER_DENIED_CONSENT": 458,
             "SDJWT_FACEAUTH_FAILED_731": 176,
             "SDJWT_FACEAUTH_FAILED_737": 37,
-            "SDJWT_FACEAUTH_FAILED_304": 41,
+            "SDJWT_FACEAUTH_FAILED_304": 42,
             "INVALID_JWT": 178,
             "SDJWT_CALLBACK_NETWORK_ERROR": 61,
             "SDJWT_SIGN_VALIDATION_FAILED": 76,
@@ -9100,22 +9179,22 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "urn:uidai:client:dc-office-tawang:202606230797",
-          "totalErrors": 987,
+          "totalErrors": 1002,
           "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
-          "topErrorCount": 268,
+          "topErrorCount": 269,
           "codes": {
-            "SDJWT_FACEAUTH_FAILED_731": 268,
+            "SDJWT_FACEAUTH_FAILED_731": 269,
             "SDJWT_USER_DENIED_CONSENT": 264,
             "SDJWT_CALLBACK_NETWORK_ERROR": 104,
             "SDJWT_FACEAUTH_FAILED_737": 107,
-            "SDJWT_FACEAUTH_FAILED_304": 138,
+            "SDJWT_FACEAUTH_FAILED_304": 152,
             "SDJWT_SIGN_VALIDATION_FAILED": 71,
             "INVALID_JWT": 35
           }
         },
         {
           "ovseId": "ooru_digital",
-          "totalErrors": 854,
+          "totalErrors": 857,
           "topErrorCode": "0",
           "topErrorCount": 167,
           "codes": {
@@ -9126,7 +9205,7 @@ const BUNDLED_DATA = {
             "SDJWT_FACEAUTH_FAILED": 115,
             "SDJWT_SIGN_VALIDATION_FAILED": 119,
             "INVALID_JWT": 39,
-            "SDJWT_FACEAUTH_FAILED_737": 41,
+            "SDJWT_FACEAUTH_FAILED_737": 44,
             "SDJWT_CALLBACK_NETWORK_ERROR": 40,
             "SDJWT_FACEAUTH_FAILED_731": 35,
             "Request failed: The request timed out.": 1
@@ -9134,16 +9213,16 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
-          "totalErrors": 425,
+          "totalErrors": 468,
           "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
-          "topErrorCount": 233,
+          "topErrorCount": 247,
           "codes": {
-            "SDJWT_FACEAUTH_FAILED_731": 233,
-            "SDJWT_USER_DENIED_CONSENT": 69,
+            "SDJWT_FACEAUTH_FAILED_731": 247,
+            "SDJWT_USER_DENIED_CONSENT": 79,
             "SDJWT_FACEAUTH_FAILED_737": 25,
-            "INVALID_JWT": 43,
-            "SDJWT_SIGN_VALIDATION_FAILED": 17,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 33,
+            "INVALID_JWT": 56,
+            "SDJWT_SIGN_VALIDATION_FAILED": 18,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 38,
             "SDJWT_FACEAUTH_FAILED_304": 5
           }
         },
@@ -9210,14 +9289,14 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "vsign",
-          "totalErrors": 315,
+          "totalErrors": 318,
           "topErrorCode": "SDJWT_SIGN_VALIDATION_FAILED",
-          "topErrorCount": 108,
+          "topErrorCount": 109,
           "codes": {
             "0": 12,
-            "SDJWT_SIGN_VALIDATION_FAILED": 108,
+            "SDJWT_SIGN_VALIDATION_FAILED": 109,
             "INVALID_JWT": 60,
-            "SDJWT_USER_DENIED_CONSENT": 78,
+            "SDJWT_USER_DENIED_CONSENT": 80,
             "SDJWT_FACEAUTH_FAILED": 15,
             "SDJWT_FACEAUTH_FAILED_731": 17,
             "SDJWT_CALLBACK_NETWORK_ERROR": 23,
@@ -9307,6 +9386,21 @@ const BUNDLED_DATA = {
           }
         },
         {
+          "ovseId": "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
+          "totalErrors": 186,
+          "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
+          "topErrorCount": 44,
+          "codes": {
+            "SDJWT_FACEAUTH_FAILED_737": 42,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 18,
+            "SDJWT_SIGN_VALIDATION_FAILED": 18,
+            "SDJWT_USER_DENIED_CONSENT": 44,
+            "INVALID_JWT": 24,
+            "SDJWT_FACEAUTH_FAILED_731": 39,
+            "SDJWT_FACEAUTH_FAILED_304": 1
+          }
+        },
+        {
           "ovseId": "urn:uidai:client:inverix-innovations-private-limited:202607131364",
           "totalErrors": 178,
           "topErrorCode": "SDJWT_SIGN_VALIDATION_FAILED",
@@ -9322,29 +9416,28 @@ const BUNDLED_DATA = {
           }
         },
         {
-          "ovseId": "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
-          "totalErrors": 175,
-          "topErrorCode": "SDJWT_FACEAUTH_FAILED_737",
-          "topErrorCount": 41,
+          "ovseId": "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
+          "totalErrors": 168,
+          "topErrorCode": "SDJWT_SIGN_VALIDATION_FAILED",
+          "topErrorCount": 74,
           "codes": {
-            "SDJWT_FACEAUTH_FAILED_737": 41,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 18,
-            "SDJWT_SIGN_VALIDATION_FAILED": 18,
-            "SDJWT_USER_DENIED_CONSENT": 38,
-            "INVALID_JWT": 21,
-            "SDJWT_FACEAUTH_FAILED_731": 38,
-            "SDJWT_FACEAUTH_FAILED_304": 1
+            "SDJWT_SIGN_VALIDATION_FAILED": 74,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 41,
+            "INVALID_JWT": 27,
+            "SDJWT_USER_DENIED_CONSENT": 22,
+            "SDJWT_FACEAUTH_FAILED_304": 1,
+            "SDJWT_FACEAUTH_FAILED_731": 3
           }
         },
         {
           "ovseId": "mantra",
-          "totalErrors": 163,
+          "totalErrors": 165,
           "topErrorCode": "0",
           "topErrorCount": 55,
           "codes": {
             "0": 55,
             "731": 1,
-            "SDJWT_USER_DENIED_CONSENT": 39,
+            "SDJWT_USER_DENIED_CONSENT": 41,
             "SDJWT_FACEAUTH_FAILED": 24,
             "SDJWT_SIGN_VALIDATION_FAILED": 20,
             "INVALID_JWT": 10,
@@ -9355,29 +9448,15 @@ const BUNDLED_DATA = {
           }
         },
         {
-          "ovseId": "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
-          "totalErrors": 162,
-          "topErrorCode": "SDJWT_SIGN_VALIDATION_FAILED",
-          "topErrorCount": 71,
-          "codes": {
-            "SDJWT_SIGN_VALIDATION_FAILED": 71,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 40,
-            "INVALID_JWT": 27,
-            "SDJWT_USER_DENIED_CONSENT": 20,
-            "SDJWT_FACEAUTH_FAILED_304": 1,
-            "SDJWT_FACEAUTH_FAILED_731": 3
-          }
-        },
-        {
           "ovseId": "urn:uidai:client:aparampaar-finance-private-limited:202605134450",
-          "totalErrors": 161,
+          "totalErrors": 164,
           "topErrorCode": "INVALID_JWT",
           "topErrorCount": 88,
           "codes": {
             "SDJWT_SIGN_VALIDATION_FAILED": 14,
             "SDJWT_CALLBACK_NETWORK_ERROR": 10,
             "INVALID_JWT": 88,
-            "SDJWT_FACEAUTH_FAILED_731": 34,
+            "SDJWT_FACEAUTH_FAILED_731": 37,
             "SDJWT_USER_DENIED_CONSENT": 14,
             "SDJWT_FACEAUTH_FAILED_304": 1
           }
@@ -9481,6 +9560,18 @@ const BUNDLED_DATA = {
           }
         },
         {
+          "ovseId": "urn:uidai:client:intuitive-data-solutions-private-limited:202607237962",
+          "totalErrors": 134,
+          "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
+          "topErrorCount": 69,
+          "codes": {
+            "SDJWT_USER_DENIED_CONSENT": 69,
+            "SDJWT_FACEAUTH_FAILED_731": 53,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 10,
+            "INVALID_JWT": 2
+          }
+        },
+        {
           "ovseId": "rjil",
           "totalErrors": 133,
           "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
@@ -9527,15 +9618,20 @@ const BUNDLED_DATA = {
           }
         },
         {
-          "ovseId": "urn:uidai:client:intuitive-data-solutions-private-limited:202607237962",
-          "totalErrors": 125,
-          "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 65,
+          "ovseId": "novelpatterns",
+          "totalErrors": 126,
+          "topErrorCode": "SDJWT_FACEAUTH_FAILED_304",
+          "topErrorCount": 32,
           "codes": {
-            "SDJWT_USER_DENIED_CONSENT": 65,
-            "SDJWT_FACEAUTH_FAILED_731": 48,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 10,
-            "INVALID_JWT": 2
+            "0": 2,
+            "SDJWT_SIGN_VALIDATION_FAILED": 26,
+            "SDJWT_FACEAUTH_FAILED_304": 32,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 12,
+            "INVALID_JWT": 15,
+            "SDJWT_USER_DENIED_CONSENT": 26,
+            "SDJWT_FACEAUTH_FAILED_737": 8,
+            "SDJWT_FACEAUTH_FAILED_731": 3,
+            "SDJWT_FACEAUTH_FAILED": 2
           }
         },
         {
@@ -9553,33 +9649,16 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "urn:uidai:client:special-branch,-bihar-police:202610163901",
-          "totalErrors": 122,
+          "totalErrors": 123,
           "topErrorCode": "INVALID_JWT",
           "topErrorCount": 77,
           "codes": {
             "INVALID_JWT": 77,
             "SDJWT_CALLBACK_NETWORK_ERROR": 30,
-            "SDJWT_SIGN_VALIDATION_FAILED": 11,
+            "SDJWT_SIGN_VALIDATION_FAILED": 12,
             "SDJWT_USER_DENIED_CONSENT": 2,
             "SDJWT_FACEAUTH_FAILED_737": 1,
             "SDJWT_FACEAUTH_FAILED_731": 1
-          }
-        },
-        {
-          "ovseId": "novelpatterns",
-          "totalErrors": 121,
-          "topErrorCode": "SDJWT_FACEAUTH_FAILED_304",
-          "topErrorCount": 29,
-          "codes": {
-            "0": 2,
-            "SDJWT_SIGN_VALIDATION_FAILED": 26,
-            "SDJWT_FACEAUTH_FAILED_304": 29,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 11,
-            "INVALID_JWT": 15,
-            "SDJWT_USER_DENIED_CONSENT": 25,
-            "SDJWT_FACEAUTH_FAILED_737": 8,
-            "SDJWT_FACEAUTH_FAILED_731": 3,
-            "SDJWT_FACEAUTH_FAILED": 2
           }
         },
         {
@@ -9613,7 +9692,7 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "evaluit",
-          "totalErrors": 113,
+          "totalErrors": 115,
           "topErrorCode": "SDJWT_SIGN_VALIDATION_FAILED",
           "topErrorCount": 25,
           "codes": {
@@ -9622,7 +9701,7 @@ const BUNDLED_DATA = {
             "SDJWT_SIGN_VALIDATION_FAILED": 25,
             "SDJWT_FACEAUTH_FAILED_737": 19,
             "SDJWT_FACEAUTH_FAILED": 7,
-            "SDJWT_FACEAUTH_FAILED_731": 12,
+            "SDJWT_FACEAUTH_FAILED_731": 14,
             "INVALID_JWT": 4,
             "SDJWT_CALLBACK_NETWORK_ERROR": 6,
             "SDJWT_FACEAUTH_FAILED_304": 2
@@ -9658,6 +9737,20 @@ const BUNDLED_DATA = {
           }
         },
         {
+          "ovseId": "ebitaus",
+          "totalErrors": 103,
+          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
+          "topErrorCount": 85,
+          "codes": {
+            "SDJWT_CALLBACK_NETWORK_ERROR": 85,
+            "SDJWT_SIGN_VALIDATION_FAILED": 7,
+            "SDJWT_FACEAUTH_FAILED": 2,
+            "SDJWT_USER_DENIED_CONSENT": 7,
+            "INVALID_JWT": 1,
+            "SDJWT_FACEAUTH_FAILED_731": 1
+          }
+        },
+        {
           "ovseId": "pinelabs",
           "totalErrors": 100,
           "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
@@ -9669,6 +9762,24 @@ const BUNDLED_DATA = {
             "SDJWT_FACEAUTH_FAILED": 8,
             "SDJWT_SIGN_VALIDATION_FAILED": 4,
             "INVALID_JWT": 5
+          }
+        },
+        {
+          "ovseId": "apiclub",
+          "totalErrors": 98,
+          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
+          "topErrorCount": 22,
+          "codes": {
+            "0": 10,
+            "400": 1,
+            "SDJWT_FACEAUTH_FAILED_304": 16,
+            "SDJWT_FACEAUTH_FAILED_731": 12,
+            "SDJWT_SIGN_VALIDATION_FAILED": 14,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 22,
+            "INVALID_JWT": 9,
+            "SDJWT_FACEAUTH_FAILED": 6,
+            "SDJWT_USER_DENIED_CONSENT": 7,
+            "SDJWT_FACEAUTH_FAILED_737": 1
           }
         },
         {
@@ -9687,6 +9798,19 @@ const BUNDLED_DATA = {
           }
         },
         {
+          "ovseId": "urn:uidai:client:finanalyz-technologies-private-limited:202606306133",
+          "totalErrors": 94,
+          "topErrorCode": "INVALID_JWT",
+          "topErrorCount": 55,
+          "codes": {
+            "INVALID_JWT": 55,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 27,
+            "SDJWT_USER_DENIED_CONSENT": 6,
+            "SDJWT_SIGN_VALIDATION_FAILED": 3,
+            "SDJWT_FACEAUTH_FAILED_731": 3
+          }
+        },
+        {
           "ovseId": "urn:uidai:client:evolute-fintech-innovations-private-limited:202608271911",
           "totalErrors": 94,
           "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
@@ -9698,49 +9822,6 @@ const BUNDLED_DATA = {
             "SDJWT_SIGN_VALIDATION_FAILED": 12,
             "SDJWT_FACEAUTH_FAILED_737": 6,
             "INVALID_JWT": 5
-          }
-        },
-        {
-          "ovseId": "apiclub",
-          "totalErrors": 93,
-          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
-          "topErrorCount": 18,
-          "codes": {
-            "0": 10,
-            "400": 1,
-            "SDJWT_FACEAUTH_FAILED_304": 16,
-            "SDJWT_FACEAUTH_FAILED_731": 12,
-            "SDJWT_SIGN_VALIDATION_FAILED": 14,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 18,
-            "INVALID_JWT": 9,
-            "SDJWT_FACEAUTH_FAILED": 6,
-            "SDJWT_USER_DENIED_CONSENT": 7
-          }
-        },
-        {
-          "ovseId": "urn:uidai:client:finanalyz-technologies-private-limited:202606306133",
-          "totalErrors": 92,
-          "topErrorCode": "INVALID_JWT",
-          "topErrorCount": 55,
-          "codes": {
-            "INVALID_JWT": 55,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 27,
-            "SDJWT_USER_DENIED_CONSENT": 4,
-            "SDJWT_SIGN_VALIDATION_FAILED": 3,
-            "SDJWT_FACEAUTH_FAILED_731": 3
-          }
-        },
-        {
-          "ovseId": "ebitaus",
-          "totalErrors": 92,
-          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
-          "topErrorCount": 79,
-          "codes": {
-            "SDJWT_CALLBACK_NETWORK_ERROR": 79,
-            "SDJWT_SIGN_VALIDATION_FAILED": 5,
-            "SDJWT_FACEAUTH_FAILED": 2,
-            "SDJWT_USER_DENIED_CONSENT": 5,
-            "INVALID_JWT": 1
           }
         },
         {
@@ -9877,6 +9958,18 @@ const BUNDLED_DATA = {
           }
         },
         {
+          "ovseId": "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
+          "totalErrors": 70,
+          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
+          "topErrorCount": 40,
+          "codes": {
+            "SDJWT_CALLBACK_NETWORK_ERROR": 40,
+            "SDJWT_USER_DENIED_CONSENT": 21,
+            "INVALID_JWT": 5,
+            "SDJWT_SIGN_VALIDATION_FAILED": 4
+          }
+        },
+        {
           "ovseId": "diovse",
           "totalErrors": 69,
           "topErrorCode": "0",
@@ -9929,18 +10022,6 @@ const BUNDLED_DATA = {
             "SDJWT_FACEAUTH_FAILED": 1,
             "SDJWT_FACEAUTH_FAILED_731": 2,
             "SDJWT_FACEAUTH_FAILED_304": 1
-          }
-        },
-        {
-          "ovseId": "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
-          "totalErrors": 67,
-          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
-          "topErrorCount": 40,
-          "codes": {
-            "SDJWT_CALLBACK_NETWORK_ERROR": 40,
-            "SDJWT_USER_DENIED_CONSENT": 19,
-            "INVALID_JWT": 5,
-            "SDJWT_SIGN_VALIDATION_FAILED": 3
           }
         },
         {
@@ -10000,11 +10081,11 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "urn:uidai:client:msqube-technology-solutions-private-limited:202611061651",
-          "totalErrors": 55,
+          "totalErrors": 56,
           "topErrorCode": "INVALID_JWT",
-          "topErrorCount": 52,
+          "topErrorCount": 53,
           "codes": {
-            "INVALID_JWT": 52,
+            "INVALID_JWT": 53,
             "SDJWT_SIGN_VALIDATION_FAILED": 3
           }
         },
@@ -10027,6 +10108,16 @@ const BUNDLED_DATA = {
           }
         },
         {
+          "ovseId": "1a2f",
+          "totalErrors": 54,
+          "topErrorCode": "INVALID_JWT",
+          "topErrorCount": 46,
+          "codes": {
+            "INVALID_JWT": 46,
+            "SDJWT_SIGN_VALIDATION_FAILED": 8
+          }
+        },
+        {
           "ovseId": "urn:uidai:client:paynearby:08092026",
           "totalErrors": 53,
           "topErrorCode": "SDJWT_SIGN_VALIDATION_FAILED",
@@ -10045,16 +10136,6 @@ const BUNDLED_DATA = {
           "topErrorCount": 53,
           "codes": {
             "INVALID_JWT": 53
-          }
-        },
-        {
-          "ovseId": "1a2f",
-          "totalErrors": 53,
-          "topErrorCode": "INVALID_JWT",
-          "topErrorCount": 45,
-          "codes": {
-            "INVALID_JWT": 45,
-            "SDJWT_SIGN_VALIDATION_FAILED": 8
           }
         },
         {
@@ -10188,6 +10269,17 @@ const BUNDLED_DATA = {
           }
         },
         {
+          "ovseId": "any2paytpl",
+          "totalErrors": 46,
+          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
+          "topErrorCount": 21,
+          "codes": {
+            "SDJWT_CALLBACK_NETWORK_ERROR": 21,
+            "INVALID_JWT": 18,
+            "SDJWT_SIGN_VALIDATION_FAILED": 7
+          }
+        },
+        {
           "ovseId": "urn:uidai:client:padmasree-hotels-private-limited:202610094326",
           "totalErrors": 45,
           "topErrorCode": "INVALID_JWT",
@@ -10211,17 +10303,6 @@ const BUNDLED_DATA = {
             "SDJWT_FACEAUTH_FAILED": 2,
             "SDJWT_USER_DENIED_CONSENT": 1,
             "SDJWT_FACEAUTH_FAILED_731": 1
-          }
-        },
-        {
-          "ovseId": "any2paytpl",
-          "totalErrors": 45,
-          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
-          "topErrorCount": 21,
-          "codes": {
-            "SDJWT_CALLBACK_NETWORK_ERROR": 21,
-            "INVALID_JWT": 17,
-            "SDJWT_SIGN_VALIDATION_FAILED": 7
           }
         },
         {
@@ -10275,6 +10356,19 @@ const BUNDLED_DATA = {
           }
         },
         {
+          "ovseId": "urn:uidai:client:3i-consulting-private-limited:202608031319",
+          "totalErrors": 41,
+          "topErrorCode": "INVALID_JWT",
+          "topErrorCount": 30,
+          "codes": {
+            "INVALID_JWT": 30,
+            "SDJWT_USER_DENIED_CONSENT": 6,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 2,
+            "SDJWT_SIGN_VALIDATION_FAILED": 2,
+            "SDJWT_FACEAUTH_FAILED_731": 1
+          }
+        },
+        {
           "ovseId": "urn:uidai:client:nagaland-police:202610092803",
           "totalErrors": 41,
           "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
@@ -10293,18 +10387,6 @@ const BUNDLED_DATA = {
           "topErrorCount": 40,
           "codes": {
             "INVALID_JWT": 40
-          }
-        },
-        {
-          "ovseId": "urn:uidai:client:3i-consulting-private-limited:202608031319",
-          "totalErrors": 40,
-          "topErrorCode": "INVALID_JWT",
-          "topErrorCount": 30,
-          "codes": {
-            "INVALID_JWT": 30,
-            "SDJWT_USER_DENIED_CONSENT": 6,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 2,
-            "SDJWT_SIGN_VALIDATION_FAILED": 2
           }
         },
         {
@@ -10644,6 +10726,16 @@ const BUNDLED_DATA = {
             "SDJWT_CALLBACK_NETWORK_ERROR": 14,
             "SDJWT_USER_DENIED_CONSENT": 5,
             "SDJWT_FACEAUTH_FAILED_731": 1
+          }
+        },
+        {
+          "ovseId": "urn:uidai:client:kendriya-vidyalaya-sangathan:202611171026",
+          "totalErrors": 19,
+          "topErrorCode": "SDJWT_SIGN_VALIDATION_FAILED",
+          "topErrorCount": 16,
+          "codes": {
+            "SDJWT_SIGN_VALIDATION_FAILED": 16,
+            "INVALID_JWT": 3
           }
         },
         {
@@ -11292,6 +11384,18 @@ const BUNDLED_DATA = {
           }
         },
         {
+          "ovseId": "urn:uidai:client:sai-roshni-capital-private-limited:202610275530",
+          "totalErrors": 7,
+          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
+          "topErrorCount": 3,
+          "codes": {
+            "SDJWT_CALLBACK_NETWORK_ERROR": 3,
+            "SDJWT_USER_DENIED_CONSENT": 2,
+            "SDJWT_FACEAUTH_FAILED_737": 1,
+            "SDJWT_FACEAUTH_FAILED_731": 1
+          }
+        },
+        {
           "ovseId": "karza",
           "totalErrors": 6,
           "topErrorCode": "INVALID_JWT",
@@ -11455,16 +11559,6 @@ const BUNDLED_DATA = {
           }
         },
         {
-          "ovseId": "urn:uidai:client:sai-roshni-capital-private-limited:202610275530",
-          "totalErrors": 4,
-          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
-          "topErrorCount": 3,
-          "codes": {
-            "SDJWT_CALLBACK_NETWORK_ERROR": 3,
-            "SDJWT_FACEAUTH_FAILED_737": 1
-          }
-        },
-        {
           "ovseId": "YOUR_OVSE_CLIENT_ID",
           "totalErrors": 4,
           "topErrorCode": "INVALID_JWT",
@@ -11611,6 +11705,16 @@ const BUNDLED_DATA = {
           "codes": {
             "INVALID_JWT": 2,
             "SDJWT_SIGN_VALIDATION_FAILED": 1
+          }
+        },
+        {
+          "ovseId": "documint",
+          "totalErrors": 3,
+          "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
+          "topErrorCount": 2,
+          "codes": {
+            "SDJWT_USER_DENIED_CONSENT": 2,
+            "INVALID_JWT": 1
           }
         },
         {
@@ -11867,15 +11971,6 @@ const BUNDLED_DATA = {
           }
         },
         {
-          "ovseId": "documint",
-          "totalErrors": 1,
-          "topErrorCode": "INVALID_JWT",
-          "topErrorCount": 1,
-          "codes": {
-            "INVALID_JWT": 1
-          }
-        },
-        {
           "ovseId": "OR61962134",
           "totalErrors": 1,
           "topErrorCode": "INVALID_JWT",
@@ -12067,540 +12162,509 @@ const BUNDLED_DATA = {
       ]
     },
     "weekly": {
-      "totalErrors": 15324,
-      "totalSuccesses": 145877,
+      "totalErrors": 18935,
+      "totalSuccesses": 162082,
       "codeList": [
         {
           "code": "SDJWT_USER_DENIED_CONSENT",
           "description": "Citizen actively declined or cancelled the consent prompt on mAadhaar app.",
           "category": "User Consent Denial",
-          "count": 6798,
-          "pctOfErrors": 44.36178543461237
+          "count": 8303,
+          "pctOfErrors": 43.85001320306311
         },
         {
           "code": "SDJWT_FACEAUTH_FAILED_731",
           "description": "Face authentication match failed (Threshold score not met, code 731).",
           "category": "Biometric Face Auth Failure",
-          "count": 3834,
-          "pctOfErrors": 25.019577133907596
+          "count": 5073,
+          "pctOfErrors": 26.79165566411407
         },
         {
           "code": "SDJWT_CALLBACK_NETWORK_ERROR",
           "description": "Network timeout or connection drop during callback reporting to OVSE backend.",
           "category": "Network / Connectivity Timeout",
-          "count": 1992,
-          "pctOfErrors": 12.999216914643696
+          "count": 2606,
+          "pctOfErrors": 13.762872986532876
         },
         {
           "code": "SDJWT_SIGN_VALIDATION_FAILED",
           "description": "Cryptographic signature validation failure between OVSE and UIDAI.",
           "category": "Cryptographic / Security Error",
-          "count": 1053,
-          "pctOfErrors": 6.87157400156617
+          "count": 867,
+          "pctOfErrors": 4.578822286770531
         },
         {
           "code": "INVALID_JWT",
           "description": "Malformed, invalid token payload, or expired token during handshake.",
           "category": "Cryptographic / Security Error",
-          "count": 771,
-          "pctOfErrors": 5.031323414252153
+          "count": 824,
+          "pctOfErrors": 4.351729601267494
         },
         {
           "code": "SDJWT_FACEAUTH_FAILED_304",
           "description": "Face capture / lighting / sensor error during camera acquisition.",
           "category": "Biometric Face Auth Failure",
-          "count": 467,
-          "pctOfErrors": 3.047507178282433
+          "count": 657,
+          "pctOfErrors": 3.46976498547663
         },
         {
           "code": "SDJWT_FACEAUTH_FAILED_737",
           "description": "Low biometric confidence / quality score during facial matching.",
           "category": "Biometric Face Auth Failure",
-          "count": 379,
-          "pctOfErrors": 2.473244583659619
+          "count": 590,
+          "pctOfErrors": 3.115922894111434
         },
         {
           "code": "SDJWT_ZIP_CREATION_FAILED",
           "description": "Failure during local credential zip extraction or compression.",
           "category": "System / Payload Processing",
-          "count": 26,
-          "pctOfErrors": 0.16966849386583138
+          "count": 11,
+          "pctOfErrors": 0.058093477686823346
         },
         {
           "code": "0",
           "description": "Generic connection reset, client drop, or unspecified timeout error.",
           "category": "Generic Timeout / Client Drop",
           "count": 4,
-          "pctOfErrors": 0.026102845210127904
+          "pctOfErrors": 0.02112490097702667
         }
       ],
       "categoryList": [
         {
           "category": "User Consent Denial",
-          "count": 6798,
-          "pct": 44.36178543461237
+          "count": 8303,
+          "pct": 43.85001320306311
         },
         {
           "category": "Biometric Face Auth Failure",
-          "count": 4680,
-          "pct": 30.54032889584965
+          "count": 6320,
+          "pct": 33.37734354370214
         },
         {
           "category": "Network / Connectivity Timeout",
-          "count": 1992,
-          "pct": 12.999216914643696
+          "count": 2606,
+          "pct": 13.762872986532876
         },
         {
           "category": "Cryptographic / Security Error",
-          "count": 1824,
-          "pct": 11.902897415818323
+          "count": 1691,
+          "pct": 8.930551888038025
         },
         {
           "category": "System / Payload Processing",
-          "count": 26,
-          "pct": 0.16966849386583138
+          "count": 11,
+          "pct": 0.058093477686823346
         },
         {
           "category": "Generic Timeout / Client Drop",
           "count": 4,
-          "pct": 0.026102845210127904
+          "pct": 0.02112490097702667
         }
       ],
       "ovseErrorList": [
         {
           "ovseId": "urbancompany",
-          "totalErrors": 5417,
+          "totalErrors": 5891,
           "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 3795,
+          "topErrorCount": 4153,
           "codes": {
-            "SDJWT_USER_DENIED_CONSENT": 3795,
-            "SDJWT_FACEAUTH_FAILED_731": 1225,
-            "INVALID_JWT": 163,
-            "SDJWT_SIGN_VALIDATION_FAILED": 119,
-            "SDJWT_FACEAUTH_FAILED_737": 53,
-            "SDJWT_FACEAUTH_FAILED_304": 62
+            "SDJWT_USER_DENIED_CONSENT": 4153,
+            "SDJWT_FACEAUTH_FAILED_731": 1324,
+            "SDJWT_SIGN_VALIDATION_FAILED": 118,
+            "INVALID_JWT": 171,
+            "SDJWT_FACEAUTH_FAILED_737": 64,
+            "SDJWT_FACEAUTH_FAILED_304": 61
           }
         },
         {
           "ovseId": "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
-          "totalErrors": 1835,
+          "totalErrors": 3808,
           "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
-          "topErrorCount": 731,
+          "topErrorCount": 1422,
           "codes": {
-            "SDJWT_FACEAUTH_FAILED_731": 731,
-            "SDJWT_USER_DENIED_CONSENT": 559,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 426,
-            "SDJWT_SIGN_VALIDATION_FAILED": 40,
-            "SDJWT_FACEAUTH_FAILED_304": 36,
-            "SDJWT_FACEAUTH_FAILED_737": 43
-          }
-        },
-        {
-          "ovseId": "dexit",
-          "totalErrors": 1171,
-          "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
-          "topErrorCount": 373,
-          "codes": {
-            "SDJWT_FACEAUTH_FAILED_731": 373,
-            "SDJWT_USER_DENIED_CONSENT": 355,
-            "INVALID_JWT": 250,
-            "SDJWT_SIGN_VALIDATION_FAILED": 92,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 71,
-            "SDJWT_FACEAUTH_FAILED_304": 14,
-            "SDJWT_FACEAUTH_FAILED_737": 16
+            "SDJWT_FACEAUTH_FAILED_731": 1422,
+            "SDJWT_USER_DENIED_CONSENT": 1231,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 778,
+            "SDJWT_FACEAUTH_FAILED_737": 174,
+            "SDJWT_SIGN_VALIDATION_FAILED": 112,
+            "SDJWT_FACEAUTH_FAILED_304": 91
           }
         },
         {
           "ovseId": "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
-          "totalErrors": 1052,
+          "totalErrors": 1222,
           "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
-          "topErrorCount": 786,
+          "topErrorCount": 905,
           "codes": {
-            "SDJWT_CALLBACK_NETWORK_ERROR": 786,
-            "SDJWT_USER_DENIED_CONSENT": 175,
-            "SDJWT_FACEAUTH_FAILED_731": 54,
-            "SDJWT_FACEAUTH_FAILED_304": 17,
-            "SDJWT_SIGN_VALIDATION_FAILED": 15,
-            "SDJWT_FACEAUTH_FAILED_737": 5
+            "SDJWT_CALLBACK_NETWORK_ERROR": 905,
+            "SDJWT_USER_DENIED_CONSENT": 203,
+            "SDJWT_FACEAUTH_FAILED_731": 55,
+            "SDJWT_FACEAUTH_FAILED_737": 14,
+            "SDJWT_FACEAUTH_FAILED_304": 24,
+            "SDJWT_SIGN_VALIDATION_FAILED": 21
+          }
+        },
+        {
+          "ovseId": "dexit",
+          "totalErrors": 1217,
+          "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
+          "topErrorCount": 397,
+          "codes": {
+            "SDJWT_FACEAUTH_FAILED_731": 397,
+            "SDJWT_USER_DENIED_CONSENT": 394,
+            "INVALID_JWT": 244,
+            "SDJWT_SIGN_VALIDATION_FAILED": 77,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 70,
+            "SDJWT_FACEAUTH_FAILED_304": 15,
+            "SDJWT_FACEAUTH_FAILED_737": 20
           }
         },
         {
           "ovseId": "gridlines",
-          "totalErrors": 824,
+          "totalErrors": 952,
           "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
-          "topErrorCount": 314,
+          "topErrorCount": 383,
           "codes": {
-            "SDJWT_CALLBACK_NETWORK_ERROR": 314,
-            "SDJWT_FACEAUTH_FAILED_731": 198,
-            "SDJWT_USER_DENIED_CONSENT": 176,
-            "SDJWT_SIGN_VALIDATION_FAILED": 37,
-            "SDJWT_FACEAUTH_FAILED_737": 42,
-            "INVALID_JWT": 30,
-            "SDJWT_FACEAUTH_FAILED_304": 27
+            "SDJWT_CALLBACK_NETWORK_ERROR": 383,
+            "SDJWT_FACEAUTH_FAILED_731": 213,
+            "SDJWT_USER_DENIED_CONSENT": 203,
+            "SDJWT_SIGN_VALIDATION_FAILED": 45,
+            "SDJWT_FACEAUTH_FAILED_304": 36,
+            "SDJWT_FACEAUTH_FAILED_737": 50,
+            "INVALID_JWT": 22
           }
         },
         {
           "ovseId": "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
-          "totalErrors": 677,
+          "totalErrors": 820,
           "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 285,
+          "topErrorCount": 354,
           "codes": {
-            "SDJWT_FACEAUTH_FAILED_731": 281,
-            "SDJWT_USER_DENIED_CONSENT": 285,
-            "SDJWT_SIGN_VALIDATION_FAILED": 41,
-            "INVALID_JWT": 45,
-            "SDJWT_FACEAUTH_FAILED_737": 14,
-            "SDJWT_FACEAUTH_FAILED_304": 6,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 5
+            "SDJWT_USER_DENIED_CONSENT": 354,
+            "SDJWT_FACEAUTH_FAILED_731": 325,
+            "INVALID_JWT": 79,
+            "SDJWT_SIGN_VALIDATION_FAILED": 25,
+            "SDJWT_FACEAUTH_FAILED_304": 13,
+            "SDJWT_FACEAUTH_FAILED_737": 16,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 8
           }
         },
         {
           "ovseId": "tnmc",
-          "totalErrors": 568,
+          "totalErrors": 766,
           "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
-          "topErrorCount": 174,
-          "codes": {
-            "SDJWT_CALLBACK_NETWORK_ERROR": 174,
-            "SDJWT_FACEAUTH_FAILED_731": 152,
-            "SDJWT_SIGN_VALIDATION_FAILED": 66,
-            "SDJWT_FACEAUTH_FAILED_304": 68,
-            "SDJWT_USER_DENIED_CONSENT": 76,
-            "SDJWT_FACEAUTH_FAILED_737": 28,
-            "INVALID_JWT": 4
-          }
-        },
-        {
-          "ovseId": "procam",
-          "totalErrors": 537,
-          "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
-          "topErrorCount": 214,
+          "topErrorCount": 230,
           "codes": {
             "SDJWT_FACEAUTH_FAILED_731": 214,
-            "SDJWT_USER_DENIED_CONSENT": 132,
-            "SDJWT_FACEAUTH_FAILED_304": 52,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 45,
-            "SDJWT_FACEAUTH_FAILED_737": 49,
-            "SDJWT_SIGN_VALIDATION_FAILED": 31,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 230,
+            "SDJWT_USER_DENIED_CONSENT": 115,
+            "SDJWT_FACEAUTH_FAILED_304": 96,
+            "SDJWT_FACEAUTH_FAILED_737": 39,
+            "SDJWT_SIGN_VALIDATION_FAILED": 58,
             "INVALID_JWT": 14
           }
         },
         {
-          "ovseId": "protean",
-          "totalErrors": 476,
-          "topErrorCode": "SDJWT_SIGN_VALIDATION_FAILED",
-          "topErrorCount": 347,
+          "ovseId": "procam",
+          "totalErrors": 659,
+          "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
+          "topErrorCount": 273,
           "codes": {
-            "SDJWT_SIGN_VALIDATION_FAILED": 347,
-            "SDJWT_USER_DENIED_CONSENT": 102,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 12,
-            "INVALID_JWT": 11,
-            "SDJWT_FACEAUTH_FAILED_731": 4
+            "SDJWT_FACEAUTH_FAILED_731": 273,
+            "SDJWT_USER_DENIED_CONSENT": 163,
+            "SDJWT_FACEAUTH_FAILED_304": 75,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 54,
+            "SDJWT_FACEAUTH_FAILED_737": 43,
+            "SDJWT_SIGN_VALIDATION_FAILED": 34,
+            "INVALID_JWT": 17
           }
         },
         {
           "ovseId": "urn:uidai:client:instantpay-india-limited:202606250788",
-          "totalErrors": 423,
+          "totalErrors": 491,
           "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 243,
+          "topErrorCount": 278,
           "codes": {
-            "SDJWT_USER_DENIED_CONSENT": 243,
-            "SDJWT_FACEAUTH_FAILED_731": 127,
-            "SDJWT_SIGN_VALIDATION_FAILED": 19,
-            "SDJWT_FACEAUTH_FAILED_304": 13,
-            "INVALID_JWT": 9,
-            "SDJWT_FACEAUTH_FAILED_737": 8,
+            "SDJWT_USER_DENIED_CONSENT": 278,
+            "SDJWT_FACEAUTH_FAILED_731": 145,
+            "SDJWT_FACEAUTH_FAILED_304": 27,
+            "SDJWT_SIGN_VALIDATION_FAILED": 22,
+            "SDJWT_FACEAUTH_FAILED_737": 7,
+            "INVALID_JWT": 8,
             "SDJWT_CALLBACK_NETWORK_ERROR": 4
           }
         },
         {
           "ovseId": "urn:uidai:client:inferalgo-private-limited:202607177737",
-          "totalErrors": 417,
+          "totalErrors": 458,
           "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 228,
+          "topErrorCount": 260,
           "codes": {
-            "SDJWT_USER_DENIED_CONSENT": 228,
-            "SDJWT_FACEAUTH_FAILED_731": 154,
-            "SDJWT_SIGN_VALIDATION_FAILED": 17,
-            "SDJWT_FACEAUTH_FAILED_737": 9,
-            "SDJWT_FACEAUTH_FAILED_304": 6,
+            "SDJWT_USER_DENIED_CONSENT": 260,
+            "SDJWT_FACEAUTH_FAILED_731": 152,
+            "SDJWT_SIGN_VALIDATION_FAILED": 25,
+            "SDJWT_FACEAUTH_FAILED_737": 11,
+            "SDJWT_FACEAUTH_FAILED_304": 7,
             "SDJWT_CALLBACK_NETWORK_ERROR": 2,
             "INVALID_JWT": 1
           }
         },
         {
           "ovseId": "trustt",
-          "totalErrors": 317,
+          "totalErrors": 423,
           "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 173,
+          "topErrorCount": 205,
           "codes": {
-            "SDJWT_USER_DENIED_CONSENT": 173,
-            "SDJWT_FACEAUTH_FAILED_731": 60,
-            "SDJWT_SIGN_VALIDATION_FAILED": 38,
+            "SDJWT_USER_DENIED_CONSENT": 205,
+            "SDJWT_FACEAUTH_FAILED_731": 108,
+            "SDJWT_SIGN_VALIDATION_FAILED": 55,
             "INVALID_JWT": 20,
-            "SDJWT_FACEAUTH_FAILED_737": 11,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 14,
-            "SDJWT_FACEAUTH_FAILED_304": 1
+            "SDJWT_FACEAUTH_FAILED_737": 24,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 11
           }
         },
         {
           "ovseId": "(Blank / Unknown)",
-          "totalErrors": 281,
+          "totalErrors": 326,
           "topErrorCode": "SDJWT_FACEAUTH_FAILED_304",
-          "topErrorCount": 119,
+          "topErrorCount": 132,
           "codes": {
+            "SDJWT_USER_DENIED_CONSENT": 111,
+            "SDJWT_FACEAUTH_FAILED_304": 132,
+            "SDJWT_FACEAUTH_FAILED_737": 66,
+            "SDJWT_FACEAUTH_FAILED_731": 17
+          }
+        },
+        {
+          "ovseId": "surepass",
+          "totalErrors": 304,
+          "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
+          "topErrorCount": 122,
+          "codes": {
+            "SDJWT_FACEAUTH_FAILED_731": 122,
+            "SDJWT_USER_DENIED_CONSENT": 86,
+            "SDJWT_FACEAUTH_FAILED_304": 31,
+            "SDJWT_FACEAUTH_FAILED_737": 16,
+            "SDJWT_SIGN_VALIDATION_FAILED": 28,
+            "INVALID_JWT": 13,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 8
+          }
+        },
+        {
+          "ovseId": "protean",
+          "totalErrors": 220,
+          "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
+          "topErrorCount": 96,
+          "codes": {
+            "SDJWT_SIGN_VALIDATION_FAILED": 92,
             "SDJWT_USER_DENIED_CONSENT": 96,
-            "SDJWT_FACEAUTH_FAILED_304": 119,
-            "SDJWT_FACEAUTH_FAILED_737": 52,
-            "SDJWT_FACEAUTH_FAILED_731": 14
+            "SDJWT_CALLBACK_NETWORK_ERROR": 15,
+            "INVALID_JWT": 13,
+            "SDJWT_FACEAUTH_FAILED_731": 4
           }
         },
         {
           "ovseId": "arattai",
-          "totalErrors": 192,
+          "totalErrors": 216,
           "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 133,
+          "topErrorCount": 146,
           "codes": {
-            "SDJWT_USER_DENIED_CONSENT": 133,
-            "SDJWT_FACEAUTH_FAILED_731": 41,
-            "SDJWT_SIGN_VALIDATION_FAILED": 6,
-            "INVALID_JWT": 7,
+            "SDJWT_USER_DENIED_CONSENT": 146,
+            "SDJWT_FACEAUTH_FAILED_731": 48,
+            "SDJWT_SIGN_VALIDATION_FAILED": 9,
+            "INVALID_JWT": 8,
             "SDJWT_FACEAUTH_FAILED_304": 4,
             "SDJWT_FACEAUTH_FAILED_737": 1
           }
         },
         {
-          "ovseId": "urn:uidai:client:punjab-school-educationboard:202608274954",
-          "totalErrors": 182,
+          "ovseId": "urn:uidai:client:hindon-mercantile-limited:202608105382",
+          "totalErrors": 189,
           "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 68,
+          "topErrorCount": 80,
           "codes": {
-            "SDJWT_USER_DENIED_CONSENT": 68,
-            "SDJWT_SIGN_VALIDATION_FAILED": 41,
-            "SDJWT_FACEAUTH_FAILED_731": 31,
-            "SDJWT_FACEAUTH_FAILED_304": 12,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 12,
-            "INVALID_JWT": 8,
-            "SDJWT_FACEAUTH_FAILED_737": 10
+            "SDJWT_FACEAUTH_FAILED_731": 77,
+            "SDJWT_USER_DENIED_CONSENT": 80,
+            "INVALID_JWT": 16,
+            "SDJWT_FACEAUTH_FAILED_737": 4,
+            "SDJWT_SIGN_VALIDATION_FAILED": 11,
+            "SDJWT_FACEAUTH_FAILED_304": 1
           }
         },
         {
-          "ovseId": "urn:uidai:client:hindon-mercantile-limited:202608105382",
-          "totalErrors": 144,
+          "ovseId": "urn:uidai:client:punjab-school-educationboard:202608274954",
+          "totalErrors": 180,
           "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 70,
+          "topErrorCount": 76,
           "codes": {
-            "SDJWT_USER_DENIED_CONSENT": 70,
-            "SDJWT_FACEAUTH_FAILED_731": 40,
-            "INVALID_JWT": 13,
-            "SDJWT_SIGN_VALIDATION_FAILED": 14,
-            "SDJWT_FACEAUTH_FAILED_737": 5,
+            "SDJWT_USER_DENIED_CONSENT": 76,
+            "SDJWT_SIGN_VALIDATION_FAILED": 29,
+            "SDJWT_FACEAUTH_FAILED_731": 44,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 15,
+            "INVALID_JWT": 7,
+            "SDJWT_FACEAUTH_FAILED_737": 7,
             "SDJWT_FACEAUTH_FAILED_304": 2
           }
         },
         {
           "ovseId": "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
-          "totalErrors": 123,
+          "totalErrors": 159,
           "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
-          "topErrorCount": 52,
+          "topErrorCount": 62,
           "codes": {
-            "SDJWT_FACEAUTH_FAILED_731": 52,
-            "SDJWT_FACEAUTH_FAILED_737": 24,
-            "SDJWT_USER_DENIED_CONSENT": 16,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 14,
-            "SDJWT_SIGN_VALIDATION_FAILED": 6,
-            "INVALID_JWT": 6,
+            "SDJWT_FACEAUTH_FAILED_731": 62,
+            "SDJWT_FACEAUTH_FAILED_737": 21,
+            "SDJWT_USER_DENIED_CONSENT": 26,
+            "INVALID_JWT": 19,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 19,
+            "SDJWT_SIGN_VALIDATION_FAILED": 7,
             "SDJWT_FACEAUTH_FAILED_304": 5
           }
         },
         {
           "ovseId": "urn:uidai:client:special-branch,-bihar-police:202610163901",
-          "totalErrors": 107,
+          "totalErrors": 102,
           "topErrorCode": "INVALID_JWT",
-          "topErrorCount": 65,
+          "topErrorCount": 59,
           "codes": {
-            "INVALID_JWT": 65,
+            "INVALID_JWT": 59,
             "SDJWT_CALLBACK_NETWORK_ERROR": 30,
-            "SDJWT_SIGN_VALIDATION_FAILED": 8,
+            "SDJWT_SIGN_VALIDATION_FAILED": 9,
             "SDJWT_USER_DENIED_CONSENT": 2,
             "SDJWT_FACEAUTH_FAILED_737": 1,
             "SDJWT_FACEAUTH_FAILED_731": 1
           }
         },
         {
-          "ovseId": "surepass",
-          "totalErrors": 75,
-          "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
-          "topErrorCount": 26,
-          "codes": {
-            "SDJWT_FACEAUTH_FAILED_731": 26,
-            "SDJWT_SIGN_VALIDATION_FAILED": 25,
-            "INVALID_JWT": 8,
-            "SDJWT_USER_DENIED_CONSENT": 16
-          }
-        },
-        {
           "ovseId": "urn:uidai:client:dc-office-tawang:202606230797",
-          "totalErrors": 45,
+          "totalErrors": 54,
           "topErrorCode": "SDJWT_FACEAUTH_FAILED_304",
-          "topErrorCount": 19,
+          "topErrorCount": 29,
           "codes": {
-            "SDJWT_FACEAUTH_FAILED_304": 19,
+            "SDJWT_FACEAUTH_FAILED_304": 29,
             "SDJWT_USER_DENIED_CONSENT": 9,
             "SDJWT_FACEAUTH_FAILED_737": 4,
-            "SDJWT_FACEAUTH_FAILED_731": 3,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 4,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 3,
             "INVALID_JWT": 2,
-            "SDJWT_SIGN_VALIDATION_FAILED": 4
+            "SDJWT_SIGN_VALIDATION_FAILED": 4,
+            "SDJWT_FACEAUTH_FAILED_731": 3
           }
         },
         {
-          "ovseId": "urn:uidai:client:ican-bpo-private-limited:202608272078",
-          "totalErrors": 41,
-          "topErrorCode": "SDJWT_SIGN_VALIDATION_FAILED",
-          "topErrorCount": 28,
+          "ovseId": "cisf",
+          "totalErrors": 45,
+          "topErrorCode": "INVALID_JWT",
+          "topErrorCount": 23,
           "codes": {
-            "SDJWT_SIGN_VALIDATION_FAILED": 28,
-            "INVALID_JWT": 13
+            "INVALID_JWT": 23,
+            "SDJWT_FACEAUTH_FAILED_731": 14,
+            "SDJWT_USER_DENIED_CONSENT": 2,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 3,
+            "SDJWT_SIGN_VALIDATION_FAILED": 3
           }
         },
         {
           "ovseId": "truscholar",
-          "totalErrors": 37,
+          "totalErrors": 38,
           "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 20,
+          "topErrorCount": 24,
           "codes": {
-            "SDJWT_USER_DENIED_CONSENT": 20,
+            "SDJWT_USER_DENIED_CONSENT": 24,
             "SDJWT_FACEAUTH_FAILED_731": 8,
-            "INVALID_JWT": 5,
             "SDJWT_SIGN_VALIDATION_FAILED": 2,
-            "SDJWT_FACEAUTH_FAILED_304": 1,
-            "SDJWT_FACEAUTH_FAILED_737": 1
+            "SDJWT_FACEAUTH_FAILED_304": 2,
+            "SDJWT_FACEAUTH_FAILED_737": 1,
+            "INVALID_JWT": 1
           }
         },
         {
-          "ovseId": "ebitaus",
-          "totalErrors": 32,
-          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
-          "topErrorCount": 26,
-          "codes": {
-            "SDJWT_CALLBACK_NETWORK_ERROR": 26,
-            "SDJWT_SIGN_VALIDATION_FAILED": 4,
-            "SDJWT_USER_DENIED_CONSENT": 2
-          }
-        },
-        {
-          "ovseId": "transaction_analysts",
-          "totalErrors": 29,
+          "ovseId": "urn:uidai:client:ican-bpo-private-limited:202608272078",
+          "totalErrors": 36,
           "topErrorCode": "SDJWT_SIGN_VALIDATION_FAILED",
           "topErrorCount": 25,
           "codes": {
             "SDJWT_SIGN_VALIDATION_FAILED": 25,
+            "INVALID_JWT": 11
+          }
+        },
+        {
+          "ovseId": "ebitaus",
+          "totalErrors": 31,
+          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
+          "topErrorCount": 26,
+          "codes": {
+            "SDJWT_CALLBACK_NETWORK_ERROR": 26,
+            "SDJWT_USER_DENIED_CONSENT": 2,
+            "SDJWT_SIGN_VALIDATION_FAILED": 2,
+            "SDJWT_FACEAUTH_FAILED_731": 1
+          }
+        },
+        {
+          "ovseId": "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
+          "totalErrors": 28,
+          "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
+          "topErrorCount": 14,
+          "codes": {
+            "SDJWT_USER_DENIED_CONSENT": 14,
+            "INVALID_JWT": 6,
+            "SDJWT_FACEAUTH_FAILED_731": 6,
+            "SDJWT_FACEAUTH_FAILED_737": 2
+          }
+        },
+        {
+          "ovseId": "vsign",
+          "totalErrors": 26,
+          "topErrorCode": "INVALID_JWT",
+          "topErrorCount": 15,
+          "codes": {
+            "INVALID_JWT": 15,
+            "SDJWT_USER_DENIED_CONSENT": 10,
+            "SDJWT_SIGN_VALIDATION_FAILED": 1
+          }
+        },
+        {
+          "ovseId": "evaluit",
+          "totalErrors": 22,
+          "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
+          "topErrorCount": 14,
+          "codes": {
+            "SDJWT_USER_DENIED_CONSENT": 14,
+            "SDJWT_FACEAUTH_FAILED_731": 7,
+            "SDJWT_SIGN_VALIDATION_FAILED": 1
+          }
+        },
+        {
+          "ovseId": "transaction_analysts",
+          "totalErrors": 20,
+          "topErrorCode": "SDJWT_SIGN_VALIDATION_FAILED",
+          "topErrorCount": 16,
+          "codes": {
+            "SDJWT_SIGN_VALIDATION_FAILED": 16,
             "SDJWT_FACEAUTH_FAILED_731": 3,
             "SDJWT_FACEAUTH_FAILED_304": 1
           }
         },
         {
-          "ovseId": "SelectiveShare",
-          "totalErrors": 26,
-          "topErrorCode": "SDJWT_ZIP_CREATION_FAILED",
-          "topErrorCount": 26,
-          "codes": {
-            "SDJWT_ZIP_CREATION_FAILED": 26
-          }
-        },
-        {
-          "ovseId": "cisf",
-          "totalErrors": 26,
-          "topErrorCode": "INVALID_JWT",
-          "topErrorCount": 13,
-          "codes": {
-            "INVALID_JWT": 13,
-            "SDJWT_FACEAUTH_FAILED_731": 9,
-            "SDJWT_USER_DENIED_CONSENT": 2,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 1,
-            "SDJWT_SIGN_VALIDATION_FAILED": 1
-          }
-        },
-        {
-          "ovseId": "urn:uidai:client:mdindia-health-insurance-tpa-private-limited:202608143596",
-          "totalErrors": 25,
-          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
-          "topErrorCount": 15,
-          "codes": {
-            "SDJWT_CALLBACK_NETWORK_ERROR": 15,
-            "SDJWT_USER_DENIED_CONSENT": 4,
-            "SDJWT_FACEAUTH_FAILED_731": 4,
-            "INVALID_JWT": 2
-          }
-        },
-        {
-          "ovseId": "vsign",
-          "totalErrors": 23,
-          "topErrorCode": "INVALID_JWT",
-          "topErrorCount": 15,
-          "codes": {
-            "INVALID_JWT": 15,
-            "SDJWT_USER_DENIED_CONSENT": 8
-          }
-        },
-        {
-          "ovseId": "evaluit",
-          "totalErrors": 21,
-          "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 14,
-          "codes": {
-            "SDJWT_USER_DENIED_CONSENT": 14,
-            "SDJWT_FACEAUTH_FAILED_731": 6,
-            "SDJWT_SIGN_VALIDATION_FAILED": 1
-          }
-        },
-        {
-          "ovseId": "urn:uidai:client:nagaland-police:202610092803",
+          "ovseId": "urn:uidai:client:kendriya-vidyalaya-sangathan:202611171026",
           "totalErrors": 19,
-          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
-          "topErrorCount": 7,
+          "topErrorCode": "SDJWT_SIGN_VALIDATION_FAILED",
+          "topErrorCount": 16,
           "codes": {
-            "SDJWT_CALLBACK_NETWORK_ERROR": 7,
-            "INVALID_JWT": 5,
-            "SDJWT_USER_DENIED_CONSENT": 4,
-            "SDJWT_FACEAUTH_FAILED_731": 3
-          }
-        },
-        {
-          "ovseId": "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
-          "totalErrors": 18,
-          "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 8,
-          "codes": {
-            "SDJWT_USER_DENIED_CONSENT": 8,
-            "SDJWT_FACEAUTH_FAILED_731": 6,
-            "INVALID_JWT": 3,
-            "SDJWT_FACEAUTH_FAILED_737": 1
+            "SDJWT_SIGN_VALIDATION_FAILED": 16,
+            "INVALID_JWT": 3
           }
         },
         {
           "ovseId": "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
-          "totalErrors": 15,
+          "totalErrors": 16,
           "topErrorCode": "SDJWT_SIGN_VALIDATION_FAILED",
-          "topErrorCount": 6,
+          "topErrorCount": 8,
           "codes": {
+            "SDJWT_SIGN_VALIDATION_FAILED": 8,
             "SDJWT_USER_DENIED_CONSENT": 4,
-            "SDJWT_SIGN_VALIDATION_FAILED": 6,
+            "INVALID_JWT": 1,
             "SDJWT_CALLBACK_NETWORK_ERROR": 2,
-            "INVALID_JWT": 2,
             "SDJWT_FACEAUTH_FAILED_731": 1
-          }
-        },
-        {
-          "ovseId": "urn:uidai:client:sahana-system-limited:202610095399",
-          "totalErrors": 13,
-          "topErrorCode": "SDJWT_SIGN_VALIDATION_FAILED",
-          "topErrorCount": 5,
-          "codes": {
-            "SDJWT_SIGN_VALIDATION_FAILED": 5,
-            "SDJWT_FACEAUTH_FAILED_731": 5,
-            "SDJWT_USER_DENIED_CONSENT": 2,
-            "SDJWT_FACEAUTH_FAILED_737": 1
           }
         },
         {
@@ -12610,6 +12674,35 @@ const BUNDLED_DATA = {
           "topErrorCount": 11,
           "codes": {
             "INVALID_JWT": 11
+          }
+        },
+        {
+          "ovseId": "urn:uidai:client:mdindia-health-insurance-tpa-private-limited:202608143596",
+          "totalErrors": 11,
+          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
+          "topErrorCount": 10,
+          "codes": {
+            "SDJWT_CALLBACK_NETWORK_ERROR": 10,
+            "SDJWT_FACEAUTH_FAILED_731": 1
+          }
+        },
+        {
+          "ovseId": "SelectiveShare",
+          "totalErrors": 11,
+          "topErrorCode": "SDJWT_ZIP_CREATION_FAILED",
+          "topErrorCount": 11,
+          "codes": {
+            "SDJWT_ZIP_CREATION_FAILED": 11
+          }
+        },
+        {
+          "ovseId": "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
+          "totalErrors": 11,
+          "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
+          "topErrorCount": 8,
+          "codes": {
+            "SDJWT_USER_DENIED_CONSENT": 8,
+            "SDJWT_SIGN_VALIDATION_FAILED": 3
           }
         },
         {
@@ -12641,52 +12734,86 @@ const BUNDLED_DATA = {
           }
         },
         {
-          "ovseId": "urn:uidai:client:appexigo-technologies-private-limited:2028555185225206113",
+          "ovseId": "urn:uidai:client:intuitive-data-solutions-private-limited:202607237962",
+          "totalErrors": 9,
+          "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
+          "topErrorCount": 5,
+          "codes": {
+            "SDJWT_FACEAUTH_FAILED_731": 5,
+            "SDJWT_USER_DENIED_CONSENT": 4
+          }
+        },
+        {
+          "ovseId": "tspolice",
           "totalErrors": 9,
           "topErrorCode": "INVALID_JWT",
-          "topErrorCount": 9,
+          "topErrorCount": 5,
           "codes": {
-            "INVALID_JWT": 9
-          }
-        },
-        {
-          "ovseId": "000",
-          "totalErrors": 9,
-          "topErrorCode": "0",
-          "topErrorCount": 4,
-          "codes": {
-            "0": 4,
-            "SDJWT_CALLBACK_NETWORK_ERROR": 3,
-            "SDJWT_SIGN_VALIDATION_FAILED": 2
-          }
-        },
-        {
-          "ovseId": "urn:uidai:client:msqube-technology-solutions-private-limited:202611061651",
-          "totalErrors": 8,
-          "topErrorCode": "INVALID_JWT",
-          "topErrorCount": 8,
-          "codes": {
-            "INVALID_JWT": 8
-          }
-        },
-        {
-          "ovseId": "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
-          "totalErrors": 8,
-          "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 6,
-          "codes": {
-            "SDJWT_USER_DENIED_CONSENT": 6,
-            "SDJWT_SIGN_VALIDATION_FAILED": 2
+            "INVALID_JWT": 5,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 2,
+            "SDJWT_USER_DENIED_CONSENT": 2
           }
         },
         {
           "ovseId": "urn:uidai:client:aparampaar-finance-private-limited:202605134450",
-          "totalErrors": 6,
+          "totalErrors": 9,
           "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
+          "topErrorCount": 7,
+          "codes": {
+            "SDJWT_FACEAUTH_FAILED_731": 7,
+            "INVALID_JWT": 2
+          }
+        },
+        {
+          "ovseId": "urn:uidai:client:sahana-system-limited:202610095399",
+          "totalErrors": 7,
+          "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
+          "topErrorCount": 5,
+          "codes": {
+            "SDJWT_FACEAUTH_FAILED_731": 5,
+            "SDJWT_USER_DENIED_CONSENT": 2
+          }
+        },
+        {
+          "ovseId": "urn:uidai:client:nagaland-police:202610092803",
+          "totalErrors": 7,
+          "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
           "topErrorCount": 4,
           "codes": {
-            "SDJWT_FACEAUTH_FAILED_731": 4,
-            "INVALID_JWT": 2
+            "SDJWT_USER_DENIED_CONSENT": 4,
+            "SDJWT_FACEAUTH_FAILED_731": 3
+          }
+        },
+        {
+          "ovseId": "urn:uidai:client:sai-roshni-capital-private-limited:202610275530",
+          "totalErrors": 7,
+          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
+          "topErrorCount": 3,
+          "codes": {
+            "SDJWT_CALLBACK_NETWORK_ERROR": 3,
+            "SDJWT_USER_DENIED_CONSENT": 2,
+            "SDJWT_FACEAUTH_FAILED_737": 1,
+            "SDJWT_FACEAUTH_FAILED_731": 1
+          }
+        },
+        {
+          "ovseId": "urn:uidai:client:appexigo-technologies-private-limited:2028555185225206113",
+          "totalErrors": 6,
+          "topErrorCode": "INVALID_JWT",
+          "topErrorCount": 6,
+          "codes": {
+            "INVALID_JWT": 6
+          }
+        },
+        {
+          "ovseId": "000",
+          "totalErrors": 6,
+          "topErrorCode": "0",
+          "topErrorCount": 4,
+          "codes": {
+            "0": 4,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 1,
+            "SDJWT_SIGN_VALIDATION_FAILED": 1
           }
         },
         {
@@ -12718,22 +12845,34 @@ const BUNDLED_DATA = {
           }
         },
         {
-          "ovseId": "urn:uidai:client:hp-marketing-board:202611045503",
-          "totalErrors": 4,
-          "topErrorCode": "INVALID_JWT",
+          "ovseId": "apiclub",
+          "totalErrors": 5,
+          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
           "topErrorCount": 4,
           "codes": {
-            "INVALID_JWT": 4
+            "SDJWT_CALLBACK_NETWORK_ERROR": 4,
+            "SDJWT_FACEAUTH_FAILED_737": 1
           }
         },
         {
-          "ovseId": "urn:uidai:client:sai-roshni-capital-private-limited:202610275530",
-          "totalErrors": 4,
-          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
+          "ovseId": "novelpatterns",
+          "totalErrors": 5,
+          "topErrorCode": "SDJWT_FACEAUTH_FAILED_304",
           "topErrorCount": 3,
           "codes": {
-            "SDJWT_CALLBACK_NETWORK_ERROR": 3,
-            "SDJWT_FACEAUTH_FAILED_737": 1
+            "SDJWT_FACEAUTH_FAILED_304": 3,
+            "SDJWT_CALLBACK_NETWORK_ERROR": 1,
+            "SDJWT_USER_DENIED_CONSENT": 1
+          }
+        },
+        {
+          "ovseId": "ooru_digital",
+          "totalErrors": 4,
+          "topErrorCode": "SDJWT_FACEAUTH_FAILED_737",
+          "topErrorCount": 3,
+          "codes": {
+            "SDJWT_FACEAUTH_FAILED_737": 3,
+            "SDJWT_FACEAUTH_FAILED_731": 1
           }
         },
         {
@@ -12744,15 +12883,6 @@ const BUNDLED_DATA = {
           "codes": {
             "SDJWT_FACEAUTH_FAILED_731": 2,
             "SDJWT_USER_DENIED_CONSENT": 2
-          }
-        },
-        {
-          "ovseId": "urn:uidai:client:bses-rajdhani-power-limited:202609164125",
-          "totalErrors": 3,
-          "topErrorCode": "SDJWT_SIGN_VALIDATION_FAILED",
-          "topErrorCount": 3,
-          "codes": {
-            "SDJWT_SIGN_VALIDATION_FAILED": 3
           }
         },
         {
@@ -12786,15 +12916,6 @@ const BUNDLED_DATA = {
           }
         },
         {
-          "ovseId": "urn:uidai:client:assam-police:202606026852",
-          "totalErrors": 2,
-          "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
-          "topErrorCount": 2,
-          "codes": {
-            "SDJWT_USER_DENIED_CONSENT": 2
-          }
-        },
-        {
           "ovseId": "urn:uidai:client:appexigo-technologies-private-limited:202606106113",
           "totalErrors": 2,
           "topErrorCode": "INVALID_JWT",
@@ -12822,15 +12943,6 @@ const BUNDLED_DATA = {
           }
         },
         {
-          "ovseId": "tspolice",
-          "totalErrors": 2,
-          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
-          "topErrorCount": 2,
-          "codes": {
-            "SDJWT_CALLBACK_NETWORK_ERROR": 2
-          }
-        },
-        {
           "ovseId": "urn:uidai:client:syncro1-private-limited:202611175462",
           "totalErrors": 2,
           "topErrorCode": "INVALID_JWT",
@@ -12840,25 +12952,34 @@ const BUNDLED_DATA = {
           }
         },
         {
-          "ovseId": "urn:uidai:client:evolute-fintech-innovations-private-limited:202608271911",
-          "totalErrors": 1,
-          "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
-          "topErrorCount": 1,
+          "ovseId": "mantra",
+          "totalErrors": 2,
+          "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
+          "topErrorCount": 2,
           "codes": {
-            "SDJWT_CALLBACK_NETWORK_ERROR": 1
+            "SDJWT_USER_DENIED_CONSENT": 2
+          }
+        },
+        {
+          "ovseId": "documint",
+          "totalErrors": 2,
+          "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
+          "topErrorCount": 2,
+          "codes": {
+            "SDJWT_USER_DENIED_CONSENT": 2
+          }
+        },
+        {
+          "ovseId": "urn:uidai:client:finanalyz-technologies-private-limited:202606306133",
+          "totalErrors": 2,
+          "topErrorCode": "SDJWT_USER_DENIED_CONSENT",
+          "topErrorCount": 2,
+          "codes": {
+            "SDJWT_USER_DENIED_CONSENT": 2
           }
         },
         {
           "ovseId": "urn:uidai:client:startup-gurukul-innovation-private-limited:202610157376",
-          "totalErrors": 1,
-          "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
-          "topErrorCount": 1,
-          "codes": {
-            "SDJWT_FACEAUTH_FAILED_731": 1
-          }
-        },
-        {
-          "ovseId": "ooru_digital",
           "totalErrors": 1,
           "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
           "topErrorCount": 1,
@@ -12876,12 +12997,57 @@ const BUNDLED_DATA = {
           }
         },
         {
+          "ovseId": "urn:uidai:client:hp-marketing-board:202611045503",
+          "totalErrors": 1,
+          "topErrorCode": "INVALID_JWT",
+          "topErrorCount": 1,
+          "codes": {
+            "INVALID_JWT": 1
+          }
+        },
+        {
           "ovseId": "urn:uidai:client:rurtech-for-arayans-llp:202611039670",
           "totalErrors": 1,
           "topErrorCode": "SDJWT_CALLBACK_NETWORK_ERROR",
           "topErrorCount": 1,
           "codes": {
             "SDJWT_CALLBACK_NETWORK_ERROR": 1
+          }
+        },
+        {
+          "ovseId": "urn:uidai:client:3i-consulting-private-limited:202608031319",
+          "totalErrors": 1,
+          "topErrorCode": "SDJWT_FACEAUTH_FAILED_731",
+          "topErrorCount": 1,
+          "codes": {
+            "SDJWT_FACEAUTH_FAILED_731": 1
+          }
+        },
+        {
+          "ovseId": "any2paytpl",
+          "totalErrors": 1,
+          "topErrorCode": "INVALID_JWT",
+          "topErrorCount": 1,
+          "codes": {
+            "INVALID_JWT": 1
+          }
+        },
+        {
+          "ovseId": "1a2f",
+          "totalErrors": 1,
+          "topErrorCode": "INVALID_JWT",
+          "topErrorCount": 1,
+          "codes": {
+            "INVALID_JWT": 1
+          }
+        },
+        {
+          "ovseId": "urn:uidai:client:msqube-technology-solutions-private-limited:202611061651",
+          "totalErrors": 1,
+          "topErrorCode": "INVALID_JWT",
+          "topErrorCount": 1,
+          "codes": {
+            "INVALID_JWT": 1
           }
         }
       ]
@@ -12891,71 +13057,71 @@ const BUNDLED_DATA = {
         "code": "SDJWT_USER_DENIED_CONSENT",
         "description": "Citizen actively declined or cancelled the consent prompt on mAadhaar app.",
         "category": "User Consent Denial",
-        "overallCount": 356124,
-        "overallPct": "16.41",
-        "weeklyCount": 6798,
-        "weeklyPct": "44.36",
-        "pctPointDelta": "27.95"
+        "overallCount": 358999,
+        "overallPct": "16.49",
+        "weeklyCount": 8303,
+        "weeklyPct": "43.85",
+        "pctPointDelta": "27.36"
       },
       {
         "code": "SDJWT_FACEAUTH_FAILED_731",
         "description": "Face authentication match failed (Threshold score not met, code 731).",
         "category": "Biometric Face Auth Failure",
-        "overallCount": 362786,
-        "overallPct": "16.72",
-        "weeklyCount": 3834,
-        "weeklyPct": "25.02",
-        "pctPointDelta": "8.30"
+        "overallCount": 364872,
+        "overallPct": "16.76",
+        "weeklyCount": 5073,
+        "weeklyPct": "26.79",
+        "pctPointDelta": "10.03"
       },
       {
         "code": "SDJWT_CALLBACK_NETWORK_ERROR",
         "description": "Network timeout or connection drop during callback reporting to OVSE backend.",
         "category": "Network / Connectivity Timeout",
-        "overallCount": 631277,
-        "overallPct": "29.10",
-        "weeklyCount": 1992,
-        "weeklyPct": "13.00",
-        "pctPointDelta": "-16.10"
+        "overallCount": 632238,
+        "overallPct": "29.05",
+        "weeklyCount": 2606,
+        "weeklyPct": "13.76",
+        "pctPointDelta": "-15.28"
       },
       {
         "code": "SDJWT_SIGN_VALIDATION_FAILED",
         "description": "Cryptographic signature validation failure between OVSE and UIDAI.",
         "category": "Cryptographic / Security Error",
-        "overallCount": 63457,
-        "overallPct": "2.92",
-        "weeklyCount": 1053,
-        "weeklyPct": "6.87",
-        "pctPointDelta": "3.95"
+        "overallCount": 63731,
+        "overallPct": "2.93",
+        "weeklyCount": 867,
+        "weeklyPct": "4.58",
+        "pctPointDelta": "1.65"
       },
       {
         "code": "INVALID_JWT",
         "description": "Malformed, invalid token payload, or expired token during handshake.",
         "category": "Cryptographic / Security Error",
-        "overallCount": 411461,
-        "overallPct": "18.96",
-        "weeklyCount": 771,
-        "weeklyPct": "5.03",
-        "pctPointDelta": "-13.93"
+        "overallCount": 411671,
+        "overallPct": "18.91",
+        "weeklyCount": 824,
+        "weeklyPct": "4.35",
+        "pctPointDelta": "-14.56"
       },
       {
         "code": "SDJWT_FACEAUTH_FAILED_304",
         "description": "Face capture / lighting / sensor error during camera acquisition.",
         "category": "Biometric Face Auth Failure",
-        "overallCount": 53785,
+        "overallCount": 54078,
         "overallPct": "2.48",
-        "weeklyCount": 467,
-        "weeklyPct": "3.05",
-        "pctPointDelta": "0.57"
+        "weeklyCount": 657,
+        "weeklyPct": "3.47",
+        "pctPointDelta": "0.99"
       },
       {
         "code": "SDJWT_FACEAUTH_FAILED_737",
         "description": "Low biometric confidence / quality score during facial matching.",
         "category": "Biometric Face Auth Failure",
-        "overallCount": 20179,
-        "overallPct": "0.93",
-        "weeklyCount": 379,
-        "weeklyPct": "2.47",
-        "pctPointDelta": "1.54"
+        "overallCount": 20460,
+        "overallPct": "0.94",
+        "weeklyCount": 590,
+        "weeklyPct": "3.12",
+        "pctPointDelta": "2.18"
       },
       {
         "code": "SDJWT_ZIP_CREATION_FAILED",
@@ -12963,19 +13129,19 @@ const BUNDLED_DATA = {
         "category": "System / Payload Processing",
         "overallCount": 575,
         "overallPct": "0.03",
-        "weeklyCount": 26,
-        "weeklyPct": "0.17",
-        "pctPointDelta": "0.14"
+        "weeklyCount": 11,
+        "weeklyPct": "0.06",
+        "pctPointDelta": "0.03"
       },
       {
         "code": "0",
         "description": "Generic connection reset, client drop, or unspecified timeout error.",
         "category": "Generic Timeout / Client Drop",
-        "overallCount": 251765,
-        "overallPct": "11.60",
+        "overallCount": 251766,
+        "overallPct": "11.57",
         "weeklyCount": 4,
-        "weeklyPct": "0.03",
-        "pctPointDelta": "-11.58"
+        "weeklyPct": "0.02",
+        "pctPointDelta": "-11.55"
       },
       {
         "code": "731",
@@ -13081,37 +13247,37 @@ const BUNDLED_DATA = {
   },
   "channels": {
     "overall": {
-      "total": 7594258,
+      "total": 7639975,
       "channelMap": {
-        "APP_INTENT": 6898976,
-        "QR_SCAN": 617138,
-        "WEB_INTENT": 78144
+        "APP_INTENT": 6941200,
+        "QR_SCAN": 619126,
+        "WEB_INTENT": 79649
       },
       "channelList": [
         {
           "channel": "APP_INTENT",
           "displayName": "App-to-App (App Intent)",
-          "count": 6898976,
-          "pct": 90.84463551277821
+          "count": 6941200,
+          "pct": 90.85370043750143
         },
         {
           "channel": "QR_SCAN",
           "displayName": "Cross-Device QR (QR Scan)",
-          "count": 617138,
-          "pct": 8.126376533428283
+          "count": 619126,
+          "pct": 8.103769973069284
         },
         {
           "channel": "WEB_INTENT",
           "displayName": "Web-to-App (Web Intent)",
-          "count": 78144,
-          "pct": 1.0289879537935107
+          "count": 79649,
+          "pct": 1.0425295894292848
         }
       ],
       "ovseList": [
         {
           "ovseId": "SelectiveShare",
-          "total": 3335968,
-          "appIntent": 3335968,
+          "total": 3365752,
+          "appIntent": 3365752,
           "webIntent": 0,
           "qrScan": 0,
           "appIntentPct": "100.0",
@@ -13120,18 +13286,18 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "tspolice",
-          "total": 2248594,
-          "appIntent": 1721658,
-          "webIntent": 209,
-          "qrScan": 526727,
+          "total": 2248605,
+          "appIntent": 1721660,
+          "webIntent": 211,
+          "qrScan": 526734,
           "appIntentPct": "76.6",
           "webIntentPct": "0.0",
           "qrScanPct": "23.4"
         },
         {
           "ovseId": "000",
-          "total": 1220076,
-          "appIntent": 1219377,
+          "total": 1220085,
+          "appIntent": 1219386,
           "webIntent": 0,
           "qrScan": 699,
           "appIntentPct": "99.9",
@@ -13140,8 +13306,8 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "urbancompany",
-          "total": 329917,
-          "appIntent": 329916,
+          "total": 333681,
+          "appIntent": 333680,
           "webIntent": 0,
           "qrScan": 1,
           "appIntentPct": "100.0",
@@ -13150,38 +13316,38 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "gridlines",
-          "total": 61734,
-          "appIntent": 39983,
-          "webIntent": 14997,
-          "qrScan": 6754,
+          "total": 62455,
+          "appIntent": 40472,
+          "webIntent": 15152,
+          "qrScan": 6831,
           "appIntentPct": "64.8",
           "webIntentPct": "24.3",
           "qrScanPct": "10.9"
         },
         {
           "ovseId": "tnmc",
-          "total": 60308,
-          "appIntent": 35898,
+          "total": 60913,
+          "appIntent": 36267,
           "webIntent": 0,
-          "qrScan": 24410,
+          "qrScan": 24646,
           "appIntentPct": "59.5",
           "webIntentPct": "0.0",
           "qrScanPct": "40.5"
         },
         {
           "ovseId": "procam",
-          "total": 53406,
-          "appIntent": 31665,
+          "total": 54052,
+          "appIntent": 32143,
           "webIntent": 0,
-          "qrScan": 21741,
-          "appIntentPct": "59.3",
+          "qrScan": 21909,
+          "appIntentPct": "59.5",
           "webIntentPct": "0.0",
-          "qrScanPct": "40.7"
+          "qrScanPct": "40.5"
         },
         {
           "ovseId": "arattai",
-          "total": 35586,
-          "appIntent": 35188,
+          "total": 35762,
+          "appIntent": 35364,
           "webIntent": 0,
           "qrScan": 398,
           "appIntentPct": "98.9",
@@ -13190,53 +13356,63 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "protean",
-          "total": 32172,
+          "total": 32764,
           "appIntent": 57,
-          "webIntent": 30966,
-          "qrScan": 1149,
+          "webIntent": 31549,
+          "qrScan": 1158,
           "appIntentPct": "0.2",
           "webIntentPct": "96.3",
-          "qrScanPct": "3.6"
+          "qrScanPct": "3.5"
         },
         {
           "ovseId": "(Blank / Unknown)",
-          "total": 26729,
+          "total": 26826,
           "appIntent": 21679,
           "webIntent": 1074,
-          "qrScan": 3976,
-          "appIntentPct": "81.1",
+          "qrScan": 4073,
+          "appIntentPct": "80.8",
           "webIntentPct": "4.0",
-          "qrScanPct": "14.9"
-        },
-        {
-          "ovseId": "urn:uidai:client:inferalgo-private-limited:202607177737",
-          "total": 26155,
-          "appIntent": 19613,
-          "webIntent": 5303,
-          "qrScan": 1239,
-          "appIntentPct": "75.0",
-          "webIntentPct": "20.3",
-          "qrScanPct": "4.7"
+          "qrScanPct": "15.2"
         },
         {
           "ovseId": "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
-          "total": 25905,
-          "appIntent": 9162,
-          "webIntent": 14117,
-          "qrScan": 2626,
-          "appIntentPct": "35.4",
-          "webIntentPct": "54.5",
+          "total": 26571,
+          "appIntent": 9347,
+          "webIntent": 14542,
+          "qrScan": 2682,
+          "appIntentPct": "35.2",
+          "webIntentPct": "54.7",
           "qrScanPct": "10.1"
         },
         {
+          "ovseId": "urn:uidai:client:inferalgo-private-limited:202607177737",
+          "total": 26416,
+          "appIntent": 19831,
+          "webIntent": 5328,
+          "qrScan": 1257,
+          "appIntentPct": "75.1",
+          "webIntentPct": "20.2",
+          "qrScanPct": "4.8"
+        },
+        {
           "ovseId": "dexit",
-          "total": 21340,
-          "appIntent": 17005,
+          "total": 21998,
+          "appIntent": 17577,
           "webIntent": 0,
-          "qrScan": 4335,
-          "appIntentPct": "79.7",
+          "qrScan": 4421,
+          "appIntentPct": "79.9",
           "webIntentPct": "0.0",
-          "qrScanPct": "20.3"
+          "qrScanPct": "20.1"
+        },
+        {
+          "ovseId": "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+          "total": 17768,
+          "appIntent": 15632,
+          "webIntent": 0,
+          "qrScan": 2136,
+          "appIntentPct": "88.0",
+          "webIntentPct": "0.0",
+          "qrScanPct": "12.0"
         },
         {
           "ovseId": "0",
@@ -13250,133 +13426,123 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "trustt",
-          "total": 14503,
-          "appIntent": 6523,
-          "webIntent": 5100,
-          "qrScan": 2880,
-          "appIntentPct": "45.0",
-          "webIntentPct": "35.2",
-          "qrScanPct": "19.9"
-        },
-        {
-          "ovseId": "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
-          "total": 12880,
-          "appIntent": 11407,
-          "webIntent": 0,
-          "qrScan": 1473,
-          "appIntentPct": "88.6",
-          "webIntentPct": "0.0",
-          "qrScanPct": "11.4"
+          "total": 15018,
+          "appIntent": 6744,
+          "webIntent": 5353,
+          "qrScan": 2921,
+          "appIntentPct": "44.9",
+          "webIntentPct": "35.6",
+          "qrScanPct": "19.4"
         },
         {
           "ovseId": "urn:uidai:client:instantpay-india-limited:202606250788",
-          "total": 9086,
-          "appIntent": 8422,
+          "total": 9461,
+          "appIntent": 8755,
           "webIntent": 14,
-          "qrScan": 650,
-          "appIntentPct": "92.7",
-          "webIntentPct": "0.2",
-          "qrScanPct": "7.2"
+          "qrScan": 692,
+          "appIntentPct": "92.5",
+          "webIntentPct": "0.1",
+          "qrScanPct": "7.3"
         },
         {
           "ovseId": "cisf",
-          "total": 7111,
-          "appIntent": 5980,
+          "total": 7139,
+          "appIntent": 5996,
           "webIntent": 0,
-          "qrScan": 1131,
-          "appIntentPct": "84.1",
+          "qrScan": 1143,
+          "appIntentPct": "84.0",
           "webIntentPct": "0.0",
-          "qrScanPct": "15.9"
+          "qrScanPct": "16.0"
         },
         {
           "ovseId": "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
-          "total": 5576,
-          "appIntent": 3785,
+          "total": 6119,
+          "appIntent": 4119,
           "webIntent": 195,
-          "qrScan": 1596,
-          "appIntentPct": "67.9",
-          "webIntentPct": "3.5",
-          "qrScanPct": "28.6"
+          "qrScan": 1805,
+          "appIntentPct": "67.3",
+          "webIntentPct": "3.2",
+          "qrScanPct": "29.5"
         },
         {
           "ovseId": "truscholar",
-          "total": 5522,
-          "appIntent": 5279,
+          "total": 5559,
+          "appIntent": 5314,
           "webIntent": 0,
-          "qrScan": 243,
+          "qrScan": 245,
           "appIntentPct": "95.6",
           "webIntentPct": "0.0",
           "qrScanPct": "4.4"
         },
         {
           "ovseId": "urn:uidai:client:hindon-mercantile-limited:202608105382",
-          "total": 4894,
-          "appIntent": 4056,
+          "total": 5064,
+          "appIntent": 4219,
           "webIntent": 0,
-          "qrScan": 838,
-          "appIntentPct": "82.9",
+          "qrScan": 845,
+          "appIntentPct": "83.3",
           "webIntentPct": "0.0",
-          "qrScanPct": "17.1"
+          "qrScanPct": "16.7"
         },
         {
           "ovseId": "urn:uidai:client:punjab-school-educationboard:202608274954",
-          "total": 4216,
-          "appIntent": 3245,
+          "total": 4387,
+          "appIntent": 3386,
           "webIntent": 0,
-          "qrScan": 971,
-          "appIntentPct": "77.0",
+          "qrScan": 1001,
+          "appIntentPct": "77.2",
           "webIntentPct": "0.0",
-          "qrScanPct": "23.0"
+          "qrScanPct": "22.8"
+        },
+        {
+          "ovseId": "surepass",
+          "total": 3249,
+          "appIntent": 2667,
+          "webIntent": 75,
+          "qrScan": 507,
+          "appIntentPct": "82.1",
+          "webIntentPct": "2.3",
+          "qrScanPct": "15.6"
         },
         {
           "ovseId": "ooru_digital",
-          "total": 3149,
+          "total": 3159,
           "appIntent": 1305,
           "webIntent": 296,
-          "qrScan": 1548,
-          "appIntentPct": "41.4",
+          "qrScan": 1558,
+          "appIntentPct": "41.3",
           "webIntentPct": "9.4",
-          "qrScanPct": "49.2"
+          "qrScanPct": "49.3"
         },
         {
           "ovseId": "trackwizz",
-          "total": 3136,
+          "total": 3137,
           "appIntent": 66,
-          "webIntent": 3069,
+          "webIntent": 3070,
           "qrScan": 1,
           "appIntentPct": "2.1",
           "webIntentPct": "97.9",
           "qrScanPct": "0.0"
         },
         {
-          "ovseId": "surepass",
-          "total": 2720,
-          "appIntent": 2230,
-          "webIntent": 75,
-          "qrScan": 415,
-          "appIntentPct": "82.0",
-          "webIntentPct": "2.8",
-          "qrScanPct": "15.3"
-        },
-        {
           "ovseId": "urn:uidai:client:dc-office-tawang:202606230797",
-          "total": 2648,
-          "appIntent": 1600,
+          "total": 2677,
+          "appIntent": 1605,
           "webIntent": 0,
-          "qrScan": 1048,
-          "appIntentPct": "60.4",
+          "qrScan": 1072,
+          "appIntentPct": "60.0",
           "webIntentPct": "0.0",
-          "qrScanPct": "39.6"
+          "qrScanPct": "40.0"
         },
         {
           "ovseId": "vsign",
-          "total": 1317,
-          "appIntent": 935,
+          "total": 1336,
+          "appIntent": 950,
           "webIntent": 0,
-          "qrScan": 382,
-          "appIntentPct": "71.0",
+          "qrScan": 386,
+          "appIntentPct": "71.1",
           "webIntentPct": "0.0",
-          "qrScanPct": "29.0"
+          "qrScanPct": "28.9"
         },
         {
           "ovseId": "entityiq",
@@ -13390,23 +13556,23 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
-          "total": 1092,
-          "appIntent": 984,
+          "total": 1231,
+          "appIntent": 1108,
           "webIntent": 0,
-          "qrScan": 108,
-          "appIntentPct": "90.1",
+          "qrScan": 123,
+          "appIntentPct": "90.0",
           "webIntentPct": "0.0",
-          "qrScanPct": "9.9"
+          "qrScanPct": "10.0"
         },
         {
           "ovseId": "rjil",
-          "total": 913,
-          "appIntent": 765,
+          "total": 923,
+          "appIntent": 775,
           "webIntent": 38,
           "qrScan": 110,
-          "appIntentPct": "83.8",
-          "webIntentPct": "4.2",
-          "qrScanPct": "12.0"
+          "appIntentPct": "84.0",
+          "webIntentPct": "4.1",
+          "qrScanPct": "11.9"
         },
         {
           "ovseId": "dreamcast",
@@ -13420,33 +13586,33 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "transaction_analysts",
-          "total": 699,
-          "appIntent": 569,
+          "total": 706,
+          "appIntent": 573,
           "webIntent": 0,
-          "qrScan": 130,
-          "appIntentPct": "81.4",
+          "qrScan": 133,
+          "appIntentPct": "81.2",
           "webIntentPct": "0.0",
-          "qrScanPct": "18.6"
+          "qrScanPct": "18.8"
         },
         {
           "ovseId": "signzytech",
-          "total": 634,
+          "total": 636,
           "appIntent": 414,
           "webIntent": 47,
-          "qrScan": 173,
-          "appIntentPct": "65.3",
+          "qrScan": 175,
+          "appIntentPct": "65.1",
           "webIntentPct": "7.4",
-          "qrScanPct": "27.3"
+          "qrScanPct": "27.5"
         },
         {
           "ovseId": "mantra",
-          "total": 618,
-          "appIntent": 454,
+          "total": 625,
+          "appIntent": 461,
           "webIntent": 4,
           "qrScan": 160,
-          "appIntentPct": "73.5",
+          "appIntentPct": "73.8",
           "webIntentPct": "0.6",
-          "qrScanPct": "25.9"
+          "qrScanPct": "25.6"
         },
         {
           "ovseId": "perfios",
@@ -13460,13 +13626,13 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "urn:uidai:client:oryggi-technologies-private-limited:202607288031",
-          "total": 532,
+          "total": 534,
           "appIntent": 417,
           "webIntent": 20,
-          "qrScan": 95,
-          "appIntentPct": "78.4",
-          "webIntentPct": "3.8",
-          "qrScanPct": "17.9"
+          "qrScan": 97,
+          "appIntentPct": "78.1",
+          "webIntentPct": "3.7",
+          "qrScanPct": "18.2"
         },
         {
           "ovseId": "frslabs",
@@ -13489,6 +13655,16 @@ const BUNDLED_DATA = {
           "qrScanPct": "72.2"
         },
         {
+          "ovseId": "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
+          "total": 438,
+          "appIntent": 260,
+          "webIntent": 37,
+          "qrScan": 141,
+          "appIntentPct": "59.4",
+          "webIntentPct": "8.4",
+          "qrScanPct": "32.2"
+        },
+        {
           "ovseId": "ayanworks",
           "total": 423,
           "appIntent": 7,
@@ -13499,24 +13675,14 @@ const BUNDLED_DATA = {
           "qrScanPct": "95.5"
         },
         {
-          "ovseId": "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
-          "total": 412,
-          "appIntent": 238,
-          "webIntent": 37,
-          "qrScan": 137,
-          "appIntentPct": "57.8",
-          "webIntentPct": "9.0",
-          "qrScanPct": "33.3"
-        },
-        {
           "ovseId": "urn:uidai:client:aparampaar-finance-private-limited:202605134450",
-          "total": 408,
+          "total": 417,
           "appIntent": 3,
-          "webIntent": 303,
+          "webIntent": 312,
           "qrScan": 102,
           "appIntentPct": "0.7",
-          "webIntentPct": "74.3",
-          "qrScanPct": "25.0"
+          "webIntentPct": "74.8",
+          "qrScanPct": "24.5"
         },
         {
           "ovseId": "urn:uidai:client:chandigarh-housing-board:202609023966",
@@ -13527,6 +13693,16 @@ const BUNDLED_DATA = {
           "appIntentPct": "30.2",
           "webIntentPct": "0.0",
           "qrScanPct": "69.8"
+        },
+        {
+          "ovseId": "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
+          "total": 402,
+          "appIntent": 100,
+          "webIntent": 141,
+          "qrScan": 161,
+          "appIntentPct": "24.9",
+          "webIntentPct": "35.1",
+          "qrScanPct": "40.0"
         },
         {
           "ovseId": "digio",
@@ -13549,34 +13725,24 @@ const BUNDLED_DATA = {
           "qrScanPct": "11.2"
         },
         {
-          "ovseId": "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
-          "total": 382,
-          "appIntent": 93,
+          "ovseId": "evaluit",
+          "total": 372,
+          "appIntent": 29,
           "webIntent": 132,
-          "qrScan": 157,
-          "appIntentPct": "24.3",
-          "webIntentPct": "34.6",
-          "qrScanPct": "41.1"
+          "qrScan": 211,
+          "appIntentPct": "7.8",
+          "webIntentPct": "35.5",
+          "qrScanPct": "56.7"
         },
         {
           "ovseId": "urn:uidai:client:evolute-fintech-innovations-private-limited:202608271911",
-          "total": 336,
+          "total": 340,
           "appIntent": 42,
           "webIntent": 0,
-          "qrScan": 294,
-          "appIntentPct": "12.5",
+          "qrScan": 298,
+          "appIntentPct": "12.4",
           "webIntentPct": "0.0",
-          "qrScanPct": "87.5"
-        },
-        {
-          "ovseId": "evaluit",
-          "total": 334,
-          "appIntent": 25,
-          "webIntent": 104,
-          "qrScan": 205,
-          "appIntentPct": "7.5",
-          "webIntentPct": "31.1",
-          "qrScanPct": "61.4"
+          "qrScanPct": "87.6"
         },
         {
           "ovseId": "pathikgp",
@@ -13589,6 +13755,16 @@ const BUNDLED_DATA = {
           "qrScanPct": "50.6"
         },
         {
+          "ovseId": "urn:uidai:client:intuitive-data-solutions-private-limited:202607237962",
+          "total": 291,
+          "appIntent": 285,
+          "webIntent": 3,
+          "qrScan": 3,
+          "appIntentPct": "97.9",
+          "webIntentPct": "1.0",
+          "qrScanPct": "1.0"
+        },
+        {
           "ovseId": "digitapai",
           "total": 290,
           "appIntent": 146,
@@ -13599,14 +13775,14 @@ const BUNDLED_DATA = {
           "qrScanPct": "23.4"
         },
         {
-          "ovseId": "urn:uidai:client:intuitive-data-solutions-private-limited:202607237962",
-          "total": 279,
-          "appIntent": 273,
-          "webIntent": 3,
-          "qrScan": 3,
-          "appIntentPct": "97.8",
-          "webIntentPct": "1.1",
-          "qrScanPct": "1.1"
+          "ovseId": "novelpatterns",
+          "total": 281,
+          "appIntent": 79,
+          "webIntent": 38,
+          "qrScan": 164,
+          "appIntentPct": "28.1",
+          "webIntentPct": "13.5",
+          "qrScanPct": "58.4"
         },
         {
           "ovseId": "urn:uidai:client:shri-trimbakeshwar-devasthan-trust:202607072068",
@@ -13617,16 +13793,6 @@ const BUNDLED_DATA = {
           "appIntentPct": "5.9",
           "webIntentPct": "0.0",
           "qrScanPct": "94.1"
-        },
-        {
-          "ovseId": "novelpatterns",
-          "total": 258,
-          "appIntent": 72,
-          "webIntent": 35,
-          "qrScan": 151,
-          "appIntentPct": "27.9",
-          "webIntentPct": "13.6",
-          "qrScanPct": "58.5"
         },
         {
           "ovseId": "urn:uidai:client:inverix-innovations-private-limited:202607131364",
@@ -13640,33 +13806,33 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "urn:uidai:client:perigeon-software-private-limited:202606041974",
-          "total": 235,
-          "appIntent": 221,
+          "total": 242,
+          "appIntent": 226,
           "webIntent": 0,
-          "qrScan": 14,
-          "appIntentPct": "94.0",
+          "qrScan": 16,
+          "appIntentPct": "93.4",
           "webIntentPct": "0.0",
-          "qrScanPct": "6.0"
-        },
-        {
-          "ovseId": "urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204",
-          "total": 228,
-          "appIntent": 129,
-          "webIntent": 0,
-          "qrScan": 99,
-          "appIntentPct": "56.6",
-          "webIntentPct": "0.0",
-          "qrScanPct": "43.4"
+          "qrScanPct": "6.6"
         },
         {
           "ovseId": "decentro",
-          "total": 227,
+          "total": 230,
           "appIntent": 141,
           "webIntent": 0,
-          "qrScan": 86,
-          "appIntentPct": "62.1",
+          "qrScan": 89,
+          "appIntentPct": "61.3",
           "webIntentPct": "0.0",
-          "qrScanPct": "37.9"
+          "qrScanPct": "38.7"
+        },
+        {
+          "ovseId": "urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204",
+          "total": 229,
+          "appIntent": 129,
+          "webIntent": 0,
+          "qrScan": 100,
+          "appIntentPct": "56.3",
+          "webIntentPct": "0.0",
+          "qrScanPct": "43.7"
         },
         {
           "ovseId": "urn:uidai:client:virendrabadrinath-buildcon-enterprises-private-limited:202605131058",
@@ -13689,6 +13855,16 @@ const BUNDLED_DATA = {
           "qrScanPct": "26.6"
         },
         {
+          "ovseId": "apiclub",
+          "total": 192,
+          "appIntent": 87,
+          "webIntent": 2,
+          "qrScan": 103,
+          "appIntentPct": "45.3",
+          "webIntentPct": "1.0",
+          "qrScanPct": "53.6"
+        },
+        {
           "ovseId": "baldortpl",
           "total": 191,
           "appIntent": 78,
@@ -13707,16 +13883,6 @@ const BUNDLED_DATA = {
           "appIntentPct": "70.7",
           "webIntentPct": "2.6",
           "qrScanPct": "26.7"
-        },
-        {
-          "ovseId": "apiclub",
-          "total": 184,
-          "appIntent": 85,
-          "webIntent": 2,
-          "qrScan": 97,
-          "appIntentPct": "46.2",
-          "webIntentPct": "1.1",
-          "qrScanPct": "52.7"
         },
         {
           "ovseId": "urn:uidai:client:directorate-of-land-records:202607304388",
@@ -13829,6 +13995,16 @@ const BUNDLED_DATA = {
           "qrScanPct": "36.9"
         },
         {
+          "ovseId": "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
+          "total": 139,
+          "appIntent": 120,
+          "webIntent": 0,
+          "qrScan": 19,
+          "appIntentPct": "86.3",
+          "webIntentPct": "0.0",
+          "qrScanPct": "13.7"
+        },
+        {
           "ovseId": "urn:uidai:client:sahana-system-limited:202610095399",
           "total": 138,
           "appIntent": 70,
@@ -13837,6 +14013,16 @@ const BUNDLED_DATA = {
           "appIntentPct": "50.7",
           "webIntentPct": "0.0",
           "qrScanPct": "49.3"
+        },
+        {
+          "ovseId": "urn:uidai:client:special-branch,-bihar-police:202610163901",
+          "total": 137,
+          "appIntent": 44,
+          "webIntent": 0,
+          "qrScan": 93,
+          "appIntentPct": "32.1",
+          "webIntentPct": "0.0",
+          "qrScanPct": "67.9"
         },
         {
           "ovseId": "urn:uidai:client:gujarat-co-operative-milk-marketing-federation-limited:202607233586",
@@ -13857,16 +14043,6 @@ const BUNDLED_DATA = {
           "appIntentPct": "72.1",
           "webIntentPct": "0.0",
           "qrScanPct": "27.9"
-        },
-        {
-          "ovseId": "urn:uidai:client:special-branch,-bihar-police:202610163901",
-          "total": 135,
-          "appIntent": 44,
-          "webIntent": 0,
-          "qrScan": 91,
-          "appIntentPct": "32.6",
-          "webIntentPct": "0.0",
-          "qrScanPct": "67.4"
         },
         {
           "ovseId": "dhiway",
@@ -13899,6 +14075,16 @@ const BUNDLED_DATA = {
           "qrScanPct": "55.3"
         },
         {
+          "ovseId": "urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049",
+          "total": 120,
+          "appIntent": 33,
+          "webIntent": 0,
+          "qrScan": 87,
+          "appIntentPct": "27.5",
+          "webIntentPct": "0.0",
+          "qrScanPct": "72.5"
+        },
+        {
           "ovseId": "as4",
           "total": 119,
           "appIntent": 29,
@@ -13909,16 +14095,6 @@ const BUNDLED_DATA = {
           "qrScanPct": "75.6"
         },
         {
-          "ovseId": "urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049",
-          "total": 118,
-          "appIntent": 31,
-          "webIntent": 0,
-          "qrScan": 87,
-          "appIntentPct": "26.3",
-          "webIntentPct": "0.0",
-          "qrScanPct": "73.7"
-        },
-        {
           "ovseId": "secureedge",
           "total": 117,
           "appIntent": 56,
@@ -13927,16 +14103,6 @@ const BUNDLED_DATA = {
           "appIntentPct": "47.9",
           "webIntentPct": "0.0",
           "qrScanPct": "52.1"
-        },
-        {
-          "ovseId": "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
-          "total": 116,
-          "appIntent": 104,
-          "webIntent": 0,
-          "qrScan": 12,
-          "appIntentPct": "89.7",
-          "webIntentPct": "0.0",
-          "qrScanPct": "10.3"
         },
         {
           "ovseId": "urn:uidai:client:sarthak-rana:202606021191",
@@ -13960,13 +14126,33 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "urn:uidai:client:finanalyz-technologies-private-limited:202606306133",
-          "total": 104,
+          "total": 106,
           "appIntent": 1,
-          "webIntent": 45,
+          "webIntent": 47,
           "qrScan": 58,
-          "appIntentPct": "1.0",
-          "webIntentPct": "43.3",
-          "qrScanPct": "55.8"
+          "appIntentPct": "0.9",
+          "webIntentPct": "44.3",
+          "qrScanPct": "54.7"
+        },
+        {
+          "ovseId": "ebitaus",
+          "total": 103,
+          "appIntent": 88,
+          "webIntent": 0,
+          "qrScan": 15,
+          "appIntentPct": "85.4",
+          "webIntentPct": "0.0",
+          "qrScanPct": "14.6"
+        },
+        {
+          "ovseId": "fastkyc",
+          "total": 103,
+          "appIntent": 57,
+          "webIntent": 0,
+          "qrScan": 46,
+          "appIntentPct": "55.3",
+          "webIntentPct": "0.0",
+          "qrScanPct": "44.7"
         },
         {
           "ovseId": "tartanhq",
@@ -13979,34 +14165,24 @@ const BUNDLED_DATA = {
           "qrScanPct": "76.5"
         },
         {
-          "ovseId": "fastkyc",
-          "total": 101,
-          "appIntent": 55,
-          "webIntent": 0,
-          "qrScan": 46,
-          "appIntentPct": "54.5",
-          "webIntentPct": "0.0",
-          "qrScanPct": "45.5"
-        },
-        {
           "ovseId": "any2paytpl",
-          "total": 100,
+          "total": 101,
           "appIntent": 0,
           "webIntent": 76,
-          "qrScan": 24,
+          "qrScan": 25,
           "appIntentPct": "0.0",
-          "webIntentPct": "76.0",
-          "qrScanPct": "24.0"
+          "webIntentPct": "75.2",
+          "qrScanPct": "24.8"
         },
         {
           "ovseId": "signcare",
-          "total": 98,
+          "total": 100,
           "appIntent": 25,
-          "webIntent": 44,
+          "webIntent": 46,
           "qrScan": 29,
-          "appIntentPct": "25.5",
-          "webIntentPct": "44.9",
-          "qrScanPct": "29.6"
+          "appIntentPct": "25.0",
+          "webIntentPct": "46.0",
+          "qrScanPct": "29.0"
         },
         {
           "ovseId": "digigo",
@@ -14017,16 +14193,6 @@ const BUNDLED_DATA = {
           "appIntentPct": "0.0",
           "webIntentPct": "0.0",
           "qrScanPct": "100.0"
-        },
-        {
-          "ovseId": "ebitaus",
-          "total": 92,
-          "appIntent": 79,
-          "webIntent": 0,
-          "qrScan": 13,
-          "appIntentPct": "85.9",
-          "webIntentPct": "0.0",
-          "qrScanPct": "14.1"
         },
         {
           "ovseId": "urn:uidai:client:paynearby:08092026",
@@ -14140,13 +14306,33 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "documint",
-          "total": 65,
+          "total": 68,
           "appIntent": 0,
-          "webIntent": 64,
+          "webIntent": 67,
           "qrScan": 1,
           "appIntentPct": "0.0",
           "webIntentPct": "98.5",
           "qrScanPct": "1.5"
+        },
+        {
+          "ovseId": "urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581",
+          "total": 65,
+          "appIntent": 49,
+          "webIntent": 12,
+          "qrScan": 4,
+          "appIntentPct": "75.4",
+          "webIntentPct": "18.5",
+          "qrScanPct": "6.2"
+        },
+        {
+          "ovseId": "urn:uidai:client:3i-consulting-private-limited:202608031319",
+          "total": 64,
+          "appIntent": 53,
+          "webIntent": 0,
+          "qrScan": 11,
+          "appIntentPct": "82.8",
+          "webIntentPct": "0.0",
+          "qrScanPct": "17.2"
         },
         {
           "ovseId": "urn:uidai:client:commissioner-esd-meeseva-telangana:202609174748",
@@ -14159,16 +14345,6 @@ const BUNDLED_DATA = {
           "qrScanPct": "75.8"
         },
         {
-          "ovseId": "urn:uidai:client:3i-consulting-private-limited:202608031319",
-          "total": 61,
-          "appIntent": 50,
-          "webIntent": 0,
-          "qrScan": 11,
-          "appIntentPct": "82.0",
-          "webIntentPct": "0.0",
-          "qrScanPct": "18.0"
-        },
-        {
           "ovseId": "idigicloud",
           "total": 61,
           "appIntent": 37,
@@ -14177,16 +14353,6 @@ const BUNDLED_DATA = {
           "appIntentPct": "60.7",
           "webIntentPct": "0.0",
           "qrScanPct": "39.3"
-        },
-        {
-          "ovseId": "urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581",
-          "total": 60,
-          "appIntent": 44,
-          "webIntent": 12,
-          "qrScan": 4,
-          "appIntentPct": "73.3",
-          "webIntentPct": "20.0",
-          "qrScanPct": "6.7"
         },
         {
           "ovseId": "urn:uidai:client:alynn-technologies-private-limited:202610262068",
@@ -14219,6 +14385,16 @@ const BUNDLED_DATA = {
           "qrScanPct": "66.7"
         },
         {
+          "ovseId": "urn:uidai:client:msqube-technology-solutions-private-limited:202611061651",
+          "total": 56,
+          "appIntent": 0,
+          "webIntent": 0,
+          "qrScan": 56,
+          "appIntentPct": "0.0",
+          "webIntentPct": "0.0",
+          "qrScanPct": "100.0"
+        },
+        {
           "ovseId": "urn:uidai:client:greenpark-hotels-and-resorts-limited:202606248233",
           "total": 56,
           "appIntent": 48,
@@ -14227,16 +14403,6 @@ const BUNDLED_DATA = {
           "appIntentPct": "85.7",
           "webIntentPct": "0.0",
           "qrScanPct": "14.3"
-        },
-        {
-          "ovseId": "urn:uidai:client:msqube-technology-solutions-private-limited:202611061651",
-          "total": 55,
-          "appIntent": 0,
-          "webIntent": 0,
-          "qrScan": 55,
-          "appIntentPct": "0.0",
-          "webIntentPct": "0.0",
-          "qrScanPct": "100.0"
         },
         {
           "ovseId": "urn:uidai:client:yars-enterprises-private-limited:202608051108",
@@ -14249,6 +14415,16 @@ const BUNDLED_DATA = {
           "qrScanPct": "5.6"
         },
         {
+          "ovseId": "1a2f",
+          "total": 54,
+          "appIntent": 12,
+          "webIntent": 0,
+          "qrScan": 42,
+          "appIntentPct": "22.2",
+          "webIntentPct": "0.0",
+          "qrScanPct": "77.8"
+        },
+        {
           "ovseId": "OR67091845",
           "total": 53,
           "appIntent": 17,
@@ -14257,16 +14433,6 @@ const BUNDLED_DATA = {
           "appIntentPct": "32.1",
           "webIntentPct": "0.0",
           "qrScanPct": "67.9"
-        },
-        {
-          "ovseId": "1a2f",
-          "total": 53,
-          "appIntent": 12,
-          "webIntent": 0,
-          "qrScan": 41,
-          "appIntentPct": "22.6",
-          "webIntentPct": "0.0",
-          "qrScanPct": "77.4"
         },
         {
           "ovseId": "ddp",
@@ -14289,6 +14455,16 @@ const BUNDLED_DATA = {
           "qrScanPct": "53.1"
         },
         {
+          "ovseId": "urn:uidai:client:centre-for-good-governance:202609037683",
+          "total": 47,
+          "appIntent": 43,
+          "webIntent": 0,
+          "qrScan": 4,
+          "appIntentPct": "91.5",
+          "webIntentPct": "0.0",
+          "qrScanPct": "8.5"
+        },
+        {
           "ovseId": "urn:uidai:client:accura-technolabs-private-limited:202609240826",
           "total": 46,
           "appIntent": 37,
@@ -14307,16 +14483,6 @@ const BUNDLED_DATA = {
           "appIntentPct": "10.9",
           "webIntentPct": "0.0",
           "qrScanPct": "89.1"
-        },
-        {
-          "ovseId": "urn:uidai:client:centre-for-good-governance:202609037683",
-          "total": 45,
-          "appIntent": 41,
-          "webIntent": 0,
-          "qrScan": 4,
-          "appIntentPct": "91.1",
-          "webIntentPct": "0.0",
-          "qrScanPct": "8.9"
         },
         {
           "ovseId": "urn:uidai:client:mizoram-police:202610168520",
@@ -14339,6 +14505,16 @@ const BUNDLED_DATA = {
           "qrScanPct": "70.5"
         },
         {
+          "ovseId": "urn:uidai:client:doklink-services-private-limited:202609249932",
+          "total": 44,
+          "appIntent": 44,
+          "webIntent": 0,
+          "qrScan": 0,
+          "appIntentPct": "100.0",
+          "webIntentPct": "0.0",
+          "qrScanPct": "0.0"
+        },
+        {
           "ovseId": "veriguard",
           "total": 44,
           "appIntent": 42,
@@ -14349,14 +14525,14 @@ const BUNDLED_DATA = {
           "qrScanPct": "4.5"
         },
         {
-          "ovseId": "urn:uidai:client:doklink-services-private-limited:202609249932",
-          "total": 43,
-          "appIntent": 43,
+          "ovseId": "urn:uidai:client:earnest-data-analytics-private-limited:202609247533",
+          "total": 44,
+          "appIntent": 36,
           "webIntent": 0,
-          "qrScan": 0,
-          "appIntentPct": "100.0",
+          "qrScan": 8,
+          "appIntentPct": "81.8",
           "webIntentPct": "0.0",
-          "qrScanPct": "0.0"
+          "qrScanPct": "18.2"
         },
         {
           "ovseId": "urn:uidai:client:bansal-hotels-and-resorts-private-limited:202608122685",
@@ -14507,16 +14683,6 @@ const BUNDLED_DATA = {
           "appIntentPct": "37.1",
           "webIntentPct": "17.1",
           "qrScanPct": "45.7"
-        },
-        {
-          "ovseId": "urn:uidai:client:earnest-data-analytics-private-limited:202609247533",
-          "total": 35,
-          "appIntent": 27,
-          "webIntent": 0,
-          "qrScan": 8,
-          "appIntentPct": "77.1",
-          "webIntentPct": "0.0",
-          "qrScanPct": "22.9"
         },
         {
           "ovseId": "urn:uidai:client:wml-it-solutions-private-limited:202609246367",
@@ -14687,6 +14853,16 @@ const BUNDLED_DATA = {
           "appIntentPct": "90.0",
           "webIntentPct": "5.0",
           "qrScanPct": "5.0"
+        },
+        {
+          "ovseId": "urn:uidai:client:kendriya-vidyalaya-sangathan:202611171026",
+          "total": 19,
+          "appIntent": 0,
+          "webIntent": 0,
+          "qrScan": 19,
+          "appIntentPct": "0.0",
+          "webIntentPct": "0.0",
+          "qrScanPct": "100.0"
         },
         {
           "ovseId": "AF87538431",
@@ -14909,6 +15085,16 @@ const BUNDLED_DATA = {
           "qrScanPct": "100.0"
         },
         {
+          "ovseId": "urn:uidai:client:sai-roshni-capital-private-limited:202610275530",
+          "total": 13,
+          "appIntent": 8,
+          "webIntent": 5,
+          "qrScan": 0,
+          "appIntentPct": "61.5",
+          "webIntentPct": "38.5",
+          "qrScanPct": "0.0"
+        },
+        {
           "ovseId": "urn:uidai:client:flix-solutions-private-limited:202608140865",
           "total": 12,
           "appIntent": 0,
@@ -15100,16 +15286,6 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "urn:uidai:client:eventshook-private-limited:202608108045",
-          "total": 8,
-          "appIntent": 8,
-          "webIntent": 0,
-          "qrScan": 0,
-          "appIntentPct": "100.0",
-          "webIntentPct": "0.0",
-          "qrScanPct": "0.0"
-        },
-        {
-          "ovseId": "urn:uidai:client:sai-roshni-capital-private-limited:202610275530",
           "total": 8,
           "appIntent": 8,
           "webIntent": 0,
@@ -15941,37 +16117,37 @@ const BUNDLED_DATA = {
       ]
     },
     "weekly": {
-      "total": 161201,
+      "total": 181017,
       "channelMap": {
-        "APP_INTENT": 150883,
-        "WEB_INTENT": 5937,
-        "QR_SCAN": 4381
+        "APP_INTENT": 169285,
+        "WEB_INTENT": 6479,
+        "QR_SCAN": 5253
       },
       "channelList": [
         {
           "channel": "APP_INTENT",
           "displayName": "App-to-App (App Intent)",
-          "count": 150883,
-          "pct": 93.59929528973146
+          "count": 169285,
+          "pct": 93.5188407718612
         },
         {
           "channel": "WEB_INTENT",
           "displayName": "Web-to-App (Web Intent)",
-          "count": 5937,
-          "pct": 3.6829796341213763
+          "count": 6479,
+          "pct": 3.5792218410425543
         },
         {
           "channel": "QR_SCAN",
           "displayName": "Cross-Device QR (QR Scan)",
-          "count": 4381,
-          "pct": 2.71772507614717
+          "count": 5253,
+          "pct": 2.9019373870962397
         }
       ],
       "ovseList": [
         {
           "ovseId": "SelectiveShare",
-          "total": 123018,
-          "appIntent": 123018,
+          "total": 134316,
+          "appIntent": 134316,
           "webIntent": 0,
           "qrScan": 0,
           "appIntentPct": "100.0",
@@ -15980,8 +16156,8 @@ const BUNDLED_DATA = {
         },
         {
           "ovseId": "urbancompany",
-          "total": 11825,
-          "appIntent": 11825,
+          "total": 13184,
+          "appIntent": 13184,
           "webIntent": 0,
           "qrScan": 0,
           "appIntentPct": "100.0",
@@ -15989,369 +16165,319 @@ const BUNDLED_DATA = {
           "qrScanPct": "0.0"
         },
         {
-          "ovseId": "protean",
-          "total": 4133,
-          "appIntent": 0,
-          "webIntent": 3774,
-          "qrScan": 359,
-          "appIntentPct": "0.0",
-          "webIntentPct": "91.3",
-          "qrScanPct": "8.7"
+          "ovseId": "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+          "total": 6700,
+          "appIntent": 5840,
+          "webIntent": 0,
+          "qrScan": 860,
+          "appIntentPct": "87.2",
+          "webIntentPct": "0.0",
+          "qrScanPct": "12.8"
         },
         {
-          "ovseId": "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
-          "total": 2981,
-          "appIntent": 2674,
-          "webIntent": 0,
-          "qrScan": 307,
-          "appIntentPct": "89.7",
-          "webIntentPct": "0.0",
-          "qrScanPct": "10.3"
+          "ovseId": "protean",
+          "total": 3904,
+          "appIntent": 0,
+          "webIntent": 3798,
+          "qrScan": 106,
+          "appIntentPct": "0.0",
+          "webIntentPct": "97.3",
+          "qrScanPct": "2.7"
         },
         {
           "ovseId": "dexit",
-          "total": 2767,
-          "appIntent": 2310,
+          "total": 2999,
+          "appIntent": 2564,
           "webIntent": 0,
-          "qrScan": 457,
-          "appIntentPct": "83.5",
+          "qrScan": 435,
+          "appIntentPct": "85.5",
           "webIntentPct": "0.0",
-          "qrScanPct": "16.5"
+          "qrScanPct": "14.5"
         },
         {
           "ovseId": "procam",
-          "total": 2115,
-          "appIntent": 1514,
+          "total": 2466,
+          "appIntent": 1803,
           "webIntent": 0,
-          "qrScan": 601,
-          "appIntentPct": "71.6",
+          "qrScan": 663,
+          "appIntentPct": "73.1",
           "webIntentPct": "0.0",
-          "qrScanPct": "28.4"
+          "qrScanPct": "26.9"
         },
         {
           "ovseId": "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
-          "total": 2089,
-          "appIntent": 1440,
+          "total": 2419,
+          "appIntent": 1662,
           "webIntent": 0,
-          "qrScan": 649,
-          "appIntentPct": "68.9",
+          "qrScan": 757,
+          "appIntentPct": "68.7",
           "webIntentPct": "0.0",
-          "qrScanPct": "31.1"
+          "qrScanPct": "31.3"
         },
         {
           "ovseId": "gridlines",
-          "total": 2011,
-          "appIntent": 1479,
-          "webIntent": 383,
-          "qrScan": 149,
-          "appIntentPct": "73.5",
-          "webIntentPct": "19.0",
-          "qrScanPct": "7.4"
+          "total": 2376,
+          "appIntent": 1725,
+          "webIntent": 462,
+          "qrScan": 189,
+          "appIntentPct": "72.6",
+          "webIntentPct": "19.4",
+          "qrScanPct": "8.0"
         },
         {
           "ovseId": "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
-          "total": 1672,
-          "appIntent": 454,
-          "webIntent": 1089,
-          "qrScan": 129,
-          "appIntentPct": "27.2",
-          "webIntentPct": "65.1",
-          "qrScanPct": "7.7"
+          "total": 2027,
+          "appIntent": 538,
+          "webIntent": 1341,
+          "qrScan": 148,
+          "appIntentPct": "26.5",
+          "webIntentPct": "66.2",
+          "qrScanPct": "7.3"
         },
         {
           "ovseId": "tnmc",
-          "total": 1660,
-          "appIntent": 1111,
+          "total": 2016,
+          "appIntent": 1316,
           "webIntent": 0,
-          "qrScan": 549,
-          "appIntentPct": "66.9",
+          "qrScan": 700,
+          "appIntentPct": "65.3",
           "webIntentPct": "0.0",
-          "qrScanPct": "33.1"
+          "qrScanPct": "34.7"
         },
         {
           "ovseId": "urn:uidai:client:instantpay-india-limited:202606250788",
-          "total": 1313,
-          "appIntent": 1245,
+          "total": 1502,
+          "appIntent": 1421,
           "webIntent": 0,
-          "qrScan": 68,
-          "appIntentPct": "94.8",
+          "qrScan": 81,
+          "appIntentPct": "94.6",
           "webIntentPct": "0.0",
-          "qrScanPct": "5.2"
+          "qrScanPct": "5.4"
         },
         {
           "ovseId": "trustt",
-          "total": 1030,
-          "appIntent": 385,
-          "webIntent": 530,
-          "qrScan": 115,
-          "appIntentPct": "37.4",
-          "webIntentPct": "51.5",
-          "qrScanPct": "11.2"
+          "total": 1317,
+          "appIntent": 532,
+          "webIntent": 648,
+          "qrScan": 137,
+          "appIntentPct": "40.4",
+          "webIntentPct": "49.2",
+          "qrScanPct": "10.4"
         },
         {
           "ovseId": "urn:uidai:client:inferalgo-private-limited:202607177737",
-          "total": 962,
-          "appIntent": 872,
-          "webIntent": 57,
-          "qrScan": 33,
-          "appIntentPct": "90.6",
-          "webIntentPct": "5.9",
-          "qrScanPct": "3.4"
+          "total": 1104,
+          "appIntent": 984,
+          "webIntent": 76,
+          "qrScan": 44,
+          "appIntentPct": "89.1",
+          "webIntentPct": "6.9",
+          "qrScanPct": "4.0"
         },
         {
           "ovseId": "arattai",
-          "total": 680,
-          "appIntent": 674,
+          "total": 743,
+          "appIntent": 737,
           "webIntent": 0,
           "qrScan": 6,
-          "appIntentPct": "99.1",
+          "appIntentPct": "99.2",
           "webIntentPct": "0.0",
-          "qrScanPct": "0.9"
+          "qrScanPct": "0.8"
         },
         {
-          "ovseId": "urn:uidai:client:punjab-school-educationboard:202608274954",
-          "total": 431,
-          "appIntent": 322,
+          "ovseId": "surepass",
+          "total": 653,
+          "appIntent": 536,
           "webIntent": 0,
-          "qrScan": 109,
-          "appIntentPct": "74.7",
+          "qrScan": 117,
+          "appIntentPct": "82.1",
           "webIntentPct": "0.0",
-          "qrScanPct": "25.3"
+          "qrScanPct": "17.9"
         },
         {
           "ovseId": "urn:uidai:client:hindon-mercantile-limited:202608105382",
-          "total": 429,
-          "appIntent": 402,
+          "total": 517,
+          "appIntent": 496,
           "webIntent": 0,
-          "qrScan": 27,
-          "appIntentPct": "93.7",
+          "qrScan": 21,
+          "appIntentPct": "95.9",
           "webIntentPct": "0.0",
-          "qrScanPct": "6.3"
+          "qrScanPct": "4.1"
+        },
+        {
+          "ovseId": "urn:uidai:client:punjab-school-educationboard:202608274954",
+          "total": 491,
+          "appIntent": 391,
+          "webIntent": 0,
+          "qrScan": 100,
+          "appIntentPct": "79.6",
+          "webIntentPct": "0.0",
+          "qrScanPct": "20.4"
+        },
+        {
+          "ovseId": "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
+          "total": 360,
+          "appIntent": 294,
+          "webIntent": 0,
+          "qrScan": 66,
+          "appIntentPct": "81.7",
+          "webIntentPct": "0.0",
+          "qrScanPct": "18.3"
         },
         {
           "ovseId": "(Blank / Unknown)",
-          "total": 281,
+          "total": 326,
           "appIntent": 0,
           "webIntent": 0,
-          "qrScan": 281,
+          "qrScan": 326,
           "appIntentPct": "0.0",
           "webIntentPct": "0.0",
           "qrScanPct": "100.0"
         },
         {
-          "ovseId": "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
-          "total": 234,
-          "appIntent": 183,
-          "webIntent": 0,
-          "qrScan": 51,
-          "appIntentPct": "78.2",
-          "webIntentPct": "0.0",
-          "qrScanPct": "21.8"
-        },
-        {
           "ovseId": "urn:uidai:client:dc-office-tawang:202606230797",
-          "total": 173,
-          "appIntent": 91,
+          "total": 184,
+          "appIntent": 87,
           "webIntent": 0,
-          "qrScan": 82,
-          "appIntentPct": "52.6",
+          "qrScan": 97,
+          "appIntentPct": "47.3",
           "webIntentPct": "0.0",
-          "qrScanPct": "47.4"
+          "qrScanPct": "52.7"
         },
         {
           "ovseId": "truscholar",
-          "total": 147,
-          "appIntent": 146,
+          "total": 164,
+          "appIntent": 161,
           "webIntent": 0,
-          "qrScan": 1,
-          "appIntentPct": "99.3",
+          "qrScan": 3,
+          "appIntentPct": "98.2",
           "webIntentPct": "0.0",
-          "qrScanPct": "0.7"
-        },
-        {
-          "ovseId": "surepass",
-          "total": 137,
-          "appIntent": 106,
-          "webIntent": 0,
-          "qrScan": 31,
-          "appIntentPct": "77.4",
-          "webIntentPct": "0.0",
-          "qrScanPct": "22.6"
+          "qrScanPct": "1.8"
         },
         {
           "ovseId": "urn:uidai:client:special-branch,-bihar-police:202610163901",
-          "total": 120,
+          "total": 116,
           "appIntent": 44,
           "webIntent": 0,
-          "qrScan": 76,
-          "appIntentPct": "36.7",
+          "qrScan": 72,
+          "appIntentPct": "37.9",
           "webIntentPct": "0.0",
-          "qrScanPct": "63.3"
-        },
-        {
-          "ovseId": "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
-          "total": 83,
-          "appIntent": 54,
-          "webIntent": 17,
-          "qrScan": 12,
-          "appIntentPct": "65.1",
-          "webIntentPct": "20.5",
-          "qrScanPct": "14.5"
-        },
-        {
-          "ovseId": "transaction_analysts",
-          "total": 82,
-          "appIntent": 48,
-          "webIntent": 0,
-          "qrScan": 34,
-          "appIntentPct": "58.5",
-          "webIntentPct": "0.0",
-          "qrScanPct": "41.5"
+          "qrScanPct": "62.1"
         },
         {
           "ovseId": "vsign",
-          "total": 72,
-          "appIntent": 57,
+          "total": 89,
+          "appIntent": 70,
           "webIntent": 0,
-          "qrScan": 15,
-          "appIntentPct": "79.2",
+          "qrScan": 19,
+          "appIntentPct": "78.7",
           "webIntentPct": "0.0",
-          "qrScanPct": "20.8"
-        },
-        {
-          "ovseId": "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
-          "total": 57,
-          "appIntent": 54,
-          "webIntent": 0,
-          "qrScan": 3,
-          "appIntentPct": "94.7",
-          "webIntentPct": "0.0",
-          "qrScanPct": "5.3"
-        },
-        {
-          "ovseId": "entityiq",
-          "total": 56,
-          "appIntent": 10,
-          "webIntent": 0,
-          "qrScan": 46,
-          "appIntentPct": "17.9",
-          "webIntentPct": "0.0",
-          "qrScanPct": "82.1"
+          "qrScanPct": "21.3"
         },
         {
           "ovseId": "evaluit",
-          "total": 51,
-          "appIntent": 7,
-          "webIntent": 36,
-          "qrScan": 8,
-          "appIntentPct": "13.7",
-          "webIntentPct": "70.6",
-          "qrScanPct": "15.7"
+          "total": 83,
+          "appIntent": 11,
+          "webIntent": 58,
+          "qrScan": 14,
+          "appIntentPct": "13.3",
+          "webIntentPct": "69.9",
+          "qrScanPct": "16.9"
+        },
+        {
+          "ovseId": "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
+          "total": 80,
+          "appIntent": 70,
+          "webIntent": 0,
+          "qrScan": 10,
+          "appIntentPct": "87.5",
+          "webIntentPct": "0.0",
+          "qrScanPct": "12.5"
         },
         {
           "ovseId": "cisf",
-          "total": 51,
-          "appIntent": 36,
+          "total": 79,
+          "appIntent": 52,
           "webIntent": 0,
-          "qrScan": 15,
-          "appIntentPct": "70.6",
+          "qrScan": 27,
+          "appIntentPct": "65.8",
           "webIntentPct": "0.0",
-          "qrScanPct": "29.4"
+          "qrScanPct": "34.2"
+        },
+        {
+          "ovseId": "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
+          "total": 78,
+          "appIntent": 53,
+          "webIntent": 13,
+          "qrScan": 12,
+          "appIntentPct": "67.9",
+          "webIntentPct": "16.7",
+          "qrScanPct": "15.4"
+        },
+        {
+          "ovseId": "transaction_analysts",
+          "total": 71,
+          "appIntent": 44,
+          "webIntent": 0,
+          "qrScan": 27,
+          "appIntentPct": "62.0",
+          "webIntentPct": "0.0",
+          "qrScanPct": "38.0"
         },
         {
           "ovseId": "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
-          "total": 46,
-          "appIntent": 9,
-          "webIntent": 28,
-          "qrScan": 9,
-          "appIntentPct": "19.6",
-          "webIntentPct": "60.9",
-          "qrScanPct": "19.6"
+          "total": 62,
+          "appIntent": 14,
+          "webIntent": 35,
+          "qrScan": 13,
+          "appIntentPct": "22.6",
+          "webIntentPct": "56.5",
+          "qrScanPct": "21.0"
+        },
+        {
+          "ovseId": "entityiq",
+          "total": 44,
+          "appIntent": 1,
+          "webIntent": 0,
+          "qrScan": 43,
+          "appIntentPct": "2.3",
+          "webIntentPct": "0.0",
+          "qrScanPct": "97.7"
         },
         {
           "ovseId": "000",
-          "total": 43,
-          "appIntent": 40,
+          "total": 40,
+          "appIntent": 38,
           "webIntent": 0,
-          "qrScan": 3,
-          "appIntentPct": "93.0",
+          "qrScan": 2,
+          "appIntentPct": "95.0",
           "webIntentPct": "0.0",
-          "qrScanPct": "7.0"
+          "qrScanPct": "5.0"
         },
         {
           "ovseId": "urn:uidai:client:ican-bpo-private-limited:202608272078",
-          "total": 41,
+          "total": 36,
           "appIntent": 21,
           "webIntent": 0,
-          "qrScan": 20,
-          "appIntentPct": "51.2",
+          "qrScan": 15,
+          "appIntentPct": "58.3",
           "webIntentPct": "0.0",
-          "qrScanPct": "48.8"
+          "qrScanPct": "41.7"
         },
         {
           "ovseId": "ebitaus",
-          "total": 32,
-          "appIntent": 27,
-          "webIntent": 0,
-          "qrScan": 5,
-          "appIntentPct": "84.4",
-          "webIntentPct": "0.0",
-          "qrScanPct": "15.6"
-        },
-        {
-          "ovseId": "urn:uidai:client:sahana-system-limited:202610095399",
           "total": 31,
-          "appIntent": 21,
-          "webIntent": 0,
-          "qrScan": 10,
-          "appIntentPct": "67.7",
-          "webIntentPct": "0.0",
-          "qrScanPct": "32.3"
-        },
-        {
-          "ovseId": "urn:uidai:client:mdindia-health-insurance-tpa-private-limited:202608143596",
-          "total": 28,
-          "appIntent": 25,
+          "appIntent": 28,
           "webIntent": 0,
           "qrScan": 3,
-          "appIntentPct": "89.3",
+          "appIntentPct": "90.3",
           "webIntentPct": "0.0",
-          "qrScanPct": "10.7"
-        },
-        {
-          "ovseId": "urn:uidai:client:nagaland-police:202610092803",
-          "total": 23,
-          "appIntent": 18,
-          "webIntent": 0,
-          "qrScan": 5,
-          "appIntentPct": "78.3",
-          "webIntentPct": "0.0",
-          "qrScanPct": "21.7"
-        },
-        {
-          "ovseId": "urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581",
-          "total": 21,
-          "appIntent": 18,
-          "webIntent": 3,
-          "qrScan": 0,
-          "appIntentPct": "85.7",
-          "webIntentPct": "14.3",
-          "qrScanPct": "0.0"
-        },
-        {
-          "ovseId": "ooru_digital",
-          "total": 20,
-          "appIntent": 5,
-          "webIntent": 0,
-          "qrScan": 15,
-          "appIntentPct": "25.0",
-          "webIntentPct": "0.0",
-          "qrScanPct": "75.0"
+          "qrScanPct": "9.7"
         },
         {
           "ovseId": "rjil",
-          "total": 18,
-          "appIntent": 18,
+          "total": 28,
+          "appIntent": 28,
           "webIntent": 0,
           "qrScan": 0,
           "appIntentPct": "100.0",
@@ -16359,37 +16485,137 @@ const BUNDLED_DATA = {
           "qrScanPct": "0.0"
         },
         {
-          "ovseId": "urn:uidai:client:oryggi-technologies-private-limited:202607288031",
-          "total": 15,
-          "appIntent": 7,
-          "webIntent": 1,
-          "qrScan": 7,
-          "appIntentPct": "46.7",
-          "webIntentPct": "6.7",
-          "qrScanPct": "46.7"
+          "ovseId": "urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581",
+          "total": 26,
+          "appIntent": 23,
+          "webIntent": 3,
+          "qrScan": 0,
+          "appIntentPct": "88.5",
+          "webIntentPct": "11.5",
+          "qrScanPct": "0.0"
+        },
+        {
+          "ovseId": "novelpatterns",
+          "total": 25,
+          "appIntent": 8,
+          "webIntent": 4,
+          "qrScan": 13,
+          "appIntentPct": "32.0",
+          "webIntentPct": "16.0",
+          "qrScanPct": "52.0"
         },
         {
           "ovseId": "urn:uidai:client:aparampaar-finance-private-limited:202605134450",
-          "total": 15,
+          "total": 23,
           "appIntent": 0,
-          "webIntent": 13,
+          "webIntent": 21,
           "qrScan": 2,
           "appIntentPct": "0.0",
-          "webIntentPct": "86.7",
-          "qrScanPct": "13.3"
+          "webIntentPct": "91.3",
+          "qrScanPct": "8.7"
+        },
+        {
+          "ovseId": "urn:uidai:client:sahana-system-limited:202610095399",
+          "total": 22,
+          "appIntent": 19,
+          "webIntent": 0,
+          "qrScan": 3,
+          "appIntentPct": "86.4",
+          "webIntentPct": "0.0",
+          "qrScanPct": "13.6"
+        },
+        {
+          "ovseId": "urn:uidai:client:intuitive-data-solutions-private-limited:202607237962",
+          "total": 20,
+          "appIntent": 19,
+          "webIntent": 0,
+          "qrScan": 1,
+          "appIntentPct": "95.0",
+          "webIntentPct": "0.0",
+          "qrScanPct": "5.0"
+        },
+        {
+          "ovseId": "urn:uidai:client:kendriya-vidyalaya-sangathan:202611171026",
+          "total": 19,
+          "appIntent": 0,
+          "webIntent": 0,
+          "qrScan": 19,
+          "appIntentPct": "0.0",
+          "webIntentPct": "0.0",
+          "qrScanPct": "100.0"
+        },
+        {
+          "ovseId": "ooru_digital",
+          "total": 19,
+          "appIntent": 5,
+          "webIntent": 0,
+          "qrScan": 14,
+          "appIntentPct": "26.3",
+          "webIntentPct": "0.0",
+          "qrScanPct": "73.7"
         },
         {
           "ovseId": "urn:uidai:client:perigeon-software-private-limited:202606041974",
-          "total": 13,
-          "appIntent": 12,
+          "total": 19,
+          "appIntent": 16,
           "webIntent": 0,
-          "qrScan": 1,
-          "appIntentPct": "92.3",
+          "qrScan": 3,
+          "appIntentPct": "84.2",
           "webIntentPct": "0.0",
-          "qrScanPct": "7.7"
+          "qrScanPct": "15.8"
         },
         {
-          "ovseId": "urn:uidai:client:assam-police:202606026852",
+          "ovseId": "tspolice",
+          "total": 17,
+          "appIntent": 6,
+          "webIntent": 2,
+          "qrScan": 9,
+          "appIntentPct": "35.3",
+          "webIntentPct": "11.8",
+          "qrScanPct": "52.9"
+        },
+        {
+          "ovseId": "urn:uidai:client:oryggi-technologies-private-limited:202607288031",
+          "total": 16,
+          "appIntent": 7,
+          "webIntent": 1,
+          "qrScan": 8,
+          "appIntentPct": "43.8",
+          "webIntentPct": "6.3",
+          "qrScanPct": "50.0"
+        },
+        {
+          "ovseId": "urn:uidai:client:mdindia-health-insurance-tpa-private-limited:202608143596",
+          "total": 14,
+          "appIntent": 13,
+          "webIntent": 0,
+          "qrScan": 1,
+          "appIntentPct": "92.9",
+          "webIntentPct": "0.0",
+          "qrScanPct": "7.1"
+        },
+        {
+          "ovseId": "apiclub",
+          "total": 13,
+          "appIntent": 6,
+          "webIntent": 0,
+          "qrScan": 7,
+          "appIntentPct": "46.2",
+          "webIntentPct": "0.0",
+          "qrScanPct": "53.8"
+        },
+        {
+          "ovseId": "urn:uidai:client:sai-roshni-capital-private-limited:202610275530",
+          "total": 13,
+          "appIntent": 8,
+          "webIntent": 5,
+          "qrScan": 0,
+          "appIntentPct": "61.5",
+          "webIntentPct": "38.5",
+          "qrScanPct": "0.0"
+        },
+        {
+          "ovseId": "mantra",
           "total": 12,
           "appIntent": 12,
           "webIntent": 0,
@@ -16397,16 +16623,6 @@ const BUNDLED_DATA = {
           "appIntentPct": "100.0",
           "webIntentPct": "0.0",
           "qrScanPct": "0.0"
-        },
-        {
-          "ovseId": "urn:uidai:client:intuitive-data-solutions-private-limited:202607237962",
-          "total": 12,
-          "appIntent": 11,
-          "webIntent": 0,
-          "qrScan": 1,
-          "appIntentPct": "91.7",
-          "webIntentPct": "0.0",
-          "qrScanPct": "8.3"
         },
         {
           "ovseId": "AF27680312",
@@ -16439,37 +16655,27 @@ const BUNDLED_DATA = {
           "qrScanPct": "22.2"
         },
         {
-          "ovseId": "urn:uidai:client:appexigo-technologies-private-limited:2028555185225206113",
+          "ovseId": "urn:uidai:client:earnest-data-analytics-private-limited:202609247533",
           "total": 9,
-          "appIntent": 0,
+          "appIntent": 9,
           "webIntent": 0,
-          "qrScan": 9,
-          "appIntentPct": "0.0",
+          "qrScan": 0,
+          "appIntentPct": "100.0",
           "webIntentPct": "0.0",
-          "qrScanPct": "100.0"
+          "qrScanPct": "0.0"
         },
         {
-          "ovseId": "urn:uidai:client:msqube-technology-solutions-private-limited:202611061651",
-          "total": 8,
-          "appIntent": 0,
+          "ovseId": "urn:uidai:client:nagaland-police:202610092803",
+          "total": 9,
+          "appIntent": 9,
           "webIntent": 0,
-          "qrScan": 8,
-          "appIntentPct": "0.0",
+          "qrScan": 0,
+          "appIntentPct": "100.0",
           "webIntentPct": "0.0",
-          "qrScanPct": "100.0"
+          "qrScanPct": "0.0"
         },
         {
-          "ovseId": "urn:uidai:client:evolute-fintech-innovations-private-limited:202608271911",
-          "total": 8,
-          "appIntent": 0,
-          "webIntent": 0,
-          "qrScan": 8,
-          "appIntentPct": "0.0",
-          "webIntentPct": "0.0",
-          "qrScanPct": "100.0"
-        },
-        {
-          "ovseId": "urn:uidai:client:sai-roshni-capital-private-limited:202610275530",
+          "ovseId": "urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049",
           "total": 8,
           "appIntent": 8,
           "webIntent": 0,
@@ -16479,19 +16685,9 @@ const BUNDLED_DATA = {
           "qrScanPct": "0.0"
         },
         {
-          "ovseId": "urn:uidai:client:startup-gurukul-innovation-private-limited:202610157376",
+          "ovseId": "urn:uidai:client:assam-police:202606026852",
           "total": 7,
-          "appIntent": 6,
-          "webIntent": 1,
-          "qrScan": 0,
-          "appIntentPct": "85.7",
-          "webIntentPct": "14.3",
-          "qrScanPct": "0.0"
-        },
-        {
-          "ovseId": "isolve",
-          "total": 6,
-          "appIntent": 6,
+          "appIntent": 7,
           "webIntent": 0,
           "qrScan": 0,
           "appIntentPct": "100.0",
@@ -16499,7 +16695,7 @@ const BUNDLED_DATA = {
           "qrScanPct": "0.0"
         },
         {
-          "ovseId": "urn:uidai:client:bses-rajdhani-power-limited:202609164125",
+          "ovseId": "urn:uidai:client:appexigo-technologies-private-limited:2028555185225206113",
           "total": 6,
           "appIntent": 0,
           "webIntent": 0,
@@ -16509,7 +16705,7 @@ const BUNDLED_DATA = {
           "qrScanPct": "100.0"
         },
         {
-          "ovseId": "urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049",
+          "ovseId": "isolve",
           "total": 6,
           "appIntent": 6,
           "webIntent": 0,
@@ -16529,57 +16725,27 @@ const BUNDLED_DATA = {
           "qrScanPct": "16.7"
         },
         {
-          "ovseId": "tspolice",
+          "ovseId": "decentro",
           "total": 6,
-          "appIntent": 4,
+          "appIntent": 1,
           "webIntent": 0,
-          "qrScan": 2,
-          "appIntentPct": "66.7",
+          "qrScan": 5,
+          "appIntentPct": "16.7",
           "webIntentPct": "0.0",
-          "qrScanPct": "33.3"
+          "qrScanPct": "83.3"
         },
         {
-          "ovseId": "apiclub",
+          "ovseId": "urn:uidai:client:startup-gurukul-innovation-private-limited:202610157376",
           "total": 6,
           "appIntent": 5,
-          "webIntent": 0,
-          "qrScan": 1,
+          "webIntent": 1,
+          "qrScan": 0,
           "appIntentPct": "83.3",
-          "webIntentPct": "0.0",
-          "qrScanPct": "16.7"
-        },
-        {
-          "ovseId": "mantra",
-          "total": 5,
-          "appIntent": 5,
-          "webIntent": 0,
-          "qrScan": 0,
-          "appIntentPct": "100.0",
-          "webIntentPct": "0.0",
+          "webIntentPct": "16.7",
           "qrScanPct": "0.0"
         },
         {
-          "ovseId": "urn:uidai:client:centre-for-good-governance:202609037683",
-          "total": 4,
-          "appIntent": 4,
-          "webIntent": 0,
-          "qrScan": 0,
-          "appIntentPct": "100.0",
-          "webIntentPct": "0.0",
-          "qrScanPct": "0.0"
-        },
-        {
-          "ovseId": "as4",
-          "total": 4,
-          "appIntent": 0,
-          "webIntent": 0,
-          "qrScan": 4,
-          "appIntentPct": "0.0",
-          "webIntentPct": "0.0",
-          "qrScanPct": "100.0"
-        },
-        {
-          "ovseId": "urn:uidai:client:hp-marketing-board:202611045503",
+          "ovseId": "urn:uidai:client:evolute-fintech-innovations-private-limited:202608271911",
           "total": 4,
           "appIntent": 0,
           "webIntent": 0,
@@ -16599,7 +16765,7 @@ const BUNDLED_DATA = {
           "qrScanPct": "100.0"
         },
         {
-          "ovseId": "urn:uidai:client:caratred-technologies-llp:202606040096",
+          "ovseId": "fastkyc",
           "total": 4,
           "appIntent": 4,
           "webIntent": 0,
@@ -16609,14 +16775,14 @@ const BUNDLED_DATA = {
           "qrScanPct": "0.0"
         },
         {
-          "ovseId": "digio",
-          "total": 3,
+          "ovseId": "signcare",
+          "total": 4,
           "appIntent": 0,
-          "webIntent": 0,
-          "qrScan": 3,
+          "webIntent": 4,
+          "qrScan": 0,
           "appIntentPct": "0.0",
-          "webIntentPct": "0.0",
-          "qrScanPct": "100.0"
+          "webIntentPct": "100.0",
+          "qrScanPct": "0.0"
         },
         {
           "ovseId": "urn:uidai:client:directorate-of-land-records:202607304388",
@@ -16639,6 +16805,26 @@ const BUNDLED_DATA = {
           "qrScanPct": "0.0"
         },
         {
+          "ovseId": "urn:uidai:client:doklink-services-private-limited:202609249932",
+          "total": 3,
+          "appIntent": 3,
+          "webIntent": 0,
+          "qrScan": 0,
+          "appIntentPct": "100.0",
+          "webIntentPct": "0.0",
+          "qrScanPct": "0.0"
+        },
+        {
+          "ovseId": "documint",
+          "total": 3,
+          "appIntent": 0,
+          "webIntent": 3,
+          "qrScan": 0,
+          "appIntentPct": "0.0",
+          "webIntentPct": "100.0",
+          "qrScanPct": "0.0"
+        },
+        {
           "ovseId": "bfhl",
           "total": 3,
           "appIntent": 2,
@@ -16649,17 +16835,27 @@ const BUNDLED_DATA = {
           "qrScanPct": "33.3"
         },
         {
-          "ovseId": "decentro",
+          "ovseId": "perfios",
           "total": 3,
-          "appIntent": 1,
+          "appIntent": 0,
           "webIntent": 0,
-          "qrScan": 2,
-          "appIntentPct": "33.3",
+          "qrScan": 3,
+          "appIntentPct": "0.0",
           "webIntentPct": "0.0",
-          "qrScanPct": "66.7"
+          "qrScanPct": "100.0"
         },
         {
-          "ovseId": "perfios",
+          "ovseId": "urn:uidai:client:3i-consulting-private-limited:202608031319",
+          "total": 3,
+          "appIntent": 3,
+          "webIntent": 0,
+          "qrScan": 0,
+          "appIntentPct": "100.0",
+          "webIntentPct": "0.0",
+          "qrScanPct": "0.0"
+        },
+        {
+          "ovseId": "signzytech",
           "total": 3,
           "appIntent": 0,
           "webIntent": 0,
@@ -16679,16 +16875,6 @@ const BUNDLED_DATA = {
           "qrScanPct": "66.7"
         },
         {
-          "ovseId": "sedax",
-          "total": 3,
-          "appIntent": 2,
-          "webIntent": 0,
-          "qrScan": 1,
-          "appIntentPct": "66.7",
-          "webIntentPct": "0.0",
-          "qrScanPct": "33.3"
-        },
-        {
           "ovseId": "urn:uidai:client:appexigo-technologies-private-limited:202606106113",
           "total": 2,
           "appIntent": 0,
@@ -16697,16 +16883,6 @@ const BUNDLED_DATA = {
           "appIntentPct": "0.0",
           "webIntentPct": "0.0",
           "qrScanPct": "100.0"
-        },
-        {
-          "ovseId": "urn:uidai:client:doklink-services-private-limited:202609249932",
-          "total": 2,
-          "appIntent": 2,
-          "webIntent": 0,
-          "qrScan": 0,
-          "appIntentPct": "100.0",
-          "webIntentPct": "0.0",
-          "qrScanPct": "0.0"
         },
         {
           "ovseId": "urn:uidai:client:syncro1-private-limited:202611175462",
@@ -16719,17 +16895,7 @@ const BUNDLED_DATA = {
           "qrScanPct": "100.0"
         },
         {
-          "ovseId": "novelpatterns",
-          "total": 2,
-          "appIntent": 1,
-          "webIntent": 1,
-          "qrScan": 0,
-          "appIntentPct": "50.0",
-          "webIntentPct": "50.0",
-          "qrScanPct": "0.0"
-        },
-        {
-          "ovseId": "signcare",
+          "ovseId": "urn:uidai:client:finanalyz-technologies-private-limited:202606306133",
           "total": 2,
           "appIntent": 0,
           "webIntent": 2,
@@ -16739,7 +16905,7 @@ const BUNDLED_DATA = {
           "qrScanPct": "0.0"
         },
         {
-          "ovseId": "fastkyc",
+          "ovseId": "urn:uidai:client:caratred-technologies-llp:202606040096",
           "total": 2,
           "appIntent": 2,
           "webIntent": 0,
@@ -16747,6 +16913,26 @@ const BUNDLED_DATA = {
           "appIntentPct": "100.0",
           "webIntentPct": "0.0",
           "qrScanPct": "0.0"
+        },
+        {
+          "ovseId": "urn:uidai:client:centre-for-good-governance:202609037683",
+          "total": 2,
+          "appIntent": 2,
+          "webIntent": 0,
+          "qrScan": 0,
+          "appIntentPct": "100.0",
+          "webIntentPct": "0.0",
+          "qrScanPct": "0.0"
+        },
+        {
+          "ovseId": "urn:uidai:client:hp-marketing-board:202611045503",
+          "total": 1,
+          "appIntent": 0,
+          "webIntent": 0,
+          "qrScan": 1,
+          "appIntentPct": "0.0",
+          "webIntentPct": "0.0",
+          "qrScanPct": "100.0"
         },
         {
           "ovseId": "urn:uidai:client:rurtech-for-arayans-llp:202611039670",
@@ -16759,7 +16945,57 @@ const BUNDLED_DATA = {
           "qrScanPct": "0.0"
         },
         {
-          "ovseId": "urn:uidai:client:shri-trimbakeshwar-devasthan-trust:202607072068",
+          "ovseId": "any2paytpl",
+          "total": 1,
+          "appIntent": 0,
+          "webIntent": 0,
+          "qrScan": 1,
+          "appIntentPct": "0.0",
+          "webIntentPct": "0.0",
+          "qrScanPct": "100.0"
+        },
+        {
+          "ovseId": "1a2f",
+          "total": 1,
+          "appIntent": 0,
+          "webIntent": 0,
+          "qrScan": 1,
+          "appIntentPct": "0.0",
+          "webIntentPct": "0.0",
+          "qrScanPct": "100.0"
+        },
+        {
+          "ovseId": "urn:uidai:client:msqube-technology-solutions-private-limited:202611061651",
+          "total": 1,
+          "appIntent": 0,
+          "webIntent": 0,
+          "qrScan": 1,
+          "appIntentPct": "0.0",
+          "webIntentPct": "0.0",
+          "qrScanPct": "100.0"
+        },
+        {
+          "ovseId": "sedax",
+          "total": 1,
+          "appIntent": 1,
+          "webIntent": 0,
+          "qrScan": 0,
+          "appIntentPct": "100.0",
+          "webIntentPct": "0.0",
+          "qrScanPct": "0.0"
+        },
+        {
+          "ovseId": "urn:uidai:client:fr8-india-private-limited:202609177281",
+          "total": 1,
+          "appIntent": 1,
+          "webIntent": 0,
+          "qrScan": 0,
+          "appIntentPct": "100.0",
+          "webIntentPct": "0.0",
+          "qrScanPct": "0.0"
+        },
+        {
+          "ovseId": "urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204",
           "total": 1,
           "appIntent": 0,
           "webIntent": 0,
@@ -16777,26 +17013,6 @@ const BUNDLED_DATA = {
           "appIntentPct": "0.0",
           "webIntentPct": "100.0",
           "qrScanPct": "0.0"
-        },
-        {
-          "ovseId": "signzytech",
-          "total": 1,
-          "appIntent": 0,
-          "webIntent": 0,
-          "qrScan": 1,
-          "appIntentPct": "0.0",
-          "webIntentPct": "0.0",
-          "qrScanPct": "100.0"
-        },
-        {
-          "ovseId": "urn:uidai:client:fr8-india-private-limited:202609177281",
-          "total": 1,
-          "appIntent": 1,
-          "webIntent": 0,
-          "qrScan": 0,
-          "appIntentPct": "100.0",
-          "webIntentPct": "0.0",
-          "qrScanPct": "0.0"
         }
       ]
     },
@@ -16804,44 +17020,36 @@ const BUNDLED_DATA = {
       {
         "channel": "APP_INTENT",
         "displayName": "App-to-App (App Intent)",
-        "overallCount": 6898976,
-        "overallPct": "90.84",
-        "weeklyCount": 150883,
-        "weeklyPct": "93.60",
-        "weeklyShareOfLifetime": "2.19",
-        "pctPointDelta": "2.75"
+        "overallCount": 6941200,
+        "overallPct": "90.85",
+        "weeklyCount": 169285,
+        "weeklyPct": "93.52",
+        "weeklyShareOfLifetime": "2.44",
+        "pctPointDelta": "2.67"
       },
       {
         "channel": "QR_SCAN",
         "displayName": "Cross-Device QR (QR Scan)",
-        "overallCount": 617138,
-        "overallPct": "8.13",
-        "weeklyCount": 4381,
-        "weeklyPct": "2.72",
-        "weeklyShareOfLifetime": "0.71",
-        "pctPointDelta": "-5.41"
+        "overallCount": 619126,
+        "overallPct": "8.10",
+        "weeklyCount": 5253,
+        "weeklyPct": "2.90",
+        "weeklyShareOfLifetime": "0.85",
+        "pctPointDelta": "-5.20"
       },
       {
         "channel": "WEB_INTENT",
         "displayName": "Web-to-App (Web Intent)",
-        "overallCount": 78144,
-        "overallPct": "1.03",
-        "weeklyCount": 5937,
-        "weeklyPct": "3.68",
-        "weeklyShareOfLifetime": "7.60",
-        "pctPointDelta": "2.65"
+        "overallCount": 79649,
+        "overallPct": "1.04",
+        "weeklyCount": 6479,
+        "weeklyPct": "3.58",
+        "weeklyShareOfLifetime": "8.13",
+        "pctPointDelta": "2.54"
       }
     ]
   },
   "dailyTrend": [
-    {
-      "date": "27/10/2026",
-      "total": 26628
-    },
-    {
-      "date": "28/10/2026",
-      "total": 26122
-    },
     {
       "date": "29/10/2026",
       "total": 25977
@@ -16952,7 +17160,15 @@ const BUNDLED_DATA = {
     },
     {
       "date": "25/11/2026",
-      "total": 10280
+      "total": 29468
+    },
+    {
+      "date": "26/11/2026",
+      "total": 26528
+    },
+    {
+      "date": "27/11/2026",
+      "total": 1
     }
   ],
   "monthlyTrend": [
@@ -17164,25 +17380,25 @@ const BUNDLED_DATA = {
     {
       "monthKey": "2026-11",
       "label": "Nov 2026",
-      "totalTx": 552098,
-      "successTx": 497221,
-      "failureTx": 54877,
-      "errorCount": 54885,
+      "totalTx": 597815,
+      "successTx": 535958,
+      "failureTx": 61857,
+      "errorCount": 61866,
       "errorCategories": {
-        "User Consent Denial": 25022,
-        "Biometric Face Auth Failure": 18408,
-        "Network / Connectivity Timeout": 5505,
-        "Cryptographic / Security Error": 5843,
+        "User Consent Denial": 27897,
+        "Biometric Face Auth Failure": 21068,
+        "Network / Connectivity Timeout": 6466,
+        "Cryptographic / Security Error": 6327,
         "System / Payload Processing": 99,
-        "Generic Timeout / Client Drop": 8
+        "Generic Timeout / Client Drop": 9
       },
-      "appIntent": 516269,
-      "webIntent": 21293,
-      "qrScan": 14536,
-      "activeEntities": 110,
-      "successRate": 90.06,
-      "failureRate": 9.94,
-      "errorRate": 9.94
+      "appIntent": 558493,
+      "webIntent": 22798,
+      "qrScan": 16524,
+      "activeEntities": 113,
+      "successRate": 89.65,
+      "failureRate": 10.35,
+      "errorRate": 10.35
     }
   ],
   "rawRecords": [
@@ -18516,6 +18732,14 @@ const BUNDLED_DATA = {
     ],
     [
       "",
+      "SelectiveShare",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      19341
+    ],
+    [
+      "",
       "000",
       "29/6/2026",
       "y",
@@ -18569,6 +18793,14 @@ const BUNDLED_DATA = {
       "y",
       "APP_INTENT",
       19100
+    ],
+    [
+      "",
+      "SelectiveShare",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      19097
     ],
     [
       "",
@@ -19305,14 +19537,6 @@ const BUNDLED_DATA = {
       "y",
       "APP_INTENT",
       8680
-    ],
-    [
-      "",
-      "SelectiveShare",
-      "25/11/2026",
-      "y",
-      "APP_INTENT",
-      8654
     ],
     [
       "",
@@ -21332,6 +21556,14 @@ const BUNDLED_DATA = {
     ],
     [
       "",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      1367
+    ],
+    [
+      "",
       "urbancompany",
       "24/10/2026",
       "y",
@@ -21652,6 +21884,14 @@ const BUNDLED_DATA = {
     ],
     [
       "",
+      "urbancompany",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      1196
+    ],
+    [
+      "",
       "tspolice",
       "31/8/2026",
       "y",
@@ -21721,6 +21961,14 @@ const BUNDLED_DATA = {
       "y",
       "APP_INTENT",
       1137
+    ],
+    [
+      "",
+      "urbancompany",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      1126
     ],
     [
       "",
@@ -22787,6 +23035,14 @@ const BUNDLED_DATA = {
       751
     ],
     [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      751
+    ],
+    [
       "",
       "protean",
       "12/10/2026",
@@ -23084,6 +23340,14 @@ const BUNDLED_DATA = {
     ],
     [
       "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      668
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
       "urbancompany",
       "20/11/2026",
       "n",
@@ -23217,6 +23481,14 @@ const BUNDLED_DATA = {
       "y",
       "APP_INTENT",
       637
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urbancompany",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      635
     ],
     [
       "",
@@ -23385,6 +23657,14 @@ const BUNDLED_DATA = {
       "y",
       "WEB_INTENT",
       594
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urbancompany",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      590
     ],
     [
       "SDJWT_USER_DENIED_CONSENT",
@@ -23800,6 +24080,14 @@ const BUNDLED_DATA = {
       "17/9/2026",
       "n",
       "APP_INTENT",
+      496
+    ],
+    [
+      "",
+      "protean",
+      "25/11/2026",
+      "y",
+      "WEB_INTENT",
       496
     ],
     [
@@ -24651,6 +24939,14 @@ const BUNDLED_DATA = {
       401
     ],
     [
+      "",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      401
+    ],
+    [
       "SDJWT_USER_DENIED_CONSENT",
       "urbancompany",
       "4/9/2026",
@@ -24883,6 +25179,14 @@ const BUNDLED_DATA = {
       382
     ],
     [
+      "",
+      "protean",
+      "26/11/2026",
+      "y",
+      "WEB_INTENT",
+      382
+    ],
+    [
       "0",
       "000",
       "15/6/2026",
@@ -24926,6 +25230,14 @@ const BUNDLED_DATA = {
       "SDJWT_FACEAUTH_FAILED_731",
       "urbancompany",
       "30/9/2026",
+      "n",
+      "APP_INTENT",
+      377
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "25/11/2026",
       "n",
       "APP_INTENT",
       377
@@ -26059,14 +26371,6 @@ const BUNDLED_DATA = {
       304
     ],
     [
-      "",
-      "protean",
-      "25/11/2026",
-      "y",
-      "WEB_INTENT",
-      304
-    ],
-    [
       "INVALID_JWT",
       "tspolice",
       "26/9/2026",
@@ -26899,6 +27203,14 @@ const BUNDLED_DATA = {
       251
     ],
     [
+      "",
+      "procam",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      251
+    ],
+    [
       "SDJWT_CALLBACK_NETWORK_ERROR",
       "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
       "26/10/2026",
@@ -26928,6 +27240,14 @@ const BUNDLED_DATA = {
       "20/11/2026",
       "y",
       "APP_INTENT",
+      249
+    ],
+    [
+      "",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "25/11/2026",
+      "y",
+      "QR_SCAN",
       249
     ],
     [
@@ -27075,6 +27395,14 @@ const BUNDLED_DATA = {
       243
     ],
     [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      243
+    ],
+    [
       "",
       "tnmc",
       "11/8/2026",
@@ -27139,6 +27467,14 @@ const BUNDLED_DATA = {
       241
     ],
     [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      241
+    ],
+    [
       "SDJWT_FACEAUTH_FAILED_304",
       "tspolice",
       "22/8/2026",
@@ -27198,6 +27534,14 @@ const BUNDLED_DATA = {
       "",
       "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
       "30/10/2026",
+      "y",
+      "APP_INTENT",
+      239
+    ],
+    [
+      "",
+      "dexit",
+      "26/11/2026",
       "y",
       "APP_INTENT",
       239
@@ -28259,6 +28603,14 @@ const BUNDLED_DATA = {
       207
     ],
     [
+      "",
+      "dexit",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      207
+    ],
+    [
       "SDJWT_CALLBACK_NETWORK_ERROR",
       "tspolice",
       "27/8/2026",
@@ -28302,6 +28654,14 @@ const BUNDLED_DATA = {
       "SDJWT_FACEAUTH_FAILED_304",
       "tspolice",
       "27/8/2026",
+      "n",
+      "APP_INTENT",
+      205
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urbancompany",
+      "26/11/2026",
       "n",
       "APP_INTENT",
       205
@@ -28755,6 +29115,14 @@ const BUNDLED_DATA = {
       195
     ],
     [
+      "",
+      "procam",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      195
+    ],
+    [
       "731",
       "urbancompany",
       "24/6/2026",
@@ -29153,6 +29521,14 @@ const BUNDLED_DATA = {
       "y",
       "APP_INTENT",
       185
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urbancompany",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      184
     ],
     [
       "",
@@ -29619,6 +29995,14 @@ const BUNDLED_DATA = {
       174
     ],
     [
+      "",
+      "urn:uidai:client:instantpay-india-limited:202606250788",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      174
+    ],
+    [
       "SDJWT_FACEAUTH_FAILED_731",
       "urbancompany",
       "13/7/2026",
@@ -30075,6 +30459,14 @@ const BUNDLED_DATA = {
       166
     ],
     [
+      "",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "25/11/2026",
+      "y",
+      "WEB_INTENT",
+      166
+    ],
+    [
       "731",
       "(Blank / Unknown)",
       "1/6/2026",
@@ -30310,6 +30702,22 @@ const BUNDLED_DATA = {
       "",
       "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
       "1/11/2026",
+      "y",
+      "APP_INTENT",
+      162
+    ],
+    [
+      "",
+      "gridlines",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      162
+    ],
+    [
+      "",
+      "surepass",
+      "26/11/2026",
       "y",
       "APP_INTENT",
       162
@@ -30739,14 +31147,6 @@ const BUNDLED_DATA = {
       154
     ],
     [
-      "",
-      "urbancompany",
-      "25/11/2026",
-      "y",
-      "APP_INTENT",
-      154
-    ],
-    [
       "SDJWT_FACEAUTH_FAILED_304",
       "procam",
       "23/7/2026",
@@ -30790,6 +31190,14 @@ const BUNDLED_DATA = {
       "",
       "gridlines",
       "3/11/2026",
+      "y",
+      "APP_INTENT",
+      153
+    ],
+    [
+      "",
+      "tnmc",
+      "25/11/2026",
       "y",
       "APP_INTENT",
       153
@@ -31187,6 +31595,14 @@ const BUNDLED_DATA = {
       148
     ],
     [
+      "",
+      "gridlines",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      148
+    ],
+    [
       "SDJWT_USER_DENIED_CONSENT",
       "tspolice",
       "8/9/2026",
@@ -31499,6 +31915,14 @@ const BUNDLED_DATA = {
       143
     ],
     [
+      "",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      143
+    ],
+    [
       "731",
       "(Blank / Unknown)",
       "23/5/2026",
@@ -31758,6 +32182,14 @@ const BUNDLED_DATA = {
       "SDJWT_FACEAUTH_FAILED_731",
       "urbancompany",
       "5/11/2026",
+      "n",
+      "APP_INTENT",
+      139
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
+      "25/11/2026",
       "n",
       "APP_INTENT",
       139
@@ -33115,6 +33547,14 @@ const BUNDLED_DATA = {
       123
     ],
     [
+      "",
+      "urn:uidai:client:instantpay-india-limited:202606250788",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      123
+    ],
+    [
       "SDJWT_CALLBACK_NETWORK_ERROR",
       "gridlines",
       "29/9/2026",
@@ -33771,6 +34211,14 @@ const BUNDLED_DATA = {
       116
     ],
     [
+      "",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "26/11/2026",
+      "y",
+      "WEB_INTENT",
+      116
+    ],
+    [
       "SDJWT_USER_DENIED_CONSENT",
       "0",
       "23/5/2026",
@@ -34371,6 +34819,14 @@ const BUNDLED_DATA = {
       110
     ],
     [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      110
+    ],
+    [
       "0",
       "0",
       "26/5/2026",
@@ -34939,14 +35395,6 @@ const BUNDLED_DATA = {
       105
     ],
     [
-      "",
-      "procam",
-      "25/11/2026",
-      "y",
-      "APP_INTENT",
-      105
-    ],
-    [
       "SDJWT_FACEAUTH_FAILED_731",
       "urbancompany",
       "20/10/2026",
@@ -35112,6 +35560,14 @@ const BUNDLED_DATA = {
       "16/11/2026",
       "y",
       "QR_SCAN",
+      103
+    ],
+    [
+      "",
+      "tnmc",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
       103
     ],
     [
@@ -35667,6 +36123,14 @@ const BUNDLED_DATA = {
       99
     ],
     [
+      "",
+      "surepass",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      99
+    ],
+    [
       "SDJWT_FACEAUTH_FAILED",
       "tnmc",
       "11/6/2026",
@@ -35955,6 +36419,14 @@ const BUNDLED_DATA = {
       96
     ],
     [
+      "",
+      "trustt",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      96
+    ],
+    [
       "SDJWT_FACEAUTH_FAILED_304",
       "procam",
       "31/7/2026",
@@ -36096,6 +36568,14 @@ const BUNDLED_DATA = {
       "12/11/2026",
       "y",
       "WEB_INTENT",
+      95
+    ],
+    [
+      "",
+      "urn:uidai:client:inferalgo-private-limited:202607177737",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
       95
     ],
     [
@@ -36403,6 +36883,14 @@ const BUNDLED_DATA = {
       93
     ],
     [
+      "",
+      "tnmc",
+      "25/11/2026",
+      "y",
+      "QR_SCAN",
+      93
+    ],
+    [
       "731",
       "0",
       "13/5/2026",
@@ -36608,6 +37096,22 @@ const BUNDLED_DATA = {
       "2/11/2026",
       "y",
       "APP_INTENT",
+      92
+    ],
+    [
+      "",
+      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      92
+    ],
+    [
+      "",
+      "trustt",
+      "25/11/2026",
+      "y",
+      "WEB_INTENT",
       92
     ],
     [
@@ -36915,6 +37419,14 @@ const BUNDLED_DATA = {
       90
     ],
     [
+      "",
+      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
+      "25/11/2026",
+      "y",
+      "QR_SCAN",
+      90
+    ],
+    [
       "731",
       "(Blank / Unknown)",
       "9/5/2026",
@@ -37094,6 +37606,14 @@ const BUNDLED_DATA = {
       "",
       "procam",
       "13/11/2026",
+      "y",
+      "APP_INTENT",
+      89
+    ],
+    [
+      "",
+      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
+      "26/11/2026",
       "y",
       "APP_INTENT",
       89
@@ -38099,6 +38619,22 @@ const BUNDLED_DATA = {
       82
     ],
     [
+      "",
+      "procam",
+      "25/11/2026",
+      "y",
+      "QR_SCAN",
+      82
+    ],
+    [
+      "",
+      "trustt",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      82
+    ],
+    [
       "SDJWT_USER_DENIED_CONSENT",
       "0",
       "30/5/2026",
@@ -38499,6 +39035,14 @@ const BUNDLED_DATA = {
       80
     ],
     [
+      "",
+      "urn:uidai:client:punjab-school-educationboard:202608274954",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      80
+    ],
+    [
       "731",
       "gridlines",
       "29/6/2026",
@@ -38779,9 +39323,9 @@ const BUNDLED_DATA = {
       78
     ],
     [
-      "SDJWT_USER_DENIED_CONSENT",
-      "urbancompany",
-      "25/11/2026",
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
+      "26/11/2026",
       "n",
       "APP_INTENT",
       78
@@ -39163,14 +39707,6 @@ const BUNDLED_DATA = {
       76
     ],
     [
-      "SDJWT_CALLBACK_NETWORK_ERROR",
-      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
-      "25/11/2026",
-      "n",
-      "APP_INTENT",
-      76
-    ],
-    [
       "",
       "tnmc",
       "7/8/2026",
@@ -39432,6 +39968,14 @@ const BUNDLED_DATA = {
       "24/11/2026",
       "y",
       "APP_INTENT",
+      75
+    ],
+    [
+      "",
+      "gridlines",
+      "26/11/2026",
+      "y",
+      "WEB_INTENT",
       75
     ],
     [
@@ -39723,6 +40267,14 @@ const BUNDLED_DATA = {
       74
     ],
     [
+      "",
+      "arattai",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      74
+    ],
+    [
       "INVALID_JWT",
       "urbancompany",
       "12/8/2026",
@@ -39832,6 +40384,14 @@ const BUNDLED_DATA = {
       "17/11/2026",
       "n",
       "WEB_INTENT",
+      73
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "dexit",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
       73
     ],
     [
@@ -40075,6 +40635,14 @@ const BUNDLED_DATA = {
       72
     ],
     [
+      "",
+      "tnmc",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      72
+    ],
+    [
       "731",
       "0",
       "7/5/2026",
@@ -40238,6 +40806,14 @@ const BUNDLED_DATA = {
       "SDJWT_FACEAUTH_FAILED_731",
       "dexit",
       "12/11/2026",
+      "n",
+      "APP_INTENT",
+      71
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "gridlines",
+      "25/11/2026",
       "n",
       "APP_INTENT",
       71
@@ -40547,6 +41123,14 @@ const BUNDLED_DATA = {
       70
     ],
     [
+      "",
+      "trustt",
+      "26/11/2026",
+      "y",
+      "WEB_INTENT",
+      70
+    ],
+    [
       "731",
       "0",
       "5/5/2026",
@@ -40742,6 +41326,14 @@ const BUNDLED_DATA = {
       "",
       "trustt",
       "18/11/2026",
+      "y",
+      "APP_INTENT",
+      69
+    ],
+    [
+      "",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "25/11/2026",
       "y",
       "APP_INTENT",
       69
@@ -41211,6 +41803,14 @@ const BUNDLED_DATA = {
       67
     ],
     [
+      "",
+      "arattai",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      67
+    ],
+    [
       "SDJWT_USER_DENIED_CONSENT",
       "0",
       "12/5/2026",
@@ -41435,6 +42035,14 @@ const BUNDLED_DATA = {
       66
     ],
     [
+      "",
+      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      66
+    ],
+    [
       "SDJWT_USER_DENIED_CONSENT",
       "(Blank / Unknown)",
       "14/5/2026",
@@ -41566,6 +42174,30 @@ const BUNDLED_DATA = {
       "SDJWT_FACEAUTH_FAILED_731",
       "dexit",
       "2/11/2026",
+      "n",
+      "APP_INTENT",
+      65
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "procam",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      65
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "dexit",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      65
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "surepass",
+      "26/11/2026",
       "n",
       "APP_INTENT",
       65
@@ -41891,14 +42523,6 @@ const BUNDLED_DATA = {
       64
     ],
     [
-      "",
-      "tnmc",
-      "25/11/2026",
-      "y",
-      "APP_INTENT",
-      64
-    ],
-    [
       "SDJWT_CALLBACK_NETWORK_ERROR",
       "(Blank / Unknown)",
       "29/5/2026",
@@ -42120,6 +42744,14 @@ const BUNDLED_DATA = {
       "20/11/2026",
       "y",
       "QR_SCAN",
+      63
+    ],
+    [
+      "",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
       63
     ],
     [
@@ -42867,6 +43499,14 @@ const BUNDLED_DATA = {
       60
     ],
     [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "gridlines",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      60
+    ],
+    [
       "",
       "(Blank / Unknown)",
       "17/5/2026",
@@ -43019,14 +43659,6 @@ const BUNDLED_DATA = {
       60
     ],
     [
-      "",
-      "dexit",
-      "25/11/2026",
-      "y",
-      "APP_INTENT",
-      60
-    ],
-    [
       "SDJWT_USER_DENIED_CONSENT",
       "(Blank / Unknown)",
       "12/5/2026",
@@ -43171,14 +43803,6 @@ const BUNDLED_DATA = {
       59
     ],
     [
-      "SDJWT_FACEAUTH_FAILED_731",
-      "urbancompany",
-      "25/11/2026",
-      "n",
-      "APP_INTENT",
-      59
-    ],
-    [
       "",
       "truscholar",
       "11/7/2026",
@@ -43232,6 +43856,14 @@ const BUNDLED_DATA = {
       "19/11/2026",
       "y",
       "QR_SCAN",
+      59
+    ],
+    [
+      "",
+      "urn:uidai:client:inferalgo-private-limited:202607177737",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
       59
     ],
     [
@@ -44187,6 +44819,14 @@ const BUNDLED_DATA = {
       56
     ],
     [
+      "",
+      "urn:uidai:client:hindon-mercantile-limited:202608105382",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      56
+    ],
+    [
       "SDJWT_FACEAUTH_FAILED",
       "tnmc",
       "5/5/2026",
@@ -44651,6 +45291,14 @@ const BUNDLED_DATA = {
       54
     ],
     [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "tnmc",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      54
+    ],
+    [
       "",
       "(Blank / Unknown)",
       "22/5/2026",
@@ -44926,6 +45574,22 @@ const BUNDLED_DATA = {
       "INVALID_JWT",
       "dexit",
       "24/11/2026",
+      "n",
+      "QR_SCAN",
+      53
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      53
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "25/11/2026",
       "n",
       "QR_SCAN",
       53
@@ -45435,6 +46099,14 @@ const BUNDLED_DATA = {
       52
     ],
     [
+      "",
+      "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      52
+    ],
+    [
       "731",
       "0",
       "1/5/2026",
@@ -45747,6 +46419,14 @@ const BUNDLED_DATA = {
       51
     ],
     [
+      "",
+      "urn:uidai:client:hindon-mercantile-limited:202608105382",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      51
+    ],
+    [
       "SDJWT_USER_DENIED_CONSENT",
       "(Blank / Unknown)",
       "7/5/2026",
@@ -46032,6 +46712,30 @@ const BUNDLED_DATA = {
       "22/11/2026",
       "n",
       "APP_INTENT",
+      50
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      50
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "trustt",
+      "25/11/2026",
+      "n",
+      "WEB_INTENT",
+      50
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "25/11/2026",
+      "n",
+      "WEB_INTENT",
       50
     ],
     [
@@ -46483,14 +47187,6 @@ const BUNDLED_DATA = {
       49
     ],
     [
-      "",
-      "urn:uidai:client:instantpay-india-limited:202606250788",
-      "25/11/2026",
-      "y",
-      "APP_INTENT",
-      49
-    ],
-    [
       "SDJWT_USER_DENIED_CONSENT",
       "(Blank / Unknown)",
       "8/5/2026",
@@ -46766,6 +47462,14 @@ const BUNDLED_DATA = {
       "SDJWT_FACEAUTH_FAILED_731",
       "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
       "23/11/2026",
+      "n",
+      "WEB_INTENT",
+      48
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "25/11/2026",
       "n",
       "WEB_INTENT",
       48
@@ -47179,6 +47883,14 @@ const BUNDLED_DATA = {
       47
     ],
     [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "26/11/2026",
+      "n",
+      "WEB_INTENT",
+      47
+    ],
+    [
       "",
       "(Blank / Unknown)",
       "24/5/2026",
@@ -47475,6 +48187,14 @@ const BUNDLED_DATA = {
       46
     ],
     [
+      "SDJWT_USER_DENIED_CONSENT",
+      "surepass",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      46
+    ],
+    [
       "",
       "truscholar",
       "8/8/2026",
@@ -47758,6 +48478,14 @@ const BUNDLED_DATA = {
       "SDJWT_SIGN_VALIDATION_FAILED",
       "protean",
       "20/11/2026",
+      "n",
+      "QR_SCAN",
+      45
+    ],
+    [
+      "INVALID_JWT",
+      "dexit",
+      "25/11/2026",
       "n",
       "QR_SCAN",
       45
@@ -48459,6 +49187,14 @@ const BUNDLED_DATA = {
       43
     ],
     [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "26/11/2026",
+      "n",
+      "WEB_INTENT",
+      43
+    ],
+    [
       "",
       "entityiq",
       "30/6/2026",
@@ -48592,6 +49328,22 @@ const BUNDLED_DATA = {
       "24/11/2026",
       "y",
       "APP_INTENT",
+      43
+    ],
+    [
+      "",
+      "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      43
+    ],
+    [
+      "",
+      "procam",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
       43
     ],
     [
@@ -49264,6 +50016,14 @@ const BUNDLED_DATA = {
       "20/11/2026",
       "n",
       "QR_SCAN",
+      41
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "procam",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
       41
     ],
     [
@@ -50843,6 +51603,14 @@ const BUNDLED_DATA = {
       38
     ],
     [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      38
+    ],
+    [
       "0",
       "0",
       "12/5/2026",
@@ -51363,14 +52131,6 @@ const BUNDLED_DATA = {
       37
     ],
     [
-      "",
-      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
-      "25/11/2026",
-      "y",
-      "APP_INTENT",
-      37
-    ],
-    [
       "731",
       "0",
       "8/5/2026",
@@ -51808,6 +52568,30 @@ const BUNDLED_DATA = {
       "21/11/2026",
       "n",
       "QR_SCAN",
+      36
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "tnmc",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      36
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:instantpay-india-limited:202606250788",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      36
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:inferalgo-private-limited:202607177737",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
       36
     ],
     [
@@ -52563,6 +53347,14 @@ const BUNDLED_DATA = {
       35
     ],
     [
+      "",
+      "gridlines",
+      "25/11/2026",
+      "y",
+      "WEB_INTENT",
+      35
+    ],
+    [
       "INVALID_JWT",
       "0",
       "9/6/2026",
@@ -52979,6 +53771,22 @@ const BUNDLED_DATA = {
       34
     ],
     [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "trustt",
+      "25/11/2026",
+      "n",
+      "WEB_INTENT",
+      34
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:instantpay-india-limited:202606250788",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      34
+    ],
+    [
       "0",
       "ayanworks",
       "8/4/2026",
@@ -53192,6 +54000,14 @@ const BUNDLED_DATA = {
       "13/11/2026",
       "y",
       "WEB_INTENT",
+      34
+    ],
+    [
+      "",
+      "urn:uidai:client:punjab-school-educationboard:202608274954",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
       34
     ],
     [
@@ -53552,6 +54368,22 @@ const BUNDLED_DATA = {
       "23/11/2026",
       "n",
       "QR_SCAN",
+      33
+    ],
+    [
+      "INVALID_JWT",
+      "urbancompany",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      33
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "arattai",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
       33
     ],
     [
@@ -54275,6 +55107,22 @@ const BUNDLED_DATA = {
       32
     ],
     [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      32
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      32
+    ],
+    [
       "",
       "(Blank / Unknown)",
       "29/4/2026",
@@ -54811,6 +55659,14 @@ const BUNDLED_DATA = {
       31
     ],
     [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "surepass",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      31
+    ],
+    [
       "0",
       "0",
       "18/4/2026",
@@ -55016,14 +55872,6 @@ const BUNDLED_DATA = {
       "21/11/2026",
       "y",
       "APP_INTENT",
-      31
-    ],
-    [
-      "",
-      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
-      "25/11/2026",
-      "y",
-      "WEB_INTENT",
       31
     ],
     [
@@ -56267,6 +57115,14 @@ const BUNDLED_DATA = {
       29
     ],
     [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:hindon-mercantile-limited:202608105382",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      29
+    ],
+    [
       "",
       "(Blank / Unknown)",
       "27/4/2026",
@@ -57107,6 +57963,62 @@ const BUNDLED_DATA = {
       28
     ],
     [
+      "SDJWT_USER_DENIED_CONSENT",
+      "procam",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      28
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "surepass",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      28
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "procam",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      28
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      28
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "procam",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      28
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "tnmc",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      28
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      28
+    ],
+    [
       "0",
       "0",
       "14/4/2026",
@@ -57894,6 +58806,14 @@ const BUNDLED_DATA = {
       "SDJWT_USER_DENIED_CONSENT",
       "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
       "24/11/2026",
+      "n",
+      "APP_INTENT",
+      27
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "tnmc",
+      "25/11/2026",
       "n",
       "APP_INTENT",
       27
@@ -58840,6 +59760,38 @@ const BUNDLED_DATA = {
       "24/11/2026",
       "n",
       "APP_INTENT",
+      26
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "dexit",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      26
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:instantpay-india-limited:202606250788",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      26
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "urbancompany",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      26
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "trustt",
+      "26/11/2026",
+      "n",
+      "WEB_INTENT",
       26
     ],
     [
@@ -60715,6 +61667,30 @@ const BUNDLED_DATA = {
       24
     ],
     [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "(Blank / Unknown)",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      24
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      24
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      24
+    ],
+    [
       "0",
       "0",
       "19/4/2026",
@@ -61022,6 +61998,14 @@ const BUNDLED_DATA = {
       "",
       "urn:uidai:client:dc-office-tawang:202606230797",
       "24/11/2026",
+      "y",
+      "APP_INTENT",
+      24
+    ],
+    [
+      "",
+      "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
+      "25/11/2026",
       "y",
       "APP_INTENT",
       24
@@ -61539,6 +62523,30 @@ const BUNDLED_DATA = {
       23
     ],
     [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "gridlines",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      23
+    ],
+    [
+      "INVALID_JWT",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      23
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      23
+    ],
+    [
       "0",
       "diovse",
       "10/4/2026",
@@ -61784,14 +62792,6 @@ const BUNDLED_DATA = {
       "22/11/2026",
       "y",
       "QR_SCAN",
-      23
-    ],
-    [
-      "",
-      "arattai",
-      "25/11/2026",
-      "y",
-      "APP_INTENT",
       23
     ],
     [
@@ -62819,6 +63819,14 @@ const BUNDLED_DATA = {
       22
     ],
     [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:hindon-mercantile-limited:202608105382",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      22
+    ],
+    [
       "",
       "(Blank / Unknown)",
       "26/5/2026",
@@ -63180,10 +64188,26 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "urn:uidai:client:hindon-mercantile-limited:202608105382",
+      "evaluit",
       "25/11/2026",
       "y",
+      "WEB_INTENT",
+      22
+    ],
+    [
+      "",
+      "truscholar",
+      "26/11/2026",
+      "y",
       "APP_INTENT",
+      22
+    ],
+    [
+      "",
+      "surepass",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
       22
     ],
     [
@@ -64011,6 +65035,22 @@ const BUNDLED_DATA = {
       21
     ],
     [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      21
+    ],
+    [
+      "INVALID_JWT",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      21
+    ],
+    [
       "0",
       "mantra",
       "17/4/2026",
@@ -64340,10 +65380,10 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "trustt",
+      "gridlines",
       "25/11/2026",
       "y",
-      "WEB_INTENT",
+      "QR_SCAN",
       21
     ],
     [
@@ -65428,18 +66468,42 @@ const BUNDLED_DATA = {
     ],
     [
       "SDJWT_USER_DENIED_CONSENT",
-      "urn:uidai:client:instantpay-india-limited:202606250788",
-      "25/11/2026",
+      "tnmc",
+      "26/11/2026",
       "n",
       "APP_INTENT",
       20
     ],
     [
-      "SDJWT_USER_DENIED_CONSENT",
-      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
-      "25/11/2026",
+      "INVALID_JWT",
+      "urbancompany",
+      "26/11/2026",
       "n",
       "APP_INTENT",
+      20
+    ],
+    [
+      "INVALID_JWT",
+      "dexit",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      20
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      20
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "trustt",
+      "26/11/2026",
+      "n",
+      "WEB_INTENT",
       20
     ],
     [
@@ -65736,14 +66800,6 @@ const BUNDLED_DATA = {
       "17/11/2026",
       "y",
       "QR_SCAN",
-      20
-    ],
-    [
-      "",
-      "urn:uidai:client:punjab-school-educationboard:202608274954",
-      "25/11/2026",
-      "y",
-      "APP_INTENT",
       20
     ],
     [
@@ -66572,10 +67628,18 @@ const BUNDLED_DATA = {
     ],
     [
       "SDJWT_FACEAUTH_FAILED_731",
-      "procam",
-      "25/11/2026",
+      "gridlines",
+      "26/11/2026",
       "n",
       "APP_INTENT",
+      19
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "(Blank / Unknown)",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
       19
     ],
     [
@@ -68219,8 +69283,8 @@ const BUNDLED_DATA = {
       18
     ],
     [
-      "INVALID_JWT",
-      "dexit",
+      "SDJWT_USER_DENIED_CONSENT",
+      "(Blank / Unknown)",
       "25/11/2026",
       "n",
       "QR_SCAN",
@@ -68228,10 +69292,42 @@ const BUNDLED_DATA = {
     ],
     [
       "SDJWT_USER_DENIED_CONSENT",
-      "trustt",
+      "protean",
       "25/11/2026",
       "n",
       "WEB_INTENT",
+      18
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "gridlines",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      18
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "trustt",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      18
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:instantpay-india-limited:202606250788",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      18
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
       18
     ],
     [
@@ -68652,10 +69748,18 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
       "25/11/2026",
       "y",
       "APP_INTENT",
+      18
+    ],
+    [
+      "",
+      "urn:uidai:client:punjab-school-educationboard:202608274954",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
       18
     ],
     [
@@ -69715,6 +70819,22 @@ const BUNDLED_DATA = {
       17
     ],
     [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "dexit",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      17
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "trustt",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      17
+    ],
+    [
       "0",
       "tnmc",
       "17/4/2026",
@@ -70102,14 +71222,6 @@ const BUNDLED_DATA = {
       "",
       "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
       "23/11/2026",
-      "y",
-      "APP_INTENT",
-      17
-    ],
-    [
-      "",
-      "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
-      "25/11/2026",
       "y",
       "APP_INTENT",
       17
@@ -71540,10 +72652,18 @@ const BUNDLED_DATA = {
     ],
     [
       "SDJWT_USER_DENIED_CONSENT",
-      "protean",
+      "urn:uidai:client:inferalgo-private-limited:202607177737",
       "25/11/2026",
       "n",
-      "WEB_INTENT",
+      "APP_INTENT",
+      16
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:punjab-school-educationboard:202608274954",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
       16
     ],
     [
@@ -73235,6 +74355,38 @@ const BUNDLED_DATA = {
       15
     ],
     [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "gridlines",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      15
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      15
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "surepass",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      15
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "gridlines",
+      "26/11/2026",
+      "n",
+      "WEB_INTENT",
+      15
+    ],
+    [
       "0",
       "tnmc",
       "21/4/2026",
@@ -73780,10 +74932,10 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "gridlines",
+      "cisf",
       "25/11/2026",
       "y",
-      "WEB_INTENT",
+      "APP_INTENT",
       15
     ],
     [
@@ -75324,7 +76476,7 @@ const BUNDLED_DATA = {
     ],
     [
       "SDJWT_USER_DENIED_CONSENT",
-      "procam",
+      "urn:uidai:client:hindon-mercantile-limited:202608105382",
       "25/11/2026",
       "n",
       "APP_INTENT",
@@ -75335,7 +76487,31 @@ const BUNDLED_DATA = {
       "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
       "25/11/2026",
       "n",
-      "WEB_INTENT",
+      "APP_INTENT",
+      14
+    ],
+    [
+      "INVALID_JWT",
+      "cisf",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      14
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "(Blank / Unknown)",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      14
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "urn:uidai:client:dc-office-tawang:202606230797",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
       14
     ],
     [
@@ -77411,11 +78587,35 @@ const BUNDLED_DATA = {
       13
     ],
     [
-      "SDJWT_FACEAUTH_FAILED_731",
-      "urn:uidai:client:instantpay-india-limited:202606250788",
+      "SDJWT_FACEAUTH_FAILED_737",
+      "(Blank / Unknown)",
       "25/11/2026",
       "n",
+      "QR_SCAN",
+      13
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "tnmc",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      13
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:inferalgo-private-limited:202607177737",
+      "26/11/2026",
+      "n",
       "APP_INTENT",
+      13
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "dexit",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
       13
     ],
     [
@@ -78084,10 +79284,10 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "gridlines",
-      "25/11/2026",
+      "dexit",
+      "26/11/2026",
       "y",
-      "APP_INTENT",
+      "QR_SCAN",
       13
     ],
     [
@@ -80259,6 +81459,62 @@ const BUNDLED_DATA = {
       12
     ],
     [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "urbancompany",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      12
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      12
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "gridlines",
+      "25/11/2026",
+      "n",
+      "WEB_INTENT",
+      12
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "gridlines",
+      "25/11/2026",
+      "n",
+      "WEB_INTENT",
+      12
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "tnmc",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      12
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      12
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "gridlines",
+      "26/11/2026",
+      "n",
+      "WEB_INTENT",
+      12
+    ],
+    [
       "0",
       "ayanworks",
       "5/4/2026",
@@ -81144,6 +82400,22 @@ const BUNDLED_DATA = {
       "24/11/2026",
       "y",
       "APP_INTENT",
+      12
+    ],
+    [
+      "",
+      "truscholar",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      12
+    ],
+    [
+      "",
+      "surepass",
+      "25/11/2026",
+      "y",
+      "QR_SCAN",
       12
     ],
     [
@@ -82923,6 +84195,46 @@ const BUNDLED_DATA = {
       11
     ],
     [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "tnmc",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      11
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "surepass",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      11
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "urn:uidai:client:instantpay-india-limited:202606250788",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      11
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "tnmc",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      11
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "urn:uidai:client:kendriya-vidyalaya-sangathan:202611171026",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      11
+    ],
+    [
       "0",
       "procam",
       "7/4/2026",
@@ -83836,7 +85148,15 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
+      "trustt",
+      "25/11/2026",
+      "y",
+      "QR_SCAN",
+      11
+    ],
+    [
+      "",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
       "25/11/2026",
       "y",
       "QR_SCAN",
@@ -86395,11 +87715,75 @@ const BUNDLED_DATA = {
       10
     ],
     [
-      "SDJWT_FACEAUTH_FAILED_731",
-      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "SDJWT_USER_DENIED_CONSENT",
+      "gridlines",
       "25/11/2026",
       "n",
-      "WEB_INTENT",
+      "APP_INTENT",
+      10
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:punjab-school-educationboard:202608274954",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      10
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "gridlines",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      10
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "surepass",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      10
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "urn:uidai:client:instantpay-india-limited:202606250788",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      10
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "tnmc",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      10
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urbancompany",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      10
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:hindon-mercantile-limited:202608105382",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      10
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
       10
     ],
     [
@@ -87396,18 +88780,18 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "procam",
+      "transaction_analysts",
       "25/11/2026",
       "y",
-      "QR_SCAN",
+      "APP_INTENT",
       10
     ],
     [
       "",
-      "tnmc",
-      "25/11/2026",
+      "vsign",
+      "26/11/2026",
       "y",
-      "QR_SCAN",
+      "APP_INTENT",
       10
     ],
     [
@@ -89747,9 +91131,41 @@ const BUNDLED_DATA = {
       9
     ],
     [
-      "SDJWT_CALLBACK_NETWORK_ERROR",
-      "gridlines",
+      "SDJWT_FACEAUTH_FAILED_731",
+      "arattai",
       "25/11/2026",
+      "n",
+      "APP_INTENT",
+      9
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urbancompany",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      9
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      9
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "dexit",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      9
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:punjab-school-educationboard:202608274954",
+      "26/11/2026",
       "n",
       "APP_INTENT",
       9
@@ -90996,10 +92412,26 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "transaction_analysts",
+      "dexit",
       "25/11/2026",
       "y",
-      "APP_INTENT",
+      "QR_SCAN",
+      9
+    ],
+    [
+      "",
+      "urn:uidai:client:punjab-school-educationboard:202608274954",
+      "25/11/2026",
+      "y",
+      "QR_SCAN",
+      9
+    ],
+    [
+      "",
+      "gridlines",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
       9
     ],
     [
@@ -94363,7 +95795,23 @@ const BUNDLED_DATA = {
       8
     ],
     [
+      "SDJWT_USER_DENIED_CONSENT",
+      "arattai",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      8
+    ],
+    [
       "SDJWT_FACEAUTH_FAILED_731",
+      "cisf",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      8
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
       "dexit",
       "25/11/2026",
       "n",
@@ -94371,11 +95819,43 @@ const BUNDLED_DATA = {
       8
     ],
     [
-      "SDJWT_USER_DENIED_CONSENT",
-      "dexit",
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "procam",
       "25/11/2026",
       "n",
       "APP_INTENT",
+      8
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "trustt",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      8
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "urbancompany",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      8
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      8
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "protean",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
       8
     ],
     [
@@ -94384,6 +95864,86 @@ const BUNDLED_DATA = {
       "25/11/2026",
       "n",
       "QR_SCAN",
+      8
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "surepass",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      8
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "tnmc",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      8
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      8
+    ],
+    [
+      "INVALID_JWT",
+      "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      8
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "25/11/2026",
+      "n",
+      "WEB_INTENT",
+      8
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "arattai",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      8
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:punjab-school-educationboard:202608274954",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      8
+    ],
+    [
+      "INVALID_JWT",
+      "tnmc",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      8
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "tnmc",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      8
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:inferalgo-private-limited:202607177737",
+      "26/11/2026",
+      "n",
+      "WEB_INTENT",
       8
     ],
     [
@@ -95756,10 +97316,18 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "urn:uidai:client:inferalgo-private-limited:202607177737",
-      "25/11/2026",
+      "urn:uidai:client:dc-office-tawang:202606230797",
+      "26/11/2026",
       "y",
-      "APP_INTENT",
+      "QR_SCAN",
+      8
+    ],
+    [
+      "",
+      "urn:uidai:client:inferalgo-private-limited:202607177737",
+      "26/11/2026",
+      "y",
+      "WEB_INTENT",
       8
     ],
     [
@@ -99251,8 +100819,64 @@ const BUNDLED_DATA = {
       7
     ],
     [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "dexit",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      7
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      7
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:inferalgo-private-limited:202607177737",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      7
+    ],
+    [
       "SDJWT_SIGN_VALIDATION_FAILED",
       "dexit",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      7
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "gridlines",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      7
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "procam",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      7
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "tnmc",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      7
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
       "25/11/2026",
       "n",
       "QR_SCAN",
@@ -99267,17 +100891,41 @@ const BUNDLED_DATA = {
       7
     ],
     [
-      "INVALID_JWT",
-      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "gridlines",
       "25/11/2026",
+      "n",
+      "WEB_INTENT",
+      7
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "trustt",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      7
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "urbancompany",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      7
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "urn:uidai:client:inferalgo-private-limited:202607177737",
+      "26/11/2026",
       "n",
       "QR_SCAN",
       7
     ],
     [
-      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "SDJWT_SIGN_VALIDATION_FAILED",
       "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
-      "25/11/2026",
+      "26/11/2026",
       "n",
       "QR_SCAN",
       7
@@ -101040,6 +102688,62 @@ const BUNDLED_DATA = {
       "24/11/2026",
       "y",
       "QR_SCAN",
+      7
+    ],
+    [
+      "",
+      "evaluit",
+      "25/11/2026",
+      "y",
+      "QR_SCAN",
+      7
+    ],
+    [
+      "",
+      "novelpatterns",
+      "25/11/2026",
+      "y",
+      "QR_SCAN",
+      7
+    ],
+    [
+      "",
+      "urn:uidai:client:instantpay-india-limited:202606250788",
+      "25/11/2026",
+      "y",
+      "QR_SCAN",
+      7
+    ],
+    [
+      "",
+      "000",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      7
+    ],
+    [
+      "",
+      "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      7
+    ],
+    [
+      "",
+      "trustt",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      7
+    ],
+    [
+      "",
+      "evaluit",
+      "26/11/2026",
+      "y",
+      "WEB_INTENT",
       7
     ],
     [
@@ -106347,16 +108051,16 @@ const BUNDLED_DATA = {
       6
     ],
     [
-      "SDJWT_USER_DENIED_CONSENT",
-      "arattai",
-      "25/11/2026",
-      "n",
-      "APP_INTENT",
-      6
-    ],
-    [
       "SDJWT_CALLBACK_NETWORK_ERROR",
-      "dexit",
+      "ebitaus",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      6
+    ],
+    [
+      "INVALID_JWT",
+      "urn:uidai:client:hindon-mercantile-limited:202608105382",
       "25/11/2026",
       "n",
       "APP_INTENT",
@@ -106364,7 +108068,7 @@ const BUNDLED_DATA = {
     ],
     [
       "SDJWT_USER_DENIED_CONSENT",
-      "tnmc",
+      "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
       "25/11/2026",
       "n",
       "APP_INTENT",
@@ -106372,10 +108076,50 @@ const BUNDLED_DATA = {
     ],
     [
       "SDJWT_FACEAUTH_FAILED_731",
-      "trustt",
+      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
       "25/11/2026",
       "n",
-      "WEB_INTENT",
+      "APP_INTENT",
+      6
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      6
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "arattai",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      6
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "trustt",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      6
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "(Blank / Unknown)",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      6
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "surepass",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
       6
     ],
     [
@@ -108596,10 +110340,58 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "cisf",
+      "novelpatterns",
       "25/11/2026",
       "y",
       "APP_INTENT",
+      6
+    ],
+    [
+      "",
+      "rjil",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      6
+    ],
+    [
+      "",
+      "urn:uidai:client:earnest-data-analytics-private-limited:202609247533",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      6
+    ],
+    [
+      "",
+      "ooru_digital",
+      "25/11/2026",
+      "y",
+      "QR_SCAN",
+      6
+    ],
+    [
+      "",
+      "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
+      "25/11/2026",
+      "y",
+      "WEB_INTENT",
+      6
+    ],
+    [
+      "",
+      "urn:uidai:client:hindon-mercantile-limited:202608105382",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      6
+    ],
+    [
+      "",
+      "urn:uidai:client:instantpay-india-limited:202606250788",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
       6
     ],
     [
@@ -114331,19 +116123,91 @@ const BUNDLED_DATA = {
       5
     ],
     [
-      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "SDJWT_SIGN_VALIDATION_FAILED",
       "tnmc",
       "25/11/2026",
+      "n",
+      "QR_SCAN",
+      5
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "urn:uidai:client:kendriya-vidyalaya-sangathan:202611171026",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      5
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      5
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:intuitive-data-solutions-private-limited:202607237962",
+      "26/11/2026",
       "n",
       "APP_INTENT",
       5
     ],
     [
       "SDJWT_FACEAUTH_FAILED_731",
-      "urn:uidai:client:hindon-mercantile-limited:202608105382",
-      "25/11/2026",
+      "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
+      "26/11/2026",
       "n",
       "APP_INTENT",
+      5
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "gridlines",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      5
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "gridlines",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      5
+    ],
+    [
+      "INVALID_JWT",
+      "surepass",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      5
+    ],
+    [
+      "INVALID_JWT",
+      "tspolice",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      5
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      5
+    ],
+    [
+      "INVALID_JWT",
+      "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
       5
     ],
     [
@@ -116892,10 +118756,50 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
+      "urn:uidai:client:dc-office-tawang:202606230797",
       "25/11/2026",
       "y",
-      "WEB_INTENT",
+      "APP_INTENT",
+      5
+    ],
+    [
+      "",
+      "vsign",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      5
+    ],
+    [
+      "",
+      "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
+      "25/11/2026",
+      "y",
+      "QR_SCAN",
+      5
+    ],
+    [
+      "",
+      "urn:uidai:client:inferalgo-private-limited:202607177737",
+      "25/11/2026",
+      "y",
+      "QR_SCAN",
+      5
+    ],
+    [
+      "",
+      "rjil",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      5
+    ],
+    [
+      "",
+      "urn:uidai:client:perigeon-software-private-limited:202606041974",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
       5
     ],
     [
@@ -125587,11 +127491,19 @@ const BUNDLED_DATA = {
       4
     ],
     [
-      "SDJWT_USER_DENIED_CONSENT",
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "apiclub",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      4
+    ],
+    [
+      "INVALID_JWT",
       "gridlines",
       "25/11/2026",
       "n",
-      "APP_INTENT",
+      "QR_SCAN",
       4
     ],
     [
@@ -125599,60 +127511,20 @@ const BUNDLED_DATA = {
       "procam",
       "25/11/2026",
       "n",
-      "APP_INTENT",
+      "QR_SCAN",
       4
     ],
     [
-      "SDJWT_USER_DENIED_CONSENT",
-      "surepass",
+      "SDJWT_FACEAUTH_FAILED_737",
+      "procam",
       "25/11/2026",
       "n",
-      "APP_INTENT",
+      "QR_SCAN",
       4
     ],
     [
       "INVALID_JWT",
-      "urbancompany",
-      "25/11/2026",
-      "n",
-      "APP_INTENT",
-      4
-    ],
-    [
-      "SDJWT_FACEAUTH_FAILED_731",
-      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
-      "25/11/2026",
-      "n",
-      "APP_INTENT",
-      4
-    ],
-    [
-      "SDJWT_USER_DENIED_CONSENT",
-      "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
-      "25/11/2026",
-      "n",
-      "APP_INTENT",
-      4
-    ],
-    [
-      "SDJWT_FACEAUTH_FAILED_731",
-      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
-      "25/11/2026",
-      "n",
-      "APP_INTENT",
-      4
-    ],
-    [
-      "SDJWT_USER_DENIED_CONSENT",
-      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
-      "25/11/2026",
-      "n",
-      "APP_INTENT",
-      4
-    ],
-    [
-      "INVALID_JWT",
-      "cisf",
+      "protean",
       "25/11/2026",
       "n",
       "QR_SCAN",
@@ -125660,10 +127532,90 @@ const BUNDLED_DATA = {
     ],
     [
       "SDJWT_SIGN_VALIDATION_FAILED",
-      "surepass",
+      "urn:uidai:client:inferalgo-private-limited:202607177737",
       "25/11/2026",
       "n",
       "QR_SCAN",
+      4
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:inferalgo-private-limited:202607177737",
+      "25/11/2026",
+      "n",
+      "WEB_INTENT",
+      4
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "truscholar",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      4
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:intuitive-data-solutions-private-limited:202607237962",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      4
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      4
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "urn:uidai:client:punjab-school-educationboard:202608274954",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      4
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "procam",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      4
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "tnmc",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      4
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "gridlines",
+      "26/11/2026",
+      "n",
+      "WEB_INTENT",
+      4
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "protean",
+      "26/11/2026",
+      "n",
+      "WEB_INTENT",
+      4
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
+      "26/11/2026",
+      "n",
+      "WEB_INTENT",
       4
     ],
     [
@@ -129420,7 +131372,7 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "surepass",
+      "000",
       "25/11/2026",
       "y",
       "APP_INTENT",
@@ -129428,10 +131380,26 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "urn:uidai:client:dc-office-tawang:202606230797",
+      "urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581",
       "25/11/2026",
       "y",
       "APP_INTENT",
+      4
+    ],
+    [
+      "",
+      "urn:uidai:client:evolute-fintech-innovations-private-limited:202608271911",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      4
+    ],
+    [
+      "",
+      "urn:uidai:client:aparampaar-finance-private-limited:202605134450",
+      "26/11/2026",
+      "y",
+      "WEB_INTENT",
       4
     ],
     [
@@ -140203,16 +142171,16 @@ const BUNDLED_DATA = {
       3
     ],
     [
-      "SDJWT_FACEAUTH_FAILED_731",
-      "cisf",
+      "SDJWT_FACEAUTH_FAILED_304",
+      "surepass",
       "25/11/2026",
       "n",
       "APP_INTENT",
       3
     ],
     [
-      "SDJWT_CALLBACK_NETWORK_ERROR",
-      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "urn:uidai:client:hindon-mercantile-limited:202608105382",
       "25/11/2026",
       "n",
       "APP_INTENT",
@@ -140227,17 +142195,193 @@ const BUNDLED_DATA = {
       3
     ],
     [
-      "SDJWT_SIGN_VALIDATION_FAILED",
-      "protean",
+      "SDJWT_FACEAUTH_FAILED_731",
+      "(Blank / Unknown)",
       "25/11/2026",
       "n",
       "QR_SCAN",
       3
     ],
     [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "novelpatterns",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      3
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "ooru_digital",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      3
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "surepass",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      3
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      3
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      3
+    ],
+    [
+      "INVALID_JWT",
+      "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      3
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "trustt",
+      "25/11/2026",
+      "n",
+      "WEB_INTENT",
+      3
+    ],
+    [
       "SDJWT_FACEAUTH_FAILED_731",
       "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
       "25/11/2026",
+      "n",
+      "WEB_INTENT",
+      3
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "procam",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      3
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "surepass",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      3
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "tnmc",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      3
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      3
+    ],
+    [
+      "INVALID_JWT",
+      "urn:uidai:client:hindon-mercantile-limited:202608105382",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      3
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "urn:uidai:client:instantpay-india-limited:202606250788",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      3
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      3
+    ],
+    [
+      "INVALID_JWT",
+      "procam",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      3
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "procam",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      3
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "trustt",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      3
+    ],
+    [
+      "INVALID_JWT",
+      "urn:uidai:client:kendriya-vidyalaya-sangathan:202611171026",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      3
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "urn:uidai:client:punjab-school-educationboard:202608274954",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      3
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "trustt",
+      "26/11/2026",
+      "n",
+      "WEB_INTENT",
+      3
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:aparampaar-finance-private-limited:202605134450",
+      "26/11/2026",
+      "n",
+      "WEB_INTENT",
+      3
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:inferalgo-private-limited:202607177737",
+      "26/11/2026",
       "n",
       "WEB_INTENT",
       3
@@ -145403,24 +147547,8 @@ const BUNDLED_DATA = {
       3
     ],
     [
-      "",
+      "0",
       "000",
-      "25/11/2026",
-      "y",
-      "APP_INTENT",
-      3
-    ],
-    [
-      "",
-      "truscholar",
-      "25/11/2026",
-      "y",
-      "APP_INTENT",
-      3
-    ],
-    [
-      "",
-      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
       "25/11/2026",
       "y",
       "APP_INTENT",
@@ -145436,10 +147564,90 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "evaluit",
+      "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      3
+    ],
+    [
+      "",
+      "transaction_analysts",
+      "25/11/2026",
+      "y",
+      "QR_SCAN",
+      3
+    ],
+    [
+      "",
+      "urn:uidai:client:inferalgo-private-limited:202607177737",
       "25/11/2026",
       "y",
       "WEB_INTENT",
+      3
+    ],
+    [
+      "",
+      "mantra",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      3
+    ],
+    [
+      "",
+      "transaction_analysts",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      3
+    ],
+    [
+      "",
+      "urn:uidai:client:dc-office-tawang:202606230797",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      3
+    ],
+    [
+      "",
+      "urn:uidai:client:earnest-data-analytics-private-limited:202609247533",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      3
+    ],
+    [
+      "",
+      "urn:uidai:client:intuitive-data-solutions-private-limited:202607237962",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      3
+    ],
+    [
+      "",
+      "decentro",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      3
+    ],
+    [
+      "",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      3
+    ],
+    [
+      "",
+      "vsign",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
       3
     ],
     [
@@ -165211,8 +167419,32 @@ const BUNDLED_DATA = {
       2
     ],
     [
-      "SDJWT_FACEAUTH_FAILED_731",
-      "arattai",
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "cisf",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "gridlines",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "gridlines",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "mantra",
       "25/11/2026",
       "n",
       "APP_INTENT",
@@ -165220,22 +167452,22 @@ const BUNDLED_DATA = {
     ],
     [
       "SDJWT_CALLBACK_NETWORK_ERROR",
-      "ebitaus",
+      "surepass",
       "25/11/2026",
       "n",
       "APP_INTENT",
       2
     ],
     [
-      "SDJWT_FACEAUTH_FAILED_731",
-      "gridlines",
+      "SDJWT_FACEAUTH_FAILED_737",
+      "surepass",
       "25/11/2026",
       "n",
       "APP_INTENT",
       2
     ],
     [
-      "SDJWT_FACEAUTH_FAILED_731",
+      "SDJWT_FACEAUTH_FAILED_737",
       "tnmc",
       "25/11/2026",
       "n",
@@ -165243,8 +167475,8 @@ const BUNDLED_DATA = {
       2
     ],
     [
-      "SDJWT_SIGN_VALIDATION_FAILED",
-      "urbancompany",
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "trustt",
       "25/11/2026",
       "n",
       "APP_INTENT",
@@ -165252,55 +167484,79 @@ const BUNDLED_DATA = {
     ],
     [
       "SDJWT_USER_DENIED_CONSENT",
-      "urn:uidai:client:hindon-mercantile-limited:202608105382",
+      "tspolice",
       "25/11/2026",
       "n",
       "APP_INTENT",
       2
     ],
     [
-      "SDJWT_FACEAUTH_FAILED_731",
-      "urn:uidai:client:inferalgo-private-limited:202607177737",
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
       "25/11/2026",
       "n",
       "APP_INTENT",
       2
     ],
     [
-      "SDJWT_FACEAUTH_FAILED_731",
-      "urn:uidai:client:punjab-school-educationboard:202608274954",
-      "25/11/2026",
-      "n",
-      "APP_INTENT",
-      2
-    ],
-    [
-      "SDJWT_SIGN_VALIDATION_FAILED",
-      "procam",
-      "25/11/2026",
-      "n",
-      "QR_SCAN",
-      2
-    ],
-    [
-      "INVALID_JWT",
-      "protean",
-      "25/11/2026",
-      "n",
-      "QR_SCAN",
-      2
-    ],
-    [
-      "SDJWT_SIGN_VALIDATION_FAILED",
+      "SDJWT_USER_DENIED_CONSENT",
       "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
       "25/11/2026",
       "n",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "cisf",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      2
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "gridlines",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      2
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "surepass",
+      "25/11/2026",
+      "n",
       "QR_SCAN",
       2
     ],
     [
       "INVALID_JWT",
-      "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
+      "tnmc",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      2
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urn:uidai:client:instantpay-india-limited:202606250788",
       "25/11/2026",
       "n",
       "QR_SCAN",
@@ -165308,7 +167564,15 @@ const BUNDLED_DATA = {
     ],
     [
       "SDJWT_FACEAUTH_FAILED_731",
-      "gridlines",
+      "evaluit",
+      "25/11/2026",
+      "n",
+      "WEB_INTENT",
+      2
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "protean",
       "25/11/2026",
       "n",
       "WEB_INTENT",
@@ -165324,8 +167588,184 @@ const BUNDLED_DATA = {
     ],
     [
       "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:sai-roshni-capital-private-limited:202610275530",
+      "25/11/2026",
+      "n",
+      "WEB_INTENT",
+      2
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
       "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
       "25/11/2026",
+      "n",
+      "WEB_INTENT",
+      2
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "dexit",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "ebitaus",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "ebitaus",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "gridlines",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "surepass",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "surepass",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "vsign",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "(Blank / Unknown)",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      2
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "dexit",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      2
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "ebitaus",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      2
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "procam",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      2
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "surepass",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      2
+    ],
+    [
+      "INVALID_JWT",
+      "trustt",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      2
+    ],
+    [
+      "INVALID_JWT",
+      "urn:uidai:client:instantpay-india-limited:202606250788",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      2
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "urn:uidai:client:instantpay-india-limited:202606250788",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      2
+    ],
+    [
+      "INVALID_JWT",
+      "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      2
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "documint",
+      "26/11/2026",
+      "n",
+      "WEB_INTENT",
+      2
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "protean",
+      "26/11/2026",
+      "n",
+      "WEB_INTENT",
+      2
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:finanalyz-technologies-private-limited:202606306133",
+      "26/11/2026",
+      "n",
+      "WEB_INTENT",
+      2
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "26/11/2026",
       "n",
       "WEB_INTENT",
       2
@@ -174107,8 +176547,8 @@ const BUNDLED_DATA = {
       2
     ],
     [
-      "0",
-      "000",
+      "",
+      "evaluit",
       "25/11/2026",
       "y",
       "APP_INTENT",
@@ -174116,7 +176556,23 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "vsign",
+      "fastkyc",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "",
+      "mantra",
+      "25/11/2026",
+      "y",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "",
+      "urn:uidai:client:3i-consulting-private-limited:202608031319",
       "25/11/2026",
       "y",
       "APP_INTENT",
@@ -174132,10 +176588,122 @@ const BUNDLED_DATA = {
     ],
     [
       "",
+      "urn:uidai:client:dc-office-tawang:202606230797",
+      "25/11/2026",
+      "y",
+      "QR_SCAN",
+      2
+    ],
+    [
+      "",
       "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
       "25/11/2026",
       "y",
       "QR_SCAN",
+      2
+    ],
+    [
+      "",
+      "novelpatterns",
+      "25/11/2026",
+      "y",
+      "WEB_INTENT",
+      2
+    ],
+    [
+      "",
+      "signcare",
+      "25/11/2026",
+      "y",
+      "WEB_INTENT",
+      2
+    ],
+    [
+      "",
+      "urn:uidai:client:aparampaar-finance-private-limited:202605134450",
+      "25/11/2026",
+      "y",
+      "WEB_INTENT",
+      2
+    ],
+    [
+      "",
+      "urn:uidai:client:sai-roshni-capital-private-limited:202610275530",
+      "25/11/2026",
+      "y",
+      "WEB_INTENT",
+      2
+    ],
+    [
+      "",
+      "apiclub",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "",
+      "evaluit",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "",
+      "urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "",
+      "urn:uidai:client:centre-for-good-governance:202609037683",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "",
+      "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      2
+    ],
+    [
+      "",
+      "signzytech",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      2
+    ],
+    [
+      "",
+      "urn:uidai:client:oryggi-technologies-private-limited:202607288031",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      2
+    ],
+    [
+      "",
+      "urn:uidai:client:perigeon-software-private-limited:202606041974",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      2
+    ],
+    [
+      "",
+      "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
+      "26/11/2026",
+      "y",
+      "WEB_INTENT",
       2
     ],
     [
@@ -208547,6 +211115,14 @@ const BUNDLED_DATA = {
       1
     ],
     [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "arattai",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      1
+    ],
+    [
       "SDJWT_FACEAUTH_FAILED_737",
       "dexit",
       "25/11/2026",
@@ -208555,32 +211131,24 @@ const BUNDLED_DATA = {
       1
     ],
     [
-      "SDJWT_FACEAUTH_FAILED_737",
-      "tnmc",
+      "SDJWT_FACEAUTH_FAILED_304",
+      "procam",
       "25/11/2026",
       "n",
       "APP_INTENT",
       1
     ],
     [
-      "SDJWT_USER_DENIED_CONSENT",
-      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "SDJWT_FACEAUTH_FAILED_731",
+      "trustt",
       "25/11/2026",
       "n",
       "APP_INTENT",
       1
     ],
     [
-      "INVALID_JWT",
-      "urn:uidai:client:hindon-mercantile-limited:202608105382",
-      "25/11/2026",
-      "n",
-      "APP_INTENT",
-      1
-    ],
-    [
-      "SDJWT_SIGN_VALIDATION_FAILED",
-      "urn:uidai:client:hindon-mercantile-limited:202608105382",
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:3i-consulting-private-limited:202608031319",
       "25/11/2026",
       "n",
       "APP_INTENT",
@@ -208595,16 +211163,32 @@ const BUNDLED_DATA = {
       1
     ],
     [
-      "SDJWT_FACEAUTH_FAILED_731",
-      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
       "25/11/2026",
       "n",
       "APP_INTENT",
       1
     ],
     [
-      "SDJWT_FACEAUTH_FAILED_304",
-      "(Blank / Unknown)",
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urn:uidai:client:punjab-school-educationboard:202608274954",
+      "25/11/2026",
+      "n",
+      "APP_INTENT",
+      1
+    ],
+    [
+      "INVALID_JWT",
+      "any2paytpl",
       "25/11/2026",
       "n",
       "QR_SCAN",
@@ -208612,7 +211196,7 @@ const BUNDLED_DATA = {
     ],
     [
       "SDJWT_FACEAUTH_FAILED_737",
-      "(Blank / Unknown)",
+      "apiclub",
       "25/11/2026",
       "n",
       "QR_SCAN",
@@ -208627,14 +211211,6 @@ const BUNDLED_DATA = {
       1
     ],
     [
-      "SDJWT_CALLBACK_NETWORK_ERROR",
-      "gridlines",
-      "25/11/2026",
-      "n",
-      "QR_SCAN",
-      1
-    ],
-    [
       "SDJWT_FACEAUTH_FAILED_731",
       "gridlines",
       "25/11/2026",
@@ -208644,15 +211220,31 @@ const BUNDLED_DATA = {
     ],
     [
       "SDJWT_CALLBACK_NETWORK_ERROR",
-      "procam",
+      "novelpatterns",
       "25/11/2026",
       "n",
       "QR_SCAN",
       1
     ],
     [
-      "SDJWT_FACEAUTH_FAILED_304",
-      "procam",
+      "SDJWT_USER_DENIED_CONSENT",
+      "novelpatterns",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "tnmc",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "tnmc",
       "25/11/2026",
       "n",
       "QR_SCAN",
@@ -208667,6 +211259,22 @@ const BUNDLED_DATA = {
       1
     ],
     [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "truscholar",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "INVALID_JWT",
+      "trustt",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
       "SDJWT_SIGN_VALIDATION_FAILED",
       "urn:uidai:client:ican-bpo-private-limited:202608272078",
       "25/11/2026",
@@ -208675,7 +211283,31 @@ const BUNDLED_DATA = {
       1
     ],
     [
-      "SDJWT_SIGN_VALIDATION_FAILED",
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urn:uidai:client:inferalgo-private-limited:202607177737",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "INVALID_JWT",
+      "urn:uidai:client:instantpay-india-limited:202606250788",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "urn:uidai:client:instantpay-india-limited:202606250788",
+      "25/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
       "urn:uidai:client:instantpay-india-limited:202606250788",
       "25/11/2026",
       "n",
@@ -208691,17 +211323,265 @@ const BUNDLED_DATA = {
       1
     ],
     [
-      "SDJWT_CALLBACK_NETWORK_ERROR",
-      "gridlines",
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:sai-roshni-capital-private-limited:202610275530",
       "25/11/2026",
       "n",
       "WEB_INTENT",
       1
     ],
     [
+      "INVALID_JWT",
+      "arattai",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "ebitaus",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      1
+    ],
+    [
       "SDJWT_CALLBACK_NETWORK_ERROR",
+      "trustt",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:dc-office-tawang:202606230797",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "urn:uidai:client:inferalgo-private-limited:202607177737",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urn:uidai:client:inferalgo-private-limited:202607177737",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urn:uidai:client:instantpay-india-limited:202606250788",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      1
+    ],
+    [
+      "SDJWT_CALLBACK_NETWORK_ERROR",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urn:uidai:client:punjab-school-educationboard:202608274954",
+      "26/11/2026",
+      "n",
+      "APP_INTENT",
+      1
+    ],
+    [
+      "INVALID_JWT",
+      "1a2f",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "dexit",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "dexit",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "gridlines",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "procam",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "procam",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "INVALID_JWT",
       "protean",
-      "25/11/2026",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "protean",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "tnmc",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urn:uidai:client:hindon-mercantile-limited:202608105382",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_304",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "urn:uidai:client:life-insurance-corporation-of-india:202606036260",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_USER_DENIED_CONSENT",
+      "urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "INVALID_JWT",
+      "urn:uidai:client:msqube-technology-solutions-private-limited:202611061651",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "urn:uidai:client:special-branch,-bihar-police:202610163901",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_SIGN_VALIDATION_FAILED",
+      "vsign",
+      "26/11/2026",
+      "n",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "gridlines",
+      "26/11/2026",
+      "n",
+      "WEB_INTENT",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_731",
+      "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
+      "26/11/2026",
+      "n",
+      "WEB_INTENT",
+      1
+    ],
+    [
+      "SDJWT_FACEAUTH_FAILED_737",
+      "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
+      "26/11/2026",
       "n",
       "WEB_INTENT",
       1
@@ -224204,14 +227084,6 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "rjil",
-      "25/11/2026",
-      "y",
-      "APP_INTENT",
-      1
-    ],
-    [
-      "",
       "urn:uidai:client:mdindia-health-insurance-tpa-private-limited:202608143596",
       "25/11/2026",
       "y",
@@ -224220,7 +227092,7 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "evaluit",
+      "apiclub",
       "25/11/2026",
       "y",
       "QR_SCAN",
@@ -224228,7 +227100,7 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "gridlines",
+      "truscholar",
       "25/11/2026",
       "y",
       "QR_SCAN",
@@ -224236,7 +227108,7 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "transaction_analysts",
+      "tspolice",
       "25/11/2026",
       "y",
       "QR_SCAN",
@@ -224244,7 +227116,7 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",
+      "urn:uidai:client:ummeed-housing-finance-private-limited:202609177828",
       "25/11/2026",
       "y",
       "QR_SCAN",
@@ -224252,7 +227124,7 @@ const BUNDLED_DATA = {
     ],
     [
       "",
-      "urn:uidai:client:inferalgo-private-limited:202607177737",
+      "tspolice",
       "25/11/2026",
       "y",
       "WEB_INTENT",
@@ -224265,7 +227137,159 @@ const BUNDLED_DATA = {
       "y",
       "WEB_INTENT",
       1
+    ],
+    [
+      "",
+      "novelpatterns",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      1
+    ],
+    [
+      "",
+      "urn:uidai:client:doklink-services-private-limited:202609249932",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      1
+    ],
+    [
+      "",
+      "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      1
+    ],
+    [
+      "",
+      "urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581",
+      "26/11/2026",
+      "y",
+      "APP_INTENT",
+      1
+    ],
+    [
+      "",
+      "novelpatterns",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "",
+      "ooru_digital",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "",
+      "transaction_analysts",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "",
+      "tspolice",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "",
+      "urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "",
+      "urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "",
+      "urn:uidai:client:inferalgo-private-limited:202607177737",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "",
+      "urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "",
+      "urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "",
+      "urn:uidai:client:special-branch,-bihar-police:202610163901",
+      "26/11/2026",
+      "y",
+      "QR_SCAN",
+      1
+    ],
+    [
+      "",
+      "documint",
+      "26/11/2026",
+      "y",
+      "WEB_INTENT",
+      1
+    ],
+    [
+      "",
+      "novelpatterns",
+      "26/11/2026",
+      "y",
+      "WEB_INTENT",
+      1
+    ],
+    [
+      "",
+      "trackwizz",
+      "26/11/2026",
+      "y",
+      "WEB_INTENT",
+      1
+    ],
+    [
+      "",
+      "tspolice",
+      "26/11/2026",
+      "y",
+      "WEB_INTENT",
+      1
+    ],
+    [
+      "",
+      "dexit",
+      "27/11/2026",
+      "y",
+      "APP_INTENT",
+      1
     ]
   ],
-  "lastUpdatedLocal": "2026-11-25T05:32:53.156Z"
+  "lastUpdatedLocal": "2026-11-26T12:48:14.258Z"
 };

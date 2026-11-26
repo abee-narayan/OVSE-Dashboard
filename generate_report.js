@@ -725,9 +725,50 @@ function processUnifiedDataset(filePath, dir = path.dirname(filePath), options =
 
   // 4. Error Code Analysis CSV
   const errorHeaders = ['Error Code', 'Category', 'Description / Meaning', 'Weekly Failures', 'Weekly Failure Share %', 'Lifetime Failures', 'Lifetime Failure Share %', 'Trend Delta (%)'];
+  const weeklyErrMap = new Map(weeklyAgg.errors.ovseErrorList.map(o => [o.ovseId, o.codes || {}]));
+  const activeWeeklyOrgs = comparisonList.filter(c => c.weeklyTotal > 0);
+  const orgMatrixHeaders = [
+    'Organisation', 'Total', 'Success', 'Failure', 'Success rate',
+    'Success rate without user denial', 'Success rate without user denial & face auth failure',
+    'User denied consent', 'Face Auth Failed (731)', 'Face Auth Failed (304)', 'Face Auth Failed (737)',
+    'Invalid JWT', 'Signature validation failed', 'Callback network error'
+  ];
+  let gtTotal = 0, gtSucc = 0, gtFail = 0, gtUd = 0, gtF731 = 0, gtF304 = 0, gtF737 = 0, gtJwt = 0, gtSign = 0, gtCb = 0;
+  const orgMatrixRows = activeWeeklyOrgs.map(c => {
+    const codes = weeklyErrMap.get(c.ovseId) || {};
+    const ud = codes['SDJWT_USER_DENIED_CONSENT'] || 0;
+    const f731 = (codes['SDJWT_FACEAUTH_FAILED_731'] || 0) + (codes['731'] || 0);
+    const f304 = codes['SDJWT_FACEAUTH_FAILED_304'] || 0;
+    const f737 = (codes['SDJWT_FACEAUTH_FAILED_737'] || 0) + (codes['737'] || 0) + (codes['SDJWT_FACEAUTH_FAILED'] || 0);
+    const jwt = codes['INVALID_JWT'] || 0;
+    const sign = codes['SDJWT_SIGN_VALIDATION_FAILED'] || 0;
+    const cb = codes['SDJWT_CALLBACK_NETWORK_ERROR'] || 0;
+    const denomNoUd = Math.max(0, c.weeklyTotal - ud);
+    const denomNoUdFace = Math.max(0, c.weeklyTotal - ud - f731 - f304 - f737);
+    const sr = c.weeklyTotal > 0 ? ((c.weeklySuccess / c.weeklyTotal) * 100).toFixed(1) + '%' : '0.0%';
+    const srNoUd = denomNoUd > 0 ? Math.min(100, (c.weeklySuccess / denomNoUd) * 100).toFixed(2) : '0.00';
+    const srNoUdFace = denomNoUdFace > 0 ? Math.min(100, (c.weeklySuccess / denomNoUdFace) * 100).toFixed(2) : '0.00';
+
+    gtTotal += c.weeklyTotal; gtSucc += c.weeklySuccess; gtFail += c.weeklyFailure;
+    gtUd += ud; gtF731 += f731; gtF304 += f304; gtF737 += f737; gtJwt += jwt; gtSign += sign; gtCb += cb;
+
+    return [c.ovseId, c.weeklyTotal, c.weeklySuccess, c.weeklyFailure, sr, srNoUd, srNoUdFace, ud, f731, f304, f737, jwt, sign, cb];
+  });
+  const gtDenomNoUd = Math.max(0, gtTotal - gtUd);
+  const gtDenomNoUdFace = Math.max(0, gtTotal - gtUd - gtF731 - gtF304 - gtF737);
+  const gtSr = gtTotal > 0 ? ((gtSucc / gtTotal) * 100).toFixed(1) + '%' : '0.0%';
+  const gtSrNoUd = gtDenomNoUd > 0 ? Math.min(100, (gtSucc / gtDenomNoUd) * 100).toFixed(2) : '0.00';
+  const gtSrNoUdFace = gtDenomNoUdFace > 0 ? Math.min(100, (gtSucc / gtDenomNoUdFace) * 100).toFixed(2) : '0.00';
+  const orgMatrixGrandTotalRow = ['Grand Total', gtTotal, gtSucc, gtFail, gtSr, gtSrNoUd, gtSrNoUdFace, gtUd, gtF731, gtF304, gtF737, gtJwt, gtSign, gtCb];
+
   const errorRows = [
     ['UIDAI OVSE ERROR CODE INTELLIGENCE - EXECUTIVE REPORT'],
     ['Generated At', new Date().toLocaleString()],
+    ['', '', '', '', '', '', '', ''],
+    ['ORGANISATION-WISE ERROR & ADJUSTED SUCCESS RATE ANALYSIS (WEEKLY)'],
+    orgMatrixHeaders,
+    ...orgMatrixRows,
+    orgMatrixGrandTotalRow,
     ['', '', '', '', '', '', '', ''],
     errorHeaders,
     ...errorComparison.map(e => [

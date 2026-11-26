@@ -347,11 +347,11 @@
           <!-- Active Scope Badges -->
           <div class="flex flex-col gap-1.5">
             <span id="outlierActiveBadge" class="inline-flex items-center px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-200/80 truncate">
-              All 283 Entities Included
+              All 286 Entities Included
             </span>
             <span id="activePeriodWindowBadge" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-semibold bg-emerald-50 text-[#0b5d3e] border border-emerald-200/70 truncate">
               <i data-lucide="calendar-range" class="w-3 h-3 text-[#0b5d3e] shrink-0"></i>
-              <span id="activePeriodWindowText" class="truncate">Weekly: 19 Nov – 25 Nov 2026</span>
+              <span id="activePeriodWindowText" class="truncate">Weekly: 20 Nov – 26 Nov 2026</span>
             </span>
           </div>
 
@@ -445,7 +445,7 @@
               <h1 id="mainHeaderTitle" class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight whitespace-nowrap">Business Overview</h1>
               <span id="headerLastUpdatedBadge" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-white text-slate-600 border border-slate-200/90 shadow-2xs whitespace-nowrap" title="Timestamp of the latest ingested dataset">
                 <i data-lucide="clock" class="w-3 h-3 text-[#0b5d3e]"></i>
-                <span id="headerLastUpdatedText">Last Updated: 25 NOV 2026, 10:46 AM IST</span>
+                <span id="headerLastUpdatedText">Last Updated: 26 NOV 2026, 05:37 PM IST</span>
               </span>
             </div>
           </div>
@@ -603,7 +603,7 @@
                   <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-900/80 text-emerald-300 border border-emerald-700/50">CSV (6 Columns)</span>
                   <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-teal-900/80 text-teal-300 border border-teal-700/50">JSON Supported</span>
                 </div>
-                <div id="masterFileName" class="text-xs text-emerald-300 font-mono truncate mt-0.5">Current Active File: ovse_data_for_public_dashboard_2026-11-25T10_46_38.556178+05_30.csv</div>
+                <div id="masterFileName" class="text-xs text-emerald-300 font-mono truncate mt-0.5">Current Active File: ovse_data_for_public_dashboard_2026-11-26T17_37_19.58935+05_30 (2).csv</div>
                 <div class="text-[10px] text-slate-400 mt-0.5">
                   Click or drag & drop <strong>.csv</strong> or <strong>.json</strong> file • Fields (any order): <code class="text-emerald-300">Auth Result, Error Code, Event Timestamp, Ovse ID, Cred Exchange Channel, Count</code>
                 </div>
@@ -1977,6 +1977,105 @@
         </div>
       </div>
 
+      <!-- ORGANISATION-WISE ERROR & ADJUSTED SUCCESS RATE MATRIX (Spreadsheet Style) -->
+      <section class="glass-card p-5 sm:p-6">
+        <div class="flex flex-col xl:flex-row xl:items-center justify-between pb-4 border-b border-slate-100 gap-3">
+          <div>
+            <div class="flex flex-wrap items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-emerald-50 border border-emerald-200/80 text-[#0b5d3e] flex items-center justify-center">
+                <i data-lucide="table-2" class="w-4 h-4"></i>
+              </div>
+              <h2 class="text-base font-extrabold text-slate-900 tracking-tight">Organisation-wise Error & Adjusted Success Rate Analysis</h2>
+              <span id="orgErrMatrixPeriodBadge" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-[#0b5d3e] border border-emerald-200/80">
+                Weekly Window
+              </span>
+            </div>
+            <p class="text-xs text-slate-500 mt-0.5">
+              OVSE-level breakdown of Total, Success, Failure, Standard Success Rate, Adjusted Success Rates (excluding User Denial &amp; Face Auth failures), and UIDAI error code counts
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <!-- Search OVSE -->
+            <div class="relative">
+              <input type="text" id="orgErrMatrixSearchInput" oninput="renderOrgErrorMatrixTable()" placeholder="Search organisation or OVSE ID..." class="pl-8 pr-3 py-1.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 w-44 sm:w-52">
+              <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5"></i>
+            </div>
+
+            <!-- Period Basis -->
+            <select id="orgErrMatrixPeriodSelect" onchange="renderOrgErrorMatrixTable()" class="px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 bg-white font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-600">
+              <option value="active_period">Period: Selected Timeframe</option>
+              <option value="overall">Period: Overall (All-Time)</option>
+            </select>
+
+            <!-- Scope Filter -->
+            <select id="orgErrMatrixScopeSelect" onchange="renderOrgErrorMatrixTable()" class="px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 bg-white font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-600">
+              <option value="active_all">All Active OVSEs (Total &gt; 0)</option>
+              <option value="with_failures">OVSEs with Failures (Failure &gt; 0)</option>
+              <option value="top5">Top 5 OVSEs by Volume</option>
+              <option value="top10">Top 10 OVSEs by Volume</option>
+              <option value="top20">Top 20 OVSEs by Volume</option>
+              <option value="all_registered">All Registered OVSEs</option>
+            </select>
+
+            <!-- Exclude SelectiveShare Toggle -->
+            <label class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200/80 px-2.5 py-1.5 rounded-lg border border-slate-300 cursor-pointer select-none transition" title="Exclude SelectiveShare & 000 from table and Grand Total">
+              <input type="checkbox" id="orgErrMatrixExclSSCheckbox" onchange="renderOrgErrorMatrixTable()" class="rounded text-[#0b5d3e] focus:ring-emerald-600">
+              <span>Excl. SelectiveShare</span>
+            </label>
+
+            <!-- Sort By -->
+            <select id="orgErrMatrixSortSelect" onchange="renderOrgErrorMatrixTable()" class="px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 bg-white font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-600">
+              <option value="total_desc">Sort: Total Tx (High to Low)</option>
+              <option value="failure_desc">Sort: Failure Tx (High to Low)</option>
+              <option value="sr_asc">Sort: Success Rate (Low to High)</option>
+              <option value="sr_desc">Sort: Success Rate (High to Low)</option>
+              <option value="sr_nodenial_asc">Sort: Success w/o Denial (Low to High)</option>
+              <option value="sr_nodenial_face_asc">Sort: Success w/o Denial &amp; Face (Low to High)</option>
+              <option value="denial_desc">Sort: User Denied Consent (High to Low)</option>
+              <option value="face731_desc">Sort: Face Auth 731 (High to Low)</option>
+              <option value="name_asc">Sort: Organisation (A to Z)</option>
+            </select>
+
+            <span id="orgErrMatrixCountBadge" class="text-[11px] text-slate-600 font-semibold px-2 py-1 rounded bg-slate-100">0 OVSEs</span>
+
+            <button onclick="downloadOrgErrorMatrixCSV()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#0b5d3e] text-white hover:bg-[#08472f] transition shadow-2xs cursor-pointer">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              <span>Export Table (.csv)</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto mt-4 border border-slate-200 rounded-xl">
+          <table class="w-full text-xs text-left border-collapse">
+            <thead class="text-[11px] bg-slate-100/90 text-slate-800 font-bold border-b border-slate-300">
+              <tr class="divide-x divide-slate-200">
+                <th class="py-2.5 px-3 sticky left-0 bg-slate-100 z-10 min-w-[210px]">Organisation</th>
+                <th class="py-2.5 px-2.5 text-right whitespace-nowrap">Total</th>
+                <th class="py-2.5 px-2.5 text-right whitespace-nowrap text-emerald-800">Success</th>
+                <th class="py-2.5 px-2.5 text-right whitespace-nowrap text-rose-700">Failure</th>
+                <th class="py-2.5 px-2.5 text-right whitespace-nowrap bg-slate-50">Success rate</th>
+                <th class="py-2.5 px-2.5 text-right min-w-[130px] bg-emerald-50/60 text-emerald-950" title="Success / (Total - User Denied Consent)">Success rate without user denial</th>
+                <th class="py-2.5 px-2.5 text-right min-w-[155px] bg-teal-50/70 text-teal-950" title="Success / (Total - User Denied Consent - All Face Auth Failures)">Success rate without user denial &amp; face auth failure</th>
+                <th class="py-2.5 px-2.5 text-right min-w-[105px] bg-amber-50/40 text-amber-950" title="SDJWT_USER_DENIED_CONSENT">User denied consent</th>
+                <th class="py-2.5 px-2.5 text-right min-w-[105px] bg-indigo-50/40 text-indigo-950" title="SDJWT_FACEAUTH_FAILED_731">Face Auth Failed (731)</th>
+                <th class="py-2.5 px-2.5 text-right min-w-[105px] bg-indigo-50/40 text-indigo-950" title="SDJWT_FACEAUTH_FAILED_304">Face Auth Failed (304)</th>
+                <th class="py-2.5 px-2.5 text-right min-w-[105px] bg-indigo-50/40 text-indigo-950" title="SDJWT_FACEAUTH_FAILED_737">Face Auth Failed (737)</th>
+                <th class="py-2.5 px-2.5 text-right whitespace-nowrap bg-purple-50/30 text-purple-950" title="INVALID_JWT">Invalid JWT</th>
+                <th class="py-2.5 px-2.5 text-right min-w-[115px] bg-purple-50/30 text-purple-950" title="SDJWT_SIGN_VALIDATION_FAILED">Signature validation failed</th>
+                <th class="py-2.5 px-2.5 text-right min-w-[110px] bg-sky-50/40 text-sky-950" title="SDJWT_CALLBACK_NETWORK_ERROR">Callback network error</th>
+              </tr>
+            </thead>
+            <tbody id="orgErrMatrixTableBody" class="divide-y divide-slate-200 font-normal bg-white">
+              <!-- Populated dynamically by renderOrgErrorMatrixTable() -->
+            </tbody>
+            <tfoot id="orgErrMatrixTableFoot" class="bg-slate-100/95 font-extrabold text-slate-900 border-t-2 border-slate-300">
+              <!-- Grand Total populated dynamically by renderOrgErrorMatrixTable() -->
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
       <!-- ROW 2: PICTURE 1 "Overview" Section for UIDAI Error Intelligence (4 Soft Pastel Gradient Cards) -->
       <section class="glass-card p-5 sm:p-6">
         <div class="flex items-center justify-between mb-4">
@@ -2896,7 +2995,7 @@
     let customRangeEnd = '';
     let activePeriodLabel = 'Last Week (7 Days)';
     let activePeriodShort = 'Weekly';
-    let activePeriodWindowStr = '19 Nov – 25 Nov 2026';
+    let activePeriodWindowStr = '20 Nov – 26 Nov 2026';
 
     const ERROR_DESCRIPTIONS = {
       'SDJWT_USER_DENIED_CONSENT': 'Citizen actively declined or cancelled the consent prompt on mAadhaar app.',
@@ -3034,7 +3133,7 @@
     function initDateRangePickers() {
       if (!baseData) return;
       const minD = baseData.metadata?.dateBounds?.minDate || '2026-03-11';
-      const maxD = baseData.metadata?.dateBounds?.maxDate || '2026-11-25';
+      const maxD = baseData.metadata?.dateBounds?.maxDate || '2026-11-26';
       const startInput = document.getElementById('customStartDate');
       const endInput = document.getElementById('customEndDate');
 
@@ -3586,7 +3685,7 @@
           count: Number(tuple[5]) || 0
         }));
 
-        const maxIso = baseData.metadata?.dateBounds?.maxDate || '2026-11-25';
+        const maxIso = baseData.metadata?.dateBounds?.maxDate || '2026-11-26';
         const minIso = baseData.metadata?.dateBounds?.minDate || '2026-03-11';
         const maxDateObj = new Date(maxIso + 'T00:00:00');
         const minDateObj = new Date(minIso + 'T00:00:00');
@@ -5165,12 +5264,12 @@
         if (masterInput) masterInput.value = '';
         const masterName = document.getElementById('masterFileName');
         if (masterName) {
-          masterName.innerText = `Current Source: ${baseData?.metadata?.sourceFile || 'ovse_data_for_public_dashboard_2026-11-25T10_46_38.556178+05_30.csv'}`;
+          masterName.innerText = `Current Source: ${baseData?.metadata?.sourceFile || 'ovse_data_for_public_dashboard_2026-11-26T17_37_19.58935+05_30 (2).csv'}`;
           masterName.classList.remove('text-emerald-300');
         }
         hideUploadError();
         recomputeFilteredData();
-        alert(`Reset to baseline dataset (${baseData?.metadata?.reportingCutoff || 'November 25, 2026'}).`);
+        alert(`Reset to baseline dataset (${baseData?.metadata?.reportingCutoff || 'November 26, 2026'}).`);
       }
     }
 
@@ -5307,7 +5406,7 @@
       const { overall, weekly, comparison, newAndEmerging } = currentData;
 
       // Update Header "Data Last Updated" badge and Banner Snapshot badge
-      const lastUpd = currentData.metadata?.dataLastUpdated || baseData?.metadata?.dataLastUpdated || '25 NOV 2026, 10:46 AM IST';
+      const lastUpd = currentData.metadata?.dataLastUpdated || baseData?.metadata?.dataLastUpdated || '26 NOV 2026, 05:37 PM IST';
       const headerUpdEl = document.getElementById('headerLastUpdatedText');
       if (headerUpdEl) {
         headerUpdEl.innerText = `Last Updated: ${lastUpd}`;
@@ -6505,7 +6604,7 @@
 
       const masterFileName = document.getElementById('masterFileName');
       if (masterFileName && !uploadedMasterFile) {
-        masterFileName.innerText = `Current Source: ${currentData?.metadata?.sourceFile || 'ovse_data_for_public_dashboard_2026-11-25T10_46_38.556178+05_30.csv'}`;
+        masterFileName.innerText = `Current Source: ${currentData?.metadata?.sourceFile || 'ovse_data_for_public_dashboard_2026-11-26T17_37_19.58935+05_30 (2).csv'}`;
       }
 
       safeCreateIcons();
@@ -7595,8 +7694,299 @@
       }
 
       // 4. Render Error Tables
+      renderOrgErrorMatrixTable();
       renderErrorMasterTable();
       renderErrorHotspotsTable();
+    }
+
+    function formatOrganisationDisplayName(id) {
+      if (!id || id === 'null') return '(Unidentified / null)';
+      const lower = id.toLowerCase().trim();
+      const friendlyMap = {
+        'urbancompany': 'Urban Company',
+        'protean': 'Protean',
+        'dexit': 'Dexit',
+        'tspolice': 'TS Police',
+        'gridlines': 'Gridlines',
+        'procam': 'Procam',
+        'tnmc': 'TNMC',
+        'selectiveshare': 'SelectiveShare',
+        '000': '000 (System / Test)'
+      };
+      if (friendlyMap[lower]) return friendlyMap[lower];
+      if (lower.includes('life-insurance-corporation-of-india')) return 'LIC';
+      if (lower.includes('department-of-registration-and-stamps,-government-of-maharashtra')) return 'Dept. of Registration & Stamps, Maharashtra';
+      if (id.startsWith('urn:uidai:client:')) {
+        const clean = id.replace('urn:uidai:client:', '').split(':')[0];
+        return clean
+          .split('-')
+          .filter(Boolean)
+          .map(w => {
+            const lw = w.toLowerCase();
+            if (['of', 'and', 'in', 'for', 'to', 'the'].includes(lw)) return lw;
+            if (['tpa', 'ltd', 'ltd.', 'pvt', 'llp', 'kyc', 'uidai', 'lic'].includes(lw)) return w.toUpperCase();
+            return w.charAt(0).toUpperCase() + w.slice(1);
+          })
+          .join(' ');
+      }
+      return id.charAt(0).toUpperCase() + id.slice(1);
+    }
+
+    function getFilteredOrgErrorMatrix() {
+      if (!currentData || !currentData.errors) return { rows: [], grandTotal: null, periodLabel: '' };
+      const periodMode = document.getElementById('orgErrMatrixPeriodSelect')?.value || 'active_period';
+      const scopeMode = document.getElementById('orgErrMatrixScopeSelect')?.value || 'active_all';
+      const exclSS = document.getElementById('orgErrMatrixExclSSCheckbox')?.checked || false;
+      const sortMode = document.getElementById('orgErrMatrixSortSelect')?.value || 'total_desc';
+      const searchQ = (document.getElementById('orgErrMatrixSearchInput')?.value || '').toLowerCase().trim();
+
+      const isOverall = periodMode === 'overall';
+      const errSourceList = isOverall
+        ? (currentData.errors.overall?.ovseErrorList || [])
+        : (currentData.errors.weekly?.ovseErrorList || []);
+      const errMap = new Map(errSourceList.map(e => [e.ovseId, e.codes || {}]));
+
+      const compList = currentData.comparison || [];
+      let rows = compList.map(c => {
+        const total = isOverall ? (Number(c.overallTotal) || 0) : (Number(c.weeklyTotal) || 0);
+        const success = isOverall ? (Number(c.overallSuccess) || 0) : (Number(c.weeklySuccess) || 0);
+        const failure = isOverall ? (Number(c.overallFailure) || 0) : (Number(c.weeklyFailure) || 0);
+        const codes = errMap.get(c.ovseId) || {};
+
+        const userDenied = Number(codes['SDJWT_USER_DENIED_CONSENT']) || 0;
+        const face731 = (Number(codes['SDJWT_FACEAUTH_FAILED_731']) || 0) + (Number(codes['731']) || 0);
+        const face304 = Number(codes['SDJWT_FACEAUTH_FAILED_304']) || 0;
+        const face737 = (Number(codes['SDJWT_FACEAUTH_FAILED_737']) || 0) + (Number(codes['737']) || 0) + (Number(codes['SDJWT_FACEAUTH_FAILED']) || 0);
+        const invalidJwt = Number(codes['INVALID_JWT']) || 0;
+        const signFailed = Number(codes['SDJWT_SIGN_VALIDATION_FAILED']) || 0;
+        const callbackErr = Number(codes['SDJWT_CALLBACK_NETWORK_ERROR']) || 0;
+
+        const faceTotal = face731 + face304 + face737;
+        const denomNoDenial = Math.max(0, total - userDenied);
+        const denomNoDenialFace = Math.max(0, total - userDenied - faceTotal);
+
+        const successRate = total > 0 ? (success / total) * 100 : 0;
+        const successRateNoDenial = denomNoDenial > 0 ? Math.min(100, (success / denomNoDenial) * 100) : (success > 0 ? 100 : 0);
+        const successRateNoDenialFace = denomNoDenialFace > 0 ? Math.min(100, (success / denomNoDenialFace) * 100) : (success > 0 ? 100 : 0);
+
+        return {
+          ovseId: c.ovseId,
+          orgName: formatOrganisationDisplayName(c.ovseId),
+          total,
+          success,
+          failure,
+          successRate,
+          successRateNoDenial,
+          successRateNoDenialFace,
+          userDenied,
+          face731,
+          face304,
+          face737,
+          invalidJwt,
+          signFailed,
+          callbackErr
+        };
+      });
+
+      // Exclude SelectiveShare & 000 if checkbox is ticked
+      if (exclSS) {
+        rows = rows.filter(r => {
+          const l = r.ovseId.toLowerCase();
+          return l !== 'selectiveshare' && l !== '000';
+        });
+      }
+
+      // Apply scope filter
+      if (scopeMode === 'active_all') {
+        rows = rows.filter(r => r.total > 0);
+      } else if (scopeMode === 'with_failures') {
+        rows = rows.filter(r => r.failure > 0);
+      } else if (scopeMode === 'top5' || scopeMode === 'top10' || scopeMode === 'top20') {
+        const limit = scopeMode === 'top5' ? 5 : (scopeMode === 'top10' ? 10 : 20);
+        rows = rows.filter(r => r.total > 0).sort((a, b) => b.total - a.total).slice(0, limit);
+      }
+
+      // Apply search filter
+      if (searchQ) {
+        rows = rows.filter(r =>
+          r.ovseId.toLowerCase().includes(searchQ) ||
+          r.orgName.toLowerCase().includes(searchQ)
+        );
+      }
+
+      // Sort
+      rows.sort((a, b) => {
+        if (sortMode === 'failure_desc') return b.failure - a.failure || b.total - a.total;
+        if (sortMode === 'sr_asc') return a.successRate - b.successRate || b.total - a.total;
+        if (sortMode === 'sr_desc') return b.successRate - a.successRate || b.total - a.total;
+        if (sortMode === 'sr_nodenial_asc') return a.successRateNoDenial - b.successRateNoDenial || b.total - a.total;
+        if (sortMode === 'sr_nodenial_face_asc') return a.successRateNoDenialFace - b.successRateNoDenialFace || b.total - a.total;
+        if (sortMode === 'denial_desc') return b.userDenied - a.userDenied || b.total - a.total;
+        if (sortMode === 'face731_desc') return b.face731 - a.face731 || b.total - a.total;
+        if (sortMode === 'name_asc') return a.orgName.localeCompare(b.orgName);
+        return b.total - a.total || b.failure - a.failure;
+      });
+
+      // Compute Grand Total across displayed rows
+      const gt = rows.reduce((acc, r) => {
+        acc.total += r.total;
+        acc.success += r.success;
+        acc.failure += r.failure;
+        acc.userDenied += r.userDenied;
+        acc.face731 += r.face731;
+        acc.face304 += r.face304;
+        acc.face737 += r.face737;
+        acc.invalidJwt += r.invalidJwt;
+        acc.signFailed += r.signFailed;
+        acc.callbackErr += r.callbackErr;
+        return acc;
+      }, {
+        total: 0, success: 0, failure: 0,
+        userDenied: 0, face731: 0, face304: 0, face737: 0,
+        invalidJwt: 0, signFailed: 0, callbackErr: 0
+      });
+
+      const gtFaceTotal = gt.face731 + gt.face304 + gt.face737;
+      const gtDenomNoDenial = Math.max(0, gt.total - gt.userDenied);
+      const gtDenomNoDenialFace = Math.max(0, gt.total - gt.userDenied - gtFaceTotal);
+
+      gt.successRate = gt.total > 0 ? (gt.success / gt.total) * 100 : 0;
+      gt.successRateNoDenial = gtDenomNoDenial > 0 ? Math.min(100, (gt.success / gtDenomNoDenial) * 100) : (gt.success > 0 ? 100 : 0);
+      gt.successRateNoDenialFace = gtDenomNoDenialFace > 0 ? Math.min(100, (gt.success / gtDenomNoDenialFace) * 100) : (gt.success > 0 ? 100 : 0);
+
+      const periodLabel = isOverall
+        ? 'Overall (All-Time)'
+        : `${activePeriodLabel} (${activePeriodWindowStr})`;
+
+      return { rows, grandTotal: gt, periodLabel };
+    }
+
+    function renderOrgErrorMatrixTable() {
+      const tbody = document.getElementById('orgErrMatrixTableBody');
+      const tfoot = document.getElementById('orgErrMatrixTableFoot');
+      if (!tbody || !tfoot) return;
+
+      const { rows, grandTotal, periodLabel } = getFilteredOrgErrorMatrix();
+
+      const badgeEl = document.getElementById('orgErrMatrixPeriodBadge');
+      if (badgeEl && periodLabel) badgeEl.innerText = periodLabel;
+
+      const countEl = document.getElementById('orgErrMatrixCountBadge');
+      if (countEl) countEl.innerText = `${rows.length} OVSE${rows.length === 1 ? '' : 's'}`;
+
+      if (rows.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="14" class="py-8 text-center text-slate-400">No organisations matched your filter criteria in this period.</td></tr>`;
+        tfoot.innerHTML = '';
+        return;
+      }
+
+      tbody.innerHTML = rows.map(r => {
+        const showSubId = r.orgName.toLowerCase() !== r.ovseId.toLowerCase();
+        return `
+          <tr class="hover:bg-emerald-50/40 transition divide-x divide-slate-100">
+            <td class="py-2 px-3 font-semibold text-slate-900 sticky left-0 bg-white z-10" title="${r.ovseId}">
+              <div class="truncate max-w-[230px]">${r.orgName}</div>
+              ${showSubId ? `<span class="text-[10px] text-slate-400 font-mono block truncate max-w-[230px]">${r.ovseId}</span>` : ''}
+            </td>
+            <td class="py-2 px-2.5 text-right font-semibold text-slate-900 tabular-nums">${r.total.toLocaleString()}</td>
+            <td class="py-2 px-2.5 text-right font-semibold text-emerald-700 tabular-nums">${r.success.toLocaleString()}</td>
+            <td class="py-2 px-2.5 text-right font-semibold ${r.failure > 0 ? 'text-rose-600' : 'text-slate-400'} tabular-nums">${r.failure.toLocaleString()}</td>
+            <td class="py-2 px-2.5 text-right font-bold text-slate-800 bg-slate-50/60 tabular-nums">${r.successRate.toFixed(1)}%</td>
+            <td class="py-2 px-2.5 text-right font-bold text-emerald-900 bg-emerald-50/30 tabular-nums">${r.successRateNoDenial.toFixed(2)}</td>
+            <td class="py-2 px-2.5 text-right font-extrabold text-teal-900 bg-teal-50/40 tabular-nums">${r.successRateNoDenialFace.toFixed(2)}</td>
+            <td class="py-2 px-2.5 text-right tabular-nums ${r.userDenied > 0 ? 'text-slate-800 font-medium' : 'text-slate-400'}">${r.userDenied.toLocaleString()}</td>
+            <td class="py-2 px-2.5 text-right tabular-nums ${r.face731 > 0 ? 'text-slate-800 font-medium' : 'text-slate-400'}">${r.face731.toLocaleString()}</td>
+            <td class="py-2 px-2.5 text-right tabular-nums ${r.face304 > 0 ? 'text-slate-800 font-medium' : 'text-slate-400'}">${r.face304.toLocaleString()}</td>
+            <td class="py-2 px-2.5 text-right tabular-nums ${r.face737 > 0 ? 'text-slate-800 font-medium' : 'text-slate-400'}">${r.face737.toLocaleString()}</td>
+            <td class="py-2 px-2.5 text-right tabular-nums ${r.invalidJwt > 0 ? 'text-slate-800 font-medium' : 'text-slate-400'}">${r.invalidJwt.toLocaleString()}</td>
+            <td class="py-2 px-2.5 text-right tabular-nums ${r.signFailed > 0 ? 'text-slate-800 font-medium' : 'text-slate-400'}">${r.signFailed.toLocaleString()}</td>
+            <td class="py-2 px-2.5 text-right tabular-nums ${r.callbackErr > 0 ? 'text-slate-800 font-medium' : 'text-slate-400'}">${r.callbackErr.toLocaleString()}</td>
+          </tr>
+        `;
+      }).join('');
+
+      if (grandTotal) {
+        tfoot.innerHTML = `
+          <tr class="divide-x divide-slate-200 bg-slate-100 text-slate-900 font-extrabold">
+            <td class="py-2.5 px-3 sticky left-0 bg-slate-100 z-10">Grand Total</td>
+            <td class="py-2.5 px-2.5 text-right tabular-nums">${grandTotal.total.toLocaleString()}</td>
+            <td class="py-2.5 px-2.5 text-right text-emerald-800 tabular-nums">${grandTotal.success.toLocaleString()}</td>
+            <td class="py-2.5 px-2.5 text-right text-rose-700 tabular-nums">${grandTotal.failure.toLocaleString()}</td>
+            <td class="py-2.5 px-2.5 text-right tabular-nums">${grandTotal.successRate.toFixed(1)}%</td>
+            <td class="py-2.5 px-2.5 text-right text-emerald-950 bg-emerald-100/60 tabular-nums">${grandTotal.successRateNoDenial.toFixed(2)}</td>
+            <td class="py-2.5 px-2.5 text-right text-teal-950 bg-teal-100/70 tabular-nums">${grandTotal.successRateNoDenialFace.toFixed(2)}</td>
+            <td class="py-2.5 px-2.5 text-right tabular-nums">${grandTotal.userDenied.toLocaleString()}</td>
+            <td class="py-2.5 px-2.5 text-right tabular-nums">${grandTotal.face731.toLocaleString()}</td>
+            <td class="py-2.5 px-2.5 text-right tabular-nums">${grandTotal.face304.toLocaleString()}</td>
+            <td class="py-2.5 px-2.5 text-right tabular-nums">${grandTotal.face737.toLocaleString()}</td>
+            <td class="py-2.5 px-2.5 text-right tabular-nums">${grandTotal.invalidJwt.toLocaleString()}</td>
+            <td class="py-2.5 px-2.5 text-right tabular-nums">${grandTotal.signFailed.toLocaleString()}</td>
+            <td class="py-2.5 px-2.5 text-right tabular-nums">${grandTotal.callbackErr.toLocaleString()}</td>
+          </tr>
+        `;
+      }
+    }
+
+    function downloadOrgErrorMatrixCSV() {
+      const { rows, grandTotal, periodLabel } = getFilteredOrgErrorMatrix();
+      if (!rows || rows.length === 0) {
+        alert("No organisation error rows to export.");
+        return;
+      }
+      const headers = [
+        'Organisation',
+        'Total',
+        'Success',
+        'Failure',
+        'Success rate',
+        'Success rate without user denial',
+        'Success rate without user denial & face auth failure',
+        'User denied consent',
+        'Face Auth Failed (731)',
+        'Face Auth Failed (304)',
+        'Face Auth Failed (737)',
+        'Invalid JWT',
+        'Signature validation failed',
+        'Callback network error'
+      ];
+      const csvRows = [
+        headers,
+        ...rows.map(r => [
+          r.orgName,
+          r.total,
+          r.success,
+          r.failure,
+          `${r.successRate.toFixed(1)}%`,
+          r.successRateNoDenial.toFixed(2),
+          r.successRateNoDenialFace.toFixed(2),
+          r.userDenied,
+          r.face731,
+          r.face304,
+          r.face737,
+          r.invalidJwt,
+          r.signFailed,
+          r.callbackErr
+        ])
+      ];
+      if (grandTotal) {
+        csvRows.push([
+          'Grand Total',
+          grandTotal.total,
+          grandTotal.success,
+          grandTotal.failure,
+          `${grandTotal.successRate.toFixed(1)}%`,
+          grandTotal.successRateNoDenial.toFixed(2),
+          grandTotal.successRateNoDenialFace.toFixed(2),
+          grandTotal.userDenied,
+          grandTotal.face731,
+          grandTotal.face304,
+          grandTotal.face737,
+          grandTotal.invalidJwt,
+          grandTotal.signFailed,
+          grandTotal.callbackErr
+        ]);
+      }
+      triggerCSVDownload(`OVSE_Organisation_Error_Matrix_${new Date().toISOString().slice(0, 10)}.csv`, csvRows);
     }
 
     function renderErrorMasterTable() {

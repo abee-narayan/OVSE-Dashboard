@@ -1,16 +1,107 @@
 UIDAI OVSE ERROR CODE INTELLIGENCE - EXECUTIVE REPORT
-Generated At,"25/11/2026, 11:02:53 am"
+Generated At,"26/11/2026, 6:18:14 pm"
+,,,,,,,
+ORGANISATION-WISE ERROR & ADJUSTED SUCCESS RATE ANALYSIS (WEEKLY)
+Organisation,Total,Success,Failure,Success rate,Success rate without user denial,Success rate without user denial & face auth failure,User denied consent,Face Auth Failed (731),Face Auth Failed (304),Face Auth Failed (737),Invalid JWT,Signature validation failed,Callback network error
+SelectiveShare,134316,134305,11,100.0%,99.99,99.99,0,0,0,0,0,0,0
+urbancompany,13184,7293,5891,55.3%,80.76,96.19,4153,1324,61,64,171,118,0
+"urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",6700,2892,3808,43.2%,52.88,76.47,1231,1422,91,174,0,112,778
+protean,3904,3684,220,94.4%,96.74,96.85,96,4,0,0,13,92,15
+dexit,2999,1782,1217,59.4%,68.41,82.01,394,397,15,20,244,77,70
+procam,2466,1807,659,73.3%,78.46,94.51,163,273,75,43,17,34,54
+urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107,2419,1197,1222,49.5%,54.02,56.38,203,55,24,14,0,21,905
+gridlines,2376,1424,952,59.9%,65.53,75.99,203,213,36,50,22,45,383
+urn:uidai:client:life-insurance-corporation-of-india:202606036260,2027,1207,820,59.5%,72.15,91.51,354,325,13,16,79,25,8
+tnmc,2016,1250,766,62.0%,65.75,80.54,115,214,96,39,14,58,230
+urn:uidai:client:instantpay-india-limited:202606250788,1502,1011,491,67.3%,82.60,96.75,278,145,27,7,8,22,4
+trustt,1317,894,423,67.9%,80.40,91.22,205,108,0,24,20,55,11
+urn:uidai:client:inferalgo-private-limited:202607177737,1104,646,458,58.5%,76.54,95.85,260,152,7,11,1,25,2
+arattai,743,527,216,70.9%,88.27,96.88,146,48,4,1,8,9,0
+surepass,653,349,304,53.4%,61.55,87.69,86,122,31,16,13,28,8
+urn:uidai:client:hindon-mercantile-limited:202608105382,517,328,189,63.4%,75.06,92.39,80,77,1,4,16,11,0
+urn:uidai:client:punjab-school-educationboard:202608274954,491,311,180,63.3%,74.94,85.91,76,44,2,7,7,29,15
+urn:uidai:client:mumbai-metropolitan-region-development-authority:202606096774,360,201,159,55.8%,60.18,81.71,26,62,5,21,19,7,19
+(Blank / Unknown),326,0,326,0.0%,0.00,0.00,111,17,132,66,0,0,0
+urn:uidai:client:dc-office-tawang:202606230797,184,130,54,70.7%,74.29,93.53,9,3,29,4,2,4,3
+truscholar,164,126,38,76.8%,90.00,97.67,24,8,2,1,1,2,0
+"urn:uidai:client:special-branch,-bihar-police:202610163901",116,14,102,12.1%,12.28,12.50,2,1,0,1,59,9,30
+vsign,89,63,26,70.8%,79.75,79.75,10,0,0,0,15,1,0
+evaluit,83,61,22,73.5%,88.41,98.39,14,7,0,0,0,1,0
+urn:uidai:client:iffco-tokio-general-insurance-company-ltd.:202610146888,80,69,11,86.3%,95.83,95.83,8,0,0,0,0,3,0
+cisf,79,34,45,43.0%,44.16,53.97,2,14,0,0,23,3,3
+urn:uidai:client:m.p.state-electronics----development-corporation--ltd:202606182023,78,62,16,79.5%,83.78,84.93,4,1,0,0,1,8,2
+transaction_analysts,71,51,20,71.8%,71.83,76.12,0,3,1,0,0,16,0
+urn:uidai:client:ummeed-housing-finance-private-limited:202609177828,62,34,28,54.8%,70.83,85.00,14,6,0,2,6,0,0
+entityiq,44,38,6,86.4%,86.36,90.48,0,0,2,0,0,0,4
+000,40,38,2,95.0%,95.00,95.00,0,0,0,0,0,1,1
+urn:uidai:client:ican-bpo-private-limited:202608272078,36,0,36,0.0%,0.00,0.00,0,0,0,0,11,25,0
+ebitaus,31,0,31,0.0%,0.00,0.00,2,1,0,0,0,2,26
+rjil,28,24,4,85.7%,92.31,100.00,2,2,0,0,0,0,0
+urn:uidai:client:yanolja-cloud-solution-private-limited:202611034581,26,21,5,80.8%,80.77,80.77,0,0,0,0,0,0,5
+novelpatterns,25,20,5,80.0%,83.33,95.24,1,0,3,0,0,0,1
+urn:uidai:client:aparampaar-finance-private-limited:202605134450,23,14,9,60.9%,60.87,87.50,0,7,0,0,2,0,0
+urn:uidai:client:sahana-system-limited:202610095399,22,15,7,68.2%,75.00,100.00,2,5,0,0,0,0,0
+urn:uidai:client:intuitive-data-solutions-private-limited:202607237962,20,11,9,55.0%,68.75,100.00,4,5,0,0,0,0,0
+ooru_digital,19,15,4,78.9%,78.95,100.00,0,1,0,3,0,0,0
+urn:uidai:client:perigeon-software-private-limited:202606041974,19,16,3,84.2%,94.12,94.12,2,0,0,0,0,0,1
+urn:uidai:client:kendriya-vidyalaya-sangathan:202611171026,19,0,19,0.0%,0.00,0.00,0,0,0,0,3,16,0
+tspolice,17,8,9,47.1%,53.33,53.33,2,0,0,0,5,0,2
+urn:uidai:client:oryggi-technologies-private-limited:202607288031,16,6,10,37.5%,50.00,50.00,4,0,0,0,0,6,0
+urn:uidai:client:mdindia-health-insurance-tpa-private-limited:202608143596,14,3,11,21.4%,21.43,23.08,0,1,0,0,0,0,10
+apiclub,13,8,5,61.5%,61.54,66.67,0,0,0,1,0,0,4
+urn:uidai:client:sai-roshni-capital-private-limited:202610275530,13,6,7,46.2%,54.55,66.67,2,1,0,1,0,0,3
+mantra,12,10,2,83.3%,100.00,100.00,2,0,0,0,0,0,0
+AF27680312,11,0,11,0.0%,0.00,0.00,0,0,0,0,11,0,0
+urn:uidai:client:nagaland-police:202610092803,9,2,7,22.2%,40.00,100.00,4,3,0,0,0,0,0
+urn:uidai:client:earnest-data-analytics-private-limited:202609247533,9,9,0,100.0%,100.00,100.00,0,0,0,0,0,0,0
+2610163901,9,0,9,0.0%,0.00,0.00,0,0,0,0,9,0,0
+202611177252,9,0,9,0.0%,0.00,0.00,0,0,0,0,9,0,0
+urn:uidai:client:blue-sapphire-it-solutions-private-limited:202610086049,8,5,3,62.5%,83.33,83.33,2,0,0,0,0,0,1
+urn:uidai:client:assam-police:202606026852,7,7,0,100.0%,100.00,100.00,0,0,0,0,0,0,0
+decentro,6,6,0,100.0%,100.00,100.00,0,0,0,0,0,0,0
+urn:uidai:client:mahalaxmi-parivahan-private-limited:202608108563,6,3,3,50.0%,50.00,50.00,0,0,0,0,1,0,2
+isolve,6,1,5,16.7%,16.67,16.67,0,0,0,0,0,0,5
+urn:uidai:client:startup-gurukul-innovation-private-limited:202610157376,6,5,1,83.3%,83.33,100.00,0,1,0,0,0,0,0
+urn:uidai:client:appexigo-technologies-private-limited:2028555185225206113,6,0,6,0.0%,0.00,0.00,0,0,0,0,6,0,0
+urn:uidai:client:evolute-fintech-innovations-private-limited:202608271911,4,4,0,100.0%,100.00,100.00,0,0,0,0,0,0,0
+fastkyc,4,4,0,100.0%,100.00,100.00,0,0,0,0,0,0,0
+signcare,4,4,0,100.0%,100.00,100.00,0,0,0,0,0,0,0
+urn:uidai:client:greenpark-hotels-and-resorts-limited:202606248233,4,2,2,50.0%,50.00,50.00,0,0,0,0,0,2,0
+signzytech,3,3,0,100.0%,100.00,100.00,0,0,0,0,0,0,0
+perfios,3,3,0,100.0%,100.00,100.00,0,0,0,0,0,0,0
+urn:uidai:client:directorate-of-land-records:202607304388,3,3,0,100.0%,100.00,100.00,0,0,0,0,0,0,0
+bioenable,3,3,0,100.0%,100.00,100.00,0,0,0,0,0,0,0
+documint,3,1,2,33.3%,100.00,100.00,2,0,0,0,0,0,0
+urn:uidai:client:3i-consulting-private-limited:202608031319,3,2,1,66.7%,66.67,100.00,0,1,0,0,0,0,0
+urn:uidai:client:doklink-services-private-limited:202609249932,3,1,2,33.3%,100.00,100.00,2,0,0,0,0,0,0
+bfhl,3,3,0,100.0%,100.00,100.00,0,0,0,0,0,0,0
+urn:uidai:client:internet-and-mobile-association-of-india:202608053256,3,2,1,66.7%,100.00,100.00,1,0,0,0,0,0,0
+urn:uidai:client:caratred-technologies-llp:202606040096,2,2,0,100.0%,100.00,100.00,0,0,0,0,0,0,0
+urn:uidai:client:finanalyz-technologies-private-limited:202606306133,2,0,2,0.0%,0.00,0.00,2,0,0,0,0,0,0
+urn:uidai:client:centre-for-good-governance:202609037683,2,2,0,100.0%,100.00,100.00,0,0,0,0,0,0,0
+urn:uidai:client:appexigo-technologies-private-limited:202606106113,2,0,2,0.0%,0.00,0.00,0,0,0,0,2,0,0
+urn:uidai:client:syncro1-private-limited:202611175462,2,0,2,0.0%,0.00,0.00,0,0,0,0,2,0,0
+trackwizz,1,1,0,100.0%,100.00,100.00,0,0,0,0,0,0,0
+urn:uidai:client:chhattisgarh-infotech-and-biotech-promotion-soc:202610079204,1,1,0,100.0%,100.00,100.00,0,0,0,0,0,0,0
+any2paytpl,1,0,1,0.0%,0.00,0.00,0,0,0,0,1,0,0
+urn:uidai:client:msqube-technology-solutions-private-limited:202611061651,1,0,1,0.0%,0.00,0.00,0,0,0,0,1,0,0
+1a2f,1,0,1,0.0%,0.00,0.00,0,0,0,0,1,0,0
+sedax,1,1,0,100.0%,100.00,100.00,0,0,0,0,0,0,0
+urn:uidai:client:hp-marketing-board:202611045503,1,0,1,0.0%,0.00,0.00,0,0,0,0,1,0,0
+urn:uidai:client:fr8-india-private-limited:202609177281,1,1,0,100.0%,100.00,100.00,0,0,0,0,0,0,0
+urn:uidai:client:rurtech-for-arayans-llp:202611039670,1,0,1,0.0%,0.00,0.00,0,0,0,0,0,0,1
+Grand Total,181017,162086,18931,89.5%,93.85,97.41,8303,5073,657,590,824,867,2606
 ,,,,,,,
 Error Code,Category,Description / Meaning,Weekly Failures,Weekly Failure Share %,Lifetime Failures,Lifetime Failure Share %,Trend Delta (%)
-SDJWT_USER_DENIED_CONSENT,User Consent Denial,Citizen actively declined or cancelled the consent prompt on mAadhaar app.,6798,44.36%,356124,16.41%,+27.95%
-SDJWT_FACEAUTH_FAILED_731,Biometric Face Auth Failure,"Face authentication match failed (Threshold score not met, code 731).",3834,25.02%,362786,16.72%,+8.30%
-SDJWT_CALLBACK_NETWORK_ERROR,Network / Connectivity Timeout,Network timeout or connection drop during callback reporting to OVSE backend.,1992,13.00%,631277,29.10%,-16.10%
-SDJWT_SIGN_VALIDATION_FAILED,Cryptographic / Security Error,Cryptographic signature validation failure between OVSE and UIDAI.,1053,6.87%,63457,2.92%,+3.95%
-INVALID_JWT,Cryptographic / Security Error,"Malformed, invalid token payload, or expired token during handshake.",771,5.03%,411461,18.96%,-13.93%
-SDJWT_FACEAUTH_FAILED_304,Biometric Face Auth Failure,Face capture / lighting / sensor error during camera acquisition.,467,3.05%,53785,2.48%,+0.57%
-SDJWT_FACEAUTH_FAILED_737,Biometric Face Auth Failure,Low biometric confidence / quality score during facial matching.,379,2.47%,20179,0.93%,+1.54%
-SDJWT_ZIP_CREATION_FAILED,System / Payload Processing,Failure during local credential zip extraction or compression.,26,0.17%,575,0.03%,+0.14%
-0,Generic Timeout / Client Drop,"Generic connection reset, client drop, or unspecified timeout error.",4,0.03%,251765,11.60%,-11.58%
+SDJWT_USER_DENIED_CONSENT,User Consent Denial,Citizen actively declined or cancelled the consent prompt on mAadhaar app.,8303,43.85%,358999,16.49%,+27.36%
+SDJWT_FACEAUTH_FAILED_731,Biometric Face Auth Failure,"Face authentication match failed (Threshold score not met, code 731).",5073,26.79%,364872,16.76%,+10.03%
+SDJWT_CALLBACK_NETWORK_ERROR,Network / Connectivity Timeout,Network timeout or connection drop during callback reporting to OVSE backend.,2606,13.76%,632238,29.05%,-15.28%
+SDJWT_SIGN_VALIDATION_FAILED,Cryptographic / Security Error,Cryptographic signature validation failure between OVSE and UIDAI.,867,4.58%,63731,2.93%,+1.65%
+INVALID_JWT,Cryptographic / Security Error,"Malformed, invalid token payload, or expired token during handshake.",824,4.35%,411671,18.91%,-14.56%
+SDJWT_FACEAUTH_FAILED_304,Biometric Face Auth Failure,Face capture / lighting / sensor error during camera acquisition.,657,3.47%,54078,2.48%,+0.99%
+SDJWT_FACEAUTH_FAILED_737,Biometric Face Auth Failure,Low biometric confidence / quality score during facial matching.,590,3.12%,20460,0.94%,+2.18%
+SDJWT_ZIP_CREATION_FAILED,System / Payload Processing,Failure during local credential zip extraction or compression.,11,0.06%,575,0.03%,+0.03%
+0,Generic Timeout / Client Drop,"Generic connection reset, client drop, or unspecified timeout error.",4,0.02%,251766,11.57%,-11.55%
 731,Biometric Face Auth Failure,Biometric verification threshold score not achieved (Code 731).,0,0.00%,14104,0.65%,-0.65%
 SDJWT_FACEAUTH_FAILED,Biometric Face Auth Failure,General facial authentication failure.,0,0.00%,3593,0.17%,-0.17%
 737,Other System Errors,UIDAI error code 737,0,0.00%,569,0.03%,-0.03%
@@ -24,18 +115,18 @@ Request failed: The resource could not be loaded because the App Transport Secur
 ,,,,,,,
 TOP IMPACTED OVSE ENTITIES BY ERROR COUNT (WEEKLY)
 OVSE ID,Total Weekly Failures,Dominant Error Code,Dominant Error Count,Dominant Error Share %
-urbancompany,5417,SDJWT_USER_DENIED_CONSENT,3795,70.1%
-"urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",1835,SDJWT_FACEAUTH_FAILED_731,731,39.8%
-dexit,1171,SDJWT_FACEAUTH_FAILED_731,373,31.9%
-urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107,1052,SDJWT_CALLBACK_NETWORK_ERROR,786,74.7%
-gridlines,824,SDJWT_CALLBACK_NETWORK_ERROR,314,38.1%
-urn:uidai:client:life-insurance-corporation-of-india:202606036260,677,SDJWT_USER_DENIED_CONSENT,285,42.1%
-tnmc,568,SDJWT_CALLBACK_NETWORK_ERROR,174,30.6%
-procam,537,SDJWT_FACEAUTH_FAILED_731,214,39.9%
-protean,476,SDJWT_SIGN_VALIDATION_FAILED,347,72.9%
-urn:uidai:client:instantpay-india-limited:202606250788,423,SDJWT_USER_DENIED_CONSENT,243,57.4%
-urn:uidai:client:inferalgo-private-limited:202607177737,417,SDJWT_USER_DENIED_CONSENT,228,54.7%
-trustt,317,SDJWT_USER_DENIED_CONSENT,173,54.6%
-(Blank / Unknown),281,SDJWT_FACEAUTH_FAILED_304,119,42.3%
-arattai,192,SDJWT_USER_DENIED_CONSENT,133,69.3%
-urn:uidai:client:punjab-school-educationboard:202608274954,182,SDJWT_USER_DENIED_CONSENT,68,37.4%
+urbancompany,5891,SDJWT_USER_DENIED_CONSENT,4153,70.5%
+"urn:uidai:client:department-of-registration-and-stamps,-government-of-maharashtra:202609036112",3808,SDJWT_FACEAUTH_FAILED_731,1422,37.3%
+urn:uidai:client:medi-assist-insurance-tpa-private-limited:202605292107,1222,SDJWT_CALLBACK_NETWORK_ERROR,905,74.1%
+dexit,1217,SDJWT_FACEAUTH_FAILED_731,397,32.6%
+gridlines,952,SDJWT_CALLBACK_NETWORK_ERROR,383,40.2%
+urn:uidai:client:life-insurance-corporation-of-india:202606036260,820,SDJWT_USER_DENIED_CONSENT,354,43.2%
+tnmc,766,SDJWT_CALLBACK_NETWORK_ERROR,230,30.0%
+procam,659,SDJWT_FACEAUTH_FAILED_731,273,41.4%
+urn:uidai:client:instantpay-india-limited:202606250788,491,SDJWT_USER_DENIED_CONSENT,278,56.6%
+urn:uidai:client:inferalgo-private-limited:202607177737,458,SDJWT_USER_DENIED_CONSENT,260,56.8%
+trustt,423,SDJWT_USER_DENIED_CONSENT,205,48.5%
+(Blank / Unknown),326,SDJWT_FACEAUTH_FAILED_304,132,40.5%
+surepass,304,SDJWT_FACEAUTH_FAILED_731,122,40.1%
+protean,220,SDJWT_USER_DENIED_CONSENT,96,43.6%
+arattai,216,SDJWT_USER_DENIED_CONSENT,146,67.6%
